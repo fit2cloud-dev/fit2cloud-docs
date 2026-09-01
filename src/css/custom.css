@@ -28,6 +28,10 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
+  /* 暗色模式下把背景恢复成深色。:root 里的 --ifm-background-color:#fff 会传播到暗色,
+     若不覆盖会导致暗色下文档仍白底、浅色文字看不清。 */
+  --ifm-background-color: #1b1b1d;
+  --ifm-background-surface-color: #242526;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
