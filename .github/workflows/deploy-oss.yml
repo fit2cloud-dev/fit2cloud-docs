@@ -71,9 +71,15 @@ jobs:
           find ossutil-bin -name ossutil -type f -exec cp {} ./ossutil \;
           chmod +x ./ossutil
 
-      - name: Sync build to OSS (full sync)
+      - name: Sync build to OSS (incremental sync)
         run: |
-          # ossutil v2 默认使用签名版本 4 (SigV4), 必须显式设置 region。
+          # 每次 npm run build 都会刷新所有文件的 mtime, 若按时间戳(--update)判断
+          # 会把"内容没变仅时间变"的文件也当作要传, 导致每次全量上传(约 400MB), 很慢。
+          # 因此改用 --size-only 按文件大小判断: 大小相同即视为未变化、跳过, 只传真正有改动的文件。
+          # Docusaurus 静态资源带内容哈希, 内容变了文件名/大小必变, 必会正确上传。
+          # 保留 --delete 让本地删除的文件也能从云端同步删除(两端一致)。
+          # --size-only 是增量关键: 只比文件大小, 大小相同即跳过, 避免每次全量上传。
+          # ossutil v2 默认 SigV4 签名, 必须用下面的 region 推导(缺少会报 "region must be set")。
           # region 从 endpoint 推导: 如 oss-cn-hangzhou.aliyuncs.com -> cn-hangzhou
           OSS_REGION="$(echo "$ALIYUN_OSS_ENDPOINT" | sed -E 's|^https?://||; s|^oss-||; s|\..*||')"
           echo "Derived region: $OSS_REGION"
@@ -84,7 +90,7 @@ jobs:
           region = "$OSS_REGION"
           endpoint = "$ALIYUN_OSS_ENDPOINT"
           EOF
-          ./ossutil sync ./build/ "oss://$ALIYUN_OSS_BUCKET/" --delete --update -f
+          ./ossutil sync ./build/ "oss://$ALIYUN_OSS_BUCKET/" --delete --size-only -f
         env:
           ALIYUN_ACCESS_KEY_ID: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
           ALIYUN_ACCESS_KEY_SECRET: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
