@@ -1,0 +1,38 @@
+---
+title: 1Panel DNS 账户配置
+description: 介绍在 1Panel 中创建和管理 DNS 服务商账户，以自动添加域名验证解析记录的方法。
+keywords: [1Panel DNS 账户, DNS API, 域名验证, SSL 证书, Cloudflare, 阿里云 DNS, 腾讯云 DNS]
+---
+
+:::note
+
+    点击证书列表上方的【DNS 账户】按钮，弹出 DNS 账户管理页面。在该页面中可以创建、编辑或删除 DNS 账户。DNS 账户用于调用对应 DNS 服务商 API，自动添加 DNS 解析记录验证域名所有权。
+    
+    目前支持的账户类型有：
+    
+    - 阿里云
+    - 腾讯云
+    - 华为云
+    - GoDaddy
+    - Cloudflare
+    - Vercel
+    - CloudDNS
+    - NameSilo
+    - NameCheap
+    - Name.com
+    - FreeMyIP
+    - 雨云
+    - 西部数码
+    - ClouDNS
+    - Spaceship
+    - 火山引擎
+    - DNSPod（即将废弃）
+
+:::
+![img.png](/img/1panel/websites/certificate_dns.png)
+
+:::note
+
+    关于不同类型 DNS 账户需要的认证信息如何获取，请查阅对应服务商的 API 文档获取支持。
+
+:::

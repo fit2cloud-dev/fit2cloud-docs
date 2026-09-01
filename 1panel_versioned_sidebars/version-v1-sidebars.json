@@ -1,0 +1,582 @@
+{
+  "1panel": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "产品介绍",
+      "key": "v1-doc:index"
+    },
+    {
+      "type": "category",
+      "label": "安装部署",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "installation/online-installation",
+          "label": "在线安装",
+          "key": "v1-doc:installation/online-installation @ 安装部署"
+        },
+        {
+          "type": "doc",
+          "id": "installation/package-installation",
+          "label": "离线包安装",
+          "key": "v1-doc:installation/package-installation @ 安装部署"
+        },
+        {
+          "type": "category",
+          "label": "云平台",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "installation/ali-cloud",
+              "label": "阿里云镜像部署",
+              "key": "v1-doc:installation/ali-cloud @ 安装部署 / 云平台"
+            },
+            {
+              "type": "doc",
+              "id": "installation/alibaba-cloud-computenest",
+              "label": "阿里云计算巢部署",
+              "key": "v1-doc:installation/alibaba-cloud-computenest @ 安装部署 / 云平台"
+            },
+            {
+              "type": "doc",
+              "id": "installation/tencent-cloud",
+              "label": "腾讯云应用模板部署",
+              "key": "v1-doc:installation/tencent-cloud @ 安装部署 / 云平台"
+            },
+            {
+              "type": "doc",
+              "id": "installation/tencent-cloudapp",
+              "label": "腾讯云云应用部署",
+              "key": "v1-doc:installation/tencent-cloudapp @ 安装部署 / 云平台"
+            }
+          ],
+          "key": "v1-cat:安装部署 / 云平台"
+        },
+        {
+          "type": "doc",
+          "id": "installation/online-upgrade",
+          "label": "在线升级",
+          "key": "v1-doc:installation/online-upgrade @ 安装部署"
+        },
+        {
+          "type": "doc",
+          "id": "installation/cli",
+          "label": "命令行工具",
+          "key": "v1-doc:installation/cli @ 安装部署"
+        }
+      ],
+      "key": "v1-cat:安装部署"
+    },
+    {
+      "type": "category",
+      "label": "功能手册",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "category",
+          "label": "应用商店",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-manual/appstore/appstore",
+              "label": "概述",
+              "key": "v1-doc:user-manual/appstore/appstore @ 功能手册 / 应用商店"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/appstore/install",
+              "label": "安装部署",
+              "key": "v1-doc:user-manual/appstore/install @ 功能手册 / 应用商店"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/appstore/installed",
+              "label": "应用操作",
+              "key": "v1-doc:user-manual/appstore/installed @ 功能手册 / 应用商店"
+            }
+          ],
+          "key": "v1-cat:功能手册 / 应用商店"
+        },
+        {
+          "type": "category",
+          "label": "网站",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-manual/websites/websites",
+              "label": "概述",
+              "key": "v1-doc:user-manual/websites/websites @ 功能手册 / 网站"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/website-create",
+              "label": "创建网站",
+              "key": "v1-doc:user-manual/websites/website-create @ 功能手册 / 网站"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/website-config-basic",
+              "label": "基本设置",
+              "key": "v1-doc:user-manual/websites/website-config-basic @ 功能手册 / 网站"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/website-config-other",
+              "label": "其他设置",
+              "key": "v1-doc:user-manual/websites/website-config-other @ 功能手册 / 网站"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/website-group",
+              "label": "网站分组",
+              "key": "v1-doc:user-manual/websites/website-group @ 功能手册 / 网站"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/website-backup",
+              "label": "网站备份",
+              "key": "v1-doc:user-manual/websites/website-backup @ 功能手册 / 网站"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/openresty",
+              "label": "OpenResty 设置",
+              "key": "v1-doc:user-manual/websites/openresty @ 功能手册 / 网站"
+            }
+          ],
+          "key": "v1-cat:功能手册 / 网站"
+        },
+        {
+          "type": "category",
+          "label": "证书",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-manual/websites/certificate",
+              "label": "证书概述",
+              "key": "v1-doc:user-manual/websites/certificate @ 功能手册 / 证书"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/certificate-create",
+              "label": "申请证书",
+              "key": "v1-doc:user-manual/websites/certificate-create @ 功能手册 / 证书"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/certificate-renew",
+              "label": "续签证书",
+              "key": "v1-doc:user-manual/websites/certificate-renew @ 功能手册 / 证书"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/certificate-acme",
+              "label": "Acme 账户",
+              "key": "v1-doc:user-manual/websites/certificate-acme @ 功能手册 / 证书"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/certificate-dns",
+              "label": "DNS 账户",
+              "key": "v1-doc:user-manual/websites/certificate-dns @ 功能手册 / 证书"
+            }
+          ],
+          "key": "v1-cat:功能手册 / 证书"
+        },
+        {
+          "type": "category",
+          "label": "运行环境",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-manual/websites/php",
+              "label": "PHP",
+              "key": "v1-doc:user-manual/websites/php @ 功能手册 / 运行环境"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/node",
+              "label": "Node.js",
+              "key": "v1-doc:user-manual/websites/node @ 功能手册 / 运行环境"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/java",
+              "label": "Java",
+              "key": "v1-doc:user-manual/websites/java @ 功能手册 / 运行环境"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/golang",
+              "label": "Golang",
+              "key": "v1-doc:user-manual/websites/golang @ 功能手册 / 运行环境"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/python",
+              "label": "Python",
+              "key": "v1-doc:user-manual/websites/python @ 功能手册 / 运行环境"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/websites/dotnet",
+              "label": ".NET",
+              "key": "v1-doc:user-manual/websites/dotnet @ 功能手册 / 运行环境"
+            }
+          ],
+          "key": "v1-cat:功能手册 / 运行环境"
+        },
+        {
+          "type": "category",
+          "label": "AI",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-manual/ai/model",
+              "label": "模型",
+              "key": "v1-doc:user-manual/ai/model @ 功能手册 / AI"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/ai/mcp",
+              "label": "MCP",
+              "key": "v1-doc:user-manual/ai/mcp @ 功能手册 / AI"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/ai/gpu",
+              "label": "GPU 监控",
+              "key": "v1-doc:user-manual/ai/gpu @ 功能手册 / AI"
+            }
+          ],
+          "key": "v1-cat:功能手册 / AI"
+        },
+        {
+          "type": "doc",
+          "id": "user-manual/mcp/mcp-server",
+          "label": "MCP Server",
+          "key": "v1-doc:user-manual/mcp/mcp-server @ 功能手册"
+        },
+        {
+          "type": "category",
+          "label": "数据库",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-manual/databases/mysql",
+              "label": "MySQL",
+              "key": "v1-doc:user-manual/databases/mysql @ 功能手册 / 数据库"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/databases/postgresql",
+              "label": "PostgreSQL",
+              "key": "v1-doc:user-manual/databases/postgresql @ 功能手册 / 数据库"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/databases/redis",
+              "label": "Redis",
+              "key": "v1-doc:user-manual/databases/redis @ 功能手册 / 数据库"
+            }
+          ],
+          "key": "v1-cat:功能手册 / 数据库"
+        },
+        {
+          "type": "category",
+          "label": "容器",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-manual/containers/container",
+              "label": "容器",
+              "key": "v1-doc:user-manual/containers/container @ 功能手册 / 容器"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/containers/compose",
+              "label": "编排",
+              "key": "v1-doc:user-manual/containers/compose @ 功能手册 / 容器"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/containers/image",
+              "label": "镜像",
+              "key": "v1-doc:user-manual/containers/image @ 功能手册 / 容器"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/containers/network",
+              "label": "网络",
+              "key": "v1-doc:user-manual/containers/network @ 功能手册 / 容器"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/containers/volume",
+              "label": "存储卷",
+              "key": "v1-doc:user-manual/containers/volume @ 功能手册 / 容器"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/containers/repo",
+              "label": "仓库",
+              "key": "v1-doc:user-manual/containers/repo @ 功能手册 / 容器"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/containers/compose-template",
+              "label": "编排模版",
+              "key": "v1-doc:user-manual/containers/compose-template @ 功能手册 / 容器"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/containers/setting",
+              "label": "配置",
+              "key": "v1-doc:user-manual/containers/setting @ 功能手册 / 容器"
+            }
+          ],
+          "key": "v1-cat:功能手册 / 容器"
+        },
+        {
+          "type": "doc",
+          "id": "user-manual/cronjobs",
+          "label": "计划任务",
+          "key": "v1-doc:user-manual/cronjobs @ 功能手册"
+        },
+        {
+          "type": "category",
+          "label": "主机",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-manual/hosts/file",
+              "label": "文件",
+              "key": "v1-doc:user-manual/hosts/file @ 功能手册 / 主机"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/hosts/monitor",
+              "label": "监控",
+              "key": "v1-doc:user-manual/hosts/monitor @ 功能手册 / 主机"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/hosts/terminal",
+              "label": "终端",
+              "key": "v1-doc:user-manual/hosts/terminal @ 功能手册 / 主机"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/hosts/firewall",
+              "label": "防火墙",
+              "key": "v1-doc:user-manual/hosts/firewall @ 功能手册 / 主机"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/hosts/process",
+              "label": "进程管理",
+              "key": "v1-doc:user-manual/hosts/process @ 功能手册 / 主机"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/hosts/ssh",
+              "label": "SSH 管理",
+              "key": "v1-doc:user-manual/hosts/ssh @ 功能手册 / 主机"
+            }
+          ],
+          "key": "v1-cat:功能手册 / 主机"
+        },
+        {
+          "type": "category",
+          "label": "工具箱",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "doc",
+              "id": "user-manual/toolbox/quick-settings",
+              "label": "快速设置",
+              "key": "v1-doc:user-manual/toolbox/quick-settings @ 功能手册 / 工具箱"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/toolbox/clean",
+              "label": "缓存清理",
+              "key": "v1-doc:user-manual/toolbox/clean @ 功能手册 / 工具箱"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/toolbox/supervisor",
+              "label": "进程守护",
+              "key": "v1-doc:user-manual/toolbox/supervisor @ 功能手册 / 工具箱"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/toolbox/clam",
+              "label": "病毒扫描",
+              "key": "v1-doc:user-manual/toolbox/clam @ 功能手册 / 工具箱"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/toolbox/ftp",
+              "label": "FTP",
+              "key": "v1-doc:user-manual/toolbox/ftp @ 功能手册 / 工具箱"
+            },
+            {
+              "type": "doc",
+              "id": "user-manual/toolbox/fail2ban",
+              "label": "Fail2ban",
+              "key": "v1-doc:user-manual/toolbox/fail2ban @ 功能手册 / 工具箱"
+            }
+          ],
+          "key": "v1-cat:功能手册 / 工具箱"
+        },
+        {
+          "type": "doc",
+          "id": "user-manual/logs",
+          "label": "日志审计",
+          "key": "v1-doc:user-manual/logs @ 功能手册"
+        },
+        {
+          "type": "category",
+          "label": "高级功能",
+          "collapsed": false,
+          "items": [
+            {
+              "type": "category",
+              "label": "WAF",
+              "collapsed": false,
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "user-manual/xpack/waf/waf",
+                  "label": "概述",
+                  "key": "v1-doc:user-manual/xpack/waf/waf @ 功能手册 / 高级功能 / WAF"
+                },
+                {
+                  "type": "doc",
+                  "id": "user-manual/xpack/waf/dashboard",
+                  "label": "概览",
+                  "key": "v1-doc:user-manual/xpack/waf/dashboard @ 功能手册 / 高级功能 / WAF"
+                },
+                {
+                  "type": "doc",
+                  "id": "user-manual/xpack/waf/global",
+                  "label": "全局设置",
+                  "key": "v1-doc:user-manual/xpack/waf/global @ 功能手册 / 高级功能 / WAF"
+                },
+                {
+                  "type": "doc",
+                  "id": "user-manual/xpack/waf/site",
+                  "label": "网站设置",
+                  "key": "v1-doc:user-manual/xpack/waf/site @ 功能手册 / 高级功能 / WAF"
+                },
+                {
+                  "type": "doc",
+                  "id": "user-manual/xpack/waf/log",
+                  "label": "拦截记录",
+                  "key": "v1-doc:user-manual/xpack/waf/log @ 功能手册 / 高级功能 / WAF"
+                },
+                {
+                  "type": "doc",
+                  "id": "user-manual/xpack/waf/block",
+                  "label": "封锁记录",
+                  "key": "v1-doc:user-manual/xpack/waf/block @ 功能手册 / 高级功能 / WAF"
+                }
+              ],
+              "key": "v1-cat:功能手册 / 高级功能 / WAF"
+            }
+          ],
+          "key": "v1-cat:功能手册 / 高级功能"
+        },
+        {
+          "type": "doc",
+          "id": "user-manual/settings",
+          "label": "面板设置",
+          "key": "v1-doc:user-manual/settings @ 功能手册"
+        }
+      ],
+      "key": "v1-cat:功能手册"
+    },
+    {
+      "type": "category",
+      "label": "常见问题",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "faq/faq",
+          "label": "产品 FAQ",
+          "key": "v1-doc:faq/faq @ 常见问题"
+        },
+        {
+          "type": "doc",
+          "id": "faq/operating-system",
+          "label": "操作系统相关",
+          "key": "v1-doc:faq/operating-system @ 常见问题"
+        },
+        {
+          "type": "doc",
+          "id": "faq/system-function",
+          "label": "系统功能相关",
+          "key": "v1-doc:faq/system-function @ 常见问题"
+        },
+        {
+          "type": "doc",
+          "id": "faq/server-architecture",
+          "label": "服务器架构相关",
+          "key": "v1-doc:faq/server-architecture @ 常见问题"
+        }
+      ],
+      "key": "v1-cat:常见问题"
+    },
+    {
+      "type": "category",
+      "label": "开发文档",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "dev-manual/dev-manual",
+          "label": "开发环境搭建",
+          "key": "v1-doc:dev-manual/dev-manual @ 开发文档"
+        },
+        {
+          "type": "doc",
+          "id": "dev-manual/api-manual",
+          "label": "API 接口配置",
+          "key": "v1-doc:dev-manual/api-manual @ 开发文档"
+        }
+      ],
+      "key": "v1-cat:开发文档"
+    },
+    {
+      "type": "doc",
+      "id": "changelog",
+      "label": "版本迭代",
+      "key": "v1-doc:changelog"
+    },
+    {
+      "type": "doc",
+      "id": "contact",
+      "label": "联系我们",
+      "key": "v1-doc:contact"
+    },
+    {
+      "type": "link",
+      "label": "商业版本",
+      "href": "https://www.lxware.cn/1panel",
+      "key": "v1-link:https://www.lxware.cn/1panel"
+    }
+  ]
+}

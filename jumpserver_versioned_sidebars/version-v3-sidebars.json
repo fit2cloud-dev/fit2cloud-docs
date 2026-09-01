@@ -1,0 +1,10 @@
+{
+  "jumpserver": [
+    {
+      "type": "doc",
+      "id": "index",
+      "label": "JumpServer 运维安全审计",
+      "key": "v3-doc:index"
+    }
+  ]
+}

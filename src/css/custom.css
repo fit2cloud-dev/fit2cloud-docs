@@ -1,0 +1,46 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* 全局配色：对齐 fit2cloud.com 品牌主色(蓝→蓝紫渐变) */
+:root {
+  --ifm-color-primary: #0c7be0;
+  --ifm-color-primary-dark: #0a6cc7;
+  --ifm-color-primary-darker: #0966ba;
+  --ifm-color-primary-darkest: #08549a;
+  --ifm-color-primary-light: #2488e6;
+  --ifm-color-primary-lighter: #2f90e9;
+  --ifm-color-primary-lightest: #55a6ee;
+  --ifm-color-secondary: #333dff;
+  --ifm-background-color: #ffffff; /* 文档页保持白色底 */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* footer 文档链接用淡灰色(去掉蓝色) */
+.footer__link-item {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.footer__link-item:hover {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* :::note 提示框左侧竖线改成品牌蓝 */
+/* note 渲染为 alert alert--secondary, 左边框颜色 = --ifm-alert-border-color(由 .alert--secondary 设为 secondary-dark) */
+.alert--secondary {
+  --ifm-alert-border-color: #0c7be0;
+}

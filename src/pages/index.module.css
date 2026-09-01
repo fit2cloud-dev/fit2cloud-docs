@@ -1,0 +1,97 @@
+/* 首页样式：还原 fit2cloud 主页观感 = 浅蓝→白柔和渐变 hero + 深色文字, 文档页保持白底 */
+.portalPage {
+  /* 浅蓝→淡蓝→白 柔和渐变(同 fit2cloud 浅蓝体系) */
+  background: linear-gradient(165deg, #eaf1ff 0%, #f7fbff 45%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.portalHeader {
+  padding: 120px 0 70px; /* fit2cloud f2c-banner 的大留白 */
+  text-align: center;
+  background: transparent; /* 渐变由 portalPage 统一提供 */
+}
+
+.portalTitle {
+  font-size: 3rem; /* fit2cloud h1 48px 风格 */
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #1a1a2e; /* 浅蓝底上深色标题 */
+}
+
+.portalSubtitle {
+  font-size: 1.15rem;
+  color: rgba(26, 26, 46, 0.72);
+  margin-bottom: 1.4rem;
+}
+
+.searchHint {
+  font-size: 0.95rem;
+  color: #0c7be0;
+  background: rgba(12, 123, 224, 0.08);
+  display: inline-block;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.categorySection {
+  margin-bottom: 3rem;
+}
+
+.categoryTitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid rgba(12, 123, 224, 0.15);
+  color: #1a1a2e; /* 浅蓝底上深色分类标题 */
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.productCard {
+  display: block;
+  padding: 1.4rem 1.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(12, 123, 224, 0.1);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.productCard:hover {
+  box-shadow: 0 8px 24px rgba(12, 123, 224, 0.12);
+  border-color: rgba(12, 123, 224, 0.3);
+  text-decoration: none;
+  color: inherit;
+  transform: translateY(-2px);
+}
+
+.productName {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #0c7be0;
+}
+
+.productDesc {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 0.8rem;
+}
+
+/* 进入按钮：fit2cloud f2c-btn-gradient 蓝渐变(保留官方渐变按钮) */
+.productEnter {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(90deg, #0c7be0 0%, #333dff 82.69%);
+  padding: 0.4rem 1.1rem;
+  border-radius: 6px;
+}
