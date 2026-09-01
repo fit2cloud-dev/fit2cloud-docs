@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 // 站点标题按语言区分：构建 zh-Hans 时显示中文，构建 en 时显示英文
 const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE || 'zh-Hans';
 const config = {
-  title: currentLocale === 'en' ? 'Unified Docs Portal' : '统一文档门户',
+  title: currentLocale === 'en' ? 'Docs Center' : '文档中心',
   tagline: currentLocale === 'en' ? 'Multiple product docs, one site, global search' : '多个产品文档，一个站点，全局搜索',
 
   // favicon 用 headTags 绝对路径提供(避免 Docusaurus 在英文站 /en/ 下自动加 /en 前缀导致 404)
@@ -154,7 +154,13 @@ const config = {
         },
       },
       navbar: {
-        title: '统一文档门户',
+        // 左上角 logo: 文档中心 logo(相对路径, 相对 baseUrl /img/...)。
+        // src = 亮色主题(02),  srcDark = 暗色主题(01)
+        logo: {
+          src: 'img/FIT2CLOUD 飞致云 文档中心-02.png',
+          srcDark: 'img/FIT2CLOUD 飞致云 文档中心-01.png',
+          alt: '文档中心',
+        },
         items: [
           {to: '/', label: '首页', position: 'left'},
           {

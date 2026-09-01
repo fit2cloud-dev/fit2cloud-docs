@@ -27,7 +27,7 @@ export default function Home() {
   const {siteConfig, i18n} = useDocusaurusContext();
   const zh = i18n.currentLocale === 'zh-Hans';
 
-  const siteTitle = zh ? '统一文档门户' : 'Unified Docs Portal';
+  const siteTitle = zh ? '文档中心' : 'Docs Center';
   const portalSubtitle = zh ? '多个产品文档，一个站点，全局搜索' : 'Multiple product docs, one site, global search';
   const searchHint = zh ? '使用右上角搜索框，跨全部产品进行全局检索' : 'Use the search box at top-right to search across all products';
   const catOps = zh ? '运维管理' : 'Ops & Management';

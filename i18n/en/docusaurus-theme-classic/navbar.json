@@ -1,10 +1,10 @@
 {
   "title": {
-    "message": "Unified Docs Portal",
+    "message": "Docs Center",
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "Logo",
+    "message": "Docs Center",
     "description": "The alt text of navbar logo"
   },
   "item.label.首页": {
