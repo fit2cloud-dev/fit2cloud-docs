@@ -2,7 +2,9 @@
 
 这是一个基于 **Docusaurus 3.10** 的「多产品文档门户」。已内置 4 个产品（1Panel、JumpServer、DataEase、MaxKB），含中英双语、多版本切换、全局搜索。
 
-> 项目目录：`docusaurus-demo/`（本说明所在目录）
+> 项目目录：`fit2cloud-docs/`（克隆本仓库后获得的文件夹名，即本说明所在目录）
+>
+> 获取方式：`git clone https://github.com/fit2cloud-dev/fit2cloud-docs.git`
 
 ---
 
@@ -25,10 +27,10 @@ npm -v
 
 ## 二、安装依赖
 
-项目根目录下执行：
+项目根目录下执行（先 `cd` 进仓库目录）：
 
 ```bash
-cd docusaurus-demo
+cd fit2cloud-docs
 npm install
 ```
 
