@@ -147,6 +147,12 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       colorMode: { respectPrefersColorScheme: true },
+      // 侧边栏分类: 同时只展开一个分类, 避免导航过度展开(配合各 sidebars 里的 collapsed: true 默认折叠)
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
       navbar: {
         title: '统一文档门户',
         items: [

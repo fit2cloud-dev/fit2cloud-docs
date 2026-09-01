@@ -91,33 +91,36 @@ jobs:
           ALIYUN_OSS_ENDPOINT: ${{ secrets.ALIYUN_OSS_ENDPOINT }}
           ALIYUN_OSS_BUCKET: ${{ secrets.ALIYUN_OSS_BUCKET }}
 
-      - name: Download aliyun-cli
-        run: |
-          # 直接下载 aliyun-cli 官方 GitHub Release 的 linux-amd64 包。
-          # 用固定版本号, 避免 runner 上用受限 GITHUB_TOKEN 访问外部仓库 API 被拒。
-          # 版本过旧需更新时, 改下面的版本号(或到 github.com/aliyun/aliyun-cli/releases 查最新)。
-          ALIYUN_CLI_VERSION="v3.4.11"
-          VER="${ALIYUN_CLI_VERSION#v}"
-          ASSET_URL="https://github.com/aliyun/aliyun-cli/releases/download/${ALIYUN_CLI_VERSION}/aliyun-cli-linux-${VER}-amd64.tgz"
-          echo "Downloading: $ASSET_URL"
-          curl -sSfL -o aliyun-cli.tgz "$ASSET_URL"
-          tar -xzf aliyun-cli.tgz
-          chmod +x ./aliyun
-          ./aliyun version
+      # --- CDN 缓存刷新(暂时停用, 后续再启用) ---
+      # 背景: 当前 AccessKey(RAM 子账号)缺 cdn:RefreshObjectCaches 权限, 刷新会被阿里云拒绝。
+      # 待处理: 给子账号补 CDN 刷新权限后在阿里云 RAM/控制台放行, 再取消下面两段注释即可恢复自动刷新。
+      # - name: Download aliyun-cli
+      #   run: |
+      #     # 直接下载 aliyun-cli 官方 GitHub Release 的 linux-amd64 包。
+      #     # 用固定版本号, 避免 runner 上用受限 GITHUB_TOKEN 访问外部仓库 API 被拒。
+      #     # 版本过旧需更新时, 改下面的版本号(或到 github.com/aliyun/aliyun-cli/releases 查最新)。
+      #     ALIYUN_CLI_VERSION="v3.4.11"
+      #     VER="${ALIYUN_CLI_VERSION#v}"
+      #     ASSET_URL="https://github.com/aliyun/aliyun-cli/releases/download/${ALIYUN_CLI_VERSION}/aliyun-cli-linux-${VER}-amd64.tgz"
+      #     echo "Downloading: $ASSET_URL"
+      #     curl -sSfL -o aliyun-cli.tgz "$ASSET_URL"
+      #     tar -xzf aliyun-cli.tgz
+      #     chmod +x ./aliyun
+      #     ./aliyun version
 
-      - name: Purge CDN cache
-        run: |
-          # RefreshObjectCaches 为全局 API, region 取一个有效值即可
-          ./aliyun configure set --profile default --mode AK \
-            --access-key-id "$ALIYUN_ACCESS_KEY_ID" \
-            --access-key-secret "$ALIYUN_ACCESS_KEY_SECRET" \
-            --region "cn-hangzhou"
-          ./aliyun cdn RefreshObjectCaches \
-            --ObjectPath "https://$ALIYUN_CDN_DOMAIN/" \
-            --ObjectType Directory \
-            --Force true
-          echo "CDN cache purge submitted for https://$ALIYUN_CDN_DOMAIN/"
-        env:
-          ALIYUN_ACCESS_KEY_ID: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
-          ALIYUN_ACCESS_KEY_SECRET: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
-          ALIYUN_CDN_DOMAIN: ${{ secrets.ALIYUN_CDN_DOMAIN }}
+      # - name: Purge CDN cache
+      #   run: |
+      #     # RefreshObjectCaches 为全局 API, region 取一个有效值即可
+      #     ./aliyun configure set --profile default --mode AK \
+      #       --access-key-id "$ALIYUN_ACCESS_KEY_ID" \
+      #       --access-key-secret "$ALIYUN_ACCESS_KEY_SECRET" \
+      #       --region "cn-hangzhou"
+      #     ./aliyun cdn RefreshObjectCaches \
+      #       --ObjectPath "https://$ALIYUN_CDN_DOMAIN/" \
+      #       --ObjectType Directory \
+      #       --Force true
+      #     echo "CDN cache purge submitted for https://$ALIYUN_CDN_DOMAIN/"
+      #   env:
+      #     ALIYUN_ACCESS_KEY_ID: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
+      #     ALIYUN_ACCESS_KEY_SECRET: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
+      #     ALIYUN_CDN_DOMAIN: ${{ secrets.ALIYUN_CDN_DOMAIN }}

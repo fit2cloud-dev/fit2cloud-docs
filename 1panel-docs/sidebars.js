@@ -11,7 +11,7 @@ const sidebars = {
     {
       "type": "category",
       "label": "安装部署",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "doc",
@@ -31,7 +31,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "从 V1 版本升级",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -61,7 +61,7 @@ const sidebars = {
     {
       "type": "category",
       "label": "功能手册",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "doc",
@@ -72,7 +72,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "应用商店",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -101,7 +101,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "AI",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -148,7 +148,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "网站",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -191,7 +191,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "证书",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -233,7 +233,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "运行环境",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -270,7 +270,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "数据库",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -300,7 +300,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "容器",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -354,7 +354,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "系统",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -401,7 +401,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "工具箱",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -438,7 +438,7 @@ const sidebars = {
         {
           "type": "category",
           "label": "高级功能",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -448,7 +448,7 @@ const sidebars = {
             {
               "type": "category",
               "label": "WAF",
-              "collapsed": false,
+              "collapsed": true,
               "items": [
                 {
                   "type": "doc",
@@ -556,7 +556,7 @@ const sidebars = {
     {
       "type": "category",
       "label": "常用软件",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "doc",
@@ -741,7 +741,7 @@ const sidebars = {
     {
       "type": "category",
       "label": "Skills 技能",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "doc",
@@ -763,7 +763,7 @@ const sidebars = {
     {
       "type": "category",
       "label": "常见问题",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "doc",
@@ -800,7 +800,7 @@ const sidebars = {
     {
       "type": "category",
       "label": "版本迭代",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "doc",
@@ -817,7 +817,7 @@ const sidebars = {
     {
       "type": "category",
       "label": "1Panel 商业版本",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "link",
@@ -839,7 +839,7 @@ const sidebars = {
     {
       "type": "category",
       "label": "1Panel AI 一体机",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "link",

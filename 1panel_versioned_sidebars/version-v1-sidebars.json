@@ -9,7 +9,7 @@
     {
       "type": "category",
       "label": "安装部署",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "doc",
@@ -26,7 +26,7 @@
         {
           "type": "category",
           "label": "云平台",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -73,12 +73,12 @@
     {
       "type": "category",
       "label": "功能手册",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "category",
           "label": "应用商店",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -104,7 +104,7 @@
         {
           "type": "category",
           "label": "网站",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -154,7 +154,7 @@
         {
           "type": "category",
           "label": "证书",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -192,7 +192,7 @@
         {
           "type": "category",
           "label": "运行环境",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -236,7 +236,7 @@
         {
           "type": "category",
           "label": "AI",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -268,7 +268,7 @@
         {
           "type": "category",
           "label": "数据库",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -294,7 +294,7 @@
         {
           "type": "category",
           "label": "容器",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -356,7 +356,7 @@
         {
           "type": "category",
           "label": "主机",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -400,7 +400,7 @@
         {
           "type": "category",
           "label": "工具箱",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "doc",
@@ -450,12 +450,12 @@
         {
           "type": "category",
           "label": "高级功能",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
             {
               "type": "category",
               "label": "WAF",
-              "collapsed": false,
+              "collapsed": true,
               "items": [
                 {
                   "type": "doc",
@@ -511,7 +511,7 @@
     {
       "type": "category",
       "label": "常见问题",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "doc",
@@ -543,7 +543,7 @@
     {
       "type": "category",
       "label": "开发文档",
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         {
           "type": "doc",
