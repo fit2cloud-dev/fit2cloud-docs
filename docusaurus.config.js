@@ -155,10 +155,10 @@ const config = {
       },
       navbar: {
         // 左上角 logo: 文档中心 logo(相对路径, 相对 baseUrl /img/...)。
-        // src = 亮色主题(02),  srcDark = 暗色主题(01)
+        // src = 亮色主题(01),  srcDark = 暗色主题(02)
         logo: {
-          src: 'img/FIT2CLOUD 飞致云 文档中心-02.png',
-          srcDark: 'img/FIT2CLOUD 飞致云 文档中心-01.png',
+          src: 'img/FIT2CLOUD 飞致云 文档中心-01.png',
+          srcDark: 'img/FIT2CLOUD 飞致云 文档中心-02.png',
           alt: '文档中心',
         },
         items: [
