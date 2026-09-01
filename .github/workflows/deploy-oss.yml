@@ -93,8 +93,16 @@ jobs:
 
       - name: Download aliyun-cli
         run: |
-          curl -sSfL -o aliyun \
-            https://aliyuncli.alicdn.com/linux-amd64/latest/aliyun
+          # 解析 aliyun-cli 最新 release 的 linux-amd64 资产(GitHub 内置 token 免限流)
+          ASSET_URL="$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+            https://api.github.com/repos/aliyun/aliyun-cli/releases/latest \
+            | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{const j=JSON.parse(d);const a=(j.assets||[]).find(x=>x.name.includes('linux')&&x.name.includes('amd64')&&x.name.endsWith('.tgz'));console.log(a?a.browser_download_url:'')})")"
+          if [ -z "$ASSET_URL" ]; then
+            echo "Failed to resolve aliyun-cli download URL"; exit 1
+          fi
+          echo "Downloading: $ASSET_URL"
+          curl -sSfL -o aliyun-cli.tgz "$ASSET_URL"
+          tar -xzf aliyun-cli.tgz
           chmod +x ./aliyun
           ./aliyun version
 
