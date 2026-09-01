@@ -156,6 +156,8 @@ const config = {
       navbar: {
         // 左上角 logo: 文档中心 logo(相对路径, 相对 baseUrl /img/...)。
         // src = 亮色主题(01),  srcDark = 暗色主题(02)
+        // title 留空: 只显示 logo, 不显示文字(若省略 title, Docusaurus 会用站点标题作为文字)
+        title: '',
         logo: {
           src: 'img/FIT2CLOUD 飞致云 文档中心-01.png',
           srcDark: 'img/FIT2CLOUD 飞致云 文档中心-02.png',

@@ -44,3 +44,8 @@
 .alert--secondary {
   --ifm-alert-border-color: #0c7be0;
 }
+
+/* navbar 只显示 logo, 隐藏 logo 旁的文字标题(navbar.title 留空时 Docusaurus 会 fallback 站点标题, 这里一并隐藏) */
+.navbar__title {
+  display: none;
+}
