@@ -73,10 +73,15 @@ jobs:
 
       - name: Sync build to OSS (full sync)
         run: |
+          # ossutil v2 默认使用签名版本 4 (SigV4), 必须显式设置 region。
+          # region 从 endpoint 推导: 如 oss-cn-hangzhou.aliyuncs.com -> cn-hangzhou
+          OSS_REGION="$(echo "$ALIYUN_OSS_ENDPOINT" | sed -E 's|^https?://||; s|^oss-||; s|\..*||')"
+          echo "Derived region: $OSS_REGION"
           cat > "$HOME/.ossutilconfig" <<EOF
           [default]
           accessKeyID = "$ALIYUN_ACCESS_KEY_ID"
           accessKeySecret = "$ALIYUN_ACCESS_KEY_SECRET"
+          region = "$OSS_REGION"
           endpoint = "$ALIYUN_OSS_ENDPOINT"
           EOF
           ./ossutil sync ./build/ "oss://$ALIYUN_OSS_BUCKET/" --delete --update -f
