@@ -29,7 +29,7 @@ const config = {
     'maxkb-docs/static',
   ],
 
-  url: 'http://192.168.35.106:8900',
+  url: 'https://docs.fit2cloud.com',
   baseUrl: '/',
 
   organizationName: 'demo',
