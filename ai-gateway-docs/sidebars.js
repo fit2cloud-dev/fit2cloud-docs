@@ -41,7 +41,7 @@ const sidebars = {
       ],
     },
 
-    { type: "doc", id: "integrate_third_party", label: "接入客户端" },
+    { type: "doc", id: "integrate_third_party", label: "接入第三方" },
   ],
 };
 
