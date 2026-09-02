@@ -27,6 +27,7 @@ const config = {
     // 以下为预留(当前无图片, 建立后自动生效)
     'dataease-docs/static',
     'maxkb-docs/static',
+    'ai-gateway-docs/static',
   ],
 
   url: 'https://docs.fit2cloud.com',
@@ -126,6 +127,26 @@ const config = {
         sidebarPath: 'maxkb-docs/sidebars.js',
       },
     ],
+      // AI 分类：AI 网关(独立产品文档)
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ai-gateway',
+        path: 'ai-gateway-docs',
+        routeBasePath: 'ai-gateway',
+        sidebarPath: 'ai-gateway-docs/sidebars.js',
+      },
+    ],
+    // AI 分类：AI 网关(独立产品文档)
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ai-gateway',
+        path: 'ai-gateway-docs',
+        routeBasePath: 'ai-gateway',
+        sidebarPath: 'ai-gateway-docs/sidebars.js',
+      },
+    ],
   ],
 
   // 本地全文搜索（支持中文分词）
@@ -157,7 +178,7 @@ const config = {
       //   这里不再逐个 sidebars.js 配置(那样对 v1 的 versioned JSON 和未来新增分类无效)。
       docs: {
         sidebar: {
-          autoCollapseCategories: false,
+          autoCollapseCategories: true,
         },
       },
       navbar: {
@@ -180,7 +201,7 @@ const config = {
             label: '产品文档',
             position: 'left',
             items: [
-              {label: '1Panel · AI 网关', to: '/1panel/user-manual/ai/gateway'},
+              {label: '1Panel · AI 网关', to: '/ai-gateway/'},
               {label: '1Panel · 运维管理面板', to: '/1panel/'},
               {label: 'JumpServer · 运维安全审计', href: 'https://docs.jumpserver.org/zh/v4/'},
               {label: 'DataEase · BI 数据分析', href: 'https://dataease.cn/docs/v2/'},
@@ -216,8 +237,6 @@ const config = {
           // 官网 / 论坛 / 开源社区 / 培训认证: 放在右侧、中英文切换(localeDropdown)之前。
           // 外部链接一律用 href(不用 to), NavbarNavLink 会自动加
           // target="_blank" + rel="noopener noreferrer" + 外链小图标
-          // 注意: 「开源社区」(community 社区站) 与左侧的「开源产品」(下拉, 链各产品官网) 是两回事,
-          //   两者 label 不同, i18n key 也不同(item.label.开源社区 / item.label.开源产品), 别合并。
           {href: 'https://www.fit2cloud.com/', label: '官网', position: 'right'},
           {href: 'https://bbs.fit2cloud.com/', label: '论坛', position: 'right'},
           {href: 'https://community.fit2cloud.com/', label: '开源社区', position: 'right'},
@@ -232,18 +251,6 @@ const config = {
           },
         ],
       },
-      // footer 三列(常用链接/联系我们/资料下载)。下列 URL 均已实测返回 200。
-      // 内容来源说明(2026-09-02 改版): 「常用链接」这一列取自官网**导航栏**, 不是官网 footer ——
-      //   官网自身的 footer 里「常用链接」仍是旧版(多云管理平台/Halo 商城版/JumpServer 国际站/
-      //   1Panel 国际站/UPage AI 建站), 而官网导航栏里才是新版(开源社区/培训认证/案例中心/
-      //   如何购买/官方应用商店)。本处以导航栏新版为准。
-      // 外部链接一律用 href(不用 to): Footer/LinkItem 判断 !isInternalUrl(href) 后自动
-      // 渲染 target=_blank + rel=noopener + 外链小图标。mailto:/tel: 同样有协议, 也会被
-      // 判为外链(带 ↗ 图标), 这是 Docusaurus 的默认行为。
-      // 注意 1: 官网原文把 JumpServer 资料下载拼成了 "JumpSever", 这里按正确拼写修正。
-      // 注意 2: 官网各处混用 www.fit2cloud.com 与 fit2cloud.com(裸域)。本处除「案例中心」
-      //   「如何购买」沿用官网导航栏的相对路径换算结果(带 www)外, 其余按给定地址用裸域。
-      //   两者实测均 200, 但长期建议统一成一种写法。
       footer: {
         style: 'dark',
         links: [
