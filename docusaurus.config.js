@@ -27,6 +27,7 @@ const config = {
     // 以下为预留(当前无图片, 建立后自动生效)
     'dataease-docs/static',
     'maxkb-docs/static',
+    'ai-gateway-docs/static',
   ],
 
   url: 'https://docs.fit2cloud.com',
@@ -126,6 +127,16 @@ const config = {
         sidebarPath: 'maxkb-docs/sidebars.js',
       },
     ],
+    // AI 分类：AI 网关(独立产品文档)
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ai-gateway',
+        path: 'ai-gateway-docs',
+        routeBasePath: 'ai-gateway',
+        sidebarPath: 'ai-gateway-docs/sidebars.js',
+      },
+    ],
   ],
 
   // 本地全文搜索（支持中文分词）
@@ -174,6 +185,7 @@ const config = {
             position: 'left',
             items: [
               {label: '1Panel · AI 网关', to: '/1panel/user-manual/ai/gateway'},
+              {label: 'AI 网关 · 独立部署版', to: '/ai-gateway/'},
               {label: '1Panel · 运维管理面板', to: '/1panel/'},
               {label: 'JumpServer · 运维安全审计', href: 'https://docs.jumpserver.org/zh/v4/'},
               {label: 'DataEase · BI 数据分析', href: 'https://dataease.cn/docs/v2/'},
@@ -234,6 +246,7 @@ const config = {
             title: '产品文档',
             items: [
               {label: '1Panel · AI 网关', to: '/1panel/user-manual/ai/gateway'},
+              {label: 'AI 网关 · 独立部署版', to: '/ai-gateway/'},
               {label: '1Panel · 运维管理面板', to: '/1panel/'},
               {label: 'JumpServer · 运维安全审计', href: 'https://docs.jumpserver.org/zh/v4/'},
               {label: 'DataEase · BI 数据分析', href: 'https://dataease.cn/docs/v2/'},
