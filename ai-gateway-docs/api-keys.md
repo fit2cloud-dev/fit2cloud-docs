@@ -3,11 +3,11 @@ title: API Keys
 description: 介绍 1Panel AI 网关 API Keys 的创建、编辑与删除，API Key 是调用网关接口的凭证。
 ---
 
-API Key 是调用网关接口的凭证。首次调用模型前需先创建 API Key。
+API Key 是调用网关接口的凭证。调用模型前需先创建 API Key。
 
 ## 1 功能入口
 
-在左侧导航栏选择**API Keys**，进入 API Keys 列表页面。
+在左侧导航栏选择** API Keys**，进入 API Keys 列表页面。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/api-keys/image1-api-keys.png" alt="API Keys 列表"/>
 
@@ -34,7 +34,7 @@ API Key 是调用网关接口的凭证。首次调用模型前需先创建 API K
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/api-keys/image2-create-api-key.png" alt="创建 API Key"/>
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  创建 API Key</div>
-
+注：API Key仅创建时可见，需要自行复制保存
 ## 4 编辑与删除 API Key
 
 - **编辑**：在目标密钥所在行的**操作**列，单击**编辑**，可修改密钥名称。
