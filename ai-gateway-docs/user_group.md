@@ -1,18 +1,22 @@
-# 1 功能简介
+---
+title: 用户组
+description: 介绍 1Panel AI 网关用户组的创建、配置与规则，包括并发上限、Token 配额与授权模型组。
+
+## 功能简介
 
 1Panel AI网关的用户组用于对使用网关的用户进行分组管理，并为不同组设置差异化的并发上限、Token 配额和可用模型组。运行期间，网关按用户所属组的限额与授权范围对请求进行调度和约束，使资源分配、计费核算和访问控制更加清晰可控。
 
 用户组页面集中展示全部已创建的用户组及其关键字段，你可以完成新增用户组、编辑用户组、启用 / 禁用、删除以及按状态筛选查看等操作。系统保证恰好存在一个启用的默认用户组，初始账号归属于该组，未归属任何自定义组的用户也会落到默认组内。
 
-![用户组列表示例](/img/user_group/image1_user_groups.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user_group/image1_user_groups.png" alt="用户组列表示例"/>
 
-<center>图 1：用户组列表示例</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  用户组列表示例</div>
 
-# 2 功能入口
+## 2 功能入口
 
 登录1Panel AI网关控制台后，选择左侧菜单 **用户组**，即可进入用户组管理页面。页面默认以表格形式展示已创建的用户组及其关键字段，并提供添加用户组、状态筛选、搜索名称等操作入口，如图 1 所示。
 
-# 3 创建用户组
+## 3 创建用户组
 
 创建用户组的核心是设置名称、并发上限、Token 配额与授权模型组四类信息，它们共同决定该组内用户的资源上限与可访问的模型范围。以下按表单填写顺序说明。
 
@@ -20,9 +24,9 @@
 
 单击用户组页面左上角的 **添加用户组** 按钮，系统会从右侧滑出添加用户组抽屉。抽屉中依次包含名称、组最大并发、单 API Key 最大并发、Token 配额（含单位）、授权模型组、状态、备注等字段。
 
-![添加用户组表单](/img/user_group/image2_add_user_group.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user_group/image2_add_user_group.png" alt="添加用户组表单"/>
 
-<center>图 2：添加用户组表单</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  添加用户组表单</div>
 
 ## 4.1 设置名称与并发上限
 
@@ -32,15 +36,17 @@
 - **组最大并发**：0 ~ 100000，控制该组全部 API Key 的合计并发上限；0 表示不额外限制，继承上一级有效上限；
 - **单 API Key 最大并发**：0 ~ 100000，控制单个 API Key 的并发；有效上限不高于组最大并发；0 表示不额外限制，继承组上限。
 
-> **注意**：单 API Key 最大并发的有效上限不会超过组最大并发；若先填了单 API Key 上限，再把组上限调到比它更小，最终会按组上限封顶。
+:::note[注意]
+单 API Key 最大并发的有效上限不会超过组最大并发；若先填了单 API Key 上限，再把组上限调到比它更小，最终会按组上限封顶。
+:::
 
 ## 4.2 设置 Token 配额
 
 **Token 配额** 用于按已知 Token 用量控制该用户组在统计周期内的消耗总量。填写数值后，可从右侧单位下拉中选择配额单位。可选单位包括 Token、万、百万、千万、亿、百亿和万亿；0 表示不限已知 Token。
 
-![Token 配额单位下拉](/img/user_group/image3_token_unit.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user_group/image3_token_unit.png" alt="Token 配额单位下拉"/>
 
-<center>图 3：Token 配额单位下拉</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  Token 配额单位下拉</div>
 
 ## 4.3 选择授权模型组
 
@@ -48,9 +54,9 @@
 
 未选择任何模型组时，该用户组可以访问全部模型；选择后只允许调用所选模型组内的模型。
 
-![授权模型组多选下拉](/img/user_group/image4_model_group.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user_group/image4_model_group.png" alt="授权模型组多选下拉"/>
 
-<center>图 4：授权模型组多选下拉</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  授权模型组多选下拉</div>
 
 ## 4.4 设置启用状态、备注并保存
 
@@ -61,11 +67,11 @@
 
 填写完成后单击 **保存**，新创建的用户组会出现在列表中。
 
-# 5 用户组配置字段
+## 5 用户组配置字段
 
 用户组列表与编辑表单中均包含调度与限额字段，用于控制该组在运行时的行为。关键字段说明见表 1。
 
-<center>表 1：用户组配置字段说明</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  用户组配置字段说明</div>
 
 | 字段 | 范围 | 说明 |
 | --- | --- | --- |
@@ -75,7 +81,7 @@
 | 授权模型组 | 最多 100 个 | 为空时允许全部模型；非空时只允许所选模型组。 |
 | 状态 | 启用 / 禁用 | 禁用后该组不再参与调度。 |
 
-# 6 编辑与删除
+## 6 编辑与删除
 
 在用户组列表的操作列，可以对每个用户组执行以下操作：
 
@@ -83,11 +89,11 @@
 - **启用 / 禁用**：通过列表中的开关控制用户组是否参与调度，关闭后该组已有的成员会回落到默认组；
 - **删除**：单击删除并确认后，用户组及其配置将被移除；仍有成员的用户组不能删除。
 
-![编辑用户组 - 已填值](/img/user_group/image5_edit_user_group.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user_group/image5_edit_user_group.png" alt="编辑用户组 - 已填值"/>
 
-<center>图 5：编辑用户组 - 已填值</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  编辑用户组 - 已填值</div>
 
-# 7 用户组规则
+## 7 用户组规则
 
 用户组具有以下系统级规则，了解这些规则有助于避免误操作和配置冲突：
 
@@ -96,8 +102,8 @@
 - **并发封顶**：单 API Key 最大并发的有效上限不会超过组最大并发；
 - **模型授权**：未选择任何模型组时，授权范围为全部模型；选择后只允许调用所选模型组内的模型。
 
-![用户组列表 - 默认组规则](/img/user_group/image6_default_group.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user_group/image6_default_group.png" alt="用户组列表 - 默认组规则"/>
 
-<center>图 6：用户组列表 - 默认组规则</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  用户组列表 - 默认组规则</div>
 
 图 6 中，Default 行带有 **默认** 徽标，且操作列只有 **编辑** 按钮，没有 **删除** 按钮，正对应「默认用户组不能被禁用或删除」以及「默认组不可删除」这两条规则。

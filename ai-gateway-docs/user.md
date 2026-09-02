@@ -1,16 +1,20 @@
-# 1 功能简介
+---
+title: 用户管理
+description: 介绍 1Panel AI 网关用户管理，包括添加用户、启用禁用、重置密码、解锁与唯一管理员保护。
+
+## 功能简介
 
 1Panel AI网关的用户管理用于集中管理控制台的登录账号。每个账号绑定一个角色和一个用户组，并保留自身的登录密码、登录失败计数、最近登录时间等安全状态。账号可被启用、禁用、重置密码和解锁；当系统内只剩一名管理员账号时，1Router 会自动启用唯一管理员保护，禁止对该账号执行破坏性操作，避免出现无人可登录的失控状态。
 
-![用户管理页面](/img/user/image1_user_list.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user/image1_user_list.png" alt="用户管理页面"/>
 
-<center>图 1：用户管理页面</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  用户管理页面</div>
 
-# 2 功能入口
+## 2 功能入口
 
 登录 1Router 控制台后，在左侧菜单中选择 **用户**，即可进入用户管理页面。页面默认以表格形式列出全部用户账号，并显示用户名、角色、用户组、状态、最近登录、创建时间和操作入口等关键字段，布局与图 1 一致。
 
-# 3 添加用户
+## 3 添加用户
 
 添加用户的过程即填写用户名、所属用户组和初始密码并保存。其中用户名与密码均有格式约束，系统会在表单中实时校验，全部通过后才能保存成功。
 
@@ -18,9 +22,9 @@
 
 在用户管理页面左上角单击 **添加用户** 按钮，系统会从右侧滑出「添加用户」抽屉。抽屉按从上到下的顺序依次提供 用户名、用户组、新密码、确认新密码 四个必填项，底部有 取消 与 保存 按钮。
 
-![添加用户表单](/img/user/image2_add_user_form.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user/image2_add_user_form.png" alt="添加用户表单"/>
 
-<center>图 2：添加用户表单</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  添加用户表单</div>
 
 ## 3.2 用户名
 
@@ -34,11 +38,11 @@
 
 填写完成后单击抽屉底部的 **保存** 按钮，新用户即出现在用户列表中。若必填项校验未通过，系统会标红对应字段并阻止提交，按提示修正后再次保存即可。首次登录时，该账号会被强制要求修改密码。
 
-# 4 管理用户
+## 4 管理用户
 
-![用户行内操作](/img/user/image3_row_actions.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user/image3_row_actions.png" alt="用户行内操作"/>
 
-<center>图 3：用户行内操作</center>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  用户行内操作</div>
 
 在用户列表的操作列，每个普通用户账号均提供 启用/禁用 开关、 重置密码、 编辑、 删除 四类操作，单击对应控件即可对账号进行维护。受账号当前状态影响，操作列会动态显示不同控件：被锁定的账号额外出现 解锁，受唯一管理员保护的账号则不显示危险操作。
 

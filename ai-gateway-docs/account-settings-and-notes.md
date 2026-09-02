@@ -1,4 +1,6 @@
-# 账号与系统设置
+---
+title: 账号与系统设置
+description: 介绍 1Panel AI 网关控制台账号与系统设置，包括修改密码、退出登录、切换语言与主题及查看版本信息。
 
 ## 1 账号与系统设置
 
@@ -6,9 +8,9 @@
 
 单击页面左下角的用户名（如 `admin`），在弹出的菜单中选择**修改密码**或**退出登录**。
 
-![图1 用户菜单](/img/account-settings-and-notes/image1-user-menu.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/account-settings-and-notes/image1-user-menu.png" alt="用户菜单"/>
 
-<div align="center">图 1  用户菜单</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  用户菜单</div>
 
 ### 1.2 切换语言与主题
 
@@ -19,9 +21,9 @@
 
 单击右上角**关于**，在弹窗中查看当前版本号，并通过**论坛求助**、**使用文档**、**项目地址**链接获取支持。
 
-![图2 关于弹窗](/img/account-settings-and-notes/image2-about.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/account-settings-and-notes/image2-about.png" alt="关于弹窗"/>
 
-<div align="center">图 2  关于弹窗</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  关于弹窗</div>
 
 ## 2 注意事项
 

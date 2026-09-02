@@ -1,18 +1,20 @@
-# 模型广场
+---
+title: 模型广场
+description: 介绍 1Panel AI 网关模型广场，包括查看模型列表、按分类筛选、搜索模型与查看接口说明。
 
 ## 1 功能入口
 
 登录成功后默认进入**模型广场**页面。左侧导航栏包含模型广场、API Keys、用量统计三个菜单，当前页面顶部面包屑显示「模型广场」。
 
-![图1 模型广场](/img/model-square/image1-model-square.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model-square/image1-model-square.png" alt="模型广场"/>
 
-<div align="center">图 1  模型广场</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  模型广场</div>
 
 ## 2 界面说明
 
 页面顶部为**接入地址**区域，展示网关统一接入地址（如 `https://1router.1panel.cn/v1`），右侧提供**复制**与**接口说明**按钮。其下方为模型分类筛选标签与模型卡片列表。
 
-<div align="center">表 1  模型广场界面元素说明</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  模型广场界面元素说明</div>
 
 | 界面元素 | 说明 |
 | --- | --- |
@@ -34,18 +36,18 @@
 2. 列表实时刷新，仅显示所选分类的模型。
 3. 所选分类下没有可用模型时，页面显示「当前分类暂无可调用模型」。
 
-![图2 按文本分类筛选模型](/img/model-square/image2-text-filter.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model-square/image2-text-filter.png" alt="按文本分类筛选模型"/>
 
-<div align="center">图 2  分类筛选文本</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  分类筛选文本</div>
 
 ## 5 搜索模型
 
 1. 在右上角搜索框中输入模型名称关键字，例如 `f2c`。
 2. 按 Enter 键，列表仅显示名称匹配的模型，底部计数同步更新。
 
-![图3 搜索模型](/img/model-square/image3-search.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model-square/image3-search.png" alt="搜索模型"/>
 
-<div align="center">图 3  搜索模型</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  搜索模型</div>
 
 ## 6 复制模型名称
 
@@ -57,11 +59,11 @@
 2. 在弹窗中查看接入地址、认证方式及支持的接口列表。
 3. 单击弹窗右上角关闭按钮或按 Esc 键关闭弹窗。
 
-![图4 接口说明](/img/model-square/image4-api-doc.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model-square/image4-api-doc.png" alt="接口说明"/>
 
-<div align="center">图 4  接口说明</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  接口说明</div>
 
-<div align="center">表 2  接口说明内容</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  接口说明内容</div>
 
 | 请求方法 | 接口地址 | 说明 |
 | --- | --- | --- |
@@ -72,6 +74,7 @@
 | POST | `https://1router.1panel.cn/v1/images/generations` | 文生图 |
 | POST | `https://1router.1panel.cn/v1/embeddings` | 向量嵌入 |
 
-> 📝 **认证方式**
-> - `Authorization: Bearer <API Key>`（通用）
-> - `x-api-key: <API Key>`（仅适用于 `/v1/messages` 接口）
+:::note[认证方式]
+- `Authorization: Bearer <API Key>`（通用）
+- `x-api-key: <API Key>`（仅适用于 `/v1/messages` 接口）
+:::

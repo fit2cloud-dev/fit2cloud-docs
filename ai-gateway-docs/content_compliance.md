@@ -1,16 +1,21 @@
-# 内容合规
+---
+title: 内容合规
+description: 介绍 1Panel AI 网关内容合规功能，包括敏感词、审核样本、策略组与审核日志。
+---
 
 内容合规是 1Panel AI 网关发送给上游大模型的请求内容进行安全检测与处置的功能。系统通过敏感词、审核样本等检测方式识别命中内容，并按策略组定义的处置动作执行仅审计或拦截，同时保留全部审核日志供追溯。
 
-> **说明**：本文内容基于 1Panel AI 网关实测验证，截图取自测试环境，实时数据以当前网关配置为准。
+:::note[说明]
+本文内容基于 1Panel AI 网关实测验证，截图取自测试环境，实时数据以当前网关配置为准。
+:::
 
-# 1 功能简介
+## 1 功能简介
 
 内容合规用于对模型请求内容进行检测与处置，防止违规、敏感或有害内容进入模型调用链路。内容合规通过检测方式识别命中内容，并按策略组定义的处置动作执行仅审计或拦截。
 
 内容合规页面位于侧边栏「内容合规」入口，页面内通过顶部标签切换 4 个管理视图：
 
-<div align="center"><strong style="color:#000000">表 1  内容合规模块</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  内容合规模块</div>
 
 | 模块 | 说明 |
 |---|---|
@@ -19,7 +24,7 @@
 | 策略组 | 定义检测处置策略，包括处置动作与风险等级 |
 | 审核日志 | 查看全部请求的检测与处置记录 |
 
-# 2 前提条件
+## 2 前提条件
 
 使用内容合规功能前，需满足以下条件：
 
@@ -27,25 +32,25 @@
 - 网关已产生真实请求流量，审核日志模块才有数据可查。
 - 需要在策略组中先创建并启用策略，敏感词与审核样本需归属于某个策略组。
 
-# 3 功能入口
+## 3 功能入口
 
 登录 1Panel AI 网关后台后，在左侧菜单栏中单击 **内容合规**，进入内容合规页面，默认展示「敏感词」标签页。功能入口位置如 图 1 所示。
 
-![内容合规功能入口](/img/content_compliance/image1_Content_Compliance_Entry.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/content_compliance/image1_Content_Compliance_Entry.png" alt="内容合规功能入口"/>
 
-<div align="center">图 1  内容合规功能入口</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  内容合规功能入口</div>
 
-# 4 敏感词管理
+## 4 敏感词管理
 
 敏感词用于按字符串匹配检测请求内容。在「敏感词」标签页可查看敏感词列表，支持按策略组与状态筛选，敏感词列表如 图 2 所示。
 
-![敏感词列表](/img/content_compliance/image2_Sensitive_Words_List.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/content_compliance/image2_Sensitive_Words_List.png" alt="敏感词列表"/>
 
-<div align="center">图 2  敏感词列表</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  敏感词列表</div>
 
 敏感词列表字段说明如下：
 
-<div align="center"><strong style="color:#000000">表 2  敏感词列表字段</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  敏感词列表字段</div>
 
 | 字段 | 说明 |
 |---|---|
@@ -60,13 +65,13 @@
 
 在「敏感词」标签页单击 **添加敏感词**，在右侧抽屉中填写敏感词信息，如 图 3 所示。
 
-![添加敏感词](/img/content_compliance/image3_Add_Sensitive_Word.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/content_compliance/image3_Add_Sensitive_Word.png" alt="添加敏感词"/>
 
-<div align="center">图 3  添加敏感词</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  添加敏感词</div>
 
 添加敏感词的表单字段说明如下：
 
-<div align="center"><strong style="color:#000000">表 3  添加敏感词字段</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  添加敏感词字段</div>
 
 | 字段 | 是否必填 | 说明 |
 |---|---|---|
@@ -77,19 +82,21 @@
 
 填写完成后单击 **保存**，即可将敏感词加入检测列表。
 
-> **提示**：敏感词支持多词条批量添加，可通过 **批量导入** 一次性录入多条数据；敏感词内容区分大小写，请按实际需要录入。
+:::tip[提示]
+敏感词支持多词条批量添加，可通过 **批量导入** 一次性录入多条数据；敏感词内容区分大小写，请按实际需要录入。
+:::
 
 ## 4.2 批量导入敏感词
 
 当需要批量录入敏感词时，在「敏感词」标签页单击 **批量导入**，在右侧抽屉中选择策略组并输入多条敏感词，如 图 4 所示。
 
-![批量导入敏感词](/img/content_compliance/image4_Batch_Import_Sensitive_Words.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/content_compliance/image4_Batch_Import_Sensitive_Words.png" alt="批量导入敏感词"/>
 
-<div align="center">图 4  批量导入敏感词</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  批量导入敏感词</div>
 
 批量导入的表单字段说明如下：
 
-<div align="center"><strong style="color:#000000">表 4  批量导入字段</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 4  批量导入字段</div>
 
 | 字段 | 是否必填 | 说明 |
 |---|---|---|
@@ -99,17 +106,17 @@
 
 填写完成后单击 **批量导入**，即可批量保存。
 
-# 5 审核样本管理
+## 5 审核样本管理
 
 审核样本用于支撑语义向量检测。当检测方式采用向量相似度时，系统将请求内容与审核样本构建的语义向量进行比对，命中相似样本后按策略处置。审核样本列表如 图 5 所示。
 
-![审核样本列表](/img/content_compliance/image5_Audit_Samples_List.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/content_compliance/image5_Audit_Samples_List.png" alt="审核样本列表"/>
 
-<div align="center">图 5  审核样本列表</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  审核样本列表</div>
 
 审核样本列表字段说明如下：
 
-<div align="center"><strong style="color:#000000">表 5  审核样本列表字段</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 5  审核样本列表字段</div>
 
 | 字段 | 说明 |
 |---|---|
@@ -123,7 +130,7 @@
 
 审核样本页提供以下操作：
 
-<div align="center"><strong style="color:#000000">表 6  审核样本操作</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 6  审核样本操作</div>
 
 | 操作 | 说明 |
 |---|---|
@@ -131,19 +138,21 @@
 | 构建选中向量 | 为勾选的样本构建语义向量 |
 | 构建全部向量 | 为列表内全部样本构建语义向量 |
 
-> **说明**：审核样本需先构建语义向量后方可参与语义检测。尚未构建向量的样本在「向量状态」中展示为未构建。
+:::note[说明]
+审核样本需先构建语义向量后方可参与语义检测。尚未构建向量的样本在「向量状态」中展示为未构建。
+:::
 
-# 6 策略组管理
+## 6 策略组管理
 
 策略组用于定义一套完整的检测处置策略。在「策略组」标签页可查看已创建的策略组列表，并支持按动作、风险等级与状态筛选，策略组列表如 图 6 所示。
 
-![策略组列表](/img/content_compliance/image6_Policy_Groups_List.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/content_compliance/image6_Policy_Groups_List.png" alt="策略组列表"/>
 
-<div align="center">图 6  策略组列表</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  策略组列表</div>
 
 策略组列表字段说明如下：
 
-<div align="center"><strong style="color:#000000">表 7  策略组列表字段</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 7  策略组列表字段</div>
 
 | 字段 | 说明 |
 |---|---|
@@ -160,13 +169,13 @@
 
 在「策略组」标签页单击 **添加策略组**，在右侧抽屉中配置策略组信息，如 图 7 所示。
 
-![添加策略组](/img/content_compliance/image7_Add_Policy_Group.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/content_compliance/image7_Add_Policy_Group.png" alt="添加策略组"/>
 
-<div align="center">图 7  添加策略组</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7  添加策略组</div>
 
 添加策略组的表单字段说明如下：
 
-<div align="center"><strong style="color:#000000">表 8  添加策略组字段</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 8  添加策略组字段</div>
 
 | 字段 | 是否必填 | 说明 | 默认值 |
 |---|---|---|---|
@@ -176,19 +185,21 @@
 | 状态 | 否 | 启用 / 禁用 | 启用 |
 | 描述 | 否 | 策略组说明，最长 512 字 | — |
 
-> **警告**：策略组动作设置为拦截后，命中内容将直接拦截请求，不向模型发送；仅审计则只记录日志、不做拦截。配置前请确认处置预期。
+:::warning[警告]
+策略组动作设置为拦截后，命中内容将直接拦截请求，不向模型发送；仅审计则只记录日志、不做拦截。配置前请确认处置预期。
+:::
 
-# 7 审核日志
+## 7 审核日志
 
 审核日志记录所有经过内容合规检测的请求及其处置结果，用于审计追溯。在「审核日志」标签页可按动作、风险等级、检测方式与策略组筛选，并可搜索，审核日志列表如 图 8 所示。
 
-![审核日志列表](/img/content_compliance/image8_Audit_Logs_List.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/content_compliance/image8_Audit_Logs_List.png" alt="审核日志列表"/>
 
-<div align="center">图 8  审核日志列表</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 8  审核日志列表</div>
 
 审核日志列表字段说明如下：
 
-<div align="center"><strong style="color:#000000">表 9  审核日志列表字段</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 9  审核日志列表字段</div>
 
 | 字段 | 说明 |
 |---|---|
@@ -206,13 +217,13 @@
 
 在「审核日志」列表单击某条记录的 **查看**，在右侧抽屉中查看该请求的完整审核详情，如 图 9 所示。
 
-![审核日志详情](/img/content_compliance/image9_Audit_Log_Detail.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/content_compliance/image9_Audit_Log_Detail.png" alt="审核日志详情"/>
 
-<div align="center">图 9  审核日志详情</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 9  审核日志详情</div>
 
 审核详情包含以下信息：
 
-<div align="center"><strong style="color:#000000">表 10  审核日志详情字段</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 10  审核日志详情字段</div>
 
 | 字段 | 说明 |
 |---|---|
@@ -229,7 +240,7 @@
 
 在详情抽屉中可单击 **查看正文** 查看请求的完整内容。
 
-# 8 注意事项
+## 8 注意事项
 
 - 敏感词与审核样本需归属于某个策略组，请先在 **策略组** 中创建策略并以启用状态运行。
 - 策略组动作设置为拦截后，命中内容将直接拦截请求，配置前请确认处置预期。

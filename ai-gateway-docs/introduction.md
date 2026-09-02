@@ -1,4 +1,6 @@
-# 功能介绍
+---
+title: 功能介绍
+description: 介绍 1Panel AI 网关的功能模块、前提条件与控制台登录步骤。
 
 ## 1 功能简介
 
@@ -20,6 +22,6 @@
 2. 输入**用户名**与**密码**。
 3. 单击**登录**，登录成功后进入模型广场页面。
 
-![图1 登录页](/img/introduction/image1-login.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/introduction/image1-login.png" alt="登录页"/>
 
-<div align="center">图 1  登录页</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  登录页</div>

@@ -1,12 +1,15 @@
-# 模型组
+---
+title: 模型组
+description: 介绍 1Panel AI 网关模型组的添加、编辑、删除与按协议类型筛选，实现候选模型聚合调度。
+---
 
 模型组是 1Panel AI 网关按协议类型聚合候选模型的管理单元。将多个模型归入同一分组后，可通过分组名称统一配置与调度，实现请求按模型顺序自动派发，并在当前模型不可用时自动切换至下一个模型。
 
 > 本文内容基于 1Panel AI 网关实测验证，截图取自测试环境，实时数据以当前网关配置为准。
 
-# 1 前提条件
+## 1 前提条件
 
-<div align="center"><strong style="color:#000000">表 1  前提条件说明</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  前提条件说明</div>
 
 | 项目 | 说明 |
 |---|---|
@@ -15,17 +18,17 @@
 | 所需权限 | 拥有可访问「模型组」菜单的管理员账号 |
 | 前置配置 | 已在「智能路由」中配置模型供应商与模型账号 |
 
-# 2 功能入口与列表说明
+## 2 功能入口与列表说明
 
 登录 1Panel AI 网关后，在左侧导航栏中选择 **模型组**，进入模型组管理页面。页面以表格形式展示当前已添加的分组，支持按协议类型筛选、添加分组、编辑分组与删除分组等操作。
 
-![模型组管理页面](/img/model_group/image1_Model_Group_Management_Page.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image1_Model_Group_Management_Page.png" alt="模型组管理页面"/>
 
-<div align="center">图 1  模型组管理页面</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  模型组管理页面</div>
 
 列表各列含义如下：
 
-<div align="center"><strong style="color:#000000">表 2  模型组列表字段说明</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  模型组列表字段说明</div>
 
 | 列名 | 说明 |
 |---|---|
@@ -36,7 +39,7 @@
 | 创建时间 | 分组的创建时间 |
 | 操作 | 提供「编辑」与「删除」操作按钮 |
 
-# 3 按协议类型筛选
+## 3 按协议类型筛选
 
 模型组支持按协议类型快速筛选分组。默认展示全部类型，可切换为文本、文生图或向量。
 
@@ -46,11 +49,11 @@
 2. 选择目标协议类型（可选：全部类型、文本、文生图、向量）。
 3. 列表自动刷新并仅展示符合条件的分组。
 
-![按协议类型筛选](/img/model_group/image2_Filter_by_Protocol_Type.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image2_Filter_by_Protocol_Type.png" alt="按协议类型筛选"/>
 
-<div align="center">图 2  按协议类型筛选</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  按协议类型筛选</div>
 
-<div align="center"><strong style="color:#000000">表 3  协议类型选项说明</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  协议类型选项说明</div>
 
 | 选项 | 说明 |
 |---|---|
@@ -59,7 +62,7 @@
 | 文生图 | 仅展示协议类型为文生图的分组 |
 | 向量 | 仅展示协议类型为向量的分组 |
 
-# 4 添加分组
+## 4 添加分组
 
 通过「添加分组」可将多个候选模型聚合到同一分组，便于统一调度。
 
@@ -72,17 +75,17 @@
 5. 可选填写 **备注**。
 6. 单击 **保存** 完成创建。
 
-![添加分组表单](/img/model_group/image3_Add_Group_Form.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image3_Add_Group_Form.png" alt="添加分组表单"/>
 
-<div align="center">图 3  添加分组表单</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  添加分组表单</div>
 
 在「模型」字段单击后，可从候选模型列表中勾选，或输入自定义模型名。
 
-![选择候选模型](/img/model_group/image4_Select_Candidate_Model.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image4_Select_Candidate_Model.png" alt="选择候选模型"/>
 
-<div align="center">图 4  选择候选模型</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  选择候选模型</div>
 
-<div align="center"><strong style="color:#000000">表 4  添加分组字段说明</strong></div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 4  添加分组字段说明</div>
 
 | 字段 | 必填 | 说明 |
 |---|---|---|
@@ -91,7 +94,7 @@
 | 模型 | 是 | 分组包含的候选模型，可从列表选择或输入新模型名 |
 | 备注 | 否 | 分组的补充说明 |
 
-# 5 编辑分组
+## 5 编辑分组
 
 创建分组后可随时调整分组名称、协议类型与候选模型，并调整模型的派发顺序。
 
@@ -102,13 +105,15 @@
 3. 如需调整派发顺序，可通过模型列表中的「上移」「下移」调整候选模型次序。
 4. 单击 **保存** 应用修改。
 
-![编辑分组表单](/img/model_group/image5_Edit_Group_Form.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image5_Edit_Group_Form.png" alt="编辑分组表单"/>
 
-<div align="center">图 5  编辑分组表单</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  编辑分组表单</div>
 
-> **提示**：分组内请求会按模型顺序进行派发，当前模型派发前不可用时，网关会自动尝试下一个模型。编辑时可通过「上移」「下移」调整优先级。
+:::tip[提示]
+分组内请求会按模型顺序进行派发，当前模型派发前不可用时，网关会自动尝试下一个模型。编辑时可通过「上移」「下移」调整优先级。
+:::
 
-# 6 删除分组
+## 6 删除分组
 
 删除分组会移除该分组及其模型映射关系，请谨慎操作。
 
@@ -118,13 +123,15 @@
 2. 在弹出的确认对话框中核对分组信息。
 3. 单击 **删除** 确认删除，或单击 **取消** 放弃操作。
 
-![删除分组确认](/img/model_group/image6_Delete_Group_Confirmation.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image6_Delete_Group_Confirmation.png" alt="删除分组确认"/>
 
-<div align="center">图 6  删除分组确认</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  删除分组确认</div>
 
-> **警告**：删除分组为不可逆操作，删除后该分组下配置的模型映射关系将被移除，操作不可恢复。删除前请确认不再使用该分组，且该分组未被路由规则占用。
+:::warning[警告]
+删除分组为不可逆操作，删除后该分组下配置的模型映射关系将被移除，操作不可恢复。删除前请确认不再使用该分组，且该分组未被路由规则占用。
+:::
 
-# 7 注意事项
+## 7 注意事项
 
 - 分组名称建议简明且唯一，便于在智能路由中识别与引用。
 - 一个模型可加入多个分组，按各分组独立调度。
