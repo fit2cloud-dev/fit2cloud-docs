@@ -27,7 +27,7 @@ const PRODUCT_GROUPS = [
         link: '/ai-gateway/',
         // SVG(viewBox 960x260, 约 3.69:1): 矢量图, 缩放不糊; 文件名含中文+【】,
         // useBaseUrl 会自动 URL 编码。卡片里受 .productLogo 的 max-width:220px 约束。
-        logo: { light: '【logo】1Panel AI 网关 2.svg' },
+        logo: { light: '1panel-ai-gateway.svg' },
       },
       {
         name: 'MaxKB',
