@@ -4,7 +4,7 @@ const sidebars = {
   aiGateway: [
     // ── 根目录：部署与账号接入 ──
     { type: "doc", id: "index", label: "AI 网关" },
-    { type: "doc", id: "overview", label: "概述" },
+    { type: "doc", id: "overview", label: "概述", key: "doc-overview" },
     { type: "doc", id: "quick_start", label: "快速入门" },
     { type: "doc", id: "quick_deployment", label: "安装部署" },
     { type: "doc", id: "introduction", label: "功能介绍" },
@@ -25,7 +25,7 @@ const sidebars = {
       label: "终端用户手册",
       collapsed: false,
       items: [
-        { type: "doc", id: "end‑user-manual/overview", label: "概述" },
+        { type: "doc", id: "end‑user-manual/overview", label: "概述", key: "user-manual-overview" },
         { type: "doc", id: "end‑user-manual/usage-statistics", label: "用量统计" },
         { type: "doc", id: "end‑user-manual/call-logs", label: "调用日志" },
         { type: "doc", id: "end‑user-manual/settings", label: "设置" },
