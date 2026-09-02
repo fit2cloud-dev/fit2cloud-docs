@@ -32,6 +32,7 @@ const sidebars = {
       items: [
         { type: "doc", id: "end-user-manual/overview", label: "概述", key: "user-manual-overview" },
         { type: "doc", id: "end-user-manual/introduction", label: "功能介绍" },
+        { type: "doc", id: "end-user-manual/model-square", label: "模型广场" },
         { type: "doc", id: "end-user-manual/api-keys", label: "API Keys" },
         { type: "doc", id: "end-user-manual/usage-statistics", label: "用量统计" },
         { type: "doc", id: "end-user-manual/account-settings-and-notes", label: "账号与系统设置" },
