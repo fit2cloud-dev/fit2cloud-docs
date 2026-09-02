@@ -19,16 +19,16 @@ const sidebars = {
     { type: "doc", id: "integrate_third_party", label: "接入客户端" },
     { type: "doc", id: "account-settings-and-notes", label: "账号与系统设置" },
 
-    // ── end-user-manual：普通用户功能页 ──
+    // ── end-user-manual：终端用户功能页 ──
     {
       type: "category",
-      label: "普通用户手册",
+      label: "终端用户手册",
       collapsed: false,
       items: [
-        { type: "doc", id: "end-user-manual/overview", label: "概述" },
-        { type: "doc", id: "end-user-manual/usage-statistics", label: "用量统计" },
-        { type: "doc", id: "end-user-manual/call-logs", label: "调用日志" },
-        { type: "doc", id: "end-user-manual/settings", label: "设置" },
+        { type: "doc", id: "end‑user-manual/overview", label: "概述" },
+        { type: "doc", id: "end‑user-manual/usage-statistics", label: "用量统计" },
+        { type: "doc", id: "end‑user-manual/call-logs", label: "调用日志" },
+        { type: "doc", id: "end‑user-manual/settings", label: "设置" },
       ],
     },
   ],
