@@ -1,13 +1,13 @@
 ---
-title: 接入客户端
+title: 接入第三方
 description: 介绍如何将 Work Buddy、DeepSeek Harness、codex 等客户端接入 1Panel AI 网关。
 ---
 
-## 接入客户端
+## 接入第三方
 
 完成网关部署与管理员配置后，即可将客户端接入 1Panel AI 网关。以下分别说明 Work Buddy、DeepSeek Harness、codex 三类客户端的接入步骤。
 
-### 接入 Work Buddy
+### 接入 WorkBuddy
 
 首先查看模型名称：登录管理端后，在「模型管理」或「用户组」页面查看当前已配置的模型标识，后续客户端配置需使用完全一致的模型名称。
 
