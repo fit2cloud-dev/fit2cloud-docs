@@ -15,13 +15,9 @@ description: 介绍 1Panel AI 网关智能路由的样本管理、决策日志�
 
 智能路由包含三个模块：
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  智能路由模块</div>
-
-| 模块 | 说明 |
-|---|---|
-| 样本管理 | 维护用于请求分类的样本数据，设置样本标签与单样本阈值 |
-| 决策日志 | 查看每次请求的路由分类、决策来源、选中模型与置信度等信息 |
-| 统计 | 按标签、来源、模型与 Token 维度查看决策分布 |
+**样本管理**：维护用于请求分类的样本数据，支持设置样本标签以及单样本阈值。
+**决策日志**：可查看每一次请求的路由分类、决策来源、选中模型和置信度等相关信息。
+**统计**：支持按照标签、来源、模型、Token 维度查看决策分布情况。
 
 ## 2 前提条件
 
@@ -59,18 +55,6 @@ description: 介绍 1Panel AI 网关智能路由的样本管理、决策日志�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  添加样本</div>
 
-添加样本的表单字段说明如下：
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  添加样本字段</div>
-
-| 字段 | 说明 |
-|---|---|
-| 标签 | 样本所属的分类标签，可选择简单或复杂 |
-| 样本文本 | 样本的具体内容，最长支持 65536 个字符 |
-| 单样本阈值 | 该样本参与分类判定时的生效阈值 |
-| 备注 | 样本的补充说明，选填 |
-| 保存后生成向量 | 勾选后保存时自动为该样本构建向量 |
-
 :::tip[提示]
 可在样本列表中选择多条样本后，单击 **构建选中向量** 批量构建；单击 **构建全部向量** 可为全部样本一次性构建向量。
 :::
@@ -83,16 +67,6 @@ description: 介绍 1Panel AI 网关智能路由的样本管理、决策日志�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  决策预览</div>
 
-决策预览支持按上下文路由选择分类，常用操作说明如下：
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  决策预览操作</div>
-
-| 操作 | 说明 |
-|---|---|
-| 请求样本 | 输入用于预览路由结果的请求文本 |
-| 决策预览 | 根据当前上下文执行路由决策判断 |
-| 添加为样本 | 将当前请求样本保存为新的路由样本 |
-| 取消 | 关闭决策预览窗口 |
 
 ## 5 决策日志
 
@@ -106,16 +80,6 @@ description: 介绍 1Panel AI 网关智能路由的样本管理、决策日志�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  决策日志列表</div>
 
-决策日志支持以下筛选条件：
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 4  决策日志筛选条件</div>
-
-| 条件 | 说明 |
-|---|---|
-| 全部分类 | 按路由分类筛选，如简单、复杂 |
-| 全部来源 | 按决策来源筛选，如本地规则、embedding |
-| 全部请求类型 | 按请求类型筛选，如真实请求 |
-| 决策时间 | 按决策发生的时间范围筛选 |
 
 ### 5.2 查看决策详情
 
@@ -125,20 +89,6 @@ description: 介绍 1Panel AI 网关智能路由的样本管理、决策日志�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  决策详情</div>
 
-决策详情中的主要信息说明如下：
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 5  决策详情字段</div>
-
-| 字段 | 说明 |
-|---|---|
-| Request ID | 该次请求的唯一标识 |
-| 路由分类 | 请求被划分到的路由分类，如简单、复杂 |
-| 决策来源 | 决策依据的来源，如本地规则、embedding |
-| 选中模型 | 最终路由选中的模型名称 |
-| 置信度 | 本次决策的可信程度 |
-| 决策耗时 | 完成本次决策所花费的时间 |
-| 回退原因 | 当未达到分类阈值时回退的原因说明 |
-| Top K 命中样本 | 与请求相似度最高的前 K 个样本及其相似度 |
 
 ## 6 统计
 
@@ -147,34 +97,6 @@ description: 介绍 1Panel AI 网关智能路由的样本管理、决策日志�
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/smart_route/image7_Statistics.png" alt="统计概览"/>
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7  统计概览</div>
-
-### 6.1 核心指标
-
-统计页顶部展示六项核心指标，说明如下：
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 6  核心指标说明</div>
-
-| 指标 | 说明 |
-|---|---|
-| 决策数 | 统计周期内的路由决策总次数 |
-| 真实请求数 | 统计周期内的真实请求数量 |
-| 失败数 | 统计周期内决策失败的次数 |
-| 总 Token | 统计周期内消耗的 Token 总量 |
-| 平均 Token | 平均每次请求消耗的 Token 数量 |
-| 累计耗时 | 统计周期内决策累计消耗的时间 |
-
-### 6.2 多维分布
-
-统计页下方按以下四个维度展示决策分布：
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 7  分布维度说明</div>
-
-| 分布维度 | 说明 |
-|---|---|
-| 按标签分布 | 简单与复杂分类各自的决策数量与占比 |
-| 按来源分布 | 不同决策来源（如本地规则、embedding）的数量与占比 |
-| 按模型分布 | 各选中模型的使用次数与占比 |
-| 按总 Token 分布 | 简单与复杂分类消耗 Token 的占比 |
 
 :::note[说明]
 统计页支持切换时间维度查看不同周期的数据，包括近 24 小时、近 7 天与近 30 天。
