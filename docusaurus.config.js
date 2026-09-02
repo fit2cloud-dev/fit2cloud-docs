@@ -147,10 +147,17 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       colorMode: { respectPrefersColorScheme: true },
-      // 侧边栏分类: 同时只展开一个分类, 避免导航过度展开(配合各 sidebars 里的 collapsed: true 默认折叠)
+      // 侧边栏分类展开策略:
+      // - autoCollapseCategories: 原为 true(手风琴效果, 展开某分类时自动收起同级其他分类)。
+      //   现已配合 src/theme/DocSidebarItems 改为「一级+二级默认全展开」, 若继续保留 true,
+      //   用户一点某个一级分类就会把其他一级全收起, 与「进来就看到完整结构」的初衷冲突,
+      //   故置为 false(各分类互相独立, 收起一个不影响其他)。
+      //   想恢复手风琴效果, 把下面改回 true 即可。
+      // - collapsed / collapsible 的改写统一在 src/theme/DocSidebarItems/index.js 里做,
+      //   这里不再逐个 sidebars.js 配置(那样对 v1 的 versioned JSON 和未来新增分类无效)。
       docs: {
         sidebar: {
-          autoCollapseCategories: true,
+          autoCollapseCategories: false,
         },
       },
       navbar: {
@@ -206,11 +213,14 @@ const config = {
             type: 'custom-VersionSwitcher',
             position: 'right',
           },
-          // 官网 / 论坛 / 培训认证: 放在右侧、中英文切换(localeDropdown)之前。
+          // 官网 / 论坛 / 开源社区 / 培训认证: 放在右侧、中英文切换(localeDropdown)之前。
           // 外部链接一律用 href(不用 to), NavbarNavLink 会自动加
           // target="_blank" + rel="noopener noreferrer" + 外链小图标
+          // 注意: 「开源社区」(community 社区站) 与左侧的「开源产品」(下拉, 链各产品官网) 是两回事,
+          //   两者 label 不同, i18n key 也不同(item.label.开源社区 / item.label.开源产品), 别合并。
           {href: 'https://www.fit2cloud.com/', label: '官网', position: 'right'},
           {href: 'https://bbs.fit2cloud.com/', label: '论坛', position: 'right'},
+          {href: 'https://community.fit2cloud.com/', label: '开源社区', position: 'right'},
           {href: 'https://edu.fit2cloud.com/', label: '培训认证', position: 'right'},
           {
             type: 'localeDropdown',
@@ -222,40 +232,65 @@ const config = {
           },
         ],
       },
+      // footer 三列(常用链接/联系我们/资料下载)。下列 URL 均已实测返回 200。
+      // 内容来源说明(2026-09-02 改版): 「常用链接」这一列取自官网**导航栏**, 不是官网 footer ——
+      //   官网自身的 footer 里「常用链接」仍是旧版(多云管理平台/Halo 商城版/JumpServer 国际站/
+      //   1Panel 国际站/UPage AI 建站), 而官网导航栏里才是新版(开源社区/培训认证/案例中心/
+      //   如何购买/官方应用商店)。本处以导航栏新版为准。
+      // 外部链接一律用 href(不用 to): Footer/LinkItem 判断 !isInternalUrl(href) 后自动
+      // 渲染 target=_blank + rel=noopener + 外链小图标。mailto:/tel: 同样有协议, 也会被
+      // 判为外链(带 ↗ 图标), 这是 Docusaurus 的默认行为。
+      // 注意 1: 官网原文把 JumpServer 资料下载拼成了 "JumpSever", 这里按正确拼写修正。
+      // 注意 2: 官网各处混用 www.fit2cloud.com 与 fit2cloud.com(裸域)。本处除「案例中心」
+      //   「如何购买」沿用官网导航栏的相对路径换算结果(带 www)外, 其余按给定地址用裸域。
+      //   两者实测均 200, 但长期建议统一成一种写法。
       footer: {
         style: 'dark',
         links: [
           {
-            // 与首页 PRODUCT_GROUPS(src/pages/index.js)保持一致:
-            // 站内已有真实文档的用 to; 只有占位页的一律 href 到各产品官方文档站,
-            // 避免跳到 /jumpserver/ 这类仅 1 篇 index.md 的空白页。
-            // href 外部链接由 theme-classic 的 Footer/LinkItem 自动渲染
-            // target=_blank + rel=noopener + 外链小图标(LinkItem 里 isInternalUrl 判断)。
-            title: '产品文档',
+            title: '常用链接',
             items: [
-              {label: '1Panel · AI 网关', to: '/1panel/user-manual/ai/gateway'},
-              {label: '1Panel · 运维管理面板', to: '/1panel/'},
-              {label: 'JumpServer · 运维安全审计', href: 'https://docs.jumpserver.org/zh/v4/'},
-              {label: 'DataEase · BI 数据分析', href: 'https://dataease.cn/docs/v2/'},
-              {label: 'MaxKB · 企业级智能体平台', href: 'https://maxkb.cn/docs/v2/'},
-              {label: 'SQLBot · 智能问数', href: 'https://sqlbot.org/docs/v1/'},
-              {label: 'Cordys CRM · AI CRM', href: 'https://cordys.cn/docs/'},
-              {label: 'MeterSphere · 持续测试', href: 'https://metersphere.io/docs/v3.x/'},
-              {label: 'Halo · 开源建站', href: 'https://docs.halo.run/'},
+              {label: '飞致云开源社区', href: 'https://community.fit2cloud.com/'},
+              {label: '培训认证中心', href: 'https://edu.fit2cloud.com/'},
+              {label: '案例中心', href: 'https://www.fit2cloud.com/customers/index.html'},
+              {label: '如何购买', href: 'https://www.fit2cloud.com/purchase/index.html'},
+              {label: '官方应用商店', href: 'https://apps.fit2cloud.com/'},
             ],
           },
           {
-            title: '更多',
+            title: '联系我们',
             items: [
-              {label: '文档中心首页', to: '/'},
-              {label: '飞致云官网', href: 'https://www.fit2cloud.com/'},
+              {label: 'support@fit2cloud.com', href: 'mailto:support@fit2cloud.com'},
+              {label: '400-052-0755', href: 'tel:400-052-0755'},
+              {label: '客户支持门户', href: 'https://support.fit2cloud.com/'},
+              {label: '产品预约演示', href: 'https://jsj.top/f/UFPJsq'},
+              {label: '合作伙伴', href: 'https://fit2cloud.com/partners/index.html'},
+            ],
+          },
+          {
+            title: '资料下载',
+            items: [
+              {label: '1Panel 产品资料下载', href: 'https://fit2cloud.com/1panel/download/introduce-1panel_2026.pdf'},
+              {label: 'JumpServer 产品资料下载', href: 'https://fit2cloud.com/jumpserver/documents/introduce-jumpserver_2026.pdf'},
+              {label: 'DataEase 产品资料下载', href: 'https://fit2cloud.com/dataease/download/introduce-dataease_2026.pdf'},
+              {label: 'MaxKB 产品资料下载', href: 'https://fit2cloud.com/maxkb/download/introduce-maxkb_2026.pdf'},
+              {label: 'Cordys 产品资料下载', href: 'https://fit2cloud.com/cordys/download/introduce-cordys_2026.pdf'},
             ],
           },
         ],
         // 注意: copyright 是 dangerouslySetInnerHTML 直接渲染的(见 theme-classic
         // Footer/Copyright), 不走 i18n —— i18n/*/footer.json 里的 copyright 条目是
         // write-translations 的历史残留, 改这里才生效。
-        copyright: `Copyright © ${new Date().getFullYear()} 飞致云 FIT2CLOUD`,
+        // 外层容器已带 text--center, 所以三行天然居中。
+        // 给 <a> 加 footer__link-item 是为了复用 custom.css 里那条白色半透明样式,
+        // 否则裸 <a> 在 dark footer 上会走全局链接色、对比度不对。
+        copyright: `<a class="footer__link-item" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备14038283号</a>
+        <br />
+        2014-${new Date().getFullYear()} 版权所有©杭州飞致云信息科技有限公司
+        <br />
+        <a class="footer__link-item" href="https://fit2cloud.com/legal/privacy-policy.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
+        <span class="footer__link-separator">|</span>
+        <a class="footer__link-item" href="https://fit2cloud.com/legal/licenses.html" target="_blank" rel="noopener noreferrer">社区软件许可协议</a>`,
       },
       prism: {
         theme: prismThemes.github,

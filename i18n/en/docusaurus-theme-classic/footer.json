@@ -1,54 +1,74 @@
 {
-  "link.title.产品文档": {
-    "message": "Product Docs",
-    "description": "The title of the footer links column with title=产品文档 in the footer"
+  "link.title.常用链接": {
+    "message": "Quick Links",
+    "description": "The title of the footer links column with title=常用链接 in the footer"
   },
-  "link.title.更多": {
-    "message": "More",
-    "description": "The title of the footer links column with title=更多 in the footer"
+  "link.title.联系我们": {
+    "message": "Contact Us",
+    "description": "The title of the footer links column with title=联系我们 in the footer"
   },
-  "link.item.label.1Panel · AI 网关": {
-    "message": "1Panel · AI Gateway",
-    "description": "The label of footer link with label=1Panel · AI 网关 linking to /1panel/user-manual/ai/gateway"
+  "link.title.资料下载": {
+    "message": "Downloads",
+    "description": "The title of the footer links column with title=资料下载 in the footer"
   },
-  "link.item.label.1Panel · 运维管理面板": {
-    "message": "1Panel · Linux Panel",
-    "description": "The label of footer link with label=1Panel · 运维管理面板 linking to /1panel/"
+  "link.item.label.飞致云开源社区": {
+    "message": "FIT2CLOUD Community",
+    "description": "The label of footer link with label=飞致云开源社区 linking to https://community.fit2cloud.com/"
   },
-  "link.item.label.JumpServer · 运维安全审计": {
-    "message": "JumpServer · Bastion Host",
-    "description": "The label of footer link with label=JumpServer · 运维安全审计 linking to https://docs.jumpserver.org/zh/v4/"
+  "link.item.label.培训认证中心": {
+    "message": "Training & Certification",
+    "description": "The label of footer link with label=培训认证中心 linking to https://edu.fit2cloud.com/"
   },
-  "link.item.label.DataEase · BI 数据分析": {
-    "message": "DataEase · BI Analytics",
-    "description": "The label of footer link with label=DataEase · BI 数据分析 linking to https://dataease.cn/docs/v2/"
+  "link.item.label.案例中心": {
+    "message": "Customer Cases",
+    "description": "The label of footer link with label=案例中心 linking to https://www.fit2cloud.com/customers/index.html"
   },
-  "link.item.label.MaxKB · 企业级智能体平台": {
-    "message": "MaxKB · AI Agent Platform",
-    "description": "The label of footer link with label=MaxKB · 企业级智能体平台 linking to https://maxkb.cn/docs/v2/"
+  "link.item.label.如何购买": {
+    "message": "How to Buy",
+    "description": "The label of footer link with label=如何购买 linking to https://www.fit2cloud.com/purchase/index.html"
   },
-  "link.item.label.SQLBot · 智能问数": {
-    "message": "SQLBot · Text-to-SQL",
-    "description": "The label of footer link with label=SQLBot · 智能问数 linking to https://sqlbot.org/docs/v1/"
+  "link.item.label.官方应用商店": {
+    "message": "Official App Store",
+    "description": "The label of footer link with label=官方应用商店 linking to https://apps.fit2cloud.com/"
   },
-  "link.item.label.Cordys CRM · AI CRM": {
-    "message": "Cordys CRM · AI CRM",
-    "description": "The label of footer link with label=Cordys CRM · AI CRM linking to https://cordys.cn/docs/"
+  "link.item.label.support@fit2cloud.com": {
+    "message": "support@fit2cloud.com",
+    "description": "The label of footer link with label=support@fit2cloud.com linking to mailto:support@fit2cloud.com"
   },
-  "link.item.label.MeterSphere · 持续测试": {
-    "message": "MeterSphere · Continuous Testing",
-    "description": "The label of footer link with label=MeterSphere · 持续测试 linking to https://metersphere.io/docs/v3.x/"
+  "link.item.label.400-052-0755": {
+    "message": "400-052-0755",
+    "description": "The label of footer link with label=400-052-0755 linking to tel:400-052-0755"
   },
-  "link.item.label.Halo · 开源建站": {
-    "message": "Halo · Website Builder",
-    "description": "The label of footer link with label=Halo · 开源建站 linking to https://docs.halo.run/"
+  "link.item.label.客户支持门户": {
+    "message": "Support Portal",
+    "description": "The label of footer link with label=客户支持门户 linking to https://support.fit2cloud.com/"
   },
-  "link.item.label.文档中心首页": {
-    "message": "Docs Home",
-    "description": "The label of footer link with label=文档中心首页 linking to /"
+  "link.item.label.产品预约演示": {
+    "message": "Request a Demo",
+    "description": "The label of footer link with label=产品预约演示 linking to https://jsj.top/f/UFPJsq"
   },
-  "link.item.label.飞致云官网": {
-    "message": "FIT2CLOUD Official Site",
-    "description": "The label of footer link with label=飞致云官网 linking to https://www.fit2cloud.com/"
+  "link.item.label.合作伙伴": {
+    "message": "Partners",
+    "description": "The label of footer link with label=合作伙伴 linking to https://fit2cloud.com/partners/index.html"
+  },
+  "link.item.label.1Panel 产品资料下载": {
+    "message": "1Panel Brochure",
+    "description": "The label of footer link with label=1Panel 产品资料下载 linking to https://fit2cloud.com/1panel/download/introduce-1panel_2026.pdf"
+  },
+  "link.item.label.JumpServer 产品资料下载": {
+    "message": "JumpServer Brochure",
+    "description": "The label of footer link with label=JumpServer 产品资料下载 linking to https://fit2cloud.com/jumpserver/documents/introduce-jumpserver_2026.pdf"
+  },
+  "link.item.label.DataEase 产品资料下载": {
+    "message": "DataEase Brochure",
+    "description": "The label of footer link with label=DataEase 产品资料下载 linking to https://fit2cloud.com/dataease/download/introduce-dataease_2026.pdf"
+  },
+  "link.item.label.MaxKB 产品资料下载": {
+    "message": "MaxKB Brochure",
+    "description": "The label of footer link with label=MaxKB 产品资料下载 linking to https://fit2cloud.com/maxkb/download/introduce-maxkb_2026.pdf"
+  },
+  "link.item.label.Cordys 产品资料下载": {
+    "message": "Cordys Brochure",
+    "description": "The label of footer link with label=Cordys 产品资料下载 linking to https://fit2cloud.com/cordys/download/introduce-cordys_2026.pdf"
   }
 }

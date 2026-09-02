@@ -27,6 +27,10 @@
     "message": "论坛",
     "description": "Navbar item with label 论坛"
   },
+  "item.label.开源社区": {
+    "message": "开源社区",
+    "description": "Navbar item with label 开源社区"
+  },
   "item.label.培训认证": {
     "message": "培训认证",
     "description": "Navbar item with label 培训认证"
