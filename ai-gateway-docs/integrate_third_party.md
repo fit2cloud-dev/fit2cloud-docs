@@ -1,6 +1,7 @@
 ---
 title: 接入客户端
 description: 介绍如何将 Work Buddy、DeepSeek Harness、codex 等客户端接入 1Panel AI 网关。
+---
 
 ## 接入客户端
 
