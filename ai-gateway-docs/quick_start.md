@@ -7,55 +7,22 @@ description: 通过快速部署、界面介绍和快速上手三个部分，帮�
 
 本文以管理员配置、智能路由和普通用户使用的完整流程为主线，介绍如何从零开始部署并使用 1Panel AI 网关。
 
-## 1 快速部署
+## 一、部署方法
 
-1Panel AI 网关通过官方容器镜像交付。部署前，请确认服务器已安装 Docker，并具备以下条件：
+1Panel AI 网关支持两种部署方式，用户可以按需快速搭建使用，无复杂配置。
 
-- 支持主流 Linux 发行版本（基于 Debian 或 RedHat，包括国产操作系统）。
-- 服务器已安装 Docker，且具备访问模型供应商服务的网络条件。
-- 开放用于访问 Web 管理界面和数据面 API 的端口，默认为 `8080`。
+### 方法 1. 通过 1Panel 应用商店一键部署
 
-### 1.1 部署模式
+依托 1Panel 原生应用商店，无需复杂命令，一键即可完成安装、部署与初始化，适配新手用户快速落地。
 
-系统支持以下数据库与部署组合：
+![图 1  1Panel 应用商店一键部署](/img/ai-gateway/deploy_app_store.png)
 
-- SQLite 单机：单个网关实例，适合快速部署和中小规模使用。
-- PostgreSQL 单机：单个网关实例共享 PostgreSQL 数据库。
-- PostgreSQL 高可用：多个网关实例共享 PostgreSQL，并由外部负载均衡和高可用 Redis 等基础设施提供高可用支撑。
+### 方法 2. 使用官方镜像手动部署
 
-:::note 部署边界
-软件通过官方容器镜像交付，并提供部署参考；不负责安装和运维外部负载均衡、PostgreSQL、Redis 或可选的 Elasticsearch 集群。
-:::
-
-### 1.2 默认运行参数
-
-默认运行参数如表 1 所示。
-
-**表 1  默认运行参数**
-
-| 项目 | 默认值 | 说明 |
-| --- | --- | --- |
-| 监听地址 | 0.0.0.0 | 监听全部 IPv4 接口。 |
-| HTTP 端口 | 8080 | Web 管理界面和数据面 API 共用。 |
-| 数据库 | SQLite | 默认数据库文件位于 `/opt/ai-gateway/data/db/ai-gateway.db`。 |
-| 凭据密钥 | 自动管理 | SQLite 首次启动时生成 `/opt/ai-gateway/data/security/credential.key`。 |
-| 优雅退出 | 60 秒 | 接收终止信号后等待请求退出。 |
-
-### 1.3 使用官方镜像安装
-
-在已安装 Docker 的服务器上拉取 1Panel AI 网关官方镜像。
+1Panel AI 网关官方镜像地址为 `1panel/ai-gateway`，未指定版本时默认使用 `latest` 最新版本，镜像版本与产品发布版本同步更新，保障功能完整性与稳定性。部署命令如下：
 
 ```bash
-docker pull 1panel/ai-gateway
-```
-
-![图 1  拉取 1Panel AI 网关官方镜像](/img/ai-gateway/deploy_pull_image.png)
-
-
-镜像拉取完成后，以 SQLite 单机模式启动：
-
-```bash
-docker run -d \
+docker run --pull always -d \
   --name 1panel-ai-gateway \
   --restart unless-stopped \
   -p 8080:8080 \
@@ -63,70 +30,26 @@ docker run -d \
   1panel/ai-gateway
 ```
 
-![图 2  启动 1Panel AI 网关容器](/img/ai-gateway/deploy_start_container.png)
-
-
-启动后在浏览器访问 `http://服务器地址:8080`。生产环境建议通过 HTTPS 反向代理访问。
-
-![图 3  在浏览器中访问 1Panel AI 网关](/img/ai-gateway/deploy_browser_access.png)
-
-
-### 1.4 镜像版本与升级
-
-正式镜像名称为 `1panel/ai-gateway`，标签与产品 Release 保持一致；不指定标签时，Docker 默认使用 `latest`。升级前执行：
+首次启动会在容器日志中输出管理员临时密码，可以通过以下命令查看：
 
 ```bash
-docker pull 1panel/ai-gateway
+docker logs 1panel-ai-gateway
 ```
 
-拉取完成后，按 1.3 的参数重新创建容器，并持续保留 `/opt/ai-gateway` 数据目录。
-
-### 1.5 首次登录
-
-空数据库首次启动会创建名为 `Default` 的默认用户组和唯一管理员，并使用 `admin` 作为管理员用户名。首次登录步骤如下：
-
-1. 确认 `/opt/ai-gateway` 数据目录可持久化，并限制无关用户访问。
-2. 启动软件。
-3. 若未显式指定管理员密码，在本次启动日志中查找 `initial administrator created` 记录，复制一次性临时密码。
-4. 使用管理员用户名 `admin` 和临时密码登录，系统将强制跳转到密码修改页。
-5. 设置 12 至 128 字节的新密码后进入管理端，立即配置上游账号与模型组。
-
-![图 4  在启动日志中查找初始管理员临时密码](/img/ai-gateway/deploy_initial_password_log.png)
-
-
-![图 5  使用管理员账号登录](/img/ai-gateway/deploy_admin_login.png)
-
-
-:::caution 首次密码
-通过 `AI_GATEWAY_INITIAL_ADMIN_PASSWORD` 显式传入的密码不会写入日志；无论采用哪种方式，数据库只保存 Argon2id 强哈希。首次初始化完成后，重启不会覆盖已有管理员。
+:::warning[首次密码]
+首次登录 1Panel AI 网关后需要立即修改临时密码。`8080` 端口访问建议限定在内网可信环境中使用，正式生产环境建议配置 HTTPS 反向代理，全面保障服务访问安全。
 :::
 
-### 1.6 健康检查
-
-可使用以下无需登录的接口检查进程与就绪状态：
-
-```bash
-curl -fsS http://127.0.0.1:8080/health/live
-curl -fsS http://127.0.0.1:8080/health/ready
-```
-
-- `/health/live` 返回 `{"status":"ok"}`，表示 HTTP 进程可响应。
-- `/health/ready` 返回 `{"status":"ok"}`，表示数据库和网关运行时已就绪。
-- 就绪检查失败时返回 503 和 `{"status":"not_ready"}`。
-
-![图 6  健康检查接口返回正常状态](/img/ai-gateway/deploy_health_check.png)
-
-
-## 2 界面介绍
+## 二、界面介绍
 
 使用管理员账号登录后进入管理端。管理端由左侧导航、顶部区域和主内容区三部分组成。左侧导航用于进入各管理模块，顶部区域显示当前页面标题并提供语言、主题和「关于」入口，主内容区显示筛选栏、数据表格、表单和详情。
 
-![图 7  管理端概览界面](/img/ai-gateway/overview.png)
+![图 2  管理端概览界面](/img/ai-gateway/overview.png)
 
 
-管理端各导航模块的功能如表 2 所示。
+管理端各导航模块的功能如下表所示。
 
-**表 2  管理端导航模块说明**
+**表  管理端导航模块说明**
 
 | 模块 | 主要功能 |
 | --- | --- |
@@ -141,15 +64,15 @@ curl -fsS http://127.0.0.1:8080/health/ready
 | 调用日志 | 记录每次调用的链路、状态、耗时与 Token 用量。 |
 | 设置 | 配置协议转换、性能参数、日志保留与正文审计。 |
 
-:::note 用户中心
+:::note[用户中心]
 普通用户登录后进入用户中心，可访问「API Keys」「用量统计」和「设置」。管理员可在用户菜单中切换到用户中心，管理自己的 API Key。Web 界面支持简体中文、繁体中文和 English，右上角可切换语言，主题按钮可在亮色与暗色之间切换。
 :::
 
-## 3 快速上手
+## 三、快速上手
 
 管理员完成上游账号接入、模型组授权和用户创建后，普通用户即可在自己的用户中心创建 API Key 并调用模型。本节以下面的流程为主线：接入模型供应商账号 → 组织模型组 → 配置用户组权限 → 启用智能路由 → 创建普通用户 → 用户使用 API Key 调用。
 
-### 3.1 添加上游账号
+### 1. 添加上游账号
 
 上游账号保存网关连接模型供应商所需的配置。每个上游账号固定一个协议类型，可包含多个具体协议和多个模型映射。
 
@@ -160,15 +83,15 @@ curl -fsS http://127.0.0.1:8080/health/ready
 5. 维护模型映射，输入供客户端使用的请求模型名称和用于供应商调用的上游模型名称。
 6. 设置优先级、最大并发和备注，单击 **保存**。
 
-![图 8  账号池列表](/img/ai-gateway/account_pool.png)
+![图 3  账号池列表](/img/ai-gateway/account_pool.png)
 
 
-![图 9  添加上游账号](/img/ai-gateway/add_upstream_account.png)
+![图 4  添加上游账号](/img/ai-gateway/add_upstream_account.png)
 
 
-上游账号主要字段如表 3 所示。
+上游账号主要字段如下表所示。
 
-**表 3  上游账号主要字段说明**
+**表  上游账号主要字段说明**
 
 | 字段 | 取值 | 说明 |
 | --- | --- | --- |
@@ -178,11 +101,11 @@ curl -fsS http://127.0.0.1:8080/health/ready
 | 最大并发 | 0-100000 | 限制该账号同时处理的请求数，0 表示不额外设置。 |
 | 健康状态 | 可用 / 冷却 / 不可用 | 由连接验证和运行时调用结果维护。 |
 
-:::caution 保存校验
+:::warning[保存校验]
 文本和向量账号在创建或关键连接信息变更时，会执行一次最小调用验证；文生图账号保存时不会实际生成图片。凭据编辑时留空表示沿用已保存的 API Key。
 :::
 
-### 3.2 创建模型组
+### 2. 创建模型组
 
 模型组把相同协议类型的请求模型按顺序组织起来，用于用户组授权和智能路由。模型组不是上游账号的复制，而是面向客户端可见模型的逻辑集合。
 
@@ -193,10 +116,10 @@ curl -fsS http://127.0.0.1:8080/health/ready
 
 当前模型派发前不可用时，网关会尝试下一个模型。
 
-![图 10  模型组列表](/img/ai-gateway/model_groups.png)
+![图 5  模型组列表](/img/ai-gateway/model_groups.png)
 
 
-### 3.3 配置用户组
+### 3. 配置用户组
 
 用户组承载模型权限、并发上限和 Token 配额。将用户加入用户组后，用户即可访问该用户组授权的模型。
 
@@ -206,17 +129,17 @@ curl -fsS http://127.0.0.1:8080/health/ready
 4. 在 **授权模型组** 中选择允许访问的模型组；未选择任何模型组时，该用户组可访问全部模型。
 5. 设置启用状态和备注，单击 **保存**。
 
-![图 11  用户组列表](/img/ai-gateway/user_groups.png)
+![图 6  用户组列表](/img/ai-gateway/user_groups.png)
 
 
-![图 12  添加用户组](/img/ai-gateway/add_user_group.png)
+![图 7  添加用户组](/img/ai-gateway/add_user_group.png)
 
 
-:::note 默认用户组
+:::note[默认用户组]
 系统保证恰好存在一个启用的默认用户组。默认用户组不能禁用或删除，仍有成员的用户组也不能删除。
 :::
 
-### 3.4 配置智能路由
+### 4. 配置智能路由
 
 智能路由的目标是「简单问题走便宜模型，复杂问题走强模型」。它对外只暴露一个虚拟模型名称，接收请求后结合本地规则、上下文路由和向量样本，把请求判定为「简单」或「复杂」：简单请求落到简单请求模型组（便宜、响应快），复杂请求落到复杂请求模型组（能力更强）。这样普通用户只需使用同一个模型名称，无需自己判断该用哪个模型。
 
@@ -228,33 +151,33 @@ curl -fsS http://127.0.0.1:8080/health/ready
 4. 按需调整分类阈值（默认 0.72）、置信差阈值（默认 0.00）和 Top K（默认 5），单击 **保存**，确认卡片右上角显示「运行时已生效」。
 5. 在同页「向量服务」中选择一个向量账号及其真实模型，单击 **测试连接**，确认返回向量维度。
 
-![图 13  设置页的智能路由配置](/img/ai-gateway/settings.png)
+![图 8  设置页的智能路由配置](/img/ai-gateway/settings.png)
 
 
 选择 **智能路由**，在 **样本管理** 中可查看样本的标签、样本文本和向量维度。
 
-![图 14  智能路由样本管理](/img/ai-gateway/smart_routing_samples.png)
+![图 9  智能路由样本管理](/img/ai-gateway/smart_routing_samples.png)
 
 
-:::note 共享向量服务
+:::note[共享向量服务]
 向量服务由智能路由和内容合规共用。更换向量账号或模型后，已有样本向量会失效，需要重新构建。
 :::
 
 配置样本后，可在 **智能路由** 页切换到 **统计**，查看决策数、真实请求数、失败数、Token、平均 Token、累计耗时，以及按标签、来源和模型的分布。
 
-![图 15  智能路由统计](/img/ai-gateway/smart_routing_stats.png)
+![图 10  智能路由统计](/img/ai-gateway/smart_routing_stats.png)
 
 
-:::tip 智能路由生效验证
+:::note[智能路由生效验证]
 启用后，用虚拟模型名（如 `1Panel-Auto`）分别发起一条简单提问和一条复杂推理请求：简单请求会路由到简单模型组的便宜模型，复杂请求会路由到复杂模型组的强模型（响应中的 `model` 字段即为实际命中的模型）。每次调用的用户、请求模型与实际路由模型都会记录在 **调用日志** 中，可据此核对路由结果；**智能路由** 页的 **统计** 标签同步展示决策数与模型分布。
 :::
 
 内容合规与智能路由共用向量服务，在模型调用前检查请求内容。系统支持敏感词关键词匹配和审核样本语义匹配，命中后可按策略组执行拦截或仅审计。管理员可在 **内容合规** 页面维护敏感词与审核样本。
 
-![图 16  内容合规策略配置](/img/ai-gateway/content_moderation.png)
+![图 11  内容合规策略配置](/img/ai-gateway/content_moderation.png)
 
 
-### 3.5 创建普通用户
+### 5. 创建普通用户
 
 管理员在 **用户** 页面创建普通用户，并将其加入已配置权限的用户组。新用户首次登录后必须修改密码。
 
@@ -263,14 +186,14 @@ curl -fsS http://127.0.0.1:8080/health/ready
 3. 选择用户组，未选择时使用系统默认用户组。
 4. 输入 12 至 128 字节的初始密码并再次确认，单击 **保存**。
 
-![图 17  用户列表](/img/ai-gateway/user_list.png)
+![图 12  用户列表](/img/ai-gateway/user_list.png)
 
 
-:::tip 用户治理
+:::important[用户治理]
 禁用普通用户会删除其现有浏览器会话，并阻止其 API Key 继续调用。重置密码会清除锁定并注销现有会话，用户下次登录必须修改密码。唯一管理员不能被禁用或降级为普通用户。
 :::
 
-### 3.6 用户使用 API Key 调用模型
+### 6. 用户使用 API Key 调用模型
 
 普通用户使用管理员分配的账号登录后进入用户中心，在 **API Keys** 页面创建密钥，并使用网关地址作为 Base URL 调用模型。
 
@@ -278,7 +201,7 @@ curl -fsS http://127.0.0.1:8080/health/ready
 2. 输入名称（1 至 64 字节），单击 **创建**，页面显示以 `sk-` 开头的完整密钥。
 3. 立即单击 **复制**，将密钥保存到密码管理器或受控密钥系统。密钥仅在创建成功时完整显示一次，关闭后无法再次查看原文。
 
-![图 18  用户中心 API Keys](/img/ai-gateway/user_center_api_keys.png)
+![图 13  用户中心 API Keys](/img/ai-gateway/user_center_api_keys.png)
 
 
 创建密钥后，将客户端的 Base URL 配置为网关地址，配合 API Key 即可调用。以 OpenAI Chat Completions 为例：
@@ -290,15 +213,15 @@ curl https://gateway.example.com/v1/chat/completions \
   -d '{"model":"example-model","messages":[{"role":"user","content":"你好"}]}'
 ```
 
-将 `"model"` 填写为用户组授权的请求模型名称；当智能路由启用且用户组有权访问虚拟模型时，也可填写 3.4 节配置的虚拟模型名称（本示例为 `1Panel-Auto`），由网关自动选择简单或复杂模型组。
+将 `"model"` 填写为用户组授权的请求模型名称；当智能路由启用且用户组有权访问虚拟模型时，也可填写「配置智能路由」一节配置的虚拟模型名称（本示例为 `1Panel-Auto`），由网关自动选择简单或复杂模型组。
 
-:::caution 虚拟模型与用户组授权
+:::warning[虚拟模型与用户组授权]
 智能路由的虚拟模型同样受用户组授权约束：若用户组的「授权模型组」中未包含虚拟模型（或所选模型组不含该虚拟模型），调用时会返回 `model_not_allowed`；若填写的模型名称与启用的虚拟模型名不一致，则返回 `model_not_found`。默认用户组未选择任何模型组时可访问全部模型，包括虚拟模型。
 :::
 
-常用数据面接口如表 4 所示。
+常用数据面接口如下表所示。
 
-**表 4  数据面接口说明**
+**表  数据面接口说明**
 
 | 方法 | 路径 | 用途 |
 | --- | --- | --- |
@@ -309,89 +232,89 @@ curl https://gateway.example.com/v1/chat/completions \
 | POST | `/v1/embeddings` | OpenAI Embeddings 兼容调用。 |
 | POST | `/v1/images/generations` | OpenAI Images 兼容文生图调用。 |
 
-:::note 认证方式
+:::note[认证方式]
 通用方式是在 `Authorization` 请求头中使用 Bearer Token。Anthropic Messages 接口也接受 `x-api-key`，使用 `x-api-key` 时不要同时发送 `Authorization`。API Key 前后不能包含空白字符。
 :::
 
 普通用户可在用户中心的 **用量统计** 页面按 API Key 和时间范围查看个人的请求量、输入 Token、输出 Token、总 Token 与趋势。
 
-![图 19  用户中心用量统计](/img/ai-gateway/user_center_usage.png)
+![图 14  用户中心用量统计](/img/ai-gateway/user_center_usage.png)
 
 
-:::tip 实际调用验证
+:::note[实际调用验证]
 使用普通用户的 API Key 完成一次真实调用（将上述示例中的 Base URL 替换为网关地址、`sk-xxxxxxxxxxxxxxxx` 替换为真实密钥）：发起简单提问「用一句话介绍什么是 API Key」后，网关将请求判定为简单请求，路由到简单模型组内的便宜模型（响应中的 `model` 字段返回实际命中的模型名，如 `step-3.7-flash`），并可返回完整生成的回答；管理员随后可在 **调用日志** 中看到该次调用记录，请求模型显示为虚拟模型名 `1Panel-Auto`，实际模型为路由命中的模型。
 :::
 
-### 3.7 查看用量与调用日志
+### 7. 查看用量与调用日志
 
 管理员可在管理端全局观测网关运行情况。**用量统计** 按用户、供应商、客户端协议和时间范围统计请求量与 Token 分布，快速识别容量与用量趋势。
 
-![图 20  管理员用量统计](/img/ai-gateway/admin_usage_stats.png)
+![图 15  管理员用量统计](/img/ai-gateway/admin_usage_stats.png)
 
 
 **调用日志** 记录每次调用的用户、模型、供应商、状态、耗时与 Token，并可展开查看每次账号尝试的调用链路。定位单次请求时，优先复制 Request ID，再结合调用时间、用户和模型交叉筛选。
 
-![图 21  调用日志](/img/ai-gateway/call_logs.png)
+![图 16  调用日志](/img/ai-gateway/call_logs.png)
 
 
-:::tip 排障建议
+:::note[排障建议]
 出现 401 或 403 时检查密钥、用户与用户组状态及模型授权；出现 429 时检查用户组、单 API Key、网关与账号并发限制；出现 5xx 或上游不可用时，查看调用链路中的账号尝试、状态码和耗时。
 :::
 
-## 4 接入 WorkBuddy 客户端
+## 四、接入 WorkBuddy 客户端
 
 除了使用 curl 直接调用数据面接口，还可以把 1Panel AI 网关作为「自定义模型」接入 WorkBuddy 等支持 OpenAI 兼容协议的 AI 客户端，在对话中直接使用网关路由的模型。
 
-### 4.1 准备模型与 API Key
+### 1. 准备模型与 API Key
 
 先在网关侧确认要使用的模型名称，并为当前用户创建 API Key。
 
 1. 在管理端 **模型组**（或 **账号池** 的模型映射）中查看已配置的请求模型名称，例如智能路由虚拟模型 `1Panel-Auto`。
 
-![图 22  在管理端查看可用模型名称](/img/ai-gateway/view_model_names.png)
+![图 17  在管理端查看可用模型名称](/img/ai-gateway/view_model_names.png)
 
 
 2. 进入用户中心的 **API Keys** 页面，单击 **创建 API Key** 并为密钥命名。
 
-![图 23  创建 API Key](/img/ai-gateway/create_api_key.png)
+![图 18  创建 API Key](/img/ai-gateway/create_api_key.png)
 
 
 3. 在创建成功弹窗中单击 **复制**，妥善保存以 `sk-` 开头的完整密钥（仅显示一次）。
 
-![图 24  复制 API Key](/img/ai-gateway/copy_api_key.png)
+![图 19  复制 API Key](/img/ai-gateway/copy_api_key.png)
 
 
-:::tip 模型名称选择
+:::note[模型名称选择]
 若网关已启用智能路由，此处填写虚拟模型名称（如 `1Panel-Auto`），接入后可让网关自动为每个问题选择合适的模型；若只需固定使用某一模型，则填写模型组中的具体请求模型名称。
 :::
 
-### 4.2 在 WorkBuddy 中配置自定义模型
+### 2. 在 WorkBuddy 中配置自定义模型
 
 1. 打开 WorkBuddy 客户端，进入模型配置，单击 **配置自定义模型**。
 
-![图 25  在 WorkBuddy 中配置自定义模型](/img/ai-gateway/workbuddy_config_entry.png)
+![图 20  在 WorkBuddy 中配置自定义模型](/img/ai-gateway/workbuddy_config_entry.png)
 
 
 2. 提供商选择 **自定义**。
 
-![图 26  选择自定义提供商](/img/ai-gateway/custom_provider.png)
+![图 21  选择自定义提供商](/img/ai-gateway/custom_provider.png)
 
 
 3. 填写接入信息：
 
    - **接口地址**：网关的数据面地址，例如 `https://1router.1panel.cn/v1`。
    - **API Key**：上一步复制的密钥。
-   - **模型名称**：4.1 中确认的模型名称。
+   - **模型名称**：上一节中确认的模型名称。
 
-![图 27  填写模型接入配置](/img/ai-gateway/fill_provider_info.png)
+![图 22  填写模型接入配置](/img/ai-gateway/fill_provider_info.png)
 
 
 4. 单击 **保存**，选择刚配置的模型发起一次提问进行测试。
 
-![图 28  保存并测试模型](/img/ai-gateway/test_model.png)
+![图 23  保存并测试模型](/img/ai-gateway/test_model.png)
 
 
-:::tip 验证接入结果
+:::note[验证接入结果]
 测试成功后，可在网关 **调用日志** 中看到来自 WorkBuddy 的调用记录；若接入时使用的是智能路由虚拟模型，记录中的实际模型即为网关为该问题选定的模型。
 :::
 
