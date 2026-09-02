@@ -20,8 +20,10 @@ description: 1Panel AI 网关产品文档入口——统一 AI 模型接入与�
 1Panel AI 网关致力于为企业打造专属的AI统一接入与治理平台，提供从统一接入、智能路由到合规审计的全链路管控，让企业AI落地更安全、更高效、更可控。
 
 ![图 1  1Panel AI 门户](/img/index/aigateway.png)
+<div align="center">图 1  1Panel AI 门户</div>
 
 ![图 2  1Panel AI 模型广场](/img/index/aigateway-Model-Hub.png)
+<div align="center">图 2  1Panel AI 模型广场</div>
 
 ## 1Panel AI网关六大核心能力
 ### 1. 统一接入与模型代理
@@ -31,6 +33,7 @@ AI 应用客户端只需配置统一的Base URL和1Panel AI网关发放的API Ke
 企业用户可以将多个模型账号组成账号池，并且结合权重、优先级、实时负载和健康状态进行流量分配。当节点故障或账号容量达到限制时，1Panel AI网关可以自动选择其他可用资源，降低单点依赖。
 
 ![图 3  1Panel AI 网关提供统一接入、模型映射与账号池调度能力](/img/index/aigateway-unified-access.png)
+<div align="center">图 3  1Panel AI 网关提供统一接入、模型映射与账号池调度能力</div>
 
 
 ### 2. 席位管理与权限控制
@@ -41,7 +44,7 @@ AI 应用客户端只需配置统一的Base URL和1Panel AI网关发放的API Ke
 
 
 ![图 4  1Panel AI网关支持席位管理与权限控制](/img/index/aigateway-usergroup.png)
-
+<div align="center">图 4  1Panel AI网关支持席位管理与权限控制</div>
 
 ### 3. 智能路由与调用分发
 
@@ -50,8 +53,10 @@ AI 应用客户端只需配置统一的Base URL和1Panel AI网关发放的API Ke
 需要说明的是，模型选择逻辑集中在网关侧，业务代码无需分别维护路由规则。团队可以在调用质量不下降的前提下，让大量简单任务优先使用成本更合理的模型，减少高价模型的非必要消耗。
 
 ![图 5  1Panel AI网关智能路由样本管理页面](/img/index/aigateway-sample.png)
+<div align="center">图 5  1Panel AI网关智能路由样本管理页面</div>
 
 ![图 6  1Panel AI网关智能路由决策日志页面](/img/index/aigateway-decision-logo.png)
+<div align="center">图 6  1Panel AI网关智能路由决策日志页面</div>
 
 ### 4. 智能负载与并发控制
 
@@ -73,11 +78,12 @@ AI 应用客户端只需配置统一的Base URL和1Panel AI网关发放的API Ke
 安全策略在1Panel AI网关入口统一执行，不同业务应用可以遵循同一套治理标准，有效减少重复建设、内容审核的成本。
 
 ![图 7  1Panel AI网关敏感词管理页面](/img/index/aigateway-sensitive-words.png)
-
+<div align="center">图 7  1Panel AI网关敏感词管理页面</div>
 
 ### 6. 用量统计与调用洞察
 
 每一笔Token消耗都应该“有迹可循、可分析、可优化”。1Panel AI网关通过概览仪表盘、多维度分布统计、用量排行榜和全链路调用日志四大功能，帮助企业将AI资源从“黑盒消耗”转变为“精细化运营”。通过1Panel AI网关，管理员可以实时查看API请求总量、Token消耗和缓存利用率等核心数据，并且按照模型供应商、模型版本、用户组和应用场景拆解资源消耗情况。用量排行榜可以快速识别高频用户和重度消耗账号，为部门核算和配额调整提供依据。同时，调用日志可以精准记录Request ID、上下游模型参数和响应耗时，支持管理员从单条日志继续查看完整调用过程，快速排查异常请求、上游故障和Token损耗原因。
 
 ![图 8  1Panel AI网关敏感词管理页面](/img/index/aigateway-usage-statistics.png)
+<div align="center">图 8  1Panel AI网关敏感词管理页面</div>
 
