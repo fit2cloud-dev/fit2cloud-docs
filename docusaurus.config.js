@@ -127,16 +127,6 @@ const config = {
         sidebarPath: 'maxkb-docs/sidebars.js',
       },
     ],
-      // AI 分类：AI 网关(独立产品文档)
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'ai-gateway',
-        path: 'ai-gateway-docs',
-        routeBasePath: 'ai-gateway',
-        sidebarPath: 'ai-gateway-docs/sidebars.js',
-      },
-    ],
     // AI 分类：AI 网关(独立产品文档)
     [
       '@docusaurus/plugin-content-docs',
