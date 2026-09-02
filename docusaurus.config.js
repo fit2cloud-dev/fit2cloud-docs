@@ -184,8 +184,7 @@ const config = {
             label: '产品文档',
             position: 'left',
             items: [
-              {label: '1Panel · AI 网关', to: '/1panel/user-manual/ai/gateway'},
-              {label: 'AI 网关 · 独立部署版', to: '/ai-gateway/'},
+              {label: '1Panel · AI 网关', to: '/ai-gateway/'},
               {label: '1Panel · 运维管理面板', to: '/1panel/'},
               {label: 'JumpServer · 运维安全审计', href: 'https://docs.jumpserver.org/zh/v4/'},
               {label: 'DataEase · BI 数据分析', href: 'https://dataease.cn/docs/v2/'},
@@ -245,8 +244,7 @@ const config = {
             // target=_blank + rel=noopener + 外链小图标(LinkItem 里 isInternalUrl 判断)。
             title: '产品文档',
             items: [
-              {label: '1Panel · AI 网关', to: '/1panel/user-manual/ai/gateway'},
-              {label: 'AI 网关 · 独立部署版', to: '/ai-gateway/'},
+              {label: '1Panel · AI 网关', to: '/ai-gateway/'},
               {label: '1Panel · 运维管理面板', to: '/1panel/'},
               {label: 'JumpServer · 运维安全审计', href: 'https://docs.jumpserver.org/zh/v4/'},
               {label: 'DataEase · BI 数据分析', href: 'https://dataease.cn/docs/v2/'},
