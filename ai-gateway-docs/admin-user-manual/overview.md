@@ -11,7 +11,7 @@ description: 介绍 1Panel AI 网关概览页的功能模块，包括网关状�
 
 概览页主要包含以下模块：
 
-<div style={{textAlign:"center", color:"#5c6370", fontSize:"14px", fontWeight:"600", margin:"16px 0 8px"}}>表 1  概览页模块功能说明表/div>
+<div style={{textAlign:"center", color:"#5c6370", fontSize:"14px", fontWeight:"600", margin:"16px 0 8px"}}>表 1  概览页模块功能说明表</div>
 
 | 模块 | 功能说明 |
 |---|---|
