@@ -1,7 +1,7 @@
 ---
 title: 用量统计
 description: 介绍 1Panel AI 网关（Gateway）用量统计页的作用、筛选项、总览指标与用量分布表格。
-slug: /user_manual/ai_gateway/usage_statistics
+slug: /admin/ai_gateway/usage_statistics
 ---
 
 ## 1 功能说明
