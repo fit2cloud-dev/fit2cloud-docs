@@ -12,11 +12,11 @@ slug: /user_manual/ai_gateway/settings
 
 基础设置包含接入地址、日志保留天数与协议转换开关。
 
-![图 1  基础设置](/img/settings/image1-Basic-Settings.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/settings/image1-Basic-Settings.png" alt="基础设置"/>
 
-<div align="center">图 1  基础设置</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  基础设置</div>
 
-**表 1  基础设置参数**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  基础设置参数</div>
 
 | 参数 | 说明 |
 |---|---|
@@ -24,7 +24,7 @@ slug: /user_manual/ai_gateway/settings
 | 日志保留天数 | 调用元数据在到期后分批清理，可设置 1 至 365 天。 |
 | 协议转换 | 开启后，可在无可用原生账号时使用已支持的 Chat Completions、Responses 与 Anthropic Messages 直接转换，原生协议始终优先。 |
 
-:::caution 协议转换并非无损
+:::caution[协议转换并非无损]
 协议转换并非无损。协议专属字段、工具调用、思考内容或多模态能力可能无法安全转换，并导致请求在调用上游前失败。
 :::
 
@@ -32,11 +32,11 @@ slug: /user_manual/ai_gateway/settings
 
 性能设置用于控制网关的并发与超时行为。
 
-![图 2  性能设置](/img/settings/image2-Performance-Settings.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/settings/image2-Performance-Settings.png" alt="性能设置"/>
 
-<div align="center">图 2  性能设置</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  性能设置</div>
 
-**表 2  性能设置参数**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  性能设置参数</div>
 
 | 参数 | 说明 |
 |---|---|
@@ -51,11 +51,11 @@ slug: /user_manual/ai_gateway/settings
 
 向量服务供智能路由与内容合规共用，从账号池选择一个向量账号及其真实模型。
 
-![图 3  向量服务](/img/settings/image3-Vector-Service.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/settings/image3-Vector-Service.png" alt="向量服务"/>
 
-<div align="center">图 3  向量服务</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  向量服务</div>
 
-**表 3  向量服务参数**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  向量服务参数</div>
 
 | 参数 | 说明 |
 |---|---|
@@ -67,11 +67,11 @@ slug: /user_manual/ai_gateway/settings
 
 智能路由根据请求复杂度，将请求分发到不同模型组。该标签依赖向量服务提供语义能力。
 
-![图 4  智能路由设置](/img/settings/image4-Smart-Routing-Settings.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/settings/image4-Smart-Routing-Settings.png" alt="智能路由设置"/>
 
-<div align="center">图 4  智能路由设置</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  智能路由设置</div>
 
-**表 4  智能路由设置参数**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 4  智能路由设置参数</div>
 
 | 参数 | 说明 |
 |---|---|
@@ -87,11 +87,11 @@ slug: /user_manual/ai_gateway/settings
 
 内容合规标签用于统一配置内容合规开关和语义检测阈值。
 
-![图 5  内容合规设置](/img/settings/image5-Content-Compliance-Settings.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/settings/image5-Content-Compliance-Settings.png" alt="内容合规设置"/>
 
-<div align="center">图 5  内容合规设置</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  内容合规设置</div>
 
-**表 5  内容合规设置参数**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 5  内容合规设置参数</div>
 
 | 参数 | 说明 |
 |---|---|
@@ -102,11 +102,11 @@ slug: /user_manual/ai_gateway/settings
 
 Elasticsearch 标签用于将请求与响应正文写入 Elasticsearch，便于审计和问题排查。
 
-![图 6  Elasticsearch 设置](/img/settings/image6-Elasticsearch-Settings.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/settings/image6-Elasticsearch-Settings.png" alt="Elasticsearch 设置"/>
 
-<div align="center">图 6  Elasticsearch 设置</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  Elasticsearch 设置</div>
 
-**表 6  Elasticsearch 设置参数**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 6  Elasticsearch 设置参数</div>
 
 | 参数 | 说明 |
 |---|---|
@@ -121,6 +121,6 @@ Elasticsearch 标签用于将请求与响应正文写入 Elasticsearch，便于�
 | 最近写入成功 | 最近一次成功写入的时间。 |
 | 连续失败开始时间 | 连续写入失败的起始时间。 |
 
-:::note 未配置状态
+:::note[未配置状态]
 Elasticsearch 未配置时，页面显示「未配置」，各写入统计项显示为 0 或空，此时不采集请求与响应正文。
 :::

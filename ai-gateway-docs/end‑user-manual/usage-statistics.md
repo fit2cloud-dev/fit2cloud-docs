@@ -8,15 +8,15 @@ slug: /user_manual/ai_gateway/usage_statistics
 
 用量统计页汇总展示网关在指定时间范围内的模型调用总量与分布，帮助管理员掌握各供应商、模型、用户的使用情况。页面由筛选区、总览卡片和分布表格组成。
 
-![图 1  用量统计页](/img/usage-statistics/image1-Usage-Statistics.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/usage-statistics/image1-Usage-Statistics.png" alt="用量统计页"/>
 
-<div align="center">图 1  用量统计页</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  用量统计页</div>
 
 ## 2 筛选项
 
 页面顶部提供以下筛选项，用于切换统计范围。
 
-**表 1  用量统计筛选项**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  用量统计筛选项</div>
 
 | 筛选项 | 说明 |
 |---|---|
@@ -30,7 +30,7 @@ slug: /user_manual/ai_gateway/usage_statistics
 
 筛选区下方以卡片形式展示所选范围内的核心指标。
 
-**表 2  用量统计总览指标**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  用量统计总览指标</div>
 
 | 指标 | 说明 |
 |---|---|
@@ -44,7 +44,7 @@ slug: /user_manual/ai_gateway/usage_statistics
 
 总览卡片下方按多个维度展示用量分布，各表格列包含「请求量」「总 Token」「缓存 Token」。
 
-**表 3  用量统计分布维度**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  用量统计分布维度</div>
 
 | 分布维度 | 说明 |
 |---|---|
@@ -55,6 +55,6 @@ slug: /user_manual/ai_gateway/usage_statistics
 | 按用户组分布 | 统计各用户组的用量。 |
 | 按用户分布 | 统计各用户的用量。 |
 
-:::tip 排查用量异常
+:::tip[排查用量异常]
 当某维度出现「未关联」「未知」等条目时，通常表示对应请求未能关联到供应商或账号。可结合调用日志进一步定位来源。
 :::

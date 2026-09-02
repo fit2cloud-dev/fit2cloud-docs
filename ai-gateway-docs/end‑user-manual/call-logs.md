@@ -8,15 +8,15 @@ slug: /user_manual/ai_gateway/call_logs
 
 调用日志页以列表形式逐条展示网关的模型调用记录，用于追踪单次调用、排查错误与统计耗时。列表默认按调用时间倒序排列，支持分页浏览。
 
-![图 1  调用日志列表](/img/call-logs/image1-Call-Logs.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/call-logs/image1-Call-Logs.png" alt="调用日志列表"/>
 
-<div align="center">图 1  调用日志列表</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  调用日志列表</div>
 
 ## 2 筛选项
 
 页面顶部提供筛选与搜索能力。
 
-**表 1  调用日志筛选项**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  调用日志筛选项</div>
 
 | 筛选项 | 说明 |
 |---|---|
@@ -30,7 +30,7 @@ slug: /user_manual/ai_gateway/call_logs
 
 列表每行对应一次调用记录，主要字段说明如下。
 
-**表 2  调用日志列表字段**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  调用日志列表字段</div>
 
 | 字段 | 说明 |
 |---|---|
@@ -47,7 +47,7 @@ slug: /user_manual/ai_gateway/call_logs
 | 调用时间 | 本次调用发生的时间。 |
 | 操作 | 单击 **查看** 打开调用详情。 |
 
-:::note 数据为空的字段
+:::note[数据为空的字段]
 部分调用（如上游返回异常）可能无法采集到 Token 用量，对应字段显示「未知」。
 :::
 
@@ -55,13 +55,13 @@ slug: /user_manual/ai_gateway/call_logs
 
 在目标日志行的 **操作** 列单击 **查看**，右侧弹出调用详情抽屉，展示本次调用的完整信息。
 
-![图 2  调用日志详情](/img/call-logs/image2-Call-Log-Details.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/call-logs/image2-Call-Log-Details.png" alt="调用日志详情"/>
 
-<div align="center">图 2  调用日志详情</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  调用日志详情</div>
 
 详情抽屉包含以下分组。
 
-**表 3  调用日志详情分组**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  调用日志详情分组</div>
 
 | 分组 | 主要内容 |
 |---|---|
@@ -71,6 +71,6 @@ slug: /user_manual/ai_gateway/call_logs
 | 状态 | 结果、上游状态码、总耗时、首字节耗时、排队耗时、上游累计耗时、错误码。 |
 | 调用链路 | 各次尝试的序号、状态码、上游账号、上游协议与耗时。 |
 
-:::tip 排查上游失败
+:::tip[排查上游失败]
 当「结果」为「上游错误」时，可在「调用链路」中查看每次尝试的上游账号与状态码，并在详情右上角单击 **查看正文** 核对请求内容。
 :::
