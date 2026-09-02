@@ -35,7 +35,7 @@ description: 介绍 1Panel AI 网关概览页的功能模块，包括网关状�
 2. 输入用户名和密码，单击**登录**；
 3. 登录成功后默认进入**概览**页面。
 
-<img src="/img/overview/image1_Overview_Full_Page.png" alt="概览页整体布局" style={{display:"block", margin:"16px auto", maxWidth:"85%"}} />
+<img style={{display:"block", margin:"16px auto", maxWidth:"100%"}} src="/img/overview/image1_Overview_Full_Page.png" alt="概览页整体布局"/>
 
 <div style={{textAlign:"center", color:"#8a8f99", fontSize:"14px", margin:"8px 0 24px"}}>图 1  概览页整体布局</div>
 
@@ -48,7 +48,7 @@ description: 介绍 1Panel AI 网关概览页的功能模块，包括网关状�
 
 网关状态模块以卡片形式展示网关当前的实时运行指标，包括当前活跃用户、当前流式请求、当前网关并发和当前等待队列。
 
-<img src="/img/overview/image2_Gateway_Status_Module.png" alt="网关状态模块" style={{display:"block", margin:"16px auto", maxWidth:"85%"}} />
+<img style={{display:"block", margin:"16px auto", maxWidth:"100%"}} src="/img/overview/image2_Gateway_Status_Module.png" alt="网关状态模块"/>
 
 <div style={{textAlign:"center", color:"#8a8f99", fontSize:"14px", margin:"8px 0 24px"}}>图 2  网关状态模块</div>
 
@@ -64,7 +64,7 @@ description: 介绍 1Panel AI 网关概览页的功能模块，包括网关状�
 
 模型账号并发模块以列表形式展示各上游模型账号的并发使用情况，帮助管理员掌握各模型账号的负载与健康状态。
 
-<img src="/img/overview/image3_Model_Account_Concurrency_Module.png" alt="模型账号并发模块" style={{display:"block", margin:"16px auto", maxWidth:"85%"}} />
+<img style={{display:"block", margin:"16px auto", maxWidth:"100%"}} src="/img/overview/image3_Model_Account_Concurrency_Module.png" alt="模型账号并发模块"/>
 
 <div style={{textAlign:"center", color:"#8a8f99", fontSize:"14px", margin:"8px 0 24px"}}>图 3  模型账号并发模块</div>
 
@@ -99,7 +99,7 @@ description: 介绍 1Panel AI 网关概览页的功能模块，包括网关状�
 
 用户组并发模块展示各用户组的并发使用情况与利用率，帮助管理员掌握不同用户组的负载状况。
 
-<img src="/img/overview/image4_User_Group_Concurrency_Module.png" alt="用户组并发模块" style={{display:"block", margin:"16px auto", maxWidth:"85%"}} />
+<img style={{display:"block", margin:"16px auto", maxWidth:"100%"}} src="/img/overview/image4_User_Group_Concurrency_Module.png" alt="用户组并发模块"/>
 
 <div style={{textAlign:"center", color:"#8a8f99", fontSize:"14px", margin:"8px 0 24px"}}>图 4  用户组并发模块</div>
 
@@ -114,7 +114,7 @@ description: 介绍 1Panel AI 网关概览页的功能模块，包括网关状�
 
 用量统计模块展示网关上 Token 的总体使用情况，支持按不同时间范围查看，并提供总 Token 的趋势图表。
 
-<img src="/img/overview/image5_Usage_Statistics_Module.png" alt="用量统计模块" style={{display:"block", margin:"16px auto", maxWidth:"85%"}} />
+<img style={{display:"block", margin:"16px auto", maxWidth:"100%"}} src="/img/overview/image5_Usage_Statistics_Module.png" alt="用量统计模块"/>
 
 <div style={{textAlign:"center", color:"#8a8f99", fontSize:"14px", margin:"8px 0 24px"}}>图 5  用量统计模块</div>
 
@@ -143,7 +143,7 @@ description: 介绍 1Panel AI 网关概览页的功能模块，包括网关状�
 
 请求统计模块展示网关处理请求的总体情况，包括请求总数、成功/失败数量、失败率、活跃用户数与 API Key 数量。
 
-<img src="/img/overview/image6_Request_Statistics_Module.png" alt="请求统计模块" style={{display:"block", margin:"16px auto", maxWidth:"85%"}} />
+<img style={{display:"block", margin:"16px auto", maxWidth:"100%"}} src="/img/overview/image6_Request_Statistics_Module.png" alt="请求统计模块"/>
 
 <div style={{textAlign:"center", color:"#8a8f99", fontSize:"14px", margin:"8px 0 24px"}}>图 6  请求统计模块</div>
 
