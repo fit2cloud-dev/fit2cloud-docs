@@ -53,3 +53,39 @@
 .navbar__title {
   display: none;
 }
+
+/* ===== navbar logo 整体缩小到原来的一半 =====
+   .navbar__logo 是 Docusaurus 包在 <img> 外层的 div(theme/Logo 里 imageClassName 传给它的),
+   不是 <img> 本身; Infima 给它 height: 2rem, 内层 img 用 .navbar__logo img { height: 100% } 跟随。
+   所以只改这个 div 的高度, 内层图会按比例自动缩放 —— 2rem -> 1rem,
+   1480x101(14.65:1)的横幅 logo 宽度从 ~469px 收到 ~234px。
+   注意: ≤996px 的移动端规则里会把 height 改回 auto 并用 max-width 锁宽, 那条在媒体查询里、
+   优先级更高, 移动端不受这里影响。 */
+.navbar__logo {
+  height: 1rem;
+}
+
+/* ===== Logo 移动端适配 =====
+   Logo 是 1480x101(比例 ~14.65:1)的宽幅横幅, Infima 默认
+   .navbar__logo { height: 2rem } -> 桌面宽度 ~469px 没问题,
+   但到 ≤996px 移动端会超出可视区, 把汉堡按钮挤出 navbar。
+   这里: 桌面已由上一条规则缩到 1rem(约 234px 宽), 移动端再按 max-width 锁宽、
+   高度按比例自动(把上面那条 height: 1rem 改回 auto), 避免被固定高度拉变形,
+   同时把 .navbar__brand 改回 0 1 auto, 避免它用 1 1 auto 抢走右侧空间。 */
+@media (max-width: 996px) {
+  .navbar__brand {
+    flex: 0 1 auto;
+    margin-right: 0.5rem;
+  }
+  .navbar__logo {
+    width: auto;
+    height: auto;        /* 高度按宽高比 14.65:1 自动, 不被 2rem 拉变形 */
+    max-width: 180px;    /* 高度自动算下来约 12px, 文字仍可辨 */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__logo {
+    max-width: 140px;    /* 小屏再压一档, 高度约 9.5px, 仍能识别 */
+  }
+}

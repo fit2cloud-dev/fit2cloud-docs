@@ -1,8 +1,11 @@
-/* 首页样式：还原 fit2cloud 主页观感 = 浅蓝→白柔和渐变 hero + 深色文字, 文档页保持白底 */
+/* 首页样式：还原 fit2cloud 主页观感 = 浅蓝→白柔和渐变 hero + 深色文字, 文档页保持白底。
+   首页在 light/dark 主题下保持一致的浅色视觉, 不跟随站点主题切换。 */
 .portalPage {
   /* 浅蓝→淡蓝→白 柔和渐变(同 fit2cloud 浅蓝体系) */
   background: linear-gradient(165deg, #eaf1ff 0%, #f7fbff 45%, #ffffff 100%);
   min-height: 100vh;
+  /* 显式深色文字: dark 主题下 body 是浅色, 不设会继承下来导致整页文字变浅 */
+  color: #1a1a2e;
 }
 
 .portalHeader {
@@ -14,24 +17,77 @@
 .portalTitle {
   font-size: 3rem; /* fit2cloud h1 48px 风格 */
   font-weight: 600;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.6rem; /* 原来是 0.8rem，靠副标题的 1.4rem margin-bottom 撑出和搜索框的距离；副标题删了直接把间距挪到 title 上 */
   color: #1a1a2e; /* 浅蓝底上深色标题 */
 }
 
-.portalSubtitle {
-  font-size: 1.15rem;
-  color: rgba(26, 26, 46, 0.72);
-  margin-bottom: 1.4rem;
+/* ===== 首页 hero 里的真实搜索框 =====
+   复用 navbar 的 @theme/SearchBar, 但要把插件/Infima 为 navbar 写的尺寸全部覆盖掉:
+   - Infima:  .navbar__search-input 固定 width: 12.5rem, ≤996px 时 9rem
+   - 插件:    .searchBarContainer { margin-left: 16px }
+              ≤576px 时未聚焦的 .navbar__search-input 会被压成 2rem(折叠成放大镜)
+   宽度取 35rem = 560px, 与插件下拉的 --search-local-modal-width 默认值一致,
+   这样下拉正好落在搜索框正下方(插件用 right:0 !important 右对齐)。 */
+.searchBox {
+  display: flex;
+  justify-content: center;
+  /* min(): 大屏锁 560px(与下拉同宽), 小屏自动留出左右各 1rem gutter 防止顶到屏幕边缘。
+     不能直接写 padding —— .portalHeader 没有左右内边距, 且 Infima 全局 box-sizing:border-box,
+     加 padding 会让内容宽度变成 528px, 反而和 560px 的下拉错开 32px。 */
+  max-width: min(35rem, 100% - 2rem); /* 不套 calc(): min() 内部本就允许裸运算, 避免 postcss-calc 处理嵌套 calc 的边界情况 */
+  margin: 0 auto;
 }
 
-.searchHint {
-  font-size: 0.95rem;
-  color: #0c7be0;
-  background: rgba(12, 123, 224, 0.08);
-  display: inline-block;
-  padding: 0.45rem 1.2rem;
-  border-radius: 999px;
-  font-weight: 500;
+.searchBox :global(.navbar__search) {
+  display: block;
+  width: 100%;
+  margin-left: 0;
+}
+
+/* 关键修复: autoComplete.js 在第一次 hover/focus 后会把 input 包进
+   <span class="aa-Form" style="display:inline-block; position:relative">
+   (见 node_modules/@easyops-cn/autocomplete.js/src/autocomplete/html.js:4
+   wrapper: '<span class="%ROOT%"></span>' + css.js:wrapper 对象)。
+   inline-block 是 shrink-to-fit, input 的 width:100% 又相对 wrapper 算, 死循环。
+   hover 触发回流时 wrapper 被插入 DOM, 浏览器重新解析尺寸链, 循环被打破,
+   wrapper 退回 shrink-to-fit, input 被压到 intrinsic size(≈ 200px),
+   放大镜是 position:absolute; left:1.1rem 相对 .navbar__search, 永远在容器左边,
+   就脱到输入框外了 —— 必须在 wrapper 上把它拍死成 block + 100%。
+   选 > span 而非 > div 或 .aa-Form: wrapper 标签是 <span>(html.js 写死),
+   不依赖 CSS Modules 哈希, 升级抗性最强。 */
+.searchBox :global(.navbar__search) > span {
+  display: block !important;
+  width: 100% !important;
+}
+
+.searchBox :global(.navbar__search-input) {
+  width: 100% !important; /* 同时压过 Infima 的固定宽度和插件 ≤576px 的 2rem 折叠 */
+  height: 3rem;
+  padding: 0 2.75rem; /* 右侧留白给 Ctrl/Cmd+K 提示与清空按钮 */
+  font-size: 1rem;
+  color: #1a1a2e;
+  background-color: #ffffff;
+  border: 1px solid rgba(12, 123, 224, 0.25);
+  border-radius: 2rem;
+  box-shadow: 0 6px 20px rgba(12, 123, 224, 0.1);
+}
+
+.searchBox :global(.navbar__search-input)::placeholder {
+  color: rgba(26, 26, 46, 0.45);
+}
+
+/* 放大镜图标: 跟着 3rem 高的输入框重新定位(插件默认按 2rem 高算, left:0.75rem / 1rem)。
+   用 `> svg` 而非 `> div > svg`: 前者不依赖 searchBox 与 .navbar__search 之间的层级, 更抗升级。
+   只匹配一个 svg —— 插件里的 LoadingRing 渲染的是 <div> 不是 <svg>, 不会被误伤。 */
+.searchBox :global(.navbar__search) > svg {
+  left: 1.1rem;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+/* 聚焦描边: 插件给的是 outline:2px solid primary, 贴着 2rem 圆角会显重, 往外推 2px 更透气 */
+.searchBox :global(.navbar__search-input):focus {
+  outline-offset: 2px;
 }
 
 .categorySection {
@@ -53,39 +109,69 @@
   gap: 1rem;
 }
 
+/* 产品卡片: 纵排居中布局, logo 在上 + 文字列在下(原版是横排 grid, 用户希望 logo 突出在视觉焦点) */
 .productCard {
-  display: block;
-  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
   background: #ffffff;
   border: 1px solid rgba(12, 123, 224, 0.1);
   border-radius: 12px;
   text-decoration: none;
-  color: inherit;
+  /* 显式深色: 不能 inherit —— dark 主题下 body 文字是浅色, 卡片白底配浅色文字会看不清 */
+  color: #1a1a2e;
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  min-height: 200px; /* 纵排布局卡片内容少, 设最小高度让所有卡片高度一致(去掉产品名后下调 20px) */
 }
 
 .productCard:hover {
   box-shadow: 0 8px 24px rgba(12, 123, 224, 0.12);
   border-color: rgba(12, 123, 224, 0.3);
   text-decoration: none;
-  color: inherit;
+  color: #1a1a2e;
   transform: translateY(-2px);
 }
 
-.productName {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  color: #0c7be0;
+/* logo 区: 居中显示, 加大高度(纵排布局下 logo 是视觉焦点)
+   用 :global(picture) 因为 picture 标签没被加 class, CSS Modules 哈希不到。
+   max-height 锁 60px + width auto 处理各 logo 宽高比不一的情况(横幅型 logo 不会变形) */
+.productCard :global(picture),
+.productLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin-bottom: 1rem;
 }
 
+.productCard :global(picture) img,
+.productLogo {
+  max-height: 60px;
+  max-width: 90px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.productBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 去掉产品名后, 描述成为卡片里唯一的正文, 字号/色阶各提一档当主文案用。
+   用定值 #374151 而不是 var(--ifm-color-emphasis-700): dark 主题下后者会变浅色,
+   白底卡片配浅色文字看不清。首页内容在 light/dark 下保持一致的深色文字。 */
 .productDesc {
-  font-size: 0.9rem;
-  color: var(--ifm-color-emphasis-600);
-  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 0.9rem;
+  /* 不截断: 居中布局下, 短描述更和谐; 卡片 min-height 撑住高度 */
 }
 
-/* 进入按钮：fit2cloud f2c-btn-gradient 蓝渐变(保留官方渐变按钮) */
+/* 进入按钮: 保留 fit2cloud 官方蓝渐变 */
 .productEnter {
   display: inline-block;
   font-size: 0.85rem;

@@ -15,8 +15,56 @@
     "message": "Product Docs",
     "description": "Navbar item with label 产品文档"
   },
-  "item.label.帮助中心": {
-    "message": "Help Center",
-    "description": "Navbar item with label 帮助中心"
+  "item.label.开源产品": {
+    "message": "Open Source Products",
+    "description": "Navbar item with label 开源产品"
+  },
+  "item.label.官网": {
+    "message": "Website",
+    "description": "Navbar item with label 官网"
+  },
+  "item.label.论坛": {
+    "message": "Forum",
+    "description": "Navbar item with label 论坛"
+  },
+  "item.label.培训认证": {
+    "message": "Training & Certification",
+    "description": "Navbar item with label 培训认证"
+  },
+  "item.label.1Panel · AI 网关": {
+    "message": "1Panel · AI Gateway",
+    "description": "Navbar item with label 1Panel · AI 网关"
+  },
+  "item.label.1Panel · 运维管理面板": {
+    "message": "1Panel · Linux Panel",
+    "description": "Navbar item with label 1Panel · 运维管理面板"
+  },
+  "item.label.JumpServer · 运维安全审计": {
+    "message": "JumpServer · Bastion Host",
+    "description": "Navbar item with label JumpServer · 运维安全审计"
+  },
+  "item.label.DataEase · BI 数据分析": {
+    "message": "DataEase · BI Analytics",
+    "description": "Navbar item with label DataEase · BI 数据分析"
+  },
+  "item.label.MaxKB · 企业级智能体平台": {
+    "message": "MaxKB · AI Agent Platform",
+    "description": "Navbar item with label MaxKB · 企业级智能体平台"
+  },
+  "item.label.SQLBot · 智能问数": {
+    "message": "SQLBot · Text-to-SQL",
+    "description": "Navbar item with label SQLBot · 智能问数"
+  },
+  "item.label.Cordys CRM · AI CRM": {
+    "message": "Cordys CRM · AI CRM",
+    "description": "Navbar item with label Cordys CRM · AI CRM"
+  },
+  "item.label.MeterSphere · 持续测试": {
+    "message": "MeterSphere · Continuous Testing",
+    "description": "Navbar item with label MeterSphere · 持续测试"
+  },
+  "item.label.Halo · 开源建站": {
+    "message": "Halo · Website Builder",
+    "description": "Navbar item with label Halo · 开源建站"
   }
 }

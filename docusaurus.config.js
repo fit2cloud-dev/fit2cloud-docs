@@ -166,20 +166,52 @@ const config = {
         items: [
           {to: '/', label: '首页', position: 'left'},
           {
+            // 与首页 PRODUCT_GROUPS(src/pages/index.js)、footer 的「产品文档」列三方保持一致。
+            // href 外部链接由 NavbarItem/NavbarNavLink 自动加 target=_blank + 外链图标
+            // (isExternalLink = label && href && !isInternalUrl(href))。
             type: 'dropdown',
             label: '产品文档',
             position: 'left',
             items: [
-              {to: '/1panel/', label: '1Panel · 运维管理面板'},
-              {to: '/jumpserver/', label: 'JumpServer · 运维安全审计'},
-              {to: '/dataease/', label: 'DataEase · BI 数据分析'},
-              {to: '/maxkb/', label: 'MaxKB · AI 知识库'},
+              {label: '1Panel · AI 网关', to: '/1panel/user-manual/ai/gateway'},
+              {label: '1Panel · 运维管理面板', to: '/1panel/'},
+              {label: 'JumpServer · 运维安全审计', href: 'https://docs.jumpserver.org/zh/v4/'},
+              {label: 'DataEase · BI 数据分析', href: 'https://dataease.cn/docs/v2/'},
+              {label: 'MaxKB · 企业级智能体平台', href: 'https://maxkb.cn/docs/v2/'},
+              {label: 'SQLBot · 智能问数', href: 'https://sqlbot.org/docs/v1/'},
+              {label: 'Cordys CRM · AI CRM', href: 'https://cordys.cn/docs/'},
+              {label: 'MeterSphere · 持续测试', href: 'https://metersphere.io/docs/v3.x/'},
+              {label: 'Halo · 开源建站', href: 'https://docs.halo.run/'},
+            ],
+          },
+          {
+            // 开源产品: 与「产品文档」同源的 8 个产品, 但链接指向各产品**官网**(不是文档站)。
+            // 1Panel AI 网关不单列 —— 它是 1Panel 的功能模块, 官网同 1panel.cn。
+            // href 外部链接由 NavbarItem/NavbarNavLink 自动加 target=_blank + 外链图标。
+            type: 'dropdown',
+            label: '开源产品',
+            position: 'left',
+            items: [
+              {label: '1Panel', href: 'https://1panel.cn/'},
+              {label: 'MaxKB', href: 'https://maxkb.cn/'},
+              {label: 'JumpServer', href: 'https://www.jumpserver.org/'},
+              {label: 'DataEase', href: 'https://dataease.cn/'},
+              {label: 'SQLBot', href: 'https://sqlbot.org/'},
+              {label: 'Cordys CRM', href: 'https://cordys.cn/'},
+              {label: 'MeterSphere', href: 'https://metersphere.io/'},
+              {label: 'Halo', href: 'https://www.halo.run/'},
             ],
           },
           {
             type: 'custom-VersionSwitcher',
             position: 'right',
           },
+          // 官网 / 论坛 / 培训认证: 放在右侧、中英文切换(localeDropdown)之前。
+          // 外部链接一律用 href(不用 to), NavbarNavLink 会自动加
+          // target="_blank" + rel="noopener noreferrer" + 外链小图标
+          {href: 'https://www.fit2cloud.com/', label: '官网', position: 'right'},
+          {href: 'https://bbs.fit2cloud.com/', label: '论坛', position: 'right'},
+          {href: 'https://edu.fit2cloud.com/', label: '培训认证', position: 'right'},
           {
             type: 'localeDropdown',
             position: 'right',
@@ -194,22 +226,36 @@ const config = {
         style: 'dark',
         links: [
           {
+            // 与首页 PRODUCT_GROUPS(src/pages/index.js)保持一致:
+            // 站内已有真实文档的用 to; 只有占位页的一律 href 到各产品官方文档站,
+            // 避免跳到 /jumpserver/ 这类仅 1 篇 index.md 的空白页。
+            // href 外部链接由 theme-classic 的 Footer/LinkItem 自动渲染
+            // target=_blank + rel=noopener + 外链小图标(LinkItem 里 isInternalUrl 判断)。
             title: '产品文档',
             items: [
+              {label: '1Panel · AI 网关', to: '/1panel/user-manual/ai/gateway'},
               {label: '1Panel · 运维管理面板', to: '/1panel/'},
-              {label: 'JumpServer · 运维安全审计', to: '/jumpserver/'},
-              {label: 'DataEase · BI 数据分析', to: '/dataease/'},
-              {label: 'MaxKB · AI 知识库', to: '/maxkb/'},
+              {label: 'JumpServer · 运维安全审计', href: 'https://docs.jumpserver.org/zh/v4/'},
+              {label: 'DataEase · BI 数据分析', href: 'https://dataease.cn/docs/v2/'},
+              {label: 'MaxKB · 企业级智能体平台', href: 'https://maxkb.cn/docs/v2/'},
+              {label: 'SQLBot · 智能问数', href: 'https://sqlbot.org/docs/v1/'},
+              {label: 'Cordys CRM · AI CRM', href: 'https://cordys.cn/docs/'},
+              {label: 'MeterSphere · 持续测试', href: 'https://metersphere.io/docs/v3.x/'},
+              {label: 'Halo · 开源建站', href: 'https://docs.halo.run/'},
             ],
           },
           {
             title: '更多',
             items: [
-              {label: '首页', to: '/'},
+              {label: '文档中心首页', to: '/'},
+              {label: '飞致云官网', href: 'https://www.fit2cloud.com/'},
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Demo, Inc. 统一文档门户 demo`,
+        // 注意: copyright 是 dangerouslySetInnerHTML 直接渲染的(见 theme-classic
+        // Footer/Copyright), 不走 i18n —— i18n/*/footer.json 里的 copyright 条目是
+        // write-translations 的历史残留, 改这里才生效。
+        copyright: `Copyright © ${new Date().getFullYear()} 飞致云 FIT2CLOUD`,
       },
       prism: {
         theme: prismThemes.github,

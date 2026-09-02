@@ -7,12 +7,48 @@
     "message": "More",
     "description": "The title of the footer links column with title=更多 in the footer"
   },
-  "link.item.label.帮助中心": {
-    "message": "Help Center",
-    "description": "The label of footer link with label=帮助中心 linking to /docs/intro"
+  "link.item.label.1Panel · AI 网关": {
+    "message": "1Panel · AI Gateway",
+    "description": "The label of footer link with label=1Panel · AI 网关 linking to /1panel/user-manual/ai/gateway"
   },
-  "copyright": {
-    "message": "Copyright © 2026 Demo, Inc. Unified Docs Portal demo",
-    "description": "The footer copyright"
+  "link.item.label.1Panel · 运维管理面板": {
+    "message": "1Panel · Linux Panel",
+    "description": "The label of footer link with label=1Panel · 运维管理面板 linking to /1panel/"
+  },
+  "link.item.label.JumpServer · 运维安全审计": {
+    "message": "JumpServer · Bastion Host",
+    "description": "The label of footer link with label=JumpServer · 运维安全审计 linking to https://docs.jumpserver.org/zh/v4/"
+  },
+  "link.item.label.DataEase · BI 数据分析": {
+    "message": "DataEase · BI Analytics",
+    "description": "The label of footer link with label=DataEase · BI 数据分析 linking to https://dataease.cn/docs/v2/"
+  },
+  "link.item.label.MaxKB · 企业级智能体平台": {
+    "message": "MaxKB · AI Agent Platform",
+    "description": "The label of footer link with label=MaxKB · 企业级智能体平台 linking to https://maxkb.cn/docs/v2/"
+  },
+  "link.item.label.SQLBot · 智能问数": {
+    "message": "SQLBot · Text-to-SQL",
+    "description": "The label of footer link with label=SQLBot · 智能问数 linking to https://sqlbot.org/docs/v1/"
+  },
+  "link.item.label.Cordys CRM · AI CRM": {
+    "message": "Cordys CRM · AI CRM",
+    "description": "The label of footer link with label=Cordys CRM · AI CRM linking to https://cordys.cn/docs/"
+  },
+  "link.item.label.MeterSphere · 持续测试": {
+    "message": "MeterSphere · Continuous Testing",
+    "description": "The label of footer link with label=MeterSphere · 持续测试 linking to https://metersphere.io/docs/v3.x/"
+  },
+  "link.item.label.Halo · 开源建站": {
+    "message": "Halo · Website Builder",
+    "description": "The label of footer link with label=Halo · 开源建站 linking to https://docs.halo.run/"
+  },
+  "link.item.label.文档中心首页": {
+    "message": "Docs Home",
+    "description": "The label of footer link with label=文档中心首页 linking to /"
+  },
+  "link.item.label.飞致云官网": {
+    "message": "FIT2CLOUD Official Site",
+    "description": "The label of footer link with label=飞致云官网 linking to https://www.fit2cloud.com/"
   }
 }
