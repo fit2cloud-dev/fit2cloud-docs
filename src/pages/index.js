@@ -24,7 +24,7 @@ const PRODUCT_GROUPS = [
         nameEn: '1Panel AI Gateway',
         desc: '企业级 AI 网关',
         descEn: 'Enterprise-grade AI gateway',
-        link: '/1panel/user-manual/ai/gateway',
+        link: '/ai-gateway/',
         // SVG(viewBox 960x260, 约 3.69:1): 矢量图, 缩放不糊; 文件名含中文+【】,
         // useBaseUrl 会自动 URL 编码。卡片里受 .productLogo 的 max-width:220px 约束。
         logo: { light: '【logo】1Panel AI 网关 2.svg' },
