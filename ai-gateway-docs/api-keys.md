@@ -6,7 +6,7 @@ API Key 是调用网关接口的凭证。首次调用模型前需先创建 API K
 
 在左侧导航栏选择**API Keys**，进入 API Keys 列表页面。
 
-![图1 API Keys 列表](/ai-gateway-docs/static/img/api-keys/image1-api-keys.png)
+![图1 API Keys 列表](/img/api-keys/image1-api-keys.png)
 
 <div align="center">图 1  API Keys 列表</div>
 
@@ -28,7 +28,7 @@ API Key 是调用网关接口的凭证。首次调用模型前需先创建 API K
 2. 在右侧弹出的抽屉中，输入**名称**（必填）。
 3. 单击**创建**完成创建；单击**取消**可放弃本次操作。
 
-![图2 创建 API Key](/ai-gateway-docs/static/img/api-keys/image2-create-api-key.png)
+![图2 创建 API Key](/img/api-keys/image2-create-api-key.png)
 
 <div align="center">图 2  创建 API Key</div>
 

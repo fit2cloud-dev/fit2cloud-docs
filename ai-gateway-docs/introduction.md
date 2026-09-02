@@ -20,6 +20,6 @@
 2. 输入**用户名**与**密码**。
 3. 单击**登录**，登录成功后进入模型广场页面。
 
-![图1 登录页](/ai-gateway-docs/static/img/introduction/image1-login.png)
+![图1 登录页](/img/introduction/image1-login.png)
 
 <div align="center">图 1  登录页</div>

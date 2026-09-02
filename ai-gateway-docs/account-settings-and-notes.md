@@ -6,7 +6,7 @@
 
 单击页面左下角的用户名（如 `admin`），在弹出的菜单中选择**修改密码**或**退出登录**。
 
-![图1 用户菜单](/ai-gateway-docs/static/img/account-settings-and-notes/image1-user-menu.png)
+![图1 用户菜单](/img/account-settings-and-notes/image1-user-menu.png)
 
 <div align="center">图 1  用户菜单</div>
 
@@ -19,7 +19,7 @@
 
 单击右上角**关于**，在弹窗中查看当前版本号，并通过**论坛求助**、**使用文档**、**项目地址**链接获取支持。
 
-![图2 关于弹窗](/ai-gateway-docs/static/img/account-settings-and-notes/image2-about.png)
+![图2 关于弹窗](/img/account-settings-and-notes/image2-about.png)
 
 <div align="center">图 2  关于弹窗</div>
 

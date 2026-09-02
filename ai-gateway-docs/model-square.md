@@ -4,7 +4,7 @@
 
 登录成功后默认进入**模型广场**页面。左侧导航栏包含模型广场、API Keys、用量统计三个菜单，当前页面顶部面包屑显示「模型广场」。
 
-![图1 模型广场](/ai-gateway-docs/static/img/model-square/image1-model-square.png)
+![图1 模型广场](/img/model-square/image1-model-square.png)
 
 <div align="center">图 1  模型广场</div>
 
@@ -34,7 +34,7 @@
 2. 列表实时刷新，仅显示所选分类的模型。
 3. 所选分类下没有可用模型时，页面显示「当前分类暂无可调用模型」。
 
-![图2 按文本分类筛选模型](/ai-gateway-docs/static/img/model-square/image2-text-filter.png)
+![图2 按文本分类筛选模型](/img/model-square/image2-text-filter.png)
 
 <div align="center">图 2  分类筛选文本</div>
 
@@ -43,7 +43,7 @@
 1. 在右上角搜索框中输入模型名称关键字，例如 `f2c`。
 2. 按 Enter 键，列表仅显示名称匹配的模型，底部计数同步更新。
 
-![图3 搜索模型](/ai-gateway-docs/static/img/model-square/image3-search.png)
+![图3 搜索模型](/img/model-square/image3-search.png)
 
 <div align="center">图 3  搜索模型</div>
 
@@ -57,7 +57,7 @@
 2. 在弹窗中查看接入地址、认证方式及支持的接口列表。
 3. 单击弹窗右上角关闭按钮或按 Esc 键关闭弹窗。
 
-![图4 接口说明](/ai-gateway-docs/static/img/model-square/image4-api-doc.png)
+![图4 接口说明](/img/model-square/image4-api-doc.png)
 
 <div align="center">图 4  接口说明</div>
 
