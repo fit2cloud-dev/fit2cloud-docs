@@ -7,7 +7,7 @@ API Key 是调用网关接口的凭证。调用模型前需先创建 API Key。
 
 ## 1 功能入口
 
-在左侧导航栏选择** API Keys**，进入 API Keys 列表页面。
+在左侧导航栏选择**API Keys**，进入 API Keys 列表页面。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/api-keys/image1-api-keys.png" alt="API Keys 列表"/>
 
