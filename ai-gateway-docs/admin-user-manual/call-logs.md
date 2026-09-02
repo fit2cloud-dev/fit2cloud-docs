@@ -8,7 +8,7 @@ slug: /user_manual/ai_gateway/call_logs
 
 调用日志页以列表形式逐条展示网关的模型调用记录，用于追踪单次调用、排查错误与统计耗时。列表默认按调用时间倒序排列，支持分页浏览。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/call-logs/image1-Call-Logs.png" alt="调用日志列表"/>
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/call_logs/image1-Call-Logs.png" alt="调用日志列表"/>
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  调用日志列表</div>
 
@@ -55,7 +55,7 @@ slug: /user_manual/ai_gateway/call_logs
 
 在目标日志行的 **操作** 列单击 **查看**，右侧弹出调用详情抽屉，展示本次调用的完整信息。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/call-logs/image2-Call-Log-Details.png" alt="调用日志详情"/>
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/call_logs/image2-Call-Log-Details.png" alt="调用日志详情"/>
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  调用日志详情</div>
 
