@@ -3,11 +3,9 @@ title: 接入第三方
 description: 介绍如何将 Work Buddy、DeepSeek Harness、codex 等客户端接入 1Panel AI 网关。
 ---
 
-## 接入第三方
-
 完成网关部署与管理员配置后，即可将客户端接入 1Panel AI 网关。以下分别说明 Work Buddy、DeepSeek Harness、codex 三类客户端的接入步骤。
 
-### 接入 WorkBuddy
+### 1 接入 WorkBuddy
 
 首先查看模型名称：登录管理端后，在「模型管理」或「用户组」页面查看当前已配置的模型标识，后续客户端配置需使用完全一致的模型名称。
 
@@ -56,7 +54,7 @@ description: 介绍如何将 Work Buddy、DeepSeek Harness、codex 等客户端�
 
 若请求返回 401 或 403，请优先检查 API Key 是否有效、是否复制完整；若返回 404，请检查接口地址与模型名称是否与配置一致。
 
-### 接入 DeepSeek Harness
+### 2 接入 DeepSeek Harness
 
 进入 DeepSeek Harness，点击设置、模型、添加自定义提供方。
 
@@ -73,7 +71,7 @@ description: 介绍如何将 Work Buddy、DeepSeek Harness、codex 等客户端�
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image10_deepseek_select_test_model.png" alt="选择模型并测试"/>
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 10  选择模型并测试</div>
 
-### 接入 codex
+### 3 接入 codex
 
 Codex CLI 本身不提供可视化的供应商管理界面，直接修改 `~/.codex/config.toml` 的方式门槛较高。这里借助 CC Switch 这一小工具完成配置：它负责管理 Codex 的供应商配置，并把请求路由到 1Panel AI 网关，无需手工编辑配置文件。
 
