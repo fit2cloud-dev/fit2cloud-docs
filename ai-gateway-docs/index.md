@@ -72,14 +72,14 @@ AI 应用客户端只需配置统一的Base URL和1Panel AI网关发放的API Ke
 
 安全策略在1Panel AI网关入口统一执行，不同业务应用可以遵循同一套治理标准，有效减少重复建设、内容审核的成本。
 
-![图 6  1Panel AI网关敏感词管理页面](/img/ai-gateway/aigateway-sensitive-words.png)
+![图 7  1Panel AI网关敏感词管理页面](/img/ai-gateway/aigateway-sensitive-words.png)
 
 
 ## 6. 用量统计与调用洞察
 
 每一笔Token消耗都应该“有迹可循、可分析、可优化”。1Panel AI网关通过概览仪表盘、多维度分布统计、用量排行榜和全链路调用日志四大功能，帮助企业将AI资源从“黑盒消耗”转变为“精细化运营”。通过1Panel AI网关，管理员可以实时查看API请求总量、Token消耗和缓存利用率等核心数据，并且按照模型供应商、模型版本、用户组和应用场景拆解资源消耗情况。用量排行榜可以快速识别高频用户和重度消耗账号，为部门核算和配额调整提供依据。同时，调用日志可以精准记录Request ID、上下游模型参数和响应耗时，支持管理员从单条日志继续查看完整调用过程，快速排查异常请求、上游故障和Token损耗原因。
 
-![图 6  1Panel AI网关敏感词管理页面](/img/ai-gateway/aigateway-usage-statistics.png)
+![图 8  1Panel AI网关敏感词管理页面](/img/ai-gateway/aigateway-usage-statistics.png)
 
 
 ## 文档目录
