@@ -1,5 +1,5 @@
 ---
-title: AI 网关
+title: 产品介绍
 description: 1Panel AI 网关产品文档入口——统一 AI 模型接入与治理。
 ---
 
