@@ -60,7 +60,7 @@ description: 介绍 1Panel AI 网关模型广场，包括查看模型列表、�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  接口说明</div>
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  接口说明内容</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  接口说明内容</div>
 
 | 请求方法 | 接口地址 | 说明 |
 | --- | --- | --- |
