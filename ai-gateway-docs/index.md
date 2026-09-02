@@ -81,7 +81,3 @@ AI 应用客户端只需配置统一的Base URL和1Panel AI网关发放的API Ke
 
 ![图 8  1Panel AI网关敏感词管理页面](/img/ai-gateway/aigateway-usage-statistics.png)
 
-
-## 文档目录
-
-- [快速入门](./quick_start.md)：从零部署 AI 网关，完成管理员配置、智能路由与普通用户调用的完整流程。
