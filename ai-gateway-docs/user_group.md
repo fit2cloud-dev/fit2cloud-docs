@@ -3,19 +3,19 @@ title: 用户组
 description: 介绍 1Panel AI 网关用户组的创建、配置与规则，包括并发上限、Token 配额与授权模型组。
 ---
 
-## 功能简介
+## 1 功能简介
 
 1Panel AI网关的用户组用于对使用网关的用户进行分组管理，并为不同组设置差异化的并发上限、Token 配额和可用模型组。运行期间，网关按用户所属组的限额与授权范围对请求进行调度和约束，使资源分配、计费核算和访问控制更加清晰可控。
 
 用户组页面集中展示全部已创建的用户组及其关键字段，你可以完成新增用户组、编辑用户组、启用 / 禁用、删除以及按状态筛选查看等操作。系统保证恰好存在一个启用的默认用户组，初始账号归属于该组，未归属任何自定义组的用户也会落到默认组内。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user_group/image1_user_groups.png" alt="用户组列表示例"/>
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  用户组列表示例</div>
-
 ## 2 功能入口
 
 登录1Panel AI网关控制台后，选择左侧菜单 **用户组**，即可进入用户组管理页面。页面默认以表格形式展示已创建的用户组及其关键字段，并提供添加用户组、状态筛选、搜索名称等操作入口，如图 1 所示。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/user_group/image1_user_groups.png" alt="用户组列表示例"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  用户组列表示例</div>
 
 ## 3 创建用户组
 
@@ -29,7 +29,7 @@ description: 介绍 1Panel AI 网关用户组的创建、配置与规则，包�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  添加用户组表单</div>
 
-## 4.1 设置名称与并发上限
+### 4.1 设置名称与并发上限
 
 填写以下基础字段：
 
@@ -41,7 +41,7 @@ description: 介绍 1Panel AI 网关用户组的创建、配置与规则，包�
 单 API Key 最大并发的有效上限不会超过组最大并发；若先填了单 API Key 上限，再把组上限调到比它更小，最终会按组上限封顶。
 :::
 
-## 4.2 设置 Token 配额
+### 4.2 设置 Token 配额
 
 **Token 配额** 用于按已知 Token 用量控制该用户组在统计周期内的消耗总量。填写数值后，可从右侧单位下拉中选择配额单位。可选单位包括 Token、万、百万、千万、亿、百亿和万亿；0 表示不限已知 Token。
 
@@ -49,7 +49,7 @@ description: 介绍 1Panel AI 网关用户组的创建、配置与规则，包�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  Token 配额单位下拉</div>
 
-## 4.3 选择授权模型组
+### 4.3 选择授权模型组
 
 **授权模型组** 用于限定该用户组可访问的模型范围。单击下拉框展开已创建的模型组列表，可选择 1 ~ 100 个模型组；多选时表现为下拉中的多个选项同时打勾。
 
@@ -59,7 +59,7 @@ description: 介绍 1Panel AI 网关用户组的创建、配置与规则，包�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  授权模型组多选下拉</div>
 
-## 4.4 设置启用状态、备注并保存
+### 4.4 设置启用状态、备注并保存
 
 继续设置以下字段：
 
