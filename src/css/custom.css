@@ -85,6 +85,21 @@
   display: none;
 }
 
+/* ===== 隐藏 navbar / footer 外部链接的外链小箭头 =====
+   用 href 定义的外部链接, Docusaurus 的 NavbarNavLink / FooterLinkItem 会自动给文字旁
+   加一个 ↗ 外链小图标(<svg class="iconExternalLink_...">, 见 NavbarNavLink.js 里
+   isExternalLink && <IconExternalLink/>)。
+   分别在 .navbar 与 .footer 范围内把所有 target="_blank" 外链里的这个 svg 隐藏掉,
+   只去掉视觉箭头、保留「新窗口打开」行为。
+   - .navbar: 右侧官网/论坛/开源社区/培训认证, 及「产品文档/开源产品」下拉里的外链
+   - .footer: 三列链接(常用链接/联系我们/资料下载)里的外链
+   限定 a[target="_blank"], 不影响首页产品卡片「进入文档 →」文字、搜索/语言图标,
+   也不影响 footer 版权区(那是手写 <a>, 无外链图标)。 */
+.navbar a[target="_blank"] svg,
+.footer a[target="_blank"] svg {
+  display: none;
+}
+
 /* ===== navbar logo 整体缩小到原来的一半 =====
    .navbar__logo 是 Docusaurus 包在 <img> 外层的 div(theme/Logo 里 imageClassName 传给它的),
    不是 <img> 本身; Infima 给它 height: 2rem, 内层 img 用 .navbar__logo img { height: 100% } 跟随。
