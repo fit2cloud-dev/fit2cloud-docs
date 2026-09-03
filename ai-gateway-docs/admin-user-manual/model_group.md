@@ -13,17 +13,10 @@ description: 介绍 1Panel AI 网关模型组的添加、编辑、删除与按�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  模型组管理页面</div>
 
-
-## 2 按协议类型筛选
-
-模型组支持按协议类型快速筛选分组。默认展示全部类型，可切换为文本、文生图或向量。
-
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image2_Filter_by_Protocol_Type.png" alt="按协议类型筛选"/>
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  按协议类型筛选</div>
+## 2 模型组管理
 
 
-## 3 添加分组
+### 2.1 模型组添加
 
 通过「添加分组」可将多个候选模型聚合到同一分组，便于统一调度。
 
@@ -46,9 +39,25 @@ description: 介绍 1Panel AI 网关模型组的添加、编辑、删除与按�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  选择候选模型</div>
 
-## 4 模型组管理
+### 2.2 模型组删除
 
-### 4.1 编辑分组
+删除分组会移除该分组及其模型映射关系，请谨慎操作。
+
+操作步骤：
+
+- 在模型组列表中找到目标分组，单击该行 **操作** 列的 **删除**。
+- 在弹出的确认对话框中核对分组信息。
+- 单击 **删除** 确认删除，或单击 **取消** 放弃操作。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image6_Delete_Group_Confirmation.png" alt="删除分组确认"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  删除分组确认</div>
+
+:::warning[警告]
+删除分组为不可逆操作，删除后该分组下配置的模型映射关系将被移除，操作不可恢复。删除前请确认不再使用该分组，且该分组未被路由规则占用。
+:::
+
+### 2.3 模型组编辑
 
 创建分组后可随时调整分组名称、协议类型与候选模型，并调整模型的派发顺序。
 
@@ -67,25 +76,15 @@ description: 介绍 1Panel AI 网关模型组的添加、编辑、删除与按�
 分组内请求会按模型顺序进行派发，当前模型派发前不可用时，网关会自动尝试下一个模型。编辑时可通过「上移」「下移」调整优先级。
 :::
 
-### 4.2 删除分组
+### 2.4 模型组筛选
 
-删除分组会移除该分组及其模型映射关系，请谨慎操作。
+模型组支持按协议类型快速筛选分组。默认展示全部类型，可切换为文本、文生图或向量。
 
-操作步骤：
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image2_Filter_by_Protocol_Type.png" alt="按协议类型筛选"/>
 
-- 在模型组列表中找到目标分组，单击该行 **操作** 列的 **删除**。
-- 在弹出的确认对话框中核对分组信息。
-- 单击 **删除** 确认删除，或单击 **取消** 放弃操作。
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  按协议类型筛选</div>
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model_group/image6_Delete_Group_Confirmation.png" alt="删除分组确认"/>
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  删除分组确认</div>
-
-:::warning[警告]
-删除分组为不可逆操作，删除后该分组下配置的模型映射关系将被移除，操作不可恢复。删除前请确认不再使用该分组，且该分组未被路由规则占用。
-:::
-
-## 5 注意事项
+## 3 注意事项
 
 - 分组名称建议简明且唯一，便于在智能路由中识别与引用。
 - 一个模型可加入多个分组，按各分组独立调度。
