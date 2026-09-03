@@ -11,7 +11,7 @@ title: 接入第三方
 
 在动手前，请先向管理员确认两件事（建议拿张纸记下来）：
 
-1. **接口地址（Base URL）**：例如 `https://1router.1panel.cn/v1`，注意末尾的 `/v1` 不能少。
+1. **接口地址（Base URL）**：例如 [https://1router.1panel.cn/v1](https://1router.1panel.cn/v1)，注意末尾的 `/v1` 不能少。
 2. **模型名称**：管理员在网关里给你开通的模型标识（例如 `1Panel-Auto`），配置时必须一字不差。
 
 ### 1 准备工作：获取 API Key（三个客户端通用）
@@ -42,7 +42,7 @@ title: 接入第三方
 
 WorkBuddy 是一款 AI 办公桌面客户端，支持 Windows 和 macOS，双击安装包、像装普通软件一样下一步到底即可。
 
-- **官方下载页**：<https://www.workbuddy.cn/>（打开网页后点击页面上的"立即下载"，按自己的电脑系统选择：Windows 选 **Windows x64**；Mac 电脑按芯片选 **Apple 芯片（M 系列）** 或 **Intel** 版本）
+- **官方下载页**：[https://www.workbuddy.cn/](https://www.workbuddy.cn/)（打开网页后点击页面上的"立即下载"，按自己的电脑系统选择：Windows 选 **Windows x64**；Mac 电脑按芯片选 **Apple 芯片（M 系列）** 或 **Intel** 版本）
 
 :::tip[温馨提示]
 
@@ -68,7 +68,7 @@ WorkBuddy 是一款 AI 办公桌面客户端，支持 Windows 和 macOS，双击
 
 填入以下三项信息：
 
-- 接口地址（Base URL）：`https://1router.1panel.cn/v1`（以管理员给你的地址为准）
+- 接口地址（Base URL）：[https://1router.1panel.cn/v1](https://1router.1panel.cn/v1) （以管理员给你的地址为准）
 - API Key：第 1 步里复制的 API Key
 - 模型名称：管理员给你开通的模型名称
 
@@ -98,17 +98,17 @@ WorkBuddy 是一款 AI 办公桌面客户端，支持 Windows 和 macOS，双击
 
 DeepSeek Harness 是 DeepSeek 官方开源的 Agent 运行工具，它不是"下载一个安装包"这么简单，需要先了解一下两种官方安装方式，任选其一：
 
-- **方式一：命令行快速启动（推荐）**。先安装 Node.js（去官网 <https://nodejs.org/> 下载 LTS 版本，一路下一步安装即可），然后在终端（Windows 打开 PowerShell，Mac 打开"终端"）里输入下面这行命令回车，等待启动完成：
+- **方式一：命令行快速启动（推荐）**。先安装 Node.js（去官网 [https://nodejs.org](https://nodejs.org) 下载 LTS 版本，一路下一步安装即可），然后在终端（Windows 打开 PowerShell，Mac 打开"终端"）里输入下面这行命令回车，等待启动完成：
   ```bash
   npx @deepseek-ai/dsh web
   ```
-  启动成功后，终端会显示一个本地网址（例如 `http://127.0.0.1:3080`），用浏览器打开这个网址，就是 DeepSeek Harness 的操作界面。
+  启动成功后，终端会显示一个本地网址（例如 [http://127.0.0.1:3080](http://127.0.0.1:3080)），用浏览器打开这个网址，就是 DeepSeek Harness 的操作界面。
 - **方式二：源码安装（适合有开发经验的用户）**：
   ```bash
   git clone https://github.com/deepseek-ai/deepseek-harness
   ```
   然后按照仓库里的说明完成安装。
-- **官方渠道入口**：官网 <https://www.deepseek.com>（DeepSeek 官网首页可找到 Harness 相关入口）；GitHub 仓库 <https://github.com/deepseek-ai/deepseek-harness>。
+- **官方渠道入口**：官网 [https://www.deepseek.com](https://www.deepseek.com)（DeepSeek 官网首页可找到 Harness 相关入口）；GitHub 仓库 [https://github.com/deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)。
 
 :::warning[认准官方渠道]
 
@@ -126,7 +126,7 @@ DeepSeek Harness 是 DeepSeek 官方开源的 Agent 运行工具，它不是"下
 
 填写提供方配置：名称可以随意起（仅用于自己识别）。
 
-API 地址填 `https://1router.1panel.cn/v1`（末尾 `/v1` 不可省略）。
+API 地址填 [https://1router.1panel.cn/v1](https://1router.1panel.cn/v1)（末尾 `/v1` 不可省略）。
 
 API 密钥填第 1 步里复制的 API Key，API 协议保持默认即可。
 
@@ -150,7 +150,7 @@ API 密钥填第 1 步里复制的 API Key，API 协议保持默认即可。
 
 Codex CLI 是 OpenAI 推出的终端编程助手——没有窗口界面，在命令行（终端）里敲 `codex` 命令使用。安装分两步：
 
-第一步，安装 Node.js（版本建议 22 及以上）。去 Node.js 官网 <https://nodejs.org/> 下载 LTS 版本，安装时保持默认选项即可。装完打开终端输入 `node -v`，能显示版本号就说明装好了。
+第一步，安装 Node.js（版本建议 22 及以上）。去 Node.js 官网 [https://nodejs.org](https://nodejs.org) 下载 LTS 版本，安装时保持默认选项即可。装完打开终端输入 `node -v`，能显示版本号就说明装好了。
 
 第二步，安装 Codex CLI。打开终端（Windows 用 PowerShell，Mac 用"终端"），输入：
 
@@ -161,19 +161,19 @@ npm install -g @openai/codex
 :::tip[温馨提示]
 
 - 包名必须是 `@openai/codex`，注意前面有 `@openai/`，不要只输 `codex`，那是一个不相关的旧包。
-- 如果下载很慢或超时，可以先换国内镜像源再装：`npm config set registry https://registry.npmmirror.com`
+- 如果下载很慢或超时，可以先换国内镜像源再装：`npm config set registry1` [https://registry.npmmirror.com](https://registry.npmmirror.com)
 
   :::
 
 安装完输入 `codex --version`，能显示版本号即成功。
 
-- **官方仓库**：<https://github.com/openai/codex>（也可从仓库的 Releases 页下载免 Node.js 的预编译版本）
+- **官方仓库**：[https://github.com/openai/codex](https://github.com/openai/codex)（也可从仓库的 Releases 页下载免 Node.js 的预编译版本）
 
 #### 4.2 CC Switch 配置
 
 Codex CLI 本身不提供可视化的供应商管理界面，直接修改 `~/.codex/config.toml` 的方式门槛较高。这里借助 CC Switch 这一小工具完成配置：它负责管理 Codex 的供应商配置，并把请求路由到 1Panel AI 网关，无需手工编辑配置文件。
 
-CC Switch 下载地址（GitHub Releases 发布页）：<https://github.com/farion1231/cc-switch/releases/latest>
+CC Switch 下载地址（GitHub Releases 发布页）：[https://github.com/farion1231/cc-switch/releases/latest](https://github.com/farion1231/cc-switch/releases/latest)
 
 - Windows：下载 `CC-Switch-vX.X.X-Windows.msi` 安装包，双击按向导安装
 - macOS：下载 `CC-Switch-vX.X.X-macOS.zip`，解压后把应用拖入"应用程序"文件夹（首次打开若提示"未知开发者"，前往「系统设置 → 隐私与安全性」点击「仍要打开」）
@@ -187,7 +187,7 @@ CC Switch 下载地址（GitHub Releases 发布页）：<https://github.com/fari
 在弹出的表单中选择「自定义配置」，并填写以下信息：
 
 - API Key：粘贴在 1Panel AI 网关管理端创建的 API Key
-- API 请求地址：`https://1router.1panel.cn/v1`（注意末尾的 `/v1` 不可省略）
+- API 请求地址：[https://1router.1panel.cn/v1](https://1router.1panel.cn/v1)（注意末尾的 `/v1` 不可省略）
 
 同时打开「本地路由映射」开关。该功能会在本机启动一个代理地址，Codex 的请求先发往本地代理，再由 CC Switch 转发到 1Panel AI 网关，从而绕开 Codex 对官方接口地址的限制。
 
