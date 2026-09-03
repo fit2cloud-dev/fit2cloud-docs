@@ -1,3 +1,8 @@
+---
+title: 1Panel 安装
+description: 介绍 1Panel AI 网关 1Panel 安装的说明
+---
+
 ## 1 安装 1Panel
 
     关于 1Panel 的安装部署与基础功能介绍，请参考 [1Panel 官方文档](https://1panel.cn/docs/) 。在完成了 1Panel 的安装部署后，根据提示网址打开浏览器进入 1Panel，界面如下。    
