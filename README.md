@@ -1,57 +1,55 @@
+# 飞致云文档中心
 
-## Deployment
+飞致云官方文档仓库（GitHub），作为统一文档门户 **https://docs.fit2cloud.com/** 的内容源，集中维护飞致云旗下所有产品的官方文档。
 
-本站通过 GitHub Actions 自动部署到**阿里云 OSS**(由阿里云 CDN 前置加速),自定义域名:
+## 官方文档门户
 
-`https://docs.fit2cloud.com`
+所有产品文档均可通过统一入口访问：**[https://docs.fit2cloud.com/](https://docs.fit2cloud.com/)**
 
-每次 push 到 `main` 分支且文档/配置有改动时,workflow(`.github/workflows/deploy-oss.yml`)会自动:
-1. 安装依赖并 `npm run build` 生成静态站点到 `build/`;
-2. 用 `ossutil sync` 把 `build/` **全量同步**到 OSS Bucket(本地删除的文件也会从 OSS 删除);
-3. 用 `aliyun-cli` 调用 CDN `RefreshObjectCaches` **目录刷新**,强制全站清除旧缓存。
+| 产品 | 简介 | 文档地址 |
+|------|------|----------|
+| 1Panel · AI 网关 | 统一管理各类 AI 模型与 API 的网关服务 | https://docs.fit2cloud.com/ai-gateway/ |
+| 1Panel | 现代化、开源的 Linux 服务器运维面板 | https://docs.fit2cloud.com/1panel/ |
+| JumpServer | 广受欢迎的开源堡垒机（运维安全审计系统） | https://docs.jumpserver.org/zh/v4/ |
+| DataEase | 人人可用的开源 BI 数据分析工具 | https://dataease.cn/docs/v2/ |
+| MaxKB | 强大易用的企业级智能体平台 | https://maxkb.cn/docs/v2/ |
+| SQLBot | 基于大模型的智能问数系统 | https://sqlbot.org/docs/v1/ |
+| Cordys CRM | 新一代开源 AI CRM 客户管理系统 | https://cordys.cn/docs/ |
+| MeterSphere | 新一代的开源持续测试工具 | https://metersphere.io/docs/v3.x/ |
+| Halo | 强大易用的开源建站工具 | https://docs.halo.run/ |
 
-### 首次配置(GitHub Secrets)
+## 技术栈
 
-在 GitHub 仓库 **Settings → Secrets and variables → Actions → New repository secret** 添加以下 5 个变量:
+- 基于 [Docusaurus](https://docusaurus.io/) 构建
+- 支持简体中文（zh-Hans）与英文（en）双语
+- 产品目录独立、支持多版本化管理
+- 内置全局搜索，侧边栏支持自动折叠
 
-| Secret 名 | 含义 | 示例 |
-|---|---|---|
-| `ALIYUN_ACCESS_KEY_ID` | 阿里云 AccessKey ID | `LTAI5t...` |
-| `ALIYUN_ACCESS_KEY_SECRET` | 阿里云 AccessKey Secret | `xxxx` |
-| `ALIYUN_OSS_ENDPOINT` | OSS 外网 Endpoint | `oss-cn-hangzhou.aliyuncs.com` |
-| `ALIYUN_OSS_BUCKET` | OSS Bucket 名称 | `my-docs` |
-| `ALIYUN_CDN_DOMAIN` | CDN 加速域名 | `docs.fit2cloud.com` |
+## 目录结构
 
-> **安全建议**:建议为 CI 单独创建 RAM 子账号,仅授予该 OSS Bucket 的读写权限(`AliyunOSSFullAccess` 可缩小为自定义策略)和 CDN 刷新权限(`AliyunCDNFullAccess` 或自定义 `RefreshObjectCaches`),不要使用主账号 AccessKey。
-
-### 阿里云控制台一次性配置
-
-1. **OSS**:创建 Bucket,开启**静态网站托管**(默认首页 `index.html`)。
-2. **OSS 域名**:绑定自定义域名到 Bucket,并上传 HTTPS 证书(如果 CDN 未开启免费 HTTPS)。
-3. **CDN**:添加加速域名,回源方式选择 **OSS 域名**;开启 HTTPS 并上传证书(或使用 CDN 免费证书)。
-
-### 手动部署(可选)
-
-想在本机手动同步一次(不经过 GitHub),先安装 [ossutil](https://help.aliyun.com/zh/oss/developer-reference/install-and-configure-ossutil) 并配置 AK,然后:
-
-```bash
-npm run build
-ossutil sync ./build/ oss://<bucket>/ --delete --update -f
+```
+fit2cloud-docs/
+├── 1panel-docs/           # 1Panel 文档
+├── ai-gateway-docs/       # AI 网关文档
+├── dataease-docs/         # DataEase 文档
+├── jumpserver-docs/       # JumpServer 文档
+├── maxkb-docs/            # MaxKB 文档
+├── i18n/                  # 国际化内容（中/英）
+├── docs/                  # 通用文档
+├── sidebars.js            # 侧边栏配置
+└── src/、static/          # 站点源码与静态资源
 ```
 
-### CDN 缓存说明
-
-Docusaurus 生成的静态资源(JS/CSS)文件名带内容哈希,CDN 通常配置为长期缓存;但 **HTML/页面本身**改动后需要刷新缓存。本 workflow 每次部署都会对 CDN 域名根路径做**目录刷新(`Force: true`)**,刷新完成后(约 5~6 分钟)访问即是最新内容。
-
----
-
-## 本地开发与构建
+## 本地运行
 
 ```bash
-npm run start    # 本地开发, 热更新
-npm run build    # 构建到 build/
-npm run serve    # 本地预览构建产物
+git clone https://github.com/fit2cloud-dev/fit2cloud-docs.git
+cd fit2cloud-docs
+npm install
+npm start
 ```
 
-更多说明见 [RUN-LOCAL.md](RUN-LOCAL.md)、[VERSIONING-GUIDE.md](VERSIONING-GUIDE.md)、[I18N-GUIDE.md](I18N-GUIDE.md)。
+## 贡献
+
+欢迎通过提交 Issue 或 Pull Request 参与文档完善。
 
