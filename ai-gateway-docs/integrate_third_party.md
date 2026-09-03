@@ -1,83 +1,187 @@
 ---
 title: 接入第三方
-description: 介绍如何将 Work Buddy、DeepSeek Harness、codex 等客户端接入 1Panel AI 网关。
 ---
 
-完成网关部署与管理员配置后，即可将客户端接入 1Panel AI 网关。以下分别说明 Work Buddy、DeepSeek Harness、codex 三类客户端的接入步骤。
+在开始之前，先弄清楚两个名词，后文会反复出现：
 
-### 1 接入 WorkBuddy
+- **1Panel AI 网关**：部署在你（或管理员）服务器上的"模型中转站"。它把各种大模型统一包装成一个标准接口，你在客户端里填上它的地址和密钥，就能用上网关里的模型。
+- **API Key**：可以理解为"门禁卡"。客户端要访问网关，必须出示这张卡；没有它或者卡号填错，请求会被拒绝。
 
-首先查看模型名称：登录管理端后，在「模型管理」或「用户组」页面查看当前已配置的模型标识，后续客户端配置需使用完全一致的模型名称。
+整个接入流程只有三步：**① 下载并安装客户端 → ② 在网关管理端拿到 API Key → ③ 在客户端里填好配置**。下面逐个客户端讲解。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image1_view_model_names.png" alt="查看模型名称"/>
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  查看模型名称</div>
+在动手前，请先向管理员确认两件事（建议拿张纸记下来）：
 
-该用户需要创建 API Key：进入「API Key 管理」页面，为该用户或用户组创建新的 API Key。Key 仅在创建时完整显示一次，请务必立即复制保存。
+1. **接口地址（Base URL）**：例如 `https://1router.1panel.cn/v1`，注意末尾的 `/v1` 不能少。
+2. **模型名称**：管理员在网关里给你开通的模型标识（例如 `1Panel-Auto`），配置时必须一字不差。
+
+### 1 准备工作：获取 API Key（三个客户端通用）
+
+不管你用哪个客户端，都需要先在 1Panel AI 网关管理端创建属于自己的 API Key。如果你已经做过这一步并保存了 Key，可以跳到对应客户端的章节。
+
+首先进入模型广场：登录管理端后，默认进入「模型广场」页面。在这里你能看到网关已接入的**所有可用模型**、统一的**接入地址**，以及每个模型的**名称与类型**。后续客户端配置要用到的模型名称和接入地址，都能在这一页找到（配置时需一字不差）。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/model-square/image1-model-square.png" alt="模型广场"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  模型广场</div>
+
+然后创建 API Key：进入「API Key 管理」页面，为自己创建新的 API Key。Key 仅在创建时完整显示一次，请务必立即复制保存。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image2_create_apikey.png" alt="创建 API Key"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  创建 API Key</div>
 
-复制 API Key：妥善保管生成的 Key，避免泄露。如 Key 遗忘或泄露，需在管理端重新生成并更新所有客户端配置。
+复制并妥善保管 API Key，避免泄露给他人。如 Key 遗忘或泄露，需在管理端重新生成并更新所有客户端配置。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image3_copy_apikey.png" alt="复制 API Key"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  复制 API Key</div>
 
-下载好 Work Buddy 客户端后，点击配置自定义模型：在客户端设置中找到「自定义模型」或「添加模型」入口。
+### 2 接入 WorkBuddy
+
+#### 2.1 下载并安装 WorkBuddy
+
+WorkBuddy 是一款 AI 办公桌面客户端，支持 Windows 和 macOS，双击安装包、像装普通软件一样下一步到底即可。
+
+- **官方下载页**：<https://www.workbuddy.cn/>（打开网页后点击页面上的"立即下载"，按自己的电脑系统选择：Windows 选 **Windows x64**；Mac 电脑按芯片选 **Apple 芯片（M 系列）** 或 **Intel** 版本）
+
+:::tip[温馨提示]
+
+怎么知道自己的 Mac 是苹果芯片还是 Intel？点屏幕左上角苹果图标 →「关于本机」，"芯片"一栏写着 Apple Mx 就选 ARM64/Apple 芯片版，写着 Intel 就选 x64/Intel 版。
+
+:::
+
+安装完成后打开 WorkBuddy，用页面上的入口登录账号，即可进行下面的模型配置。
+
+#### 2.2 配置自定义模型
+
+点击配置自定义模型：在客户端设置中找到「自定义模型」或「添加模型」入口。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image4_workbuddy_custom_model.png" alt="配置自定义模型"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  配置自定义模型</div>
 
-提供商选择自定义：类型选择「自定义」或「OpenAI 兼容」，不要选择预设的 OpenAI 官方选项。
+提供商选择自定义：类型选择「自定义」或「OpenAI 兼容」，**不要**选择预设的 OpenAI 官方选项。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image5_select_custom_provider.png" alt="选择自定义提供商"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  选择自定义提供商</div>
 
-填入：
+填入以下三项信息：
 
-- 接口地址（Base URL）：`https://1router.1panel.cn/v1`
-- API Key：刚才复制的 API Key
-- 模型名称：系统用户中配置好的模型名称
+- 接口地址（Base URL）：`https://1router.1panel.cn/v1`（以管理员给你的地址为准）
+- API Key：第 1 步里复制的 API Key
+- 模型名称：管理员给你开通的模型名称
 
 三者需完全一致。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image6_fill_integration_config.png" alt="填写接入配置"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  填写接入配置</div>
 
 :::note[注意]
+
 接口地址末尾的 `/v1` 路径不可省略，部分客户端会自动补全，但建议显式写入以避免请求失败。
+
 :::
+
+#### 2.3 保存并测试
 
 点击保存，选择刚才配置的模型进行测试：在模型列表中发送测试消息，验证请求是否正常返回。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image7_save_and_test_model.png" alt="保存并测试模型"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7  保存并测试模型</div>
 
-若请求返回 401 或 403，请优先检查 API Key 是否有效、是否复制完整；若返回 404，请检查接口地址与模型名称是否与配置一致。
+### 3 接入 DeepSeek Harness
 
-### 2 接入 DeepSeek Harness
+#### 3.1 下载并安装 DeepSeek Harness
 
-进入 DeepSeek Harness，点击设置、模型、添加自定义提供方。
+DeepSeek Harness 是 DeepSeek 官方开源的 Agent 运行工具，它不是"下载一个安装包"这么简单，需要先了解一下两种官方安装方式，任选其一：
+
+- **方式一：命令行快速启动（推荐）**。先安装 Node.js（去官网 <https://nodejs.org/> 下载 LTS 版本，一路下一步安装即可），然后在终端（Windows 打开 PowerShell，Mac 打开"终端"）里输入下面这行命令回车，等待启动完成：
+  ```bash
+  npx @deepseek-ai/dsh web
+  ```
+  启动成功后，终端会显示一个本地网址（例如 `http://127.0.0.1:3080`），用浏览器打开这个网址，就是 DeepSeek Harness 的操作界面。
+- **方式二：源码安装（适合有开发经验的用户）**：
+  ```bash
+  git clone https://github.com/deepseek-ai/deepseek-harness
+  ```
+  然后按照仓库里的说明完成安装。
+- **官方渠道入口**：官网 <https://www.deepseek.com>（DeepSeek 官网首页可找到 Harness 相关入口）；GitHub 仓库 <https://github.com/deepseek-ai/deepseek-harness>。
+
+:::warning[认准官方渠道]
+
+网上存在仿冒 DeepSeek / DeepSeek Harness 的网站和账号。请只通过上述官方地址下载，任何"收费入群""收费激活"都是假冒行为。
+
+:::
+
+#### 3.2 配置接入 1Panel AI 网关
+
+进入 DeepSeek Harness（浏览器打开的界面），点击设置、模型、添加自定义提供方。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image8_deepseek_harness_add_provider.png" alt="添加自定义提供方"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 8  添加自定义提供方</div>
 
-自定义提供方：在请求中唯一标识该提供方，并用于派生凭据名。配置好显示名称、API 地址、API 密钥，API 协议默认即可，可以点击获取可用，若获取不了可以点击添加。
+填写提供方配置：名称可以随意起（仅用于自己识别）。
+
+API 地址填 `https://1router.1panel.cn/v1`（末尾 `/v1` 不可省略）。
+
+API 密钥填第 1 步里复制的 API Key，API 协议保持默认即可。
+
+填好后可以点击"获取可用"拉取模型列表；若获取不了，也可以点击"添加"手动填写模型名称（名称需与管理员开通的模型名称完全一致）。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image9_fill_provider_config.png" alt="填写提供方配置"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 9  填写提供方配置</div>
+
+#### 3.3 选择模型并测试
 
 选择配置好的模型进行测试：保存后在底部输入框左侧的提供商下拉菜单中选择刚添加的提供方，发送消息验证连接。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image10_deepseek_select_test_model.png" alt="选择模型并测试"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 10  选择模型并测试</div>
 
-### 3 接入 codex
+### 4 接入 codex
+
+#### 4.1 下载并安装 codex（Codex CLI）
+
+Codex CLI 是 OpenAI 推出的终端编程助手——没有窗口界面，在命令行（终端）里敲 `codex` 命令使用。安装分两步：
+
+第一步，安装 Node.js（版本建议 22 及以上）。去 Node.js 官网 <https://nodejs.org/> 下载 LTS 版本，安装时保持默认选项即可。装完打开终端输入 `node -v`，能显示版本号就说明装好了。
+
+第二步，安装 Codex CLI。打开终端（Windows 用 PowerShell，Mac 用"终端"），输入：
+
+```bash
+npm install -g @openai/codex
+```
+
+:::tip[温馨提示]
+
+- 包名必须是 `@openai/codex`，注意前面有 `@openai/`，不要只输 `codex`，那是一个不相关的旧包。
+- 如果下载很慢或超时，可以先换国内镜像源再装：`npm config set registry https://registry.npmmirror.com`
+
+  :::
+
+安装完输入 `codex --version`，能显示版本号即成功。
+
+- **官方仓库**：<https://github.com/openai/codex>（也可从仓库的 Releases 页下载免 Node.js 的预编译版本）
+
+#### 4.2 CC Switch 配置
 
 Codex CLI 本身不提供可视化的供应商管理界面，直接修改 `~/.codex/config.toml` 的方式门槛较高。这里借助 CC Switch 这一小工具完成配置：它负责管理 Codex 的供应商配置，并把请求路由到 1Panel AI 网关，无需手工编辑配置文件。
+
+CC Switch 下载地址（GitHub Releases 发布页）：<https://github.com/farion1231/cc-switch/releases/latest>
+
+- Windows：下载 `CC-Switch-vX.X.X-Windows.msi` 安装包，双击按向导安装
+- macOS：下载 `CC-Switch-vX.X.X-macOS.zip`，解压后把应用拖入"应用程序"文件夹（首次打开若提示"未知开发者"，前往「系统设置 → 隐私与安全性」点击「仍要打开」）
 
 首先下载并安装 CC Switch，安装完成后打开软件，进入供应商管理界面，点击右上角「添加」按钮，新建一个供应商配置。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image11_ccswitch_add_button.png" alt="点击添加"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 11  点击添加</div>
 
 在弹出的表单中选择「自定义配置」，并填写以下信息：
@@ -88,19 +192,36 @@ Codex CLI 本身不提供可视化的供应商管理界面，直接修改 `~/.co
 同时打开「本地路由映射」开关。该功能会在本机启动一个代理地址，Codex 的请求先发往本地代理，再由 CC Switch 转发到 1Panel AI 网关，从而绕开 Codex 对官方接口地址的限制。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image12_enter_apikey_enable_routing.png" alt="填写配置并启用路由"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 12  填写配置并启用路由</div>
 
 点击「获取模型列表」，CC Switch 会通过网关的 `/v1/models` 接口拉取当前可用的模型。在返回的列表中选择要使用的模型（或手动添加，名称需与管理端模型映射中的请求模型名称完全一致），确认无误后点击「添加」按钮保存该供应商配置。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image13_fetch_model_list_submit.png" alt="获取模型列表并提交"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 13  获取模型列表并提交</div>
 
 回到 CC Switch 的开始界面，在供应商列表中选中刚创建的配置，点击「启动」，CC Switch 会将本地路由代理与 Codex 配置一并写入。之后重启 codex（退出正在运行的 Codex CLI 进程后重新启动），使新配置生效。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image14_restart_codex_after_ccswitch.png" alt="重启 codex"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 14  重启 codex</div>
 
-在 codex 中发起一次对话测试：选择映射到 1Panel AI 网关的模型（如 `1Panel-Auto`），发送一条简单消息。若能正常返回回复，说明整条链路（codex → CC Switch 本地路由 → 1Panel AI 网关 → 上游模型）已经打通；若报 401 请检查 API Key，若报 404 请核对请求地址与模型名称。
+#### 4.3 发起测试对话
+
+在 codex 中发起一次对话测试：选择映射到 1Panel AI 网关的模型（如 `1Panel-Auto`），发送一条简单消息。若能正常返回回复，说明整条链路（codex → CC Switch 本地路由 → 1Panel AI 网关 → 上游模型）已经打通。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image15_codex_select_model_test.png" alt="codex 测试对话"/>
+
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 15  codex 测试对话</div>
+
+### 5 常见问题排查（FAQ）
+
+配置完成后测试如果不通，按下面的对照表排查，基本都能解决：
+
+| 报错现象              | 大概率原因                           | 解决办法                                      |
+| ----------------- | ------------------------------- | ----------------------------------------- |
+| 401 / 403         | API Key 无效、复制不完整（少了开头或结尾字符）、已过期 | 回管理端确认 Key 有效，重新复制粘贴一遍，注意不要带空格            |
+| 404               | 接口地址或模型名称填错                     | 检查 Base URL 末尾是否有 `/v1`；模型名称与管理员开通的是否一字不差 |
+| 连接超时 / 无法访问       | 网络不通、地址不对                       | 换个浏览器访问 Base URL 确认可达；确认电脑没有开启拦截流量的代理软件   |
+| 能连通但没有回复 / 模型列表为空 | 该模型未分配给你的账号                     | 联系管理员确认模型已加入你的用户组                         |
