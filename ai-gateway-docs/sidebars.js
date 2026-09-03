@@ -16,7 +16,7 @@ const sidebars = {
         { type: "doc", id: "admin-user-manual/overview", label: "概览", key: "doc-overview" },
         { type: "doc", id: "admin-user-manual/account_pool", label: "账号池" },
         { type: "doc", id: "admin-user-manual/model_group", label: "模型组" },
-        { type: "doc", id: "admin-user-manual/user", label: "用户管理" },
+        { type: "doc", id: "admin-user-manual/user", label: "用户" },
         { type: "doc", id: "admin-user-manual/user_group", label: "用户组" },
         { type: "doc", id: "admin-user-manual/smart_route", label: "智能路由" },
         { type: "doc", id: "admin-user-manual/content_compliance", label: "内容合规" },
