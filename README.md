@@ -12,7 +12,7 @@
 
 | 产品 | 简介 | 文档地址 |
 |------|------|----------|
-| 1Panel · AI 网关 | 统一管理各类 AI 模型与 API 的网关服务 | https://docs.fit2cloud.com/ai-gateway/ |
+| 1Panel · AI 网关 | 1Panel AI 网关 | https://docs.fit2cloud.com/ai-gateway/ |
 | 1Panel | 现代化、开源的 Linux 服务器运维面板 | https://docs.fit2cloud.com/1panel/ |
 | JumpServer | 广受欢迎的开源堡垒机（运维安全审计系统） | https://docs.jumpserver.org/zh/v4/ |
 | DataEase | 人人可用的开源 BI 数据分析工具 | https://dataease.cn/docs/v2/ |
