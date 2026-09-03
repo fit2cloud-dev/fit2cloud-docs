@@ -57,7 +57,7 @@ description: 介绍 1Panel AI 网关用户管理，包括添加用户、启用�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  重置密码页面</div>
 
-### 3.4 唯一管理员保护
+### 2.5 唯一管理员保护
 
 当系统内仅剩一名管理员账号时，该账号会被唯一管理员规则保护：
 
