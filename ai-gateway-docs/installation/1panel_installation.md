@@ -27,7 +27,7 @@
 
 ![图 4  安装完成](/img/ai-gateway/ai_gateway_start.png)    
 
-## 3 访问 MaxKB 
+## 3 访问 1Panel AI 网关
 
     安装成功后，通过浏览器访问如下页面登录 1Panel AI 网关：   
 
