@@ -1,0 +1,49 @@
+/* 「开源产品」下拉(仿 fit2cloud 官网顶部菜单): 每个产品 = logo 小图标 + 加粗产品名 + 灰色描述。
+   外层容器沿用 theme 的全局类(.navbar__item .dropdown .dropdown--hoverable .dropdown__menu
+   .dropdown__link), 天然获得 hover 展开/菜单样式/链接高亮; 这里只定制条目内部布局与配色。 */
+
+.menu {
+  min-width: 320px; /* 官方菜单偏宽, 容纳 图标+两行文字 */
+}
+
+/* 整条: 图标在左, 名+描述在右, 一行一个产品 */
+.link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 12px;
+}
+
+/* 图标区: 固定方形 box, 大图等比缩放进去 */
+.icon {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(127, 127, 127, 0.06); /* 浅底, 让透明 logo 在 navbar 上更醒目 */
+  border-radius: 8px;
+}
+.icon img {
+  display: block;
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+  min-width: 0;
+}
+.name {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.desc {
+  font-size: 12px;
+  color: var(--ifm-color-emphasis-600);
+  white-space: nowrap;
+}

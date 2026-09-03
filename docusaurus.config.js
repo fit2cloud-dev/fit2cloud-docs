@@ -168,7 +168,7 @@ const config = {
       //   这里不再逐个 sidebars.js 配置(那样对 v1 的 versioned JSON 和未来新增分类无效)。
       docs: {
         sidebar: {
-          autoCollapseCategories: true,
+          autoCollapseCategories: false, // 各分类互相独立: 展开一个不会自动收起别的(避免手风琴)
         },
       },
       navbar: {
@@ -184,52 +184,22 @@ const config = {
         items: [
           {to: '/', label: '首页', position: 'left'},
           {
-            // 与首页 PRODUCT_GROUPS(src/pages/index.js)、footer 的「产品文档」列三方保持一致。
-            // href 外部链接由 NavbarItem/NavbarNavLink 自动加 target=_blank + 外链图标
-            // (isExternalLink = label && href && !isInternalUrl(href))。
-            type: 'dropdown',
-            label: '产品文档',
+            // 产品文档: 仿 fit2cloud 官网顶部菜单, 每个产品带 logo 小图标 + 产品名 + 描述。
+            // 实现: src/theme/NavbarItem/ProductDocs.js (产品/文档链接/图标集中维护在该组件 PRODUCTS 表)。
+            // logo 图片在 static/img/logo/ 下, 亮/暗主题统一用彩色版。
+            // 站内文档用 <Link> 同站跳转, 独立文档站用 <a target="_blank"> 外链。
+            type: 'custom-ProductDocs',
             position: 'left',
-            items: [
-              {label: '1Panel · AI 网关', to: '/ai-gateway/'},
-              {label: '1Panel · 现代化、开源的 Linux 面板', to: '/1panel/'},
-              {label: 'JumpServer · 广受欢迎的开源堡垒机', to: 'https://docs.jumpserver.org/zh/v4/'},
-              {label: 'DataEase · 人人可用的开源 BI 工具', to: 'https://dataease.cn/docs/v2/'},
-              {label: 'MaxKB · 强大易用的企业级智能体平台', to: 'https://maxkb.cn/docs/v2/'},
-              {label: 'SQLBot · 基于大模型的智能问数系统', to: 'https://sqlbot.org/docs/v1/'},
-              {label: 'Cordys CRM · 新一代开源 AI CRM 系统', to: 'https://cordys.cn/docs/'},
-              {label: 'MeterSphere · 新一代的开源持续测试工具', to: 'https://metersphere.io/docs/v3.x/'},
-              {label: 'Halo · 强大易用的开源建站工具', to: 'https://docs.halo.run/'},
-            ],
-          },
-          {
-            // 开源产品: 与「产品文档」同源的 8 个产品, 但链接指向各产品**官网**(不是文档站)。
-            // 1Panel AI 网关不单列 —— 它是 1Panel 的功能模块, 官网同 1panel.cn。
-            // href 外部链接由 NavbarItem/NavbarNavLink 自动加 target=_blank + 外链图标。
-            type: 'dropdown',
-            label: '开源产品',
-            position: 'left',
-            items: [
-              {label: '1Panel', to: 'https://1panel.cn/'},
-              {label: 'MaxKB', to: 'https://maxkb.cn/'},
-              {label: 'JumpServer', to: 'https://www.jumpserver.org/'},
-              {label: 'DataEase', to: 'https://dataease.cn/'},
-              {label: 'SQLBot', to: 'https://sqlbot.org/'},
-              {label: 'Cordys CRM', to: 'https://cordys.cn/'},
-              {label: 'MeterSphere', to: 'https://metersphere.io/'},
-              {label: 'Halo', href: 'to://www.halo.run/'},
-            ],
           },
           {
             type: 'custom-VersionSwitcher',
             position: 'right',
           },
-          // 官网 / 论坛 / 开源社区 / 培训认证: 放在右侧、中英文切换(localeDropdown)之前。
+          // 官网 / 论坛 / 培训认证: 放在右侧、中英文切换(localeDropdown)之前。
           // 外部链接一律用 href(不用 to), NavbarNavLink 会自动加
           // target="_blank" + rel="noopener noreferrer" + 外链小图标
           {href: 'https://www.fit2cloud.com/', label: '官网', position: 'right'},
           {href: 'https://bbs.fit2cloud.com/', label: '论坛', position: 'right'},
-          {href: 'https://community.fit2cloud.com/', label: '开源社区', position: 'right'},
           {href: 'https://edu.fit2cloud.com/', label: '培训认证', position: 'right'},
           {
             type: 'localeDropdown',
@@ -282,9 +252,8 @@ const config = {
         // 给 <a> 加 footer__link-item 是为了复用 custom.css 里那条白色半透明样式,
         // 否则裸 <a> 在 dark footer 上会走全局链接色、对比度不对。
         copyright: `<a class="footer__link-item" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">浙ICP备14038283号</a>
-        <br />
         2014-${new Date().getFullYear()} 版权所有©杭州飞致云信息科技有限公司
-        <br />
+        <br>
         <a class="footer__link-item" href="https://fit2cloud.com/legal/privacy-policy.html" target="_blank" rel="noopener noreferrer">隐私政策</a>
         <span class="footer__link-separator">|</span>
         <a class="footer__link-item" href="https://fit2cloud.com/legal/licenses.html" target="_blank" rel="noopener noreferrer">社区软件许可协议</a>`,
