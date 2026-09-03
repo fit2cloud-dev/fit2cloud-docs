@@ -94,7 +94,7 @@ title: API Keys
 
 ## 4 快速开始：拿到 Key 后怎么用
 
-在 [模型广场](pathname:///user_manual/ai_gateway/model_square) 拿到接入地址、创建好 API Key 后，把下面命令里的 `sk-xxx` 替换成你刚创建的真实 Key，`model` 替换成想用的模型名，就能直接调用：
+在 [模型广场](pathname:///ai-gateway/end‑user-manual/model-square) 拿到接入地址、创建好 API Key 后，把下面命令里的 `sk-xxx` 替换成你刚创建的真实 Key，`model` 替换成想用的模型名，就能直接调用：
 
 ```bash
 curl https://1router.1panel.cn/v1/chat/completions \
