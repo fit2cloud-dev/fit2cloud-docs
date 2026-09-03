@@ -86,7 +86,7 @@ docker logs 1panel-ai-gateway
 
 上游账号主要字段如下表所示。
 
-**表 1 上游账号主要字段说明**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  上游账号主要字段说明</div>
 
 | 字段 | 取值 | 说明 |
 | --- | --- | --- |
@@ -216,7 +216,7 @@ curl https://gateway.example.com/v1/chat/completions \
 
 常用数据面接口如下表所示。
 
-**表 2 数据面接口说明**
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  数据面接口说明</div>
 
 | 方法 | 路径 | 用途 |
 | --- | --- | --- |
