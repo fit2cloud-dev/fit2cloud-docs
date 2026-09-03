@@ -5,8 +5,19 @@ const sidebars = {
     // ── 根目录：部署与账号接入 ──
     { type: "doc", id: "index", label: "产品介绍" },
     { type: "doc", id: "quick_start", label: "快速入门" },
-    { type: "doc", id: "quick_deployment", label: "安装部署" },
 
+    // ── installation：安装部署页 ──
+    {
+      type: "category",
+      label: "安装部署",
+      collapsed: false,
+      items: [
+        { type: "doc", id: "installation/deployment_instructions", label: "部署说明", key: "installation-deployment" },
+        { type: "doc", id: "installation/online_installation", label: "在线安装" },
+        { type: "doc", id: "installation/1panel_installation", label: "1Panel安装" },
+      ],
+    },
+    
     // ── admin-user-manual：管理员手册功能页 ──
     {
       type: "category",
@@ -16,7 +27,7 @@ const sidebars = {
         { type: "doc", id: "admin-user-manual/overview", label: "概览", key: "doc-overview" },
         { type: "doc", id: "admin-user-manual/account_pool", label: "账号池" },
         { type: "doc", id: "admin-user-manual/model_group", label: "模型组" },
-        { type: "doc", id: "admin-user-manual/user", label: "用户管理" },
+        { type: "doc", id: "admin-user-manual/user", label: "用户" },
         { type: "doc", id: "admin-user-manual/user_group", label: "用户组" },
         { type: "doc", id: "admin-user-manual/smart_route", label: "智能路由" },
         { type: "doc", id: "admin-user-manual/content_compliance", label: "内容合规" },
