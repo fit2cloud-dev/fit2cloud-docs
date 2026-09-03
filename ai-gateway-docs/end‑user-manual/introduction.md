@@ -52,9 +52,9 @@ title: 功能介绍
 
 登录成功后，建议按下面的顺序熟悉系统：
 
-1. **先去 [API Keys](pathname:///ai-gateway/end‑user-manual/api_keys)** 创建一个自己的 Key，复制保存好（这是后续调用的必备凭证）。
-2. **再去 [模型广场](pathname:///ai-gateway/end‑user-manual/model_square)** 看看需要哪些模型、记下接入地址。
-3. **最后看 [用量统计](pathname:///ai-gateway/end‑user-manual/usage_statistics)** 学会怎么查看自己和团队的消耗情况。
+1. **先去 [API Keys](pathname:///ai-gateway/end‑user-manual/api-keys)** 创建一个自己的 Key，复制保存好（这是后续调用的必备凭证）。
+2. **再去 [模型广场](pathname:///ai-gateway/end‑user-manual/model-square)** 看看需要哪些模型、记下接入地址。
+3. **最后看 [用量统计](pathname:///ai-gateway/end‑user-manual/usage-statistics)** 学会怎么查看自己和团队的消耗情况。
 
 ## 6 注意事项
 
