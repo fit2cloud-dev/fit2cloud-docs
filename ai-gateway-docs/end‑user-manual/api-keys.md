@@ -10,7 +10,7 @@ title: API Keys
 
 **几个关键点**：
 
-- **每个 API Key 独立计量**。在 [用量统计](pathname:///user_manual/ai_gateway/usage_statistics) 页面，可以按 Key 查看各自消耗了多少 Token，便于按团队、项目核算成本。
+- **每个 API Key 独立计量**。在 [用量统计](pathname:///ai-gateway/end‑user-manual/usage-statistics) 页面，可以按 Key 查看各自消耗了多少 Token，便于按团队、项目核算成本。
 - **建议为不同业务/项目创建独立的 Key**。例如给「智能客服小程序」一个 Key，给「内部数据分析脚本」另一个 Key——这样一旦某个 Key 泄露，只需要删它一个，不影响其他业务。
 - **API Key 仅在创建时完整可见一次**。之后列表里只会显示脱敏后的前缀+后缀（如 `sk-vfnR...oBKs`），所以创建时一定要**立即复制保存**。
 
