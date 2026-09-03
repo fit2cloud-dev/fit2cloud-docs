@@ -14,6 +14,21 @@
   padding: 8px 12px;
 }
 
+/* 下拉 trigger 文字旁的 chevron 箭头(参考 halo 顶部「版本」): 15px、浅灰、位置靠下 */
+.caretIcon {
+  margin-left: 4px;
+  color: #9aa4b1;
+  vertical-align: -0.2em; /* 相对文字基线往下沉, 箭头靠下 */
+  transition: color 0.2s, transform 0.2s;
+}
+.navbar__link:hover .caretIcon {
+  color: #0c7be0;
+}
+/* 下拉展开(hover)时箭头旋转 180° */
+:global(.navbar__item.dropdown--hoverable:hover) .caretIcon {
+  transform: rotate(180deg);
+}
+
 /* 图标区: 固定方形 box, 大图等比缩放进去 */
 .icon {
   flex: none;

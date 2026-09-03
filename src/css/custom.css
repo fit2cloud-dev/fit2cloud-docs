@@ -100,6 +100,23 @@
   display: none;
 }
 
+/* 隐藏 Infima 为 dropdown trigger 默认加的三角箭头, 改用「产品文档」旁自定义的 chevron 图标 */
+.navbar .dropdown > .navbar__link:after {
+  display: none;
+}
+
+/* 语言切换(中英文)的 chevron 图标(与「产品文档」同款 SVG, 由 swizzle 注入):
+   浅灰、靠下, 悬停变蓝由 .navbar__link:hover 的 currentColor 处理, 展开旋转见下 */
+.navbar-caret-icon {
+  margin-left: 4px;
+  color: #9aa4b1;
+  vertical-align: -0.2em;
+  transition: color 0.2s, transform 0.2s;
+}
+.navbar .dropdown--hoverable:hover .navbar-caret-icon {
+  transform: rotate(180deg);
+}
+
 /* ===== navbar logo 整体缩小到原来的一半 =====
    .navbar__logo 是 Docusaurus 包在 <img> 外层的 div(theme/Logo 里 imageClassName 传给它的),
    不是 <img> 本身; Infima 给它 height: 2rem, 内层 img 用 .navbar__logo img { height: 100% } 跟随。
@@ -108,7 +125,7 @@
    注意: ≤996px 的移动端规则里会把 height 改回 auto 并用 max-width 锁宽, 那条在媒体查询里、
    优先级更高, 移动端不受这里影响。 */
 .navbar__logo {
-  height: 1.5rem;
+  height: 1.1rem;
 }
 
 /* ===== Logo 移动端适配 =====
@@ -227,9 +244,33 @@ aside.theme-doc-sidebar-container {
     justify-content: center;
   }
 
-  /* 侧栏菜单字体稍加粗(原 Infima 默认 500, 提到 600) */
+  /* 侧栏菜单字体参考 docs.halo.run: 普通项 14px/400、分类标题 500、激活项 600, 行高 24px */
   .theme-doc-sidebar-container .menu__link {
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #1b1b1d;
+  }
+  .theme-doc-sidebar-container .menu__list-item-collapsible > .menu__link {
+    font-weight: 500;   /* 分类标题稍粗 */
+  }
+  .theme-doc-sidebar-container .menu__link--active {
+    font-weight: 600;   /* 当前项加粗 */
+  }
+  /* 侧栏分类展开箭头参考 halo: 更小巧、浅灰(halo 的辅助小图标偏浅) */
+  .theme-doc-sidebar-container .menu__caret {
+    opacity: 0.55;
+  }
+  .theme-doc-sidebar-container .menu__caret::before {
+    height: 1rem;
+    width: 1rem;
+    background-size: 1rem 1rem;
+  }
+  /* 侧栏菜单项 hover / 选中项: 背景改为主页浅蓝、文字改浅蓝 */
+  .theme-doc-sidebar-container .menu__link:hover,
+  .theme-doc-sidebar-container .menu__link--active {
+    background-color: #eaf1ff;
+    color: #0c7be0;
   }
   /* 主体: 弹性占满剩余宽度 */
   main[class*="docMainContainer"] {
@@ -285,6 +326,28 @@ aside.theme-doc-sidebar-container {
 [class*="language-bash"] .token.property,
 [class*="language-bash"] .token.number {
   color: #82aaff; /* 亮蓝(函数/数字) */
+}
+
+/* ===== 顶部导航栏文字字体参考 docs.halo.run「开发者指南」=====
+   halo 顶部导航项样式: 14px / 500 / 行高 22 / 深灰 #242424。
+   只设默认(非激活)颜色, hover 与激活态的蓝色仍由 Infima 规则生效。 */
+.navbar__link {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #242424;
+}
+/* 选中/悬停保持原本的浅蓝色(主题主色), 不被默认深灰覆盖 */
+.navbar__link:hover,
+.navbar__link--active {
+  color: #0c7be0;
+}
+
+/* ===== 文档正文字体与侧边导航栏一致(14px) =====
+   Docusaurus 正文默认 --ifm-font-size-base: 16px, 这里把文档正文容器降到 14px,
+   与左侧导航栏(.menu__link 14px)保持同一字号。 */
+.theme-doc-markdown {
+  font-size: 14px;
 }
 
 /* ===== 文档侧栏: 菜单项内容靠左 =====

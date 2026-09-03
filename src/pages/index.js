@@ -26,17 +26,9 @@ const EN_INFO = {
 // 按中文名查下拉数据, 拿到 {name, desc, logo, to/link} 作为卡片第一二行的统一信息来源。
 const docByName = Object.fromEntries(DOC_PRODUCTS.map((p) => [p.name, p]));
 
-// 1Panel AI 网关是 1Panel 的功能模块, 不在下拉的 8 个开源产品里, 单独给一份数据(走站内 /ai-gateway/)。
-const AI_GATEWAY = {
-  name: '1Panel AI 网关',
-  desc: '企业级 AI 网关',
-  to: '/ai-gateway/',
-  logo: '1panel-07-蓝色.png', // 复用 1Panel 的彩色小 logo
-};
-
 // 所有产品按分类集中在这张表, 每个产品对象来自 docByName(与「产品文档」下拉同源)。
 const PRODUCT_GROUPS = [
-  {title: 'AI 原生', titleEn: 'AI Native', items: [AI_GATEWAY, docByName['MaxKB']]},
+  {title: 'AI 原生', titleEn: 'AI Native', items: [docByName['1Panel AI 网关'], docByName['MaxKB']]},
   {title: '运维管理', titleEn: 'Ops Management', items: [docByName['1Panel'], docByName['JumpServer']]},
   {title: 'BI 数据分析', titleEn: 'BI & Analytics', items: [docByName['DataEase'], docByName['SQLBot']]},
   {title: 'CRM、建站及测试', titleEn: 'CRM, Website & Testing', items: [docByName['Cordys CRM'], docByName['MeterSphere'], docByName['Halo']]},

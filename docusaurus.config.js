@@ -13,6 +13,18 @@ const config = {
     {tagName: 'link', attributes: {rel: 'icon', type: 'image/x-icon', href: '/img/favicon.ico'}},
     {tagName: 'link', attributes: {rel: 'apple-touch-icon', href: '/img/favicon.png', sizes: '180x180'}},
     {tagName: 'link', attributes: {rel: 'icon', type: 'image/png', href: '/img/favicon.png', sizes: '32x32'}},
+    // 简单的无埋点浏览追踪: Google Analytics 4 (gtag)
+    {tagName: 'script', attributes: {async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-PRP2HJ49K6'}},
+    {
+      tagName: 'script',
+      attributes: {}, // 校验要求 headTags 每项必有 attributes(内联脚本可空缺)
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PRP2HJ49K6');
+      `,
+    },
   ],
 
   future: { v4: true },
@@ -201,10 +213,6 @@ const config = {
           {href: 'https://www.fit2cloud.com/', label: '官网', position: 'right'},
           {href: 'https://bbs.fit2cloud.com/', label: '论坛', position: 'right'},
           {href: 'https://edu.fit2cloud.com/', label: '培训认证', position: 'right'},
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          },
           {
             type: 'search',
             position: 'right',

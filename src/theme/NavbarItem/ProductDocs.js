@@ -19,14 +19,15 @@ import styles from './ProductDocs.module.css';
 // 与首页 PRODUCT_GROUPS(src/pages/index.js) 同源的 8 个产品, 链接指向各自文档站。
 // export 出来供首页引用(首页卡片的第一二行名称/简介共用这份数据)。
 export const PRODUCTS = [
+  {name: '1Panel AI 网关', to: '/ai-gateway/', desc: '企业级 AI 网关', logo: 'AI网关logo.png'},
   {name: '1Panel', to: '/1panel/', desc: '现代化、开源的 Linux 面板', logo: '1panel-07-蓝色.png'},
   {name: 'JumpServer', link: 'https://docs.jumpserver.org/zh/v4/', desc: '广受欢迎的开源堡垒机', logo: 'JumpServer-辅助图形-绿色.png'},
   {name: 'DataEase', link: 'https://dataease.cn/docs/v2/', desc: '人人可用的开源 BI 工具', logo: 'DataEase-07-蓝色.png'},
-  {name: 'MeterSphere', link: 'https://metersphere.io/docs/v3.x/', desc: '新一代的开源持续测试工具', logo: 'MeterSphere-辅助图形-紫色.png'},
   {name: 'MaxKB', link: 'https://maxkb.cn/docs/v2/', desc: '强大易用的企业级智能体平台', logo: 'MaxKB-03.png'},
-  {name: 'Halo', link: 'https://docs.halo.run/', desc: '强大易用的开源建站工具', logo: 'Halo-03.png'},
   {name: 'SQLBot', link: 'https://sqlbot.org/docs/v1/', desc: '基于大模型的智能问数系统', logo: '【辅助图形】SQLBot.png'},
   {name: 'Cordys CRM', link: 'https://cordys.cn/docs/', desc: '新一代的开源 AI CRM 系统', logo: 'CORDYS-辅助图形.png'},
+  {name: 'MeterSphere', link: 'https://metersphere.io/docs/v3.x/', desc: '新一代的开源持续测试工具', logo: 'MeterSphere-辅助图形-紫色.png'},
+  {name: 'Halo', link: 'https://docs.halo.run/', desc: '强大易用的开源建站工具', logo: 'Halo-03.png'},
 ];
 
 function ProductItem({p, imgSrc}) {
@@ -71,6 +72,22 @@ export default function ProductDocs() {
         aria-haspopup="true"
         aria-expanded="false">
         产品文档
+        {/* 下拉箭头, 参考 docs.halo.run 顶部「版本」旁的 chevron 图标 */}
+        <svg
+          className={styles.caretIcon}
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true">
+          <path
+            d="M6 9l6 6 6-6"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </a>
       <ul className={`${styles.menu} dropdown__menu`}>
         {PRODUCTS.map((p) => (

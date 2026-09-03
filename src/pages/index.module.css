@@ -123,7 +123,7 @@
   /* 显式深色: 不能 inherit —— dark 主题下 body 文字是浅色, 卡片白底配浅色文字会看不清 */
   color: #1a1a2e;
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  min-height: 150px; /* 三层内容紧凑, 设最小高度让各卡片高度一致 */
+  min-height: 120px; /* 三层内容紧凑, 设最小高度让各卡片高度一致 */
 }
 
 .productCard:hover {
