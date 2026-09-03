@@ -109,7 +109,7 @@
   gap: 1rem;
 }
 
-/* 产品卡片: 纵排居中布局, logo 在上 + 文字列在下(原版是横排 grid, 用户希望 logo 突出在视觉焦点) */
+/* 产品卡片: 纵排三层结构 —— 第一行(小 logo + 产品名) / 第二行(简介) / 第三行(纯文字「进入文档」) */
 .productCard {
   display: flex;
   flex-direction: column;
@@ -123,7 +123,7 @@
   /* 显式深色: 不能 inherit —— dark 主题下 body 文字是浅色, 卡片白底配浅色文字会看不清 */
   color: #1a1a2e;
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  min-height: 200px; /* 纵排布局卡片内容少, 设最小高度让所有卡片高度一致(去掉产品名后下调 20px) */
+  min-height: 120px; /* 三层内容紧凑, 设最小高度让各卡片高度一致 */
 }
 
 .productCard:hover {
@@ -134,50 +134,39 @@
   transform: translateY(-2px);
 }
 
-/* logo 区: 居中显示, 加大高度(纵排布局下 logo 是视觉焦点)
-   用 :global(picture) 因为 picture 标签没被加 class, CSS Modules 哈希不到。
-   max-height 锁 60px + width auto 处理各 logo 宽高比不一的情况(横幅型 logo 不会变形) */
-.productCard :global(picture),
-.productLogo {
+/* 卡片第一行: 小 logo + 产品名 并排居中(logo 用「产品文档」下拉同款彩色小图) */
+.productHeader {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 60px;
-  margin-bottom: 1rem;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
 }
 
-.productCard :global(picture) img,
 .productLogo {
-  max-height: 60px;
-  max-width: 90px;
-  width: auto;
-  height: auto;
+  display: block;
+  width: 26px;
+  height: 26px;
   object-fit: contain;
 }
 
-.productBody {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.productName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a2e;
 }
 
-/* 去掉产品名后, 描述成为卡片里唯一的正文, 字号/色阶各提一档当主文案用。
-   用定值 #374151 而不是 var(--ifm-color-emphasis-700): dark 主题下后者会变浅色,
-   白底卡片配浅色文字看不清。首页内容在 light/dark 下保持一致的深色文字。 */
+/* 第二行: 产品简介 */
 .productDesc {
-  font-size: 0.95rem;
-  color: #374151;
+  font-size: 0.9rem;
+  color: #6b7280;
   margin-bottom: 0.9rem;
-  /* 不截断: 居中布局下, 短描述更和谐; 卡片 min-height 撑住高度 */
 }
 
-/* 进入按钮: 保留 fit2cloud 官方蓝渐变 */
+/* 第三行: 「进入文档」, 纯文字(无背景) */
 .productEnter {
   display: inline-block;
-  font-size: 0.85rem;
+  margin-top: auto; /* 贴底对齐各卡片 */
+  font-size: 0.9rem;
   font-weight: 500;
-  color: #ffffff;
-  background: linear-gradient(90deg, #0c7be0 0%, #333dff 82.69%);
-  padding: 0.4rem 1.1rem;
-  border-radius: 6px;
+  color: #0c7be0; /* 品牌蓝文字 */
 }

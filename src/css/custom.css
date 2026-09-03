@@ -85,6 +85,38 @@
   display: none;
 }
 
+/* ===== 隐藏 navbar / footer 外部链接的外链小箭头 =====
+   用 href 定义的外部链接, Docusaurus 的 NavbarNavLink / FooterLinkItem 会自动给文字旁
+   加一个 ↗ 外链小图标(<svg class="iconExternalLink_...">, 见 NavbarNavLink.js 里
+   isExternalLink && <IconExternalLink/>)。
+   分别在 .navbar 与 .footer 范围内把所有 target="_blank" 外链里的这个 svg 隐藏掉,
+   只去掉视觉箭头、保留「新窗口打开」行为。
+   - .navbar: 右侧官网/论坛/开源社区/培训认证, 及「产品文档/开源产品」下拉里的外链
+   - .footer: 三列链接(常用链接/联系我们/资料下载)里的外链
+   限定 a[target="_blank"], 不影响首页产品卡片「进入文档 →」文字、搜索/语言图标,
+   也不影响 footer 版权区(那是手写 <a>, 无外链图标)。 */
+.navbar a[target="_blank"] svg,
+.footer a[target="_blank"] svg {
+  display: none;
+}
+
+/* 隐藏 Infima 为 dropdown trigger 默认加的三角箭头, 改用「产品文档」旁自定义的 chevron 图标 */
+.navbar .dropdown > .navbar__link:after {
+  display: none;
+}
+
+/* 语言切换(中英文)的 chevron 图标(与「产品文档」同款 SVG, 由 swizzle 注入):
+   浅灰、靠下, 悬停变蓝由 .navbar__link:hover 的 currentColor 处理, 展开旋转见下 */
+.navbar-caret-icon {
+  margin-left: 4px;
+  color: #9aa4b1;
+  vertical-align: -0.2em;
+  transition: color 0.2s, transform 0.2s;
+}
+.navbar .dropdown--hoverable:hover .navbar-caret-icon {
+  transform: rotate(180deg);
+}
+
 /* ===== navbar logo 整体缩小到原来的一半 =====
    .navbar__logo 是 Docusaurus 包在 <img> 外层的 div(theme/Logo 里 imageClassName 传给它的),
    不是 <img> 本身; Infima 给它 height: 2rem, 内层 img 用 .navbar__logo img { height: 100% } 跟随。
@@ -93,7 +125,7 @@
    注意: ≤996px 的移动端规则里会把 height 改回 auto 并用 max-width 锁宽, 那条在媒体查询里、
    优先级更高, 移动端不受这里影响。 */
 .navbar__logo {
-  height: 1rem;
+  height: 1.1rem;
 }
 
 /* ===== Logo 移动端适配 =====
@@ -172,3 +204,152 @@
   font-weight: 500;
 }
 */
+
+/* ===== 文档详情页: 左侧导航栏与顶部导航之间留出更大间隔 =====
+   Docusaurus 3.x 里文档侧栏的容器带全局类 theme-doc-sidebar-container。
+   默认侧栏菜单紧贴顶部导航, 这里给容器顶部加一点 padding, 让左侧菜单往下挪、
+   与顶部导航拉开距离。
+   - 用全局类而非 CSS Module: theme-classic 的 .sidebar 类会被哈希, 无法稳定覆盖。
+   - 只加顶部 padding、不改 sticky 的 top: 初始与滚动吸附后, 菜单距顶栏
+     都是「navbar 高度 + 本值」, 视觉间隔保持一致。 */
+aside.theme-doc-sidebar-container {
+  padding-top: 24px;
+}
+
+/* ===== 文档详情页: 左中右三段布局 =====
+   Docusaurus 原生支持三段: 左侧导航栏 + 中间内容 + 右侧目录(TOC)。
+   说明: 右侧目录是自动生成的第三列, 仅当「文档有标题且未设置
+   hide_table_of_contents」时才会显示; 没有标题的文档自然只有左+中两列。
+   这里把三段做成紧凑版:
+   - 左栏固定窄宽(默认 --doc-sidebar-width 300px), 紧贴内容区;
+   - 内容区弹性占满剩余;
+   - 右侧目录固定约 240px 独立成列, 与内容左右分明。
+   若想要 1:2:1 的均宽比例, 把下面 .col--3 和 [class*=docItemCol] 的
+   flex 值改成 2:1 并把左栏宽度调成 25% 即可。 */
+@media (min-width: 997px) {
+  /* 左栏: 固定宽 360px, 里侧 300px 菜单靠右 → 侧栏贴向内容区, 左侧留白 */
+  aside.theme-doc-sidebar-container {
+    flex: 0 0 360px;
+    max-width: 360px;
+  }
+  /* 侧栏固定: 强制 sticky 吸在顶部, 滚动页面时侧栏不跟着内容上移;
+     高度按内容自适应(菜单长时内部滚动), 水平居中于左栏 */
+  aside.theme-doc-sidebar-container > div {
+    position: sticky !important;
+    top: 0 !important;
+    height: auto !important; /* 关键: 去掉 100%, 否则侧栏高度=内容高, 会随页面滚动走 */
+    max-height: calc(100vh - var(--ifm-navbar-height)) !important;
+    overflow-y: auto !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 侧栏菜单字体参考 docs.halo.run: 普通项 14px/400、分类标题 500、激活项 600, 行高 24px */
+  .theme-doc-sidebar-container .menu__link {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #1b1b1d;
+  }
+  .theme-doc-sidebar-container .menu__list-item-collapsible > .menu__link {
+    font-weight: 500;   /* 分类标题稍粗 */
+  }
+  .theme-doc-sidebar-container .menu__link--active {
+    font-weight: 600;   /* 当前项加粗 */
+  }
+  /* 侧栏分类展开箭头参考 halo: 更小巧、浅灰(halo 的辅助小图标偏浅) */
+  .theme-doc-sidebar-container .menu__caret {
+    opacity: 0.55;
+  }
+  .theme-doc-sidebar-container .menu__caret::before {
+    height: 1rem;
+    width: 1rem;
+    background-size: 1rem 1rem;
+  }
+  /* 侧栏菜单项 hover / 选中项: 背景改为主页浅蓝、文字改浅蓝 */
+  .theme-doc-sidebar-container .menu__link:hover,
+  .theme-doc-sidebar-container .menu__link--active {
+    background-color: #eaf1ff;
+    color: #0c7be0;
+  }
+  /* 主体: 弹性占满剩余宽度 */
+  main[class*="docMainContainer"] {
+    flex: 1 1 auto;
+    max-width: none !important;
+  }
+  /* 内容列: 去掉默认 75% 上限, 让它填满到右侧目录 */
+  main[class*="docMainContainer"] [class*="docItemCol"] {
+    max-width: none !important;
+    flex: 1 1 auto;
+  }
+  /* 右侧目录: 固定 ~240px 独立一列, 与内容分开 */
+  main[class*="docMainContainer"] .col--3 {
+    flex: 0 0 240px !important;
+    width: 240px !important;
+    max-width: 240px !important;
+  }
+}
+
+/* ===== bash 代码块: 黑色背景 =====
+   只改 bash 语言代码块: 背景黑、文字浅色、语法高亮用亮色, 保证黑底可读。
+   其它语言不受影响。 */
+[class*="language-bash"] {
+  background-color: #000000 !important;
+  color: #e6e6e6 !important;
+}
+[class*="language-bash"] .token {
+  color: #e6e6e6;
+}
+[class*="language-bash"] .token.comment,
+[class*="language-bash"] .token.prolog,
+[class*="language-bash"] .token.doctype,
+[class*="language-bash"] .token.cdata {
+  color: #8a8a8a; /* 注释灰 */
+}
+[class*="language-bash"] .token.keyword,
+[class*="language-bash"] .token.boolean,
+[class*="language-bash"] .token.constant,
+[class*="language-bash"] .token.operator,
+[class*="language-bash"] .token.punctuation,
+[class*="language-bash"] .token.tag,
+[class*="language-bash"] .token.selector {
+  color: #ff79c6; /* 亮粉(关键字/运算符) */
+}
+[class*="language-bash"] .token.string,
+[class*="language-bash"] .token.char,
+[class*="language-bash"] .token.attr-value,
+[class*="language-bash"] .token.regex {
+  color: #50fa7b; /* 亮绿(字符串) */
+}
+[class*="language-bash"] .token.function,
+[class*="language-bash"] .token.attr-name,
+[class*="language-bash"] .token.property,
+[class*="language-bash"] .token.number {
+  color: #82aaff; /* 亮蓝(函数/数字) */
+}
+
+/* ===== 顶部导航栏文字字体参考 docs.halo.run「开发者指南」=====
+   halo 顶部导航项样式: 14px / 500 / 行高 22 / 深灰 #242424。
+   只设默认(非激活)颜色, hover 与激活态的蓝色仍由 Infima 规则生效。 */
+.navbar__link {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #242424;
+}
+/* 选中/悬停保持原本的浅蓝色(主题主色), 不被默认深灰覆盖 */
+.navbar__link:hover,
+.navbar__link--active {
+  color: #0c7be0;
+}
+
+/* ===== 文档正文字体与侧边导航栏一致(14px) =====
+   Docusaurus 正文默认 --ifm-font-size-base: 16px, 这里把文档正文容器降到 14px,
+   与左侧导航栏(.menu__link 14px)保持同一字号。 */
+.theme-doc-markdown {
+  font-size: 14px;
+}
+
+/* ===== 文档侧栏: 菜单项内容靠左 =====
+   菜单项文字保持 Infima 默认左对齐(带缩进); 不做居中处理。
+   侧栏整体位置见下方 1:2:1 块里 sidebarViewport 的 flex 对齐。 */

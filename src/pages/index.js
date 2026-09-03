@@ -6,139 +6,63 @@ import Heading from '@theme/Heading';
 // 与右上角同一个搜索框组件(由 @easyops-cn/docusaurus-search-local 提供)。
 // 首页不是文档页, 这里没有 activePlugin / searchContext, 因此会检索全部产品的全部文档。
 import SearchBar from '@theme/SearchBar';
+// 产品名称/简介/logo/文档链接复用左侧「产品文档」下拉那份数据(单一数据源, 避免两处不一致)。
+import {PRODUCTS as DOC_PRODUCTS} from '../theme/NavbarItem/ProductDocs';
 import styles from './index.module.css';
 
-// 所有产品集中维护在这里; 改链接/描述/分类/换图都只动这张表。
-// - link 是站内路由时, Docusaurus Link 自动加 baseUrl 并用 <a> 同站跳转
-// - link 是 http(s):// 时, Link 自动加 target="_blank" rel="noopener noreferrer"
-// - logo 只用 light 版: 首页内容在 light/dark 主题下保持一致的浅色视觉, 不切换 logo
-// - 中英双语: title/desc/name 是中文, titleEn/descEn/nameEn 是英文, 按 i18n.currentLocale 切换。
-//   nameEn 可省略(品牌名本身就是拉丁字母时), 组件里 fallback 到 name。
+// 首页卡片在中英文下要显示产品名/简介: 下拉 PRODUCTS 只有中文 name/desc,
+// 这里补一份英文(nameEn/descEn), 按中文 name 匹配; 没有英文的 fallback 到中文。
+const EN_INFO = {
+  '1Panel': ['1Panel', 'Modern, open-source Linux panel'],
+  'JumpServer': ['JumpServer', 'The most popular open-source bastion host'],
+  'DataEase': ['DataEase', 'Open-source BI tool for everyone'],
+  'MeterSphere': ['MeterSphere', 'Next-gen open-source continuous testing tool'],
+  'MaxKB': ['MaxKB', 'Powerful yet easy-to-use enterprise AI agent platform'],
+  'Halo': ['Halo', 'Powerful yet easy-to-use open-source website builder'],
+  'SQLBot': ['SQLBot', 'LLM-powered Text-to-SQL system'],
+  'Cordys CRM': ['Cordys CRM', 'Next-generation open-source AI CRM'],
+};
+
+// 按中文名查下拉数据, 拿到 {name, desc, logo, to/link} 作为卡片第一二行的统一信息来源。
+const docByName = Object.fromEntries(DOC_PRODUCTS.map((p) => [p.name, p]));
+
+// 所有产品按分类集中在这张表, 每个产品对象来自 docByName(与「产品文档」下拉同源)。
 const PRODUCT_GROUPS = [
-  {
-    title: 'AI 原生',
-    titleEn: 'AI Native',
-    items: [
-      {
-        name: '1Panel AI 网关',
-        nameEn: '1Panel AI Gateway',
-        desc: '企业级 AI 网关',
-        descEn: 'Enterprise-grade AI gateway',
-        link: '/ai-gateway/',
-        // SVG(viewBox 960x260, 约 3.69:1): 矢量图, 缩放不糊; 文件名含中文+【】,
-        // useBaseUrl 会自动 URL 编码。卡片里受 .productLogo 的 max-width:220px 约束。
-        logo: { light: '1panel-ai-gateway.svg' },
-      },
-      {
-        name: 'MaxKB',
-        desc: '强大易用的企业级智能体平台',
-        descEn: 'Powerful yet easy-to-use enterprise AI agent platform',
-        link: 'https://maxkb.cn/docs/v2/',
-        logo: { light: 'MaxKB-05.png' },
-      },
-    ],
-  },
-  {
-    title: '运维管理',
-    titleEn: 'Ops Management',
-    items: [
-      {
-        name: '1Panel 运维管理面板',
-        nameEn: '1Panel Linux Panel',
-        desc: '现代化、开源的 Linux 面板',
-        descEn: 'Modern open-source Linux panel',
-        link: '/1panel/',
-        logo: { light: '1panel-01.png' },
-      },
-      {
-        name: 'JumpServer',
-        desc: '广受欢迎的开源堡垒机',
-        descEn: 'The most popular open-source bastion host',
-        // 注意: JumpServer 文档站没有英文版(/en/v4/ 会 302 回 /zh/v4/), 所以中英文共用中文地址
-        link: 'https://docs.jumpserver.org/zh/v4/',
-        logo: { light: 'JumpServer-绿色.png' },
-      },
-    ],
-  },
-  {
-    title: 'BI 数据分析',
-    titleEn: 'BI & Analytics',
-    items: [
-      {
-        name: 'DataEase',
-        desc: '人人可用的开源 BI 工具',
-        descEn: 'Open-source BI tool for everyone',
-        link: 'https://dataease.cn/docs/v2/',
-        logo: { light: 'DataEase-01.png' },
-      },
-      {
-        name: 'SQLBot',
-        desc: '基于大模型的智能问数系统',
-        descEn: 'LLM-powered Text-to-SQL system',
-        link: 'https://sqlbot.org/docs/v1/',
-        // 文件名含【】和中文, useBaseUrl + img.src 会自动 URL 编码, 没问题
-        logo: { light: '【logo】SQLBot.png' },
-      },
-    ],
-  },
-  {
-    title: 'CRM、建站及测试',
-    titleEn: 'CRM, Website & Testing',
-    items: [
-      {
-        name: 'Cordys CRM',
-        desc: '新一代的开源 AI CRM 系统',
-        descEn: 'Next-generation open-source AI CRM',
-        link: 'https://cordys.cn/docs/',
-        logo: { light: 'CORDYS.png' },
-      },
-      {
-        name: 'MeterSphere',
-        desc: '新一代的开源持续测试工具',
-        descEn: 'Next-generation open-source continuous testing tool',
-        link: 'https://metersphere.io/docs/v3.x/',
-        logo: { light: 'MeterSphere-紫色.png' },
-      },
-      {
-        name: 'Halo',
-        desc: '强大易用的开源建站工具',
-        descEn: 'Powerful yet easy-to-use open-source website builder',
-        link: 'https://docs.halo.run/',
-        logo: { light: 'Halo-01.png' },
-      },
-    ],
-  },
+  {title: 'AI 原生', titleEn: 'AI Native', items: [docByName['1Panel AI 网关'], docByName['MaxKB']]},
+  {title: '运维管理', titleEn: 'Ops Management', items: [docByName['1Panel'], docByName['JumpServer']]},
+  {title: 'BI 数据分析', titleEn: 'BI & Analytics', items: [docByName['DataEase'], docByName['SQLBot']]},
+  {title: 'CRM、建站及测试', titleEn: 'CRM, Website & Testing', items: [docByName['Cordys CRM'], docByName['MeterSphere'], docByName['Halo']]},
 ];
 
-function ProductCard({ item, enter, zh }) {
-  // 首页统一用亮色版 logo, 不参与站点 data-theme 切换。
-  const lightSrc = useBaseUrl(`/img/${item.logo.light}`);
+// 卡片三层结构: 第一行(小 logo + 产品名) / 第二行(简介) / 第三行(纯文字「进入文档」)。
+function ProductCard({item, zh}) {
+  const nickname = item.name;
+  const en = EN_INFO[nickname];
+  const name = zh ? nickname : (en ? en[0] : nickname);
+  const desc = zh ? item.desc : (en ? en[1] : item.desc);
+  const target = item.to ?? item.link; // 站内 to / 外站 link
+  const logo = useBaseUrl(`/img/logo/${encodeURIComponent(item.logo)}`);
+  const enter = zh ? '进入文档 →' : 'Enter Docs →';
 
   return (
-    <Link to={item.link} className={styles.productCard}>
-      <img
-        src={lightSrc}
-        alt={zh ? item.name : item.nameEn || item.name}
-        className={styles.productLogo}
-        loading="lazy"
-      />
-      <div className={styles.productBody}>
-        {/* 不再渲染产品名: logo 图片本身已带产品名文字, 重复展示显冗余。
-            name 字段仍保留 —— 用作 React key、以及 alt(无障碍/图片加载失败时的兜底文案)。 */}
-        <div className={styles.productDesc}>{zh ? item.desc : item.descEn}</div>
-        <div className={styles.productEnter}>{enter}</div>
-      </div>
+    <Link to={target} className={styles.productCard}>
+      <span className={styles.productHeader}>
+        <img src={logo} alt={name} className={styles.productLogo} loading="lazy" />
+        <span className={styles.productName}>{name}</span>
+      </span>
+      <span className={styles.productDesc}>{desc}</span>
+      <span className={styles.productEnter}>{enter}</span>
     </Link>
   );
 }
 
-function CategorySection({ title, titleEn, items, enter, zh }) {
+function CategorySection({title, titleEn, items, zh}) {
   return (
     <section className={styles.categorySection}>
       <Heading as="h2" className={styles.categoryTitle}>{zh ? title : titleEn}</Heading>
       <div className={styles.productGrid}>
         {items.map((item) => (
-          <ProductCard key={item.name} item={item} enter={enter} zh={zh} />
+          <ProductCard key={item.name} item={item} zh={zh} />
         ))}
       </div>
     </section>
@@ -146,10 +70,9 @@ function CategorySection({ title, titleEn, items, enter, zh }) {
 }
 
 export default function Home() {
-  const { i18n } = useDocusaurusContext();
+  const {i18n} = useDocusaurusContext();
   const zh = i18n.currentLocale === 'zh-Hans';
   const siteTitle = zh ? '文档中心' : 'Docs Center';
-  const enter = zh ? '进入文档 →' : 'Enter Docs →';
 
   return (
     <Layout title={siteTitle} description={siteTitle}>
@@ -167,7 +90,6 @@ export default function Home() {
               title={g.title}
               titleEn={g.titleEn}
               items={g.items}
-              enter={enter}
               zh={zh}
             />
           ))}

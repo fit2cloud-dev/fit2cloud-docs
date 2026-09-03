@@ -11,6 +11,7 @@ import DocSidebarNavbarItem from '@theme/NavbarItem/DocSidebarNavbarItem';
 import DocsVersionNavbarItem from '@theme/NavbarItem/DocsVersionNavbarItem';
 import DocsVersionDropdownNavbarItem from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
 import VersionSwitcher from '@theme/NavbarItem/VersionSwitcher';
+import ProductDocs from '@theme/NavbarItem/ProductDocs';
 
 const ComponentTypes = {
   default: DefaultNavbarItem,
@@ -23,6 +24,7 @@ const ComponentTypes = {
   docsVersion: DocsVersionNavbarItem,
   docsVersionDropdown: DocsVersionDropdownNavbarItem,
   'custom-VersionSwitcher': VersionSwitcher,
+  'custom-ProductDocs': ProductDocs,
 };
 
 export default ComponentTypes;
