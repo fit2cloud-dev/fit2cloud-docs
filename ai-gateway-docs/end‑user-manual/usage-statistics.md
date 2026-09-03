@@ -8,7 +8,7 @@ slug: /user_manual/ai_gateway/usage_statistics
 
 用量统计页汇总展示网关在指定时间范围内的模型调用总量与分布，帮助管理员掌握各供应商、模型、用户的使用情况。页面由筛选区、总览卡片和分布表格组成。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/usage_statistics/image1-Usage-Statistics.png" alt="用量统计页"/>
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/usage_statistics/image2-Usage-Statistics.png" alt="用量统计页"/>
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  用量统计页</div>
 
