@@ -161,7 +161,7 @@ npm install -g @openai/codex
 :::tip[温馨提示]
 
 - 包名必须是 `@openai/codex`，注意前面有 `@openai/`，不要只输 `codex`，那是一个不相关的旧包。
-- 如果下载很慢或超时，可以先换国内镜像源再装：`npm config set registry` [https://registry.npmmirror.com](https://registry.npmmirror.com)
+- 如果下载很慢或超时，可以先换国内镜像源再装：`npm config set registry1` [https://registry.npmmirror.com](https://registry.npmmirror.com)
 
   :::
 
