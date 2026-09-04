@@ -1,6 +1,5 @@
 ---
 title: 接入第三方
-description: 介绍如何将 Work Buddy、DeepSeek Harness、codex、Cursor、OpenClaw 等客户端接入 1Panel AI 网关。
 ---
 
 在开始之前，先弄清楚两个名词，后文会反复出现：
@@ -15,7 +14,7 @@ description: 介绍如何将 Work Buddy、DeepSeek Harness、codex、Cursor、Op
 1. **接口地址（Base URL）**：例如 [https://1router.1panel.cn/v1](https://1router.1panel.cn/v1)，注意末尾的 `/v1` 不能少。
 2. **模型名称**：管理员在网关里给你开通的模型标识（例如 `1Panel-Auto`），配置时必须一字不差。
 
-### 1 准备工作：获取 API Key（各客户端通用）
+### 1 准备工作：获取 API Key（三个客户端通用）
 
 不管你用哪个客户端，都需要先在 1Panel AI 网关管理端创建属于自己的 API Key。如果你已经做过这一步并保存了 Key，可以跳到对应客户端的章节。
 
@@ -162,7 +161,7 @@ npm install -g @openai/codex
 :::tip[温馨提示]
 
 - 包名必须是 `@openai/codex`，注意前面有 `@openai/`，不要只输 `codex`，那是一个不相关的旧包。
-- 如果下载很慢或超时，可以先换国内镜像源再装：`npm config set registry1` [https://registry.npmmirror.com](https://registry.npmmirror.com)
+- 如果下载很慢或超时，可以先换国内镜像源再装：`npm config set registry` [https://registry.npmmirror.com](https://registry.npmmirror.com)
 
   :::
 
@@ -248,7 +247,7 @@ Cursor 是一款 AI 编程编辑器（可理解为"内置 AI 助手的 VS Code"�
 
 1. **模型名称**：填写网关开通的模型标识（如 `1Panel-Auto`），需与模型广场展示的名称一字不差
 2. **OpenAI API Key**：粘贴在 1Panel AI 网关管理端创建的 API Key
-3. **Override OpenAI Base URL**：打开该开关，填入接口地址 `https://1router.1panel.cn/v1`（末尾 `/v1` 不可省略）
+3. **Override OpenAI Base URL**：打开该开关，填入接口地址 [https://1router.1panel.cn/v1](https://1router.1panel.cn/v1)（末尾 `/v1` 不可省略）
 4. 点击「Add」保存
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image19_cursor_fill_apikey_baseurl.png" alt="填写接入配置"/>
@@ -256,7 +255,9 @@ Cursor 是一款 AI 编程编辑器（可理解为"内置 AI 助手的 VS Code"�
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 19  填写模型名称、API Key 与接口地址</div>
 
 :::note[注意]
+
 接口地址末尾的 `/v1` 路径不可省略。若你的网关部署在本地或内网，地址以管理员提供的实际地址为准。
+
 :::
 
 #### 5.4 选择模型并测试
@@ -299,7 +300,7 @@ openclaw configure --section model
 
 按提示依次填写三项信息：
 
-- **API Base URL**：`https://1router.1panel.cn/v1`（末尾 `/v1` 不可省略）
+- **API Base URL**：[https://1router.1panel.cn/v1](https://1router.1panel.cn/v1)（末尾 `/v1` 不可省略）
 - **API Key**：粘贴在 1Panel AI 网关管理端创建的 API Key
 - **Model ID**：网关开通的模型标识（如 `1Panel-Auto`），需与模型广场展示的名称一字不差
 
@@ -364,8 +365,10 @@ openclaw config validate
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 26  openclaw config validate 校验通过</div>
 
 :::note[常见踩坑]
+
 - JSON 里字段名写错（如 `baseUrl` 写成 `base_url`）、`api` 值填错，都会导致校验报错「Invalid option」或「Unrecognized key」，按错误提示里给出的合法值修正即可。
 - 不要用 `openclaw config set auth.openai.baseURL ...` 来配置网关——该键位校验会失败，正确做法就是用上面的方式一或方式二写入 `models.providers`。
+
 :::
 
 #### 6.4 启动网关并测试对话
