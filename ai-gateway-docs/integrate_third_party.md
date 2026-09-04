@@ -215,7 +215,183 @@ CC Switch 下载地址（GitHub Releases 发布页）：[https://github.com/fari
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 15  codex 测试对话</div>
 
-### 5 常见问题排查（FAQ）
+### 5 接入 Cursor
+
+#### 5.1 下载并安装 Cursor
+
+Cursor 是一款 AI 编程编辑器（可理解为"内置 AI 助手的 VS Code"），支持 Windows、macOS 和 Linux。打开官网 [https://cursor.com/download](https://cursor.com/download)，点击「Download for Windows / Mac」下载安装包，双击安装即可，无需额外配置环境。
+
+#### 5.2 添加自定义模型
+
+打开 Cursor 并登录账号后，在对话输入框下方点击当前模型名称（如 `Composer 2.5 Fast`）打开模型下拉菜单，点击列表底部的「Add Models」。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image16_cursor_add_models.png" alt="点击 Add Models"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 16  点击 Add Models</div>
+
+进入「Models」设置页后，点击列表底部的「View All Models」展开全部模型。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image17_cursor_models_view_all.png" alt="View All Models"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 17  展开全部模型</div>
+
+在展开的模型列表最底部，点击「+ Add Custom Model」，开始添加网关模型。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image18_cursor_add_custom_model.png" alt="Add Custom Model"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 18  点击 Add Custom Model</div>
+
+#### 5.3 填写接入配置
+
+按以下顺序填写四项信息（对应下图标号）：
+
+1. **模型名称**：填写网关开通的模型标识（如 `1Panel-Auto`），需与模型广场展示的名称一字不差
+2. **OpenAI API Key**：粘贴在 1Panel AI 网关管理端创建的 API Key
+3. **Override OpenAI Base URL**：打开该开关，填入接口地址 [https://1router.1panel.cn/v1](https://1router.1panel.cn/v1)（末尾 `/v1` 不可省略）
+4. 点击「Add」保存
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image19_cursor_fill_apikey_baseurl.png" alt="填写接入配置"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 19  填写模型名称、API Key 与接口地址</div>
+
+:::note[注意]
+
+接口地址末尾的 `/v1` 路径不可省略。若你的网关部署在本地或内网，地址以管理员提供的实际地址为准。
+
+:::
+
+#### 5.4 选择模型并测试
+
+回到对话界面，再次打开模型下拉菜单，此时列表中已出现刚添加的模型（如 `1Panel-Auto`），点击选中它并发送一条简单消息。若能正常返回回复，说明 Cursor → 1Panel AI 网关 → 上游模型的链路已经打通。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image20_cursor_select_model_test.png" alt="选择模型并测试"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 20  选择自定义模型并测试</div>
+
+### 6 接入 OpenClaw
+
+OpenClaw 是一款开源的个人 AI 助手（通过终端使用），同样支持接入自定义模型。接入它需要先在电脑上安装 Node.js（版本建议 22 及以上，方法见 4.1 节），然后在终端（Windows 用 PowerShell）执行安装命令：
+
+```bash
+npm install -g openclaw
+```
+
+接入 1Panel AI 网关有两种配置方式，任选其一即可：方式一用交互式配置向导（推荐，全程按提示填写）；方式二直接编辑配置文件 `openclaw.json`（适合熟悉 JSON 的用户）。
+
+#### 6.1 方式一：交互式配置向导
+
+在终端执行以下命令，进入模型配置向导：
+
+```bash
+openclaw configure --section model
+```
+
+在「Model/auth provider」列表中，用方向键选中「More...」并按回车，展开完整供应商列表。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image21_openclaw_config_section_model.png" alt="进入模型配置向导"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 21  进入模型配置向导并展开更多供应商</div>
+
+在列表中选中「Custom Provider (Any OpenAI or Anthropic compatible endpoint)」并按回车。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image22_openclaw_select_custom_provider.png" alt="选择 Custom Provider"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 22  选择 Custom Provider</div>
+
+按提示依次填写三项信息：
+
+- **API Base URL**：[https://1router.1panel.cn/v1](https://1router.1panel.cn/v1)（末尾 `/v1` 不可省略）
+- **API Key**：粘贴在 1Panel AI 网关管理端创建的 API Key
+- **Model ID**：网关开通的模型标识（如 `1Panel-Auto`），需与模型广场展示的名称一字不差
+
+填完 Model ID 后，向导会自动校验连通性并显示「Verification successful」；「Endpoint compatibility」保持默认的 OpenAI-compatible，「Endpoint ID」保持与模型 ID 一致即可。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image23_openclaw_fill_baseurl_apikey_modelid.png" alt="填写接口地址、API Key 与模型 ID"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 23  填写接口地址、API Key 与模型 ID 并通过校验</div>
+
+一路按回车完成剩余选项后，终端出现「Configuration updated.」表示配置已写入 `~/.openclaw/openclaw.json`（旧配置会自动备份为 `.bak` 文件）。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image24_openclaw_config_updated.png" alt="配置更新完成"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 24  出现 Configuration updated 即配置完成</div>
+
+#### 6.2 方式二：直接编辑 openclaw.json
+
+配置向导不方便使用时，可以直接编辑配置文件 `~/.openclaw/openclaw.json`（Windows 上位于 `C:\Users\<你的用户名>\.openclaw\openclaw.json`），在 `models.providers` 下添加自定义供应商节点，核心字段如下：
+
+```json
+"models": {
+  "mode": "merge",
+  "providers": {
+    "1panel-auto": {
+      "baseUrl": "https://1router.1panel.cn/v1",
+      "apiKey": "sk-你的APIKey",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "1Panel-Auto",
+          "name": "1Panel-Auto"
+        }
+      ]
+    }
+  }
+}
+```
+
+四个要点：
+
+- **baseUrl**：网关接口地址，末尾 `/v1` 不可省略
+- **apiKey**：网关管理端创建的 API Key
+- **api**：固定填 `openai-completions`
+- **models 的 id / name**：网关开通的模型标识，两处保持一致
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image25_openclaw_edit_json_config.png" alt="编辑 openclaw.json"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 25  在 openclaw.json 中配置自定义供应商</div>
+
+#### 6.3 校验配置
+
+两种方式配置完成后，都执行以下命令校验配置文件是否合法：
+
+```bash
+openclaw config validate
+```
+
+终端输出「Config valid: ~/.openclaw\openclaw.json」（绿色）即表示配置正确。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image26_openclaw_config_validate.png" alt="配置校验通过"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 26  openclaw config validate 校验通过</div>
+
+:::note[常见踩坑]
+
+- JSON 里字段名写错（如 `baseUrl` 写成 `base_url`）、`api` 值填错，都会导致校验报错「Invalid option」或「Unrecognized key」，按错误提示里给出的合法值修正即可。
+- 不要用 `openclaw config set auth.openai.baseURL ...` 来配置网关——该键位校验会失败，正确做法就是用上面的方式一或方式二写入 `models.providers`。
+
+:::
+
+#### 6.4 启动网关并测试对话
+
+校验通过后，启动 OpenClaw 网关：
+
+```bash
+openclaw gateway run --verbose
+```
+
+启动日志最后一行出现 `agent model: my-selfhost/1Panel-Auto`（即配置的供应商/模型）说明模型已生效。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image27_openclaw_gateway_run.png" alt="启动 OpenClaw 网关"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 27  启动网关，agent model 显示为已接入的模型</div>
+
+新开一个终端执行 `openclaw tui` 进入对话界面，发送一条简单消息（如"你好"）。能收到模型回复，且状态栏显示所用模型（如 `1Panel-Auto`），说明 OpenClaw → 1Panel AI 网关 → 上游模型链路已经打通。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/quick_deployment/image28_openclaw_tui_test_chat.png" alt="openclaw tui 测试对话"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 28  openclaw tui 测试对话成功</div>
+
+### 7 常见问题排查（FAQ）
 
 配置完成后测试如果不通，按下面的对照表排查，基本都能解决：
 
