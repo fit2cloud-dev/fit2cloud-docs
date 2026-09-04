@@ -6,6 +6,9 @@ const sidebars = {
     { type: "doc", id: "index", label: "产品介绍" },
     { type: "doc", id: "quick_start", label: "快速入门" },
 
+    // ── 更新日志 ──
+    { type: "doc", id: "changelog", label: "更新日志" },
+
     // ── installation：安装部署页 ──
     {
       type: "category",
