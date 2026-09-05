@@ -111,6 +111,16 @@ slug: /user_manual/ai_gateway/settings
 
 网关产生的调用日志、审计日志等数据量较大且需要检索能力。通过对接 Elasticsearch，可将日志数据写入其中，便于高效存储、检索与分析。
 
+:::caution[仅支持 Elasticsearch 9.x 版本]
+当前仅支持 Elasticsearch **9.x** 版本（如 9.5.3），连接 8.x 及更早版本会提示"Elasticsearch 版本不受支持"。
+:::
+
+如果你还没有 Elasticsearch 服务，推荐直接在 **1Panel 应用商店** 中安装：进入 1Panel 的「应用商店」，搜索 **Elasticsearch**，在版本下拉框中选择 **9.x** 版本（如 9.5.3）完成安装，再回到本页填写该服务的地址与认证信息即可。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/settings/image7-Elasticsearch-App-Store.png" alt="在 1Panel 应用商店安装 Elasticsearch"/>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  在 1Panel 应用商店安装 Elasticsearch</div>
+
 主要配置项包括：
 
 - **Elasticsearch 地址**：目标 Elasticsearch 服务地址。
@@ -128,7 +138,7 @@ slug: /user_manual/ai_gateway/settings
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/settings/image6-Elasticsearch-Settings.png" alt="Elasticsearch 设置"/>
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  Elasticsearch 设置</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7  Elasticsearch 设置</div>
 
 ## 8 注意事项
 

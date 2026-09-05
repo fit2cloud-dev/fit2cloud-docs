@@ -353,3 +353,12 @@ aside.theme-doc-sidebar-container {
 /* ===== 文档侧栏: 菜单项内容靠左 =====
    菜单项文字保持 Infima 默认左对齐(带缩进); 不做居中处理。
    侧栏整体位置见下方 1:2:1 块里 sidebarViewport 的 flex 对齐。 */
+
+/* ===== 提示框(admonition)标题: 取消默认全大写 =====
+   本 Docusaurus 版本使用 CSS 嵌套层级(@layer)，Infima 实际作用于
+   .admonitionHeading_xxx（哈希类名）的 text-transform: uppercase。
+   用 [class*=admonitionHeading] 匹配哈希类，并加 !important 压过 layer。
+   导致中文提示框标题里的英文(如 Elasticsearch)被强制大写，这里恢复原文大小写。 */
+[class*=admonitionHeading] {
+  text-transform: none !important;
+}
