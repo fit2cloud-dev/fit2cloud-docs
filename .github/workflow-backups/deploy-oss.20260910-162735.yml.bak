@@ -12,7 +12,7 @@
 #
 # 流程:
 #   1. npm run build 生成静态站点到 build/
-#   2. 用 ossutil sync 同步到 Bucket(--job 20 并发上传; --delete 清理本地已不存在的文件)
+#   2. 用 ossutil sync 增量同步到 Bucket(--checksum 比较大小和 crc64, 只传有变化的; --delete 清理已删文件)
 #   3. 用 aliyun-cli 调用 CDN RefreshObjectCaches 刷新(目录或批量URL, 见 cdn_refresh_mode 输入)
 #      (需要 RAM 子账号具备 cdn:RefreshObjectCaches 权限, 否则该步会 Forbidden.RAM)
 
@@ -59,7 +59,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+        run: npm ci
 
       - name: Build site
         run: npm run build
@@ -74,12 +74,16 @@ jobs:
           find ossutil-bin -name ossutil -type f -exec cp {} ./ossutil \;
           chmod +x ./ossutil
 
-      - name: Sync build to OSS
+      - name: Sync build to OSS (incremental sync)
         run: |
-          # ossutil 2.4.0 默认只并发传 3 个文件；本站图片多，提高到 20 以减少传输等待。
-          # 保留原有同步参数和 Bucket 根目录镜像范围，仅调整多文件并发数。
-          # --checksum 在该版本仅适用于 OSS 对象间拷贝，本地上传仍可能全量传输。
-          # 不使用 --size-only，确保字节数相同但内容变化的 HTML 也能正确覆盖。
+          # 每次 npm run build 都会刷新所有文件的 mtime, 若按时间戳(--update)判断
+          # 会把"内容没变仅时间变"的文件也当作要传, 导致每次全量上传(约 400MB), 很慢。
+          # 之前用 --size-only(只比大小) 会误判: HTML 内容变了但字节数恰好相同(CSS哈希名等长
+          # 替换)时被当作"未变化"跳过, 造成线上 HTML 引用已删除的旧 CSS -> 样式丢失。
+          # 因此改用 --checksum: 大小不同 或 crc64 校验不同 才上传, 既不漏传又不全量。
+          # Docusaurus 静态资源带内容哈希, 内容变了大小/crc64 必变, 必会正确上传。
+          # 保留 --delete 让本地删除的文件也能从云端同步删除(两端一致)。
+          # --checksum 是增量关键: 同时比较大小和 crc64, 只会传真正有改动的文件。
           # ossutil v2 默认 SigV4 签名, 必须用下面的 region 推导(缺少会报 "region must be set")。
           # region 从 endpoint 推导: 如 oss-cn-hangzhou.aliyuncs.com -> cn-hangzhou
           OSS_REGION="$(echo "$ALIYUN_OSS_ENDPOINT" | sed -E 's|^https?://||; s|^oss-||; s|\..*||')"
@@ -91,7 +95,7 @@ jobs:
           region = "$OSS_REGION"
           endpoint = "$ALIYUN_OSS_ENDPOINT"
           EOF
-          ./ossutil sync ./build/ "oss://$ALIYUN_OSS_BUCKET/" --delete --checksum -f --job 20
+          ./ossutil sync ./build/ "oss://$ALIYUN_OSS_BUCKET/" --delete --checksum -f
         env:
           ALIYUN_ACCESS_KEY_ID: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
           ALIYUN_ACCESS_KEY_SECRET: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
