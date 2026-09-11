@@ -154,13 +154,13 @@ const sidebars = {
     ),
     doc("quick_start", "快速入门", "doc:快速入门"),
     cat(
-      "最新动态",
+      "更新日志",
       [
-        doc("changelog", "更新日志", "doc:最新动态/更新日志"),
+        doc("changelog", "日志详情", "doc:更新日志/日志详情"),
         cat(
           "更新说明",
-          [doc("change-v3-0-0", "v3.0.0", "doc:最新动态/更新说明/v3.0.0")],
-          "cat:最新动态/更新说明"
+          [doc("change-v3-0-0", "v3.0.0", "doc:更新日志/更新说明/v3.0.0")],
+          "cat:更新日志/更新说明"
         ),
       ],
       "cat:最新动态"

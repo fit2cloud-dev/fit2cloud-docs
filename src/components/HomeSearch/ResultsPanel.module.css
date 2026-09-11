@@ -1,0 +1,138 @@
+/* ==================================================================
+ * 首页/导航栏共用的「即时搜索结果下拉面板」样式 (自 HomeSearch/index.module.css 迁出)
+ * 数值取自 Figma frame '交互' Frame 1564942 / 搜索内容 / 查看全部结果
+ * ================================================================== */
+
+/* ---------------- 下拉面板 ----------------
+   设计稿: 与搜索框同宽 800, 距搜索框 8, 白底 r12, 内边距 27(左右/上)。
+
+   【position:fixed 说明】
+   面板用 position:fixed + 内联 style(top/left/width, 由 JS 以搜索框/锚点的
+   getBoundingClientRect 计算), 并渲染到 <body>(createPortal)。
+   首页 Hero 有 overflow:hidden(裁剪光晕), 若面板 absolute 沈出 Hero 底部会被
+   整个裁掉; 导航栏为 fixed-top 亦需脱离文档流。故统一 fixed + portal 脱离裁剪范围。
+   z-index 取高位, 保证浮在 navbar / 产品卡片等一切之上。 */
+.panel {
+  position: fixed;
+  padding: 27px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(28, 75, 170, 0.14);
+  max-height: 60vh;
+  overflow-y: auto;
+  z-index: 2000;
+  box-sizing: border-box;
+}
+
+/* 结果行: 746x70(=800-27*2), 行内容 54 高 + 上下留白 8, 图标与正文间距 12 */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  height: 70px;
+  padding: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.row:hover {
+  text-decoration: none;
+}
+/* hover / 键盘选中态 (设计稿 Frame 1564944 第 3 行: #f5f8ff r8) */
+.rowActive {
+  background: #f5f8ff;
+}
+.rowIcon {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+.rowBody {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.rowTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/* 标题 16/500 #6c7280, 单行省略 */
+.rowTitle {
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #6c7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 分类 Tag: 底 #edf0f1 r4, 文字 12/400 #323535, 高 24 */
+.rowTag {
+  flex: none;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 4px;
+  background: #edf0f1;
+  color: #323535;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+}
+/* 摘要 14/400 #6c7280, 最多一行 */
+.rowDesc {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #6c7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 底部「查看全部结果」: 14/400, 默认 #6c7280, hover #333eff (设计稿 Frame 1564943) */
+.viewAll {
+  display: block;
+  margin-top: 8px;
+  padding: 9px 8px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #6c7280;
+  text-decoration: none;
+}
+.viewAll:hover {
+  color: #333eff;
+  text-decoration: none;
+}
+
+.empty {
+  padding: 16px 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6c7280;
+}
+
+/* ---------------- 响应式 ---------------- */
+@media (max-width: 996px) {
+  .panel {
+    padding: 16px;
+  }
+  .row {
+    gap: 8px;
+    height: 64px;
+  }
+  .rowTitle {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .rowDesc {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+}

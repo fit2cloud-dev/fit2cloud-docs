@@ -30,7 +30,7 @@ wrapperClassName: de-contact
 
 :::note
 
-- 官网：`http://www.dataease.cn`
+- 官网：[https://www.dataease.cn](https://www.dataease.cn)
 - 邮箱：support@fit2cloud.com
 - 电话：400-052-0755
 :::

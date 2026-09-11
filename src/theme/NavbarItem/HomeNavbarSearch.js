@@ -1,37 +1,32 @@
+/**
+ * 导航栏右上角的即时搜索框, 复用首页 HomeSearch 的搜索逻辑与结果面板。
+ *
+ * - 索引: 与首页相同, usePluginData('home-search-index')(构建期由
+ *   plugins/home-search-index.js 注入), 无额外构建步骤。
+ * - 匹配: 复用 search.js 的 buildIndex/searchDocs(纯函数)。
+ * - 面板: 复用 ResultsPanel(createPortal + position:fixed)。
+ *   导航栏为 position:fixed;top:0, 面板用视口坐标定位天然可用。
+ * - 定位: 输入框较窄(~215px), 面板若等宽太窄, 故面板右对齐输入框右缘、
+ *   固定宽度 panelWidth(min(480, 视口宽-24)), 避免右缘溢出屏外。
+ * - i18n: 用 useDocusaurusContext().i18n.currentLocale 判定, 与首页一致。
+ */
+
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {useHistory} from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {usePluginData} from '@docusaurus/useGlobalData';
-import styles from './index.module.css';
-import {buildIndex, searchDocs, I18N, MAX_RESULTS, searchUrlFor} from './search';
-import ResultsPanel from './ResultsPanel';
-import SearchBox from './SearchBox';
+import styles from './HomeNavbarSearch.module.css';
+import {buildIndex, searchDocs, I18N, MAX_RESULTS, searchUrlFor} from '../../components/HomeSearch/search';
+import ResultsPanel from '../../components/HomeSearch/ResultsPanel';
 
-/* ------------------------------------------------------------------
- * 首页 Hero 搜索框 + 即时结果下拉面板
- *
- * 规格来源: Figma node 488-3119 / frame '交互'
- *   下拉面板 Frame 1564942: 与搜索框同宽 800, 距搜索框 8, 白底 r12, 内边距 27
- *   结果行  搜索内容 746x70, 行间距 8, hover/选中底 #f5f8ff r8
- *     文档图标 32x32(#b7bfd2 描边) | 标题 20/500 #6c7280 + 右侧 Tag
- *     Tag: 底 #edf0f1 r4, 文字 12/400 #323535, 高 24
- *     摘要 14/400 #6c7280, 单行省略
- *   底部「查看全部结果」14/400, 默认 #6c7280, hover #333eff
- *
- * 搜索逻辑(productOf/buildIndex/searchDocs)已抽到 ./search.js, 结果面板
- * 已抽到 ./ResultsPanel, 与导航栏 HomeNavbarSearch 共用。
- *
- * 【面板定位: position:fixed 的原因】
- *   Hero(.hero) 设了 overflow:hidden(用于裁剪大尺寸光晕), 若面板沿用
- *   position:absolute 沈出 Hero 底部, 会被 overflow:hidden 整个裁掉、
- *   只露出最上面一行(见 BUG: 搜索时看不到完整结果, 感觉被「全部产品」块挡住)。
- *   因此下面板用 createPortal 渲染到 <body> 并 position:fixed, 以搜索框的
- *   getBoundingClientRect 计算视口坐标, 彻底脱离 Hero 的裁切范围、浮在一切之上。
- * ------------------------------------------------------------------ */
+const PANEL_WIDTH = 480; // 面板固定宽度, 右对齐输入框右缘
 
-export default function HomeSearch({zh, placeholder, submitLabel}) {
+export default function HomeNavbarSearch() {
+  const {i18n} = useDocusaurusContext();
+  const zh = i18n.currentLocale === 'zh-Hans';
   const t = zh ? I18N.zh : I18N.en;
+
   const history = useHistory();
-  // 文档索引由 plugins/home-search-index.js 在构建期注入 globalData
   const {items} = usePluginData('home-search-index');
   const index = useMemo(() => buildIndex(items), [items]);
 
@@ -41,7 +36,7 @@ export default function HomeSearch({zh, placeholder, submitLabel}) {
   // 面板 position:fixed 的视口坐标; null 表示尚未测量
   const [rect, setRect] = useState(null);
   const wrapRef = useRef(null);
-  const searchBoxRef = useRef(null);
+  const inputRef = useRef(null);
   const panelRef = useRef(null);
 
   const results = useMemo(() => searchDocs(index, query), [index, query]);
@@ -57,10 +52,10 @@ export default function HomeSearch({zh, placeholder, submitLabel}) {
     [history],
   );
 
-  /* 测量搜索框在视口内的位置, 供 fixed 面板对齐。
-     width 锁到搜索框宽度(wrap 里 800/max-width 100%), 这样面板与输入框等宽。 */
+  /* 测量输入框在视口内的位置; 面板右对齐输入框右缘、固定宽度, 避免右缘溢出。
+     width 用 min(480, 视口宽-24) 兜底小屏。 */
   const updatePos = useCallback(() => {
-    const el = searchBoxRef.current;
+    const el = inputRef.current;
     if (!el) {
       return;
     }
@@ -68,21 +63,21 @@ export default function HomeSearch({zh, placeholder, submitLabel}) {
     if (r.width === 0) {
       return;
     }
+    const width = Math.min(PANEL_WIDTH, window.innerWidth - 24);
     setRect({
       top: r.bottom + 8,
-      left: r.left,
-      width: r.width,
+      left: r.right - width,
+      width,
     });
   }, []);
 
-  // 面板打开时: 测一次位置, 并挂在 scroll/resize 上跟随(滚动时搜索框会移动)
+  // 面板打开时: 测一次位置, 并挂在 scroll/resize 上跟随
   useEffect(() => {
     if (!visible) {
       return undefined;
     }
     updatePos();
     window.addEventListener('resize', updatePos);
-    // capture=true 捕获 Hero 内部乃至任意祖先的滚动, 都能让面板跟着搜索框走
     document.addEventListener('scroll', updatePos, true);
     return () => {
       window.removeEventListener('resize', updatePos);
@@ -149,21 +144,32 @@ export default function HomeSearch({zh, placeholder, submitLabel}) {
   ) : null;
 
   return (
-    <div className={styles.wrap} ref={wrapRef}>
-      <SearchBox
-        value={query}
-        placeholder={placeholder}
-        submitLabel={submitLabel}
-        onChange={(e) => {
-          setQuery(e.target.value);
-          setOpen(true);
-          setActive(-1);
-        }}
-        onFocus={() => setOpen(true)}
-        onKeyDown={onKeyDown}
-        onSubmit={onSubmit}
-        boxRef={searchBoxRef}
-      />
+    <div className={`${styles.search} navbar-search-home`} ref={wrapRef}>
+      <form className={styles.searchBox} role="search" onSubmit={onSubmit}>
+        <span className={styles.searchIcon} aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8" />
+            <path d="M16 16l4.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+        </span>
+        <input
+          className={styles.input}
+          ref={inputRef}
+          type="search"
+          name="q"
+          value={query}
+          placeholder={t.placeholder}
+          autoComplete="off"
+          aria-label={t.placeholder}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setOpen(true);
+            setActive(-1);
+          }}
+          onFocus={() => setOpen(true)}
+          onKeyDown={onKeyDown}
+        />
+      </form>
       {panel}
     </div>
   );

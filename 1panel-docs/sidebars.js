@@ -10,7 +10,7 @@ const sidebars = {
     },
     {
       "type": "category",
-      "label": "版本迭代",
+      "label": "更新日志",
       "collapsed": true,
       "items": [
         {
@@ -23,6 +23,33 @@ const sidebars = {
           "id": "enterprise-changelog",
           "label": "企业版"
         }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "购买指南",
+      "collapsed": true,
+      "items": [
+        {
+          "type": "link",
+          "label": "版本功能对比",
+          "href": "https://1panel.cn/versions.html"
+        },
+        {
+          "type": "link",
+          "label": "1Panel 专业版",
+          "href": "https://www.lxware.cn/1panel"
+        },
+        {
+          "type": "link",
+          "label": "1Panel 企业版",
+          "href": "https://1panel.cn/enterprise.html"
+        },
+        {
+      "type": "link",
+      "label": "1Panel AI 一体机",
+      "href": "https://1panel.cn/ai-appliance.html"
+        },
       ]
     },
     {
@@ -811,50 +838,6 @@ const sidebars = {
           "type": "doc",
           "id": "faq/ai-coding",
           "label": "AI 编程接入指南"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "label": "1Panel 商业版本",
-      "collapsed": true,
-      "items": [
-        {
-          "type": "link",
-          "label": "版本功能对比",
-          "href": "https://1panel.cn/versions.html"
-        },
-        {
-          "type": "link",
-          "label": "1Panel 专业版",
-          "href": "https://www.lxware.cn/1panel"
-        },
-        {
-          "type": "link",
-          "label": "1Panel 企业版",
-          "href": "https://1panel.cn/enterprise.html"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "label": "1Panel AI 一体机",
-      "collapsed": true,
-      "items": [
-        {
-          "type": "link",
-          "label": "1Panel AI 通用一体机",
-          "href": "https://1panel.cn/deepseek-appliance.html"
-        },
-        {
-          "type": "link",
-          "label": "1Panel AI 编程一体机",
-          "href": "https://1panel.cn/aicoding_gb10.html"
-        },
-        {
-          "type": "link",
-          "label": "1Panel AI 助理一体机",
-          "href": "https://1panel.cn/openclaw.html"
         }
       ]
     },

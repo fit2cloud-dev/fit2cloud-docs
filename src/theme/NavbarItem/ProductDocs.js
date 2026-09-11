@@ -22,7 +22,7 @@ import styles from './ProductDocs.module.css';
 //
 // 官网地址对齐 https://www.fit2cloud.com/ 官网首页展示的开源产品入口。
 const PRODUCTS = [
-  {name: '1Panel AI 网关', link: 'https://1panel.cn/ai-gateway.html', desc: '企业级 AI 网关', logo: 'AI网关logo.png'},
+  {name: '1Panel AI 网关', link: 'https://1panel.cn/ai-gateway.html', desc: '企业级 AI 网关', logo: '1panel-07-蓝色.png'},
   {name: '1Panel 面板', link: 'https://1panel.cn/', desc: '现代化、开源的 Linux 面板', logo: '1panel-07-蓝色.png'},
   {name: 'JumpServer', link: 'https://www.jumpserver.org/', desc: '广受欢迎的开源堡垒机', logo: 'JumpServer-辅助图形-绿色.png'},
   {name: 'DataEase', link: 'https://dataease.cn/', desc: '人人可用的开源 BI 工具', logo: 'DataEase-07-蓝色.png'},

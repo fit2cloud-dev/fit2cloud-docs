@@ -42,16 +42,20 @@
   transform: rotate(180deg);
 }
 
+/* 下拉菜单: position:fixed 悬浮在导航栏上方(由 CSS Module 的内联 style 定位到按钮正下方)。
+   不用 absolute/文档流: 文档流会把下方侧边栏菜单往下挤; absolute 会被侧边栏
+   overflow-y:auto 祖先裁剪。故用 fixed + createPortal(<body>), 脱离裁剪与文档流,
+   高 z-index 悬浮在侧边栏/导航栏之上(组件侧 group=2000 覆盖页面其它层)。 */
 .switcherMenu {
-  list-style: none;
-  margin: 4px 0 0;
+  position: fixed;
+  z-index: 2000;
   padding: 4px;
-  /* 用普通文档流展开(不绝对定位), 避免下拉溢出被侧边栏 overflow-y:auto 祖先裁剪。
-     位于按钮正下方, 点击后自然多出列表, 无需滚动也能看到全部选项。 */
+  margin: 0;
+  list-style: none;
   background: #ffffff;
   border: 1px solid #e4e8f0;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 .switcherMenu li {
   margin: 0 !important;

@@ -46,14 +46,14 @@
   padding: 0 24px;
 }
 
-/* 右侧插画: 高度锁到 hero 组件高度(340px)等比缩放, 垂直居中贴右, 浮在光晕之上/正文之下 */
+/* 右侧插画: 固定 547x340, 垂直居中贴右, 浮在光晕之上/正文之下 */
 .heroIllustration {
   position: absolute;
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  height: 340px; /* 与 .hero 的 height 一致 */
-  width: auto;
+  width: 547px;
+  height: 340px;
   z-index: 1;
   pointer-events: none;
 }
@@ -87,7 +87,8 @@
 
 /* ---------------- 全部产品 ---------------- */
 .productsSection {
-  padding: 0;
+  /* 去掉上 padding、保留下 padding, 与 hero 紧贴, 与 footer 隔开 */
+  padding: 0 0 40px;
 }
 .productsInner {
   max-width: 1248px;
@@ -127,19 +128,6 @@
   transform: translateY(-4px);
   box-shadow: 0 10px 28px rgba(28, 75, 170, 0.12);
   text-decoration: none;
-}
-
-/* 分类 Tag: 贴右上角(顶/右与卡缘平齐), r: 右上随卡、左下 12 */
-.cardTag {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 28px;
-  padding: 0 14px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 28px;
-  border-radius: 0 20px 0 12px;
 }
 
 .productHeader {

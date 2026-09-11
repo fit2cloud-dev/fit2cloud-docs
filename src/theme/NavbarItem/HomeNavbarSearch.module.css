@@ -1,0 +1,65 @@
+/* ==================================================================
+ * 导航栏右上角即时搜索框 (pill 样式)
+ * 点击展开即时结果面板(面板样式在 HomeSearch/ResultsPanel.module.css)
+ * ================================================================== */
+
+/* 容器: 专属标识 .search 供 custom.css 做首页/移动端控制 */
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* pill 输入框: 215x32 r20 白底描边 */
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 215px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #e4e8f0;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.searchBox:focus-within {
+  border-color: #0c7be0;
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 10px;
+  color: #9aa4b1;
+  pointer-events: none;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 12px 0 8px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  color: #1f2329;
+  box-sizing: border-box;
+}
+.input::placeholder {
+  color: #c8cbcb;
+  font-weight: 400;
+}
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* ---------------- 响应式 ---------------- */
+@media (max-width: 996px) {
+  .search {
+    display: none;
+  }
+}

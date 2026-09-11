@@ -1,0 +1,247 @@
+/* ==================================================================
+ * /search 全量结果页样式
+ * 背景/hero 盒风格对齐主页 (index.module.css / index.module.css)。
+ * ================================================================== */
+
+/* 整页底色: 与主页 portalPage 同款蓝→白渐变 */
+.page {
+  background: linear-gradient(180deg, #eaf1ff 0%, #eef4ff 45%, #f7fbff 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1248px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------------- hero 盒子: 左 全部结果+搜索框, 右 插画; 结果紧随其下 ---------------- */
+.heroBox {
+  position: relative;
+  overflow: hidden;
+  height: 340px; /* 与插画同高 */
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.heroBody {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  flex: 1;
+}
+
+/* 「全部结果」标题 */
+.heroTitle {
+  margin: 0 0 20px;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 60px;
+  color: #001222;
+}
+
+/* 大搜索框容器: 复用 SearchBox(白底圆角+渐变按钮), 这里给定宽度 */
+.searchWrap {
+  width: 560px;
+  max-width: 100%;
+}
+
+/* 右侧插画: 固定 547x340, 垂直居中贴右, ≤996px 隐藏 */
+.heroIllu {
+  position: absolute;
+  top: 58%;
+  right: -24px;
+  transform: translateY(-50%);
+  width: 547px;
+  height: 340px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---------------- 结果列表: 白底盒子铺满整行, 内容 1200px 居中, 每页 10 条 ---------------- */
+.results {
+  width: auto;
+  margin: 0 0 48px;
+  padding: 32px 24px 48px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.resultsInner {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 12px 0;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.06);
+  text-decoration: none;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.row:hover {
+  background: #f5f8ff;
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.10);
+  text-decoration: none;
+}
+.rowIcon {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  margin-top: 2px;
+  display: block;
+}
+.rowBody {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.rowTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.rowTitle {
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #1f2329;
+}
+/* 分类 Tag: 与主页下拉一致 */
+.rowTag {
+  flex: none;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 4px;
+  background: #edf0f1;
+  color: #323535;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  white-space: nowrap;
+}
+.rowDesc {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #6c7280;
+}
+
+.empty {
+  padding: 40px 8px;
+  font-size: 15px;
+  line-height: 22px;
+  color: #6c7280;
+  text-align: center;
+}
+
+/* ---------------- 分页条 ---------------- */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(228, 232, 240, 0.9);
+}
+.pageInfo {
+  flex: none;
+  font-size: 14px;
+  color: #6c7280;
+}
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.pageBtn,
+.pageNum {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #e4e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1f2329;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pageNum {
+  min-width: 32px;
+  padding: 0 6px;
+}
+.pageBtn:hover:not(:disabled),
+.pageNum:hover:not(.pageActive) {
+  border-color: #0c7be0;
+  color: #0c7be0;
+}
+.pageBtn:disabled {
+  color: #c8cbcb;
+  border-color: #e4e8f0;
+  cursor: not-allowed;
+}
+.pageActive {
+  border-color: #0c7be0;
+  background: #0c7be0;
+  color: #ffffff;
+}
+.pageEllipsis {
+  display: inline-block;
+  padding: 0 2px;
+  line-height: 32px;
+  color: #9aa4b1;
+  user-select: none;
+}
+.pageItemWrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------------- 响应式 ---------------- */
+@media (max-width: 996px) {
+  .heroBox {
+    height: auto;
+    min-height: 0;
+    padding: 40px 0 40px;
+  }
+  .heroBody {
+    max-width: 100%;
+    text-align: center;
+  }
+  .searchWrap {
+    width: 100%;
+    margin: 0 auto;
+  }
+  /* ≤996px 隐藏右侧插画(与主页 hero 一致) */
+  .heroIllu {
+    display: none;
+  }
+  .heroTitle {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .rowTitle {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  /* 小屏分页条堆叠 */
+  .pagination {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
