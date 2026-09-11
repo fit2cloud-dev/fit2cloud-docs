@@ -5,6 +5,8 @@ title: 升级指南
 :::warning[JumpServer V3 如果要升级到 V4 版本，需要先升级到 V3 的最新版本，否则升级会失败！]
 
 :::
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  离线升级包</div>
+
 | OS/Arch       | Architecture | Linux Kernel | Offline Name                                     |
 | :------------ | :----------- | :----------- | :----------------------------------------------- |
 | linux/amd64   | x86_64       | &gt;= 4.0       | jumpserver-ce--x86_64.tar.gz |

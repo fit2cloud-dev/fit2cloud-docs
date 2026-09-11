@@ -11,16 +11,22 @@ title: 组件设置
 
 - 详细参数:
 
-| 参数名称         | 描述                                                                 | 示例或默认值 |
-|------------------|----------------------------------------------------------------------|--------------|
-| 组件注册         | 选择组件注册方式，自动注册(JumpServer启动后5 mins有效)、启用或禁用。<br />当部署远程应用发布机或扩展 JumpServer 节点时需要选择启用以确保组件注册成功                              | 启用         |
-| 客户端连接       | 允许通过 SSH 客户端连接到 KoKo 组件                                 | 启用         |
-| 密码             | 允许用户通过密码验证登录 KoKo 组件                                 | 启用         |
-| SSH 公钥         | 允许用户通过公钥认证方式登录 KoKo 组件                             | 启用         |
-| 资产列表排序     | 选择资产列表排序方式，按名称或地址排序                             | 名称         |
-| 资产列表每页数量 | 设置客户端连接命令行类型资产列表每页显示的资产数量                                     | 10           |
-| Razor            | 启用 Razor 组件，用于 RDP 客户端连接                               | 启用         |
-| Magnus          | 启用 Magnus 组件，用于 数据库本地客户端连接(例如Navicat、DBeaver等)                             | 启用         |
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  基本设置参数说明</div>
+<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>
+<thead>
+<tr><th style={{width:'25%', padding:'8px'}}>参数名称</th><th style={{width:'50%', padding:'8px'}}>描述</th><th style={{width:'25%', padding:'8px'}}>示例或默认值</th></tr>
+</thead>
+<tbody>
+<tr><td style={{padding:'8px'}}>组件注册</td><td style={{padding:'8px'}}>选择组件注册方式，自动注册(JumpServer启动后5 mins有效)、启用或禁用。<br />当部署远程应用发布机或扩展 JumpServer 节点时需要选择启用以确保组件注册成功</td><td style={{padding:'8px'}}>启用</td></tr>
+<tr><td style={{padding:'8px'}}>客户端连接</td><td style={{padding:'8px'}}>允许通过 SSH 客户端连接到 KoKo 组件</td><td style={{padding:'8px'}}>启用</td></tr>
+<tr><td style={{padding:'8px'}}>密码</td><td style={{padding:'8px'}}>允许用户通过密码验证登录 KoKo 组件</td><td style={{padding:'8px'}}>启用</td></tr>
+<tr><td style={{padding:'8px'}}>SSH 公钥</td><td style={{padding:'8px'}}>允许用户通过公钥认证方式登录 KoKo 组件</td><td style={{padding:'8px'}}>启用</td></tr>
+<tr><td style={{padding:'8px'}}>资产列表排序</td><td style={{padding:'8px'}}>选择资产列表排序方式，按名称或地址排序</td><td style={{padding:'8px'}}>名称</td></tr>
+<tr><td style={{padding:'8px'}}>资产列表每页数量</td><td style={{padding:'8px'}}>设置客户端连接命令行类型资产列表每页显示的资产数量</td><td style={{padding:'8px'}}>10</td></tr>
+<tr><td style={{padding:'8px'}}>Razor</td><td style={{padding:'8px'}}>启用 Razor 组件，用于 RDP 客户端连接</td><td style={{padding:'8px'}}>启用</td></tr>
+<tr><td style={{padding:'8px'}}>Magnus</td><td style={{padding:'8px'}}>启用 Magnus 组件，用于 数据库本地客户端连接(例如Navicat、DBeaver等)</td><td style={{padding:'8px'}}>启用</td></tr>
+</tbody>
+</table>
 
 ## 2 组件列表
 

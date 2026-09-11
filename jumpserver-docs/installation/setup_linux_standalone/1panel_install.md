@@ -7,7 +7,9 @@ title: 1Panel安装
 - 关于 1Panel 的安装部署与基础功能介绍，请参考 [1Panel 官方文档](/1panel/installation/online-installation) 。
 - 在完成了 1Panel 的安装部署后，根据提示网址打开浏览器进入 1Panel，如下界面。
 
-![1panel页面](/img/jumpserver/1panel_install_01.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/1panel_install_01.png" alt="图 1  1Panel 页面" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  1Panel 页面</div>
 
 ## 2. 安装数据库
 
@@ -17,13 +19,19 @@ title: 1Panel安装
 
 - 点击页面左侧的`应用商店`模块，其中选择 MySQL 点击安装，选择 5.7.xx 版本 。
 
-![安装 MySQL 数据库_01](/img/jumpserver/1panel_install_02.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/1panel_install_02.png" alt="图 2  安装 MySQL 数据库（一）" />
 
-![安装 MySQL 数据库_02](/img/jumpserver/1panel_install_03.png)
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  安装 MySQL 数据库（一）</div>
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/1panel_install_03.png" alt="图 3  安装 MySQL 数据库（二）" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  安装 MySQL 数据库（二）</div>
 
 
 - 详细参数说明：
 
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  MySQL 应用参数说明</div>
 
 | 参数    |             说明              |
 | ------- | ---------------------------- |
@@ -41,11 +49,15 @@ title: 1Panel安装
 
 - 点击页面左侧的`应用商店`模块，其中选择 Redis 点击安装。
 
-![安装 Redis 数据库](/img/jumpserver/1panel_install_04.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/1panel_install_04.png" alt="图 4  安装 Redis 数据库" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  安装 Redis 数据库</div>
 
 
 - 详细参数说明：
 
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  Redis 应用参数说明</div>
 
 | 参数    |             说明              |
 | ------- | ---------------------------- |
@@ -63,23 +75,31 @@ title: 1Panel安装
 
 - 点击页面左侧的`应用商店`模块，切换至`已安装`的应用列表，检查 MySQL 和 Redis 服务状态变为已启动。
 
-![数据库状态检查](/img/jumpserver/1panel_install_05.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/1panel_install_05.png" alt="图 5  数据库状态检查" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  数据库状态检查</div>
 
 ## 3. 安装 JumpServer 
 
 
 - 点击页面左侧的`应用商店`模块，其中选择 JumpServer 点击安装。
 
-![安装 JumpServer](/img/jumpserver/1panel_install_06.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/1panel_install_06.png" alt="图 6  应用商店安装 JumpServer" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  应用商店安装 JumpServer</div>
 
 
 - 在应用详情页选择最新的 JumpServer 版本进行安装，并进行相关参数设置。
 
-![安装 JumpServer](/img/jumpserver/1panel_install_07.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/1panel_install_07.png" alt="图 7  安装 JumpServer 参数配置" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7  安装 JumpServer 参数配置</div>
 
 
 - 详细参数说明：
 
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  JumpServer 应用参数说明</div>
 
 | 参数    |             说明              |
 | ------- | ---------------------------- |
@@ -108,7 +128,9 @@ title: 1Panel安装
 
 - 点击页面左侧的`应用商店`模块，切换至`已安装`的应用列表，检查 JumpServer 服务状态变为已启动。
 
-![检查 JumpServer](/img/jumpserver/1panel_install_08.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/1panel_install_08.png" alt="图 8  检查 JumpServer 服务状态" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 8  检查 JumpServer 服务状态</div>
 
 ## 4. 访问 JumpServer 
 
@@ -118,5 +140,7 @@ title: 1Panel安装
 密码: admin
 ```
 
-![访问 JumpServer](/img/jumpserver/1panel_install_09.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/1panel_install_09.png" alt="图 9  访问 JumpServer" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 9  访问 JumpServer</div>
 

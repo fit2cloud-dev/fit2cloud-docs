@@ -8,6 +8,8 @@ title: Lion 环境部署
 
 ### 1.1 环境要求
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  Lion 环境要求</div>
+
 | Name    | JumpServer               | Guacd                  |  Lion                    |
 | :------ | :----------------------- | :--------------------- | :----------------------- |
 | Version | v4.10.17 | [1.4.0][guacd-1.4.0]   |  |
@@ -44,6 +46,8 @@ ldconfig
 ### 1.3 下载 Lion
 
 - 可以从 [Github][lion] 网站上获取最新的 [Release][lion_release] 副本。
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  Lion 下载包</div>
 
 | OS      | Arch    | Name                                                                                              |
 | :------ | :------ | :------------------------------------------------------------------------------------------------ |

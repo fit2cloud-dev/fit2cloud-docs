@@ -49,6 +49,8 @@ v3 版本与 v2 版本存在一定的差异，如需 v2 版本升级至 v3 版�
 - 推荐使用外置 DB Server 和 Redis Server，方便日后扩展升级
 
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  数据库版本要求</div>
+
 | 名称     | 版本   |
 | :------ | :------ |
 | MySQL   | &gt;= 5.7  |

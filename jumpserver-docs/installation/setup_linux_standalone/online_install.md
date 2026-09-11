@@ -3,6 +3,8 @@ title: 在线安装
 ---
 
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  在线安装包</div>
+
 | OS/Arch       | Architecture | Linux Kernel | Offline Name                                     |
 | :------------ | :----------- | :----------- | :----------------------------------------------- |
 | linux/amd64   | x86_64       | &gt;= 4.0       | jumpserver-installer-v4.10.17.tar.gz |
@@ -229,4 +231,6 @@ cd /opt/jumpserver-installer-v4.10.17
 用户名: admin
 密码: ChangeMe
 ```
-![登录页面](/img/jumpserver/online_install_01.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/online_install_01.png" alt="图 1  登录页面" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  登录页面</div>

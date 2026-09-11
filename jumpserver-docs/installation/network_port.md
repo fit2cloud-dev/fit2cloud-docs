@@ -6,6 +6,8 @@ title: 网络端口说明
 
 - JumpServer 作为符合 4A 规范的专业运维安全审计系统，其正常运行需要开放如下网络端口，管理员可根据实际环境中 JumpServer 组件部署的方案，在网络和主机侧开放相关端口。
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  网络端口列表</div>
+
 | 端口 | 作用 | 说明 |
 | --- | --- | --- |
 | 22 | SSH | 安装、升级及管理使用 |

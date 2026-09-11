@@ -16,6 +16,8 @@ helm repo list
 ```
 
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  JumpServer Helm Chart 参数说明</div>
+
 | Name                      | Description                                     | Value                   |
 | :------------------------ | :---------------------------------------------- | :---------------------- |
 | global.imageRegistry      | Global Docker image registry                    | docker.io               |

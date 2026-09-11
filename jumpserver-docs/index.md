@@ -40,7 +40,7 @@ title: 产品介绍
 JumpServer 是广受欢迎的开源堡垒机，是符合 4A 规范的专业运维安全审计系统。JumpServer 帮助企业以更安全的方式管控和登录所有类型的资产，实现事前授权、事中监察、事后审计，满足等保合规要求。
 
 ![index_02](/img/jumpserver/jumpserver-arch-light.png)
-
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  JumpServer 架构图</div>
 
 JumpServer 堡垒机支持的资产类型包括：
 
@@ -53,6 +53,7 @@ JumpServer 堡垒机支持的资产类型包括：
 - Web 站点 (各类系统的 Web 管理后台)
 - 应用 (通过 Remote App 连接各类应用)
 
+文档指引：
 
 - [**产品官网**](https://jumpserver.org/)
 - [**安装部署**](installation/setup_linux_standalone/requirements)  
@@ -66,16 +67,17 @@ JumpServer 堡垒机支持的资产类型包括：
 
 JumpServer 的产品特色包括：
 
-- 开源：零门槛，线上快速获取和安装；
-- 分布式：轻松支持大规模并发访问；
-- 无插件：仅需浏览器，极致的 Web Terminal 使用体验；
-- 多云支持：一套系统，同时管理不同云上面的资产；
-- 云端存储：审计录像云端存储，永不丢失；
-- 多租户：一套系统，多个子公司和部门同时使用；
-- 多应用支持：数据库，Windows 远程应用，Kubernetes。
+- **开源**：零门槛，线上快速获取和安装；
+- **分布式**：轻松支持大规模并发访问；
+- **无插件**：仅需浏览器，极致的 Web Terminal 使用体验；
+- **多云支持**：一套系统，同时管理不同云上面的资产；
+- **云端存储**：审计录像云端存储，永不丢失；
+- **多租户**：一套系统，多个子公司和部门同时使用；
+- **多应用支持**：数据库，Windows 远程应用，Kubernetes。
 
 ## 3 页面展示
 ![界面展示](/img/jumpserver/dashboard.png)
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  页面展示</div>
 
 ## 4 应用商店
 

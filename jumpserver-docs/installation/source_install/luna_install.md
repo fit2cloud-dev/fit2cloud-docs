@@ -8,6 +8,8 @@ title: Luna 环境部署
 
 ### 1.1 环境要求
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  Luna 环境要求</div>
+
 | Name    | Luna                     | Node  |
 | :------ | :----------------------- | :---- |
 | Version | v4.10.17 | 16.5 |
@@ -112,6 +114,8 @@ tar -czf luna-v4.10.17.tar.gz luna-v4.10.17
 
 - 下载 Release 文件，从 [Github][luna] 网站上获取最新的 [Release][luna_release] 副本。
 - 这些版本是最新代码的稳定快照。
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  Luna 下载包</div>
 
 | OS     | Arch  | Name                                                          |
 | :----- | :---- | :------------------------------------------------------------ |

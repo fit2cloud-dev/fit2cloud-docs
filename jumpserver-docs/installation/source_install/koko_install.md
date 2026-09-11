@@ -8,6 +8,8 @@ Koko 是 Go 版本的 coco，重构了 coco 的 SSH/SFTP 服务和 Web Terminal 
 
 ### 1.1 环境要求
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  KoKo 环境要求</div>
+
 | Name    | KoKo                     | Go   | Node  | Redis Client |
 | :------ | :----------------------- | :--  | :---- | :----------- |
 | Version | v4.10.17 | 1.18 | 16.5  | &gt;= 6.0       |
@@ -67,6 +69,8 @@ echo 'export PATH=/usr/local/go/bin:$PATH' >> ~/.bashrc
 
         - 编译。
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  KoKo 编译命令</div>
+
         | OS    | Arch  | Command     |
         | :---- | :---- | :---------- |
         | Linux | amd64 | make linux  |
@@ -83,6 +87,8 @@ echo 'export PATH=/usr/local/go/bin:$PATH' >> ~/.bashrc
 
 - 下载 Release 文件。
 - 从 [Github][koko] 网站上获取最新的 [Release][koko_release] 副本。这些版本是最新代码的稳定快照。
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  KoKo 下载包</div>
 
 | OS     | Arch    | Name                                                                                              |
 | :----- | :------ | :------------------------------------------------------------------------------------------------ |
