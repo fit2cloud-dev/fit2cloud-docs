@@ -1081,6 +1081,42 @@ const sidebars = {
       "id": "contact",
       "label": "联系我们",
       "key": "doc:联系我们"
+    },
+    {
+      "type": "doc",
+      "id": "global_search",
+      "label": "全局搜索",
+      "key": "doc:全局搜索"
+    },
+    {
+      "type": "doc",
+      "id": "system_message",
+      "label": "系统消息",
+      "key": "doc:系统消息"
+    },
+    {
+      "type": "doc",
+      "id": "system_help",
+      "label": "系统帮助",
+      "key": "doc:系统帮助"
+    },
+    {
+      "type": "doc",
+      "id": "language_switch",
+      "label": "语言切换",
+      "key": "doc:语言切换"
+    },
+    {
+      "type": "doc",
+      "id": "personal_center",
+      "label": "个人中心",
+      "key": "doc:个人中心"
+    },
+    {
+      "type": "doc",
+      "id": "daily_ticket",
+      "label": "日常工单",
+      "key": "doc:日常工单"
     }
   ]
 };
