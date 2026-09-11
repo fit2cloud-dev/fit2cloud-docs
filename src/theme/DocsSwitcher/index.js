@@ -18,10 +18,10 @@ import styles from './styles.module.css';
 const DOCS_PRODUCTS = [
   {name: '1Panel AI 网关', id: 'ai-gateway', routeBasePath: 'ai-gateway'},
   {name: '1Panel 面板', id: '1panel', routeBasePath: '1panel'},
-  {name: 'JumpServer', id: 'jumpserver', routeBasePath: 'jumpserver'},
-  {name: 'DataEase', id: 'dataease', routeBasePath: 'dataease'},
-  {name: 'MaxKB', id: 'maxkb', routeBasePath: 'maxkb'},
-  {name: 'SQLBot', id: 'sqlbot', routeBasePath: 'sqlbot'},
+  {name: 'JumpServer 堡垒机', id: 'jumpserver', routeBasePath: 'jumpserver'},
+  {name: 'DataEase BI 工具', id: 'dataease', routeBasePath: 'dataease'},
+  {name: 'MaxKB 智能体平台', id: 'maxkb', routeBasePath: 'maxkb'},
+  {name: 'SQLBot 智能问数', id: 'sqlbot', routeBasePath: 'sqlbot'},
   {name: 'Cordys CRM', id: 'cordys', routeBasePath: 'cordys'},
 ];
 
