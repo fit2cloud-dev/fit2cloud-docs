@@ -837,26 +837,9 @@ const sidebars = {
       ]
     },
     {
-      "type": "category",
+      "type": "link",
       "label": "1Panel AI 一体机",
-      "collapsed": true,
-      "items": [
-        {
-          "type": "link",
-          "label": "1Panel AI 通用一体机",
-          "href": "https://1panel.cn/deepseek-appliance.html"
-        },
-        {
-          "type": "link",
-          "label": "1Panel AI 编程一体机",
-          "href": "https://1panel.cn/aicoding_gb10.html"
-        },
-        {
-          "type": "link",
-          "label": "1Panel AI 助理一体机",
-          "href": "https://1panel.cn/openclaw.html"
-        }
-      ]
+      "href": "https://1panel.cn/ai-appliance.html"
     },
     {
       "type": "doc",

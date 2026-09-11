@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 // 站点标题按语言区分：构建 zh-Hans 时显示中文，构建 en 时显示英文
 const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE || 'zh-Hans';
 const config = {
-  title: currentLocale === 'en' ? 'Docs Center' : '文档中心',
+  title: currentLocale === 'en' ? 'Docs Center' : '飞致云文档中心',
   tagline: currentLocale === 'en' ? 'Multiple product docs, one site, global search' : '多个产品文档，一个站点，全局搜索',
 
   // favicon 用 headTags 绝对路径提供(避免 Docusaurus 在英文站 /en/ 下自动加 /en 前缀导致 404)

@@ -10,7 +10,7 @@
  * 与顶部下拉(src/theme/NavbarItem/ProductDocs.js)再无依赖关系。
  */
 const HOME_PRODUCTS = [
-  {name: '1Panel AI 网关', to: '/ai-gateway/', desc: '企业级 AI 网关', logo: 'AI网关logo.png'},
+  {name: '1Panel AI 网关', to: '/ai-gateway/', desc: '企业级 AI 网关', logo: '1panel-07-蓝色.png'},
   {name: '1Panel 面板', to: '/1panel/', desc: '现代化、开源的 Linux 面板', logo: '1panel-07-蓝色.png'},
   {name: 'JumpServer', to: '/jumpserver/', desc: '广受欢迎的开源堡垒机', logo: 'JumpServer-辅助图形-绿色.png'},
   {name: 'DataEase', to: '/dataease/', desc: '人人可用的开源 BI 工具', logo: 'DataEase-07-蓝色.png'},

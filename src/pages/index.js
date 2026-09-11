@@ -21,29 +21,14 @@ import styles from './index.module.css';
  *     卡底渐变 #f7fbff→#ffffff; 内边距 32
  *     logo(高30)+名称 24px/700 #1f2329; 副标题 16px #1f2329; 描述 14px/24 #646a73
  *     '进入文档' 按钮 320x32 r4 渐变描边 #1075e3→#333dff, 文字 16px #0c7be0
- *     分类 Tag 贴右上角(与卡顶/右缘平齐), 浅色底 + 品牌色字 14px/500
  * - 底部横幅: 渐变 #f7fbff→#f8f9ff; 'FIT2CLOUD 飞致云' 32px/600 居中 + 说明 16px #6c7280
  * - 设计稿的「热门检索/换一批」榜单按要求不做
  * ------------------------------------------------------------------ */
 
-/* 产品分类标签 (文字与颜色取自设计稿各卡 Tag 实例) */
-const TAGS = {
-  '1Panel AI 网关': {label: 'AI 原生', color: '#005eeb'},
-  '1Panel 面板': {label: 'AI 原生', color: '#005eeb'},
-  'Cordys CRM': {label: 'AI CRM', color: '#00a6ab'},
-  JumpServer: {label: '运维安全', color: '#189e7a'},
-  MaxKB: {label: '智能体开发', color: '#3370ff'},
-  DataEase: {label: '数据可视化', color: '#0b87fd'},
-  SQLBot: {label: '智能问数', color: '#3370ff'},
-  MeterSphere: {label: '软件测试', color: '#783887'},
-  Halo: {label: '建站', color: '#0b87fd'},
-};
-const DEFAULT_TAG = {label: 'AI 原生', color: '#005eeb'};
-
-/* 卡片排列顺序: 对齐设计稿 (行1 AI 网关/1Panel/Cordys CRM; 行2 JumpServer/MaxKB/DataEase; 行3 SQLBot/MeterSphere/Halo) */
+/* 卡片排列顺序: 行1 1Panel/AI 网关/Cordys CRM; 行2 JumpServer/MaxKB/DataEase; 行3 SQLBot/MeterSphere/Halo */
 const CARD_ORDER = [
-  '1Panel AI 网关',
   '1Panel 面板',
+  '1Panel AI 网关',
   'Cordys CRM',
   'JumpServer',
   'MaxKB',
@@ -122,17 +107,11 @@ function Hero({site, zh}) {
     </section>
   );
 }function ProductCard({item, site}) {
-  const tag = TAGS[item.name] || DEFAULT_TAG;
   const target = item.to ?? item.link;
   const logo = useBaseUrl(`/img/logo/${encodeURIComponent(item.logo)}`);
   const desc = PRODUCT_DESC[item.name] || item.desc;
   return (
     <Link to={target} className={styles.productCard}>
-      <span
-        className={styles.cardTag}
-        style={{color: tag.color, background: `${tag.color}1F`}}>
-        {tag.label}
-      </span>
       <span className={styles.productHeader}>
         <img src={logo} alt={item.name} className={styles.productLogo} loading="lazy" />
         <span className={styles.productName}>{item.name}</span>
@@ -163,7 +142,7 @@ function ProductsSection({site}) {
 }
 
 export default function Home() {
-  const {i18n} = useDocusaurusContext();
+  const {i18n, siteConfig} = useDocusaurusContext();
   const zh = i18n.currentLocale === 'zh-Hans';
   const site = zh ? I18N.zh : I18N.en;
 
@@ -175,7 +154,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Layout title={site.title} description={site.subtitle}>
+    <Layout title={siteConfig.title} description={site.subtitle}>
       <div className={styles.portalPage}>
         <Hero site={site} zh={zh} />
         <ProductsSection site={site} />

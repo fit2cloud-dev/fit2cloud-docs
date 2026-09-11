@@ -129,19 +129,6 @@
   text-decoration: none;
 }
 
-/* 分类 Tag: 贴右上角(顶/右与卡缘平齐), r: 右上随卡、左下 12 */
-.cardTag {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 28px;
-  padding: 0 14px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 28px;
-  border-radius: 0 20px 0 12px;
-}
-
 .productHeader {
   display: flex;
   align-items: center;
