@@ -16,4 +16,5 @@ title: 全局搜索
 - 在搜索框中输入关键字，系统会显示与关键字匹配的搜索结果。
 - 在搜索结果中点击目标资源，即可跳转至该资源的详情或列表页面。
 - 点击搜索框外部区域，可关闭全局搜索。
-![image](/img/jumpserver/global_search01.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/global_search01.png" alt="图 1  全局搜索" />
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  全局搜索</div>
