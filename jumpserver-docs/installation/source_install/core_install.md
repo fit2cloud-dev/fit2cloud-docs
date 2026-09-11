@@ -8,6 +8,8 @@ title: Core 环境部署
 
 ### 1.1 环境要求
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  Core 环境要求</div>
+
 | Name    | Core                     | Python |
 | :------ | :----------------------- | :----- |
 | Version | v4.10.17 | 3.9    |

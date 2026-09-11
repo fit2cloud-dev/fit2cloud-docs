@@ -18,12 +18,18 @@ title: 安装指南
 
 - 打开应用商店菜单 在全部栏 右边搜索栏搜索 **JumpServer** 找到后点击 **安装**。
 
-![img](/img/jumpserver/V4_1Panel_setup1.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/V4_1Panel_setup1.png" alt="图 1  搜索并安装 JumpServer" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  搜索并安装 JumpServer</div>
 
 - 在安装之前会弹出各种安装版本的信息以及数据库选择等信息，需要输入数据库密码等信息，输入完成后点击 **确认** 即可进行安装。
 
-![img](/img/jumpserver/V4_1panel_setup2.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/V4_1panel_setup2.png" alt="图 2  安装 JumpServer 参数配置" />
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  安装 JumpServer 参数配置</div>
+
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  JumpServer 安装参数说明</div>
 
 | 参数                | 说明                                                         |
 | ------------------- | ------------------------------------------------------------ |
@@ -48,7 +54,9 @@ title: 安装指南
 | 编辑 compose 文件   | 支持自定义 compose 文件启动容器。                            |
 
 
-![img](/img/jumpserver/V4_1panel_setup4.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/V4_1panel_setup4.png" alt="图 3  安装 JumpServer 高级配置" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  安装 JumpServer 高级配置</div>
 
 ## 4. 访问 JumpServer
 

@@ -13,16 +13,22 @@ title: 准备工作
 
 ### 1.1 数据库要求
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  数据库要求</div>
+
 | 名称    | 版本 | 默认字符集  | 默认字符编码  | TLS/SSL          |
 | :------ | :------ | :--------------- | :----------------- | :--------------- |
 | PostgreSQL   | 16  | utf8             | utf8_general_ci    | ✓ |
 | MariaDB | &gt;= 10.6 | utf8mb3          | utf8mb3_general_ci | ✓ |
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  Redis 要求</div>
 
 | Name    | Version | Sentinel         | Cluster            | TLS/SSL          |
 | :------ | :------ | :--------------- | :----------------- | :--------------- |
 | Redis   | &gt;= 6.0  | ✓ | ✗   | ✓ |
     
 ### 1.2 服务器要求
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  服务器要求</div>
 
 | 服务名称   |      IP 地址        |  端口                   |     使用涉及组件/服务     |   最小化硬件配置    |   标准化硬件配置     |
 | ------------- | ---------------- | ----------------------- | ---------------- | ---------------------- | ----------------------- |
@@ -36,6 +42,8 @@ title: 准备工作
 | Elasticsearch |  192.168.100.51  | 9200,9300               | Core, KoKo       | 2Core/4GB RAM/100G HDD | 4Core/8GB  RAM/1T   SSD |
     
 ### 1.3 组件容器健康检查
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 4  组件容器健康检查</div>
 
 | 服务名称   | 健康检查                   | 实例                                   |
 | ------------- | ------------------------------ | ----------------------------------------- |

@@ -14,9 +14,12 @@ title: 数据库迁移
 - 针对 MySQL/MariaDB 和 Redis 的版本要求如下：
   
 
-| DB      | Version | Cache | Version | v4.10.17 | :------ | :------ | :---- | :------ |
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  数据库版本要求</div>
+
+| DB      | Version    | Cache | Version    |
+| :------ | :--------- | :---- | :--------- |
 | MySQL   | &gt;= 5.7  | Redis | &gt;= 6.0  |
-| MariaDB | &gt;= 10.6 |  -    |   -     |
+| MariaDB | &gt;= 10.6 | -     | -          |
 
 ## 2 操作过程
 

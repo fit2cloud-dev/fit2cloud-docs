@@ -10,4 +10,5 @@ title: 许可证
 :::
 
 - 可以通过按钮 **导入** 导入许可证。
-![V4_lisence_01.png](/img/jumpserver/V4_lisence_01.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/V4_lisence_01.png" alt="图 1  许可证页面" />
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  许可证页面</div>

@@ -18,6 +18,8 @@ vi /opt/jumpserver/config/config.txt
 
 - Core 参数如下：
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  Core 参数说明</div>
+
 |  参数名称   | 默认值  | 可选项  | 说明  |
 |  :-----  | :-----  |  :-----  | :-----  |
 | SECRET_KEY  | '' | - | 用于对敏感字段进行加解密的 Key |

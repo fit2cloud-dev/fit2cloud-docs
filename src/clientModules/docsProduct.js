@@ -24,6 +24,24 @@ function setDocsProduct(pathname) {
   }
 }
 
+function setDocsSection(pathname) {
+  const p = pathname || (typeof window !== 'undefined' ? window.location.pathname : '');
+  if (typeof document === 'undefined') {
+    return;
+  }
+  let section = '';
+  if (/\/jumpserver\/installation(\/|$)/.test(p)) {
+    section = 'installation';
+  } else if (/\/jumpserver\/manual\/env(\/|$)/.test(p)) {
+    section = 'env';
+  }
+  if (section) {
+    document.documentElement.dataset.docsSection = section;
+  } else {
+    delete document.documentElement.dataset.docsSection;
+  }
+}
+
 function markDeCaptions() {
   if (typeof document === 'undefined') {
     return;
@@ -44,6 +62,7 @@ function markDeCaptions() {
 
 export function onRouteDidUpdate({location}) {
   setDocsProduct(location.pathname);
+  setDocsSection(location.pathname);
   markDeCaptions();
   if (typeof requestAnimationFrame === 'function') {
     requestAnimationFrame(markDeCaptions);
@@ -51,4 +70,5 @@ export function onRouteDidUpdate({location}) {
 }
 
 setDocsProduct();
+setDocsSection();
 markDeCaptions();
