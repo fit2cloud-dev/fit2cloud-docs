@@ -1,30 +1,19 @@
 ---
 title: Passkey
+description: 介绍 JumpServer 认证设置中 Passkey 的配置项。
 ---
 
-## 1 关于 Passkey
+## 1 功能简介
 
+Passkey 用于通行密钥认证。路径：单击右上角齿轮进入 **系统设置**，选择 **认证设置**，页签 **Passkey**。
 
-- 通过点击页面右上角小齿轮进入 **系统设置** 页面，点击 **认证设置 &gt; Passkey** ，进入 Passkey 配置页面。
-- **Passkey** 是一种基于公钥加密的无密码身份认证技术，符合 FIDO2 标准（包括 WebAuthn 和 CTAP），支持通过生物识别（如指纹、面部）、PIN 或安全密钥进行身份验证，提升安全性和用户体验。
-- 部分认证器需要 JumpServer 启用 HTTPS 访问，否则认证流程可能无法正常进行。
+界面提示：只有 SSL 域名可以使用 Passkey 认证。字段包括 **Passkey** 开关、**Passkey 服务域名**、**Passkey 服务名称**。单击 **提交** 保存。
 
-## 2 配置参数
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_auth_passkey_01.png" alt="图 1  Passkey" />
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  Passkey</div>
 
-详细参数说明：
+## 2 前提条件
 
-| 参数 | 说明 | 示例 |
-|------|------|------|
-| Passkey | 启用 Passkey 无密码认证 | 启用/禁用 |
-| 服务域名 | Passkey 服务可用的完整域名，多个域名用逗号分隔 | `jumpserver.example.com` |
-| 服务名称 | Passkey 服务名称 | `JumpServer` |
-
-
-- 服务域名如未设置，默认取请求主机，并匹配 `config.txt` 文件中的 `DOMAINS`。
-
-## 3 操作说明
-
-
-- 配置完成后，点击 **提交** 保存设置。
-
+- 已使用系统管理员账号登录 JumpServer。
+- 站点以 HTTPS 访问。

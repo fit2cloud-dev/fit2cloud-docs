@@ -1,66 +1,112 @@
 ---
 title: 账号改密
+description: 介绍 JumpServer PAM 中账号改密任务的创建、执行以及概览、执行历史与改密状态。
 ---
 
-## 1 功能概述
+## 1 功能简介
 
+账号改密用于按策略修改资产上的账号密文，可立即执行或按周期执行。路径：登录后将控制台切换到 **PAM**，选择 **安全设置 > 账号改密**。
 
-- 进入 **PAM** 页面，点击 **安全设置 &gt; 账号改密**，进入账号改密页面。
-- 账号改密是为了满足用户的安全需求，定期或手动执行任务修改资产中的用户密码。
-- 账号改密任务更改资产上的用户密码使用该资产的特权账号进行操作 **此操作需要资产的账号列表中有特权账号** 。
+页签包括 **概览**、**账号改密任务**、**执行历史**、**执行记录** 和 **改密状态**。
 
-:::warning
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_secret_01.png" alt="图 1  账号改密任务" />
 
-- 由于 **修改特权用户的密码** 为高风险操作，所以 JumpServer 默认不允许修改特权用户的密码；修改资产的特权账号密码的功能默认不开启，需管理员用户在配置文件中添加选项 `CHANGE_AUTH_PLAN_SECURE_MODE_ENABLED=false` ，重启堡垒机服务后生效。
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  账号改密任务</div>
+
+**账号改密任务** 列表列字段包括名称、账号、资产、节点、执行周期、执行数、激活及操作。行内绿色按钮为立即执行。右上角提供搜索、列设置和刷新。
+
+## 2 前提条件
+
+- 已使用具备 PAM 权限的账号登录 JumpServer（如系统管理员）。
+- 目标资产或节点须已存在。资产维护请参见 [资产列表](../../console/assets/assets_list.md)。
+- 目标账号须勾选 **可改密**。账号字段请参见 [账号列表](../../console/account_management/account_list.md)。
+
+## 3 概览
+
+选择 **概览**。可按 **今天**、**近7天**、**近30天** 查看统计。
+
+- **任务汇总**： 总共、定期、资产管理。
+- **执行汇总**： 总共、成功、失败。
+- **运行中**： 总共、资产管理、账号。
+
+下方为 **账号改密成功/失败** 趋势图，以及 **改密失败账号** 列表。失败账号列表列字段包括资产、账号、结束日期、成功、错误及操作。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_secret_02.png" alt="图 2  账号改密概览" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  账号改密概览</div>
+
+## 4 创建改密任务
+
+1. 在 **账号改密任务** 单击 **创建**。
+2. 在右侧抽屉 **创建账号改密** 中填写信息。
+3. 单击 **提交**。若需连续添加，单击 **保存并继续添加**。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_secret_03.png" alt="图 3  创建账号改密" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  创建账号改密</div>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  创建账号改密字段说明</div>
+
+| 分组 | 字段 | 说明 |
+| --- | --- | --- |
+| 基本设置 | 名称 | 必填。任务名称。 |
+| 资产 | 账号 | 必填。输入后按下 Enter 继续输入。页面提示：对于同一资产中的账号，如果存在切换自关系，则不应放在同一个任务中执行密码更改，而是应分成两个任务分别执行。 |
+| 资产 | 资产 | 要改密的资产。 |
+| 资产 | 节点 | 要改密的节点。可与资产同时选择。 |
+| 密码策略 | 密文生成策略 | **指定** 或 **随机生成**。 |
+| 密码策略 | 密文类型 | **密码** 或 **SSH 密钥**。 |
+| 密码策略 | 密码 | 策略为指定、类型为密码时输入。 |
+| 参数 | 参数 | 单击 **设置**。页面提示：参数设置，目前只对 AIX LINUX UNIX 类型的资产有效。 |
+| 定期 | 周期执行 | 勾选后按周期重复执行。默认未勾选。 |
+| 定期 | 间隔 | 勾选周期执行后出现，默认 24 小时。 |
+| 定期 | 定时任务 | 勾选周期执行后出现。页面提示：如果同时设置了 interval 和 crontab，则优先考虑 crontab。 |
+| 其它设置 | 更改后检查连接 | 默认勾选。改密后检查账号连接。 |
+| 其它设置 | 激活 | 默认勾选。任务可用。 |
+| 其它设置 | 收件人 | 选择用户。页面提示：当前只支持邮件发送。 |
+| 其它设置 | 备注 | 选填。 |
+
+:::note[切换自账号分开改密]
+同一资产上存在 **切换自** 关系的账号，不要放在同一个改密任务中，须拆成两个任务分别执行。
 :::
 
-## 2 概览
+:::note[参数仅部分系统有效]
+**参数** 目前只对 AIX、LINUX、UNIX 类型的资产有效。
+:::
 
-- Jumpserver 支持对账号密码更改任务的概览，其中可以查看最近的账号密码更改任务的摘要、任务执行结果以及账号密码更改成功的统计和失败的统计。账号更改密码概览页面如下：
-![V4_change_secrets_1](/img/jumpserver/V4_change_secrets_1.png)
+## 5 执行与维护
 
+行内绿色按钮立即执行。**更多** 包括 **编辑**、**删除**、**副本**。
 
-您可以在 **改密失败账号** 中查看具体的失败账号和失败原因。如果想查看密码更改任务中的旧密码和新密码，可以点击操作中的 **查看**。此步骤需要拥有查询密码权限的用户在 JumpServer 中进行 MFA 验证。
-![V4_change_secrets_7](/img/jumpserver/V4_change_secrets_7.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_secret_04.png" alt="图 4  行内更多" />
 
-## 3 账号改密任务
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  行内更多</div>
 
-- 单击 **账号改密任务** 页面上的 **创建** 按钮，以创建用于修改账户密码的自动化任务。
-![V4_change_secrets_2](/img/jumpserver/V4_change_secrets_2.png)
+单击任务 **名称** 打开详情。页签包括 **基本设置**、**资产/节点**、**活动**。右上角可 **编辑** 或 **删除**。右侧 **快速更新** 提供 **手动执行**。基本信息包括 ID、名称、账号、资产数、节点数、密文生成策略、定时任务、间隔、创建日期、更新日期、备注、激活。
 
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_secret_05.png" alt="图 5  账号改密详情" />
 
-- 详细参数说明:
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  账号改密详情</div>
 
-| 参数                          | 说明                                                                 |
-|-------------------------------|----------------------------------------------------------------------|
-| 名称                          | 账号改密自动化任务的名称                                             |
-| 用户名                        | 被改密的用户。                                                       |
-| 资产                          | 需要被改密的资产。                                                   |
-| 节点                          | 需要被改密的资产节点组。                                             |
-| 密码策略 - 密文生成策略          | 选择被改密的用户的密码策略。                                         |
-|                               | ●  指定：管理员用户手动输入密码。                                     |
-|                               | ●  随机：JumpServer 自行生成密码。                                    |
-| 密码策略 - 密文类型              | 被修改的用户密文的类型。                                             |
-| 密码                          | 选择密文生成策略为指定，管理员用户输入密码。                         |
-|                               | 选择密文生成策略为随机，管理员用户设置密码生成规则，例如：密码长度、密码强弱规则等等。 |
-| 参数                          | 参数设置目前只针对 UNIX、AIX、LINUX 类型资产有效。                    |
-| 定时执行                      | 选择该自动化任务是否定时执行，设置定时任务执行时间。                 |
-| 收件人                        | 选择用户接受改密后的邮件通知信息。                                   |
+## 6 执行历史
 
+选择 **执行历史**。列表列字段包括任务、触发模式、开始日期、结束日期、自动化快照、状态、花费时间及操作。触发模式示例为手动触发。操作列可查看本次执行的日志。
 
-- 单击 **执行** 按钮立即运行自动化任务。单击 **更多** 按钮可编辑、删除或复制。
-![V4_change_secrets_3](/img/jumpserver/V4_change_secrets_3.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_secret_06.png" alt="图 6  执行历史" />
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  执行历史</div>
 
-- 检查执行日志。
-![V4_change_secrets_4](/img/jumpserver/V4_change_secrets_4.png)
+## 7 执行记录
 
-## 4 执行历史
+选择 **执行记录**。列表列字段包括资产、用户名、结束日期、成功、测试、错误及操作。
 
-- 此页面主要显示有关计划的帐户密码更改任务的详细信息，如执行日志和报告。请查看执行日志。
-![V4_change_secrets_5](/img/jumpserver/V4_change_secrets_5.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_secret_07.png" alt="图 7  执行记录" />
 
-## 5 执行记录
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7  执行记录</div>
 
-- 此页面主要显示已更改密码的每个账号的记录，您可以查看新旧密码并重试更改账号密码。查看新旧密码需要用户进行 MFA 验证。
-![V4_change_secrets_6](/img/jumpserver/V4_change_secrets_6.png)
+## 8 改密状态
+
+选择 **改密状态**。列表列字段包括执行 ID、资产、用户名、状态、剩余时间（秒）及操作。用于查看正在进行的改密。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_secret_08.png" alt="图 8  改密状态" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 8  改密状态</div>

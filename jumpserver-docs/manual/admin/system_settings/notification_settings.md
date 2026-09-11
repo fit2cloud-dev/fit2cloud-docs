@@ -1,63 +1,26 @@
 ---
 title: 通知设置
+description: 介绍 JumpServer 系统设置中邮箱、消息模板、短信和消息订阅。
 ---
 
+## 1 功能简介
 
-- 通过点击页面右上角小齿轮进入 **系统设置** 页面，点击 **通知设置** ，进入通知设置页面。
+通知设置用于配置系统通知通道。路径：单击右上角齿轮进入 **系统设置**，选择 **通知设置**。
 
-## 1 邮箱设置
+页签包括 **邮箱**、**消息模板**、**短信**、**消息订阅**。
 
-- 邮件设置界面主要配置邮件的发件邮箱信息，用于发送创建用户密码设置邮件、危险命令邮件、授权过期邮件等邮件到JumpServer用户邮箱。
-![V4_systemsetting_notification_settings1](/img/jumpserver/V4_systemsetting_notification_settings1.png)
+邮箱页可配置服务（SMTP 或 Microsoft Exchange 服务器）、主机、端口、账号、密码、发件人、SSL/TLS、证书校验、邮件模版和测试收件人。先单击 **提交** 保存，再单击 **测试连接**。
 
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_st_notify_01.png" alt="图 1  通知设置" />
 
-| 参数 | 说明 |
-|----------|----------|
-| 协议 | 邮件服务使用的协议 |
-| 主机 | 邮件服务器的地址 |
-| 端口 | 邮件服务器使用的端口 |
-| 账户 | 登录到邮件服务器的用户名 |
-| 密码 | 登录到邮件服务器的密码 |
-| 发件人 | 发件人的电子邮件地址 |
-| 使用SSL | 与SMTP服务器通信时是否使用隐式TLS连接 |
-| 使用TLS | 与SMTP服务器通信时是否使用TLS连接 |
-| 邮件模板 | 用于发送邮件的模版，包括邮件标题前缀和邮件内容 |
-| 收件人 | 用于测试电子邮件服务器是否连通的测试邮箱地址 |
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  通知设置</div>
 
-## 2 短信设置
+## 2 前提条件
 
-### 2.1 功能概述
+- 已使用系统管理员账号登录 JumpServer。
 
-- 可以设置短信MFA认证方式(目前支持阿里云、腾讯云、华为云、CMPP V2.0和自定义方式对接)。
-- JumpServer还支持使用手机短信找回用户密码，管理员需要开启SMS服务，且用户信息需要配置手机号。
-![V4_systemsetting_notification_settings2](/img/jumpserver/V4_systemsetting_notification_settings2.png)
+## 3 其他页签
 
-### 2.2 配置说明
-
-- 选择对应的短信服务商，填入服务商平台认证相关信息，点击 **测试** 按钮可测试配置是否正确。
-![V4_systemsetting_notification_settings3](/img/jumpserver/V4_systemsetting_notification_settings3.png)
-
-- 您的 JumpServer 动态码为：$\{code\}，验证码 1 分钟内有效，请勿泄露！
-
-### 2.3 用户侧配置
-
-- 点击用户头像-个人信息在手机一栏配置用户个人手机号。
-![V4_systemsetting_notification_settings4](/img/jumpserver/V4_systemsetting_notification_settings4.png)
-
-
-- 点击MFA认证设置按钮，进入设置页面。
-- 点击启用MFA按钮，再点击启用SMS按钮即可使用短信认证功能。
-![V4_systemsetting_notification_settings5](/img/jumpserver/V4_systemsetting_notification_settings5.png)
-![V4_systemsetting_notification_settings6](/img/jumpserver/V4_systemsetting_notification_settings6.png)
-
-## 3 消息订阅
-### 3.1 功能概述
-
-- 可以设置 JumpServer 平台监控消息的接收人。
-- 可以设置监控消息的发送方式(站内信和邮件)。
-![V4_systemsetting_notification_settings7](/img/jumpserver/V4_systemsetting_notification_settings7.png)
-### 3.2 设置消息接收人
-
-- 点击 **编辑消息接收人** 按钮，进入设置界面。
-- 在可选择列表中勾选用户，会将其移入已选择。在已选择列表中勾选用户，会将其移入未选择。
-![V4_systemsetting_notification_settings8](/img/jumpserver/V4_systemsetting_notification_settings8.png)
+- **消息模板**：配置通知正文模板。
+- **短信**：配置短信通道。
+- **消息订阅**：按消息类型勾选邮箱、企业微信、钉钉、站内信、飞书、Lark、Slack 等接收方式。

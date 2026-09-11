@@ -1,57 +1,91 @@
 ---
 title: 风险检测
+description: 介绍 JumpServer PAM 中账号风险检测任务的创建、检测结果处理以及检测引擎说明。
 ---
 
-## 1 功能概述
+## 1 功能简介
 
+风险检测用于检查 JumpServer 已纳管账号的凭据风险，例如密码强度、密码重复和常用密码。路径：登录后将控制台切换到 **PAM**，选择 **安全设置 > 风险检测**。
 
-- 进入 **PAM** 页面，点击 **安全设置 &gt; 风险检测**，进入风险检测页面
-- JumpServer 支持账号风险检测功能，可检测账号长时间未登录、密码过期、弱密码、重复密码等风险，并可导出风险列表进行审核、处理或忽略
-![V4_risk_detection_1](/img/jumpserver/V4_risk_detection_1.png)
+页签包括 **检测结果**、**检测任务**、**执行历史** 和 **检测引擎**。
 
-## 2 检测结果
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_risk_01.png" alt="图 1  检测结果" />
 
-- 检测结果页面展示所有账号风险类型及处理建议，可导出风险列表进行审核、处理或忽略
-- 若检测到密码重复、长时间未改密等风险，可点击账号右侧下拉箭头，按提示更新密码或添加账号，也可直接审核风险内容
-- 弱密码检测规则包括：密码长度小于 8 位、仅包含单一字符类型、仅为数字，或为常见弱密码（如 123456、password、abc123 等）
-- 针对不同风险类型，可选择“同步删除”“添加账户”“密码修改后添加”等操作，处理后风险状态变为已确认，若选择忽略则状态变为已忽略
-![V4_risk_detection_1](/img/jumpserver/V4_risk_detection_1.png)
-![V4_risk_detection_3](/img/jumpserver/V4_risk_detection_3.png)
-![V4_risk_detection_2](/img/jumpserver/V4_risk_detection_2.png)
-![V4_risk_detection_4](/img/jumpserver/V4_risk_detection_4.png)
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  检测结果</div>
 
-## 3 检测任务
+**检测结果** 页左侧为资产树，上方统计最近一周、最近一月和待处理数量。列表列字段包括资产、账号、风险、待处理及创建日期。右上角提供搜索、筛选、列设置、导出和刷新。
 
-- 点击检测任务页面的 **创建** 按钮，填写相关信息创建账号风险检测任务
-![V4_risk_detection_5](/img/jumpserver/V4_risk_detection_5.png)
+## 2 前提条件
 
+- 已使用具备 PAM 权限的账号登录 JumpServer（如系统管理员）。
+- 目标资产或节点须已存在，且账号已纳管并配置凭据。资产维护请参见 [资产列表](../../console/assets/assets_list.md)，账号维护请参见 [账号列表](../../console/account_management/account_list.md)。
 
-- 详细参数说明:
-| 参数    | 说明 |
-|---------|------|
-| 名称    | 风险检测任务名称 |
-| 资产    | 需检测账号的资产 |
-| 节点    | 需检测账号的资产节点组 |
-| 引擎    | 检查账号密码强度、账号密码是否重复、是否为常用密码 |
-| 收件人  | 目前仅支持邮件发送 |
-| 周期执行    | 周期执行设置 |
-|激活   | 任务是否生效|
-|备注     |	非必填项，检测任务备注信息|
+:::note[先纳管再检测]
+风险检测只检查系统中已纳管的账号凭据，不会连接资产去发现账号。若要核对资产上的实际账号，请先执行 [账号发现](../automation/account_discovery.md)，并完成账号纳管和凭据配置。
+:::
 
+## 3 检测结果
 
-- 点击 **执行** 按钮可立即运行检测任务，点击 **更多** 可编辑、删除或复制任务
-![V4_risk_detection_6](/img/jumpserver/V4_risk_detection_6.png)
+任务执行后，在 **检测结果** 中勾选记录，单击 **更多操作**：
 
+- **解决所选**： 将所选风险标记为已处理。
+- **删除所选**： 从检测结果中去掉所选记录。
 
-- 可查看检测任务的执行日志
-![V4_risk_detection_8](/img/jumpserver/V4_risk_detection_8.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_risk_02.png" alt="图 2  检测结果更多操作" />
 
-## 4 执行历史
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  检测结果更多操作</div>
 
-- 显示账号风险检测任务的历史记录，可查看日志或报告
-![V4_risk_detection_7](/img/jumpserver/V4_risk_detection_7.png)
+:::note[先有任务才有结果]
+**检测结果** 来自已执行的检测任务。当前环境该页为空时，须先在 **检测任务** 中创建任务并执行。
+:::
 
-## 5 检测引擎
+## 4 检测任务
 
-- 显示当前支持的检测引擎及其说明
-![V4_risk_detection_9](/img/jumpserver/V4_risk_detection_9.png)
+选择 **检测任务**。列表列字段包括名称、资产数、节点数、执行周期、激活及操作。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_risk_03.png" alt="图 3  检测任务" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  检测任务</div>
+
+1. 单击 **创建**。
+2. 在右侧抽屉 **创建检测任务** 中填写信息。
+3. 单击 **提交**。若需连续添加，单击 **保存并继续添加**。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_risk_04.png" alt="图 4  创建检测任务" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  创建检测任务</div>
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  创建检测任务字段说明</div>
+
+| 分组 | 字段 | 说明 |
+| --- | --- | --- |
+| 基本设置 | 名称 | 必填。任务名称。 |
+| 资产 | 资产 | 要检测的资产。 |
+| 资产 | 节点 | 要检测的节点。可与资产同时选择。 |
+| 配置 | 引擎 | 必填。选择检测引擎。页面提示：风险检测仅检查系统中已纳管的账号凭据，不会连接资产实时发现账号。 |
+| 配置 | 收件人 | 选择用户。页面提示：当前只支持邮件发送。 |
+| 定期 | 周期执行 | 勾选后按周期重复执行。默认未勾选。 |
+| 定期 | 间隔 | 勾选周期执行后出现，默认 24 小时。 |
+| 定期 | 定时任务 | 勾选周期执行后出现。页面提示：如果同时设置了 interval 和 crontab，则优先考虑 crontab。 |
+| 其它设置 | 激活 | 默认勾选。任务可用。 |
+| 其它设置 | 备注 | 选填。 |
+
+## 5 执行历史
+
+选择 **执行历史**。列表列字段包括任务、触发模式、开始日期、结束日期、自动化快照、状态、花费时间及操作。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_risk_05.png" alt="图 5  执行历史" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  执行历史</div>
+
+## 6 检测引擎
+
+选择 **检测引擎**。当前环境提供 3 个引擎：
+
+- **检查您的账号和密码的强度**： 针对账号密码的安全性进行检查分析，包括密码强度、泄露情况等。
+- **检查账号和密码是否重复**： 检查该账号是否与其他账户相同。
+- **检查账号密码是否为常用密码**： 检查账号密码是否为常见泄露密码。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_risk_06.png" alt="图 6  检测引擎" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  检测引擎</div>

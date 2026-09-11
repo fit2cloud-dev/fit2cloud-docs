@@ -1,52 +1,26 @@
 ---
 title: 人脸识别 (X-Pack)
+description: 介绍 JumpServer 人脸识别 MFA 的启用条件与安全设置入口。
 ---
 
+## 1 功能简介
 
-&gt; 1. 版本：v4.6.0 及以上 <br />
-&gt; 2. 旗舰版许可证 5000 个以上的资产 <br />
-&gt; 3. 启用 HTTPS 访问
+人脸识别可作为 MFA 方式之一。在 **系统设置 > 安全设置 > 认证安全** 中，**允许的 MFA 方式** 包含 **人脸识别**。勾选后，用户可在个人信息中录入面部信息，登录或连接资产时按策略进行人脸验证。
 
-## 1 配置 Faclive
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_st_sec_01.png" alt="图 1  允许的 MFA 方式含人脸识别" />
 
-**新增参数**
-```sh
-vim /opt/jumpserver/config/config.txt
-#config.txt
-USE_XPACK=1
-FACE_RECOGNITION_ENABLED=true
-FACELIVE_ENABLED=1
-```
-**重启 JumpServer**
-```sh
-jmsctl restart
-```
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  允许的 MFA 方式含人脸识别</div>
 
-## 2 配置 MFA 人脸识别
+## 2 使用限制
 
-- 在用户详细信息页面记录面部信息并启用 MFA。
+- 需企业版 / X-Pack 能力，具体以许可证为准。
+- 须使用 HTTPS 访问。
+- 部署侧需开启人脸相关配置项（如 `FACE_RECOGNITION_ENABLED`），修改后重启 JumpServer，以当前版本部署文档为准。
 
-![image.png](/img/jumpserver/Facelive1.png)
+## 3 前提条件
 
+- 已使用系统管理员账号登录 JumpServer。
+- 已在安全设置中勾选 **人脸识别**。
+- 用户已在个人信息中录入面部信息。
 
-- 退出登录并尝试重新登录，选择人脸验证。
-![image.png](/img/jumpserver/Facelive2.png)
-
-
-- 请在30秒内完成面部验证。
-![image.png](/img/jumpserver/Facelive3.png)
-
-## 3 资产连接面部认证与监控
-
-- 在 **控制台 &gt; 访问控制 &gt; 资产连接** 中启用**人脸验证**。操作可以是 **人脸验证** 或 **人脸在线** 。
-![image.png](/img/jumpserver/Facelive4.png)
-
-
-- 连接到资产前需要进行人脸验证。
-![image.png](/img/jumpserver/Facelive5.png)
-
-
-- 如果面部识别未检测到用户，会暂停会话。
-- 暂停会话期间将无法进行对资产的任何操作。
-![image.png](/img/jumpserver/Facelive6.png)
-    
+资产连接前的人脸校验在访问控制策略中配置，详见 [访问控制](../console/access_control/acls.md)。

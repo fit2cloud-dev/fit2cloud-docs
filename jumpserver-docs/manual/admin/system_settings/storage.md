@@ -1,19 +1,18 @@
 ---
 title: 存储设置
+description: 介绍 JumpServer 系统设置中对象存储与命令存储。
 ---
 
+## 1 功能简介
 
-- 通过点击页面右上角小齿轮进入 **系统设置** 页面，点击 **存储设置** ，进入存储设置页面。
-- 存储设置页面主要配置 JumpServer 录像存储、账号被封以及命令存储的设置。
-  
-## 1 对象存储
+存储设置用于配置会话录像等对象存储，以及命令存储。路径：单击右上角齿轮进入 **系统设置**，选择 **存储设置**。
 
-- 对象存储页面可以对JumpServer连接资产的会话录像存储的位置进行自定义。目前支持的外部录像存储有亚马逊的 S3 云存储、Ceph、Swift、OSS、Azure、OBS、COS。
-- SFTP 存储仅支持作为账号备份服务器。
-  
+页签包括 **对象存储** 和 **命令存储**。列表列字段包括名称、类型、备注、默认及操作。可单击 **创建**。
 
-## 2 命令存储
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_st_stor_01.png" alt="图 1  存储设置" />
 
-- 命令存储页面可以更改JumpServer连接资产的会话命令记录存储的位置。默认的资产会话命令记录存储在JumpServer的数据库中，目前支持的外部命令存储有Elasticsearch。
-- Elasticsearch 主机格式为 `http://es_user:es_password@es_host:es_port`。
-- 如果开启按日期建立索引，那么输入的值会作为索引前缀。
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  存储设置</div>
+
+## 2 前提条件
+
+- 已使用系统管理员账号登录 JumpServer。

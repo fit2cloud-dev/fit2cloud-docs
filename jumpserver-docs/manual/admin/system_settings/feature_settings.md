@@ -1,58 +1,27 @@
 ---
 title: 功能设置
+description: 介绍 JumpServer 系统设置中公告、工单、作业中心等功能开关。
 ---
 
+## 1 功能简介
 
-- 通过点击页面右上角小齿轮进入 **系统设置** 页面，点击 **功能设置** ，进入功能设置页面。
+功能设置用于开关公告、工单、作业中心、账号存储、SSH 证书签发和虚拟应用等能力。路径：单击右上角齿轮进入 **系统设置**，选择 **功能设置**。
 
-## 1 公告
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_st_feat_01.png" alt="图 1  功能设置" />
 
-- 点击页面上方的 **公告** ，即进入公告设置页面。
-- 该页面可以自定义是否启用公告功能，并设置公告内容，在JumpServer页面全局展示。
-![V4_systemsetting_feature1](/img/jumpserver/V4_systemsetting_feature1.png)
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  功能设置</div>
 
+## 2 前提条件
 
-- 启用公告后效果如下。
-![V4_systemsetting_feature2](/img/jumpserver/V4_systemsetting_feature2.png)
+- 已使用系统管理员账号登录 JumpServer。
 
-## 2 工单
+## 3 页签说明
 
-- 点击页面上方的 **工单** ，即进入工单设置页面。
-- 可以自定义是否启用工单功能，用户可以通过工单来申请资源授权。
-![V4_systemsetting_feature3](/img/jumpserver/V4_systemsetting_feature3.png)
+- **公告**：主题、内容、开始日期、结束日期、更多信息 URL。
+- **工单**：工单相关开关。
+- **作业中心**：启用作业中心、Ansible docker 隔离、作业中心命令黑名单（如 reboot、shutdown 等）。工作台作业中心依赖此开关。
+- **账号存储**：账号保险箱相关能力。
+- **SSH 证书签发**：SSH 证书相关能力。
+- **虚拟应用**：虚拟应用功能开关。虚拟应用包管理见 [虚拟应用](./virtual_apps.md)。
 
-
-- 启用工单后效果如下。
-![V4_systemsetting_feature4](/img/jumpserver/V4_systemsetting_feature4.png)
-
-## 3 作业中心
-
-- 点击页面上方的 **作业中心** ，即进入作业中心设置页面。
-- 批量命令执行选项决定是否允许用户在 **工作台 &gt; 作业中心** 中执行批量命令。
-- 作业中心命令黑名单设置不允许在批量命令中使用的命令。
-![V4_systemsetting_feature5](/img/jumpserver/V4_systemsetting_feature5.png)
-
-## 4 账号存储
-
-
-- 点击页面上方的 **账号存储** ，即进入账号存储设置页面。
-- 账号密钥支持对接HashiCorp Vault第三方密钥存储系统，用户需要在 `config.txt` 配置文件中修改参数 `VAULT_ENABLED = true` 以及按照存储引擎配置 `VAULT_BACKEND = [local/hcp/azure/aws]` 参数，然后回到页面进行配置即可。
-- 进行数据同步，同步是单向的，只会从本地数据库同步到远端 Vault，同步完成后本地数据库不再存储密码，请备份好数据。
-- 二次修改 Vault 配置后需重启服务。
-![V4_systemsetting_feature6](/img/jumpserver/V4_systemsetting_feature6.png)
-
-## 5 智能问答
-
-
-- 点击页面上方的 智能问答，即可进入智能问答设置页面。
-- 智能问答支持对接 ChatGPT、Deepseek 以及自定义模型服务（自定义模型功能需在 &gt;= V4.10.14 版本中才可使用），开启后即可启动聊天 AI 功能进行智能问答。
-- 填写聊天服务的基本地址、API Key，点击 **保存** ，再点击 **测试**；测试连接成功后，即可开始与智能问答小助手进行对话。
-![V4_systemsetting_feature7](/img/jumpserver/V4_systemsetting_feature7.png)
-
-## 6 虚拟应用
-
-
-- 点击页面上方的 **虚拟应用** ，即进入虚拟应用设置页面。
-- JumpServer支持使用Linux系统作为远程应用功能的运行载体，在此页面开启以Linux系统为底层的虚拟应用功能。
-- 使用配置见[虚拟应用配置说明](virtual_apps)。
-![V4_systemsetting_feature8](/img/jumpserver/V4_systemsetting_feature8.png)
+单击 **提交** 保存。

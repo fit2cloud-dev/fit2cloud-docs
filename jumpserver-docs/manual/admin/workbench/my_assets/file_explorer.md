@@ -1,27 +1,28 @@
 ---
 title: 文件管理
+description: 介绍 JumpServer 工作台文件管理入口，以及 Web 终端中的传输中心。
 ---
 
+## 1 功能简介
 
-- 进入 **工作台** 页面，点击 **我的资产 &gt; 文件管理** ，进入文件管理页面。
-- 默认情况下，上传和下载的SFTP目录设置为 `/tmp`。SFTP目录绑定到资产平台。JumpServer 中的默认 SFTP 目录无法修改；如果需要修改，则需要在 `设置`-`平台列表` 创建新的系统平台并相应地进行调整。
-- 点击 `小齿轮` 修改SFTP的默认路径。
-![v4_file_manage_1](/img/jumpserver/v4_file_manage_1.png)
+文件管理用于在已授权资产上浏览和传输文件。路径：登录后将控制台切换到 **工作台**，选择 **我的资产 > 文件管理**，将打开独立的文件管理器（依赖 Koko 组件）。
 
+在 [Web 终端](./web_terminal.md) 中，也可单击右下角 **传输中心**，查看传输队列（文件、传输方向、进度、速度 / 剩余、状态、操作）。
 
-- 文件管理页面如下图所示，右击上方黑色区域选择文本标签可显示标签含义：
-![v4_file_manage_2](/img/jumpserver/v4_file_manage_2.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_wb_fm_01.png" alt="图 1  传输中心" />
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  传输中心</div>
 
-- 点击左侧节点树对应信息，即可进入资产中的SFTP目录。当某个资产有且仅有一个账号授权时，点击资产名称即可直接进入该资产对应授权用户的SFTP目录。
-- 当某个资产拥有多个账号授权时，需点击资产名称后选择资产对应的账号才能进入对应的SFTP目录。
-![v4_file_manage_3](/img/jumpserver/v4_file_manage_3.png)
+:::note[组件需可用]
+独立文件管理器依赖 Koko。若打开后无法访问，请检查组件状态，见 [组件设置](../../system_settings/components.md)。向多台 Linux 资产批量上传见 [文件传输](./file_transfer.md)。
+:::
 
+## 2 前提条件
 
-- 第一种方式：直接在右侧页面右击唤出操作菜单
-- 第二种方式：上方黑色部分的按钮进行对应的操作
-![v4_file_manage_4](/img/jumpserver/v4_file_manage_4.png)
+- 已使用工作台账号登录 JumpServer。
+- 当前用户已被授权可上传或下载文件的资产。
+- Koko 组件运行正常。
 
+## 3 使用说明
 
-- JumpServer支持调整展示文件的视图。调整按钮与调整之后的视图如下所示：
-![v4_file_manage_5](/img/jumpserver/v4_file_manage_5.png)
+默认 SFTP 目录由资产所属平台决定，常见为 `/tmp`。修改目录需在 [平台列表](../../system_settings/platforms.md) 中调整对应平台，而不是改系统默认平台。

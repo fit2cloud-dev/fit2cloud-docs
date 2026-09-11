@@ -1,43 +1,26 @@
 ---
 title: 界面设置
+description: 介绍 JumpServer 系统设置中产品名称、主题与 Logo。
 ---
 
+## 1 功能简介
 
-- 通过点击页面右上角小齿轮进入 **系统设置** 页面，点击 **界面设置** ，进入界面设置页面。
-- 界面设置主要包含：登录页面标题设置、JumpServer 整体主题设置，JumpServer 相关 Logo 设置、登录页面图片设置以及备案号设置。
-![V4_appearance_01.png](/img/jumpserver/V4_appearance_01.png)
+界面设置用于自定义产品名称、主题和各类 Logo。路径：单击右上角齿轮进入 **系统设置**，选择 **界面设置**。
 
-## 1 基本设置
+- **产品名称**
+- **主题**（如经典绿）
+- **顶部宽 logo**：管理页面左上方，建议 185px × 55px
+- **方形小 logo**：Web 终端，建议 82px × 82px
+- **网站图标**：建议 16px × 16px
+- **登录页面图片**：建议 492px × 472px
+- **页脚内容**
 
-- 基本设置包含登录页面标题与主题。登录页面标题可自定义，自定义后显示如下：
-![V4_appearance_02.png](/img/jumpserver/V4_appearance_02.png)
+单击 **提交**、**还原** 或 **恢复默认**。
 
-- 查看页面上的标题设置：
-![V4_appearance_03.png](/img/jumpserver/V4_appearance_03.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_st_ui_01.png" alt="图 1  界面设置" />
 
-- JumpServer 支持多种主题切换，目前支持的主题有：中国红、深邃黑、科技蓝、经典绿、高贵紫。
-![V4_appearance_04.png](/img/jumpserver/V4_appearance_04.png)
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  界面设置</div>
 
-## 2 Logo
+## 2 前提条件
 
-- `顶部宽logo`的选项调整后将会显示在管理页面左上方，如下图所示：
-![V4_appearance_05.png](/img/jumpserver/V4_appearance_05.png)
-
-- 调整`方形小logo`选项后，会在企业版用户 web 终端上显示为一个小图标，如下图所示：
-![V4_appearance_06.png](/img/jumpserver/V4_appearance_06.png)
-
-- 调整`网站图标`选项后，它将显示为浏览器标签左侧的小图标，如下图所示：
-![V4_appearance_07.png](/img/jumpserver/V4_appearance_07.png)
-
-## 3 图片
-
-- `登录页面图片`调整后显示页面位于登录输入框的右侧，如下所示：
-![V4_appearance_08.png](/img/jumpserver/V4_appearance_08.png)
-
-## 4 页脚
-
-- 更新外观页面上的页脚内容：
-![V4_appearance_10.pngalt text](/img/jumpserver/V4_appearance_10.png)
-
-- 调整记录信息后，将显示在登录页面底部，如下图所示：
-![V4_appearance_09.png](/img/jumpserver/V4_appearance_09.png)
+- 已使用系统管理员账号登录 JumpServer。

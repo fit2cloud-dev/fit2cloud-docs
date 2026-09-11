@@ -1,43 +1,19 @@
 ---
-title: Slack (X-Pack)
+title: Slack
+description: 介绍 JumpServer 认证设置中 Slack 的配置项。
 ---
 
-## 1 关于 Slack
+## 1 功能简介
 
+Slack 认证用于使用 Slack 登录 JumpServer。路径：单击右上角齿轮进入 **系统设置**，选择 **认证设置**，页签 **Slack**。
 
+字段包括 **Slack** 开关、**Client ID**、**Client secret**、**Client bot token**、**映射属性**、**组织**。单击 **提交** 保存。
 
-- 通过点击页面右上角小齿轮进入 **系统设置** 页面，点击 **认证设置 &gt; Slack** ，进入 Slack 配置页面。
-- **Slack** 认证是基于 Slack 平台的身份认证机制，允许用户使用 Slack 账户安全登录企业应用程序。JumpServer 支持标准 Slack 认证。
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_auth_slack_01.png" alt="图 1  Slack" />
 
-## 2 配置参数
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  Slack</div>
 
+## 2 前提条件
 
-详细参数说明：
-
-| 参数 | 说明 | 示例 |
-|------|------|------|
-| Slack | 勾选启用 Slack 身份验证 | 启用/禁用 |
-| Client ID | Slack Client ID，这是 Slack 应用程序的唯一标识符，用于在 OAuth 2.0 授权过程中标识应用程序 |  |
-| Client secret | Slack Client secret，这是与 Slack 应用程序关联的机密字符串，用于在 OAuth 2.0 令牌交换过程中对应用程序进行身份认证 |   |
-| Client bot token | Slack Client bot token，这是授予 Slack 机器人的访问令牌，允许它与 Slack 工作区交互并执行发送消息或管理频道等任务 |  |
-| 映射属性 | 用户属性映射。键表示 JumpServer 用户属性名称，值对应 Slack 用户属性名称 | 示例见下文 |
-| 组织 | 经过身份认证和创建后，用户将被添加到所选组织中 | 默认值：`DEFAULT` |
-
-Slack 用户属性示例
-
--  **映射属性** 字段用于设置用户属性映射。键表示 JumpServer 用户属性名称，值对应 Slack 用户属性名称。
-
-```json
-{
-  "name": "real_name",
-  "username": "name",
-  "email": "profile.email"
-}
-```
-
-## JumpServer Slack URL 说明
-
-| URL 类型 | 地址 | 说明 |
-|----------|------|------|
-| 二维码登录 URL | `https://jumpserver.example.com/core/auth/slack/qr/login/` | Slack 二维码登录入口 |
-| 二维码登录回调 URL | `https://jumpserver.example.com/core/auth/slack/qr/login/callback/` | 二维码登录成功回调地址 |
+- 已使用系统管理员账号登录 JumpServer。
+- 已在 Slack 创建应用。

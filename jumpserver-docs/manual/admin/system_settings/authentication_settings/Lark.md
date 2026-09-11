@@ -1,45 +1,19 @@
 ---
-title: Lark (X-Pack)
+title: Lark
+description: 介绍 JumpServer 认证设置中 Lark 的配置项。
 ---
 
-## 关于 Lark
+## 1 功能简介
 
+Lark 认证用于使用 Lark 登录 JumpServer。路径：单击右上角齿轮进入 **系统设置**，选择 **认证设置**，页签 **Lark**。
 
-- 通过点击页面右上角小齿轮进入 **系统设置** 页面，点击 **认证设置 &gt; Lark** ，进入 Lark 配置页面。
-- **Lark** 认证是 Lark(国际版飞书)提供的一种身份认证机制，使企业和第三方应用程序能够通过 Lark 对用户进行身份认证和授权。
+字段包括 **Lark** 开关、**App ID**、**App secret**、**映射属性**、**组织**。单击 **提交** 保存。
 
-## 基础配置
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_auth_lark_01.png" alt="图 1  Lark" />
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  Lark</div>
 
-- 点击页面右上角的设置按钮
-- 导航到 **系统设置 &gt; 认证设置 &gt; Lark**
+## 2 前提条件
 
-
-详细参数说明：
-
-| 参数 | 说明 | 示例 |
-|------|------|------|
-| Lark | 勾选启用 Lark 身份验证 | 启用/禁用 |
-| App ID | Lark App ID，这是应用程序的唯一标识符 |  |
-| App secret | Lark 应用程序密钥，用于获取调用 Lark API 的访问令牌 |   |
-| 映射属性 | 用户属性映射。键表示 JumpServer 用户属性名称，值对应 Lark 用户属性名称 | 示例见下文 |
-| 组织 | 经过身份认证和创建后，用户将被添加到所选组织中 | 默认值：`DEFAULT` |
-
-Lark 用户属性示例
-
--  **映射属性** 字段用于设置用户属性映射。键表示 JumpServer 用户属性名称，值对应 Lark 用户属性名称。
-
-```json
-{
-  "name": "nickname",
-  "username": "user_id",
-  "email": "email"
-}
-```
-
-## JumpServer Lark URL 说明
-
-| URL 类型 | 地址 | 说明 |
-|----------|------|------|
-| 二维码登录 URL | `https://jumpserver.example.com/core/auth/lark/qr/login/` | Lark 二维码登录入口 |
-| 二维码登录回调 URL | `https://jumpserver.example.com/core/auth/lark/qr/login/callback/` | 二维码登录成功回调地址 |
+- 已使用系统管理员账号登录 JumpServer。
+- 已在 Lark 开放平台创建应用。

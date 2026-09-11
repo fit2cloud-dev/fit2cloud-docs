@@ -1,40 +1,19 @@
 ---
-title: 飞书 (X-Pack)
+title: Feishu
+description: 介绍 JumpServer 认证设置中飞书的配置项。
 ---
 
-## 1 关于飞书
+## 1 功能简介
 
+飞书认证用于使用飞书登录 JumpServer。路径：单击右上角齿轮进入 **系统设置**，选择 **认证设置**，页签 **飞书**。
 
+字段包括 **飞书** 开关、**App ID**、**App secret**、**映射属性**、**组织**。单击 **提交** 保存。
 
-- 通过点击页面右上角小齿轮进入 **系统设置** 页面，点击 **认证设置 &gt; 飞书** ，进入飞书配置页面。
-- **飞书认证** 是基于飞书平台的身份认证方法，JumpServer 支持二维码登录和企业身份绑定。
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_auth_feishu_01.png" alt="图 1  飞书" />
 
-## 2 基础配置
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  飞书</div>
 
+## 2 前提条件
 
-详细参数说明：
-
-| 参数 | 说明 | 示例 |
-|------|------|------|
-| 飞书 | 勾选启用飞书身份验证 | 启用/禁用 |
-| App ID | 飞书 App ID，这是应用程序的唯一标识符 |  |
-| App secret | 飞书应用程序密钥，类似于 API 访问的密码，用于获取调用飞书 API 的访问令牌 |   |
-| 映射属性 | 用户属性映射。键表示 JumpServer 用户属性名称，值对应飞书用户属性名称 | 示例见下文 |
-| 组织 | 经过身份认证和创建后，用户将被添加到所选组织中 | 默认值：`DEFAULT` |
-
-飞书用户属性示例
-
-```json
-{
-  "name": "nickname",
-  "username": "user_id",
-  "email": "email"
-}
-```
-
-## 4 JumpServer 飞书 URL 说明
-
-| URL 类型 | 地址 | 说明 |
-|----------|------|------|
-| 二维码登录 URL | `https://jumpserver.example.com/core/auth/feishu/qr/login/` | 飞书二维码登录入口 |
-| 二维码登录回调 URL | `https://jumpserver.example.com/core/auth/feishu/qr/login/callback/` | 二维码登录成功回调地址 |
+- 已使用系统管理员账号登录 JumpServer。
+- 已在飞书开放平台创建应用。

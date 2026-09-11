@@ -1,10 +1,32 @@
 ---
 title: 登录日志
+description: 介绍 JumpServer 审计台中登录日志的查看、列设置和导出。
 ---
 
-## 1 功能概述
+## 1 功能简介
 
-- 进入 **审计台** 页面，点击 **日志审计 &gt; 登录日志** ，进入登录日志页面。
-- 登录日志是指 JumpServer 平台的用户登录日志，在此页面可以查看到用户登录 JumpServer 的详细信息包括用户的登录类型、登录IP、登录城市、登录日期、登录失败的原因等信息。
-![login_logs_01](/img/jumpserver/v4_login_logs_01.png)
+登录日志用于查看用户登录 JumpServer 的记录，包括认证方式、登录城市、失败原因和状态等。路径：登录后将控制台切换到 **审计台**，选择 **日志审计 > 登录日志**。
 
+列表列字段包括用户名、认证方式、登录城市、原因描述、状态及登录日期。右上角提供搜索、日期筛选、列设置、导出和刷新。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_loginlog_01.png" alt="图 1  登录日志" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  登录日志</div>
+
+## 2 前提条件
+
+- 已使用具备审计权限的账号登录 JumpServer（如系统管理员或审计员）。
+
+## 3 列设置与导出
+
+单击右上角列设置，打开 **列表偏好**，勾选要显示的列后单击 **确认**。可 **恢复默认**。除默认列外，还可勾选 ID、类型、登录 IP、用户代理、MFA、原因等。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_loginlog_02.png" alt="图 2  列表偏好" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  列表偏好</div>
+
+单击导出。文件类型为 **CSV** 或 **Excel**。导出范围为 **导出所有**、**仅导出选择项** 或 **仅导出搜索结果**。单击 **确认**。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_loginlog_03.png" alt="图 3  导出登录日志" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  导出登录日志</div>

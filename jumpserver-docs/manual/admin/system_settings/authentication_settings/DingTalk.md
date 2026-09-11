@@ -1,45 +1,19 @@
 ---
-title: 钉钉 (X-Pack)
+title: DingTalk
+description: 介绍 JumpServer 认证设置中钉钉的配置项。
 ---
 
-## 关于钉钉
+## 1 功能简介
 
+钉钉认证用于使用钉钉登录 JumpServer。路径：单击右上角齿轮进入 **系统设置**，选择 **认证设置**，页签 **钉钉**。
 
-- 通过点击页面右上角小齿轮进入 **系统设置** 页面，点击 **认证设置 &gt; 钉钉** ，进入钉钉配置页面。
-- **钉钉认证** 是基于钉钉的身份认证方法，支持 JumpServer 二维码登录和企业身份绑定，实现安全便捷的企业用户登录和管理。
+字段包括 **启用钉钉认证**、**Agent ID**、**App key**、**App secret**、**映射属性**、**组织**。单击 **提交** 保存。
 
-## 基础配置
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/v5_admin_auth_ding_01.png" alt="图 1  钉钉" />
 
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  钉钉</div>
 
-详细参数说明：
+## 2 前提条件
 
-| 参数 | 说明 | 示例 |
-|------|------|------|
-| 启用钉钉认证 | 勾选启用钉钉身份验证 | 启用/禁用 |
-| Agent ID | 钉钉 Agent ID，该 ID 唯一标识企业内的微型应用程序，主要用于发送工作通知 |  |
-| App key | 钉钉应用程序密钥，这是应用程序的唯一标识符，类似于 API 访问的用户名 |  |
-| App secret | 钉钉应用程序密钥，类似于 API 访问的密码，用于获取调用钉钉 API 的 访问令牌 |   |
-| 映射属性 | 用户属性映射。键表示 JumpServer 用户属性名称，值对应钉钉用户属性名称 | 示例见下文 |
-| 组织 | 经过身份认证和创建后，用户将被添加到所选组织中 | 默认值：`DEFAULT` |
-
-钉钉用户属性示例
-
--  **映射属性** 字段用于设置用户属性映射。键表示 JumpServer 用户属性名称，值对应钉钉用户属性名称。
--  钉钉用户属性示例：
-
-```json
-{
-  "name": "name",
-  "username": "name",
-  "email": "email"
-}
-```
-
-## JumpServer 钉钉 URL 说明
-
-| URL 类型 | 地址 | 说明 |
-|----------|------|------|
-| 二维码登录 URL | `https://jumpserver.example.com/core/auth/dingtalk/qr/login/` | 钉钉二维码登录入口 |
-| 二维码登录回调 URL | `https://jumpserver.example.com/core/auth/dingtalk/qr/login/callback/` | 二维码登录成功回调地址 |
-| OAuth 登录 URL | `https://jumpserver.example.com/core/auth/dingtalk/oauth/login/` | 钉钉 OAuth 登录入口 |
-| OAuth 登录回调 URL | `https://jumpserver.example.com/core/auth/dingtalk/oauth/login/callback/` | OAuth 登录成功回调地址 |
+- 已使用系统管理员账号登录 JumpServer。
+- 已在钉钉开放平台创建应用。
