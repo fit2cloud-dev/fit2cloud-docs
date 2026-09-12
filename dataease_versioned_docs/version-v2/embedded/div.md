@@ -10,7 +10,7 @@ DIV 嵌入需引入 DataEase 嵌入式 JS。
 
 DIV 嵌入的初始化图表不依赖监听触发，DIV 嵌入需要定义好容器的大小 。
 
-**注意：嵌入需要在 DataEase 的配置文件 /opt/dataease2.0/conf/application.yml 里增加 origin-list 配置，并重启服务。详细见[嵌入式常见问题 2](https://dataease.cn/docs/v2/embedded/question/#2-iframe-div)。**
+**注意：嵌入需要在 DataEase 的配置文件 /opt/dataease2.0/conf/application.yml 里增加 origin-list 配置，并重启服务。详细见[嵌入式常见问题 2](./question#2-iframe-div-嵌入后提示域名匹配错误)。**
 :::
 
 ## 1 仪表板嵌入
@@ -429,7 +429,7 @@ getToken().then(result => {
 ### 3.1 数据大屏双向参数传递
 :::note
 
-参考 [1.1 仪表板双向参数传递](https://dataease.cn/docs/v2/embedded/div/#11)以及 [3 数据大屏嵌入](https://dataease.cn/docs/v2/embedded/div/#3)，将相应 busiFlag 修改对应。
+参考 [1.1 仪表板双向参数传递](#11-仪表板双向参数传递)以及 [3 数据大屏嵌入](#3-数据大屏嵌入)，将相应 busiFlag 修改对应。
    
 - 仪表板图表 busiFlag: dashboard
 - 数据大屏图表 busiFlag: dataV
@@ -543,7 +543,7 @@ getToken().then(result => {
 ### 5.1 图表双向参数传递
 :::note
 
-参考 [1.1 仪表板双向参数传递](https://dataease.cn/docs/v2/embedded/div/#11)以及 [5 图表嵌入](https://dataease.cn/docs/v2/embedded/div/#5)。
+参考 [1.1 仪表板双向参数传递](#11-仪表板双向参数传递)以及 [5 图表嵌入](#5-图表嵌入)。
 :::
 
 ## 6 我的填报嵌入

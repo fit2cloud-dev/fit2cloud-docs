@@ -65,7 +65,7 @@ title: 仪表板使用
 :::note
 
 公共链接功能集成 Ticket 机制，公共链接外部参数可以直接在 Ticket 参数中简易设置，增强外部传参的安全性和灵活性。    
-**注意：设置 Ticket 的同时，需要开启 [设置仪表板外部参数](./dashboard_basicfunctions)。**     
+**注意：设置 Ticket 的同时，需要开启 [设置仪表板外部参数](./dashboard_basicfunctions#6-外部参数设置)。**     
 打开 Ticket 设置，并单独配置其有效期与参数，每个 Ticket 均可独立设定有效期，例如配置有效期为 30 天，参数为 \{"国家":"Lebanon"\}：
 :::
 

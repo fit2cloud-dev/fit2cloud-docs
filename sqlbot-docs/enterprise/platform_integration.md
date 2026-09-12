@@ -57,7 +57,7 @@ DataEase 对接企业微信，需要填写以下信息：
 
 
 SQLBot 对接企业微信，让安装 SQLBot 的服务器可以访问企业微信的接口，需要设置企业可信域名。可信域名若使用非标准端口需要带上端口号，此处不可使用 IP 地址。  
-可参考[可信域名验证配置](https://kb.fit2cloud.com/?p=915e0151-5581-406f-ac2e-22afb9b3b4bf  )操作步骤可参考。若校验不通过，可按照提示信息做相关操作即可。
+可参考[可信域名验证配置](https://kb.fit2cloud.com/?p=915e0151-5581-406f-ac2e-22afb9b3b4bf)操作步骤可参考。若校验不通过，可按照提示信息做相关操作即可。
 
 <img src="/img/sqlbot/user_manual/enterprise/企业微信对接6.png" alt="对接企业微信" style={{maxWidth:'720px',width:'100%',display:'block',margin:'16px auto 6px',borderRadius:'4px'}} />
 <div style={{fontSize:'14px',color:'#666',margin:'0 0 16px',textAlign:'center'}}>图 7 企业微信对接6</div>

@@ -232,7 +232,7 @@ province 需要和国家 geo 文件中 properties 下的 name 字段保持一致
 
 ![世界地图](/img/dataease/system_management/世界地图.png)
 
-图 27  世界地图<a id="33"></a>
+图 27  世界地图
 
 ### 3.3 在线地图
 

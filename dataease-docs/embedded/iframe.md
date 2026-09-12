@@ -103,8 +103,6 @@ const onMessage = function (event: any){
 ```
 :::
 
-<a id="11"></a>
-
 ### 1.1 仪表板双向参数传递
 
 :::note
@@ -545,8 +543,6 @@ const onMessage = function (event: any){
 ```
 :::
 
-<a id="3"></a>
-
 ## 3 数据大屏嵌入
 
 :::note
@@ -641,7 +637,7 @@ const onMessage = function (event: any){
 
 :::note
 
-参考 [1.1 仪表板双向参数传递](./iframe#11)以及 [3 数据大屏嵌入](./iframe#3)。以及 Iframe 数据大屏嵌入，将相应 busiFlag 修改对应。
+参考 [1.1 仪表板双向参数传递](#11-仪表板双向参数传递)以及 [3 数据大屏嵌入](#3-数据大屏嵌入)。以及 Iframe 数据大屏嵌入，将相应 busiFlag 修改对应。
 
 - 仪表板图表 busiFlag: dashboard
 - 数据大屏图表 busiFlag: dataV
@@ -720,7 +716,6 @@ contentWindow.postMessage(params , "*")
 ```
 :::
 
-<a id="5"></a>
 
 ## 5 图表嵌入
 

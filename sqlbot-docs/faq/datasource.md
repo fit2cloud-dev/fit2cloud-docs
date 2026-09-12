@@ -15,7 +15,7 @@ title: 数据源
 
 可以参考达梦官方的解决方案处理：
 
-`https://eco.dameng.com/community/question/ec52c8c5b36d5445db1ed8399728fb97`
+[https://eco.dameng.com/community/question/ec52c8c5b36d5445db1ed8399728fb97](https://eco.dameng.com/community/question/ec52c8c5b36d5445db1ed8399728fb97)
 
 docker-compose.yml文件修改示例：
 

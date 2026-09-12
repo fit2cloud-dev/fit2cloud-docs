@@ -141,7 +141,7 @@ root@iZt4ndy6544y6f1i99ahw0Z:~# npm version
 ### 2.5 安装配置 PostgreSQL
 
 从 v1.1.0 版本开始，SQLBot 需要使用到 PG 的向量扩展。为了方便，这里我们使用 docker 镜像来安装 PG。
-如果没有安装 docker 环境，可以先[安装相应的 docker 环境](#41-docker)。
+如果没有安装 docker 环境，可以先[安装相应的 docker 环境](#41-安装-docker)。
 
 执行以下命令启动 PG:
 ```
@@ -221,12 +221,12 @@ root@iZt4n9ii50pwh74bs5bhuzZ:~# docker cp sqlbot:/opt/sqlbot/models /opt/sqlbot/
 Successfully copied 831MB to /opt/sqlbot/models
 ```
 
-也可以参考一些其他的安装方式，如 `https://cloud.tencent.com/developer/article/2509399`
+也可以参考一些其他的安装方式，如 [https://cloud.tencent.com/developer/article/2509399](https://cloud.tencent.com/developer/article/2509399)
 
 
 #### 3.2.3 Oracle Instant Client 安装
 
-为了支持 Oracle 11 以及 thick 模型，我们需要安装 Oracle Instant Client。可以到 Oracle 官网下载对应的版本，地址是 `https://www.oracle.com/database/technologies/instant-client/downloads.html`
+为了支持 Oracle 11 以及 thick 模型，我们需要安装 Oracle Instant Client。可以到 Oracle 官网下载对应的版本，地址是 [https://www.oracle.com/database/technologies/instant-client/downloads.html](https://www.oracle.com/database/technologies/instant-client/downloads.html)
 
 若不需要使用 Oracle thick 模式的话，可以略过此步骤。
 

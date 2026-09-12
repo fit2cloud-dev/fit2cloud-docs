@@ -19,7 +19,7 @@ DataEase 在安装的时候默认向系统中添加了相应的 dataease Service
 :::note
 
 DataEase 默认内置了命令行运维工具（dectl），通过执行 dectl help 命令，可以查看相关的帮助文档。  
-**请注意**，backup、restore 命令需要 DataEase 版本在 v2.4 及以上，使用方式见：https://dataease.cn/docs/v2/change-v2-4/#71-dectl 
+**请注意**，backup、restore 命令需要 DataEase 版本在 v2.4 及以上，使用方式见：[dectl 备份与恢复](../change-v2-4#71-dectl-增加备份与恢复操作) 
 
 ```
 Usage:

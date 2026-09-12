@@ -33,13 +33,13 @@ SQLBot v1.5.0 版本开始正式支持了 API 的调用。可以在 API Key 页�
 <div style={{fontSize:'14px',color:'#666',margin:'0 0 16px',textAlign:'center'}}>图 1 API Key</div>
 
 
-生成 JWT Token。Token 的生成过程是标准化的，这里拿在线工具（`https://www.bejson.com/jwt/`）举例。其中 header 参考下图，Payload 中填入 SQLBot 的 Access Key，对称密钥填写 SQLBot 的 Secret Key。 点击编码按钮，生成对应的 Token。如下图所示：
+生成 JWT Token。Token 的生成过程是标准化的，这里拿在线工具（[https://www.bejson.com/jwt/](https://www.bejson.com/jwt/)）举例。其中 header 参考下图，Payload 中填入 SQLBot 的 Access Key，对称密钥填写 SQLBot 的 Secret Key。 点击编码按钮，生成对应的 Token。如下图所示：
 
 <img src="/img/sqlbot/faq/api_jwt.png" alt="api_jwt" style={{maxWidth:'720px',width:'100%',display:'block',margin:'16px auto 6px',borderRadius:'4px'}} />
 <div style={{fontSize:'14px',color:'#666',margin:'0 0 16px',textAlign:'center'}}>图 2 API JWT</div>
 
 
-生成 token 后，可以通过 API 调用工具来使用该 token 调用对应的接口。这里用在线工具（`https://getman.cn/`）举例。将生成的 token 复制下来，在请求的 header 里输入：
+生成 token 后，可以通过 API 调用工具来使用该 token 调用对应的接口。这里用在线工具（[https://getman.cn/](https://getman.cn/)）举例。将生成的 token 复制下来，在请求的 header 里输入：
 ```
 # 下面的 xxx 为 token
 x-sqlbot-ask-token: sk xxx

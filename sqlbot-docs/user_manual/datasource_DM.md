@@ -26,7 +26,7 @@ title: 配置达梦数据源
 
 步骤二：填写连接与认证信息。进入【配置信息】页后，填入收集的 IP 、端口、数据库等相关的信息。数据源检验，校验成功后即可进行下一步。
 
-**注意：若数据库连接失败，请参考 [达梦数据源无法连接](../faq/datasource)。**
+**注意：若数据库连接失败，请参考 [达梦数据源无法连接](../faq/datasource#1-达梦数据源无法连接)。**
 
 
 <img src="/img/sqlbot/user_manual/datasource/add_DM.png" alt="配置 DM 连接信息" style={{maxWidth:'720px',width:'100%',display:'block',margin:'16px auto 6px',borderRadius:'4px'}} />

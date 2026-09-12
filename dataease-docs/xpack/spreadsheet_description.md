@@ -35,7 +35,7 @@ title: 电子表格概述
 
 :::note
 
-**与 Excel 的关系**：单元格编辑能力基于 Univer 引擎，与 Excel 重合度约 90%。DataEase 独有数据集绑定、发布共享、查询控件、明细表 / 透视表对象、数据集替换等。通用编辑见 [电子表格功能详解](./spreadsheet_features)，特有能力见 [电子表格特殊功能](./spreadsheet_special)，对照表见 [与 Excel / Univer 的关系](./spreadsheet_features#excel-univer)。
+**与 Excel 的关系**：单元格编辑能力基于 Univer 引擎，与 Excel 重合度约 90%。DataEase 独有数据集绑定、发布共享、查询控件、明细表 / 透视表对象、数据集替换等。通用编辑见 [电子表格功能详解](./spreadsheet_features)，特有能力见 [电子表格特殊功能](./spreadsheet_special)，对照表见 [与 Excel / Univer 的关系](./spreadsheet_features#5-与-excel-univer-的关系)。
 :::
 
 :::note
@@ -119,7 +119,7 @@ title: 电子表格概述
 **第 5 步：配置查询控件（可选）**
 
 - 点击工具栏【查询控件】→【+ 添加查询条件】；
-- 为条件关联明细表 / 透视表字段，实现联动过滤（详见 [查询控件](./spreadsheet_special#query-control)）。
+- 为条件关联明细表 / 透视表字段，实现联动过滤（详见 [查询控件](./spreadsheet_special#5-查询控件)）。
 :::
 
 ![电子表格模块](/img/dataease/newimg/xpack/添加查询组件1.png)

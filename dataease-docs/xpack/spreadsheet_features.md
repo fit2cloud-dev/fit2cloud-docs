@@ -41,7 +41,7 @@ DataEase 特有能力的详细说明见 [电子表格特殊功能](./spreadsheet
 | 预览 | 预览当前表格；下拉支持【全屏预览】 |
 | 保存 | 保存当前编辑 |
 | 发布 | 发布上线。下拉项随状态变化：已发布时可【取消发布】；已发布后又修改并保存、尚未再次发布时，可【恢复到发布版本】 |
-| 替换数据集 | 右上角循环箭头图标，批量替换表格内使用的数据集（详见 [数据集替换](./spreadsheet_publish#dataset-replace)） |
+| 替换数据集 | 右上角循环箭头图标，批量替换表格内使用的数据集（详见 [数据集替换](./spreadsheet_publish#1-数据集替换)） |
 
 :::note
 
@@ -76,7 +76,7 @@ DataEase 特有能力的详细说明见 [电子表格特殊功能](./spreadsheet
 | 数字格式 | 数字格式面板（默认显示「常规」）、百分比、货币、增加小数位、减少小数位 |
 | 数据 | 冻结、筛选、排序、数据验证、条件格式、函数 |
 | 辅助 | 表格、快捷键面板、查找替换 |
-| 查询控件 | 【查询控件】（详见 [电子表格特殊功能 - 查询控件](./spreadsheet_special#query-control)） |
+| 查询控件 | 【查询控件】（详见 [电子表格特殊功能 - 查询控件](./spreadsheet_special#5-查询控件)） |
 
 ![工具栏](/img/dataease/newimg/xpack/工具栏分组总览.png)
 
@@ -88,8 +88,8 @@ DataEase 特有能力的详细说明见 [电子表格特殊功能](./spreadsheet
 
 | 菜单项 | 说明 |
 | --- | --- |
-| 透视表 | 按行 / 列维度汇总指标，详见 [透视表](./spreadsheet_special#pivot-table) |
-| 明细表 | 逐行展示数据集明细，详见 [明细表](./spreadsheet_special#detail-table) |
+| 透视表 | 按行 / 列维度汇总指标，详见 [透视表](./spreadsheet_special#4-透视表) |
+| 明细表 | 逐行展示数据集明细，详见 [明细表](./spreadsheet_special#3-明细表) |
 | 链接 | 插入超链接 |
 | 批注 | 单元格批注 |
 
@@ -189,7 +189,7 @@ DataEase 特有能力的详细说明见 [电子表格特殊功能](./spreadsheet
 | 表格 | 将区域转换为表格对象 |
 | 快捷键面板 | 查看快捷键 |
 | 查找替换 | 在表格内查找 / 替换 |
-| 查询控件 | 打开 / 关闭查询栏，详见 [查询控件](./spreadsheet_special#query-control) |
+| 查询控件 | 打开 / 关闭查询栏，详见 [查询控件](./spreadsheet_special#5-查询控件) |
 
 ![辅助菜单](/img/dataease/newimg/xpack/辅助1.png)
 
@@ -223,13 +223,11 @@ DataEase 特有能力的详细说明见 [电子表格特殊功能](./spreadsheet
 
 | 能力 | 简要说明 | 详细文档 |
 | --- | --- | --- |
-| 明细表 / 透视表 | 【插入】中绑定数据集展示数据 | [明细表](./spreadsheet_special#detail-table)、[透视表](./spreadsheet_special#pivot-table) |
-| 查询控件 | 配置条件并联动数据对象 | [查询控件](./spreadsheet_special#query-control) |
-| 数据集复制粘贴 | 在表格内复用数据对象 | [数据集复制粘贴](./spreadsheet_special#dataset-copy-paste) |
-| 右侧配置面板 | 选中对象后配置字段与样式 | [右侧配置面板](./spreadsheet_special#config-panel) |
-| 替换数据集 | 批量切换数据集并映射字段 | [数据集替换](./spreadsheet_publish#dataset-replace) |
-
-<a id="excel-univer"></a>
+| 明细表 / 透视表 | 【插入】中绑定数据集展示数据 | [明细表](./spreadsheet_special#3-明细表)、[透视表](./spreadsheet_special#4-透视表) |
+| 查询控件 | 配置条件并联动数据对象 | [查询控件](./spreadsheet_special#5-查询控件) |
+| 数据集复制粘贴 | 在表格内复用数据对象 | [数据集复制粘贴](./spreadsheet_special#6-数据集复制粘贴) |
+| 右侧配置面板 | 选中对象后配置字段与样式 | [右侧配置面板](./spreadsheet_special#7-右侧配置面板) |
+| 替换数据集 | 批量切换数据集并映射字段 | [数据集替换](./spreadsheet_publish#1-数据集替换) |
 
 ## 5 与 Excel / Univer 的关系
 

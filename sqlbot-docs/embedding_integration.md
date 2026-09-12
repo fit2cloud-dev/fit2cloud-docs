@@ -7,7 +7,7 @@ SQLBot 支持通过【小助手嵌入】和【网页嵌入】的方式将智能�
 
 其中【小助手嵌入】包含【基础应用】和【高级应用】两种模式，每种模式都支持「浮窗嵌入」和「全屏嵌入」两种呈现方式。
 
-嵌入式 Demo 地址：`https://github.com/dataease/sqlbot-embedded-demo`
+嵌入式 Demo 地址：[https://github.com/dataease/sqlbot-embedded-demo](https://github.com/dataease/sqlbot-embedded-demo)
 
 三类方式的区别主要按照权限划分，请对照选择合适的嵌入方式：
 
@@ -136,7 +136,7 @@ source_val = `Bearer ${JSON.parse(JSON.parse(source_val).v)}`
 ## 2 宿主系统实现
 
 
-下载 Demo 代码 `https://github.com/dataease/sqlbot-embedded-demo` 。
+下载 Demo 代码 [https://github.com/dataease/sqlbot-embedded-demo](https://github.com/dataease/sqlbot-embedded-demo) 。
 
 配置数据库信息：
 
