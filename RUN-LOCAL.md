@@ -1,6 +1,6 @@
 # 统一文档门户 —— 本地运行说明
 
-这是一个基于 **Docusaurus 3.10** 的「多产品文档门户」。已内置 4 个产品（1Panel、JumpServer、DataEase、MaxKB），含中英双语、多版本切换、全局搜索。
+这是一个基于 **Docusaurus 3.10** 的「多产品文档门户」。已聚合 1Panel、JumpServer、MaxKB、DataEase 等产品文档，含中英双语、多版本切换、全局搜索。
 
 > 项目目录：`fit2cloud-docs/`（克隆本仓库后获得的文件夹名，即本说明所在目录）
 >
@@ -46,11 +46,19 @@ npm install
 
 ## 三、本地开发预览（推荐）
 
+日常编辑文档、首页和样式时，使用轻量模式（macOS / Linux）：
+
+```bash
+npm run dev
+```
+
+手动打开 **http://localhost:3000** 。轻量模式保留首页、各产品当前版本、即时搜索和热更新，跳过历史版本文档及其图片目录，并关闭 JS 源码映射以减少编译与内存开销。需要在浏览器中定位原始 JS / JSX 源码，或预览历史版本时，使用完整模式：
+
 ```bash
 npm start
 ```
 
-启动后打开 **http://localhost:3000** 。
+两种模式只启动一种；切换前先在原终端按 `Ctrl+C` 停止，避免重复占用资源。生产构建 `npm run build` 不受轻量模式影响。
 
 - 改文档（`1panel-docs/`、`jumpserver-docs/` 等目录下的 `.md`）会**热更新**，改完刷新即可
 - 导航栏：顶部「产品文档」下拉可进各产品；右上角语言切换中/英
@@ -73,7 +81,7 @@ npm run serve     # 本地预览构建产物，默认 http://localhost:3000
 
 | 目录 | 说明 |
 |---|---|
-| `1panel-docs/` `jumpserver-docs/` `dataease-docs/` `maxkb-docs/` | 各产品的文档源（Markdown）|
+| `1panel-docs/` `jumpserver-docs/` `maxkb-docs/` `dataease-docs/` | 各产品的文档源（Markdown）|
 | 各产品目录内 `*-docs/sidebars.js` | 各产品侧边栏（已收进各自产品目录，无需在根目录维护）|
 | `1panel_versioned_docs/` `jumpserver_versioned_docs/` | 历史版本文档（1Panel v1、JumpServer v3.0）|
 | `static/img/` | 仅存门户自身文件：favicon、social-card、logo、undraw 模板图；**产品图片已移到各自产品的 `static/img/<namespace>/`**（通过 `staticDirectories` 聚合到 `/img/`）|

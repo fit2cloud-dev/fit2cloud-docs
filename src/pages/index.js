@@ -20,29 +20,16 @@ import styles from './index.module.css';
  * - 产品区: 标题 '全部产品' 36px/600 居中; 3列卡片 384x256 间距24 r20
  *     卡底渐变 #f7fbff→#ffffff; 内边距 32
  *     logo(高30)+名称 24px/700 #1f2329; 副标题 16px #1f2329; 描述 14px/24 #646a73
- *     '进入文档' 按钮 320x32 r4 渐变描边 #1075e3→#333dff, 文字 16px #0c7be0
+ *     '进入文档' 按钮 320x36 r8 浅蓝底、低对比细边框, 文字 14px #0966ba
  * - 底部横幅: 渐变 #f7fbff→#f8f9ff; 'FIT2CLOUD 飞致云' 32px/600 居中 + 说明 16px #6c7280
  * - 设计稿的「热门检索/换一批」榜单按要求不做
  * ------------------------------------------------------------------ */
-
-/* 卡片排列顺序: 行1 1Panel/AI 网关/Cordys CRM; 行2 JumpServer/MaxKB/DataEase; 行3 SQLBot/MeterSphere/Halo */
-const CARD_ORDER = [
-  '1Panel 面板',
-  '1Panel AI 网关',
-  'Cordys CRM',
-  'JumpServer',
-  'MaxKB',
-  'DataEase',
-  'SQLBot',
-  'MeterSphere',
-  'Halo',
-];
 
 /* 卡片描述区的长文案 (副标题用 products.js 的短定位句, 此处为完整描述)。
    文案口径对齐 fit2cloud 官网产品介绍; 未覆盖的产品回退为副标题同文。 */
 const PRODUCT_DESC = {
   '1Panel AI 网关':
-    '1Panel 是一个现代化、开源的 Linux 服务器运维管理面板，帮助你快速建设与管理数字化基础设施。',
+    '1Panel AI 网关提供从统一接入、智能路由到合规审计的全链条管控，让企业 AI 落地更安全、更高效、更可控。',
   '1Panel 面板':
     '1Panel 是一个现代化、开源的 Linux 服务器运维管理面板，帮助你轻松部署和管理网站、数据库与容器等应用。',
   JumpServer:
@@ -125,16 +112,13 @@ function Hero({site, zh}) {
 }
 
 function ProductsSection({site}) {
-  const ordered = CARD_ORDER.map(
-    (name) => HOME_PRODUCTS.find((p) => p.name === name),
-  ).filter(Boolean);
   return (
     <section className={styles.productsSection}>
       <div className={styles.productsInner}>
         <h2 className={styles.productsTitle}>{site.productsTitle}</h2>
         <div className={styles.productGrid}>
-          {ordered.map((item) => (
-            <ProductCard key={item.name} item={item} site={site} />
+          {HOME_PRODUCTS.map((item) => (
+            <ProductCard key={item.id} item={item} site={site} />
           ))}
         </div>
       </div>

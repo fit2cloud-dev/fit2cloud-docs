@@ -5,6 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "dev": "DOCS_DEV_LITE=1 docusaurus start --no-open",
     "build": "docusaurus build --locale zh-Hans",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

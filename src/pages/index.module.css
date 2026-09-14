@@ -167,27 +167,31 @@
   overflow: hidden;
 }
 
-/* 「进入文档」: 320x32 r4, 渐变描边(#1075e3→#333dff), 白底蓝字 */
+/* 「进入文档」: 浅蓝底搭配低对比细边框, 悬停与键盘聚焦时轻微加深 */
 .productEnter {
   margin-top: auto;
-  height: 32px;
+  height: 36px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  color: #0c7be0;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background:
-    linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(90deg, #1075e3 0%, #333dff 100%) border-box;
-  transition: all 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0966ba;
+  border: 1px solid rgba(12, 123, 224, 0.12);
+  border-radius: 8px;
+  background-color: #f0f6ff;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
-.productCard:hover .productEnter {
-  background:
-    linear-gradient(90deg, #1075e3 0%, #333dff 100%) padding-box,
-    linear-gradient(90deg, #1075e3 0%, #333dff 100%) border-box;
-  color: #ffffff;
+.productCard:hover .productEnter,
+.productCard:focus-visible .productEnter {
+  background-color: #e6f0ff;
+  border-color: rgba(12, 123, 224, 0.24);
+  color: #08549a;
+}
+.productCard:focus-visible {
+  outline: 2px solid #0c7be0;
+  outline-offset: 4px;
 }
 
 /* ---------------- 响应式 ---------------- */

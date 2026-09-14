@@ -12,19 +12,20 @@ import {createPortal} from 'react-dom';
 import Link from '@docusaurus/Link';
 import {useLocation} from '@docusaurus/router';
 import {useActivePluginAndVersion} from '@docusaurus/plugin-content-docs/client';
+import {sortProducts} from '../../data/productOrder';
 import styles from './styles.module.css';
 
 // 本站提供文档的产品：routeBasePath 与文档实例路由前缀一致，用于跳转。
 // id 与跳转路径分离：routeBasePath 用于 URL，id 用于匹配当前插件。
-const DOCS_PRODUCTS = [
-  {name: '1Panel AI 网关', id: 'ai-gateway', routeBasePath: 'ai-gateway'},
+const DOCS_PRODUCTS = sortProducts([
   {name: '1Panel 面板', id: '1panel', routeBasePath: '1panel'},
+  {name: '1Panel AI 网关', id: 'ai-gateway', routeBasePath: 'ai-gateway'},
   {name: 'JumpServer 堡垒机', id: 'jumpserver', routeBasePath: 'jumpserver'},
-  {name: 'DataEase BI 工具', id: 'dataease', routeBasePath: 'dataease'},
   {name: 'MaxKB 智能体平台', id: 'maxkb', routeBasePath: 'maxkb'},
+  {name: 'DataEase BI 工具', id: 'dataease', routeBasePath: 'dataease'},
   {name: 'SQLBot 智能问数', id: 'sqlbot', routeBasePath: 'sqlbot'},
   {name: 'Cordys CRM', id: 'cordys', routeBasePath: 'cordys'},
-];
+]);
 
 function useOnClickOutside(refs, handler) {
   useEffect(() => {

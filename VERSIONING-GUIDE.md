@@ -18,7 +18,7 @@ Docusaurus 把一个产品分为两类版本：
 
 ## 〇、命令速查（针对本项目）
 
-本项目里每个产品是一个独立的 `plugin-content-docs` 插件实例（`id = 1panel / jumpserver / dataease / maxkb`），因此版本化命令带 `<产品id>`：
+本项目里每个产品是一个独立的 `plugin-content-docs` 插件实例（`id = 1panel / jumpserver / maxkb / dataease`），因此版本化命令带 `<产品id>`：
 
 ```bash
 # 给 1Panel 创建/新增一个历史版本（把当前 1panel-docs 内容快照成 version-vN）

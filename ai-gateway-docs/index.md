@@ -17,7 +17,7 @@ description: 1Panel AI 网关产品文档入口——统一 AI 模型接入与�
 
 总结来说，现阶段 AI 企业落地的核心矛盾在于：AI 应用场景快速扩张，而企业的治理能力没有同步跟上。
 
-1Panel AI 网关致力于为企业打造专属的 AI 统一接入与治理平台，提供从统一接入、智能路由到合规审计的全链路管控，让企业 AI 落地更安全、更高效、更可控。
+1Panel AI 网关提供从统一接入、智能路由到合规审计的全链条管控，让企业 AI 落地更安全、更高效、更可控。
 
 <img src="/img/index/aigateway.png" alt="1Panel AI 网关" style={{display:'block',margin:'16px auto',maxWidth:'100%'}}/>
 

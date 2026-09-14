@@ -12,26 +12,27 @@
  */
 import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import {sortProducts} from '../../data/productOrder';
 import styles from './ProductDocs.module.css';
 
 // 「开源产品」下拉的自有数据。
 //
 // 背景: 本下拉最初与首页产品卡片共用一份 PRODUCTS 表, 且链接指向各产品「文档站」。
 // 现改为「开源产品」并跳各产品「官方官网」, 与首页卡片(仍指文档站)目的不同,
-// 故由 src/data/products.js 承接首页那份数据, 本文件只保留下拉专用数据, 两处彻底解耦。
+// 故由 src/data/products.js 承接首页那份数据, 本文件只保留下拉专用数据, 共用产品排序。
 //
 // 官网地址对齐 https://www.fit2cloud.com/ 官网首页展示的开源产品入口。
-const PRODUCTS = [
-  {name: '1Panel AI 网关', link: 'https://1panel.cn/ai-gateway.html', desc: '企业级 AI 网关', logo: '1panel-07-蓝色.png'},
-  {name: '1Panel 面板', link: 'https://1panel.cn/', desc: '现代化、开源的 Linux 面板', logo: '1panel-07-蓝色.png'},
-  {name: 'JumpServer', link: 'https://www.jumpserver.org/', desc: '广受欢迎的开源堡垒机', logo: 'JumpServer-辅助图形-绿色.png'},
-  {name: 'DataEase', link: 'https://dataease.cn/', desc: '人人可用的开源 BI 工具', logo: 'DataEase-07-蓝色.png'},
-  {name: 'MaxKB', link: 'https://maxkb.cn/', desc: '强大易用的企业级智能体平台', logo: 'MaxKB-03.png'},
-  {name: 'SQLBot', link: 'https://sqlbot.org/', desc: '基于大模型的智能问数系统', logo: '【辅助图形】SQLBot.png'},
-  {name: 'Cordys CRM', link: 'https://cordys.cn/', desc: '新一代的开源 AI CRM 系统', logo: 'CORDYS-辅助图形.png'},
-  {name: 'MeterSphere', link: 'https://metersphere.io/', desc: '新一代的开源持续测试工具', logo: 'MeterSphere-辅助图形-紫色.png'},
-  {name: 'Halo', link: 'https://halo.run/', desc: '强大易用的开源建站工具', logo: 'Halo-03.png'},
-];
+const PRODUCTS = sortProducts([
+  {id: '1panel', name: '1Panel 面板', link: 'https://1panel.cn/', desc: '现代化、开源的 Linux 面板', logo: '1panel-07-蓝色.png'},
+  {id: 'ai-gateway', name: '1Panel AI 网关', link: 'https://1panel.cn/ai-gateway.html', desc: '企业级 AI 统一接入与治理平台', logo: '1panel-07-蓝色.png'},
+  {id: 'jumpserver', name: 'JumpServer', link: 'https://www.jumpserver.org/', desc: '广受欢迎的开源堡垒机', logo: 'JumpServer-辅助图形-绿色.png'},
+  {id: 'maxkb', name: 'MaxKB', link: 'https://maxkb.cn/', desc: '强大易用的企业级智能体平台', logo: 'MaxKB-03.png'},
+  {id: 'dataease', name: 'DataEase', link: 'https://dataease.cn/', desc: '人人可用的开源 BI 工具', logo: 'DataEase-07-蓝色.png'},
+  {id: 'sqlbot', name: 'SQLBot', link: 'https://sqlbot.org/', desc: '基于大模型的智能问数系统', logo: '【辅助图形】SQLBot.png'},
+  {id: 'metersphere', name: 'MeterSphere', link: 'https://metersphere.io/', desc: '新一代的开源持续测试工具', logo: 'MeterSphere-辅助图形-紫色.png'},
+  {id: 'halo', name: 'Halo', link: 'https://halo.run/', desc: '强大易用的开源建站工具', logo: 'Halo-03.png'},
+  {id: 'cordys', name: 'Cordys CRM', link: 'https://cordys.cn/', desc: '新一代的开源 AI CRM 系统', logo: 'CORDYS-辅助图形.png'},
+]);
 
 function ProductItem({p, imgSrc}) {
   const className = `${styles.link} dropdown__link`;
@@ -87,7 +88,7 @@ export default function ProductDocs() {
       </a>
       <ul className={`${styles.menu} dropdown__menu`}>
         {PRODUCTS.map((p) => (
-          <li key={p.name}>
+          <li key={p.id}>
             <ProductItem p={p} imgSrc={imgSrc} />
           </li>
         ))}

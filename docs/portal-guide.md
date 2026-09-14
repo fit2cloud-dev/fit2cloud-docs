@@ -91,6 +91,18 @@ npm run serve                    # 本地预览
 - 浏览器访问 `/img/<namespace>/<某张图>` 应返回 200（非 404）。
 - 确认门户自身的 `build/img/favicon.ico`、`static/img/undraw_*` 等仍在（这些属于门户根 static，勿动）。
 
+## 6. 产品展示顺序
+
+产品展示顺序统一维护在 `src/data/productOrder.js` 的 `PRODUCT_ORDER` 中，使用稳定的产品 `id`：
+
+1Panel 面板 → 1Panel AI 网关 → JumpServer → MaxKB → DataEase → SQLBot → MeterSphere → Halo → Cordys CRM。
+
+首页卡片、顶部“开源产品”菜单、文档切换菜单和页脚“资料下载”都通过 `sortProducts` 排序。
+各入口分别维护自己的链接和文案；只包含部分产品时，保留这些产品在统一顺序中的相对位置。
+页脚配置通过 `data-product-id` 标记产品链接，由 `Footer/Links` 在渲染时排序，修改共用顺序后可随其他入口一起热更新。
+
+新增产品时，先在 `PRODUCT_ORDER` 中登记其 `id`，再添加相应入口。调整顺序后，同步更新 README、中英文帮助中心、本地运行说明和版本操作手册中的产品列表。
+
 ## 附：命名空间必须全局唯一（防覆盖）
 Docusaurus 的 `staticDirectories` 中，**后注册目录的同路径会覆盖先注册目录**。
 门户自身的 `'static'` 排在最前，专门防止产品目录覆盖门户文件（如未来某产品若也放

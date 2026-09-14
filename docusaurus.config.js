@@ -4,6 +4,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 // 站点标题按语言区分：构建 zh-Hans 时显示中文，构建 en 时显示英文
 const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE || 'zh-Hans';
+// 轻量模式仅作用于本地开发，生产构建始终包含完整文档。
+const isLiteDev = process.env.NODE_ENV === 'development' && process.env.DOCS_DEV_LITE === '1';
 const config = {
   title: currentLocale === 'en' ? 'Docs Center' : '飞致云文档中心',
   tagline: currentLocale === 'en' ? 'Multiple product docs, one site, global search' : '多个产品文档，一个站点，全局搜索',
@@ -313,12 +315,13 @@ const config = {
           },
           {
             title: '资料下载',
+            // 产品标识供 Footer/Links 在渲染时排序，支持修改共用顺序后热更新。
             items: [
-              {label: '1Panel 产品资料下载', to: 'https://fit2cloud.com/1panel/download/introduce-1panel_2026.pdf'},
-              {label: 'JumpServer 产品资料下载', to: 'https://fit2cloud.com/jumpserver/documents/introduce-jumpserver_2026.pdf'},
-              {label: 'DataEase 产品资料下载', to: 'https://fit2cloud.com/dataease/download/introduce-dataease_2026.pdf'},
-              {label: 'MaxKB 产品资料下载', to: 'https://fit2cloud.com/maxkb/download/introduce-maxkb_2026.pdf'},
-              {label: 'Cordys 产品资料下载', to: 'https://fit2cloud.com/cordys/download/introduce-cordys_2026.pdf'},
+              {'data-product-id': '1panel', label: '1Panel 产品资料下载', to: 'https://fit2cloud.com/1panel/download/introduce-1panel_2026.pdf'},
+              {'data-product-id': 'jumpserver', label: 'JumpServer 产品资料下载', to: 'https://fit2cloud.com/jumpserver/documents/introduce-jumpserver_2026.pdf'},
+              {'data-product-id': 'maxkb', label: 'MaxKB 产品资料下载', to: 'https://fit2cloud.com/maxkb/download/introduce-maxkb_2026.pdf'},
+              {'data-product-id': 'dataease', label: 'DataEase 产品资料下载', to: 'https://fit2cloud.com/dataease/download/introduce-dataease_2026.pdf'},
+              {'data-product-id': 'cordys', label: 'Cordys 产品资料下载', to: 'https://fit2cloud.com/cordys/download/introduce-cordys_2026.pdf'},
             ],
           },
         ],
@@ -341,5 +344,25 @@ const config = {
       },
     }),
 };
+
+if (isLiteDev) {
+  config.staticDirectories = config.staticDirectories.filter(
+    (directory) => !directory.includes('_versioned_docs/'),
+  );
+  config.plugins = config.plugins.map((plugin) =>
+    Array.isArray(plugin) && plugin[0] === '@docusaurus/plugin-content-docs'
+      ? [plugin[0], {...plugin[1], onlyIncludeVersions: ['current']}]
+      : plugin,
+  );
+  config.plugins.push(function lightweightDevTools() {
+    return {
+      name: 'lightweight-dev-tools',
+      // 保留热更新，省略浏览器调试用的 JS 源码映射。
+      configureWebpack() {
+        return {devtool: false};
+      },
+    };
+  });
+}
 
 export default config;
