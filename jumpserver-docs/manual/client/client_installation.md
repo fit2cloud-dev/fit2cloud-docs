@@ -33,6 +33,8 @@ JumpServer 客户端是一款跨平台的桌面应用程序，支持 Windows、m
 
 ## 客户端界面预览
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/clientV4_01.png" alt="图 2  客户端界面预览" />
+客户端的基本功能与[web控制台](../user/workbench/my_assets)大致相仿，界面也是类似的
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/client_index.png" alt="图 2  客户端界面预览" />
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  客户端界面预览</div>
