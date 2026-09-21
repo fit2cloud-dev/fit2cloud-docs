@@ -1,5 +1,6 @@
 // @ts-check
 import {themes as prismThemes} from 'prism-react-renderer';
+import {GlobExcludeDefault} from '@docusaurus/utils';
 
 /** @type {import('@docusaurus/types').Config} */
 // 站点标题按语言区分：构建 zh-Hans 时显示中文，构建 en 时显示英文
@@ -143,6 +144,8 @@ const config = {
         path: 'jumpserver-docs',
         routeBasePath: 'jumpserver',
         sidebarPath: 'jumpserver-docs/sidebars.js',
+        // 排除工作区记忆目录(.workbuddy 里的 md 不是文档, 会被当 MDX 编译报错)
+        exclude: [...GlobExcludeDefault, '**/.workbuddy/**'],
         // 版本化: current(jumpserver-docs) = v4.0, 历史版本 v3.0
         lastVersion: 'current',
         versions: {

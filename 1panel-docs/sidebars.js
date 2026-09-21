@@ -109,9 +109,9 @@ const sidebars = {
       "items": [
         {
           "type": "doc",
-          "id": "user-manual/dashboard",
+          "id": "user_manual/dashboard",
           "label": "首页",
-          "key": "doc:user-manual/dashboard @ 功能手册"
+          "key": "doc:user_manual/dashboard @ 功能手册"
         },
         {
           "type": "category",
@@ -120,24 +120,24 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/appstore/appstore",
+              "id": "user_manual/appstore/appstore",
               "label": "概述",
-              "key": "doc:user-manual/appstore/appstore @ 功能手册 / 应用商店"
+              "key": "doc:user_manual/appstore/appstore @ 功能手册 / 应用商店"
             },
             {
               "type": "doc",
-              "id": "user-manual/appstore/install",
+              "id": "user_manual/appstore/install",
               "label": "安装部署",
-              "key": "doc:user-manual/appstore/install @ 功能手册 / 应用商店"
+              "key": "doc:user_manual/appstore/install @ 功能手册 / 应用商店"
             },
             {
               "type": "doc",
-              "id": "user-manual/appstore/installed",
+              "id": "user_manual/appstore/installed",
               "label": "应用操作"
             },
             {
               "type": "doc",
-              "id": "user-manual/appstore/setting",
+              "id": "user_manual/appstore/setting",
               "label": "应用商店设置"
             }
           ]
@@ -149,42 +149,42 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/ai/agent",
+              "id": "user_manual/ai/agent",
               "label": "智能体"
             },
             {
               "type": "doc",
-              "id": "user-manual/ai/model",
+              "id": "user_manual/ai/model",
               "label": "模型管理"
             },
             {
               "type": "doc",
-              "id": "user-manual/ai/vllm",
+              "id": "user_manual/ai/vllm",
               "label": "vLLM"
             },
             {
               "type": "doc",
-              "id": "user-manual/ai/gateway",
+              "id": "user_manual/ai/gateway",
               "label": "AI 网关"
             },
             {
               "type": "doc",
-              "id": "user-manual/ai/benchmark",
+              "id": "user_manual/ai/benchmark",
               "label": "基准测试"
             },
             {
               "type": "doc",
-              "id": "user-manual/ai/skills-hub",
+              "id": "user_manual/ai/skills-hub",
               "label": "Skills Hub"
             },
             {
               "type": "doc",
-              "id": "user-manual/ai/mcp",
+              "id": "user_manual/ai/mcp",
               "label": "MCP"
             },
             {
               "type": "doc",
-              "id": "user-manual/ai/gpu",
+              "id": "user_manual/ai/gpu",
               "label": "GPU 监控"
             }
           ]
@@ -196,38 +196,38 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/websites/websites",
+              "id": "user_manual/websites/websites",
               "label": "概述",
-              "key": "doc:user-manual/websites/websites @ 功能手册 / 网站"
+              "key": "doc:user_manual/websites/websites @ 功能手册 / 网站"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/website-create",
+              "id": "user_manual/websites/website-create",
               "label": "创建网站"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/website-config-basic",
+              "id": "user_manual/websites/website-config-basic",
               "label": "网站配置"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/website-config-other",
+              "id": "user_manual/websites/website-config-other",
               "label": "网站操作"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/website-group",
+              "id": "user_manual/websites/website-group",
               "label": "网站分组"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/website-backup",
+              "id": "user_manual/websites/website-backup",
               "label": "网站备份"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/openresty",
+              "id": "user_manual/websites/openresty",
               "label": "OpenResty 设置"
             }
           ]
@@ -239,37 +239,37 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/websites/certificate",
+              "id": "user_manual/websites/certificate",
               "label": "证书概述"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/certificate-create",
+              "id": "user_manual/websites/certificate-create",
               "label": "申请证书"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/certificate-upload",
+              "id": "user_manual/websites/certificate-upload",
               "label": "上传证书"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/certificate-self-sign",
+              "id": "user_manual/websites/certificate-self-sign",
               "label": "自签证书"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/certificate-renew",
+              "id": "user_manual/websites/certificate-renew",
               "label": "续签证书"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/certificate-acme",
+              "id": "user_manual/websites/certificate-acme",
               "label": "ACME 账户"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/certificate-dns",
+              "id": "user_manual/websites/certificate-dns",
               "label": "DNS 账户"
             }
           ]
@@ -281,32 +281,32 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/websites/php",
+              "id": "user_manual/websites/php",
               "label": "PHP"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/node",
+              "id": "user_manual/websites/node",
               "label": "Node.js"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/java",
+              "id": "user_manual/websites/java",
               "label": "Java"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/golang",
+              "id": "user_manual/websites/golang",
               "label": "Go"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/python",
+              "id": "user_manual/websites/python",
               "label": "Python"
             },
             {
               "type": "doc",
-              "id": "user-manual/websites/dotnet",
+              "id": "user_manual/websites/dotnet",
               "label": ".NET"
             }
           ]
@@ -318,26 +318,26 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/databases/mysql",
+              "id": "user_manual/databases/mysql",
               "label": "MySQL",
-              "key": "doc:user-manual/databases/mysql @ 功能手册 / 数据库"
+              "key": "doc:user_manual/databases/mysql @ 功能手册 / 数据库"
             },
             {
               "type": "doc",
-              "id": "user-manual/databases/postgresql",
+              "id": "user_manual/databases/postgresql",
               "label": "PostgreSQL"
             },
             {
               "type": "doc",
-              "id": "user-manual/databases/redis",
+              "id": "user_manual/databases/redis",
               "label": "Redis",
-              "key": "doc:user-manual/databases/redis @ 功能手册 / 数据库"
+              "key": "doc:user_manual/databases/redis @ 功能手册 / 数据库"
             },
             {
               "type": "doc",
-              "id": "user-manual/databases/mongodb",
+              "id": "user_manual/databases/mongodb",
               "label": "MongoDB",
-              "key": "doc:user-manual/databases/mongodb @ 功能手册 / 数据库"
+              "key": "doc:user_manual/databases/mongodb @ 功能手册 / 数据库"
             }
           ]
         },
@@ -348,48 +348,48 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/containers/overview",
+              "id": "user_manual/containers/overview",
               "label": "概览"
             },
             {
               "type": "doc",
-              "id": "user-manual/containers/container",
+              "id": "user_manual/containers/container",
               "label": "容器",
-              "key": "doc:user-manual/containers/container @ 功能手册 / 容器"
+              "key": "doc:user_manual/containers/container @ 功能手册 / 容器"
             },
             {
               "type": "doc",
-              "id": "user-manual/containers/compose",
+              "id": "user_manual/containers/compose",
               "label": "编排"
             },
             {
               "type": "doc",
-              "id": "user-manual/containers/image",
+              "id": "user_manual/containers/image",
               "label": "镜像"
             },
             {
               "type": "doc",
-              "id": "user-manual/containers/network",
+              "id": "user_manual/containers/network",
               "label": "网络"
             },
             {
               "type": "doc",
-              "id": "user-manual/containers/volume",
+              "id": "user_manual/containers/volume",
               "label": "存储卷"
             },
             {
               "type": "doc",
-              "id": "user-manual/containers/repo",
+              "id": "user_manual/containers/repo",
               "label": "仓库"
             },
             {
               "type": "doc",
-              "id": "user-manual/containers/compose-template",
+              "id": "user_manual/containers/compose-template",
               "label": "编排模板"
             },
             {
               "type": "doc",
-              "id": "user-manual/containers/setting",
+              "id": "user_manual/containers/setting",
               "label": "配置"
             }
           ],
@@ -402,44 +402,44 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/hosts/file",
+              "id": "user_manual/hosts/file",
               "label": "文件"
             },
             {
               "type": "doc",
-              "id": "user-manual/hosts/monitor",
+              "id": "user_manual/hosts/monitor",
               "label": "监控"
             },
             {
               "type": "doc",
-              "id": "user-manual/hosts/firewall",
+              "id": "user_manual/hosts/firewall",
               "label": "防火墙"
             },
             {
               "type": "doc",
-              "id": "user-manual/hosts/disk",
+              "id": "user_manual/hosts/disk",
               "label": "磁盘管理"
             },
             {
               "type": "doc",
-              "id": "user-manual/hosts/process",
+              "id": "user_manual/hosts/process",
               "label": "进程管理"
             },
             {
               "type": "doc",
-              "id": "user-manual/hosts/ssh",
+              "id": "user_manual/hosts/ssh",
               "label": "SSH 管理"
             }
           ]
         },
         {
           "type": "doc",
-          "id": "user-manual/terminal",
+          "id": "user_manual/terminal",
           "label": "终端"
         },
         {
           "type": "doc",
-          "id": "user-manual/cronjobs",
+          "id": "user_manual/cronjobs",
           "label": "计划任务"
         },
         {
@@ -449,32 +449,32 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/toolbox/quick-settings",
+              "id": "user_manual/toolbox/quick-settings",
               "label": "快速设置"
             },
             {
               "type": "doc",
-              "id": "user-manual/toolbox/clean",
+              "id": "user_manual/toolbox/clean",
               "label": "缓存清理"
             },
             {
               "type": "doc",
-              "id": "user-manual/toolbox/supervisor",
+              "id": "user_manual/toolbox/supervisor",
               "label": "进程守护"
             },
             {
               "type": "doc",
-              "id": "user-manual/toolbox/clam",
+              "id": "user_manual/toolbox/clam",
               "label": "病毒扫描"
             },
             {
               "type": "doc",
-              "id": "user-manual/toolbox/ftp",
+              "id": "user_manual/toolbox/ftp",
               "label": "FTP"
             },
             {
               "type": "doc",
-              "id": "user-manual/toolbox/fail2ban",
+              "id": "user_manual/toolbox/fail2ban",
               "label": "Fail2ban"
             }
           ]
@@ -486,7 +486,7 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user-manual/xpack/mobile-app",
+              "id": "user_manual/xpack/mobile-app",
               "label": "移动端"
             },
             {
@@ -496,103 +496,103 @@ const sidebars = {
               "items": [
                 {
                   "type": "doc",
-                  "id": "user-manual/xpack/waf/waf",
+                  "id": "user_manual/xpack/waf/waf",
                   "label": "概述",
-                  "key": "doc:user-manual/xpack/waf/waf @ 功能手册 / 高级功能 / WAF"
+                  "key": "doc:user_manual/xpack/waf/waf @ 功能手册 / 高级功能 / WAF"
                 },
                 {
                   "type": "doc",
-                  "id": "user-manual/xpack/waf/dashboard",
+                  "id": "user_manual/xpack/waf/dashboard",
                   "label": "首页",
-                  "key": "doc:user-manual/xpack/waf/dashboard @ 功能手册 / 高级功能 / WAF"
+                  "key": "doc:user_manual/xpack/waf/dashboard @ 功能手册 / 高级功能 / WAF"
                 },
                 {
                   "type": "doc",
-                  "id": "user-manual/xpack/waf/stat",
+                  "id": "user_manual/xpack/waf/stat",
                   "label": "攻击报表"
                 },
                 {
                   "type": "doc",
-                  "id": "user-manual/xpack/waf/log",
+                  "id": "user_manual/xpack/waf/log",
                   "label": "拦截记录"
                 },
                 {
                   "type": "doc",
-                  "id": "user-manual/xpack/waf/block",
+                  "id": "user_manual/xpack/waf/block",
                   "label": "封锁记录"
                 },
                 {
                   "type": "doc",
-                  "id": "user-manual/xpack/waf/blackwhite",
+                  "id": "user_manual/xpack/waf/blackwhite",
                   "label": "黑白名单"
                 },
                 {
                   "type": "doc",
-                  "id": "user-manual/xpack/waf/site",
+                  "id": "user_manual/xpack/waf/site",
                   "label": "网站设置"
                 },
                 {
                   "type": "doc",
-                  "id": "user-manual/xpack/waf/global",
+                  "id": "user_manual/xpack/waf/global",
                   "label": "全局设置"
                 }
               ]
             },
             {
               "type": "doc",
-              "id": "user-manual/xpack/node",
+              "id": "user_manual/xpack/node",
               "label": "节点管理"
             },
             {
               "type": "doc",
-              "id": "user-manual/xpack/website-monitor",
+              "id": "user_manual/xpack/website-monitor",
               "label": "网站监控"
             },
             {
               "type": "doc",
-              "id": "user-manual/xpack/database-cluster",
+              "id": "user_manual/xpack/database-cluster",
               "label": "数据库集群"
             },
             {
               "type": "doc",
-              "id": "user-manual/xpack/tamper",
+              "id": "user_manual/xpack/tamper",
               "label": "网站防篡改"
             },
             {
               "type": "doc",
-              "id": "user-manual/xpack/resource-sync",
+              "id": "user_manual/xpack/resource-sync",
               "label": "资源同步"
             },
             {
               "type": "doc",
-              "id": "user-manual/xpack/appearance",
+              "id": "user_manual/xpack/appearance",
               "label": "界面设置"
             },
             {
               "type": "doc",
-              "id": "user-manual/enterprise/user-management",
+              "id": "user_manual/enterprise/user-management",
               "label": "用户管理"
             },
             {
               "type": "doc",
-              "id": "user-manual/enterprise/vm",
+              "id": "user_manual/enterprise/vm",
               "label": "虚拟机"
             },
             {
               "type": "doc",
-              "id": "user-manual/enterprise/ops-report",
+              "id": "user_manual/enterprise/ops-report",
               "label": "安全运维报表"
             }
           ]
         },
         {
           "type": "doc",
-          "id": "user-manual/logs",
+          "id": "user_manual/logs",
           "label": "日志审计"
         },
         {
           "type": "doc",
-          "id": "user-manual/settings",
+          "id": "user_manual/settings",
           "label": "面板设置"
         }
       ]
@@ -604,180 +604,180 @@ const sidebars = {
       "items": [
         {
           "type": "doc",
-          "id": "user-manual/appstore/openclaw",
+          "id": "user_manual/appstore/openclaw",
           "label": "OpenClaw"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/hermes-agent",
+          "id": "user_manual/appstore/hermes-agent",
           "label": "Hermes Agent"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/deepseek-harness",
+          "id": "user_manual/appstore/deepseek-harness",
           "label": "DeepSeek Harness"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/openresty",
+          "id": "user_manual/appstore/openresty",
           "label": "OpenResty"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/mysql",
+          "id": "user_manual/appstore/mysql",
           "label": "MySQL",
-          "key": "doc:user-manual/appstore/mysql @ 常用软件"
+          "key": "doc:user_manual/appstore/mysql @ 常用软件"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/redis",
+          "id": "user_manual/appstore/redis",
           "label": "Redis",
-          "key": "doc:user-manual/appstore/redis @ 常用软件"
+          "key": "doc:user_manual/appstore/redis @ 常用软件"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/ollama",
+          "id": "user_manual/appstore/ollama",
           "label": "Ollama"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/halo",
+          "id": "user_manual/appstore/halo",
           "label": "Halo"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/openlist",
+          "id": "user_manual/appstore/openlist",
           "label": "OpenList"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/maxkb",
+          "id": "user_manual/appstore/maxkb",
           "label": "MaxKB"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/phpmyadmin",
+          "id": "user_manual/appstore/phpmyadmin",
           "label": "phpMyAdmin"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/wordpress",
+          "id": "user_manual/appstore/wordpress",
           "label": "WordPress"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/zabbix",
+          "id": "user_manual/appstore/zabbix",
           "label": "Zabbix"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/alist",
+          "id": "user_manual/appstore/alist",
           "label": "AList"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/frp",
+          "id": "user_manual/appstore/frp",
           "label": "frp"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/qinglong",
+          "id": "user_manual/appstore/qinglong",
           "label": "青龙"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/nginx-proxy-manager",
+          "id": "user_manual/appstore/nginx-proxy-manager",
           "label": "Nginx Proxy Manager"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/ddns-go",
+          "id": "user_manual/appstore/ddns-go",
           "label": "ddns-go"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/gitea",
+          "id": "user_manual/appstore/gitea",
           "label": "Gitea"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/dataease",
+          "id": "user_manual/appstore/dataease",
           "label": "DataEase"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/openwebui",
+          "id": "user_manual/appstore/openwebui",
           "label": "Open WebUI"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/mariadb",
+          "id": "user_manual/appstore/mariadb",
           "label": "MariaDB"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/rustdesk",
+          "id": "user_manual/appstore/rustdesk",
           "label": "RustDesk"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/minio",
+          "id": "user_manual/appstore/minio",
           "label": "MinIO"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/bitwarden",
+          "id": "user_manual/appstore/bitwarden",
           "label": "Bitwarden"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/home-assistant",
+          "id": "user_manual/appstore/home-assistant",
           "label": "Home Assistant"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/mongodb",
+          "id": "user_manual/appstore/mongodb",
           "label": "MongoDB",
-          "key": "doc:user-manual/appstore/mongodb @ 常用软件"
+          "key": "doc:user_manual/appstore/mongodb @ 常用软件"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/nextcloud",
+          "id": "user_manual/appstore/nextcloud",
           "label": "Nextcloud"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/lobechat",
+          "id": "user_manual/appstore/lobechat",
           "label": "LobeChat"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/jumpserver",
+          "id": "user_manual/appstore/jumpserver",
           "label": "Jumpserver"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/stirling-pdf",
+          "id": "user_manual/appstore/stirling-pdf",
           "label": "Stirling-PDF"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/chatgpt-next-web",
+          "id": "user_manual/appstore/chatgpt-next-web",
           "label": "ChatGPT-Next-Web"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/cloudreve",
+          "id": "user_manual/appstore/cloudreve",
           "label": "Cloudreve"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/uptime-kuma",
+          "id": "user_manual/appstore/uptime-kuma",
           "label": "Uptime Kuma"
         },
         {
           "type": "doc",
-          "id": "user-manual/appstore/vscode",
+          "id": "user_manual/appstore/vscode",
           "label": "VS Code"
         }
       ]
@@ -789,19 +789,19 @@ const sidebars = {
       "items": [
         {
           "type": "doc",
-          "id": "dev-manual/skills",
+          "id": "dev_manual/skills",
           "label": "1Panel 运维技能"
         },
         {
           "type": "doc",
-          "id": "dev-manual/appstore-skills",
+          "id": "dev_manual/appstore-skills",
           "label": "1Panel 应用商店技能"
         }
       ]
     },
     {
       "type": "doc",
-      "id": "dev-manual/api-manual",
+      "id": "dev_manual/api_manual",
       "label": "API 接口"
     },
     {

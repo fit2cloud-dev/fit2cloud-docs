@@ -10,7 +10,7 @@ OpenClaw 是一个运行在你自己设备上的个人 AI 助理。它可以在�
 
 ## 2 1Panel 如何安装 OpenClaw？
 
-OpenClaw 支持通过 1Panel 的智能体功能快速部署，具体可参考 [安装部署文档](./../user-manual/appstore/openclaw)。
+OpenClaw 支持通过 1Panel 的智能体功能快速部署，具体可参考 [安装部署文档](./../user_manual/appstore/openclaw)。
 
 ## 3 如何通过 Ollama 运行本地模型？
 

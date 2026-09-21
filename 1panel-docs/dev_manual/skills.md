@@ -62,7 +62,7 @@ title: 1Panel 运维技能
 - `1Panel-Timestamp`
 - `1Panel-Token = md5("1panel" + API_KEY + TIMESTAMP)`
 
-关于签名规则与接口鉴权方式，可参考本章节中的 [API 接口](././api-manual) 文档。
+关于签名规则与接口鉴权方式，可参考本章节中的 [API 接口](././api_manual) 文档。
 
 ## 5 接入智能体平台
 

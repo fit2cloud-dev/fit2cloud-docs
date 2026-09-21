@@ -88,7 +88,7 @@ keywords: [1Panel 面板设置, 安全设置, 告警通知, 备份账号, 系统
     ```
 
 :::
-## 3 面板告警
+## 3 面板告警 {/* #3 */}
 
 **功能概述**：面板告警用于在 1Panel 检测到异常或重要事件时，通过 **邮箱**、**企业微信**、**钉钉**、**飞书**、**短信**、**Bark** 等渠道及时通知管理员。
 
@@ -248,7 +248,7 @@ keywords: [1Panel 面板设置, 安全设置, 告警通知, 备份账号, 系统
 - 确认企业微信 / 钉钉 / 飞书 后台的 **IP 白名单** 中，已经正确添加了 1Panel 服务器当前实际出口 IP  
 - 如服务器位于内网且通过代理访问外网，请确保代理出口 IP 同样在第三方平台的 IP 白名单中
 
-## 4 备份账号
+## 4 备份账号 {/* #4 */}
 
 备份账号用于保存计划任务、应用、网站、数据库和系统快照等备份。企业版普通用户需要具有备份账号权限；账号密钥、令牌和私钥应按敏感凭证管理。
 
@@ -268,7 +268,7 @@ keywords: [1Panel 面板设置, 安全设置, 告警通知, 备份账号, 系统
 - 七牛云 Kodo
 - 又拍云 对象存储
 
-### 4.2 OneDrive 自定义配置
+### 4.2 OneDrive 自定义配置 {/* #42-onedrive */}
 
 **在调用 OneDrive API 时需要使用到 4 个参数：**
 
@@ -321,7 +321,7 @@ keywords: [1Panel 面板设置, 安全设置, 告警通知, 备份账号, 系统
 ![img.png](/img/1panel/settings/onedrive_step4.png)
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 22 OneDrive 账号绑定界面（续）</div>
 
-### 4.4 阿里云盘账号绑定
+### 4.4 阿里云盘账号绑定 {/* #44 */}
 
 （1）登陆网页版阿里云盘 (https://www.alipan.com/)。
 
@@ -335,7 +335,7 @@ keywords: [1Panel 面板设置, 安全设置, 告警通知, 备份账号, 系统
 ![img.png](/img/1panel/settings/ali_pan_2.png)
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 24 阿里云盘账号绑定界面（续）</div>
 
-### 4.5 谷歌云盘账号绑定
+### 4.5 谷歌云盘账号绑定 {/* #45 */}
 
 **在调用 Google API 时需要使用到 3 个参数：**
 
@@ -386,7 +386,7 @@ keywords: [1Panel 面板设置, 安全设置, 告警通知, 备份账号, 系统
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 32 谷歌云盘账号绑定界面（续）</div>
 
 
-### 4.6 WebDAV 连接 AList
+### 4.6 WebDAV 连接 AList {/* #46-webdav-alist */}
 
 （1）从应用商店安装好 AList 后（记得打开端口外部访问），在容器日志中查看初始化密码，跳转到 AList 管理界面。 
 

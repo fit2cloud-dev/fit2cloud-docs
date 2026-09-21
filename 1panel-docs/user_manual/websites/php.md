@@ -53,7 +53,7 @@ title: PHP
 ![img.png](/img/1panel/websites/runtime_php_daemon.png)
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6 配置进程守护界面</div>
 
-## 5 PHP 扩展列表
+## 5 PHP 扩展列表 {/* #php_1 */}
 
 
 
