@@ -90,6 +90,12 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
+              "id": "user_manual/home",
+              "label": "首页",
+              "key": "doc:功能手册/通用功能/首页"
+            },
+            {
+              "type": "doc",
               "id": "user_manual/global_search",
               "label": "全局搜索",
               "key": "doc:功能手册/通用功能/全局搜索"
@@ -99,6 +105,18 @@ const sidebars = {
               "id": "user_manual/followup_plan",
               "label": "跟进记录计划",
               "key": "doc:功能手册/通用功能/跟进记录计划"
+            },
+            {
+              "type": "doc",
+              "id": "user_manual/personal_center",
+              "label": "个人中心",
+              "key": "doc:功能手册/通用功能/个人中心"
+            },
+            {
+              "type": "doc",
+              "id": "user_manual/import_export",
+              "label": "导入导出",
+              "key": "doc:功能手册/通用功能/导入导出"
             },
             {
               "type": "doc",
@@ -140,65 +158,85 @@ const sidebars = {
                 {
                   "type": "doc",
                   "id": "user_manual/org_manage",
-                  "label": "组织架构管理",
+                  "label": "组织架构",
                   "key": "doc:功能手册/管理手册/系统配置/组织架构管理"
                 },
                 {
                   "type": "doc",
                   "id": "user_manual/role_permission",
-                  "label": "角色权限管理",
+                  "label": "角色权限",
                   "key": "doc:功能手册/管理手册/系统配置/角色权限管理"
                 },
                 {
-                  "type": "doc",
-                  "id": "user_manual/module_config",
-                  "label": "模块配置管理",
-                  "key": "doc:功能手册/管理手册/系统配置/模块配置管理"
+                  "type": "category",
+                  "label": "模块配置",
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "type": "doc",
+                      "id": "user_manual/module_config",
+                      "label": "模块配置",
+                      "key": "doc:功能手册/管理手册/系统配置/模块配置管理"
+                    },
+                    {
+                      "type": "doc",
+                      "id": "user_manual/form_config",
+                      "label": "表单设置",
+                      "key": "doc:功能手册/管理手册/系统配置/模块配置/表单设置"
+                    },
+                    {
+                      "type": "doc",
+                      "id": "user_manual/lead_pool",
+                      "label": "线索池与库容",
+                      "key": "doc:功能手册/管理手册/系统配置/模块配置/线索池与库容"
+                    },
+                    {
+                      "type": "doc",
+                      "id": "user_manual/open_sea",
+                      "label": "公海设置",
+                      "key": "doc:功能手册/管理手册/系统配置/模块配置/公海设置"
+                    },
+                    {
+                      "type": "doc",
+                      "id": "user_manual/opportunity_stage",
+                      "label": "商机阶段设置",
+                      "key": "doc:功能手册/管理手册/系统配置/模块配置/商机阶段设置"
+                    },
+                    {
+                      "type": "doc",
+                      "id": "user_manual/order_status",
+                      "label": "订单状态流",
+                      "key": "doc:功能手册/管理手册/系统配置/模块配置/订单状态流"
+                    }
+                  ],
+                  "key": "cat:功能手册/管理手册/系统配置/模块配置"
                 },
                 {
                   "type": "doc",
                   "id": "user_manual/message_setting",
-                  "label": "消息设置管理",
+                  "label": "消息设置",
                   "key": "doc:功能手册/管理手册/系统配置/消息设置管理"
                 },
                 {
                   "type": "doc",
                   "id": "user_manual/workflow_setting",
-                  "label": "流程设置管理",
+                  "label": "流程设置",
                   "key": "doc:功能手册/管理手册/系统配置/流程设置管理"
                 },
                 {
                   "type": "doc",
                   "id": "user_manual/enterprise_setting",
-                  "label": "企业设置管理",
+                  "label": "企业设置",
                   "key": "doc:功能手册/管理手册/系统配置/企业设置管理"
                 },
                 {
                   "type": "doc",
                   "id": "user_manual/system_log",
-                  "label": "系统日志管理",
+                  "label": "系统日志",
                   "key": "doc:功能手册/管理手册/系统配置/系统日志管理"
                 }
               ],
               "key": "cat:功能手册/管理手册/系统配置"
-            },
-            {
-              "type": "doc",
-              "id": "user_manual/form_config",
-              "label": "自定义表单",
-              "key": "doc:功能手册/管理手册/自定义表单"
-            },
-            {
-              "type": "doc",
-              "id": "user_manual/product_entry",
-              "label": "产品",
-              "key": "doc:功能手册/管理手册/产品"
-            },
-            {
-              "type": "doc",
-              "id": "user_manual/dashboard",
-              "label": "仪表板",
-              "key": "doc:功能手册/管理手册/仪表板"
             }
           ],
           "key": "cat:功能手册/管理手册"
@@ -237,6 +275,24 @@ const sidebars = {
               "id": "user_manual/order",
               "label": "订单管理",
               "key": "doc:功能手册/通用用户手册/订单管理"
+            },
+            {
+              "type": "doc",
+              "id": "user_manual/product_entry",
+              "label": "产品",
+              "key": "doc:功能手册/通用用户手册/产品"
+            },
+            {
+              "type": "doc",
+              "id": "user_manual/dashboard",
+              "label": "仪表板",
+              "key": "doc:功能手册/通用用户手册/仪表板"
+            },
+            {
+              "type": "doc",
+              "id": "user_manual/custom_form",
+              "label": "自定义表单",
+              "key": "doc:功能手册/通用用户手册/自定义表单"
             },
             {
               "type": "doc",

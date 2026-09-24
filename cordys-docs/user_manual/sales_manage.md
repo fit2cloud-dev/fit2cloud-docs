@@ -14,7 +14,7 @@ title: 销售流程管理
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  线索管理页面</div>
 
 
-用户可以「新建线索」或快捷「导入线索」。
+用户可以“新建线索”或快捷“导入线索”。
 
 ![新建线索](/img/cordys/user_manual/create-lead2.png)
 
@@ -29,7 +29,7 @@ title: 销售流程管理
 
 ### 1.2 线索转换
 
-选择线索，点击「转换」，可以快捷将线索转换成客户/商机。
+选择线索，点击“转换”，可以快捷将线索转换成客户/商机。
 
 ![线索转换](/img/cordys/user_manual/convert-lead2.png)
 
@@ -38,7 +38,7 @@ title: 销售流程管理
 ### 1.3 线索转为客户
 
 
-在线索详情中，点击「转换」，即可将线索一键转为客户。
+在线索详情中，点击“转换”，即可将线索一键转为客户。
 
 **注意**：转客户的线索不会展示在线索列表中。
 
@@ -54,14 +54,14 @@ title: 销售流程管理
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  线索转客户</div>
 
 
-管理员进入【系统-模块设置】，点击「客户表单设置」，进入「表单属性」，设置表单联动。
+管理员进入【系统-模块设置】，点击“客户表单设置”，进入“表单属性”，设置表单联动。
 
 ![客户表单设置](/img/cordys/user_manual/image-202509181141221552.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7  客户表单设置</div>
 
 
-配置好线索表单字段与客户表单字段的映射关系，在进行「线索转客户」操作时即可一键填充相应信息。
+配置好线索表单字段与客户表单字段的映射关系，在进行“线索转客户”操作时即可一键填充相应信息。
 
 ![客户表单联动](/img/cordys/user_manual/image-20250918114143362.png)
 
@@ -75,8 +75,8 @@ title: 销售流程管理
 
 在左侧菜单点击【客户】，进入客户管理页面，用户可以：
  
- - 「新建客户」
- - 快捷「线索转为客户」
+ - “新建客户”
+ - 快捷“线索转为客户”
 
 ![客户管理](/img/cordys/user_manual/customer-management2.png)
 
@@ -99,21 +99,21 @@ title: 销售流程管理
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 11  客户合并</div>
 
 
-用户需要先「选中客户」然后在隐藏的按钮中选择「合并客户」。
+用户需要先“选中客户”然后在隐藏的按钮中选择“合并客户”。
 
 ![选择客户](/img/cordys/user_manual/merge-customers42.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 12  选择客户</div>
 
 
-**注意: 需要确认,「合并后，数据不可回退」。**
+**注意: 需要确认,“合并后，数据不可回退”。**
 
 ![二次确认](/img/cordys/user_manual/merge-customers22.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 13  二次确认</div>
 
 
-用户需要选择，合并至「已选客户」或者「其他客户」然后选择合并后的客户负责人。
+用户需要选择，合并至“已选客户”或者“其他客户”然后选择合并后的客户负责人。
 
 ![选择人员](/img/cordys/user_manual/merge-customers32.png)
 
@@ -126,8 +126,8 @@ title: 销售流程管理
 
 在左侧菜单点击【商机】，进入商机管理页面，用户可以：
 
- - 「新建商机」
- - 快捷「线索转为商机」
+ - “新建商机”
+ - 快捷“线索转为商机”
 
 ![商机管理](/img/cordys/user_manual/opportunity-management2.png)
 
@@ -135,14 +135,14 @@ title: 销售流程管理
 
 ### 3.2 跟进商机
 
-点击商机名称或「跟进」按钮，进入商机详情页面。
+点击商机名称或“跟进”按钮，进入商机详情页面。
 
 
 用户可以根据跟进情况进行以下操作：
 
 - 修改商机阶段
-- 录入当前商机的「跟进记录」
-- 添加「跟进计划」
+- 录入当前商机的“跟进记录”
+- 添加“跟进计划”
 
 ![商机跟进](/img/cordys/user_manual/follow-opportunity2.png)
 
@@ -151,7 +151,7 @@ title: 销售流程管理
 ### 3.3 商机看板
 
 
-点击看板icon进入「商机看板」视图。
+点击看板icon进入“商机看板”视图。
 
 - 商机看板根据商机阶段展示当前商机信息
 - 商机视图均支持列表和看板两种模式查看
@@ -173,7 +173,7 @@ title: 销售流程管理
 
 进入当前视图的数据分析页。
 
-- 用户可以进一步添加条件进行过滤，也可以基于当前视图直接配置图表类型和分组依据进行「生成图表」
+- 用户可以进一步添加条件进行过滤，也可以基于当前视图直接配置图表类型和分组依据进行“生成图表”
 - 数据指标支持计数、求和、平均三种汇总方式
 - 生成的图表支持全屏展示和下载保存
 
@@ -302,19 +302,19 @@ title: 销售流程管理
 ## 5 活动记录
 
 
-在右上方菜单按钮中点击「活动记录功能」按钮。
+在右上方菜单按钮中点击“活动记录功能”按钮。
 ![活动顶部入口](/img/cordys/user_manual/activitylog12.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 28  活动顶部入口</div>
 
 
-可以按客户维度查看，创建完成的「跟进记录」或「跟进计划」。
+可以按客户维度查看，创建完成的“跟进记录”或“跟进计划”。
 ![活动记录列表](/img/cordys/user_manual/activitylog3.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 29  活动记录列表</div>
 
 
-点击「详情」按钮，可以查看「跟进记录」或「跟进计划」的详细信息。
+点击“详情”按钮，可以查看“跟进记录”或“跟进计划”的详细信息。
 ![活动记录详情](/img/cordys/user_manual/activitylog22.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 30  活动记录详情</div>
