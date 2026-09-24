@@ -146,7 +146,7 @@ Cordys CRM 的 MCP Server 提供以下工具。
 
 步骤⼀： 创建或进入一个高级编排类型的应用。
 
-步骤二： 在「基本信息」里添加两个用户输入，分别是 ak 和 sk，添加两个会话变量，分别是 Cordys CRM 的 Access Key 和 Secret Key。
+步骤二： 在“基本信息”里添加两个用户输入，分别是 ak 和 sk，添加两个会话变量，分别是 Cordys CRM 的 Access Key 和 Secret Key。
 
 步骤三： 添加 Cordys CRM MCP 工具。
 

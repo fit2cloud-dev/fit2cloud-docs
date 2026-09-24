@@ -1,63 +1,43 @@
 ---
-title: 组织架构配置
+title: 组织架构
+description: 介绍 Cordys CRM 组织架构中的部门、成员添加、导入与企业微信同步入口。
 ---
 
-## 1 快捷导入成员
+组织架构管理维护企业的部门和成员，是角色、数据权限和业务负责人的基础。管理员在这里建立部门树、添加登录账号，也可以从 Excel 导入成员，或改由企业微信同步。
 
+## 1 功能简介
 
-**注意**：导入成员功能与企业微信同步功能互斥，请确认同步组织架构开关处于关闭状态。
+页面左侧是部门树，右侧是当前部门下的成员列表。列表可按名称搜索，并展示姓名、状态、性别、手机号、邮箱、部门、角色、工作城市与入职日期。状态开关用于启用或停用成员。行内提供编辑；部分成员还提供更多操作。
 
-### 1.1 操作步骤
+## 2 入口位置
 
+在左侧导航单击 **系统 › 组织架构**。
 
-1. 点击「更多」按钮下的「导入」选项
-2. 在导入成员弹窗中，下载模板
-3. 根据模板要求维护好成员信息
-4. 上传模板文件，即可完成导入
+## 3 添加成员
 
-![导入成员](/img/cordys/user_manual/import-members2.png)
+先在左侧选中部门，再单击“添加成员”。部门树旁的加号用于新增部门。
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  导入成员</div>
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/cordys/user_manual/org-add-member.png" alt="图 1  添加成员" />
 
-## 2 手动添加成员
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  添加成员</div>
 
+- **姓名**：必填。
+- **性别**：男或女，默认男。
+- **手机号**：必填。成员可使用手机号登录。
+- **邮箱**：必填。成员也可使用邮箱登录。
+- **部门**：必填，默认带出当前选中的部门。
+- **工号**：选填。
+- **状态**：抽屉底部的开关，关闭后该成员不能登录。
 
-**注意**：添加成员功能与企业微信同步功能互斥，请确认同步组织架构开关处于关闭状态。
+单击“更多”可展开其余资料项。单击“确认”保存并关闭；需要连续添加时单击“保存并继续添加”。
 
-### 2.1 添加部门信息
+## 4 导入与同步
 
-![添加部门](/img/cordys/user_manual/add-department2.png)
+成员列表上方的“更多”菜单提供两项：
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  添加部门</div>
+- **导入**：按模版批量添加成员。
+- **企业微信同步**：从企业微信拉取组织与成员。对接步骤见[企业设置](./enterprise_setting.md#41-企业微信)。
 
-### 2.2 添加成员
-
-
-录入成员基本信息，即创建成功。
-
-![添加成员](/img/cordys/user_manual/add-member2.png)
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  添加成员</div>
-
-## 3 成员登录系统
-
-### 3.1 账号登录
-
-
-所有系统成员均可使用账号 & 密码登录系统：
-
-- **账号**：手机号或邮箱
-- **密码**：手机号后6位
-
-![账号登录](/img/cordys/installation/login.png)
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  账号登录</div>
-
-### 3.2 扫码登录
-
-
-从企业微信同步的成员，在【企业设置】→【三方设置】中开启扫码登录后，即可使用扫码登录功能。
-
-![扫码登录](/img/cordys/user_manual/qr-login2.png)
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  扫码登录</div>
+:::important[重要]
+成员来自手工维护还是企业微信同步，应只选一种。已开启企业微信同步时，不要再并行导入或手工新增，避免两边名单不一致。
+:::

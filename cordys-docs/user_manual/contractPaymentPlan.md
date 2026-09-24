@@ -11,7 +11,7 @@ title: 回款计划
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  创建回款计划</div>
 
 
-用户可以「新建回款计划」或「导出回款计划」。
+用户可以“新建回款计划”或“导出回款计划”。
 
 ![回款计划列表](/img/cordys/user_manual/paymentlist2.png)
 

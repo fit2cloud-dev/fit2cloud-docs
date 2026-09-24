@@ -12,7 +12,7 @@ title: 合同
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  创建合同</div>
 
 
-用户可以「新建合同」或「导出合同」。
+用户可以“新建合同”或“导出合同”。
 ![合同列表](/img/cordys/user_manual/contractlist2.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  合同列表</div>
@@ -26,7 +26,7 @@ title: 合同
 ## 2 合同关联其他模块
 
 
-管理员进入【系统-模块设置】，点击「合同表单设置」，选择「数据源」，设置要关联模块。
+管理员进入【系统-模块设置】，点击“合同表单设置”，选择“数据源”，设置要关联模块。
     
 ![合同关联](/img/cordys/user_manual/contractassociation2.png)
 

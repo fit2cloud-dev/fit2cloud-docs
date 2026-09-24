@@ -56,9 +56,9 @@ Cordys CRM 内置一份基于 Swagger UI 的在线接口文档，随产品一同
 
 接口文档页面的主要区域包括：
 
-- **分组选择框**： 位于页面左上角，用于在 15 个业务分组之间切换，切换后页面只显示该分组的接口。
-- **接口列表**： 每个接口占一行，行首的标签表示请求方法（`POST`、`GET` 等），其后是接口路径与中文接口名称。
-- **接口详情**： 单击任意一行可展开详情，查看请求参数、请求体示例值与响应结构。
+- **分组选择框**：位于页面左上角，用于在 15 个业务分组之间切换，切换后页面只显示该分组的接口。
+- **接口列表**：每个接口占一行，行首的标签表示请求方法（`POST`、`GET` 等），其后是接口路径与中文接口名称。
+- **接口详情**：单击任意一行可展开详情，查看请求参数、请求体示例值与响应结构。
 
 <img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/cordys/api/api-swagger-groups.png" alt="图 3  切换接口分组" />
 
@@ -84,11 +84,11 @@ Cordys CRM 内置一份基于 Swagger UI 的在线接口文档，随产品一同
 
 每个 API Key 以卡片形式展示，卡片中的信息包括：
 
-- **Access Key**： 公开的访问标识，调用接口时随请求发送。
-- **Secret Key**： 默认以掩码显示，单击右侧的眼睛图标可查看明文。
-- **描述**： 该 API Key 的备注说明。
-- **创建时间**： API Key 的生成时间。
-- **有效时间**： 该 API Key 的生效期限，默认永久有效。
+- **Access Key**：公开的访问标识，调用接口时随请求发送。
+- **Secret Key**：默认以掩码显示，单击右侧的眼睛图标可查看明文。
+- **描述**：该 API Key 的备注说明。
+- **创建时间**：API Key 的生成时间。
+- **有效时间**：该 API Key 的生效期限，默认永久有效。
 
 :::important[重要]
 Secret Key 与密码同等敏感，请勿写入前端代码、客户端程序或提交到代码仓库。如怀疑已泄露，请删除该 API Key 后重新创建。
@@ -116,9 +116,9 @@ Secret Key 与密码同等敏感，请勿写入前端代码、客户端程序或
 
 每个请求都需要在 HTTP 请求头中携带 API Key，字段如下：
 
-- **X-Access-Key**： API Key 的 Access Key。
-- **X-Secret-Key**： API Key 的 Secret Key。
-- **Content-Type**： 固定为 `application/json`，`POST` 请求必填。
+- **X-Access-Key**：API Key 的 Access Key。
+- **X-Secret-Key**：API Key 的 Secret Key。
+- **Content-Type**：固定为 `application/json`，`POST` 请求必填。
 
 请求头字段名不区分大小写。缺少请求头或 Key 不正确时，接口返回 HTTP 401，响应体为空。
 
@@ -157,10 +157,10 @@ curl -X POST 'https://<产品访问地址>/account/page' \
 
 所有接口返回统一的外层结构，业务数据位于 `data` 字段中：
 
-- **code**： 业务状态码，`100200` 表示成功。
-- **message**： 提示信息，成功时为 `null`。
-- **messageDetail**： 异常的详细信息，排查问题时使用。
-- **data**： 业务数据，结构随接口不同而变化。
+- **code**：业务状态码，`100200` 表示成功。
+- **message**：提示信息，成功时为 `null`。
+- **messageDetail**：异常的详细信息，排查问题时使用。
+- **data**：业务数据，结构随接口不同而变化。
 
 常见失败情形如下：
 

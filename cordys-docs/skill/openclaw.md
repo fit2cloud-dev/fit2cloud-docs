@@ -104,7 +104,7 @@ CORDYS_CRM_DOMAIN=https://你的域名
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7  API 模式创建</div>
 
 
-选择以「长连接」方式创建，并获取Bot ID 和 Secret。
+选择以“长连接”方式创建，并获取Bot ID 和 Secret。
 
 ![agent](/img/cordys/openclaw/weixin/3.png)
 
@@ -197,7 +197,7 @@ CORDYS_CRM_DOMAIN=https://你的域名
 
 
 步骤一：创建企业自建应用
-首先我们登录飞书进入飞书开放平台（链接：https://open.feishu.cn/app?lang=zh-CN ）进入「开发者后台」，选择「企业自建应用」，点击「创建企业自建应用」，如下图所示：
+首先我们登录飞书进入飞书开放平台（链接：https://open.feishu.cn/app?lang=zh-CN ）进入“开发者后台”，选择“企业自建应用”，点击“创建企业自建应用”，如下图所示：
 
 ![agent](/img/cordys/openclaw/feishu/feishu-1.png)
 
@@ -227,14 +227,14 @@ CORDYS_CRM_DOMAIN=https://你的域名
 
 
 步骤三：权限配置
-完成机器人创建后，点击进入「权限管理」，并点击「批量导入/导出权限」。
+完成机器人创建后，点击进入“权限管理”，并点击“批量导入/导出权限”。
 
 ![agent](/img/cordys/openclaw/feishu/feishu-5.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 23  权限配置</div>
 
 
-点击「批量导入/导出权限」，清空默认配置权限信息，将如下所示权限授权脚本复制粘贴，点击保存即可。
+点击“批量导入/导出权限”，清空默认配置权限信息，将如下所示权限授权脚本复制粘贴，点击保存即可。
 
 ```json
 {
@@ -282,7 +282,7 @@ CORDYS_CRM_DOMAIN=https://你的域名
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 24  效果</div>
 
 
-点击「下一步，确认新增权限」，并最终确保所有权限均已开通。其中个人用户自行确认企业账户需要管理员审核。确保所有权限均已开通，如下图所示：
+点击“下一步，确认新增权限”，并最终确保所有权限均已开通。其中个人用户自行确认企业账户需要管理员审核。确保所有权限均已开通，如下图所示：
 
 ![agent](/img/cordys/openclaw/feishu/feishu-7.png)
 
@@ -290,13 +290,13 @@ CORDYS_CRM_DOMAIN=https://你的域名
 
 
 步骤四：获取凭证并配置
-进入飞书平台在「凭证与基础信息」中获取应用凭证，如下图所示：
+进入飞书平台在“凭证与基础信息”中获取应用凭证，如下图所示：
 ![agent](/img/cordys/openclaw/feishu/feishu-8.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 26  获取凭证并配置</div>
 
 
-获取后，进入OpenClaw 的「配置」页面，完成飞书聊天渠道配置，点击保存，如下图所示：
+获取后，进入OpenClaw 的“配置”页面，完成飞书聊天渠道配置，点击保存，如下图所示：
 
 ![agent](/img/cordys/openclaw/feishu/feishu-9.png)
 
@@ -304,7 +304,7 @@ CORDYS_CRM_DOMAIN=https://你的域名
 
 
 步骤五：创建事件与回调
-如下图所示，进入「事件与回调」菜单，分别完成订阅方式设置以及事件添加。
+如下图所示，进入“事件与回调”菜单，分别完成订阅方式设置以及事件添加。
 
 ![agent](/img/cordys/openclaw/feishu/feishu-10.png)
 
@@ -317,14 +317,14 @@ CORDYS_CRM_DOMAIN=https://你的域名
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 29  长链接订阅</div>
 
 
-添加事件：输入im.message.receive_v1搜索，基于「应用身份订阅」勾选接收消息，最后确认添加即可。
+添加事件：输入im.message.receive_v1搜索，基于“应用身份订阅”勾选接收消息，最后确认添加即可。
 ![agent](/img/cordys/openclaw/feishu/feishu-12.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 30  接收消息</div>
 
 
 步骤六：创建并发布版本
-确认完成后点击「创建版本」，然后根据要求输入版本相关信息并发布，个人账号无需审批，企业账号需要进行企业审批。
+确认完成后点击“创建版本”，然后根据要求输入版本相关信息并发布，个人账号无需审批，企业账号需要进行企业审批。
 ![agent](/img/cordys/openclaw/feishu/feishu-13.png)
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 31  创建版本</div>
