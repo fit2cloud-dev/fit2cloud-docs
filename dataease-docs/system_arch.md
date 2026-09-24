@@ -4,7 +4,7 @@ title: 系统架构
 
 ## 1 整体架构
 
-![整体架构](/img/dataease/newimg/product_acceptance/功能架构图.jpg)
+![整体架构](/img/dataease/newimg/product_acceptance/功能架构图.png)
 
 图 1  功能架构图
 

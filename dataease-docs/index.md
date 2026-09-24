@@ -12,6 +12,12 @@ DataEase 支持丰富的数据源连接，能够通过拖拉拽方式快速制�
 
 图 1  功能架构图
 
+DataEase 功能架构分为数据准备、可视化分析和工作台三层：
+
+- **数据准备**：连接数据源并构建数据集，支持跨源查询、计算字段与数据导出
+- **可视化分析**：通过仪表板、数据大屏完成图表制作与多端展示，同时提供类 Excel 的电子表格分析
+- **工作台**：集中进行资源概览、快速创建、模板中心，以及最近使用、收藏、分享和填报
+
 ## 1 界面展示
 
 ![界面展示图](/img/dataease/newimg/product_acceptance/界面介绍.gif)
@@ -35,10 +41,11 @@ DataEase 支持丰富的数据源连接，能够通过拖拉拽方式快速制�
 
 ## 4 主要功能
 
-- 图表展示: 支持 PC 端、移动端及大屏展示；
-- 图表制作: 支持丰富的图表类型、支持拖拉拽方式快速制作仪表板或数据大屏；
+- 图表展示：支持 PC 端、移动端及大屏展示；
+- 图表制作：支持丰富的图表类型、支持拖拉拽方式快速制作仪表板或数据大屏；
+- 电子表格：支持类 Excel 在线编辑，明细表 / 透视表绑定数据集，并支持公式计算与查询控件联动；
 - 数据查询：支持基于 Calcite 的跨源数据查询；
-- 数据连接: 支持关系型数据库、数据文件、数据仓库、API 等各种数据源。
+- 数据连接：支持关系型数据库、数据文件、数据仓库、API 等各种数据源。
 
 ## 5 版本对比
 
@@ -72,5 +79,4 @@ DataEase 支持丰富的数据源连接，能够通过拖拉拽方式快速制�
 - **如何向团队介绍 DataEase？：** [人人可用的开源 BI 工具](https://fit2cloud.com/dataease/download/introduce-dataease_2026.pdf)
 - **DataEase 技术白皮书：**  `https://whitepaper.dataease.cn/`
 - **DataEase 知识库：** `https://kb.fit2cloud.com/categories/dataease`
-- **DataEase 认证培训：** `https://edu.fit2cloud.com/index` 
-- **DataEase 书籍：** [《数据可视化分析与实践》](https://item.jd.com/10207058297099.html)
+- **DataEase 认证培训：** `https://edu.fit2cloud.com/index`
