@@ -25,7 +25,7 @@ Cordys CRM 能够帮助企业实现从线索到回款（L2C）的全流程精细
 
 <table style={{borderCollapse:'collapse', border:'1px solid black'}}>
   <tr>
-    <td style={{padding:'5px', backgroundColor:'#fff'}}><img src= "https://resource.fit2cloud.com/1panel/cordys-crm/img/setting.png" alt="Settings" /><div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  模块设置</div></td>
+    <td style={{padding:'5px', backgroundColor:'#fff'}}><img src= "https://resource.fit2cloud.com/1panel/cordys-crm/img/setting.png" alt="Settings" /><div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  模块配置</div></td>
     <td style={{padding:'5px', backgroundColor:'#fff'}}><img src= "https://resource.fit2cloud.com/1panel/cordys-crm/img/rbac.png" alt="RBAC" /><div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  角色设置</div></td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ Cordys CRM 能够帮助企业实现从线索到回款（L2C）的全流程精细
 - 合同管理：用于管理合同履约与回款相关数据，涵盖回款计划、回款记录、工商抬头及发票记录等子模块，支持合同回款节点管理、资金回收跟踪及开票信息维护，确保合同执行过程在 CRM 中闭环、可追溯。
 - 订单管理：用于管理合同履约执行数据，关联合同信息，覆盖订单创建、交付、验收与收款环节，支持履约进度跟踪与状态同步，保障业务执行规范可追溯。
 - Skills 技能：开放 CRM Skills 接口，驱动 OpenClaw、WorkBuddy 等智能助手 7×24 小时在线，让 AI 深入销售每个环节。
-- 系统管理：包含组织架构、角色权限、模块设置、消息管理、企业设置以及系统日志功能。
+- 系统管理：包含组织架构、角色权限、模块配置、消息管理、企业设置以及系统日志功能。
 ## 6  了解更多
 
 - [了解飞致云](https://www.fit2cloud.com/) 

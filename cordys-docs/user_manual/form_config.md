@@ -3,7 +3,7 @@ title: 业务表单配置
 ---
 
 
-点击左侧菜单【系统】，进入【模块设置】页面。
+点击左侧菜单【系统】，进入【模块配置】页面。
 
 系统已内置以下业务表单模板：
 
@@ -37,9 +37,9 @@ title: 业务表单配置
 2. **配置属性**：在右侧字段属性面板修改字段的基本信息、约束、权限等
 3. **调整布局**：在表单属性中修改整体表单布局
 
-![模块设置](/img/cordys/user_manual/module-settings2.png)
+![模块配置](/img/cordys/user_manual/module-settings2.png)
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  模块设置</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  模块配置</div>
 
 
 表单字段设置
@@ -226,7 +226,7 @@ title: 业务表单配置
 ## 2 业务规则设置
 
 
-在【模块设置】中，可以对不同模块的业务规则进行自定义配置。
+在【模块配置】中，可以对不同模块的业务规则进行自定义配置。
 
 **可配置的业务规则：**
 

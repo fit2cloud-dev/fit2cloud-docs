@@ -26,7 +26,7 @@ title: 回款记录
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  回款记录配置</div>
 
 
-管理员进入【系统-模块设置】，点击「回款记录表单设置」，选择「合同名称」，设置显示字段。
+管理员进入【系统-模块配置】，点击「回款记录表单设置」，选择「合同名称」，设置显示字段。
     
 ![回款记录关联显示](/img/cordys/user_manual/contractPaymentRecord32.png)
 

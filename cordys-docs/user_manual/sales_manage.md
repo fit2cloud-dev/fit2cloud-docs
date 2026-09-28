@@ -54,7 +54,7 @@ title: 销售流程管理
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  线索转客户</div>
 
 
-管理员进入【系统-模块设置】，点击「客户表单设置」，进入「表单属性」，设置表单联动。
+管理员进入【系统-模块配置】，点击「客户表单设置」，进入「表单属性」，设置表单联动。
 
 ![客户表单设置](/img/cordys/user_manual/image-202509181141221552.png)
 
