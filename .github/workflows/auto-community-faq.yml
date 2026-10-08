@@ -160,8 +160,18 @@ jobs:
       #   sparse-checkout   —— 工作区只物化下面两个范围，于是「按需取」的 blob 也只有这 0.92MB
       # 配套：本 workflow 已**取消 rebase**（见 Prepare fixed branch），因此不再需要完整历史。
       # 另：不再使用 actions/setup-python —— runner 自带 python3 即可，少一个跨境下载点。
+      # 跨境抖动重试（2026-10-08）：本仓库到 GitHub 的跨境链路是「概率性被掐」——
+      # 2026-10-05 定时运行实测：即便已按上面的浅克隆+稀疏检出压到 0.92MB，checkout
+      # 仍在 ~4 分钟后失败（TLS EOF / early EOF 一类），随后所有步骤 skipped。
+      # 同一套配置此前多次跑通过，属链路抖动而非配置错误，故失败后等待再重试，
+      # 最多 4 次尝试、间隔 30s。action 失败会直接终止步骤，用 continue-on-error
+      # 把失败转成输出，由后面的「Checkout failed」步骤在重试用尽后如实报错。
+      # 注：重试会复用同名 action 缓存目录，若上次失败留下半截仓库导致重试反复失败，
+      # 退路是在重试前 rm -rf "$GITHUB_WORKSPACE"/* 清一次（本次先不加，观察）。
       - name: Checkout (partial clone + sparse)
+        id: checkout
         uses: actions/checkout@v4
+        continue-on-error: true
         with:
           ref: ${{ env.BASE_BRANCH }}
           fetch-depth: 1
@@ -179,6 +189,64 @@ jobs:
             /.github/
             /jumpserver-docs/*.md
             /jumpserver-docs/**/*.md
+
+      # 重试循环：actions/checkout 自身没有重试参数，失败后在这里重跑它。
+      # 重跑方式：直接执行 runner _tool 目录里已下载的 checkout 入口脚本
+      # （RUNNER_TOOL_CACHE/checkout/<版本>/<arch>/bin/git-helper 所在目录），
+      # 环境变量（GITHUB_*、INPUT_*）由 runner 原样保留，等价于再跑一次 action。
+      # 若找不到入口脚本（缓存路径随 runner 版本变化），退化为 curl 下载 action 仓库再跑。
+      - name: Retry checkout on transient failure
+        id: retry-checkout
+        if: ${{ steps.checkout.outcome == 'failure' }}
+        env:
+          INPUT_REF: ${{ env.BASE_BRANCH }}
+          INPUT_FETCH_DEPTH: 1
+          INPUT_FILTER: blob:none
+          INPUT_SPARSE_CHECKOUT_CONE_MODE: "false"
+          INPUT_SPARSE_CHECKOUT: |
+            /.github/
+            /jumpserver-docs/*.md
+            /jumpserver-docs/**/*.md
+        run: |
+          set -e
+          # 定位已下载的 actions/checkout（尝试 v4 下所有已缓存版本，取最新）
+          entry="$(find "${RUNNER_TOOL_CACHE}/checkout" -maxdepth 4 -name git-helper -type f 2>/dev/null | sort -V | tail -1 || true)"
+          if [ -z "${entry}" ]; then
+            echo "::warning::未找到已缓存的 checkout 入口脚本，改用 curl 重新下载 actions/checkout"
+            tmp="$(mktemp -d)"
+            curl -fsSL --retry 3 -o "${tmp}/checkout.tar.gz" \
+              https://github.com/actions/checkout/archive/refs/tags/v4.2.2.tar.gz
+            tar -xzf "${tmp}/checkout.tar.gz" -C "${tmp}"
+            ( cd "${tmp}"/checkout-* && npm ci --omit=dev >/dev/null 2>&1 || true )
+            entry="${tmp}"/checkout-*/dist/index.js
+          fi
+          echo "checkout 入口：${entry}"
+          delay=30
+          for attempt in 2 3 4; do
+            echo "── checkout 重试 第 ${attempt}/4 次（等待 ${delay}s 让链路恢复）──"
+            sleep "${delay}"
+            delay=$((delay * 2))
+            # 清理上次失败留下的半截仓库，避免 git 状态污染重试
+            rm -rf "${GITHUB_WORKSPACE:?}/.git" "${GITHUB_WORKSPACE:?}"/* 2>/dev/null || true
+            # 工作区清空后 git-helper 需要目录存在
+            cd "${GITHUB_WORKSPACE}"
+            if node "${entry}"; then
+              echo "重试成功（第 ${attempt} 次）"
+              exit 0
+            fi
+            echo "::warning::第 ${attempt} 次 checkout 仍失败"
+          done
+          echo "::error::checkout 连续 4 次失败 —— 跨境链路当前不可用（非配置问题）。"
+          echo "::error::若持续失败：考虑把 sparse 范围改成 cone 模式整目录（见 Checkout 步骤注释的退路），或给该 runner 配置代理。"
+          exit 1
+
+      # checkout 失败（含重试用尽）时，让 job 明确失败在这里，而不是让后续步骤
+      # 以「文件不存在」之类的误导性报错继续。
+      - name: Fail fast if checkout never succeeded
+        if: ${{ steps.checkout.outcome == 'failure' && steps.retry-checkout.outcome != 'success' }}
+        run: |
+          echo "::error::checkout 最终失败，无法继续。"
+          exit 1
 
       # 配置自检：缺东西就立刻失败并指明缺哪一项，避免跑到取数阶段才报错
       - name: Preflight
