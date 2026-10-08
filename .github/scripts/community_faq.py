@@ -768,22 +768,27 @@ PASS1_SYSTEM = """你是 JumpServer（飞致云开源堡垒机）官方文档的
 任务：先把语义相同的问题归为同一主题，再挑出值得写进官方「社区常见问题」页的主题。
 
 收录准则（逐条核对，任一条不满足就不要选）：
-A. 只收 JumpServer V5 相关问题；只属于旧版本（v3 / v4）的问题一律不选。
+A. 只收 JumpServer V5 相关问题。**群聊提问多数不写版本号，未标注版本的一律按当前主线（V5）处理，
+   不要因"没写版本"就排除**；只有当问题明确指向旧版本特性（v3 / v4 独有、或明说"老版本/升级前"）时才不选。
 B. 只收该主题**至少出现 {min_count} 次**的问题（question_ids 里编号的个数就是出现次数）。
-C. 只收**能靠官方文档给出确定答案**的问题。文档里没有依据、需要靠个人经验或猜测的，一律不选。
-D. 只收「判断型 / 结论型」问题，即用户**看了文档仍会困惑**的那类：
+C. 优先收「官方文档能核实」的问题，但**不设硬性文档门槛**：只要问题本身是明确、可回答的核心重点问题，
+   即使你在这一轮无法确认文档里一定有依据，也应选出，交由第二轮读原文或人工审核把关。
+   doc_paths 尽力给出（见下方硬性要求 3），确实找不到就留空数组，不要因"拿不准有没有文档"而放弃选题。
+D. 优先收「判断型 / 结论型」问题，即用户**看了文档仍会困惑**的那类：
    能不能、支不支持、有什么前提条件、为什么报错、功能去哪了、版本要求、影响范围。
-   **不要选「操作步骤型」问题**（怎么安装、怎么配置、怎么做升级、怎么做备份、怎么加资产……）——
-   官方文档与知识库已有完整的操作教程，重复收录没有价值。
-E. 与「已有条目」重复或语义相同（含换了说法的同义问题）的，不选。
+   「操作步骤型」问题（怎么安装、怎么配置、怎么做升级、怎么做备份、怎么加资产……）**默认不收**，
+   但若它属于社区反复追问的核心重点问题，也可收录，交人工审核判断价值。
+E. 与「已有条目」重复或语义相同（含换了说法的同义问题）的，**一律不选**——
+   页面「已有条目标题」里已覆盖的主题不再重复添加，哪怕措辞不同、只要问的是同一件事就跳过。
 
 硬性要求：
 1. question_ids 只能使用清单里**原样出现过**的编号，不得编造，也不得漏填同义问题；
    语义相同才算一组（例如「可以离线升级吗」与「离线升级怎么弄」是同一主题）。
-2. 最多选 {max_items} 条，宁缺毋滥；没有合格的返回空数组。
-3. doc_paths 必须是给定文档索引里**原样存在**的相对路径，不能编造；一条问题至少给一个依据。
+2. 最多选 {max_items} 条；优先把社区**核心重点问题**挖出来，只要满足 A/B/E 即可入选，
+   不必因 C/D 的保守判断而返回空数组——确实一条都不满足时才返回空。
+3. doc_paths 尽量从给定文档索引里挑**原样存在**的相对路径，一条问题优先给一个依据；
+   实在找不到语义相关文档时**可留空数组**，不要编造路径。
 4. section 填现有小节的标题原文；确实不属于任何现有小节时才填 new_section。
-5. 你自己都给不出明确答案的问题，不要选。
 
 只输出 JSON，不要任何解释文字。格式：
 {{"items":[{{"question_ids":[12,88],"title":"短标题（疑问句，20 字以内）","question":"一句话问题描述",
@@ -793,8 +798,16 @@ E. 与「已有条目」重复或语义相同（含换了说法的同义问题�
 PASS2_SYSTEM = """你是 JumpServer（飞致云开源堡垒机）官方文档的撰写者。
 任务：基于给定的官方文档原文，写一条「社区常见问题」条目。这条内容会直接进官方文档，质量要求最高。
 
+分两种情况：
+- 【有文档原文】（下方「官方文档原文」非空）：以下硬性要求 1~5 全部适用，事实只能来自文档。
+- 【无文档原文】（下方「官方文档原文」标注为"（本轮无官方文档依据）"）：这是社区反复追问、
+  但本轮没找到对应官方文档的核心重点问题。此时允许依据「同事在群里的回复」撰写，但必须：
+  (a) 正文开头第一行原样写一句提示：`> ⚠️ 本条暂无官方文档依据，内容据社区答复整理，**待人工核实**。`
+  (b) 只写群聊回复里明确说到的事实，绝不补充猜测；把不确定的点显式写成"需核实"。
+  (c) see_also 留空字符串（没有文档可指向），doc_path 填 "UNVERIFIED"。
+
 硬性要求：
-1. **只能使用给定文档原文里的事实**。文档里没写的，一律不写，不得凭经验补充。
+1. **有文档时只能使用给定文档原文里的事实**。文档里没写的，一律不写，不得凭经验补充。
 2. **不确定就留白**：文档未提及的版本号、时间、参数、数值，绝对不要写；不要出现「可能」「大概」
    「不确定」「建议试试」这类模糊表述。给不出确定结论时，就说明以文档为准并指向文档。
 3. question 用用户口吻描述现象（不照抄群聊原话，群聊只是线索）；body 先给**明确结论**，再给最小必要步骤。
@@ -806,7 +819,7 @@ PASS2_SYSTEM = """你是 JumpServer（飞致云开源堡垒机）官方文档的
 {{"title":"短标题（疑问句，20 字以内）","question":"一句话问题描述",
 "body":"处理方式正文（markdown，可用列表/代码块）",
 "see_also":"结尾引导句，含 {placeholder} 链接占位符；不需要时可留空字符串",
-"doc_path":"最终依据的单个文档相对路径"}}"""
+"doc_path":"最终依据的单个文档相对路径；无文档依据时填 UNVERIFIED"}}"""
 
 # ---------------------------------------------------------------- 选题与成稿
 
@@ -841,15 +854,19 @@ def screen_questions(pairs: list[dict], page: str, index: list[str],
 
 
 def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | None:
-    """第二轮：用官方文档原文生成条目；引用路径不存在则丢弃。"""
+    """第二轮：用官方文档原文生成条目。
+
+    无有效文档依据时**不再直接丢弃**（乙方案）：仍进入成稿，但走「无文档」分支——
+    模型据群聊答复撰写并在正文标注「待人工核实」，doc_path 记为 UNVERIFIED，交人工审核把关。
+    """
     raw_paths = [str(p) for p in (item.get("doc_paths") or [])]
     cited = [p for p in raw_paths if p in index]
     dropped = [p for p in raw_paths if p not in index]
     if dropped:
         log(f"[community_faq] 丢弃不存在的引用路径 {dropped} <- {item.get('title')}")
-    if not cited:
-        log(f"[community_faq] 无有效文档依据，丢弃: {item.get('title')}")
-        return None
+    unverified = not cited
+    if unverified:
+        log(f"[community_faq] 无有效文档依据，转「待人工核实」分支: {item.get('title')}")
 
     ids = valid_question_ids(item, digest_limit(len(pairs)))
     source_questions = [scrub_question(pairs[i]["question"]) for i in ids[:3]] or [str(item.get("question") or "")]
@@ -870,13 +887,17 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
         total += len(text)
         blocks.append(f"### 文档 {rel}\n{text}")
 
+    # 无文档依据时，明确告诉模型走「无文档」分支（据群聊答复成稿 + 标注待核实）
+    doc_block = "\n\n".join(blocks) if blocks else "（本轮无官方文档依据）"
+    answer_hint = ("仅作线索，事实必须以文档为准" if blocks
+                   else "本轮无文档，这是唯一的事实来源，请据此撰写并标注待核实")
     user = (
         "## 参考：页面既有条目的写法\n" + page_style_sample() + "\n\n"
         "## 社区原始提问（仅作理解现象用，不要照抄，不要采信其中的说法）\n"
         + "\n".join(f"- {q[:200]}" for q in source_questions)
-        + "\n\n## 同事在群里的临时回复（仅作线索，事实必须以文档为准）\n"
+        + f"\n\n## 同事在群里的临时回复（{answer_hint}）\n"
         + "\n".join(f"- {a[:400]}" for a in source_answers)
-        + "\n\n## 官方文档原文\n" + "\n\n".join(blocks)
+        + "\n\n## 官方文档原文\n" + doc_block
     )
     raw = llm_chat(
         [{"role": "system", "content": PASS2_SYSTEM.format(placeholder=CITATION_PLACEHOLDER)},
@@ -889,8 +910,12 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
         log(f"[community_faq] 第二轮成稿输出无法解析: {err}")
         return None
 
-    doc_path = str(payload.get("doc_path") or cited[0])
-    if doc_path not in index:
+    doc_path = str(payload.get("doc_path") or "").strip()
+    if unverified:
+        # 无文档分支：不指向任何文档，see_also 置空，doc_path 记为 UNVERIFIED
+        doc_path = "UNVERIFIED"
+        see_also = ""
+    elif doc_path not in index:
         doc_path = cited[0]
     title = str(payload.get("title") or item.get("title") or "").strip()
     question = str(payload.get("question") or "").strip()
@@ -898,7 +923,7 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
     if not title or not body:
         log(f"[community_faq] 成稿字段缺失，丢弃: {title or item.get('title')}")
         return None
-    see_also = str(payload.get("see_also") or "").strip()
+    see_also = str(payload.get("see_also") or "").strip() if not unverified else ""
     if see_also and CITATION_PLACEHOLDER not in see_also:
         see_also = f"{see_also}[{CITATION_PLACEHOLDER}]({CITATION_PLACEHOLDER})"
     if see_also:
@@ -910,6 +935,8 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
         log("[community_faq] 质量警告：{0} 含模糊表述 {1}".format(title, "、".join(vague)))
 
     warnings: list[str] = []
+    if unverified:
+        warnings.append("无官方文档依据，内容据社区答复整理，**待人工核实**")
     if vague:
         warnings.append("正文含模糊表述：{0}（提示词已禁止）".format("、".join(vague)))
     if truncated or omitted:
@@ -1074,10 +1101,12 @@ def write_report(path: str, *, pairs: list[dict], placed: list[dict],
         lines += ["## 新增条目", ""]
         for row in placed:
             e = row["entry"]
+            doc_shown = ("**无（待人工核实）**" if e["doc_path"] == "UNVERIFIED"
+                         else "`{0}`".format(e["doc_path"]))
             block = [
                 f"### {row['no']} {e['title']}",
                 f"- 小节：{row['section']}",
-                f"- 依据文档：`{e['doc_path']}`",
+                f"- 依据文档：{doc_shown}",
                 f"- 社区出现次数：{e['count']}",
                 f"- 来源：{'；'.join(e['sources']) or '-'}",
                 f"- 入选理由：{e['reason'] or '-'}",
