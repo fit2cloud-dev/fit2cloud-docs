@@ -2,8 +2,13 @@
 """
 fit2cloud 多产品更新日志自动生成脚本（Docusaurus / fit2cloud-docs）
 
-从社区发布 API 取指定版本的发布说明，按各产品 changelog.md 的既有格式生成一个新的
-版本区块，插入到目标文件「更新内容」章节的最前面（即现有最新版本之前）。
+从发布源取指定版本的发布说明，按各产品 changelog.md 的既有格式生成一个新的版本区块，
+插入到目标文件「更新内容」章节的最前面（即现有最新版本之前）。
+
+发布源有两种（见各产品配置的 source）:
+    'ul' / 'br'  社区发布 API，https://community.fit2cloud.com/v1/products/{code}/releases
+    'gh'         GitHub Releases，https://api.github.com/repos/{owner}/{repo}/releases
+                 （正文是 markdown，不是 HTML，故单独用一个解析器）
 
 与 gen_changelog.py（JumpServer 专用）相互独立，互不影响。
 
@@ -14,31 +19,35 @@ fit2cloud 多产品更新日志自动生成脚本（Docusaurus / fit2cloud-docs�
     python .github/scripts/gen_changelog_multi.py maxkb   v2.10.6-lts --force   # 忽略「已存在」
 
 产品 -> 目标文件（按主版本号路由；未列出的大版本走 default_target）:
-    maxkb    -> maxkb-docs/changelog.md     (v1.x -> maxkb_versioned_docs/version-v1/changelog.md)
-    dataease -> dataease-docs/changelog.md  (v2.x -> dataease_versioned_docs/version-v2/changelog.md)
-    1panel   -> 1panel-docs/changelog.md    (v1.x -> 1panel_versioned_docs/version-v1/changelog.md)
-    sqlbot   -> sqlbot-docs/changelog.md
-    cordys   -> cordys-docs/changelog.md
+    maxkb      -> maxkb-docs/changelog.md      (v1.x -> maxkb_versioned_docs/version-v1/changelog.md)
+    dataease   -> dataease-docs/changelog.md   (v2.x -> dataease_versioned_docs/version-v2/changelog.md)
+    1panel     -> 1panel-docs/changelog.md     (v1.x -> 1panel_versioned_docs/version-v1/changelog.md)
+    sqlbot     -> sqlbot-docs/changelog.md
+    cordys     -> cordys-docs/changelog.md
+    ai-gateway -> ai-gateway-docs/changelog.md (数据源为 GitHub Releases，无版本快照目录)
 
-退出码: 0=成功或已存在无需修改, 1=版本在社区列表中不存在, 2=参数/文件错误,
+退出码: 0=成功或已存在无需修改, 1=版本在发布列表中不存在, 2=参数/文件错误,
         3=版本与目标文件不匹配(见 sanity_check, 路由配置可能已过期)
 """
 from __future__ import annotations
 
-import sys, json, re, html, urllib.request
+import sys, os, json, re, html, urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 API_BASE = "https://community.fit2cloud.com/v1/products/{}/releases"
+GH_API = "https://api.github.com/repos/{}/releases"
 TZ = timezone(timedelta(hours=8))
 
 # ---------------------------------------------------------------------------
 # 产品配置
 #
-#   api                 社区 API 的产品代号
+#   api                 社区 API 的产品代号（source='gh' 时不使用）
+#   gh_repo             GitHub 仓库（owner/name），仅 source='gh' 时使用
 #   targets             主版本号 -> 目标文件（版本快照目录）；未列出的走 default_target
 #   default_target      当前的（非快照）更新日志文件
-#   source              源格式解析器: 'ul'(h*/ul/li) | 'br'(h1/p/■/br)
+#   source              数据源与解析器: 'ul'(社区 h*/ul/li) | 'br'(社区 h1/p/■/br)
+#                       | 'gh'(GitHub Releases 的 markdown 正文)
 #   date_style          日期格式: 'plain'(2026年9月24日) | 'spaced'(2026 年 9 月 24 日)
 #   title_date_blank    版本标题与日期之间是否空一行
 #   bullet              条目前缀
@@ -51,7 +60,7 @@ TZ = timezone(timedelta(hours=8))
 #   enabled            是否纳入自动流程（默认 True）；False 时 --list 不输出，
 #                      workflow 也不会为其创建任务
 #
-# 当前启用: dataease / 1panel / cordys
+# 当前启用: dataease / 1panel / cordys / ai-gateway
 # 当前停用: sqlbot / maxkb
 #   这两个产品的社区 API 发布说明是「开发视角」的原始条目（带 feat/refactor/build
 #   前缀与 issue 号），与文档里「产品视角」的人工整理内容并非同一份数据；用现有最新
@@ -148,6 +157,24 @@ PRODUCTS = {
         ],
         'fallback_group': None,
     },
+    'ai-gateway': {
+        # 数据源是 GitHub Releases（正文为 markdown），不走社区发布 API。
+        'source': 'gh',
+        'gh_repo': '1Panel-dev/1Panel-Gateway',
+        'targets': {},
+        'default_target': 'ai-gateway-docs/changelog.md',
+        'date_style': 'plain',
+        'title_date_blank': True,
+        'bullet': '- ',
+        'strip_trailing': True,
+        'groups': [
+            # GitHub 上 v1.1.0 这类版本的小标题写作「优化改进」，文档统一归到「功能优化」。
+            {'match': ['新增功能', '新功能', '新增'], 'title': '**新增功能**'},
+            {'match': ['优化改进', '功能优化', '优化', '改进'], 'title': '**功能优化**'},
+            {'match': ['问题修复', '错误修复', 'bug 修复', '修复'], 'title': '**问题修复**'},
+        ],
+        'fallback_group': None,
+    },
 }
 
 # 版本区块所在位置：文件中第一个 "### vX" 之前
@@ -160,17 +187,83 @@ BR = re.compile(r'<br\s*/?>', re.I)
 EMOJI = re.compile(r'[\u2190-\u27BF\u2B00-\u2BFF\uFE0F\U0001F000-\U0001FAFF]')
 NUM_PREFIX = re.compile(r'^\s*[\d.]+\s*')
 
+# markdown（GitHub Releases 正文）
+MD_HEAD = re.compile(r'^\s{0,3}#{1,6}\s+(.*?)\s*#*\s*$')
+MD_ITEM = re.compile(r'^\s*[-*+]\s+(.*)$')
+MD_LINK = re.compile(r'\[([^\]]*)\]\(([^)]*)\)')
+MD_BOLD = re.compile(r'\*\*(.+?)\*\*')
+MD_STRIKE = re.compile(r'~~(.+?)~~')
+MD_CODE = re.compile(r'`([^`]*)`')
+MD_ITALIC = re.compile(r'(?<!\*)\*(?!\s)([^*]+?)(?<!\s)\*(?!\*)')
+
 
 def fetch(api: str):
     with urllib.request.urlopen(API_BASE.format(api), timeout=30) as r:
         return json.loads(r.read().decode())
 
 
-def latest_version(api: str) -> str:
-    """社区发布列表的第一条即最新版本（列表按发布时间倒序）。"""
-    data = fetch(api)
+def gh_headers() -> dict:
+    """GitHub API 请求头。带 GITHUB_TOKEN / GH_TOKEN 时鉴权，避免匿名限流（60 次/小时）。"""
+    h = {
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+        'User-Agent': 'fit2cloud-docs-changelog',
+    }
+    token = os.environ.get('GITHUB_TOKEN') or os.environ.get('GH_TOKEN')
+    if token:
+        h['Authorization'] = f'Bearer {token}'
+    return h
+
+
+def fetch_gh(repo: str):
+    """GitHub Releases -> 归一化成与社区发布 API 相同的结构。
+
+    统一后的字段（下游 find_release / render / insert 无需区分数据源）:
+        version        tag_name，如 v1.3.0
+        publishTime    发布时间，毫秒时间戳（换算成北京时间由 TZ 负责）
+        releaseNoteH   release 正文，这里是 markdown
+    """
+    req = urllib.request.Request(GH_API.format(repo) + '?per_page=100', headers=gh_headers())
+    with urllib.request.urlopen(req, timeout=30) as r:
+        data = json.loads(r.read().decode())
+    out = []
+    for rel in data:
+        if rel.get('draft'):
+            continue
+        version = (rel.get('tag_name') or '').strip()
+        if not version:
+            continue
+        ts = None
+        published = rel.get('published_at') or rel.get('created_at')
+        if published:
+            try:
+                dt = datetime.strptime(published, '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=timezone.utc)
+                ts = int(dt.timestamp() * 1000)
+            except ValueError:
+                ts = None
+        out.append({'version': version, 'publishTime': ts, 'releaseNoteH': rel.get('body') or ''})
+    return out
+
+
+def fetch_releases(cfg: dict):
+    """按配置的数据源取发布列表；'gh' 走 GitHub Releases，其余走社区发布 API。"""
+    if cfg.get('source') == 'gh':
+        return fetch_gh(cfg['gh_repo'])
+    return fetch(cfg['api'])
+
+
+def source_label(cfg: dict) -> str:
+    """发布源的可读地址（用于日志与 PR 正文）。"""
+    if cfg.get('source') == 'gh':
+        return f'GitHub Releases https://github.com/{cfg["gh_repo"]}/releases'
+    return API_BASE.format(cfg['api'])
+
+
+def latest_version(cfg: dict) -> str:
+    """发布列表的第一条即最新版本（列表按发布时间倒序）。"""
+    data = fetch_releases(cfg)
     if not data:
-        raise SystemExit(f'{api} 的社区发布列表为空')
+        raise SystemExit(f'{cfg.get("api") or cfg.get("gh_repo")} 的发布列表为空')
     return (data[0].get('version') or '').strip()
 
 
@@ -244,6 +337,61 @@ def parse_br(note: str):
         if items:
             sections.append((title, items))
     return sections
+
+
+def md_inline(s: str) -> str:
+    """markdown 行内语法 -> 纯文本；[text](url) 保留为 markdown 链接。"""
+    s = MD_LINK.sub(lambda m: '[%s](%s)' % (m.group(1).strip(), m.group(2).strip()), s)
+    s = MD_CODE.sub(r'\1', s)
+    s = MD_BOLD.sub(r'\1', s)
+    s = MD_STRIKE.sub(r'\1', s)
+    s = MD_ITALIC.sub(r'\1', s)
+    return re.sub(r'[ \t\u00a0]+', ' ', s).strip()
+
+
+def parse_md(note: str):
+    """markdown 正文结构（ai-gateway / GitHub Releases）。
+
+    以 #~###### 标题切分为分组；组内以 -/*/+ 列表行为条目，
+    非列表的续行并入上一条（应对正文折行）。段落等非列表内容不产出条目。
+    """
+    lines = note.replace('\r\n', '\n').replace('\r', '\n').split('\n')
+    sections = []
+    title = None
+    items = []
+    cur = None
+
+    def flush():
+        nonlocal cur
+        if cur is not None:
+            t = md_inline(cur)
+            if t:
+                items.append(t)
+            cur = None
+
+    for ln in lines:
+        hm = MD_HEAD.match(ln)
+        if hm:
+            flush()
+            if title is not None and items:
+                sections.append((title, items))
+            title = md_inline(hm.group(1))
+            items = []
+            continue
+        bm = MD_ITEM.match(ln)
+        if bm:
+            flush()
+            cur = bm.group(1).strip()
+            continue
+        if cur is not None and ln.strip():
+            cur = f'{cur} {ln.strip()}'
+    flush()
+    if title is not None and items:
+        sections.append((title, items))
+    return sections
+
+
+PARSE_BY_SOURCE = {'ul': parse_ul, 'br': parse_br, 'gh': parse_md}
 
 
 def fmt_date(dt: datetime, style: str) -> str:
@@ -361,6 +509,7 @@ def main() -> int:
     dry_run = '--dry-run' in argv
     print_target = '--print-target' in argv
     print_version = '--print-version' in argv
+    print_source = '--print-source' in argv
     force = '--force' in argv
 
     enabled = [k for k, v in PRODUCTS.items() if v.get('enabled', True)]
@@ -385,7 +534,7 @@ def main() -> int:
 
     if not pos:
         print('Usage: gen_changelog_multi.py <product> [<version>] '
-              '[--list|--matrix|--print-version|--print-target|--dry-run|--force]',
+              '[--list|--matrix|--print-version|--print-target|--print-source|--dry-run|--force]',
               file=sys.stderr)
         return 2
 
@@ -396,13 +545,18 @@ def main() -> int:
         return 2
     cfg = PRODUCTS[prod]
 
+    # --print-source: 回显该产品的发布源地址（无需版本参数）
+    if print_source:
+        print(source_label(cfg))
+        return 0
+
     # --print-version: 带版本参数则回显，否则取社区 API 最新版本（供 workflow 检测用）
     if print_version:
         if len(pos) >= 2 and pos[1].strip():
             raw = pos[1].strip()
             print(raw if raw.startswith('v') else 'v' + raw)
         else:
-            print(latest_version(cfg['api']))
+            print(latest_version(cfg))
         return 0
 
     if len(pos) < 2:
@@ -441,15 +595,15 @@ def main() -> int:
         print(f'{target} already exists in {path}, skip.')
         return 0
 
-    rel = find_release(target, fetch(cfg['api']))
+    rel = find_release(target, fetch_releases(cfg))
     if not rel:
-        print(f'Target version {target} not found in community release list', file=sys.stderr)
+        print(f'Target version {target} not found in {source_label(cfg)}', file=sys.stderr)
         return 1
 
     ts = rel.get('publishTime')
     dt = datetime.fromtimestamp(ts / 1000, tz=TZ) if ts else datetime.now(tz=TZ)
     note = rel.get('releaseNoteH') or ''
-    parser = parse_br if cfg['source'] == 'br' else parse_ul
+    parser = PARSE_BY_SOURCE.get(cfg['source'], parse_ul)
     sections = parser(note)
     if not sections:
         print(f'Empty release notes for {target}', file=sys.stderr)
