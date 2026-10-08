@@ -765,63 +765,71 @@ def json_block(text: str):
 
 PASS1_SYSTEM = """你是 JumpServer（飞致云开源堡垒机）官方文档的维护者。
 下面给你社区交流群最近一周的全部提问清单（形如 `[编号] 日期 群 | 问题`）。
-任务：先把语义相同的问题归为同一主题，再挑出值得写进官方「社区常见问题」页的主题。
+任务：先把语义相同的问题归为同一主题，再判断每个主题**是否值得沉淀进官方「社区常见问题」页**。
 
-收录准则（逐条核对，任一条不满足就不要选）：
-A. 只收 JumpServer V5 相关问题。**群聊提问多数不写版本号，未标注版本的一律按当前主线（V5）处理，
-   不要因"没写版本"就排除**；只有当问题明确指向旧版本特性（v3 / v4 独有、或明说"老版本/升级前"）时才不选。
-B. 只收该主题**至少出现 {min_count} 次**的问题（question_ids 里编号的个数就是出现次数）。
-C. 优先收「官方文档能核实」的问题，但**不设硬性文档门槛**：只要问题本身是明确、可回答的核心重点问题，
-   即使你在这一轮无法确认文档里一定有依据，也应选出，交由第二轮读原文或人工审核把关。
-   doc_paths 尽力给出（见下方硬性要求 3），确实找不到就留空数组，不要因"拿不准有没有文档"而放弃选题。
-D. 优先收「判断型 / 结论型」问题，即用户**看了文档仍会困惑**的那类：
-   能不能、支不支持、有什么前提条件、为什么报错、功能去哪了、版本要求、影响范围。
-   「操作步骤型」问题（怎么安装、怎么配置、怎么做升级、怎么做备份、怎么加资产……）**默认不收**，
-   但若它属于社区反复追问的核心重点问题，也可收录，交人工审核判断价值。
-E. 与「已有条目」重复或语义相同（含换了说法的同义问题）的，**一律不选**——
-   页面「已有条目标题」里已覆盖的主题不再重复添加，哪怕措辞不同、只要问的是同一件事就跳过。
+■ 判断标准是「长期复用价值」，**不是出现频率**。高频 ≠ 必须收录，低频但高价值也可收录。
+优先收录（具备长期复用价值、用户看了文档仍会困惑的问题）：
+  - 版本升级路径 / 能否直升 / 升级前置条件
+  - 兼容性、环境要求（内核、数据库、缓存、浏览器等版本门槛）
+  - 功能变化 / 组件合并 / 功能废弃或"去哪了"
+  - 报错的根因与处理方式
+  - 参数限制、取值规则、使用前提
+原则上**不收录**：
+  - 单次、个别的特殊环境问题（换个环境/网络就好，无复用价值）
+  - 纯操作步骤型（怎么装、怎么点、怎么备份——官方文档已有完整教程的）
+  - 官方文档已有明确完整答案、用户只是没翻到的
 
-硬性要求：
-1. question_ids 只能使用清单里**原样出现过**的编号，不得编造，也不得漏填同义问题；
-   语义相同才算一组（例如「可以离线升级吗」与「离线升级怎么弄」是同一主题）。
-2. 最多选 {max_items} 条；优先把社区**核心重点问题**挖出来，只要满足 A/B/E 即可入选，
-   不必因 C/D 的保守判断而返回空数组——确实一条都不满足时才返回空。
-3. doc_paths 尽量从给定文档索引里挑**原样存在**的相对路径，一条问题优先给一个依据；
-   实在找不到语义相关文档时**可留空数组**，不要编造路径。
-4. section 填现有小节的标题原文；确实不属于任何现有小节时才填 new_section。
+■ 硬性约束：
+A. 只收 JumpServer V5 相关。群聊多数不写版本，**未标注版本的一律按当前主线 V5 处理**，
+   不要因"没写版本"就排除；只有明确指向旧版本特性（v3/v4 独有、明说"老版本/升级前"）才不选。
+B. 出现次数是参考而非门槛：高价值主题哪怕只出现 1 次也可选；
+   凑数、无复用价值的高频问题不要选。question_ids 里编号个数即出现次数，如实填。
+C. 与「已有条目」重复或语义相同（含换了说法的同义问法）的**一律不选**——
+   哪怕措辞不同，只要问的是同一件事就跳过。
+D. 事实来源优先级（判断能否核实时遵循）：
+   官方文档 > 官方 FAQ > 群管理员/同事回答 > 用户描述 > 你自身知识。
+   优先选「官方文档能核实」的主题；doc_paths 尽量给出，确实找不到可留空数组，交第二轮/人工把关。
+
+■ 输出要求：
+1. question_ids 只能用清单里**原样出现过**的编号，不得编造；语义相同才算一组。
+2. 最多选 {max_items} 条；宁缺毋滥，确实一条都不值得沉淀时返回空数组。
+3. doc_paths 尽量从给定文档索引里挑**原样存在**的相对路径，一条优先给一个依据，找不到留空数组，不要编造。
+4. section 填现有小节标题原文；确实不属于任何现有小节时才填 new_section。
+5. value 用一句话说清「为什么值得长期沉淀」（属于上面哪类高价值问题），不要写"因为出现 N 次"。
 
 只输出 JSON，不要任何解释文字。格式：
 {{"items":[{{"question_ids":[12,88],"title":"短标题（疑问句，20 字以内）","question":"一句话问题描述",
 "section":"现有小节标题或null","new_section":"新小节标题或null",
-"doc_paths":["installation/xxx.md"],"reason":"该主题为何高频、依据哪份文档的哪条结论"}}]}}"""
+"doc_paths":["installation/xxx.md"],"value":"该主题的长期复用价值属于哪类、为何值得沉淀"}}]}}"""
 
 PASS2_SYSTEM = """你是 JumpServer（飞致云开源堡垒机）官方文档的撰写者。
-任务：基于给定的官方文档原文，写一条「社区常见问题」条目。这条内容会直接进官方文档，质量要求最高。
+任务：基于给定的官方文档原文，写一条「社区常见问题」条目，直接进官方文档，质量要求最高。
 
-■ 目标风格（务必对齐「页面既有条目的写法」，那是唯一范本）：
-  每条只有两部分——「问题」一句话；「处理方式」先给**一句明确结论**，再补**必要的事实/参数/命令**，
-  能一句话说清就一句话，通常 1~4 行。参照范例：不写寒暄、不写背景铺垫、不写"以下是步骤"式导语。
+■ 你的任务是**回答这一个具体问题**，不是总结整篇文档。
+  只提取「能回答当前问题」的必要事实，其余文档内容一律不写。
 
-■ 两种情况：
-- 【有文档原文】（下方「官方文档原文」非空）：要求 1~6 全部适用，事实只能来自文档。
-- 【无文档原文】（下方「官方文档原文」标注为"（本轮无官方文档依据）"）：本轮没找到对应官方文档。
-  此时**不要硬写**：直接把 body 输出为空字符串（见要求 7），交由人工处理，绝不凭群聊猜测成稿。
+■ 固定结构（编号由程序生成，你不要写编号；正文只有下面两部分）：
+  **问题**：一句话描述用户问题
+  **处理方式**：一句话明确结论 + 必要事实/参数/命令
+  篇幅通常 1~4 行，能一句话说清就绝不扩写。参照「页面既有条目范例」的措辞与详略。
 
-■ 硬性要求：
-1. **只能使用给定文档原文里的事实**。文档没写的一律不写，不得凭经验、常识或群聊说法补充。
-2. **绝不写不确定的东西**：文档未提及的版本号、时间、参数、数值一律不写；严禁出现「可能」「大概」
-   「不确定」「建议试试」「请以…为准」「视…而定」「具体…请参见」这类模糊或甩锅表述。
-   只要给不出**确定、可执行**的结论，就把 body 置空（要求 7），不要用模糊话凑一段。
-3. question 用用户口吻描述现象（不照抄群聊原话，群聊只是线索）；body 先给**明确结论**，
-   只在确有必要时补最少的事实。**不要在 body 里写"请参阅/详见/参见…文档"之类的引导句**——
-   引导链接只放在 see_also 字段，正文里绝不出现指向文档的句子。
-4. 涉及配置项、命令、路径、版本号时必须与文档原文**逐字一致**，不得改写或自造。
-5. see_also 是**可选**的一句收尾引导（如"详细步骤请参阅[升级指南]({placeholder})"），全条最多一句，
-   用 {placeholder} 作为链接地址占位符，不要自己写相对路径；没有值得引导的文档时留空字符串。
-6. 正文用简体中文；仅在文档原文本身含命令/配置示例时才用代码块，不要为排版而堆步骤编号列表。
-7. **body 允许为空**：若依据不足、文档被截断看不到关键结论、或只能给出模糊答案，
-   就输出 {{"title":..., "question":..., "body":"", "see_also":"", "doc_path":...}}，
-   用空 body 表示"这条不该自动入库"，宁缺毋滥。
+■ 事实来源优先级（硬性）：
+  官方文档 > 官方 FAQ > 群管理员/同事回答 > 用户描述 > 你自身知识
+  1. 涉及**版本号、参数、命令、路径、配置项**的内容，必须有官方文档原文依据，逐字一致，不得改写或自造。
+  2. **禁止用你自身知识补充**文档没写的内容；群聊回复只是线索，不能当作事实来源。
+  3. 严禁出现「可能/大概/不确定/建议试试/请以…为准/视…而定/具体…请参见」等模糊或甩锅表述。
+
+■ 放弃生成（宁缺毋滥）：以下任一情况，把 body 输出为空字符串，表示这条不该自动入库：
+  - 官方文档没有明确结论、或只给了你无法确认的间接信息；
+  - 下方「官方文档原文」标注了「已截断」，而你要用的结论可能落在被截掉的部分；
+  - 只能给出模糊、猜测或需要"视情况而定"的答案。
+
+■ 其它：
+  - question 用用户口吻描述现象（不照抄群聊原话）。
+  - **不要在 body 里写"请参阅/详见/参见…文档"之类的引导句**——引导链接只放 see_also 字段。
+  - see_also 可选，全条最多一句收尾引导（如"详细步骤请参阅[升级指南]({placeholder})"），
+    用 {placeholder} 作链接地址占位符，不要自写相对路径；没有值得引导的文档就留空字符串。
+  - 正文用简体中文；仅当文档原文本身含命令/配置示例时才用代码块，不要为排版堆步骤编号列表。
 
 只输出 JSON，不要任何解释文字。格式：
 {{"title":"短标题（疑问句，20 字以内）","question":"一句话问题描述",
@@ -832,8 +840,8 @@ PASS2_SYSTEM = """你是 JumpServer（飞致云开源堡垒机）官方文档的
 # ---------------------------------------------------------------- 选题与成稿
 
 def screen_questions(pairs: list[dict], page: str, index: list[str],
-                     max_items: int, min_count: int) -> list[dict]:
-    """第一轮：模型归组并挑出可入库的高频问题，同时给出文档依据。"""
+                     max_items: int) -> list[dict]:
+    """第一轮：模型归组并按「长期复用价值」挑选值得沉淀的问题，同时给出文档依据。"""
     digest = build_question_digest(pairs)
     if not digest:
         return []
@@ -848,7 +856,7 @@ def screen_questions(pairs: list[dict], page: str, index: list[str],
         "## 最近提问清单\n" + digest
     )
     raw = llm_chat(
-        [{"role": "system", "content": PASS1_SYSTEM.format(max_items=max_items, min_count=min_count)},
+        [{"role": "system", "content": PASS1_SYSTEM.format(max_items=max_items)},
          {"role": "user", "content": user}],
         temperature=0.1, max_tokens=3000,
     )
@@ -897,13 +905,15 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
         blocks.append(f"### 文档 {rel}\n{text}")
 
     doc_block = "\n\n".join(blocks)
+    trunc_note = ("\n\n⚠️ 注意：上面标注「已截断」的文档并不完整，若你要用的结论可能落在被截掉的部分，"
+                  "请把 body 置空放弃生成。" if truncated else "")
     user = (
-        "## 参考：页面既有条目的写法\n" + page_style_sample() + "\n\n"
+        "## 页面既有条目范例（Golden Examples，模仿其措辞与详略）\n" + page_style_sample() + "\n\n"
         "## 社区原始提问（仅作理解现象用，不要照抄，不要采信其中的说法）\n"
         + "\n".join(f"- {q[:200]}" for q in source_questions)
-        + "\n\n## 同事在群里的临时回复（仅作线索，事实必须以文档为准）\n"
+        + "\n\n## 同事在群里的临时回复（仅作线索，事实必须以官方文档为准）\n"
         + "\n".join(f"- {a[:400]}" for a in source_answers)
-        + "\n\n## 官方文档原文\n" + doc_block
+        + "\n\n## 官方文档原文\n" + doc_block + trunc_note
     )
     raw = llm_chat(
         [{"role": "system", "content": PASS2_SYSTEM.format(placeholder=CITATION_PLACEHOLDER)},
@@ -933,6 +943,10 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
 
     # 正文里不该出现指向文档的引导句（引导链接只放 see_also）：剥掉模型误写进 body 的收尾引导行
     body = _strip_trailing_citation(body)
+    # 剥完可能只剩空壳（正文本就是纯引用、无实质回答）：按空正文丢弃
+    if not body:
+        log(f"[community_faq] 剥除引用后正文为空，跳过: {title or item.get('title')}")
+        return None
 
     see_also = str(payload.get("see_also") or "").strip()
     if see_also:
@@ -972,21 +986,48 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
         "question_ids": ids,
         "count": len(ids),
         "sources": ["{0} {1}".format(pairs[i]["date"], pairs[i]["group"]) for i in ids[:3]],
-        "reason": str(item.get("reason") or "").strip(),
+        "reason": str(item.get("value") or item.get("reason") or "").strip(),
         "truncated": truncated,
         "omitted": omitted,
         "warnings": warnings,
     }
 
 
-def page_style_sample() -> str:
-    """取页面里已有的一条条目作为措辞范例（避免模型另起风格）。"""
+def page_style_sample(max_examples: int = 8) -> str:
+    """取页面里已有的若干条条目作为措辞范例（Golden Examples），覆盖不同类型，避免风格漂移。
+
+    页面条目少时全给；多时按小节分散取样，尽量覆盖不同主题。附带固定结构说明，
+    明确「问题 + 处理方式」两段式、编号由程序生成、正文 1~4 行。
+    """
     try:
         text = read_page()
     except SystemExit:
-        return "（无）"
-    m = re.search(r"^###\s+\d+\.\d+.*?(?=^###\s|^##\s|\Z)", text, re.S | re.M)
-    return m.group(0).strip()[:900] if m else text.strip()[:600]
+        return "（页面暂无条目）"
+    blocks = re.findall(r"^###\s+\d+\.\d+.*?(?=^###\s|^##\s|\Z)", text, re.S | re.M)
+    if not blocks:
+        return text.strip()[:600]
+    # 按所属小节分组后轮转取样，保证覆盖不同类型而非集中在同一小节
+    grouped: dict[str, list[str]] = {}
+    for b in blocks:
+        key = b.split("\n", 1)[0].split(".", 1)[0].strip()  # 用「### N」的小节号粗分组
+        grouped.setdefault(key, []).append(b.strip()[:700])
+    picked: list[str] = []
+    buckets = list(grouped.values())
+    i = 0
+    while len(picked) < max_examples and any(buckets):
+        b = buckets[i % len(buckets)]
+        if b:
+            picked.append(b.pop(0))
+        i += 1
+    header = (
+        "【页面固定结构】每条只有两段，编号由程序生成、你不要写编号：\n"
+        "### N.N 标题（疑问句）\n"
+        "**问题**：一句话描述用户问题\n"
+        "**处理方式**：\n"
+        "一句话明确结论 + 必要事实/参数/命令（通常 1~4 行，能一句话说清就别扩写）\n\n"
+        "【Golden Examples：模仿以下真实条目的措辞与详略，不要自创风格】\n"
+    )
+    return header + "\n\n---\n\n".join(picked)
 
 
 # ---------------------------------------------------------------- 写回页面
@@ -1003,33 +1044,49 @@ _TRAILING_LEADIN_RE = re.compile(
     r"\s*(?:详细|完整|更多|具体)?[^。\n]{0,40}?"
     r"(?:请参阅|详见|参见|参考|见)\s*[，,：:。]?\s*$"
 )
+# 剥掉链接后，行尾可能剩「详见官方文档」「具体配置步骤请参阅」这类以引用动词开头/收尾的
+# 悬空短语（动词在前、名词在后）。匹配「(修饰语)?(详见|参见|...) + 少量名词」直到行末。
+_DANGLING_LEADIN_RE = re.compile(
+    r"\s*(?:详细|完整|更多|具体)?[^（）()\n]{0,20}?"
+    r"(?:请参阅|详见|参见|参考|见)\s*(?:官方)?(?:文档|说明|教程|手册|链接|页面)?\s*$"
+)
+# 行尾的「（详见/参见…[链接]…。）」或「详见…[链接]。」引用尾——必须以引用动词引导，
+# 避免误伤正文里正常的括号链接。
+_INLINE_CITATION_TAIL_RE = re.compile(
+    r"\s*[（(]?\s*(?:详细|完整|更多|具体)?[^（）()\n]{0,24}?"
+    r"(?:请参阅|详见|参见|参考|见)\s*[，,：:]?\s*"
+    r"\[[^\]]*\]\([^)]*\)\s*[）)]?\s*[。.]?\s*$"
+)
+
+
+def _clean_line_citations(line: str) -> str:
+    """对单行从右反复剥：末尾裸链接 → 「详见…[链接]」引用尾 → 悬空引导词，直到稳定。"""
+    prev = None
+    cur = line.rstrip()
+    while cur != prev:
+        prev = cur
+        cur = _TRAILING_BARE_LINK_RE.sub("", cur).rstrip()
+        cur = _INLINE_CITATION_TAIL_RE.sub("", cur).rstrip()
+        cur = _DANGLING_LEADIN_RE.sub("", cur).rstrip()
+        cur = _TRAILING_LEADIN_RE.sub("", cur).rstrip()
+    return cur
 
 
 def _strip_trailing_citation(body: str) -> str:
-    """去掉正文末尾指向文档的引导句/裸链接，避免与 see_also 重复。"""
-    text = body.rstrip()
-    # 先剥最末尾的裸链接（可能与引导句挤在同一行，如「…请参阅 [A](a.md)。[B](b.md)」）
-    text = _TRAILING_BARE_LINK_RE.sub("", text).rstrip()
-    lines = text.splitlines()
+    """去掉正文里指向文档的引导句/裸链接，避免与 see_also 重复。"""
+    lines = [_clean_line_citations(ln) for ln in body.rstrip().splitlines()]
+    # 从末尾删掉被剥空的行或整行都是引用/裸链接的行
     while lines:
         last = lines[-1].strip()
-        if _CITATION_LINE_RE.match(last) or _BARE_LINK_LINE_RE.match(last):
+        if last == "" or _CITATION_LINE_RE.match(last) or _BARE_LINK_LINE_RE.match(last):
             lines.pop()
-            while lines and lines[-1].strip() == "":
-                lines.pop()
-            continue
-        # 剥链接后本行只剩悬空引导语（如「详细…，请参阅」）：清掉，若清空则删行
-        cleaned = _TRAILING_LEADIN_RE.sub("", lines[-1]).rstrip()
-        if cleaned != lines[-1].rstrip():
-            if cleaned.strip():
-                lines[-1] = cleaned
-            else:
-                lines.pop()
-                while lines and lines[-1].strip() == "":
-                    lines.pop()
             continue
         break
     stripped = "\n".join(lines).rstrip()
+    # 剥完后若只剩「答：」这类空壳（正文本就是纯引用、无实质内容），返回空串，
+    # 交给上层按空正文丢弃。
+    if re.sub(r"^[\s>*\-]*答[：:]\s*", "", stripped).strip() == "":
+        return ""
     # 只有确实剥掉了内容且还剩正文时才采用，防止把整段误删
     return stripped if stripped else body.rstrip()
 
@@ -1213,7 +1270,8 @@ def main() -> int:
     ap.add_argument("--days", type=int, default=8,
                     help="回看天数（含今天），默认 8：多留一天以补回上次运行漏掉的那半天")
     ap.add_argument("--max-items", type=int, default=3, help="本期最多新增条目数，默认 3")
-    ap.add_argument("--min-count", type=int, default=2, help="簇至少出现 N 次才算高频，默认 2")
+    ap.add_argument("--min-count", type=int, default=2,
+                    help="（已弱化）出现次数仅作参考，选题以长期复用价值为准；保留仅为兼容")
     ap.add_argument("--apply", action="store_true", help="写回页面（默认只预览）")
     ap.add_argument("--skip-llm", action="store_true", help="只取数+聚类，不调模型")
     ap.add_argument("--pairs-json", default="", help="改用本地问答对 JSON，跳过取数")
@@ -1264,7 +1322,7 @@ def main() -> int:
     index = doc_index()
     keys = existing_question_keys(page)
 
-    candidates = screen_questions(pairs, page, index, args.max_items * 2, args.min_count)
+    candidates = screen_questions(pairs, page, index, args.max_items * 2)
     log("[community_faq] 模型初选 {0} 条".format(len(candidates)))
     if not candidates:
         log("[community_faq] 模型没有选出合格问题")
@@ -1277,9 +1335,9 @@ def main() -> int:
         if len(entries) >= args.max_items:
             break
         ids = valid_question_ids(item, limit)
-        if len(ids) < args.min_count:
+        if not ids:
             skipped.append({"title": item.get("title"),
-                            "reason": "出现次数不足（有效问题编号 {0} < {1}）".format(len(ids), args.min_count)})
+                            "reason": "没有有效的社区问题编号"})
             continue
         title = str(item.get("title") or "")
         probe = normalize_text(title)[:40]
