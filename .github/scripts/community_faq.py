@@ -798,28 +798,36 @@ E. 与「已有条目」重复或语义相同（含换了说法的同义问题�
 PASS2_SYSTEM = """你是 JumpServer（飞致云开源堡垒机）官方文档的撰写者。
 任务：基于给定的官方文档原文，写一条「社区常见问题」条目。这条内容会直接进官方文档，质量要求最高。
 
-分两种情况：
-- 【有文档原文】（下方「官方文档原文」非空）：以下硬性要求 1~5 全部适用，事实只能来自文档。
-- 【无文档原文】（下方「官方文档原文」标注为"（本轮无官方文档依据）"）：这是社区反复追问、
-  但本轮没找到对应官方文档的核心重点问题。此时允许依据「同事在群里的回复」撰写，但必须：
-  (a) 正文开头第一行原样写一句提示：`> ⚠️ 本条暂无官方文档依据，内容据社区答复整理，**待人工核实**。`
-  (b) 只写群聊回复里明确说到的事实，绝不补充猜测；把不确定的点显式写成"需核实"。
-  (c) see_also 留空字符串（没有文档可指向），doc_path 填 "UNVERIFIED"。
+■ 目标风格（务必对齐「页面既有条目的写法」，那是唯一范本）：
+  每条只有两部分——「问题」一句话；「处理方式」先给**一句明确结论**，再补**必要的事实/参数/命令**，
+  能一句话说清就一句话，通常 1~4 行。参照范例：不写寒暄、不写背景铺垫、不写"以下是步骤"式导语。
 
-硬性要求：
-1. **有文档时只能使用给定文档原文里的事实**。文档里没写的，一律不写，不得凭经验补充。
-2. **不确定就留白**：文档未提及的版本号、时间、参数、数值，绝对不要写；不要出现「可能」「大概」
-   「不确定」「建议试试」这类模糊表述。给不出确定结论时，就说明以文档为准并指向文档。
-3. question 用用户口吻描述现象（不照抄群聊原话，群聊只是线索）；body 先给**明确结论**，再给最小必要步骤。
+■ 两种情况：
+- 【有文档原文】（下方「官方文档原文」非空）：要求 1~6 全部适用，事实只能来自文档。
+- 【无文档原文】（下方「官方文档原文」标注为"（本轮无官方文档依据）"）：本轮没找到对应官方文档。
+  此时**不要硬写**：直接把 body 输出为空字符串（见要求 7），交由人工处理，绝不凭群聊猜测成稿。
+
+■ 硬性要求：
+1. **只能使用给定文档原文里的事实**。文档没写的一律不写，不得凭经验、常识或群聊说法补充。
+2. **绝不写不确定的东西**：文档未提及的版本号、时间、参数、数值一律不写；严禁出现「可能」「大概」
+   「不确定」「建议试试」「请以…为准」「视…而定」「具体…请参见」这类模糊或甩锅表述。
+   只要给不出**确定、可执行**的结论，就把 body 置空（要求 7），不要用模糊话凑一段。
+3. question 用用户口吻描述现象（不照抄群聊原话，群聊只是线索）；body 先给**明确结论**，
+   只在确有必要时补最少的事实。**不要在 body 里写"请参阅/详见/参见…文档"之类的引导句**——
+   引导链接只放在 see_also 字段，正文里绝不出现指向文档的句子。
 4. 涉及配置项、命令、路径、版本号时必须与文档原文**逐字一致**，不得改写或自造。
-5. 结尾给一句引导查阅文档的话，其中用 {placeholder} 作为链接地址占位符，不要自己写相对路径。
-6. 正文使用简体中文，代码用三个反引号围栏；篇幅精炼，能说清就行。
+5. see_also 是**可选**的一句收尾引导（如"详细步骤请参阅[升级指南]({placeholder})"），全条最多一句，
+   用 {placeholder} 作为链接地址占位符，不要自己写相对路径；没有值得引导的文档时留空字符串。
+6. 正文用简体中文；仅在文档原文本身含命令/配置示例时才用代码块，不要为排版而堆步骤编号列表。
+7. **body 允许为空**：若依据不足、文档被截断看不到关键结论、或只能给出模糊答案，
+   就输出 {{"title":..., "question":..., "body":"", "see_also":"", "doc_path":...}}，
+   用空 body 表示"这条不该自动入库"，宁缺毋滥。
 
 只输出 JSON，不要任何解释文字。格式：
 {{"title":"短标题（疑问句，20 字以内）","question":"一句话问题描述",
-"body":"处理方式正文（markdown，可用列表/代码块）",
-"see_also":"结尾引导句，含 {placeholder} 链接占位符；不需要时可留空字符串",
-"doc_path":"最终依据的单个文档相对路径；无文档依据时填 UNVERIFIED"}}"""
+"body":"处理方式正文（markdown；依据不足时留空字符串）",
+"see_also":"可选的一句收尾引导，含 {placeholder} 链接占位符；不需要时留空字符串",
+"doc_path":"最终依据的单个文档相对路径"}}"""
 
 # ---------------------------------------------------------------- 选题与成稿
 
@@ -856,17 +864,18 @@ def screen_questions(pairs: list[dict], page: str, index: list[str],
 def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | None:
     """第二轮：用官方文档原文生成条目。
 
-    无有效文档依据时**不再直接丢弃**（乙方案）：仍进入成稿，但走「无文档」分支——
-    模型据群聊答复撰写并在正文标注「待人工核实」，doc_path 记为 UNVERIFIED，交人工审核把关。
+    宁缺毋滥：无有效文档依据、或模型判定依据不足（body 置空）时，直接返回 None 跳过，
+    不据群聊猜测硬写，交人工处理。
     """
     raw_paths = [str(p) for p in (item.get("doc_paths") or [])]
     cited = [p for p in raw_paths if p in index]
     dropped = [p for p in raw_paths if p not in index]
     if dropped:
         log(f"[community_faq] 丢弃不存在的引用路径 {dropped} <- {item.get('title')}")
-    unverified = not cited
-    if unverified:
-        log(f"[community_faq] 无有效文档依据，转「待人工核实」分支: {item.get('title')}")
+    # 无有效文档依据：不再据群聊硬写（新策略宁缺毋滥），直接跳过交人工
+    if not cited:
+        log(f"[community_faq] 无有效文档依据，跳过（不自动入库）: {item.get('title')}")
+        return None
 
     ids = valid_question_ids(item, digest_limit(len(pairs)))
     source_questions = [scrub_question(pairs[i]["question"]) for i in ids[:3]] or [str(item.get("question") or "")]
@@ -887,15 +896,12 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
         total += len(text)
         blocks.append(f"### 文档 {rel}\n{text}")
 
-    # 无文档依据时，明确告诉模型走「无文档」分支（据群聊答复成稿 + 标注待核实）
-    doc_block = "\n\n".join(blocks) if blocks else "（本轮无官方文档依据）"
-    answer_hint = ("仅作线索，事实必须以文档为准" if blocks
-                   else "本轮无文档，这是唯一的事实来源，请据此撰写并标注待核实")
+    doc_block = "\n\n".join(blocks)
     user = (
         "## 参考：页面既有条目的写法\n" + page_style_sample() + "\n\n"
         "## 社区原始提问（仅作理解现象用，不要照抄，不要采信其中的说法）\n"
         + "\n".join(f"- {q[:200]}" for q in source_questions)
-        + f"\n\n## 同事在群里的临时回复（{answer_hint}）\n"
+        + "\n\n## 同事在群里的临时回复（仅作线索，事实必须以文档为准）\n"
         + "\n".join(f"- {a[:400]}" for a in source_answers)
         + "\n\n## 官方文档原文\n" + doc_block
     )
@@ -910,24 +916,32 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
         log(f"[community_faq] 第二轮成稿输出无法解析: {err}")
         return None
 
-    doc_path = str(payload.get("doc_path") or "").strip()
-    if unverified:
-        # 无文档分支：不指向任何文档，see_also 置空，doc_path 记为 UNVERIFIED
-        doc_path = "UNVERIFIED"
-        see_also = ""
-    elif doc_path not in index:
-        doc_path = cited[0]
     title = str(payload.get("title") or item.get("title") or "").strip()
     question = str(payload.get("question") or "").strip()
     body = str(payload.get("body") or "").strip()
-    if not title or not body:
-        log(f"[community_faq] 成稿字段缺失，丢弃: {title or item.get('title')}")
+    # 模型按新策略判定"依据不足"时会把 body 置空 -> 这条不入库，交人工
+    if not body:
+        log(f"[community_faq] 模型判定依据不足（body 为空），跳过: {title or item.get('title')}")
         return None
-    see_also = str(payload.get("see_also") or "").strip() if not unverified else ""
-    if see_also and CITATION_PLACEHOLDER not in see_also:
-        see_also = f"{see_also}[{CITATION_PLACEHOLDER}]({CITATION_PLACEHOLDER})"
+    if not title:
+        log(f"[community_faq] 成稿字段缺失，丢弃: {item.get('title')}")
+        return None
+
+    doc_path = str(payload.get("doc_path") or "").strip()
+    if doc_path not in index:
+        doc_path = cited[0]
+
+    # 正文里不该出现指向文档的引导句（引导链接只放 see_also）：剥掉模型误写进 body 的收尾引导行
+    body = _strip_trailing_citation(body)
+
+    see_also = str(payload.get("see_also") or "").strip()
     if see_also:
-        see_also = see_also.replace(CITATION_PLACEHOLDER, rel_link(doc_path))
+        if CITATION_PLACEHOLDER in see_also:
+            # 模型已给出含占位符的链接，直接替换地址
+            see_also = see_also.replace(CITATION_PLACEHOLDER, rel_link(doc_path))
+        else:
+            # 模型只给了引导语没带链接：把链接补在句末，避免出现裸占位符或重复链接
+            see_also = f"{see_also.rstrip('。 ')}（[{rel_link(doc_path)}]({rel_link(doc_path)})）"
 
     final_question = question or title
     vague = sorted({w for w in VAGUE_PHRASES if w in body or w in final_question})
@@ -935,8 +949,6 @@ def compose_entry(item: dict, pairs: list[dict], index: list[str]) -> dict | Non
         log("[community_faq] 质量警告：{0} 含模糊表述 {1}".format(title, "、".join(vague)))
 
     warnings: list[str] = []
-    if unverified:
-        warnings.append("无官方文档依据，内容据社区答复整理，**待人工核实**")
     if vague:
         warnings.append("正文含模糊表述：{0}（提示词已禁止）".format("、".join(vague)))
     if truncated or omitted:
@@ -978,6 +990,49 @@ def page_style_sample() -> str:
 
 
 # ---------------------------------------------------------------- 写回页面
+
+# 模型偶尔把"请参阅 XXX 文档"这类收尾引导句写进 body（本该只放 see_also），
+# 会与 _render_entry 追加的 see_also 重复，甚至出现连续多句/裸链接。逐行从末尾剥掉。
+_CITATION_LINE_RE = re.compile(
+    r"^(?:详细|完整|更多|具体)?[^。\n]{0,40}?"
+    r"(?:请参阅|详见|参见|见|参考)\s*\[[^\]]*\]\([^)]*\)\s*[。.]?$"
+)
+_BARE_LINK_LINE_RE = re.compile(r"^\s*\[[^\]]*\]\([^)]*\)\s*[。.]?\s*$")
+_TRAILING_BARE_LINK_RE = re.compile(r"\s*\[[^\]]*\]\([^)]*\)\s*[。.]?\s*$")
+_TRAILING_LEADIN_RE = re.compile(
+    r"\s*(?:详细|完整|更多|具体)?[^。\n]{0,40}?"
+    r"(?:请参阅|详见|参见|参考|见)\s*[，,：:。]?\s*$"
+)
+
+
+def _strip_trailing_citation(body: str) -> str:
+    """去掉正文末尾指向文档的引导句/裸链接，避免与 see_also 重复。"""
+    text = body.rstrip()
+    # 先剥最末尾的裸链接（可能与引导句挤在同一行，如「…请参阅 [A](a.md)。[B](b.md)」）
+    text = _TRAILING_BARE_LINK_RE.sub("", text).rstrip()
+    lines = text.splitlines()
+    while lines:
+        last = lines[-1].strip()
+        if _CITATION_LINE_RE.match(last) or _BARE_LINK_LINE_RE.match(last):
+            lines.pop()
+            while lines and lines[-1].strip() == "":
+                lines.pop()
+            continue
+        # 剥链接后本行只剩悬空引导语（如「详细…，请参阅」）：清掉，若清空则删行
+        cleaned = _TRAILING_LEADIN_RE.sub("", lines[-1]).rstrip()
+        if cleaned != lines[-1].rstrip():
+            if cleaned.strip():
+                lines[-1] = cleaned
+            else:
+                lines.pop()
+                while lines and lines[-1].strip() == "":
+                    lines.pop()
+            continue
+        break
+    stripped = "\n".join(lines).rstrip()
+    # 只有确实剥掉了内容且还剩正文时才采用，防止把整段误删
+    return stripped if stripped else body.rstrip()
+
 
 def _render_entry(no: int, minor: int, entry: dict) -> list[str]:
     lines = [f"### {no}.{minor} {entry['title']}", "", f"**问题**：{entry['question']}", "",
@@ -1101,8 +1156,7 @@ def write_report(path: str, *, pairs: list[dict], placed: list[dict],
         lines += ["## 新增条目", ""]
         for row in placed:
             e = row["entry"]
-            doc_shown = ("**无（待人工核实）**" if e["doc_path"] == "UNVERIFIED"
-                         else "`{0}`".format(e["doc_path"]))
+            doc_shown = "`{0}`".format(e["doc_path"])
             block = [
                 f"### {row['no']} {e['title']}",
                 f"- 小节：{row['section']}",

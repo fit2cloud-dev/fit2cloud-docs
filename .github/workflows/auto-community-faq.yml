@@ -484,7 +484,6 @@ jobs:
         if: ${{ steps.commit.outputs.pushed == 'true' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPORT: ${{ runner.temp }}/community-faq-report.md
           DAYS: ${{ github.event.inputs.days || '8' }}
           DRAFT: ${{ github.event.inputs.draft || 'true' }}
         run: |
@@ -522,7 +521,7 @@ jobs:
                   return exc.code, exc.read().decode("utf-8", "replace")
 
 
-          # ---- 组装 PR 描述（含本期报告）----
+          # ---- 组装 PR 描述（精简版：完整报告只进 Actions 摘要，不进 PR body）----
           lines = [
               "自动从社区交流群沉淀的本周常见问题，**请人工核对内容与措辞后再合并**。",
               "",
@@ -531,11 +530,10 @@ jobs:
               "- 目标文件：`%s`" % PAGE,
               "- 提交分支：`%s`" % BRANCH,
               "",
+              "本期新增条目见右侧「文件改动」diff；选题依据、质量警告等生成细节见本次运行的 "
+              "Actions 摘要（Summary），此处不再重复。",
+              "",
           ]
-          report = os.environ.get("REPORT") or ""
-          if report and os.path.isfile(report):
-              with open(report, encoding="utf-8") as fh:
-                  lines.append(fh.read())
           body = "\n".join(lines)
 
           # 按北京时间取日期（job 级 TZ=Asia/Shanghai）
