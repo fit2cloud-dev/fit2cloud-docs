@@ -1,0 +1,140 @@
+# 多产品更新日志自动生成并提 PR（dataease / 1panel / cordys）
+#
+# 与 auto-changelog.yml（JumpServer 专用）相互独立：
+#   - 产品清单与格式规则由 .github/scripts/gen_changelog_multi.py 的 PRODUCTS 配置驱动，
+#     脚本 `--matrix` 输出当前启用的产品，本 workflow 据此动态生成 matrix。
+#   - 目标文件按主版本号路由（见脚本 targets 配置）。
+#   - 每个产品一个独立 job，各自创建 PR，互不干扰；版本已存在时脚本会自动跳过。
+#
+# 注意:
+#   - schedule 触发器只在仓库默认分支(main)上生效；放在功能分支上时，
+#     只能用 workflow_dispatch 手动运行（Actions 页面选择本分支后 Run workflow）。
+#   - 需要仓库 Settings -> Actions -> General -> Workflow permissions 设为
+#     "Read and write permissions"，否则最后一步创建 PR 会 403。
+#   - 脚本退出码 3 表示版本与目标文件不匹配（sanity check），通常是新大版本做快照后
+#     脚本的 targets 配置未同步更新，此时不会生成 PR，需人工修正后重跑。
+
+name: Auto Changelog (Multi-product)
+
+on:
+  workflow_dispatch:
+    inputs:
+      product:
+        description: '仅运行指定产品(dataease/1panel/cordys，逗号分隔)；留空则运行全部'
+        required: false
+        default: ''
+      version:
+        description: '指定版本号(如 v3.1.0)；留空则各产品自动取社区 API 最新版本'
+        required: false
+        default: ''
+  schedule:
+    # 每日 20:10 UTC（北京时间次日 04:10），与 JumpServer 的 20:05 错开
+    - cron: '10 20 * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  BASE_BRANCH: main
+  SCRIPT: .github/scripts/gen_changelog_multi.py
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    outputs:
+      products: ${{ steps.resolve.outputs.products }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BASE_BRANCH }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Resolve product matrix
+        id: resolve
+        run: |
+          set -e
+          products=$(python "${SCRIPT}" --matrix "${{ github.event.inputs.product }}")
+          echo "Products: ${products}"
+          echo "products=${products}" >> "$GITHUB_OUTPUT"
+
+  changelog:
+    needs: list
+    if: ${{ needs.list.outputs.products != '[]' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        product: ${{ fromJson(needs.list.outputs.products) }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BASE_BRANCH }}
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Detect version and target file
+        id: detect
+        run: |
+          set -e
+          version=$(python "${SCRIPT}" "${{ matrix.product }}" ${{ github.event.inputs.version }} --print-version)
+          echo "Raw version: ${version}"
+          if [ -z "${version}" ] || [ "${version}" = "null" ]; then
+            echo "No version detected for ${{ matrix.product }} (API error / empty list?), aborting."
+            exit 1
+          fi
+          target_file=$(python "${SCRIPT}" "${{ matrix.product }}" "${version}" --print-target)
+          echo "Version: ${version}"
+          echo "Target file: ${target_file}"
+          {
+            echo "version=${version}"
+            echo "target_file=${target_file}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Generate changelog entry
+        run: |
+          set -e
+          python "${SCRIPT}" "${{ matrix.product }}" "${{ steps.detect.outputs.version }}"
+          echo "----- preview (first 30 lines) -----"
+          head -n 30 "${{ steps.detect.outputs.target_file }}"
+          echo "------------------------------------"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/changelog-${{ matrix.product }}
+          base: ${{ env.BASE_BRANCH }}
+          title: "chore(changelog): ${{ matrix.product }} ${{ steps.detect.outputs.version }}"
+          commit-message: "chore(changelog): ${{ matrix.product }} ${{ steps.detect.outputs.version }}"
+          body: |
+            自动生成的更新日志条目：**${{ matrix.product }} ${{ steps.detect.outputs.version }}**
+
+            - 数据来源：社区发布 API `https://community.fit2cloud.com/v1/products/*/releases`
+            - 目标文件：`${{ steps.detect.outputs.target_file }}`
+            - 基础分支：`${{ env.BASE_BRANCH }}`
+
+            内容由 `gen_changelog_multi.py` 从社区发布说明生成，合并前请人工核对措辞与分类。
+          delete-branch: true
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Auto Changelog - ${{ matrix.product }}"
+            echo ""
+            echo "- 版本: \`${{ steps.detect.outputs.version || '(未检测到)' }}\`"
+            echo "- 目标文件: \`${{ steps.detect.outputs.target_file || '-' }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
