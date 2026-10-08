@@ -13,7 +13,7 @@ title: 平台对接
 ## 1 企业微信设置
 ### 1.1 配置平台对接信息
 
-DataEase 对接企业微信，需要填写以下信息：
+SQLBot 对接企业微信，需要填写以下信息：
 
 - 企业 ID
 - 应用 ID
@@ -124,7 +124,7 @@ SQLBot 对接企业微信，让安装 SQLBot 的服务器可以访问企业微�
 - AGENTID - 应用 ID
 
 主页地址示例：
-`https://open.weixin.qq.com/connect/oauth2/authorize?appid=ww8c9076cfd8ea1fc1&redirect_uri=https://dataease.fit2cloud.com/#/de-auto-login?type=wecom&response_type=code&scope=snsapi_base&agentid=1000001#&state=fit2cloud-wecom-client#wechat_redirect`
+`https://open.weixin.qq.com/connect/oauth2/authorize?appid=ww8c9076cfd8ea1fc1&redirect_uri=https://sqlbot.fit2cloud.com/#/de-auto-login?type=wecom&response_type=code&scope=snsapi_base&agentid=1000001#&state=fit2cloud-wecom-client#wechat_redirect`
 
 
 在应用的【应用主页】栏点击【配置】，将上一步获取到的应用主页地址填入电脑端网址即可。
@@ -135,7 +135,7 @@ SQLBot 对接企业微信，让安装 SQLBot 的服务器可以访问企业微�
 图 14 企业微信应用首页
 
 
-在企业微信工作台中找到 DataEase 应用，PC 端和移动端点击该应用即可免登访问 SQLBot。
+在企业微信工作台中找到 SQLBot 应用，PC 端和移动端点击该应用即可免登访问 SQLBot。
 
 
 ![对接企业微信](/img/sqlbot/user_manual/enterprise/企业微信界面.png)
@@ -144,7 +144,7 @@ SQLBot 对接企业微信，让安装 SQLBot 的服务器可以访问企业微�
 ## 2 钉钉设置
 ### 2.1 配置平台对接信息
 
-DataEase 对接钉钉，需要填写以下信息：
+SQLBot 对接钉钉，需要填写以下信息：
 
 - 应用 ID
 - 应用 Key
@@ -336,7 +336,7 @@ SQLBot 对接飞书，需要填写以下信息：
 ### 3.3 飞书免登设置
 
 
-在飞书开放平台中，选择 DataEase 应用。在【应用功能】下的【网页】里，开启网页功能，并配置【桌面端主页】和【移动端主页】。地址格式：http(s)://xxx.xxx.xxx.xxx/?client=lark。可实现 PC 端和移动端免密登陆。
+在飞书开放平台中，选择 SQLBot 应用。在【应用功能】下的【网页】里，开启网页功能，并配置【桌面端主页】和【移动端主页】。地址格式：http(s)://xxx.xxx.xxx.xxx/?client=lark。可实现 PC 端和移动端免密登陆。
 
 
 ![对接飞书平台](/img/sqlbot/user_manual/enterprise/飞书免密登录.png)
