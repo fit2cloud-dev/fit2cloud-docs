@@ -74,10 +74,6 @@ Hermes Agent 不绑定在本地电脑上，既可以运行在 VPS、GPU 集群�
 
 首次打开时，如页面仍在初始化，可稍等片刻后再刷新访问。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/app/Hermes_Agent_index.png" alt="图 3 访问 Hermes Agent WebUI界面" />
-
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3 访问 Hermes Agent WebUI界面</div>
-
 ## 5. 后续配置说明
 
 完成基础部署后，你还可以继续在 1Panel 中根据实际业务场景调整 Hermes Agent 的模型、访问方式或其他运行参数。
