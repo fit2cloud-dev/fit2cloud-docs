@@ -36,15 +36,19 @@ JumpServer 社区常见问题自动生成脚本（Docusaurus / fit2cloud-docs）
     PRODUCT_KEYWORD            群名过滤关键词，默认 jumpserver
 
 退出码: 0=完成, 1=取数失败, 2=配置/参数错误, 3=无合格新条目（不需要提 PR）,
-        4=大模型环节失败（网关不可达 / 鉴权失败 / 模型无返回）
+        4=大模型环节失败（网关不可达 / 鉴权失败 / 模型无返回）,
+        5=MDX 安全护栏拦截（生成内容无法通过 MDX 编译，页面未写入）
 
-关于退出码 1 / 3 / 4 的区别（重要）:
+关于退出码 1 / 3 / 4 / 5 的区别（重要）:
     3 只用于「确实取到了数据、只是没有合格的新条目」，此时 workflow 视为成功且不提 PR。
     1 专指**取数**环节：登录失败、接口异常、一条消息都没取到——若被当成「无新增」，
       接口整体挂掉时会伪装成绿色成功、静默跳过一整周，没人会发现。
     4 专指**大模型**环节：LLM_BASE_URL 不可达、LLM_API_KEY 无效、模型无返回。
       必须单独成码，否则报错文案会指向取数、把排查方向带偏
       （2026-09-23 实测：取数 321 条全部成功，仅模型网关跨境超时，却被报成「取数失败」）。
+    5 专指**MDX 安全护栏**：模型写出的内容经转义后仍无法通过 MDX 编译（例如新出现的
+      危险写法），页面**保持原样不写入**、由人工介入。宁可本周无新增，也不能让坏内容
+      进 main 把整站发布搞挂（2026-10-10 事故：裸尖括号 `<参数>` 导致 build 失败）。
 """
 from __future__ import annotations
 
@@ -52,6 +56,8 @@ import argparse
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
 import tempfile
 import time
@@ -65,6 +71,9 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DOCS_ROOT = REPO_ROOT / "jumpserver-docs"
 FAQ_PAGE = DOCS_ROOT / "faq" / "community_faq.md"
+NODE_MODULES = REPO_ROOT / "node_modules"
+# 本文件只有标准库依赖，但模块级会读取 package.json 判定 MDX 校验可用性
+PACKAGE_JSON = REPO_ROOT / "package.json"
 
 # ---------------------------------------------------------------- 常量
 
@@ -853,6 +862,9 @@ PASS2_SYSTEM = """你是 JumpServer（飞致云开源堡垒机）官方文档的
   4. **严禁「用户问为什么报错、你找不到原因就转而介绍该功能怎么用」**——这是最不可接受的错误。
   5. 严禁出现「可能/大概/不确定/建议试试/请以…为准/视…而定/具体…请参见」等模糊或甩锅表述。
   6. **禁止用你自身知识补充**文档没写的内容；群聊回复只是线索，不能当作事实来源。
+  7. **正文必须能被 MDX 安全编译**：不要写尖括号占位符，例如写「参数」而不是「<参数>」；
+     文档里的真实尖括号写法（如 `<域名>`）必须包在反引号里写成 `` `<域名>` ``，或放进代码块。
+     不要写 `<br>`、`<https://…>` 这类裸 HTML 标签或裸链接。
 
 ■ 事实来源优先级（硬性）：官方文档 > 官方 FAQ > 群管理员/同事回答 > 用户描述 > 你自身知识。
 
@@ -1283,6 +1295,232 @@ def set_action_output(changed: bool, count: int, report: str) -> None:
         log(f"[community_faq] 写 GITHUB_OUTPUT 失败: {err}")
 
 
+# ---------------------------------------------------------------- MDX 安全护栏
+# 背景（2026-10-10 线上事故）：模型生成的正文里出现裸尖括号占位符「在<参数>中配置」,
+# Docusaurus 的 MDX 会把它当 JSX 标签解析，报
+#   Expected a closing tag for `<参数>` before the end of `paragraph`
+# 导致 npm run build 退出码 1、整站发布失败。而这条坏内容是在合入 main 之后、
+# 发布时才被发现的。下面的护栏在「写回页面」之前拦住这类词法炸弹。
+
+MDX_COMPILE_JS = (
+    "const fs=require('fs');"
+    "const{compile}=require('@mdx-js/mdx');"
+    "compile(fs.readFileSync(process.argv[1],'utf8'),{jsx:false})"
+    ".then(()=>{console.log('MDX_OK');})"
+    ".catch(e=>{console.error(e.message.split('\\n')[0]);process.exit(1);});"
+)
+
+# 危险模式（纯标准库正则），用于在拿不到 node/@mdx-js 时兜底。
+# 注意：**不能**用它在整页上做「有则拒绝」的全量判断 —— 本仓库大量使用合法 JSX
+# （`<div style={{…}}>`、`</div>` 等），全量扫描在 198 个文件里会命中 160 个，
+# 全部是误报，用它闸门会每周把自动化自己拦住。所以只做**增量**检测
+# （见 new_mdx_dangers）：拿「新页面」减「原页面」，只关心本次新引入的危险。
+# 已实测（@mdx-js/mdx 编译验证）以下写法安全、不会命中这些模式：
+#   - 反引号内 ` <参数> `            -> 安全
+#   - 围栏代码块内的 <访问地址>       -> 安全
+#   - 比较运算 a < b、x < 10、| 参数 < 阈值 |  -> 安全
+#   - 花括号里是纯标识符/中英文字（{参数}、{host}）-> 安全
+_MDX_DANGER_PATTERNS = (
+    ("裸尖括号标签（<参数>、<param>、<参数 >）",
+     re.compile(r"<[A-Za-z\u4e00-\u9fa5][A-Za-z0-9_.\u4e00-\u9fa5 -]*>")),
+    ("裸尖括号紧跟数字（x <3 个）",
+     re.compile(r"<\d")),
+    ("连续尖括号 / 箭头（<<、<-）",
+     re.compile(r"<<|<-")),
+    ("裸自动链接（<https://…>，应写 [文本](url)）",
+     re.compile(r"<[A-Za-z][A-Za-z0-9+.-]*://")),
+)
+
+
+def _mask_code_spans(text: str) -> str:
+    """把围栏代码块与行内代码里的字符替换成占位符，使危险模式扫描不会误伤。
+
+    只改字符、不改长度与换行结构，便于按行号回溯定位。
+    """
+    out: list[str] = []
+    in_fence = False
+    for line in text.splitlines(keepends=True):
+        stripped = line.lstrip()
+        if stripped.startswith("```") or stripped.startswith("~~~"):
+            in_fence = not in_fence
+            out.append("".join("\u0000" if ch not in "\r\n" else ch for ch in line))
+            continue
+        if in_fence:
+            out.append("".join("\u0000" if ch not in "\r\n" else ch for ch in line))
+            continue
+        # 行内代码：按反引号成对替换（支持 `` 与 ` 两种）
+        masked = re.sub(r"`+[^`\n]*`+", lambda m: "\u0000" * len(m.group(0)), line)
+        out.append(masked)
+    return "".join(out)
+
+
+def scan_mdx_danger(text: str) -> list[str]:
+    """返回危险模式的「行号: 问题描述: 片段」列表（屏蔽代码块/行内代码后扫描）。"""
+    findings: list[str] = []
+    masked = _mask_code_spans(text)
+    raw_lines = text.splitlines()
+    for idx, line in enumerate(masked.splitlines(), start=1):
+        for label, pattern in _MDX_DANGER_PATTERNS:
+            hit = pattern.search(line)
+            if hit:
+                raw = raw_lines[idx - 1] if idx - 1 < len(raw_lines) else ""
+                findings.append("{0}: {1}: {2}".format(idx, label, raw.strip()[:120]))
+    return findings
+
+
+def new_mdx_dangers(new_text: str, old_text: str) -> list[str]:
+    """增量危险检测：只报告新页面**比原页面多出来**的危险模式。
+
+    为什么不能用绝对判断：仓库现有文档本就大量含合法 JSX（`<div style={{…}}>`、`</div>`），
+    绝对扫描会把他们全判成危险 → 误拦。改成「按模式计数相减」，存量合法写法自动抵消，
+    只有本次新增的危险才会被报出来（典型危险条目只引入 1~2 处，而存量是成百上千处）。
+    仅用于无 node/@mdx-js 的兜底路径；有编译器时以真实编译结果为准。
+    """
+    def counts(text: str) -> dict[str, int]:
+        masked = _mask_code_spans(text)
+        out: dict[str, int] = {}
+        for label, pattern in _MDX_DANGER_PATTERNS:
+            hits = pattern.findall(masked)
+            out[label] = sum(len(h) if isinstance(h, tuple) else 1 for h in hits)
+        return out
+
+    new_counts, old_counts = counts(new_text), counts(old_text)
+    findings: list[str] = []
+    for label, pattern in _MDX_DANGER_PATTERNS:
+        delta = new_counts.get(label, 0) - old_counts.get(label, 0)
+        if delta <= 0:
+            continue
+        raw_lines = new_text.splitlines()
+        masked_lines = _mask_code_spans(new_text).splitlines()
+        shown = 0
+        for idx, line in enumerate(masked_lines, start=1):
+            if not pattern.search(line):
+                continue
+            raw = raw_lines[idx - 1] if idx - 1 < len(raw_lines) else ""
+            findings.append("{0}: 新增 {1} 处「{2}」: {3}".format(idx, delta, label, raw.strip()[:120]))
+            shown += 1
+            if shown >= delta:
+                break
+    return findings
+
+
+# 可读的转义替身（避免正文被 MDX 当 JSX / 表达式解析，渲染后仍显示原文）
+_ESCAPE_MAP = {"<": "&lt;", "{": "&#123;"}
+
+
+def sanitize_mdx_text(text: str) -> tuple[str, list[str]]:
+    """把裸尖括号/花括号转义为 HTML 实体，返回 (清洗后文本, 变更说明)。
+
+    只处理落在代码块 / 行内代码之外的字符；已实测这类字符是 MDX 构建失败的唯一来源,
+    转义后渲染结果与原文显示一致（内容不丢）。
+    """
+    if not text:
+        return text, []
+    notes: list[str] = []
+    masked = _mask_code_spans(text)
+    out: list[str] = []
+    changed = 0
+    for idx, ch in enumerate(text):
+        if ch in _ESCAPE_MAP and masked[idx] == ch:
+            out.append(_ESCAPE_MAP[ch])
+            changed += 1
+        else:
+            out.append(ch)
+    if changed:
+        notes.append("转义了 {0} 个裸尖括号/花括号（防止 MDX 当成 JSX 标签解析）".format(changed))
+    return "".join(out), notes
+
+
+def sanitize_entry(entry: dict) -> dict:
+    """对条目里所有会落入页面的文本字段做 MDX 转义。
+
+    覆盖 title（进 `### 编号 标题` 标题行）、new_section（进 `## 编号 标题` 标题行）、
+    question、body、see_also —— 任一漏掉都会以另一种方式触发构建失败。
+    """
+    notes: list[str] = []
+    for field in ("title", "new_section", "question", "body", "see_also"):
+        value = entry.get(field)
+        if isinstance(value, str) and value:
+            cleaned, sub = sanitize_mdx_text(value)
+            entry[field] = cleaned
+            notes += ["{0}：{1}".format(field, s) for s in sub]
+    if notes:
+        entry.setdefault("warnings", []).extend(notes)
+    return entry
+
+
+def mdx_compile_check(text: str, label: str = "community_faq",
+                      baseline: str | None = None) -> tuple[bool, str]:
+    """用 @mdx-js/mdx 真实编译校验；环境不具备时退化为**增量**危险模式检测。
+
+    workflow 的 sparse-checkout 不含 node_modules，此时走正则兜底。兜底必须做增量
+    （与 baseline 相比只报新增），否则会被仓库存量合法 JSX 误报 —— 实测全量扫描
+    198 个文件命中 160 个、全是误报。
+    这也是防护必须同时做在 Python 侧转义里的原因：不能只依赖编译校验。
+    """
+    node = shutil.which("node")
+    has_compiler = (NODE_MODULES / "@mdx-js" / "mdx").is_dir()
+    if node and has_compiler:
+        with tempfile.TemporaryDirectory() as tmp:
+            probe = Path(tmp) / "probe.md"
+            probe.write_text(text, encoding="utf-8")
+            try:
+                proc = subprocess.run(
+                    [node, "-e", MDX_COMPILE_JS, str(probe)],
+                    capture_output=True, text=True, timeout=60,
+                )
+            except (OSError, subprocess.SubprocessError) as err:
+                return True, "{0}：MDX 编译校验未能执行（{1}）".format(label, err)
+        if proc.returncode == 0 and "MDX_OK" in proc.stdout:
+            return True, "{0}：MDX 编译校验通过".format(label)
+        err = (proc.stderr or proc.stdout or "").strip().splitlines()
+        return False, "{0}：MDX 编译失败：{1}".format(label, err[0] if err else "未知错误")
+
+    findings = new_mdx_dangers(text, baseline) if baseline is not None else scan_mdx_danger(text)
+    if findings:
+        return False, "{0}：MDX 危险模式（增量）检测不通过（无 node/@mdx-js，已退化）：\n  {1}".format(
+            label, "\n  ".join(findings[:10]))
+    return True, "{0}：本环境无 node/@mdx-js，已用增量危险模式检测替代（未发现新增风险）".format(label)
+
+
+def _entry_fragment(entry: dict) -> str:
+    """把条目按最终写进页面的形态渲染成片段，用于 MDX 编译校验。
+
+    含 new_section 时一并渲染 `## 标题` 行 —— 新小节标题同样会变成 heading，
+    漏掉它就会出现「逐条校验通过、整页构建失败」的盲区。
+    """
+    parts: list[str] = []
+    new_sec = str(entry.get("new_section") or "").strip()
+    if new_sec:
+        parts += ["## 1 {0}".format(new_sec), ""]
+    parts += _render_entry(1, 1, entry)
+    return "\n".join(parts)
+
+
+def mdx_entry_ok(entry: dict) -> bool:
+    """按条目的最终渲染形态做一次编译校验。静默返回结果，由调用方决定如何记录。"""
+    ok, _ = mdx_compile_check(_entry_fragment(entry), label=str(entry.get("title") or "entry"))
+    return ok
+
+
+def ensure_mdx_safe_entry(entry: dict) -> dict | None:
+    """保证单条条目能被 MDX 编译；返回可直接入库的条目，或 None（该条丢弃）。
+
+    策略是「先不动刀」：原文能编译就原样保留，避免误伤合法 HTML / JSX；
+    只有编译不过时才做转义挽救；转义后仍不过则丢弃这一条（宁缺毋滥）。
+    """
+    if mdx_entry_ok(entry):
+        return entry
+    log("[community_faq] 条目未通过 MDX 校验，自动转义后重试：{0}".format(entry.get("title")))
+    safe = sanitize_entry(entry)
+    if mdx_entry_ok(safe):
+        return safe
+    # 转义后仍不合法：说明是护栏未覆盖的新写法，宁可丢弃也不让它进 main
+    _, note = mdx_compile_check(_entry_fragment(safe), label=str(safe.get("title") or "entry"))
+    log("[community_faq] 转义后仍无法编译，丢弃「{0}」：{1}".format(safe.get("title"), note))
+    return None
+
+
 def load_pairs_from_json(path: str) -> tuple[list[dict], list[dict]]:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
     pairs = payload.get("pairs") if isinstance(payload, dict) else payload
@@ -1397,6 +1635,13 @@ def main() -> int:
         if entry is None:
             skipped.append({"title": item.get("title"), "reason": "缺少可核实的文档依据或成稿失败"})
             continue
+        # MDX 安全护栏：原文能编译就不动刀（避免误伤合法 HTML/JSX）；
+        # 编译不过则自动转义挽救；转义后仍不合法就丢弃这一条，绝不把词法炸弹写进页面
+        safe_entry = ensure_mdx_safe_entry(entry)
+        if safe_entry is None:
+            skipped.append({"title": entry["title"], "reason": "MDX 编译校验失败（转义后仍不合法），已丢弃"})
+            continue
+        entry = safe_entry
         final_key = normalize_text(entry["title"])[:40]
         if final_key in keys:
             skipped.append({"title": entry["title"], "reason": "成稿后与页面已有条目重复"})
@@ -1424,6 +1669,13 @@ def main() -> int:
         log("[community_faq] 插入后页面无变化")
         set_action_output(False, 0, "")
         return 3
+
+    # 最后一道闸：整页编译校验（兜底路径传原页面作基线，只报本次新增的危险模式）
+    page_ok, page_note = mdx_compile_check(new_page, label=str(FAQ_PAGE), baseline=page)
+    log("[community_faq] 整页 MDX 校验：{0}".format(page_note))
+    if not page_ok:
+        log("[community_faq] 拒绝写回：页面无法通过 MDX 编译，页面保持原样")
+        return 5
 
     report = args.report or str(Path(tempfile.gettempdir()) / "community-faq-report.md")
     write_report(report, pairs=pairs, placed=placed, skipped=skipped,

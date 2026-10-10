@@ -6,7 +6,17 @@
 #
 # 配套脚本: .github/scripts/community_faq.py（单文件自包含，仅用 Python 标准库；
 #           退出码 0=完成 / 1=取数失败 / 2=配置或参数错误 / 3=无新增条目
-#                 / 4=大模型环节失败（网关不可达、key 无效、模型无返回））
+#                 / 4=大模型环节失败（网关不可达、key 无效、模型无返回）
+#                 / 5=MDX 安全护栏拦截（内容未通过 MDX 编译，页面未写入））
+#
+# 内容安全护栏（2026-10-10 事故后新增）:
+#   模型生成的正文曾出现裸尖括号占位符「在<参数>中配置」，MDX 把它当 JSX 标签解析，
+#   导致 Deploy to Aliyun OSS 的 npm run build 失败、整站发布中断 —— 而坏内容此时已合入 main。
+#   现在脚本在写回页面前做三重防护：
+#     1) 提示词层：PASS2_SYSTEM 明令禁止裸尖括号占位符 / 裸 HTML 标签 / 裸链接；
+#     2) 转义层：sanitize_entry 把代码块之外的裸 < 与 { 转成 HTML 实体（渲染不变、内容不丢）；
+#     3) 校验层：逐条 + 整页用 @mdx-js/mdx 真实编译（本环境无 node_modules 时退化为正则扫描），
+#        整页不过则返回退出码 5 且**不写入页面**。
 #
 # 部署位置（重要）:
 #   本 workflow 与 .github/scripts/community_faq.py 部署到**官方仓库**
@@ -421,10 +431,11 @@ jobs:
           code=$?
           set -e
 
-          # 退出码含义：0=完成 1=取数失败 2=配置/参数错误 3=无合格新条目 4=大模型环节失败
-          # 只有 3 才算「跑通了但本周没东西可写」；1/2/4 一律让 job 失败，
+          # 退出码含义：0=完成 1=取数失败 2=配置/参数错误 3=无合格新条目
+          #             4=大模型环节失败 5=MDX 安全护栏拦截（页面未写入）
+          # 只有 3 才算「跑通了但本周没东西可写」；1/2/4/5 一律让 job 失败，
           # 否则接口挂掉会伪装成「本周无新增」，绿色通过、静默跳过一整周。
-          # 1 与 4 分开，是为了让报错指向真正出问题的环节（取数 / 大模型）。
+          # 1 / 4 / 5 分开，是为了让报错指向真正出问题的环节（取数 / 大模型 / MDX 内容）。
           case "${code}" in
             0) : ;;
             3) echo "本周没有合格的新条目，无需提 PR。" ;;
@@ -435,6 +446,10 @@ jobs:
             4) echo "::error::大模型环节失败（退出码 4）：无法访问模型网关 ${LLM_BASE_URL}、LLM_API_KEY 无效，或模型无返回。"
                echo "::error::若该网关仅在国内网络可达，跑在 GitHub 托管 runner（境外）上必然连接超时 —— 把仓库 Variables 的 RUNNER_LABELS 设为 [\"self-hosted\",\"f2c\"]，让本任务落到国内自托管 runner；或用 LLM_BASE_URL 指向公网可达的网关。"
                exit 4 ;;
+            5) echo "::error::MDX 安全护栏拦截（退出码 5）：生成的条目经转义后仍无法通过 MDX 编译，页面**未被修改**。"
+               echo "::error::这意味着模型写出了护栏尚未覆盖的 MDX 危险写法，请查看上面的「整页 MDX 校验」日志定位具体报错，"
+               echo "::error::并补充 .github/scripts/community_faq.py 里的 _MDX_DANGER_PATTERNS / sanitize_mdx_text。切勿直接把内容合进 main，否则整站发布（Deploy to Aliyun OSS）会失败。"
+               exit 5 ;;
             *) echo "::error::community_faq.py 异常退出（退出码 ${code}）"
                exit "${code}" ;;
           esac
@@ -598,7 +613,7 @@ jobs:
             echo "- 窗口: 最近 \`${{ github.event.inputs.days || '8' }}\` 天（含今天，按北京时间）"
             echo "- 工作基线: \`${{ steps.base.outputs.base_ref || '-' }}\`"
             echo "- 固定分支: \`${BRANCH}\`"
-            echo "- 脚本退出码: \`${{ steps.gen.outputs.exit_code || '-' }}\`（0=完成，1=取数失败，2=配置或参数错误，3=无合格新条目，4=大模型环节失败）"
+            echo "- 脚本退出码: \`${{ steps.gen.outputs.exit_code || '-' }}\`（0=完成，1=取数失败，2=配置或参数错误，3=无合格新条目，4=大模型环节失败，5=MDX 安全护栏拦截）"
             echo "- 本轮推送: \`${{ steps.commit.outputs.pushed || 'false' }}\`"
             echo "- 本轮 PR: ${{ steps.pr.outputs.pr_url || '-' }}"
           } >> "$GITHUB_STEP_SUMMARY"
