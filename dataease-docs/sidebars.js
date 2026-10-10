@@ -20,16 +20,32 @@ function doc(id, label, key, className) {
 
 /**
  * @param {string} label
- * @param {any[]} items
+ * @param {string} href
  * @param {string} key
  */
-function cat(label, items, key) {
+function linkItem(label, href, key) {
+  return {
+    type: /** @type {const} */ ("link"),
+    label,
+    href,
+    key,
+  };
+}
+
+/**
+ * @param {string} label
+ * @param {any[]} items
+ * @param {string} key
+ * @param {string} [className] 可选，侧栏条目附加类名（如 "sidebar-item-badge-hot" 显示「HOT」角标）
+ */
+function cat(label, items, key, className) {
   return {
     type: /** @type {const} */ ("category"),
     label,
     collapsed: true,
     items,
     key,
+    ...(className ? { className } : {}),
   };
 }
 
@@ -147,7 +163,8 @@ const 电子表格 = cat(
     doc("xpack/spreadsheet_special", "电子表格特殊功能", "doc:使用手册/用户使用手册/电子表格/电子表格特殊功能"),
     doc("xpack/spreadsheet_publish", "发布运维", "doc:使用手册/用户使用手册/电子表格/发布运维"),
   ],
-  "cat:使用手册/用户使用手册/电子表格"
+  "cat:使用手册/用户使用手册/电子表格",
+  "sidebar-item-badge-new"
 );
 
 const sidebars = {
@@ -176,7 +193,17 @@ const sidebars = {
       ],
       "cat:最新动态"
     ),
-    doc("purchase", "购买指南", "doc:购买指南"),
+    // 「购买指南」为纯目录，子项均指向 DataEase 官网
+    cat(
+      "购买指南",
+      [
+        linkItem("版本对比", "https://dataease.cn/versions.html", "link:购买指南/版本对比"),
+        linkItem("DataEase 专业版", "https://dataease.cn/pro.html", "link:购买指南/DataEase 专业版"),
+        linkItem("DataEase 嵌入式版", "https://dataease.cn/embedded-bi.html", "link:购买指南/DataEase 嵌入式版"),
+        linkItem("DataEase 企业版", "https://dataease.cn/enterprise.html", "link:购买指南/DataEase 企业版"),
+      ],
+      "cat:购买指南"
+    ),
     cat(
       "安装部署",
       [
@@ -187,23 +214,19 @@ const sidebars = {
         doc("installation/offline_upgrade", "升级指南", "doc:安装部署/升级指南"),
         doc("installation/online_upgrade", "在线升级", "doc:安装部署/在线升级"),
         doc("installation/deployment_installation", "源码部署", "doc:安装部署/源码部署"),
-        doc("installation/data_migration", "数据迁移", "doc:安装部署/数据迁移"),
+        doc("installation/data_migration", "V2 - V3 数据迁移", "doc:安装部署/数据迁移", "sidebar-item-badge-hot"),
       ],
       "cat:安装部署"
     ),
     cat(
       "使用手册",
       [
+        doc("instructional_video", "教学视频", "doc:使用手册/教学视频"),
         cat(
           "通用功能",
           [
             doc("user_manual/homepage", "工作台", "doc:使用手册/通用功能/工作台"),
             doc("user_manual/template_market", "模板市场", "doc:使用手册/通用功能/模板市场"),
-            cat(
-              "帮助",
-              [doc("instructional_video", "教学视频", "doc:使用手册/通用功能/帮助/教学视频")],
-              "cat:使用手册/通用功能/帮助"
-            ),
             cat(
               "工具箱",
               [
@@ -303,7 +326,8 @@ const sidebars = {
             doc("embedded/question", "嵌入式常见问题", "doc:使用手册/嵌入式 BI 使用手册/嵌入式常见问题"),
             嵌入式附加,
           ],
-          "cat:使用手册/嵌入式 BI 使用手册"
+          "cat:使用手册/嵌入式 BI 使用手册",
+          "sidebar-item-badge-hot"
         ),
         cat(
           "第三方集成",
@@ -314,7 +338,6 @@ const sidebars = {
       "cat:使用手册"
     ),
     doc("desktop/index", "桌面版说明", "doc:桌面版说明"),
-    doc("faq/enterprise_faq", "企业版功能", "doc:企业版功能"),
     cat(
       "API 文档",
       [doc("xpack/sys_management_develop", "系统 API", "doc:API 文档/系统 API")],

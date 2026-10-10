@@ -5,7 +5,7 @@ wrapperClassName: de-contact
 
 ## 1 微信公众号
 
-<img alt="微信公众号" src="/img/dataease/wechat-official.jpg" width="280" style={{maxWidth:'100%', height:'auto'}}/>
+<img alt="微信公众号" src="/img/dataease/wechat-official.jpg" width="170" style={{maxWidth:'100%', height:'auto', marginLeft:'-8px'}}/>
 
 ## 2 开源社区论坛
 
