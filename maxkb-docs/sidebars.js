@@ -22,6 +22,12 @@ const sidebars = {
       "key": "doc:更新日志"
     },
     {
+      "type": "link",
+      "label": "购买指南",
+      "href": "https://maxkb.cn/price",
+      "key": "link:购买指南"
+    },
+    {
       "type": "doc",
       "id": "system_arch",
       "label": "系统架构",
