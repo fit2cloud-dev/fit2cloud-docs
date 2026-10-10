@@ -10,12 +10,6 @@ const sidebars = {
       "key": "doc:产品介绍"
     },
     {
-      "type": "link",
-      "label": "版本对比",
-      "href": "https://jumpserver.org/features.html",
-      "key": "link:版本对比"
-    },
-    {
       "type": "doc",
       "id": "quick_start",
       "label": "快速入门",
@@ -28,10 +22,24 @@ const sidebars = {
       "key": "doc:更新日志"
     },
     {
-      "type": "link",
+      "type": "category",
       "label": "购买指南",
-      "href": "https://jumpserver.org/enterprise.html",
-      "key": "doc:购买指南"
+      "collapsed": true,
+      "items": [
+        {
+          "type": "link",
+          "label": "如何购买",
+          "href": "https://jumpserver.org/enterprise.html",
+          "key": "link:购买指南/如何购买"
+        },
+        {
+          "type": "link",
+          "label": "版本对比",
+          "href": "https://jumpserver.org/features.html",
+          "key": "link:购买指南/版本对比"
+        }
+      ],
+      "key": "cat:购买指南"
     },
     {
       "type": "category",
