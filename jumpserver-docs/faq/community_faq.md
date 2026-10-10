@@ -71,7 +71,7 @@ JumpServer 对操作系统内核、数据库与缓存的版本要求，详见[�
 JumpServer 支持同时配置多个访问地址（如内网 IP 和外网域名/IP），以实现内外网用户均可访问。
 
 **处理方法：**
-1. 如果是 1panel 部署的JumpServer，在<参数>中配置 `DOAMINS`, 若常规离线部署, 在 /opt/jumpserver/config/config.txt 中配置，若需支持多个地址，请使用**英文逗号**分隔。
+1. 如果是 1Panel 部署的 JumpServer，在应用参数中配置 `DOMAINS`；若为常规离线部署，则在 `/opt/jumpserver/config/config.txt` 中配置。若需支持多个地址，请使用**英文逗号**分隔。
 2. 例如：`192.168.1.100,example.com`。
 3. 修改配置后，需重启服务或重建容器使配置生效。
 
