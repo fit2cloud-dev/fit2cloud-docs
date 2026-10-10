@@ -8,6 +8,11 @@ const sidebars = {
 
     // ── 更新日志 ──
     { type: "doc", id: "changelog", label: "更新日志" },
+    {
+      type: "link",
+      label: "版本说明",
+      href: "https://1panel.cn/versions.html",
+    },
 
     // ── installation：安装部署页 ──
     {
