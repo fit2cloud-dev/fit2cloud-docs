@@ -53,7 +53,7 @@ DataEase 功能架构分为数据准备、可视化分析和工作台三层：
 
 图 4  版本对比
 
-完整对比与试用、商务联系见 [购买指南](./purchase) 与 [企业版功能](./faq/enterprise_faq)。
+详细版本对比见 [版本对比](https://dataease.cn/versions.html)。
 
 ## 6 产品书籍
 

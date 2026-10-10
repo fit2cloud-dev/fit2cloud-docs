@@ -180,17 +180,83 @@ html[data-docs-product='sqlbot'] .theme-doc-markdown p:has(+ table) {
   margin: 6px 0 20px;
 }
 
-/* 教学视频封面：固定约 280px，左对齐横排，不加图注 */
-.de-instructional-video .theme-doc-markdown a:has(img) {
-  display: inline-block;
-  margin: 0 8px 8px 0;
-  text-align: left;
+/* ===== 教学视频：卡片网格 =====
+   结构由 dataease-docs/instructional_video.md 内的 .de-video-grid 提供，
+   一行 HTML 卡片 = 一个视频；封面携带「视频」角标，下方为标题 / 观看数 / 免费。
+   注意：docs 插件不支持 frontmatter 的 wrapperClassName，故样式直接挂在卡片容器类名上。 */
+.de-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+  gap: 18px 14px;
+  margin: 8px 0 24px;
 }
-.de-instructional-video .theme-doc-markdown a img {
-  width: 280px;
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
+.de-video-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--ifm-background-surface-color, #ffffff);
+  border: 1px solid var(--ifm-color-emphasis-200, #e8eaed);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+}
+.de-video-card:hover {
+  text-decoration: none;
+  color: inherit;
+  border-color: var(--ifm-color-emphasis-300, #c9ced6);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+  transform: translateY(-2px);
+}
+.de-video-cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #eef1f6;
+  overflow: hidden;
+}
+.de-video-cover img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  object-fit: cover;
+}
+.de-video-badge {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 7px;
+  border-radius: 4px;
+  background: rgba(45, 52, 64, .78);
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 18px;
+}
+.de-video-badge::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 7px solid #ffffff;
+}
+.de-video-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 42px;
+  padding: 10px 12px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ifm-font-color-base, #1c1e21);
 }
 
 /* navbar 只显示 logo, 隐藏 logo 旁的文字标题(navbar.title 留空时 Docusaurus 会 fallback 站点标题, 这里一并隐藏) */
@@ -624,6 +690,40 @@ html[class*='docs-doc-id-manual/pam/introduction'] .theme-doc-markdown table {
 .theme-doc-sidebar-container li.sidebar-item-badge-rec > .menu__link > span::after,
 .theme-doc-sidebar-container li.sidebar-item-badge-rec > .menu__list-item-collapsible > .menu__link > span::after {
   content: "推 荐";
+  flex: 0 0 auto;
+  margin-left: 8px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #ffc266 0%, #ff871d 50%, #ff5c00 100%);
+  box-shadow: 0 1px 2px rgba(255, 92, 0, 0.25);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.4px;
+  vertical-align: middle;
+}
+
+/* ===== 文档侧栏 HOT 标签 =====
+   在 sidebars.js 中给需要标记的条目增加 className: "sidebar-item-badge-hot"。
+   样式与 推荐 标签完全一致，仅文案不同。 */
+.theme-doc-sidebar-container li.sidebar-item-badge-hot > .menu__link,
+.theme-doc-sidebar-container li.sidebar-item-badge-hot > .menu__list-item-collapsible > .menu__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.theme-doc-sidebar-container li.sidebar-item-badge-hot > .menu__link > span,
+.theme-doc-sidebar-container li.sidebar-item-badge-hot > .menu__list-item-collapsible > .menu__link > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.theme-doc-sidebar-container li.sidebar-item-badge-hot > .menu__link > span::after,
+.theme-doc-sidebar-container li.sidebar-item-badge-hot > .menu__list-item-collapsible > .menu__link > span::after {
+  content: "HOT";
   flex: 0 0 auto;
   margin-left: 8px;
   padding: 2px 7px;
