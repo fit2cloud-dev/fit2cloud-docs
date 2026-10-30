@@ -10,7 +10,7 @@ description: 介绍 1Panel AI 网关的离线安装方式，涵盖离线包内�
 - **全程离线、开箱即用**：离线包内置 Docker 离线安装包、网关镜像与 PostgreSQL 镜像，安装过程不依赖外网，也无需自行准备数据库实例。
 - **自带 1gctl 命令行工具**：安装完成后可直接在部署服务器上执行 `1gctl` 完成服务状态检查、启停、重启、日志查看与卸载；通过 1Panel 应用商店方式部署的网关没有该工具。
 - **不受 1Panel 版本限制**：通过 1Panel 应用商店安装 PostgreSQL 版本，需要 **1Panel v2.4.0 及以上版本**；1Panel 版本低于 v2.4.0 时，应用商店的版本列表不会显示 PostgreSQL 版本。
-- **避免数据库类型被锁定**：SQLite 与 PostgreSQL 之间不能直接升级，也不能交叉恢复备份。通过 1Panel 应用商店以 SQLite 方式部署后，升级到 v1.5.0 仍只能继续使用 SQLite，无法切换为 PostgreSQL，除非重新部署。
+- **避免数据库类型被锁定**：SQLite 与 PostgreSQL 之间不能直接升级，也不能交叉恢复备份。通过 1Panel 应用商店以 SQLite 方式部署后，升级到 v1.5.1 仍只能继续使用 SQLite，无法切换为 PostgreSQL，除非重新部署。
 
 :::
 
@@ -50,10 +50,10 @@ description: 介绍 1Panel AI 网关的离线安装方式，涵盖离线包内�
 
 ## 3 离线包内容
 
-解压后的离线包目录结构如下所示（以 v1.5.0 amd64 为例）：
+解压后的离线包目录结构如下所示（以 v1.5.1 amd64 为例）：
 
 ```text
-1panel-ai-gateway-v1.5.0-linux-amd64/
+1panel-ai-gateway-v1.5.1-linux-amd64/
 ├── install.sh                      安装脚本
 ├── upgrade.sh                      升级脚本
 ├── 1gctl.sh                        控制工具脚本（安装后注册为 1gctl 命令）
@@ -100,7 +100,7 @@ description: 介绍 1Panel AI 网关的离线安装方式，涵盖离线包内�
 
 <div style={{textAlign:'center',color:'#8a8f99',fontSize:'13px',margin:'6px 0 20px'}}>图 1  社区版下载页</div>
 
-- 当前最新版本为 **v1.5.0**，安装包文件名为 `1panel-ai-gateway-v1.5.0-linux-amd64.tar.gz`。
+- 当前最新版本为 **v1.5.1**，安装包文件名为 `1panel-ai-gateway-v1.5.1-linux-amd64.tar.gz`。
 - 下载页会同步提供各历史版本的安装包，可按需选择。
 
 下载完成后，将离线包**上传至部署服务器**，下文以 `/home` 目录为例说明安装过程。
@@ -114,7 +114,7 @@ description: 介绍 1Panel AI 网关的离线安装方式，涵盖离线包内�
 ```bash
 cd /home
 # 请将示例文件名替换为实际下载的安装包名称
-tar zxvf 1panel-ai-gateway-v1.5.0-linux-amd64.tar.gz
+tar zxvf 1panel-ai-gateway-v1.5.1-linux-amd64.tar.gz
 ```
 
 <img src="/img/offline_installation/image2-extract.png" alt="解压离线安装包" style={{display:'block',margin:'16px auto',maxWidth:'100%'}}/>
@@ -125,7 +125,7 @@ tar zxvf 1panel-ai-gateway-v1.5.0-linux-amd64.tar.gz
 
 ```bash
 # 进入解压后的目录（目录名与安装包同名）
-cd 1panel-ai-gateway-v1.5.0-linux-amd64
+cd 1panel-ai-gateway-v1.5.1-linux-amd64
 
 # 执行安装脚本
 /bin/bash install.sh
@@ -191,7 +191,7 @@ cd 1panel-ai-gateway-v1.5.0-linux-amd64
 <tr><th style={{width:'32%', padding:'8px'}}>容器名称</th><th style={{width:'28%', padding:'8px'}}>镜像</th><th style={{width:'40%', padding:'8px'}}>说明</th></tr>
 </thead>
 <tbody>
-<tr><td style={{padding:'8px'}}><code>1panel-ai-gateway</code></td><td style={{padding:'8px'}}><code>1panel/ai-gateway:v1.5.0</code></td><td style={{padding:'8px'}}>网关服务，映射宿主机 8080 端口</td></tr>
+<tr><td style={{padding:'8px'}}><code>1panel-ai-gateway</code></td><td style={{padding:'8px'}}><code>1panel/ai-gateway:v1.5.1</code></td><td style={{padding:'8px'}}>网关服务，映射宿主机 8080 端口</td></tr>
 <tr><td style={{padding:'8px'}}><code>1panel-ai-gateway-postgres</code></td><td style={{padding:'8px'}}><code>postgres:18.6</code></td><td style={{padding:'8px'}}>数据库服务，仅在容器网络内提供 5432，不对外暴露</td></tr>
 </tbody>
 </table>
