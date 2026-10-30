@@ -34,10 +34,10 @@ description: 介绍 1Panel AI 网关 1Panel 安装的说明
 
 1Panel AI 网关应用提供两个版本，请在 **版本** 下拉框中按需选择：
 
-- **1.5.0**：使用 SQLite，适合单机部署，已有 SQLite 实例可沿此版本线升级。
-- **1.5.0-postgres**：使用 PostgreSQL，需要 **1Panel v2.4.0 及以上版本** 和 **PostgreSQL 18**。1Panel 版本低于 v2.4.0 时，版本下拉框中不会显示该版本。安装时选择已在 1Panel 中配置的 PostgreSQL 服务，由面板创建并关联应用数据库。
+- **1.5.1**：使用 SQLite，适合单机部署，已有 SQLite 实例可沿此版本线升级。
+- **1.5.1-postgres**：使用 PostgreSQL，需要 **1Panel v2.4.0 及以上版本** 和 **PostgreSQL 18**。1Panel 版本低于 v2.4.0 时，版本下拉框中不会显示该版本。安装时选择已在 1Panel 中配置的 PostgreSQL 服务，由面板创建并关联应用数据库。
 
-两个版本均使用 `1panel/ai-gateway:v1.5.0` 镜像，通过数据库配置区分。应用目录保存配置等持久化数据；PostgreSQL 版的数据库由所选 PostgreSQL 服务保存，备份请使用 1Panel 的应用备份功能以包含关联数据库。
+两个版本均使用 `1panel/ai-gateway:v1.5.1` 镜像，通过数据库配置区分。应用目录保存配置等持久化数据；PostgreSQL 版的数据库由所选 PostgreSQL 服务保存，备份请使用 1Panel 的应用备份功能以包含关联数据库。
 
 SQLite 与 PostgreSQL 版本之间不能直接升级或交叉恢复备份，切换数据库类型需要单独迁移数据。
 
