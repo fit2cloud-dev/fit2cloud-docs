@@ -12,6 +12,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!缺陷管理](/img/metersphere-v2/track/缺陷管理.png)
 
+图 1  缺陷管理
+
 ## 1 创建缺陷
 
 :::note
@@ -22,6 +24,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建缺陷](/img/metersphere-v2/track/创建缺陷1.png)
 
+图 2  创建缺陷（1）
+
 :::note
 
 也可以在测试用例执行中创建缺陷或关联缺陷。
@@ -29,6 +33,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!创建缺陷](/img/metersphere-v2/track/创建缺陷2.png)
+
+图 3  创建缺陷（2）
 
 ## 2 同步缺陷 (X-Pack)
 
@@ -40,6 +46,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建缺陷](/img/metersphere-v2/track/同步缺陷.png)
 
+图 4  同步缺陷
+
 ## 3 导入缺陷
 
 :::note
@@ -50,6 +58,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建缺陷](/img/metersphere-v2/track/导入缺陷.png)
 
+图 5  导入缺陷
+
 ## 4 导出缺陷
 
 :::note
@@ -59,3 +69,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!创建缺陷](/img/metersphere-v2/track/导出缺陷.png)
+
+图 6  导出缺陷

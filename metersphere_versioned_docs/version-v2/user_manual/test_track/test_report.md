@@ -11,6 +11,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!测试报告](/img/metersphere-v2/track/测试报告.png)
 
+图 1  测试报告
+
 ## 1 报告详情介绍
 
 :::note
@@ -29,7 +31,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!报告总结](/img/metersphere-v2/track/报告总结.png)
 
+图 2  报告总结
+
 ![!报告总结](/img/metersphere-v2/track/报告总结_1.png)
+
+图 3  编辑报告总结
 
 ### 1.2 功能测试部分
 
@@ -42,6 +48,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!功能测试](/img/metersphere-v2/track/功能测试1.png)
 
+图 4  功能测试统计图表
+
 :::note
 
 同时支持用户自定义指定统计各个指标，统计图表为自动重新统计。
@@ -50,6 +58,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!功能测试](/img/metersphere-v2/track/功能测试2.png)
 
+图 5  功能测试自定义统计
+
 :::note
 
 报告中【缺陷列表、所有用例、失败用例、堵塞用例、跳过用例】都是以列表的形式显示其相关明细。
@@ -57,6 +67,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!功能测试](/img/metersphere-v2/track/功能测试3.png)
+
+图 6  功能测试用例明细
 
 ### 1.3 接口测试部分
 
@@ -69,6 +81,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!接口测试](/img/metersphere-v2/track/接口测试1.png)
 
+图 7  接口测试统计图表
+
 :::note
 
 报告中【失败用例、所有用例】都是以列表的形式显示其相关明细。<br />
@@ -78,6 +92,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!接口测试](/img/metersphere-v2/track/接口测试2.png)
 
+图 8  接口测试用例页签
+
 :::note
 
 选择【接口用例】，点击左侧接口用例列表中的某个接口，其右侧可呈现该接口运行时详细的测试数据及结果。
@@ -86,6 +102,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!接口测试](/img/metersphere-v2/track/接口测试4.png)
 
+图 9  接口用例详情
+
 :::note
 
 选择【场景用例】，点击左侧场景用例列表中的某个场景，其右侧可呈现该场景用例运行时详细的测试数据及结果。
@@ -93,6 +111,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!接口测试](/img/metersphere-v2/track/接口测试3.png)
+
+图 10  场景用例详情
 
 ### 1.4 UI 测试部分
 
@@ -104,6 +124,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!UI测试](/img/metersphere-v2/track/UI测试部分.png)
 
+图 11  UI 测试部分
+
 :::note
 
 点击左侧 UI 用例列表中的某个用例，其右侧可呈现该 UI 运行时详细的测试数据及结果。
@@ -111,6 +133,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!接口测试](/img/metersphere-v2/track/UI测试详细信息.png)
+
+图 12  UI 测试详细信息
 
 ### 1.5 性能测试部分
 
@@ -123,6 +147,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能测试](/img/metersphere-v2/track/性能测试1.png)
 
+图 13  性能测试统计图表
+
 :::note
 
 报告中【失败用例、所有用例】都是以列表的形式显示其相关明细。<br />
@@ -131,6 +157,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能测试](/img/metersphere-v2/track/性能测试2.png)
+
+图 14  性能测试用例详情
 
 ## 2 报告目录
 
@@ -143,6 +171,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!报告目录](/img/metersphere-v2/track/报告目录1.png)
 
+图 15  报告目录
+
 ## 3 报告免登陆分享
 
 :::note
@@ -153,6 +183,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!报告分享](/img/metersphere-v2/track/报告分享1.png)
 
+图 16  报告分享链接
+
 :::note
 
 在浏览器的地址栏中，输入该地址，就可直接打开此测试报告。
@@ -160,6 +192,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!报告分享](/img/metersphere-v2/track/报告分享2.png)
+
+图 17  报告分享页面
 
 ## 4 报告导出
 
@@ -170,3 +204,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!报告导出](/img/metersphere-v2/track/报告导出.png)
+
+图 18  报告导出

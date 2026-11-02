@@ -6,6 +6,8 @@ title: "联系我们"
 
 ![wechat-official](/img/metersphere/wechat-official.jpg)
 
+图 1  飞致云微信公众号
+
 ## 2 开源社区论坛
 
 :::note

@@ -51,7 +51,7 @@ function markDeCaptions() {
     return;
   }
   const product = document.documentElement.dataset.docsProduct;
-  if (product !== 'dataease' && product !== 'sqlbot') {
+  if (product !== 'dataease' && product !== 'sqlbot' && product !== 'metersphere') {
     return;
   }
   document.querySelectorAll('.theme-doc-markdown p').forEach((p) => {

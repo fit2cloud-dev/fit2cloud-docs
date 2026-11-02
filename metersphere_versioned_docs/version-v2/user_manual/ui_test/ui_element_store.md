@@ -13,6 +13,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建元素](/img/metersphere-v2/ui_test/创建元素.png)
 
+图 1  创建元素
+
 ## 2 元素定位
 
 :::note
@@ -23,6 +25,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![元素定位](/img/metersphere-v2/ui_test/元素定位1.png)
 
+图 2  元素定位（1）
+
 :::note
 
 在页面上点击你要定位的元素，然后右键选择【检查】。
@@ -31,6 +35,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![元素定位](/img/metersphere-v2/ui_test/元素定位2.png)
 
+图 3  元素定位（2）
+
 :::note
 
 右键选择 Copy-Copy XPath 即可获得该元素的 xpath 路径。
@@ -38,6 +44,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![元素定位](/img/metersphere-v2/ui_test/元素定位3.png)
+
+图 4  元素定位（3）
 
 ## 3 编辑元素
 
@@ -49,8 +57,14 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![编辑元素](/img/metersphere-v2/ui_test/编辑元素.png)
 
+图 5  编辑元素
+
 ## 4 复制元素
 ![复制元素](/img/metersphere-v2/ui_test/复制元素.png)
 
+图 6  复制元素
+
 ## 5 删除元素
 ![删除元素](/img/metersphere-v2/ui_test/删除元素.png)
+
+图 7  删除元素

@@ -14,3 +14,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![UI系统设置](/img/metersphere-v2/ui_test/UI系统设置.png)
+
+图 1  UI 系统设置

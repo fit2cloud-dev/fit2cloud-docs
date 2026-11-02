@@ -11,6 +11,8 @@ MeterSphere v2.4 版本实现了服务集成的插件化，目前已经支持禅
 
 ![录制](/img/metersphere-v2/user_manual/plugin_use/service_integration_plugin/service_integration_plugin_1.png)
 
+图 1  录制（1）
+
 :::note
 
 【系统设置】-【系统】-【服务集成】处可看到 Jira 平台，选中 Jira 平台可出现相关账号信息。点击【编辑】填写Jira 平台相关账号信息后进行保存，并通过【测试连接】进行验证。
@@ -19,6 +21,8 @@ MeterSphere v2.4 版本实现了服务集成的插件化，目前已经支持禅
 
 ![录制](/img/metersphere-v2/user_manual/plugin_use/service_integration_plugin/service_integration_plugin_3.png)
 
+图 2  录制（2）
+
 :::note
 
 验证通过后，在【系统设置】-【系统】-【项目管理】处，进行项目编辑时，可看到【集成第三方平台】的下拉框有 Jira 平台选项以及 Jira 平台的相关信息。
@@ -26,3 +30,5 @@ MeterSphere v2.4 版本实现了服务集成的插件化，目前已经支持禅
 :::
 
 ![录制](/img/metersphere-v2/user_manual/plugin_use/service_integration_plugin/service_integration_plugin_4.png)
+
+图 3  录制（3）

@@ -81,8 +81,16 @@ vi /opt/metersphere/docker-compose-kafka.yml 配置
 :::
 
 ![配置主机1](/img/metersphere-v2/installation/dis_pressure/kafka主机1.png)
+
+图 1  Kafka 主机（1）
+
 ![配置主机2](/img/metersphere-v2/installation/dis_pressure/kafka主机2.png)
+
+图 2  Kafka 主机（2）
+
 ![配置主机3](/img/metersphere-v2/installation/dis_pressure/kafka主机3.png)
+
+图 3  Kafka 主机（3）
 
 ## 4 分别修改三台 MeterSphere 服务docker配置文件，将使用到 kafka 集群的配置项改为 KAFKA_BOOTSTRAP-SERVERS：ip1:9092,ip2:9092,ip3:9092。
 
@@ -106,6 +114,8 @@ cd /opt/metersphere 需修改文件:
 
 ![配置](/img/metersphere-v2/installation/dis_pressure/其他服务配置.png)
 
+图 4  其他服务配置
+
 ## 5 所有配置修改完成，msctl reload 生效即可创建 kraft 集群。
 
 :::note
@@ -113,10 +123,18 @@ cd /opt/metersphere 需修改文件:
 以上内容配置好之后，使用 msctl reload 命令重新加载配置文件，即可创建 kraft 集群。
 ![配置](/img/metersphere-v2/installation/dis_pressure/reload.png)
 
+图 5  重载服务配置
+
 :::
 
 ![配置](/img/metersphere-v2/installation/dis_pressure/集群1.png)
 
+图 6  集群（1）
+
 ![配置](/img/metersphere-v2/installation/dis_pressure/集群2.png)
 
+图 7  集群（2）
+
 ![配置](/img/metersphere-v2/installation/dis_pressure/集群.png)
+
+图 8  集群（3）

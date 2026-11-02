@@ -34,9 +34,13 @@ pip install pinyin
 
 ![接口测试](/img/metersphere/ask_question/api_question/task_runner_volumn.png)
 
+图 1  Task-Runner 目录挂载
+
 配置完成后执行 msctl reload，服务启动后就可以在 Python3 脚本中直接使用三方包了
 
 ![接口测试](/img/metersphere/ask_question/api_question/python3代码.png)
+
+图 2  Python3 代码
 
 :::
 
@@ -104,6 +108,8 @@ services:
 
 ![接口测试](/img/metersphere/ask_question/api_question/本地执行localhost.png)
 
+图 3  本地执行 localhost
+
 :::note
 
 在 Chrome 浏览器上访问【chrome://flags/#block-insecure-private-network-requests】将该项设置为【disabled】，重启浏览器即可
@@ -111,6 +117,8 @@ services:
 :::
 
 ![接口测试](/img/metersphere/ask_question/api_question/localhost设置.png)
+
+图 4  localhost 设置
 
 :::note
 
@@ -120,6 +128,8 @@ services:
 
 ![接口测试](/img/metersphere/ask_question/api_question/Edge浏览器.png)
 
+图 5  Edge 浏览器
+
 :::note
 
 点击【检测并保存】即可检测通过
@@ -127,6 +137,8 @@ services:
 :::
 
 ![接口测试](/img/metersphere/ask_question/api_question/localhost检测通过.png)
+
+图 6  localhost 检测通过
 
 :::note[配置本地IP异常]
 
@@ -136,6 +148,8 @@ services:
 
 ![接口测试](/img/metersphere/ask_question/api_question/本地执行.png)
 
+图 7  本地执行
+
 :::note
 
 在 Chrome 浏览器上访问【chrome://settings/】后，点击【隐私和安全-网站设置-更多内容设置-不安全内容-允许显示不安全内容-添加】
@@ -144,7 +158,11 @@ services:
 
 ![接口测试](/img/metersphere/ask_question/api_question/IP浏览器设置.png)
 
+图 8  IP 浏览器设置
+
 ![接口测试](/img/metersphere/ask_question/api_question/IP不安全内容.png)
+
+图 9  IP 不安全内容
 
 :::note
 
@@ -154,7 +172,11 @@ services:
 
 ![接口测试](/img/metersphere/ask_question/api_question/IP添加运行域名.png)
 
+图 10  IP 添加运行域名
+
 ![接口测试](/img/metersphere/ask_question/api_question/不安全内容允许.png)
+
+图 11  不安全内容允许
 
 :::note
 
@@ -164,7 +186,11 @@ services:
 
 ![接口测试](/img/metersphere/ask_question/api_question/Edge不安全.png)
 
+图 12  Edge 不安全
+
 ![接口测试](/img/metersphere/ask_question/api_question/Edge添加域名.png)
+
+图 13  Edge 添加域名
 
 :::note
 
@@ -173,6 +199,8 @@ services:
 :::
 
 ![接口测试](/img/metersphere/ask_question/api_question/IP检测通过.png)
+
+图 14  IP 检测通过
 
 ## 3 资源池无法访问当前站点
 
@@ -184,6 +212,8 @@ services:
 
 ![接口测试](/img/metersphere/ask_question/api_question/资源池无法访问当前站点.png)
 
+图 15  资源池无法访问当前站点
+
 :::note[解决方法]
 
 【系统设置-系统-资源池】编辑页面，工作节点 URL 填写为 MeterSphere 服务地址，该地址与 task-runner 容器服务之间网络要通。
@@ -191,3 +221,5 @@ services:
 :::
 
 ![接口测试](/img/metersphere/ask_question/api_question/配置当前站点.png)
+
+图 16  配置当前站点

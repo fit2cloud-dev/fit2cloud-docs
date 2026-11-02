@@ -12,6 +12,8 @@ title: "个人信息"
 
 ![个人中心](/img/metersphere/personal_center/基础信息操作.png)
 
+图 1  基础信息操作
+
 ## 2 密码设置
 
 :::note
@@ -21,6 +23,8 @@ title: "个人信息"
 :::
 
 ![个人中心](/img/metersphere/personal_center/个人中心修改密码.png)
+
+图 2  个人中心修改密码
 
 ## 3 APIKEY
 
@@ -32,6 +36,8 @@ title: "个人信息"
 
 ![个人中心](/img/metersphere/personal_center/apikey.png)
 
+图 3  API Key 管理
+
 ## 4 本地执行
 
 :::note
@@ -41,6 +47,8 @@ title: "个人信息"
 :::
 
 ![个人中心](/img/metersphere/personal_center/个人中心本地执行.png)
+
+图 4  个人中心本地执行
 
 :::note[说明]
 
@@ -64,6 +72,8 @@ title: "个人信息"
 
 ![个人中心](/img/metersphere/personal_center/禅道个人账号.png)
 
+图 5  禅道个人账号
+
 ## 6  模型配置
 
 :::note
@@ -73,3 +83,5 @@ title: "个人信息"
 :::
 
 ![个人中心](/img/metersphere/personal_center/个人中心模型配置.png)
+
+图 6  个人中心模型配置

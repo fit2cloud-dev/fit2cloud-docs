@@ -12,6 +12,8 @@ title: "通用功能"
 
 ![!切换项目](/img/metersphere/general/切换项目.png)
 
+图 1  切换项目
+
 :::note[说明]
 
 系统中的测试计划、测试用例、接口测试用例、缺陷等资源均使用项目进行隔离。
@@ -31,6 +33,8 @@ title: "通用功能"
 
 ![!添加子模块](/img/metersphere/general/添加子模块.png)
 
+图 2  添加子模块
+
 :::note[说明]
 
 系统默认模块【未规划用例】不允许创建子模块。
@@ -40,6 +44,8 @@ title: "通用功能"
 ### 2.2 模块操作
 
 ![!模块操作](/img/metersphere/general/模块操作1.png)
+
+图 3  模块操作（1）
 
 :::note[操作说明]
 
@@ -59,6 +65,8 @@ title: "通用功能"
 
 ![!模块操作](/img/metersphere/general/模块操作2.png)
 
+图 4  模块操作（2）
+
 ## 3 列表页操作
 
 ### 3.1 批量操作
@@ -71,6 +79,8 @@ title: "通用功能"
 
 ![!批量操作](/img/metersphere/general/批量操作.png)
 
+图 5  批量操作
+
 :::note
 
 批量编辑标签属性时，可以进行【更新】、【追加】、【清空】等操作。
@@ -78,6 +88,8 @@ title: "通用功能"
 :::
 
 ![!批量操作](/img/metersphere/general/批量编辑标签操作.png)
+
+图 6  批量编辑标签操作
 
 ### 3.2 全选操作
 
@@ -89,8 +101,12 @@ title: "通用功能"
 
 ![!全选操作](/img/metersphere/general/全选操作.png)
 
+图 7  全选操作
+
 ### 3.3 查询操作
 ![!查询操作](/img/metersphere/general/查询操作.png)
+
+图 8  查询操作
 
 ### 3.4 表格设置
 
@@ -112,6 +128,8 @@ title: "通用功能"
 
 ![!表格设置](/img/metersphere/general/表格设置.png)
 
+图 9  表格设置
+
 ### 3.5 表头快捷排序
 
 :::note
@@ -119,6 +137,8 @@ title: "通用功能"
 :::
 
 ![!表头快捷排序](/img/metersphere/general/表头快捷排序.png)
+
+图 10  表头快捷排序
 
 ### 3.6 列表排序
 
@@ -130,6 +150,8 @@ title: "通用功能"
 
 ![!列表排序](/img/metersphere/general/列表排序.png)
 
+图 11  列表排序
+
 ### 3.7 表头快捷筛选
 
 :::note
@@ -139,6 +161,8 @@ title: "通用功能"
 :::
 
 ![!表头快捷筛选](/img/metersphere/general/表头快捷筛选.png)
+
+图 12  表头快捷筛选
 
 ### 3.8 列表内快捷修改
 
@@ -150,6 +174,8 @@ title: "通用功能"
 
 ![!列表内快捷修改](/img/metersphere/general/列表内快捷修改.png)
 
+图 13  列表内快捷修改
+
 ### 3.9 调整列表宽度
 
 :::note
@@ -159,6 +185,8 @@ title: "通用功能"
 :::
 
 ![!调整列表宽度](/img/metersphere/general/调整列表宽度.png)
+
+图 14  调整列表宽度
 
 ### 3.10 快捷键保存
 
@@ -178,7 +206,11 @@ title: "通用功能"
 
 ![!回收站](/img/metersphere/general/回收站1.png)
 
+图 15  回收站（1）
+
 ![!回收站](/img/metersphere/general/回收站2.png)
+
+图 16  回收站（2）
 
 ## 5 消息通知
 
@@ -190,6 +222,8 @@ title: "通用功能"
 
 ![!消息通知](/img/metersphere/general/消息通知.png)
 
+图 17  消息通知
+
 ## 6 任务中心
 
 :::note
@@ -199,6 +233,8 @@ title: "通用功能"
 :::
 
 ![!任务中心](/img/metersphere/general/任务中心1.png)
+
+图 18  任务中心
 
 ### 6.1 系统即时任务
 
@@ -210,6 +246,8 @@ title: "通用功能"
 
 ![!消息通知](/img/metersphere/general/实时任务.png)
 
+图 19  实时任务
+
 :::note
 
 失败用例或场景支持一键失败重跑。
@@ -217,6 +255,8 @@ title: "通用功能"
 :::
 
 ![!消息通知](/img/metersphere/general/一键重跑.png)
+
+图 20  一键重跑
 
 ### 6.2 任务执行详情
 
@@ -228,6 +268,8 @@ title: "通用功能"
 
 ![!消息通知](/img/metersphere/general/任务执行详情.png)
 
+图 21  任务执行详情
+
 ### 6.3 系统后台任务
 
 :::note
@@ -238,6 +280,8 @@ title: "通用功能"
 
 ![!消息通知](/img/metersphere/general/系统后台任务.png)
 
+图 22  系统后台任务
+
 ## 7 帮助中心
 
 :::note
@@ -245,6 +289,8 @@ title: "通用功能"
 :::
 
 ![!帮助中心](/img/metersphere/general/帮助中心.png)
+
+图 23  帮助中心
 
 ## 8 切换语言
 
@@ -254,6 +300,8 @@ title: "通用功能"
 
 ![!切换语言](/img/metersphere/general/切换语言.png)
 
+图 24  切换语言
+
 ## 9 退出系统
 
 :::note
@@ -261,3 +309,5 @@ title: "通用功能"
 :::
 
 ![!退出系统](/img/metersphere/general/退出系统.png)
+
+图 25  退出系统

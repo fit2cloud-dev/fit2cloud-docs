@@ -19,6 +19,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/创建代码片段1.png)
 
+图 1  创建代码片段（1）
+
 :::note
 
 点击【创建代码片段】，可以把常用的脚本代码保存在这里。
@@ -26,6 +28,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/创建代码片段2.png)
+
+图 2  创建代码片段（2）
 
 :::note
 
@@ -35,6 +39,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/创建代码片段3.png)
 
+图 3  创建代码片段（3）
+
 :::note
 
 同时系统提供相关的管理功能：【编辑】、【复制】和【删除】等，对代码片段进行管理。
@@ -42,6 +48,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/代码列表操作.png)
+
+图 4  代码列表操作
 
 ## 2 自定义代码片段使用
 
@@ -53,4 +61,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/插入自定义代码片段.png)
 
+图 5  插入自定义代码片段（1）
+
 ![!项目设置](/img/metersphere-v2/project_management/插入自定义代码片段_1.png)
+
+图 6  插入自定义代码片段（2）

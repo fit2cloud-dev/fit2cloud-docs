@@ -13,6 +13,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!消息通知](/img/metersphere-v2/system_management/消息通知首页.png)
 
+图 1  消息通知首页
+
 :::note
 
 - **测试跟踪任务通知**<br />
@@ -22,6 +24,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!消息设置-设置](/img/metersphere-v2/system_management/消息设置-设置.png)
 
+图 2  消息设置-设置
+
 :::note
 
 同时测试跟踪页面上的每个关键操作，都可以支持用户自定义任务通知。比如测试计划的新建、更新、删除、执行完成等，都可以设置相应的任务通知。
@@ -29,6 +33,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!测试计划-新建](/img/metersphere-v2/system_management/测试计划-新建.png)
+
+图 3  测试计划-新建
 
 :::note
 
@@ -39,6 +45,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!接口-首页](/img/metersphere-v2/system_management/接口-首页.png)
 
+图 4  接口-首页
+
 :::note
 
 同时接口测试页面上的每个关键操作，都可以支持用户自定义任务通知。比如接口定义中 API 相关的增删改、CASE 相关的增删改等操作，都可以设置相应的任务通知。
@@ -46,6 +54,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!接口-新建](/img/metersphere-v2/system_management/接口-新建.png)
+
+图 5  接口-新建
 
 :::note
 
@@ -56,6 +66,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能测试任务通知-首页](/img/metersphere-v2/system_management/性能测试任务通知-首页.png)
 
+图 6  性能测试任务通知-首页
+
 :::note
 
 同时性能测试页面上的每个关键操作，都可以支持用户自定义任务通知。比如测试的新建、更新、删除、执行完成等操作，都可以设置相应的任务通知。
@@ -63,6 +75,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能测试任务通知-新建](/img/metersphere-v2/system_management/性能测试任务通知-新建.png)
+
+图 7  性能测试任务通知-新建
 
 :::note
 
@@ -73,6 +87,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!Jenkins任务通知-首页](/img/metersphere-v2/system_management/Jenkins任务通知-首页.png)
 
+图 8  Jenkins 任务通知-首页
+
 :::note
 
 Jenkins 任务通知自动化通过 Jenkins 持续部署来启动 MeterSphere 自动化脚本时，可以在这里设置此类型的任务通知。
@@ -80,6 +96,8 @@ Jenkins 任务通知自动化通过 Jenkins 持续部署来启动 MeterSphere �
 :::
 
 ![!Jenkins任务通知-新建](/img/metersphere-v2/system_management/Jenkins任务通知-新建.png)
+
+图 9  Jenkins 任务通知-新建
 
 ## 2 自定义消息模板 (X-Pack)
 
@@ -91,4 +109,8 @@ Jenkins 任务通知自动化通过 Jenkins 持续部署来启动 MeterSphere �
 
 ![!自定义模板](/img/metersphere-v2/system_management/自定义消息模板.png)
 
+图 10  自定义消息模板
+
 ![!自定义模板](/img/metersphere-v2/system_management/自定义模板页面.png)
+
+图 11  自定义模板页面

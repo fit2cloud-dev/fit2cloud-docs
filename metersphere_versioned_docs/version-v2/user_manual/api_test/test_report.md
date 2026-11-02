@@ -18,8 +18,16 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!查看测试报告](/img/metersphere-v2/api/查看报告1.png)
+
+图 1  查看报告
+
 ![!查看测试报告](/img/metersphere-v2/api/查看报告详情.png)
+
+图 2  查看报告详情
+
 ![!重命名测试报告](/img/metersphere-v2/api/修改报告名称.png)
+
+图 3  修改报告名称
 
 ## 2 导出和分享测试报告
 
@@ -31,6 +39,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!导出测试报告](/img/metersphere-v2/api/分享报告.png)
 
+图 4  分享报告
+
 ## 3 删除测试报告
 
 :::note
@@ -41,6 +51,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!删除测试报告](/img/metersphere-v2/api/删除报告.png)
 
+图 5  删除报告
+
 :::note
 
 在测试报告列表批量勾选，点击列表三个小点【...】即可出现【批量删除报告】菜单，点击可批量删除测试报告。<br />
@@ -49,3 +61,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!接口测试首页](/img/metersphere-v2/api/批量删除报告.png)
+
+图 6  批量删除报告

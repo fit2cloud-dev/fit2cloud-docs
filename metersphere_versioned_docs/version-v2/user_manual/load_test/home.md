@@ -14,3 +14,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!测试跟踪首页](/img/metersphere-v2/performance/性能测试首页.png)
+
+图 1  性能测试首页

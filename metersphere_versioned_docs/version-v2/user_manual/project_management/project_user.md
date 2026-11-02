@@ -19,6 +19,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/项目成员.png)
 
+图 1  项目成员
+
 :::note
 
 点击页面左上角【添加成员】，可根据用户 ID 和用户邮箱搜索需要添加的用户，可选择用户组，点击【确定】按钮完成项目成员添加。
@@ -27,6 +29,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/添加成员.png)
 
+图 2  添加成员
+
 :::note
 
 添加完成后可在成员列表中查看到添加的成员，在成员的操作列中可点击【编辑】和【删除】进行成员修改和成员删除操作。
@@ -34,3 +38,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/编辑移除.png)
+
+图 3  编辑移除

@@ -12,6 +12,8 @@ title: "Kubernetes 部署"
 
 ![执行命令](/img/metersphere/installation/k8s/下载helm-chart包.png)
 
+图 1  下载 helm-chart 包
+
 :::note[修改配置文件]
 
 ```
@@ -24,7 +26,11 @@ vi values.yaml
 
 ![执行命令](/img/metersphere/installation/k8s/修改values配置文件.png)
 
+图 2  修改 values 配置文件
+
 ![执行命令](/img/metersphere/installation/k8s/外置中间件.png)
+
+图 3  外置中间件
 
 :::note[配置说明]
 
@@ -47,6 +53,8 @@ helm install metersphere metersphere3-3.4.0.tgz -f values.yaml -n ms
 
 ![执行命令](/img/metersphere/installation/k8s/执行安装命令.png)
 
+图 4  执行安装命令
+
 :::note[查询服务状态]
 
 ```
@@ -57,6 +65,8 @@ helm install metersphere metersphere3-3.4.0.tgz -f values.yaml -n ms
 
 ![执行命令](/img/metersphere/installation/k8s/查询服务状态.png)
 
+图 5  查询服务状态
+
 :::note[注意：]
 
 若是无网环境，先下载离线包导入镜像后，再执行安装命令，下载地址：https://community.fit2cloud.com/#/products/metersphere/downloads
@@ -64,6 +74,8 @@ helm install metersphere metersphere3-3.4.0.tgz -f values.yaml -n ms
 :::
 
 ![执行命令](/img/metersphere/installation/k8s/下载离线镜像.png)
+
+图 6  下载离线镜像
 
 :::note
 
@@ -76,6 +88,8 @@ docker load < metersphere.tar
 :::
 
 ![执行命令](/img/metersphere/installation/k8s/加载离线镜像.png)
+
+图 7  加载离线镜像
 
 ## 2 helm-chart 升级
 

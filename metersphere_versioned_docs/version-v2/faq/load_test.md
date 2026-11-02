@@ -15,6 +15,8 @@ MeterSphere 通过在测试资源池中添加多个测试执行节点的方式�
 
 ![测试资源池](/img/metersphere-v2/system_management/编辑测试资源池.png)
 
+图 1  编辑测试资源池
+
 ## 2 如何向测试资源池中添加节点？
 
 :::note
@@ -177,6 +179,8 @@ nginx.novalocal
 
 ![! 报告对比](/img/metersphere-v2/faq/报告对比.png)
 
+图 2  报告对比
+
 ## 13 执行压测时，多台发压机的情况下，可以设置变量不重复执行吗？
 
 :::note
@@ -235,6 +239,8 @@ http://服务器IP:9100/metrics # 访问查看 node_export 是否正常启动
 
 ![! 性能测试-设置超时时间](/img/metersphere-v2/faq/性能测试-设置超时时间.png)
 
+图 3  性能测试-设置超时时间
+
 ## 18 进行压测时，最大用户加到 50/100 就不能继续加吗？
 
 :::note
@@ -273,6 +279,8 @@ http://服务器IP:9100/metrics # 访问查看 node_export 是否正常启动
 
 ![! 接口测试-K8S配置](/img/metersphere-v2/faq/接口测试-K8S配置.png)
 
+图 4  接口测试-K8s 配置（1）
+
 ## 22 操作时提示：`check node-controller status`
 
 :::note
@@ -292,6 +300,8 @@ http://服务器IP:9100/metrics # 访问查看 node_export 是否正常启动
 :::
 
 ![! 接口测试-K8S配置](/img/metersphere-v2/faq/Jmeter_Heap.jpg)
+
+图 5  接口测试-K8s 配置（2）
 
 ## 24 性能测试中怎么跨线程传递变量？
 
@@ -340,6 +350,8 @@ http://服务器IP:9100/metrics # 访问查看 node_export 是否正常启动
 
 ![!kafka](/img/metersphere-v2/faq/kafka_log.png)
 
+图 6  Kafka 日志配置
+
 ## 28 性能测试时接口读取 csv 不能按顺序读取
 
 :::note
@@ -382,6 +394,8 @@ services: []
 :::
 
 ![!kafka](/img/metersphere-v2/faq/k8s_监控.png)
+
+图 7  K8s 监控
 
 ## 32 接口自动化创建的性能测试，脚本及文件内容更新后，已转性能测试的用例没有同步更新
 

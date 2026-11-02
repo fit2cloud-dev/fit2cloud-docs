@@ -12,6 +12,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 ## 1 新增用户组
 ![!项目设置](/img/metersphere-v2/project_management/创建用户组.png)
 
+图 1  创建用户组
+
 :::note
 
 点击【创建用户组】，新增当前项目的用户组信息。详细功能操作及说明参考 [系统设置->系统->用户组与权限->创建用户组](../system_management/system#1-用户)。
@@ -21,6 +23,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 ## 2 设置用户组权限
 ![!项目设置](/img/metersphere-v2/project_management/设置用户组权限.png)
 
+图 2  设置用户组权限
+
 :::note
 
 点击【设置权限】为用户组进行权限设置。详细功能操作及说明参考 [系统设置->系统->用户组与权限->设置权限](../system_management/system#3-用户组与权限)。
@@ -29,6 +33,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ## 3 设置用户组成员
 ![!项目设置](/img/metersphere-v2/project_management/设置用户组成员.png)
+
+图 3  设置用户组成员
 
 :::note
 

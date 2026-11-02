@@ -13,6 +13,8 @@ title: "钉钉"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/创建应用.png)
 
+图 1  创建应用
+
 :::note
 
 在创建应用的信息设置页面进行相关设置，点击保存。
@@ -21,6 +23,8 @@ title: "钉钉"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/填写应用名称.png)
 
+图 2  填写应用名称
+
 :::note
 
 在创建应用成功后，点击【凭证与基础信息】后，可以查看到应用凭证。
@@ -28,6 +32,8 @@ title: "钉钉"
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/应用凭证.png)
+
+图 3  应用凭证
 
 ## 2 权限配置
 
@@ -39,6 +45,8 @@ title: "钉钉"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/设置回调地址.png)
 
+图 4  设置回调地址
+
 :::note
 
 点击【安全设置】，填写服务器出口IP，点击保存即可。
@@ -46,6 +54,8 @@ title: "钉钉"
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/钉钉出口配置.png)
+
+图 5  钉钉出口配置
 
 :::note[参数说明]
 
@@ -62,6 +72,8 @@ title: "钉钉"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/勾选读权限.png)
 
+图 6  勾选读权限
+
 :::note
 
 搜索【User】后，开通【个人手机号信息】、【通讯录个人信息读权限】、【调用钉钉项目管理相关接口的权限】权限。
@@ -69,6 +81,8 @@ title: "钉钉"
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/个人信息权限.png)
+
+图 7  个人信息权限
 
 ## 3 钉钉认证配置
 
@@ -79,6 +93,8 @@ title: "钉钉"
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/MS配置钉钉.png)
+
+图 8  MS 配置钉钉
 
 :::note[注意]
 
@@ -96,6 +112,12 @@ title: "钉钉"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/work_weixin/企业微信登录页面.png)
 
+图 9  MeterSphere 登录页面
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/钉钉扫码登录.png)
 
+图 10  钉钉扫码登录
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/dingding/钉钉正常登录.png)
+
+图 11  钉钉正常登录

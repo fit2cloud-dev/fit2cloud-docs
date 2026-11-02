@@ -7,6 +7,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![整体架构](/img/metersphere-v2/system-arch.png)
 
+图 1  整体架构
+
 :::note[组件说明]
 
 - **[Chrome 浏览器录制插件](https://github.com/metersphere/chrome-extensions)**: 录制 Web 访问请求生成 JMeter 脚本并导入到 MeterSphere 中用于接口测试及性能测试。
@@ -42,6 +44,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![组件说明](/img/metersphere-v2/components.png)
 
+图 2  组件说明
+
 ## 2 管理模型
 
 :::note
@@ -59,6 +63,8 @@ MeterSphere 提供了多租户、多角色的管理模型, 用户可根据所在
 :::
 
 ![管理模型](/img/metersphere-v2/management-model.png)
+
+图 3  管理模型
 
 ## 3 技术栈
 

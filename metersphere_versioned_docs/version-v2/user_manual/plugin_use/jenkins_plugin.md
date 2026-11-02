@@ -19,6 +19,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![Jenkins_plugin](/img/metersphere-v2/user_manual/plugin_use/jenkins_plugin/jenkins_plugin_install.png)
 
+图 1  安装 Jenkins 插件
+
 ## 2 插件使用
 
 :::note
@@ -30,6 +32,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![Jenkins_plugin](/img/metersphere-v2/user_manual/plugin_use/jenkins_plugin/MeterSphere-Jenkins-config.png)
 
+图 2  配置构建步骤
+
 :::note
 
 v2版本将 Jenkins Job 的运行结果变更为当前运行的测试计划或用例的实际运行结果状态，即当用例运行失败时，Jenkins Job 的状态也为失败。
@@ -37,3 +41,5 @@ v2版本将 Jenkins Job 的运行结果变更为当前运行的测试计划或�
 :::
 
 ![Jenkins_plugin](/img/metersphere-v2/user_manual/plugin_use/jenkins_plugin/add_jenkins_3.png)
+
+图 3  Jenkins 构建结果

@@ -12,6 +12,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!用例评审](/img/metersphere-v2/track/用例评审1.png)
 
+图 1  用例评审（1）
+
 :::note
 
 进入测试用例评审详情页时，系统提供了两种用例显示模式：列表和脑图。
@@ -19,6 +21,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!用例评审](/img/metersphere-v2/track/用例评审2.png)
+
+图 2  用例评审（2）
 
 :::note
 
@@ -28,8 +32,12 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!用例评审](/img/metersphere-v2/track/用例评审3.png)
 
+图 3  用例评审（3）
+
 ## 1 创建用例评审任务
 ![!用例评审](/img/metersphere-v2/track/用例评审首页.png)
+
+图 4  用例评审首页
 
 :::note
 
@@ -38,6 +46,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!用例评审](/img/metersphere-v2/track/创建用例评审.png)
+
+图 5  创建用例评审
 
 :::note[评审通过标准]
 
@@ -54,6 +64,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!选择测试用例](/img/metersphere-v2/track/关联测试用例1.png)
 
+图 6  关联测试用例（1）
+
 :::note
 
 在弹出的用例选择列表中，选择要添加到此次用例评审任务中的测试用例，点击【确定】完成添加。
@@ -61,6 +73,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!选择测试用例](/img/metersphere-v2/track/关联测试用例2.png)
+
+图 7  关联测试用例（2）
 
 ## 2 编辑评审
 
@@ -72,7 +86,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!编辑评审](/img/metersphere-v2/track/编辑评审1.png)
 
+图 8  编辑评审（1）
+
 ![!编辑评审](/img/metersphere-v2/track/编辑评审2.png)
+
+图 9  编辑评审（2）
 
 ### 2.1 关联用例
 
@@ -84,7 +102,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联用例](/img/metersphere-v2/track/关联用例1.png)
 
+图 10  关联用例（1）
+
 ![!关联用例](/img/metersphere-v2/track/关联用例2.png)
+
+图 11  关联用例（2）
 
 :::note
 
@@ -93,6 +115,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!关联用例](/img/metersphere-v2/track/关联用例3.png)
+
+图 12  关联用例（3）
 
 :::note
 
@@ -109,6 +133,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!取消关联](/img/metersphere-v2/track/取消关联.png)
+
+图 13  取消关联
 
 ## 3 开始评审
 
@@ -128,6 +154,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联测试用例](/img/metersphere-v2/track/用例评审执行主页.png)
 
+图 14  用例评审执行主页
+
 :::note
 
 进入用例评审详情页面，使用【翻页】按钮快速切换用例，使用标签快捷标注用例评审结果，标注后的评审结果将会在用例列表中显示。同时支持用户为此次评审发表评论。
@@ -135,6 +163,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!关联测试用例](/img/metersphere-v2/track/用例评审执行详情页.png)
+
+图 15  用例评审执行详情页
 
 :::note
 
@@ -145,6 +175,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联测试用例](/img/metersphere-v2/track/用例评审关联缺陷.png)
 
+图 16  用例评审关联缺陷
+
 :::note
 
 - 批量更改评审结果
@@ -153,6 +185,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!关联测试用例](/img/metersphere-v2/track/批量更改评审结果.png)
+
+图 17  批量更改评审结果
 
 ### 3.2 指定用例评审
 
@@ -164,6 +198,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联测试用例](/img/metersphere-v2/track/指定用例评审1.png)
 
+图 18  指定用例评审
+
 ### 3.3 脑图模式评审用例
 
 :::note
@@ -173,6 +209,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!脑图评审测试用例](/img/metersphere-v2/track/脑图评审测试用例.png)
+
+图 19  脑图评审测试用例
 
 ## 4 重新提审
 
@@ -184,6 +222,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!开启重新提审](/img/metersphere-v2/track/开启重新提审.png)
 
+图 20  开启重新提审
+
 :::note
 
 评审人可快速检索出需要重新评审的用例。评审列表中还支持手动更新为【重新提审】状态。
@@ -191,6 +231,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!筛选重新提审](/img/metersphere-v2/track/筛选重新提审.png)
+
+图 21  筛选重新提审
 
 :::note[开启重新提审]
 
@@ -208,6 +250,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!批量操作](/img/metersphere-v2/track/批量操作1.png)
 
+图 22  批量操作
+
 ### 5.1 批量编辑
 
 :::note
@@ -217,6 +261,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!批量编辑](/img/metersphere-v2/track/批量编辑2.png)
+
+图 23  批量编辑
 
 ### 5.2 批量取消关联
 
@@ -228,3 +274,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!批量取消关联](/img/metersphere-v2/track/批量取消关联.png)
+
+图 24  批量取消关联

@@ -57,6 +57,8 @@ vars.remove("VAR3");
 
 ![!代码模板](/img/metersphere-v2/api/前置脚本.png)
 
+图 1  前置脚本
+
 ### 1.1 API测试
 
 :::note
@@ -66,7 +68,12 @@ vars.remove("VAR3");
 :::
 
 ![!API测试](/img/metersphere-v2/api/选择API.png)
+
+图 2  选择 API
+
 ![!API测试](/img/metersphere-v2/api/生成代码.png)
+
+图 3  生成代码
 
 :::note
 
@@ -75,6 +82,8 @@ vars.remove("VAR3");
 :::
 
 ![!API测试](/img/metersphere-v2/api/新API测试.png)
+
+图 4  新 API 测试
 
 ### 1.2 自定义变量
 
@@ -85,6 +94,8 @@ vars.remove("VAR3");
 :::
 
 ![!自定义变量](/img/metersphere-v2/api/自定义变量.png)
+
+图 5  自定义变量
 
 ### 1.3 项目环境
 
@@ -98,6 +109,8 @@ vars.remove("VAR3");
 
 ![!项目环境](/img/metersphere-v2/api/环境变量.png)
 
+图 6  环境变量
+
 ### 1.4 自定义代码片段
 
 :::note
@@ -107,7 +120,12 @@ vars.remove("VAR3");
 :::
 
 ![!项目环境](/img/metersphere-v2/api/选择自定义代码片段1.png)
+
+图 7  选择自定义代码片段
+
 ![!项目环境](/img/metersphere-v2/api/复用代码片段1.png)
+
+图 8  复用代码片段
 
 ### 1.5 异常处理
 
@@ -119,6 +137,8 @@ vars.remove("VAR3");
 
 ![!终止测试](/img/metersphere-v2/api/终止流程.png)
 
+图 9  终止流程
+
 ## 2 后置脚本
 
 :::note
@@ -128,6 +148,8 @@ vars.remove("VAR3");
 :::
 
 ![!终止测试](/img/metersphere-v2/api/后置脚本.png)
+
+图 10  后置脚本
 
 ## 3 前置 SQL
 
@@ -143,7 +165,12 @@ vars.remove("VAR3");
 :::
 
 ![!前置SQL](/img/metersphere-v2/api/前置sql编辑.png)
+
+图 11  前置 SQL 编辑
+
 ![!SQL请求参数](/img/metersphere-v2/api/前置SQL1.png)
+
+图 12  前置 SQL
 
 ## 4 后置 SQL
 
@@ -170,7 +197,12 @@ vars.remove("VAR3");
 :::
 
 ![!断言界面](/img/metersphere-v2/api/添加断言.png)
+
+图 13  添加断言
+
 ![!断言界面](/img/metersphere-v2/api/断言规则使用.png)
+
+图 14  断言规则使用
 
 ### 5.1 文本断言
 
@@ -186,6 +218,8 @@ vars.remove("VAR3");
 
 ![!文本断言](/img/metersphere-v2/api/文本断言1.png)
 
+图 15  文本断言
+
 ### 5.2 正则断言
 
 :::note
@@ -198,6 +232,8 @@ vars.remove("VAR3");
 :::
 
 ![!正则断言](/img/metersphere-v2/api/正则断言1.png)
+
+图 16  正则断言
 
 :::note[示例]
 
@@ -226,7 +262,12 @@ JSONPath 断言适用于响应内容是 JSON 格式进行断言。
 :::
 
 ![!JSONPath断言](/img/metersphere-v2/api/jsonpath表达式.png)
+
+图 17  jsonpath 表达式
+
 ![!JSONPath断言](/img/metersphere-v2/api/jsonpath快捷操作.png)
+
+图 18  jsonpath 快捷操作
 
 ### 5.4 XPath 断言
 
@@ -239,6 +280,8 @@ XPath 断言适用于对响应内容是 XML、HTML 等格式的请求进行断�
 :::
 
 ![!XPath断言](/img/metersphere-v2/api/xpath断言1.png)
+
+图 19  XPath 断言
 
 :::note[示例]
 
@@ -285,6 +328,8 @@ XPath 断言适用于对响应内容是 XML、HTML 等格式的请求进行断�
 
 ![!响应时间断言](/img/metersphere-v2/api/响应时间.png)
 
+图 20  响应时间
+
 ### 5.6 文档结构校验
 
 :::note
@@ -295,6 +340,8 @@ XPath 断言适用于对响应内容是 XML、HTML 等格式的请求进行断�
 
 ![!文档结构校验](/img/metersphere-v2/api/文档格式校验添加.png)
 
+图 21  文档格式校验添加
+
 :::note
 
 导入文档校验： 点击【导入】可导入需断言 Json/xml 数据，自动生成文档结构校验元素表格。可以自定义设置 校验规则。<br />
@@ -303,7 +350,12 @@ XPath 断言适用于对响应内容是 XML、HTML 等格式的请求进行断�
 :::
 
 ![!文档结构校验](/img/metersphere-v2/api/导入校验.png)
+
+图 22  导入校验
+
 ![!文档结构校验](/img/metersphere-v2/api/文档格式校验内容.png)
+
+图 23  文档格式校验内容
 
 ### 5.7 脚本断言
 
@@ -316,7 +368,12 @@ XPath 断言适用于对响应内容是 XML、HTML 等格式的请求进行断�
 :::
 
 ![!脚本断言](/img/metersphere-v2/api/脚本断言编辑.png)
+
+图 24  脚本断言编辑
+
 ![!脚本断言](/img/metersphere-v2/api/脚本断言.png)
+
+图 25  脚本断言
 
 ## 6 提取参数
 
@@ -333,6 +390,8 @@ MeterSphere已支持的提取参数方式包括：
 
 ![!提取参数界面](/img/metersphere-v2/api/正则提取参数.png)
 
+图 26  正则提取参数
+
 ### 6.1 正则提取
 
 :::note
@@ -346,6 +405,8 @@ MeterSphere已支持的提取参数方式包括：
 :::
 
 ![!正则提取](/img/metersphere-v2/api/正则表达提取.png)
+
+图 27  正则表达提取
 
 :::note
 
@@ -375,7 +436,12 @@ JSONPath 提取适用于响应内容是 JSON 格式的响应内容的处理，�
 :::
 
 ![!JSONPath提取](/img/metersphere-v2/api/jp提参.png)
+
+图 28  jp 提参
+
 ![!JSONPath提取](/img/metersphere-v2/api/推荐jp.png)
+
+图 29  推荐 jp
 
 :::note
 
@@ -413,6 +479,8 @@ XPath 提取适用于处理 XML、HTML 等格式的响应内容，可以方便�
 :::
 
 ![!XPath提取](/img/metersphere-v2/api/xp提取.png)
+
+图 30  xp 提取
 
 :::note[示例]
 

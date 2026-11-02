@@ -13,6 +13,8 @@ title: "飞书"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/飞书创建应用.png)
 
+图 1  飞书创建应用
+
 :::note
 
 输入应用名称和应用描述，点击【创建】即可
@@ -20,6 +22,8 @@ title: "飞书"
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/飞书应用名称.png)
+
+图 2  飞书应用名称
 
 ## 2 设置飞书引用
 ### 2.1 配置网页应用
@@ -32,6 +36,8 @@ title: "飞书"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/添加机器人能力.png)
 
+图 3  添加机器人能力
+
 :::note
 
 在【网页应用】页面，填写"桌面端主页"和"移动端主页"内容，均为 MeterSphere 访问地址。
@@ -39,6 +45,8 @@ title: "飞书"
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/网页应用.png)
+
+图 4  网页应用
 
 ### 2.2 配置安全设置
 
@@ -50,6 +58,8 @@ title: "飞书"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/安全设置.png)
 
+图 5  安全设置
+
 ### 2.3 配置权限管理
 
 :::note
@@ -59,6 +69,8 @@ title: "飞书"
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/批量开通权限.png)
+
+图 6  批量开通权限
 
 ### 2.4 配置版本管理
 
@@ -70,7 +82,11 @@ title: "飞书"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/创建版本发布.png)
 
+图 7  创建版本发布
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/填写发布版本信息.png)
+
+图 8  填写发布版本信息
 
 :::note
 
@@ -80,7 +96,11 @@ title: "飞书"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/确认发布.png)
 
+图 9  确认发布
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/已发布.png)
+
+图 10  已发布
 
 ## 3 获取凭据
 
@@ -92,6 +112,8 @@ title: "飞书"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/获取凭证.png)
 
+图 11  获取凭证
+
 ## 4 MeterSphere 配置飞书
 
 :::note
@@ -101,6 +123,8 @@ title: "飞书"
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/飞书连接成功.png)
+
+图 12  飞书连接成功
 
 ## 5 飞书登录
 
@@ -112,6 +136,12 @@ title: "飞书"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/work_weixin/企业微信登录页面.png)
 
+图 13  MeterSphere 登录页面
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/飞书扫码登录.png)
 
+图 14  飞书扫码登录
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/feishu/飞书正常登录.png)
+
+图 15  飞书正常登录

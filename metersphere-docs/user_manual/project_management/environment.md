@@ -10,6 +10,8 @@ title: "环境管理"
 
 ![!项目环境页面](/img/metersphere/project_management/enviroment/项目环境页面.png)
 
+图 1  项目环境页面
+
 ## 1 请求头
 
 :::note
@@ -20,6 +22,8 @@ title: "环境管理"
 
 ![!全局请求头](/img/metersphere/project_management/enviroment/全局请求头.png)
 
+图 2  全局请求头
+
 :::note
 
 参数值使用【Mock】和【JMeter】函数，以【Mock】函数为例。
@@ -28,6 +32,8 @@ title: "环境管理"
 
 ![!请求头自动生成](/img/metersphere/project_management/enviroment/请求头自动生成.png)
 
+图 3  请求头自动生成
+
 :::note
 
 【批量添加】请求头。
@@ -35,6 +41,8 @@ title: "环境管理"
 :::
 
 ![!批量添加请求头内容](/img/metersphere/project_management/enviroment/批量添加请求头内容.png)
+
+图 4  批量添加请求头内容
 
 ## 2 环境配置
 
@@ -50,9 +58,15 @@ title: "环境管理"
 
 ![!环境进行复制删除操作](/img/metersphere/project_management/enviroment/环境进行复制删除操作.png)
 
+图 5  环境进行复制删除操作
+
 ![!环境进行复制删除操作](/img/metersphere/project_management/enviroment/环境复制删除导出操作.png)
 
+图 6  环境复制删除导出操作
+
 ![!导入导出环境](/img/metersphere/project_management/enviroment/导入导出环境.png)
+
+图 7  导入导出环境
 
 :::note[功能说明:]
 
@@ -77,6 +91,8 @@ title: "环境管理"
 
 ![!环境变量](/img/metersphere/project_management/enviroment/环境变量.png)
 
+图 8  环境变量
+
 ### 2.2 HTTP
 
 :::note
@@ -87,6 +103,8 @@ title: "环境管理"
 
 ![!添加环境内容](/img/metersphere/project_management/enviroment/添加环境内容.png)
 
+图 9  添加环境内容
+
 :::note
 
 添加【HTTP】或【HTTPS】请求时，可通过不同的条件，例如模块、路径进行匹配。
@@ -94,6 +112,8 @@ title: "环境管理"
 :::
 
 ![!环境变量](/img/metersphere/project_management/enviroment/http设置.png)
+
+图 10  HTTP 设置
 
 :::note[环境启用条件规则:]
 
@@ -110,6 +130,8 @@ title: "环境管理"
 
 ![!设置超时时间](/img/metersphere/project_management/enviroment/设置超时时间.png)
 
+图 11  设置超时时间
+
 ### 2.3 数据库
 
 :::note
@@ -119,6 +141,8 @@ title: "环境管理"
 :::
 
 ![!数据源链接成功](/img/metersphere/project_management/enviroment/数据源连接成功.png)
+
+图 12  数据源连接成功
 
 :::note[数据源字段说明:]
 
@@ -146,6 +170,8 @@ title: "环境管理"
 
 ![!数据源链接成功](/img/metersphere/project_management/enviroment/host域名解析.png)
 
+图 13  host 域名解析
+
 ### 2.5 前置/后置
 
 :::note
@@ -155,6 +181,8 @@ title: "环境管理"
 :::
 
 ![!前置操作sql操作](/img/metersphere/project_management/enviroment/前置操作sql操作.png)
+
+图 14  前置操作 SQL 操作
 
 :::note
 
@@ -172,6 +200,8 @@ title: "环境管理"
 
 ![!显示设置](/img/metersphere/project_management/enviroment/断言.png)
 
+图 15  断言
+
 ### 2.7 TCP 设置
 
 :::note
@@ -182,6 +212,8 @@ title: "环境管理"
 
 ![!显示设置](/img/metersphere/project_management/enviroment/TCP配置.png)
 
+图 16  TCP 配置
+
 ### 2.8 显示设置
 
 :::note
@@ -191,6 +223,8 @@ title: "环境管理"
 :::
 
 ![!显示设置](/img/metersphere/project_management/enviroment/显示设置.png)
+
+图 17  显示设置
 
 [//]: # (## 2 环境组)
 

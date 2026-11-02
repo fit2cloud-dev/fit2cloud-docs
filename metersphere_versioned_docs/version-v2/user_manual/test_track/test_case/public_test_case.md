@@ -11,6 +11,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!公共用例库入口](/img/metersphere-v2/track/公共用例库入口.png)
 
+图 1  公共用例库入口
+
 :::note
 
 公共用例库列表字段不展示自定义的模板字段
@@ -18,6 +20,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!公共用例库页面](/img/metersphere-v2/track/公共用例库页面.png)
+
+图 2  公共用例库页面
 
 ## 1 启动公共用例库
 
@@ -29,6 +33,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!公共用例库选择数据](/img/metersphere-v2/track/启动公共用例库.png)
 
+图 3  启动公共用例库
+
 ## 2 添加用例至公共用例库
 
 :::note
@@ -39,6 +45,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!公共用例库批量处理](/img/metersphere-v2/track/添加用例至公共用例库.png)
 
+图 4  添加用例至公共用例库
+
 ## 3 从公共用例库中复制用例
 
 :::note
@@ -48,3 +56,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!公共用例库批量处理](/img/metersphere-v2/track/复制公共用例库中的用例.png)
+
+图 5  复制公共用例库中的用例

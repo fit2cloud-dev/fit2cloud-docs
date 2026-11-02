@@ -27,3 +27,5 @@ MeterSphere UI 测试模块围绕应用系统的 用户界面 提供以下主要
 :::
 
 ![UI系统设置](/img/metersphere-v2/ui_test/UI系统设置.png)
+
+图 1  UI 系统设置

@@ -11,6 +11,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!报表统计_首页](/img/metersphere-v2/report_statistics/报表统计_首页.png)
 
+图 1  报表统计 首页
+
 ## 1 测试用例统计
 
 :::note
@@ -21,7 +23,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!测试用例统计](/img/metersphere-v2/report_statistics/测试用例统计.png)
 
+图 2  测试用例统计（1）
+
 ![!测试用例统计](/img/metersphere-v2/report_statistics/测试用例统计_1.png)
+
+图 3  测试用例统计（2）
 
 - 创建新报表
 
@@ -41,6 +47,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!水平轴系列](/img/metersphere-v2/report_statistics/水平轴系列.png)
 
+图 4  水平轴系列
+
 - 纵向轴系列
 
 :::note
@@ -50,6 +58,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!纵向轴系列](/img/metersphere-v2/report_statistics/纵向轴系列.png)
+
+图 5  纵向轴系列
 
 - 创建时间
 
@@ -61,6 +71,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建时间](/img/metersphere-v2/report_statistics/创建时间.png)
 
+图 6  创建时间
+
 - 更多选项
 
 :::note
@@ -70,6 +82,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!更多选项](/img/metersphere-v2/report_statistics/更多选项.png)
+
+图 7  更多选项
 
 - 保存
 
@@ -81,6 +95,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!保存](/img/metersphere-v2/report_statistics/保存.png)
 
+图 8  保存
+
 - 另存为
 
 :::note
@@ -90,6 +106,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!保存](/img/metersphere-v2/report_statistics/另存为.png)
+
+图 9  另存为
 
 - 全部报表
 
@@ -101,6 +119,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!全部报表](/img/metersphere-v2/report_statistics/全部报表.png)
 
+图 10  全部报表
+
 - 我的报表
 
 :::note
@@ -110,6 +130,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!我的报表](/img/metersphere-v2/report_statistics/我的报表.png)
+
+图 11  我的报表
 
 - 重命名报表
 
@@ -121,6 +143,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!编辑](/img/metersphere-v2/report_statistics/编辑.png)
 
+图 12  编辑
+
 - 删除
 
 :::note
@@ -131,6 +155,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!编辑](/img/metersphere-v2/report_statistics/删除.png)
 
+图 13  删除
+
 - 导出
 
 :::note
@@ -140,3 +166,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!导出](/img/metersphere-v2/report_statistics/导出.png)
+
+图 14  导出

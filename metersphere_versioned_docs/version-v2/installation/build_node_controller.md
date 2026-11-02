@@ -13,6 +13,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 - 最后，资源池配置完成后，需要在资源池列表启用资源池，校验通过即可使用。
 
 ![配置主机3](/img/metersphere-v2/installation/dis_pressure/添加资源池.png)
+
+图 1  添加资源池
+
 ![配置主机3](/img/metersphere-v2/installation/dis_pressure/资源池检验.png)
+
+图 2  资源池检验
 
 :::

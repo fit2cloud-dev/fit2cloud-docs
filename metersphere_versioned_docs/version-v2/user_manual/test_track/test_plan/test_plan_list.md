@@ -13,6 +13,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!测试计划管理](/img/metersphere-v2/track/测试计划管理.png)
 
+图 1  测试计划管理
+
 ## 1 计划列表操作
 
 :::note
@@ -23,6 +25,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!计划列表维护](/img/metersphere-v2/track/计划列表维护1.png)
 
+图 2  计划列表维护（1）
+
 :::note
 
 点击【执行】按钮，选择和勾选运行测试计划的相关配置后，点击【执行】即可。默认环境为用例首次关联进测试计划所选择的用例，选择新环境后可选择执行和保存，保存后新选择的环境为默认环境，点击执行不会修改默认环境，默认环境多用于定时任务、API调用及流水线触发执行。<br />
@@ -31,6 +35,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!计划列表维护](/img/metersphere-v2/track/测试计划区分环境.png)
 
+图 3  测试计划区分环境
+
 :::note
 
 可以管理和维护本次计划测试的范围：功能测试用例、接口测试用例、场景测试用例、性能测试用例等。
@@ -38,6 +44,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!计划列表维护](/img/metersphere-v2/track/计划列表维护2.png)
+
+图 4  计划列表维护（2）
 
 ## 2 测试报告查看
 
@@ -49,7 +57,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!测试报告查看](/img/metersphere-v2/track/查看测试报告.png)
 
+图 5  查看测试报告
+
 ![!测试报告查看](/img/metersphere-v2/track/查看测试计划报告.png)
+
+图 6  查看测试计划报告
 
 :::note
 

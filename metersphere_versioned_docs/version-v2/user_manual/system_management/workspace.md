@@ -13,6 +13,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![工作空间](/img/metersphere-v2/system_management/工作空间.png)
 
+图 1  工作空间
+
 :::note
 
 - **添加成员**<br />
@@ -21,6 +23,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!添加成员](/img/metersphere-v2/system_management/添加成员.png)
+
+图 2  添加成员
 
 :::note[参数说明]
 
@@ -39,6 +43,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!编辑成员](/img/metersphere-v2/system_management/编辑成员.png)
 
+图 3  编辑成员
+
 :::note
 
 -  **查询用户**<br />
@@ -47,6 +53,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![查询成员用户](/img/metersphere-v2/system_management/查询成员用户.png)
+
+图 4  查询成员用户
 
 ## 2 服务集成
 
@@ -68,6 +76,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!服务集成](/img/metersphere-v2/system_management/服务集成首页.png)
 
+图 5  服务集成首页
+
 ### 2.1 与TAPD集成
 
 :::note
@@ -77,6 +87,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!TAPD-配置](/img/metersphere-v2/system_management/TAPD-配置.png)
+
+图 6  TAPD-配置
 
 :::note[参数说明]
 
@@ -93,6 +105,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!TAPD-马上关联项目](/img/metersphere-v2/system_management/TAPD-马上关联项目.png)
 
+图 7  TAPD-马上关联项目
+
 :::note
 
 跳转到项目管理页面，点击项目列表中的【编辑】按钮，编辑项目里【TAPD 项目 ID】，以及缺陷模板等相关信息。
@@ -101,6 +115,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!TAPD-编辑信息](/img/metersphere-v2/system_management/TAPD-编辑信息.png)
 
+图 8  TAPD-编辑信息
+
 :::note
 
 同时，还需要配置项目中的 TAPD 缺陷模板设置，【缺陷模板】需要选择【TAPD-默认模板】。
@@ -108,6 +124,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!TAPD-默认模板](/img/metersphere-v2/system_management/TAPD-默认模板.png)
+
+图 9  TAPD-默认模板
 
 :::note
 
@@ -118,6 +136,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!TAPD-马上添加](/img/metersphere-v2/system_management/TAPD-马上添加.png)
 
+图 10  TAPD-马上添加
+
 :::note
 
 该信息为通过 TAPD 提交缺陷的用户认证信息，若未填写，则使用组织中配置的默认信息。<br />
@@ -127,6 +147,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!TAPD-第三方平台账号](/img/metersphere-v2/system_management/TAPD-第三方平台账号.png)
 
+图 11  TAPD-第三方平台账号
+
 :::note
 
 参数说明：【TAPD 昵称】是 TAPD 个人设置里查看。
@@ -134,6 +156,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!TAPD-昵称](/img/metersphere-v2/system_management/TAPD-昵称.png)
+
+图 12  TAPD-昵称
 
 :::note
 
@@ -143,6 +167,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!TAPD-关联需求](/img/metersphere-v2/system_management/关联需求.png)
 
+图 13  关联需求（1）
+
 :::note
 
 在缺陷管理提交缺陷后，平台类型显示为 TAPD 的数据，点击【同步缺陷】按钮，会将数据同步到 TAPD 系统中。
@@ -151,6 +177,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!TAPD-同步需求](/img/metersphere-v2/system_management/同步缺陷_TAPD.png)
 
+图 14  同步缺陷 TAPD
+
 :::note
 
 在 TAPD 缺陷中可以查询到同步过来的缺陷数据。
@@ -158,6 +186,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!TAPD-查询需求](/img/metersphere-v2/system_management/TAPD-查询需求.png)
+
+图 15  TAPD-查询需求
 
 ### 2.2 与JIRA集成
 
@@ -177,6 +207,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!填写jira](/img/metersphere-v2/system_management/填写jira.png)
 
+图 16  填写 Jira
+
 :::note[注意]
 
 问题类型需要和 JIRA 的事务类型保持一致，必须在 JIRA 中存在此类型，如下：
@@ -184,6 +216,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!备注](/img/metersphere-v2/system_management/备注.png)
+
+图 17  备注
 
 :::note
 
@@ -200,6 +234,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!jira关联](/img/metersphere-v2/system_management/jira关联.png)
 
+图 18  Jira 关联
+
 :::note
 
 跳转到项目管理页面，点击项目列表中的【编辑】按钮，设置项目里项目相关配置。
@@ -207,6 +243,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!jira关联项目](/img/metersphere-v2/system_management/jira关联项目.png)
+
+图 19  Jira 关联项目
 
 :::note[参数说明]
 
@@ -219,6 +257,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!jira项目](/img/metersphere-v2/system_management/jira项目.png)
 
+图 20  Jira 项目
+
 :::note
 
 第三步：添加个人平台账号。<br />
@@ -228,6 +268,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!jira关联第三方帐号](/img/metersphere-v2/system_management/jira关联第三方帐号.png)
 
+图 21  Jira 关联第三方帐号
+
 :::note
 
 该信息为通过 Jira 提交缺陷的用户认证信息，若未填写，则使用组织中配置的默认信息.点击【第三方平台账号】设置【Jira 信息】，如果不设置个人平台账号，则所有使用 MeterSphere 提交缺陷的用户，此缺陷推送到配置的服务平台上账号都是服务配置中设定的账号信息。
@@ -235,6 +277,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!设置第三方信息](/img/metersphere-v2/system_management/设置第三方信息.png)
+
+图 22  设置第三方信息
 
 :::note
 
@@ -244,7 +288,11 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!关联需求](/img/metersphere-v2/system_management/关联需求.png)
 
+图 23  关联需求（2）
+
 ![!同步缺陷](/img/metersphere-v2/system_management/同步缺陷_Jira.png)
+
+图 24  同步缺陷 Jira
 
 ### 2.3 与禅道集成
 
@@ -255,6 +303,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!禅道-服务集成配置](/img/metersphere-v2/system_management/禅道-服务集成配置.png)
+
+图 25  禅道-服务集成配置
 
 :::note
 
@@ -279,6 +329,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!禅道-马上关联项目](/img/metersphere-v2/system_management/禅道-马上关联项目.png)
 
+图 26  禅道-马上关联项目
+
 :::note
 
 跳转到【项目管理】，点击【编辑】，编辑项目里【禅道项目ID】，以及缺陷模板等相关信息。
@@ -286,6 +338,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!禅道-禅道项目ID](/img/metersphere-v2/system_management/禅道-禅道项目ID.png)
+
+图 27  禅道项目 ID
 
 :::note[参数说明]
 
@@ -302,6 +356,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!禅道-马上添加](/img/metersphere-v2/system_management/禅道-马上添加.png)
 
+图 28  禅道-马上添加
+
 :::note
 
 该信息为通过禅道提交缺陷的用户名、密码，若未填写，则使用组织中配置的默认信息。<br />
@@ -311,6 +367,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!禅道-第三方平台账号](/img/metersphere-v2/system_management/禅道-第三方平台账号.png)
 
+图 29  禅道-第三方平台账号
+
 :::note
 
 以上配置完成后，在 Metersphere 系统中测试用例里，就可以关联禅道的相关需求。
@@ -319,6 +377,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!禅道-相关需求](/img/metersphere-v2/system_management/关联需求.png)
 
+图 30  关联需求（3）
+
 :::note
 
 在缺陷管理提交缺陷后，数据会同步到禅道系统中。
@@ -326,6 +386,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!禅道-同步需求](/img/metersphere-v2/system_management/同步缺陷_禅道.png)
+
+图 31  同步缺陷 禅道
 
 ### 2.4 与Azure Devops集成
 
@@ -338,6 +400,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!禅道-马上关联项目](/img/metersphere-v2/system_management/Azure配置项目.png)
 
+图 32  Azure 配置项目
+
 :::note
 
 第二步： 关联项目配置
@@ -347,6 +411,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!禅道-马上关联项目](/img/metersphere-v2/system_management/Azure-马上关联项目.png)
 
+图 33  Azure-马上关联项目
+
 :::note
 
 跳转到【项目管理】，点击【编辑】，编辑项目里【集成第三方平台】、【AzureDevops项目ID】、【AzureDevops过滤ID】，以及缺陷模板等相关信息。 <br />
@@ -354,6 +420,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!禅道-禅道项目ID](/img/metersphere-v2/system_management/Azure-Azure项目ID.png)
+
+图 34  Azure 项目 ID
 
 :::note
 
@@ -364,6 +432,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!禅道-马上添加](/img/metersphere-v2/system_management/Azure-马上添加.png)
 
+图 35  Azure-马上添加
+
 :::note
 
 选择【第三方平台账号】设置【AzureDevops 信息】，如果不设置个人平台账号，则使用 MeterSphere 提交缺陷的用户，此缺陷推送到配置的服务平台上账号都是服务配置中设定的账号信息。 <br />
@@ -371,6 +441,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!禅道-第三方平台账号](/img/metersphere-v2/system_management/Azure-第三方平台账号.png)
+
+图 36  Azure-第三方平台账号
 
 :::note
 
@@ -380,6 +452,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!禅道-相关需求](/img/metersphere-v2/system_management/Azure-关联需求.png)
 
+图 37  Azure-关联需求
+
 :::note
 
 在缺陷管理提交缺陷后，点击【同步按钮】，数据会同步到 AzureDevops 系统中。 <br />
@@ -387,6 +461,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!禅道-同步需求](/img/metersphere-v2/system_management/同步缺陷_Azure.png)
+
+图 38  同步缺陷 Azure
 
 ## 3 项目管理
 
@@ -406,6 +482,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!创建项目](/img/metersphere-v2/system_management/项目管理创建环境.png)
 
+图 39  项目管理创建环境
+
 :::note
 
 根据项目实际情况，选择对应的第三方集成平台以及用例模板和缺陷模板，点击保存即可。
@@ -413,6 +491,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!创建项目](/img/metersphere-v2/system_management/项目管理填写项目内容.png)
+
+图 40  项目管理填写项目内容
 
 :::note[参数说明]
 
@@ -431,6 +511,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!创建项目](/img/metersphere-v2/system_management/创建项目JIRA平台.png)
 
+图 41  创建项目 Jira 平台
+
 :::note
 
 - **编辑项目**<br />
@@ -439,6 +521,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!创建项目](/img/metersphere-v2/system_management/项目管理编辑.png)
+
+图 42  项目管理编辑
 
 :::note
 
@@ -449,6 +533,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!创建项目](/img/metersphere-v2/system_management/项目管理删除.png)
 
+图 43  项目管理删除
+
 :::note
 
 - **环境配置**<br />
@@ -457,6 +543,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!创建项目](/img/metersphere-v2/system_management/项目管理环境.png)
+
+图 44  项目管理环境
 
 ## 4 配额管理 (X-Pack)
 
@@ -468,7 +556,11 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!配额管理](/img/metersphere-v2/system_management/配额管理编辑.png)
 
+图 45  配额管理编辑
+
 ![!配额管理](/img/metersphere-v2/system_management/配额管理默认配额.png)
+
+图 46  配额管理默认配额
 
 :::note
 
@@ -478,6 +570,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!配额管理](/img/metersphere-v2/system_management/单个项目配额管理.png)
 
+图 47  单个项目配额管理
+
 :::note
 
 点击【删除】按钮，即可删除已配置好的内容，恢复到最初状态，使用默认配额的状态也由【是】变成【否】
@@ -485,6 +579,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!配额管理](/img/metersphere-v2/system_management/配额管理删除.png)
+
+图 48  配额管理删除
 
 ## 5 环境管理
 
@@ -505,6 +601,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 :::
 
 ![!创建环境](/img/metersphere-v2/system_management/创建环境.png)
+
+图 49  创建环境
 
 :::note
 
@@ -537,6 +635,8 @@ v2.4 版本缺陷对接实现了插件化，可根据自身需求开发对应插
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_通用配置.png)
 
+图 50  环境设置 通用配置（1）
+
 :::note
 
 IP 和域名进行映射配置，可设置链接超时、响应超时时间
@@ -544,6 +644,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 :::
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_通用配置_1.png)
+
+图 51  环境设置 通用配置（2）
 
 :::note
 
@@ -554,6 +656,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_HTTP配置.png)
 
+图 52  环境设置 HTTP 配置（1）
+
 :::note
 
 可设置模块、路径等条件来启用该环境
@@ -562,6 +666,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_HTTP配置_1.png)
 
+图 53  环境设置 HTTP 配置（2）
+
 :::note
 
 可单个设置或者批量设置请求头信息
@@ -569,6 +675,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 :::
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_HTTP配置_2.png)
+
+图 54  环境设置 HTTP 配置（3）
 
 :::note
 
@@ -579,6 +687,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_数据库配置.png)
 
+图 55  环境设置 数据库配置（1）
+
 :::note
 
 执行多条SQL语句需在数据库后面加上【?allowMultiQueries=true】，可设置最大连接数和超时时间，点击【校验】或【添加】
@@ -586,6 +696,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 :::
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_数据库配置_1.png)
+
+图 56  环境设置 数据库配置（2）
 
 :::note
 
@@ -596,6 +708,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_TCP配置.png)
 
+图 57  环境设置 TCP 配置
+
 :::note
 
 - **证书配置**<br />
@@ -604,6 +718,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 :::
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_证书配置.png)
+
+图 58  环境设置 证书配置
 
 :::note
 
@@ -614,6 +730,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_全局前置脚本.png)
 
+图 59  环境设置 全局前置脚本（1）
+
 :::note
 
 【单个请求步骤前执行】可设置【全局前置脚本】执行的协议以及顺序
@@ -622,6 +740,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_全局前置脚本_1.png)
 
+图 60  环境设置 全局前置脚本（2）
+
 :::note
 
 【所有场景步骤前执行】可关联场景结果，场景执行成功但是此处前置脚本执行失败，执行结果是显示失败
@@ -629,6 +749,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 :::
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_全局前置脚本_2.png)
+
+图 61  环境设置 全局前置脚本（3）
 
 :::note
 
@@ -646,6 +768,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_全局认证配置.png)
 
+图 62  环境设置 全局认证配置
+
 :::note
 
 - **全局断言**<br />
@@ -655,6 +779,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_全局断言.png)
 
+图 63  环境设置 全局断言（1）
+
 :::note
 
 可选择多种类型进行断言设置，可勾选忽略状态码，点击【添加】按钮即可
@@ -662,6 +788,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 :::
 
 ![!创建环境](/img/metersphere-v2/system_management/环境设置_全局断言_1.png)
+
+图 64  环境设置 全局断言（2）
 
 :::note
 
@@ -671,6 +799,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 :::
 
 ![!导入环境](/img/metersphere-v2/system_management/导入环境.png)
+
+图 65  导入环境
 
 :::note
 
@@ -687,6 +817,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!导出环境](/img/metersphere-v2/system_management/导出环境.png)
 
+图 66  导出环境
+
 :::note
 
 - **编辑环境**<br />
@@ -695,6 +827,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 :::
 
 ![!编辑环境](/img/metersphere-v2/system_management/编辑环境.png)
+
+图 67  编辑环境
 
 :::note
 
@@ -705,6 +839,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 
 ![!复制环境](/img/metersphere-v2/system_management/复制环境.png)
 
+图 68  复制环境
+
 :::note
 
 - **删除环境**<br />
@@ -713,6 +849,8 @@ IP 和域名进行映射配置，可设置链接超时、响应超时时间
 :::
 
 ![!删除环境](/img/metersphere-v2/system_management/删除环境.png)
+
+图 69  删除环境
 
 ### 5.2 环境组
 
@@ -726,6 +864,8 @@ MeterSphere 支持跨项目进行接口、接口用例、场景用例等自动�
 
 ![!创建环境组](/img/metersphere-v2/system_management/创建环境组.png)
 
+图 70  创建环境组
+
 :::note
 
 - **编辑环境组**<br />
@@ -734,6 +874,8 @@ MeterSphere 支持跨项目进行接口、接口用例、场景用例等自动�
 :::
 
 ![!编辑环境组](/img/metersphere-v2/system_management/编辑环境组.png)
+
+图 71  编辑环境组
 
 :::note
 
@@ -744,6 +886,8 @@ MeterSphere 支持跨项目进行接口、接口用例、场景用例等自动�
 
 ![!复制环境组](/img/metersphere-v2/system_management/复制环境组.png)
 
+图 72  复制环境组
+
 :::note
 
 - **删除环境组**<br />
@@ -752,6 +896,8 @@ MeterSphere 支持跨项目进行接口、接口用例、场景用例等自动�
 :::
 
 ![!删除环境组](/img/metersphere-v2/system_management/删除环境组.png)
+
+图 73  删除环境组
 
 ## 6 操作日志
 
@@ -762,3 +908,5 @@ MeterSphere 支持跨项目进行接口、接口用例、场景用例等自动�
 :::
 
 ![操作日志](/img/metersphere-v2/system_management/操作日志.png)
+
+图 74  操作日志

@@ -18,3 +18,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/项目功能列表.png)
+
+图 1  项目功能列表

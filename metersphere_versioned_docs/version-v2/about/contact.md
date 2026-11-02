@@ -7,6 +7,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![wechat-official](/img/metersphere-v2/wechat-official.jpg)
 
+图 1  飞致云微信公众号
+
 ## 2 开源社区论坛
 
 :::note

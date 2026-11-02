@@ -23,6 +23,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!用户管理](/img/metersphere-v2/system_management/系统用户首页.png)
 
+图 1  系统用户首页
+
 :::note[说明]
 
  MeterSphere 部署成功后会自动创建一个系统管理员账户，用户名为 admin，默认密码为 metersphere。如将平台用于生产环境，请及时更改密码。
@@ -38,6 +40,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建用户](/img/metersphere-v2/system_management/系统创建用户.png)
 
+图 2  系统创建用户
+
 :::note
 
 需要创建多个用户时，可点击【导入用户】按钮，下载模版并填写用户信息，通过 Excel 文件导入用户。
@@ -45,6 +49,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!创建用户](/img/metersphere-v2/system_management/系统导入用户.png)
+
+图 3  系统导入用户
 
 :::note
 
@@ -55,6 +61,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!设置用户角色](/img/metersphere-v2/system_management/系统下添加用户组.png)
 
+图 4  系统下添加用户组
+
 :::note
 
 - **查询用户**<br />
@@ -64,6 +72,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![针对用户的其他操作](/img/metersphere-v2/system_management/查询用户.png)
 
+图 5  查询用户
+
 :::note
 
 - **针对用户的其他操作**<br />
@@ -72,6 +82,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![针对用户的其他操作](/img/metersphere-v2/system_management/针对用户的其他操作.png)
+
+图 6  针对用户的其他操作
 
 ## 2 工作空间
 
@@ -83,6 +95,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!工作空间管理](/img/metersphere-v2/system_management/系统工作空间首页.png)
 
+图 7  系统工作空间首页
+
 :::note
 
 - **创建工作空间**<br />
@@ -91,6 +105,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!创建工作空间](/img/metersphere-v2/system_management/创建工作空间.png)
+
+图 8  创建工作空间
 
 :::note
 
@@ -101,6 +117,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!编辑工作空间](/img/metersphere-v2/system_management/编辑工作空间.png)
 
+图 9  编辑工作空间
+
 :::note
 
 - **删除工作空间**<br />
@@ -109,6 +127,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!删除工作空间](/img/metersphere-v2/system_management/删除工作空间.png)
+
+图 10  删除工作空间
 
 ## 3 用户组与权限
 
@@ -120,6 +140,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![系统用户组首页](/img/metersphere-v2/system_management/系统用户组首页3.png)
 
+图 11  系统用户组首页
+
 :::note
 
 - **创建用户组**<br />
@@ -128,6 +150,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建用户组](/img/metersphere-v2/system_management/创建用户组.png)
+
+图 12  创建用户组
 
 :::note
 
@@ -138,6 +162,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![为用户组配置权限](/img/metersphere-v2/system_management/为用户组配置权限4.png)
 
+图 13  为用户组配置权限
+
 :::note
 
 - **编辑用户组信息**<br />
@@ -146,6 +172,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![编辑用户组信息](/img/metersphere-v2/system_management/编辑用户组信息.png)
+
+图 14  编辑用户组信息
 
 :::note
 
@@ -156,6 +184,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![编辑用户组信息](/img/metersphere-v2/system_management/查询用户组信息.png)
 
+图 15  查询用户组信息
+
 :::note
 
 - **删除用户组**<br />
@@ -164,6 +194,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![编辑用户组信息](/img/metersphere-v2/system_management/删除用户组信息.png)
+
+图 16  删除用户组信息
 
 ## 4 测试资源池管理
 
@@ -175,6 +207,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!测试资源池管理](/img/metersphere-v2/system_management/系统测试资源池首页.png)
 
+图 17  系统测试资源池首页
+
 ### 4.1 创建 Node 资源池
 
 :::note
@@ -185,6 +219,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建资源池](/img/metersphere-v2/system_management/系统下创建资源池.png)
 
+图 18  系统下创建资源池
+
 ### 4.2 创建 Kubernetes 资源池 (X-Pack)
 
 :::note
@@ -194,6 +230,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!创建K8S资源池](/img/metersphere-v2/system_management/系统下创建K8S资源池.png)
+
+图 19  系统下创建 K8s 资源池
 
 :::note
 
@@ -236,6 +274,8 @@ kubectl get all -n ms-pool
 
 ![!创建K8S资源池](/img/metersphere-v2/system_management/下载yaml文件.png)
 
+图 20  下载 yaml 文件
+
 :::note
 
 Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
@@ -245,7 +285,11 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![!创建K8S资源池](/img/metersphere-v2/system_management/k8s资源池配置完成.png)
 
+图 21  K8s 资源池配置完成
+
 ![!创建K8S资源池](/img/metersphere-v2/system_management/k8s列表显示.png)
+
+图 22  K8s 列表显示
 
 :::note
 
@@ -271,6 +315,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![系统参数设置首页](/img/metersphere-v2/system_management/系统参数设置首页.png)
 
+图 23  系统参数设置首页（1）
+
 ### 5.1 基本配置
 
 :::note
@@ -280,6 +326,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![!当前站点URL](/img/metersphere-v2/system_management/系统参数设置首页_1.png)
+
+图 24  系统参数设置首页（2）
 
 :::note[选项]
 
@@ -300,6 +348,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![!编辑SMTP信息](/img/metersphere-v2/system_management/编辑smtp信息.png)
 
+图 25  编辑 smtp 信息
+
 ### 5.3 LDAP 设置
 
 :::note
@@ -309,6 +359,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![配置ldap](/img/metersphere-v2/system_management/配置ldap.png)
+
+图 26  配置 LDAP
 
 :::note[选项]
 
@@ -343,6 +395,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![ldap登录](/img/metersphere-v2/system_management/ldap登录.png)
 
+图 27  LDAP 登录
+
 ### 5.4 显示设置 (X-Pack)
 
 :::note
@@ -352,6 +406,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![显示设置](/img/metersphere-v2/system_management/显示设置.png)
+
+图 28  显示设置
 
 ### 5.5 认证设置 (X-Pack)
 
@@ -363,6 +419,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![认证配置](/img/metersphere-v2/system_management/认证配置_2.png)
 
+图 29  认证配置（1）
+
 :::note
 
 可以点击【启用/禁用】按钮或者【删除】按钮，若启用 CAS、OIDC 认证后，登录页会新增 CAS、OIDC 登录选项。<br />
@@ -371,7 +429,11 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![认证配置](/img/metersphere-v2/system_management/认证配置.png)
 
+图 30  认证配置（2）
+
 ![认证配置](/img/metersphere-v2/system_management/认证配置_1.png)
+
+图 31  认证配置（3）
 
 ### 5.6 模块管理 (X-Pack)
 
@@ -383,6 +445,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![模块管理](/img/metersphere-v2/system_management/模块管理.png)
 
+图 32  模块管理
+
 ### 5.7 扫码登录 (X-Pack)
 
 :::note
@@ -393,6 +457,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/扫码登录.png)
 
+图 33  扫码登录
+
 :::note[企业微信]
 
 打开 [企业微信管理后台](https://work.weixin.qq.com/)，用管理员权限用户登录。点击【我的企业】获取企业ID。
@@ -400,6 +466,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/企业微信获取企业ID.png)
+
+图 34  企业微信获取企业 ID
 
 :::note
 
@@ -409,6 +477,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/企业微信后台创建应用.png)
 
+图 35  企业微信后台创建应用
+
 :::note
 
 点击应用进入，获取 AgentId、Scret。
@@ -416,6 +486,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/获取应用ID和应用秘钥.png)
+
+图 36  获取应用 ID 和应用秘钥
 
 :::note
 
@@ -425,6 +497,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/配置回调地址.png)
 
+图 37  配置回调地址
+
 :::note
 
 配置企业可信IP。
@@ -432,6 +506,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/配置可信IP.png)
+
+图 38  配置可信 IP
 
 :::note
 
@@ -441,6 +517,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/配置企业微信连接成功.png)
 
+图 39  配置企业微信连接成功
+
 :::note
 
 登录页面，点击扫码登录即可。
@@ -449,7 +527,11 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/企业微信登录页.png)
 
+图 40  企业微信登录页
+
 ![扫码登录](/img/metersphere-v2/system_management/企业微信扫码进行登录.png)
+
+图 41  企业微信扫码进行登录
 
 :::note[钉钉]
 
@@ -459,6 +541,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/创建钉钉应用.png)
 
+图 42  创建钉钉应用
+
 :::note
 
 点击应用进入，获取 AgentId、Client ID 和 Client Secret。
@@ -466,6 +550,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/获取钉钉应用ID.png)
+
+图 43  获取钉钉应用 ID
 
 :::note
 
@@ -475,6 +561,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/钉钉设置回调地址.png)
 
+图 44  钉钉设置回调地址
+
 :::note
 
 点击【安全设置】，填写服务器出口IP，点击保存即可。
@@ -482,6 +570,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/钉钉出口配置.png)
+
+图 45  钉钉出口配置
 
 :::note
 
@@ -491,6 +581,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/钉钉个人信息权限.png)
 
+图 46  钉钉个人信息权限
+
 :::note
 
 点击【钉钉】添加按钮，填写应用key、应用ID、应用密钥，测试连接通过后，开启状态，点击【确定】即可。
@@ -498,6 +590,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/配置钉钉连接成功.png)
+
+图 47  配置钉钉连接成功
 
 :::note
 
@@ -507,6 +601,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/钉钉扫码登录.png)
 
+图 48  钉钉扫码登录
+
 :::note[飞书]
 
 打开 [飞书开放平台](https://open.feishu.cn/app/)，用管理员权限用户登录。点击【创建企业自建应用】。
@@ -514,6 +610,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/飞书创建应用.png)
+
+图 49  飞书创建应用
 
 :::note
 
@@ -523,6 +621,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/飞书应用名称.png)
 
+图 50  飞书应用名称
+
 :::note
 
 点击【添加应用能力】，添加网页应用。
@@ -530,6 +630,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/添加机器人能力.png)
+
+图 51  添加机器人能力
 
 :::note
 
@@ -539,6 +641,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/飞书配置回调地址.png)
 
+图 52  飞书配置回调地址
+
 :::note
 
 点击【安全设置】，添加重定向 URL 和 H5 可信域名，均填写填写 MeterSphere 访问地址。
@@ -546,6 +650,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/飞书配置域名地址.png)
+
+图 53  飞书配置域名地址
 
 :::note
 
@@ -555,6 +661,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/批量开通权限.png)
 
+图 54  批量开通权限
+
 :::note
 
 点击【版本管理与发布-创建版本】，填写应用版本号和更新说明等信息，点击【保存】。
@@ -562,6 +670,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/创建版本发布.png)
+
+图 55  创建版本发布
 
 :::note
 
@@ -571,6 +681,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/确认发布.png)
 
+图 56  确认发布
+
 :::note
 
 点击【凭证与基础信息】，获取 APP ID 和 APP Secret 等凭证信息。
@@ -578,6 +690,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/获取飞书的凭证.png)
+
+图 57  获取飞书的凭证
 
 :::note
 
@@ -587,6 +701,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![扫码登录](/img/metersphere-v2/system_management/配置飞书连接成功.png)
 
+图 58  配置飞书连接成功
+
 :::note
 
 登录页面，点击飞书扫码登录即可。
@@ -594,6 +710,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![扫码登录](/img/metersphere-v2/system_management/飞书扫码登录.png)
+
+图 59  飞书扫码登录
 
 ## 6 配额管理 (X-Pack)
 
@@ -605,7 +723,11 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![!配额管理](/img/metersphere-v2/system_management/工作空间配额管理编辑.png)
 
+图 60  工作空间配额管理编辑
+
 ![!配额管理](/img/metersphere-v2/system_management/工作空间配额管理默认配额.png)
+
+图 61  工作空间配额管理默认配额
 
 :::note
 
@@ -615,6 +737,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![!配额管理](/img/metersphere-v2/system_management/单个工作空间配额管理.png)
 
+图 62  单个工作空间配额管理
+
 :::note
 
 点击【删除】按钮，即可删除已配置好的内容，恢复到最初状态，使用默认配额的状态也由【是】变成【否】
@@ -622,6 +746,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![!配额管理](/img/metersphere-v2/system_management/工作空间配额管理删除.png)
+
+图 63  工作空间配额管理删除
 
 ## 7 授权管理
 
@@ -633,6 +759,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![授权管理首页](/img/metersphere-v2/system_management/授权管理首页.png)
 
+图 64  授权管理首页
+
 ## 8 操作日志
 
 :::note
@@ -642,6 +770,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 :::
 
 ![操作日志首页](/img/metersphere-v2/system_management/操作日志首页.png)
+
+图 65  操作日志首页
 
 ## 9 插件管理
 ### 9.1 WebSocket 插件 (X-Pack)
@@ -654,6 +784,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![jenkins-plugin](/img/metersphere-v2/system_management/插件管理1.png)
 
+图 66  插件管理（1）
+
 :::note
 
 在【接口测试】-【接口自动化】界面下，新建一个场景，点击场景右下角【+】号，添加 WebSocket 相关请求。
@@ -662,4 +794,8 @@ Deploy Name 使用默认的 ms-node-controller 就行，不需要更改。<br />
 
 ![jenkins-plugin](/img/metersphere-v2/system_management/插件管理2.png)
 
+图 67  插件管理（2）
+
 ![jenkins-plugin](/img/metersphere-v2/system_management/插件管理3.png)
+
+图 68  插件管理（3）

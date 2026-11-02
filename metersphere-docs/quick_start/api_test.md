@@ -12,6 +12,8 @@ title: "使用接口测试"
 
 ![!新建请求](/img/metersphere/quick_start/api/新建请求1.png)
 
+图 1  新建请求（1）
+
 :::note
 
 接下来按下图序号顺序，选择 HTTP 协议、GET 方法，输入获取文章列表接口的 URL 地址 `https://demo.halo.run/apis/api.console.halo.run/v1alpha1/posts` ，选择 Query 参数，输入 `page 等于 1，size 等于 5`。
@@ -20,6 +22,8 @@ title: "使用接口测试"
 
 ![!新建请求](/img/metersphere/quick_start/api/新建请求2.png)
 
+图 2  新建请求（2）
+
 :::note
 
 输入接口认证信息，如下图 Halo 接口采用 Basic Auth 登录认证，选择 `Basic Auth`,`用户名：demo，密码：P@ssw0rd123..`，点击【服务端执行】，执行成功后保存。
@@ -27,6 +31,8 @@ title: "使用接口测试"
 :::
 
 ![!新建请求](/img/metersphere/quick_start/api/执行.png)
+
+图 3  执行
 
 :::note[注意]
 
@@ -44,6 +50,8 @@ title: "使用接口测试"
 
 ![!新建接口](/img/metersphere/quick_start/api/API新建请求1.png)
 
+图 4  API 新建请求（1）
+
 :::note
 
 在新建接口页面，选择协议类型、接口方法、URL以及基本信息、请求头、请求体、QUERY、REST、认证等信息后点击保存。
@@ -51,6 +59,8 @@ title: "使用接口测试"
 :::
 
 ![!新建接口](/img/metersphere/quick_start/api/API新建请求2.png)
+
+图 5  API 新建请求（2）
 
 ## 3 创建环境
 
@@ -62,6 +72,8 @@ title: "使用接口测试"
 
 ![!创建环境](/img/metersphere/quick_start/api/创建环境1.png)
 
+图 6  创建环境（1）
+
 :::note
 
 按下图序号顺序，点击【+】后，填写环境名称 `Halo`，切换 HTTP ，点击【添加 HTTP 】，选择 https ,输入域名地址 `demo.halo.run`和 `Basic Auth` 信息后点击确认。
@@ -69,6 +81,8 @@ title: "使用接口测试"
 :::
 
 ![!创建环境](/img/metersphere/quick_start/api/创建环境2.png)
+
+图 7  创建环境（2）
 
 ## 4 接口定义调试
 
@@ -80,7 +94,11 @@ title: "使用接口测试"
 
 ![!执行](/img/metersphere/quick_start/api/调试1.png)
 
+图 8  调试（1）
+
 ![!执行](/img/metersphere/quick_start/api/调试2.png)
+
+图 9  调试（2）
 
 ## 5 添加提取
 
@@ -92,6 +110,8 @@ title: "使用接口测试"
 
 ![!执行](/img/metersphere/quick_start/api/添加后置操作1.png)
 
+图 10  添加后置操作（1）
+
 :::note
 
 输入参数名称 `headSnapshot`，类型选择 `临时参数`，方式选择 `JSONPATH`,范围默认 `Body`，表达式选择【快捷提取】。
@@ -99,6 +119,8 @@ title: "使用接口测试"
 :::
 
 ![!执行](/img/metersphere/quick_start/api/添加后置操作2.png)
+
+图 11  添加后置操作（2）
 
 :::note
 
@@ -108,6 +130,8 @@ title: "使用接口测试"
 
 ![!执行](/img/metersphere/quick_start/api/添加后置操作3.png)
 
+图 12  添加后置操作（3）
+
 :::note
 
 点击【服务端执行】后，点击【提取】查看提取的结果。
@@ -115,6 +139,8 @@ title: "使用接口测试"
 :::
 
 ![!保存为新用例](/img/metersphere/quick_start/api/添加后置操作4.png)
+
+图 13  添加后置操作（4）
 
 ## 6 添加断言
 
@@ -126,6 +152,8 @@ title: "使用接口测试"
 
 ![!执行](/img/metersphere/quick_start/api/添加断言1.png)
 
+图 14  添加断言（1）
+
 :::note
 
 点击【服务端执行】，执行成功后在执行结果处点击【断言】查看断言结果。
@@ -133,6 +161,8 @@ title: "使用接口测试"
 :::
 
 ![!执行](/img/metersphere/quick_start/api/添加断言2.png)
+
+图 15  添加断言（2）
 
 ## 7 保存为用例
 
@@ -144,6 +174,8 @@ title: "使用接口测试"
 
 ![!创建用例](/img/metersphere/quick_start/api/创建用例1.png)
 
+图 16  创建用例
+
 ## 8 创建场景
 
 :::note
@@ -154,6 +186,8 @@ title: "使用接口测试"
 
 ![!创建场景](/img/metersphere/quick_start/api/创建场景1.png)
 
+图 17  创建场景（1）
+
 :::note
 
 点击【添加步骤】，选择【导入系统请求】。
@@ -161,6 +195,8 @@ title: "使用接口测试"
 :::
 
 ![!创建场景](/img/metersphere/quick_start/api/创建场景2.png)
+
+图 18  创建场景（2）
 
 :::note
 
@@ -170,6 +206,8 @@ title: "使用接口测试"
 
 ![!创建场景](/img/metersphere/quick_start/api/创建场景3.png)
 
+图 19  创建场景（3）
+
 :::note
 
 选择【Halo】环境，点击【服务端执行】生成报告。
@@ -177,6 +215,8 @@ title: "使用接口测试"
 :::
 
 ![!创建场景](/img/metersphere/quick_start/api/创建场景4.png)
+
+图 20  创建场景（4）
 
 ## 9 查看报告
 
@@ -188,6 +228,8 @@ title: "使用接口测试"
 
 ![!查看测试报告](/img/metersphere/quick_start/api/查看报告1.png)
 
+图 21  查看报告（1）
+
 :::note
 
 点击 `发布文章流程` 的报告名称预览报告详情。
@@ -196,6 +238,8 @@ title: "使用接口测试"
 
 ![!查看测试报告](/img/metersphere/quick_start/api/查看报告2.png)
 
+图 22  查看报告（2）
+
 :::note
 
 如下图，点击【步骤名称】查看步骤实际请求的响应内容。
@@ -203,3 +247,5 @@ title: "使用接口测试"
 :::
 
 ![!查看测试报告](/img/metersphere/quick_start/api/查看报告3.png)
+
+图 23  查看报告（3）

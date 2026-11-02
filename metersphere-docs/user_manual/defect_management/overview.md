@@ -9,3 +9,5 @@ title: "缺陷管理概述"
 :::
 
 ![!项目设置](/img/metersphere/defect_management/缺陷页面.png)
+
+图 1  缺陷页面

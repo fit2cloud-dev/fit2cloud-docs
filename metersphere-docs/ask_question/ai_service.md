@@ -19,7 +19,12 @@ AI配置入口有【系统设置】-【系统参数】-【模型设置】和登�
 :::
 
 ![系统设置模型配置](/img/metersphere/system_management/模型配置.png)
+
+图 1  模型配置
+
 ![个人中心模型配置](/img/metersphere/personal_center/个人中心模型配置.png)
+
+图 2  个人中心模型配置
 
 ## 3 使用说明
 
@@ -30,7 +35,12 @@ AI配置入口有【系统设置】-【系统参数】-【模型设置】和登�
 :::
 
 ![AI智能助手入口](/img/metersphere/ask_question/ai_service/AI智能助手入口.png)
+
+图 3  AI 智能助手入口
+
 ![AI助手会话界面](/img/metersphere/ask_question/ai_service/AI助手会话界面.png)
+
+图 4  AI 助手会话界面
 
 ### 3.1 接口测试用例生成
 
@@ -42,6 +52,8 @@ AI配置入口有【系统设置】-【系统参数】-【模型设置】和登�
 
 ![AI生成接口测试用例入口](/img/metersphere/ask_question/ai_service/AI生成接口测试用例入口.png)
 
+图 5  AI 生成接口测试用例入口
+
 :::note
 
 生成单条用例： 输入API信息（例如URL、Method、Headers、Body结构等）和用户提示词，AI将生成一条对应的测试用例。
@@ -50,6 +62,8 @@ AI配置入口有【系统设置】-【系统参数】-【模型设置】和登�
 
 ![AI生成单条接口测试用例示例](/img/metersphere/ask_question/ai_service/AI生成单条接口测试用例示例.png)
 
+图 6  AI 生成单条接口测试用例示例
+
 :::note
 
 批量生成用例： 输入API信息（例如Swagger/OpenAPI文档URL或内容）和用户提示词，AI将自动分析并生成多条相关的测试用例。
@@ -57,7 +71,12 @@ AI配置入口有【系统设置】-【系统参数】-【模型设置】和登�
 :::
 
 ![AI批量生成接口测试用例示例](/img/metersphere/ask_question/ai_service/AI批量生成接口测试用例示例.png)
+
+图 7  AI 批量生成接口测试用例示例
+
 ![AI生成的接口测试用例列表](/img/metersphere/ask_question/ai_service/AI生成的接口测试用例列表.png)
+
+图 8  AI 生成的接口测试用例列表
 
 ### 3.2 功能测试用例生成
 
@@ -69,6 +88,8 @@ AI配置入口有【系统设置】-【系统参数】-【模型设置】和登�
 
 ![AI生成功能用例入口](/img/metersphere/ask_question/ai_service/AI生成功能用例入口.png)
 
+图 9  AI 生成功能用例入口
+
 :::note
 
 生成单条用例：直接输入对测试场景的自然语言描述（例如：“测试用户登录成功场景，使用正确的用户名和密码”），AI将自动生成一条对应的测试用例。<br />
@@ -77,7 +98,12 @@ AI配置入口有【系统设置】-【系统参数】-【模型设置】和登�
 :::
 
 ![AI批量生成功能用例示例](/img/metersphere/ask_question/ai_service/AI批量生成功能用例示例.png)
+
+图 10  AI 批量生成功能用例示例
+
 ![AI生成功能用例列表](/img/metersphere/ask_question/ai_service/AI生成功能用例列表.png)
+
+图 11  AI 生成功能用例列表
 
 ### 3.3 查看与编辑用例
 

@@ -20,6 +20,8 @@ MeterSphere 除支持通用的HTTP/HTTPS、TCP、SQL、DUBBO协议外，还可�
 
 ![jenkins-plugin](/img/metersphere-v2/system_management/插件管理1.png)
 
+图 1  插件管理（1）
+
 ## 2 插件使用
 
 :::note
@@ -29,4 +31,9 @@ MeterSphere 除支持通用的HTTP/HTTPS、TCP、SQL、DUBBO协议外，还可�
 :::
 
 ![jenkins-plugin](/img/metersphere-v2/system_management/插件管理2.png)
+
+图 2  插件管理（2）
+
 ![jenkins-plugin](/img/metersphere-v2/system_management/插件管理3.png)
+
+图 3  插件管理（3）

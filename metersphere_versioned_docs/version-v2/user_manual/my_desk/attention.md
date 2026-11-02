@@ -11,4 +11,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![切换](/img/metersphere-v2/user_manual/my_desk/attention/attention_2.png)
 
+图 1  切换
+
 ![跳转](/img/metersphere-v2/user_manual/my_desk/attention/attention_3.png)
+
+图 2  跳转

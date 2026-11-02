@@ -17,3 +17,5 @@ title: "项目管理概述"
 :::
 
 ![!项目设置](/img/metersphere/project_management/overview/系统管理页面.png)
+
+图 1  系统管理页面

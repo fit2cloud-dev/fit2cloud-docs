@@ -15,7 +15,9 @@ MeterSphere 大规模的性能压测主要取决于三个组件
 
 :::
 
-![配置架构图地址](/img/metersphere-v2/installation/dis_pressure/架构图.png) <br />
+![配置架构图地址](/img/metersphere-v2/installation/dis_pressure/架构图.png)
+
+图 1  架构图
 
 :::note
 

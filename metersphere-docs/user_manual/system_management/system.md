@@ -12,6 +12,8 @@ title: "系统"
 
 ![!用户管理](/img/metersphere/system_management/系统用户.png)
 
+图 1  系统用户
+
 :::note[操作说明]
 
 - 【编辑】: 点击列表【用户组】修改用户组信息，点击列表【编辑】按钮修改用户基础信息及权限。<br />
@@ -31,6 +33,8 @@ title: "系统"
 
 ![!创建用户](/img/metersphere/system_management/新增用户.png)
 
+图 2  新增用户
+
 :::note
 
 - **邮箱邀请**<br />
@@ -46,6 +50,8 @@ title: "系统"
 
 ![!创建用户](/img/metersphere/system_management/邮箱邀请.png)
 
+图 3  邮箱邀请
+
 :::note
 
 - **导入用户**<br />
@@ -55,6 +61,8 @@ title: "系统"
 
 ![!创建用户](/img/metersphere/system_management/导入用户.png)
 
+图 4  导入用户
+
 :::note
 
 - **用户批量操作**<br />
@@ -63,6 +71,8 @@ title: "系统"
 :::
 
 ![针对用户的其他操作](/img/metersphere/system_management/用户批量操作.png)
+
+图 5  用户批量操作
 
 ## 2 用户组
 
@@ -85,6 +95,8 @@ title: "系统"
 
 ![系统用户组首页](/img/metersphere/system_management/预置管理员.png)
 
+图 6  预置管理员
+
 :::note[操作说明]
 
 - 【恢复默认】: 恢复为上一次保存的权限。<br />
@@ -104,6 +116,8 @@ title: "系统"
 
 ![系统用户组首页](/img/metersphere/system_management/系统用户组成员.png)
 
+图 7  系统用户组成员
+
 ## 3 组织与项目
 ### 3.1 组织
 
@@ -114,6 +128,8 @@ title: "系统"
 :::
 
 ![!工作空间管理](/img/metersphere/system_management/默认组织.png)
+
+图 8  默认组织
 
 :::note[操作说明]
 
@@ -132,6 +148,8 @@ title: "系统"
 
 ![!工作空间管理](/img/metersphere/system_management/组织添加成员.png)
 
+图 9  组织添加成员
+
 ### 3.2 项目
 
 :::note
@@ -141,6 +159,8 @@ title: "系统"
 :::
 
 ![!工作空间管理](/img/metersphere/system_management/组织项目切换.png)
+
+图 10  组织项目切换
 
 :::note[操作说明]
 
@@ -161,6 +181,8 @@ title: "系统"
 
 ![!工作空间管理](/img/metersphere/system_management/项目添加成员.png)
 
+图 11  项目添加成员
+
 :::note
 
 - **新增项目**<br />
@@ -169,6 +191,8 @@ title: "系统"
 :::
 
 ![!编辑工作空间](/img/metersphere/system_management/创建项目.png)
+
+图 12  创建项目
 
 :::note[操作说明]
 
@@ -198,7 +222,12 @@ title: "系统"
 :::
 
 ![系统参数设置首页](/img/metersphere/system_management/系统设置.png)
+
+图 13  系统设置
+
 ![!系统参数邮件](/img/metersphere/system_management/系统参数邮件配置.png)
+
+图 14  系统参数邮件配置
 
 ### 4.2 模型设置
 
@@ -209,9 +238,20 @@ title: "系统"
 :::
 
 ![系统参数模型设置](/img/metersphere/system_management/系统参数模型设置.png)
+
+图 15  系统参数模型设置
+
 ![DeepSeek模型配置](/img/metersphere/system_management/DeepSeek模型配置.png)
+
+图 16  DeepSeek 模型配置
+
 ![OpenAI模型配置](/img/metersphere/system_management/OpenAI模型配置.png)
+
+图 17  OpenAI 模型配置
+
 ![智谱AI模型配置](/img/metersphere/system_management/智谱AI模型配置.png)
+
+图 18  智谱 AI 模型配置
 
 ### 4.3 数据清理
 
@@ -223,6 +263,8 @@ title: "系统"
 :::
 
 ![系统参数设置首页](/img/metersphere/system_management/系统参数内存清理.png)
+
+图 19  系统参数内存清理
 
 ## 5 资源池
 
@@ -240,6 +282,8 @@ title: "系统"
 :::
 
 ![!测试资源池管理](/img/metersphere/system_management/资源池页面.png)
+
+图 20  资源池页面
 
 :::note[操作说明]
 
@@ -266,6 +310,8 @@ title: "系统"
 
 ![!测试资源池管理](/img/metersphere/system_management/编辑资源池.png)
 
+图 21  编辑资源池
+
 ### 5.2 创建 K8S 资源池
 
 :::note
@@ -275,6 +321,8 @@ title: "系统"
 :::
 
 ![!测试资源池管理](/img/metersphere/system_management/新增k8s资源池.png)
+
+图 22  新增 k8s 资源池
 
 :::note[注意]
 
@@ -300,7 +348,13 @@ title: "系统"
 - 实时任务：可查看当前接口用例、接口场景正在运行的任务状态。<br />
 - 定时任务：可创建测试定时执行任务。
 
-![任务中心](/img/metersphere/system_management/任务中心1.png) ![任务中心](/img/metersphere/system_management/任务中心.png)
+![任务中心](/img/metersphere/system_management/任务中心1.png)
+
+图 23  任务中心（1）
+
+![任务中心](/img/metersphere/system_management/任务中心.png)
+
+图 24  任务中心（2）
 
 :::
 
@@ -313,6 +367,8 @@ title: "系统"
 :::
 
 ![插件](/img/metersphere/system_management/插件管理.png)
+
+图 25  插件管理
 
 :::note[操作说明]
 
@@ -332,6 +388,8 @@ title: "系统"
 
 ![插件](/img/metersphere/system_management/上传插件.png)
 
+图 26  上传插件
+
 :::note
 
 数据库驱动上传后，在【项目管理-环境管理-数据库-添加数据库】页面，驱动选项下拉框可选择 oracle 驱动，具体参考：[数据源配置](../project_management/environment#23-数据库)。
@@ -339,6 +397,8 @@ title: "系统"
 :::
 
 ![插件](/img/metersphere/system_management/oracle数据库.png)
+
+图 27  Oracle 数据库
 
 ### 7.2 接口协议插件
 
@@ -350,6 +410,8 @@ title: "系统"
 
 ![插件](/img/metersphere/system_management/上传接口协议插件.png)
 
+图 28  上传接口协议插件
+
 :::note
 
 协议插件上传后，在【项目管理-环境管理-TCP配置】处可进行配置。
@@ -358,6 +420,8 @@ title: "系统"
 
 ![插件](/img/metersphere/system_management/环境配置-tcp配置.png)
 
+图 29  环境配置-TCP 配置
+
 :::note
 
 点击【接口测试-调试-TCP】切换到 TCP 请求页面进行 TCP 请求的调试。
@@ -365,6 +429,8 @@ title: "系统"
 :::
 
 ![插件](/img/metersphere/system_management/tcp请求页面.png)
+
+图 30  TCP 请求页面
 
 ### 7.3 服务集成插件
 
@@ -376,6 +442,8 @@ title: "系统"
 
 ![插件](/img/metersphere/system_management/禅道服务集成插件.png)
 
+图 31  禅道服务集成插件
+
 :::note
 
 服务集成插件上传后，在【系统设置-组织-服务集成】处可进行配置。具体参考：[服务集成](organization#42-与禅道集成)。
@@ -383,6 +451,8 @@ title: "系统"
 :::
 
 ![插件](/img/metersphere/system_management/禅道服务集成插件页面.png)
+
+图 32  禅道服务集成插件页面
 
 ## 8 日志
 
@@ -393,3 +463,5 @@ title: "系统"
 :::
 
 ![系统参数设置首页](/img/metersphere/system_management/系统设置日志.png)
+
+图 33  系统设置日志

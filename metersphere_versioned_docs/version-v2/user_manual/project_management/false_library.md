@@ -19,6 +19,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/误报库.png)
 
+图 1  误报库列表
+
 :::note
 
 在【创建误报】页面，输入相关配置后，点击【保存】即可
@@ -26,6 +28,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/误报库_2.png)
+
+图 2  创建误报
 
 :::note
 
@@ -35,6 +39,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/误报库_3.png)
 
+图 3  启用关闭误报
+
 :::note
 
 点击【编辑】按钮，可编辑误报内容，之后点击【保存】即可
@@ -43,6 +49,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/误报库_4.png)
 
+图 4  编辑误报
+
 :::note
 
 点击【删除】按钮，点击删除提示中的【确定】按钮，该误报就被删除了
@@ -50,3 +58,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/误报库_5.png)
+
+图 5  删除误报

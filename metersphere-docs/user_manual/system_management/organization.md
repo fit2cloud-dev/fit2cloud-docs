@@ -12,6 +12,8 @@ title: "组织"
 
 ![工作空间](/img/metersphere/system_management/组织成员.png)
 
+图 1  组织成员
+
 :::note[操作说明]
 
  - 【添加成员】：添加组织成员并设置用户组权限。可根据用户 ID 和用户邮箱搜，勾选添加多个成员。<br />
@@ -32,6 +34,8 @@ title: "组织"
 
 ![系统用户组首页](/img/metersphere/system_management/组织用户组.png)
 
+图 2  组织用户组
+
 :::note[操作说明]
 
  - 【查询】：根据名称查询用户组。<br />
@@ -51,6 +55,8 @@ title: "组织"
 
 ![系统用户组首页](/img/metersphere/system_management/添加组织用户组成员.png)
 
+图 3  添加组织用户组成员
+
 ## 3 项目
 
 :::note
@@ -60,6 +66,8 @@ title: "组织"
 :::
 
 ![!项目](/img/metersphere/system_management/组织的项目.png)
+
+图 4  组织的项目
 
 :::note[操作说明]
 
@@ -80,6 +88,8 @@ title: "组织"
 :::
 
 ![!新增项目](/img/metersphere/system_management/组织项目添加.png)
+
+图 5  组织项目添加
 
 :::note[操作说明]
 
@@ -104,6 +114,8 @@ title: "组织"
 :::
 
 ![!服务集成](/img/metersphere/system_management/组织服务集成.png)
+
+图 6  组织服务集成
 
 {/*
 ### 4.1 与 TAPD 集成
@@ -209,6 +221,8 @@ title: "组织"
 
 ![!jira集成](/img/metersphere/system_management/jira服务集成.png)
 
+图 7  Jira 服务集成
+
 :::note[注意]
 
  认证信息区分私有化部署选择 Basic Auth 填写账号密码, 选择 Bearer Token 填写 Token, SaaS 版本只能选择 Basic Auth, 填写(账号+令牌)(账户设置-安全-创建API令牌)<br />
@@ -222,7 +236,12 @@ title: "组织"
 :::
 
 ![!jira关联](/img/metersphere/system_management/jira关联项目.png)
+
+图 8  Jira 关联项目
+
 ![!jira项目](/img/metersphere/system_management/jira项目.png)
+
+图 9  Jira 项目
 
 :::note
 
@@ -232,6 +251,8 @@ title: "组织"
 
 ![!jira关联项目](/img/metersphere/system_management/项目管理使用jira模板.png)
 
+图 10  项目管理使用 Jira 模板
+
 :::note
 
 添加个人平台账号。点击【个人信息-第三方平台账号】配置 jira 账号，创建缺陷同步可使用该账户信息。点击跳转[个人中心](../personal_center/information.md#5-三方平台账号)。
@@ -240,6 +261,8 @@ title: "组织"
 
 ![!jira关联第三方帐号](/img/metersphere/system_management/个人信息绑定.png)
 
+图 11  个人信息绑定
+
 :::note
 
 以上配置完成后，在 Metersphere 【缺陷管理】模块，可以创建并同步 jira 平台的缺陷。
@@ -247,6 +270,8 @@ title: "组织"
 :::
 
 ![!同步缺陷](/img/metersphere/system_management/jira模板创建用例.png)
+
+图 12  Jira 模板创建用例
 
 ### 4.2 与禅道集成
 
@@ -263,6 +288,8 @@ title: "组织"
 :::
 
 ![!禅道集成](/img/metersphere/system_management/禅道服务集成.png)
+
+图 13  禅道服务集成
 
 :::note[说明]
 
@@ -282,6 +309,8 @@ title: "组织"
 
 ![!禅道-马上关联项目](/img/metersphere/system_management/配置禅道缺陷模板.png)
 
+图 14  配置禅道缺陷模板
+
 :::note
 
  配置缺陷模板：切换到【项目管理-模板管理】，勾选使用 禅道 默认模板。在缺陷创建页面即可使用到 禅道 的缺陷模板。点击跳转[项目设置-模板管理](../project_management/template_management.md#22-模板设置)
@@ -289,6 +318,8 @@ title: "组织"
 :::
 
 ![!jira关联项目](/img/metersphere/system_management/禅道缺陷模板.png)
+
+图 15  禅道缺陷模板
 
 :::note
 
@@ -298,10 +329,14 @@ title: "组织"
 
 ![!jira关联第三方帐号](/img/metersphere/system_management/禅道个人账号.png)
 
+图 16  禅道个人账号
+
 :::note
 
 以上配置完成后，在 MeterSphere 【缺陷管理】模块，可以创建并同步禅道平台的缺陷。
 ![!禅道-相关需求](/img/metersphere/system_management/禅道缺陷模板创建用例.png)
+
+图 17  禅道缺陷模板创建用例
 
 :::
 
@@ -383,6 +418,8 @@ title: "组织"
 
 ![!模板](/img/metersphere/system_management/组织模板.png)
 
+图 18  组织模板
+
 ### 5.1 用例模板
 
 :::note
@@ -393,7 +430,12 @@ title: "组织"
 :::
 
 ![!创建项目](/img/metersphere/system_management/组织模板新增字段.png)
+
+图 19  组织模板新增字段（1）
+
 ![!创建项目](/img/metersphere/system_management/组织模板新增字段1.png)
+
+图 20  组织模板新增字段（2）
 
 :::note
 
@@ -403,6 +445,8 @@ title: "组织"
 :::
 
 ![!创建项目](/img/metersphere/system_management/更新用例模板.png)
+
+图 21  更新用例模板
 
 ### 5.2 缺陷模板
 
@@ -415,6 +459,8 @@ title: "组织"
 
 ![!创建项目](/img/metersphere/system_management/组织模板新增字段2.png)
 
+图 22  组织模板新增字段（3）
+
 :::note
 
 - **新增缺陷模板**<br />
@@ -424,6 +470,8 @@ title: "组织"
 :::
 
 ![!创建项目](/img/metersphere/system_management/创建缺陷模板.png)
+
+图 23  创建缺陷模板
 
 :::note
 
@@ -435,6 +483,8 @@ title: "组织"
 
 ![!创建项目](/img/metersphere/system_management/缺陷模板新增字段.png)
 
+图 24  缺陷模板新增字段
+
 :::note
 
 - **缺陷工作流设置**<br />
@@ -444,6 +494,8 @@ title: "组织"
 
 ![!创建项目](/img/metersphere/system_management/组织模板工作流状态.png)
 
+图 25  组织模板工作流状态
+
 ## 6 任务中心
 
 :::note
@@ -452,7 +504,12 @@ title: "组织"
 实时任务：支持查看当前组织接口用例、接口场景报告。<br />
 定时任务：可创建测试定时执行任务、接口定时同步任务。
 ![任务中心](/img/metersphere/system_management/任务中心.png)
+
+图 26  任务中心（1）
+
 ![任务中心](/img/metersphere/system_management/任务中心1.png)
+
+图 27  任务中心（2）
 
 :::
 
@@ -465,3 +522,5 @@ title: "组织"
 :::
 
 ![!配额管理](/img/metersphere/system_management/组织日志.png)
+
+图 28  组织日志

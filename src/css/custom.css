@@ -129,9 +129,7 @@ html[data-docs-product='jumpserver'] .alert--warning {
   --ifm-alert-border-color: #e1ad26;
   background-color: var(--ifm-alert-background-color) !important;
 }
-/* MeterSphere：提示框去掉全部视觉样式（用户要求"只要文字"）——v3/v2 文档大量使用
-   :::note（v3 863 处、v2 1273 处）+ v2 1 处 :::info，背景/左边线/内边距全部清掉，
-   内容按普通正文段落渲染（margin 保留保证与前后文的段距）。 */
+/* MeterSphere 不在以下两条规则里做「一刀切」，改为按有无标题分两种形态（见下方）。 */
 html[data-docs-product='metersphere'] .alert--secondary,
 html[data-docs-product='metersphere'] .alert--info {
   background: transparent !important;
@@ -144,11 +142,39 @@ html[data-docs-product='metersphere'] .alert--info {
   --ifm-link-hover-color: var(--ifm-color-primary-dark);
   --ifm-link-decoration: none;
 }
-/* 标题行(如 :::note[组件说明])的 ⓘ 图标也去掉, 只留标题文字。
-   图标 span 的类名是 CSS Module 哈希(admonitionIcon_xxx), 用属性前缀匹配。 */
+/* MeterSphere 的 :::note 有两种用法，样式分开处理：
+   ① 不带标题（v3/v2 正文共 600+ 处「说明」段落）——保持纯文字，按普通正文段落渲染，
+      全做成卡片会满屏是框；
+   ② 带标题（:::note[温馨提示]，417 处）——极浅蓝底 + 同色系深蓝左条 + 6px 圆角，
+      不做整圈包边（与 JumpServer 那套观感一致），标题深蓝加粗、图标同色。
+   :has() 区分「有没有 admonitionHeading 子节点」，即有没有写 [标题]。 */
+html[data-docs-product='metersphere'] .alert--secondary:has([class*='admonitionHeading']),
+html[data-docs-product='metersphere'] .alert--info:has([class*='admonitionHeading']) {
+  --ifm-alert-background-color: #eef5fe;
+  --ifm-alert-border-color: #0c7be0;
+  background-color: #eef5fe !important;
+  border: none !important;
+  border-left: 3px solid #0c7be0 !important;
+  border-radius: 6px !important;
+  padding: 12px 16px !important;
+  margin: 16px 0 20px !important;
+}
+html[data-docs-product='metersphere'] .alert--secondary [class*='admonitionHeading'],
+html[data-docs-product='metersphere'] .alert--info [class*='admonitionHeading'] {
+  color: #0b62b8;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+/* 标题行的 ⓘ 图标（类名是 CSS Module 哈希 admonitionIcon_xxx，用属性前缀匹配）随标题着色 */
 html[data-docs-product='metersphere'] .alert--secondary [class*='admonitionIcon'],
 html[data-docs-product='metersphere'] .alert--info [class*='admonitionIcon'] {
-  display: none;
+  color: #0c7be0;
+}
+/* 卡片内最后一段不留多余段距，避免底部空一截 */
+html[data-docs-product='metersphere'] .alert--secondary:has([class*='admonitionHeading']) > *:last-child,
+html[data-docs-product='metersphere'] .alert--info:has([class*='admonitionHeading']) > *:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -175,7 +201,8 @@ html[data-docs-product='metersphere'] .theme-doc-markdown th {
 }
 /* 正文截图居中；列表徽章、链接封面、联系我们二维码不走这套。 */
 html[data-docs-product='dataease'] .theme-doc-markdown p > img:only-child,
-html[data-docs-product='sqlbot'] .theme-doc-markdown p > img:only-child {
+html[data-docs-product='sqlbot'] .theme-doc-markdown p > img:only-child,
+html[data-docs-product='metersphere'] .theme-doc-markdown p > img:only-child {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -184,7 +211,8 @@ html[data-docs-product='sqlbot'] .theme-doc-markdown p > img:only-child {
 }
 .de-contact .theme-doc-markdown img,
 html[data-docs-product='dataease'] .de-contact .theme-doc-markdown p > img:only-child,
-html[data-docs-product='sqlbot'] .de-contact .theme-doc-markdown p > img:only-child {
+html[data-docs-product='sqlbot'] .de-contact .theme-doc-markdown p > img:only-child,
+html[data-docs-product='metersphere'] .de-contact .theme-doc-markdown p > img:only-child {
   display: inline-block;
   margin-left: 0;
   margin-right: 0;
@@ -200,14 +228,19 @@ html[data-docs-product='dataease'] .theme-doc-markdown img + p,
 html[data-docs-product='sqlbot'] .theme-doc-markdown p.de-caption,
 html[data-docs-product='sqlbot'] .theme-doc-markdown p:has(img) + p,
 html[data-docs-product='sqlbot'] .theme-doc-markdown p:has(a img) + p,
-html[data-docs-product='sqlbot'] .theme-doc-markdown img + p {
+html[data-docs-product='sqlbot'] .theme-doc-markdown img + p,
+html[data-docs-product='metersphere'] .theme-doc-markdown p.de-caption,
+html[data-docs-product='metersphere'] .theme-doc-markdown p:has(img) + p,
+html[data-docs-product='metersphere'] .theme-doc-markdown p:has(a img) + p,
+html[data-docs-product='metersphere'] .theme-doc-markdown img + p {
   text-align: center;
   color: #8a8f99;
   font-size: 13px;
   margin: 6px 0 20px;
 }
 html[data-docs-product='dataease'] .theme-doc-markdown p:has(+ table),
-html[data-docs-product='sqlbot'] .theme-doc-markdown p:has(+ table) {
+html[data-docs-product='sqlbot'] .theme-doc-markdown p:has(+ table),
+html[data-docs-product='metersphere'] .theme-doc-markdown p:has(+ table) {
   text-align: center;
   color: #8a8f99;
   font-size: 13px;

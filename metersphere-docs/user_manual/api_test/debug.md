@@ -12,6 +12,8 @@ title: "接口调试"
 
 ![!新建请求1](/img/metersphere/api_test/debug/新建请求1.png)
 
+图 1  新建请求（1）
+
 :::note
 
 按下图序号顺序，依次选择接口协议、接口方法，输入请求 URL 、请求参数、认证信息等，点击执行调试成功后保存或直接保存。
@@ -19,6 +21,8 @@ title: "接口调试"
 :::
 
 ![!新建请求2](/img/metersphere/api_test/debug/新建请求2.png)
+
+图 2  新建请求（2）
 
 :::note
 
@@ -46,6 +50,8 @@ title: "接口调试"
 
 ![!保存](/img/metersphere/api_test/debug/保存.png)
 
+图 3  保存
+
 ## 2 导入 cURL 请求
 
 :::note
@@ -56,6 +62,8 @@ title: "接口调试"
 
 ![!导入请求1](/img/metersphere/api_test/debug/导入请求1.png)
 
+图 4  导入请求（1）
+
 :::note
 
 打开浏览器，按 F12 快捷键打开 NetWork ，根据下图示意复制 cURL 请求。
@@ -64,6 +72,8 @@ title: "接口调试"
 
 ![!导入请求2](/img/metersphere/api_test/debug/导入请求2.png)
 
+图 5  导入请求（2）
+
 :::note
 
 录入上图复制的 cURL 请求信息，点击导入。
@@ -71,6 +81,8 @@ title: "接口调试"
 :::
 
 ![!导入请求3](/img/metersphere/api_test/debug/导入请求3.png)
+
+图 6  导入请求（3）
 
 :::note[说明]
 
@@ -89,6 +101,8 @@ title: "接口调试"
 
 ![!执行](/img/metersphere/api_test/debug/执行.png)
 
+图 7  执行
+
 :::note[注意]
 
 - 本地执行：进行本地接口调试，调用本地部署的 `task-runner` 执行机。`task-runner` 部署和配置教程请参考：[task_runner 部署配置教程](../api_test/functions.md)。
@@ -106,6 +120,8 @@ title: "接口调试"
 
 ![!响应内容1](/img/metersphere/api_test/debug/响应内容1.png)
 
+图 8  响应内容（1）
+
 :::note
 
 点击【上下/左右】切换响应内容布局。
@@ -113,6 +129,8 @@ title: "接口调试"
 :::
 
 ![!响应内容2](/img/metersphere/api_test/debug/响应内容2.png)
+
+图 9  响应内容（2）
 
 ## 5 重命名
 
@@ -124,6 +142,8 @@ title: "接口调试"
 
 ![!重命名](/img/metersphere/api_test/debug/重命名.png)
 
+图 10  重命名
+
 ## 6 收起/展开全部请求
 
 :::note
@@ -133,6 +153,8 @@ title: "接口调试"
 :::
 
 ![!收起/展开全部请求](/img/metersphere/api_test/debug/全部请求.png)
+
+图 11  全部请求
 
 ## 7 搜索
 
@@ -144,6 +166,8 @@ title: "接口调试"
 
 ![!搜索](/img/metersphere/api_test/debug/搜索.png)
 
+图 12  搜索
+
 ## 8 删除
 
 :::note
@@ -153,6 +177,8 @@ title: "接口调试"
 :::
 
 ![!删除](/img/metersphere/api_test/debug/删除.png)
+
+图 13  删除
 
 :::note[注意]
 

@@ -29,6 +29,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!场景批量运行](/img/metersphere-v2/faq/场景批量运行.png)
 
+图 1  场景批量运行
+
 ## 4 接口测试如何支持上传文件的接口吗？
 
 :::note
@@ -38,6 +40,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!接口上传文件类型](/img/metersphere-v2/faq/接口上传文件类型.png)
+
+图 2  接口上传文件类型
 
 ## 5 接口自动化中模块之间是否支持共享 cookie?
 
@@ -141,7 +145,12 @@ SQL请求的断言可通过如下步骤进行：
 :::
 
 ![! 配置多环境域名1](/img/metersphere-v2/faq/配置多环境域名1.png)
+
+图 3  配置多环境域名（1）
+
 ![! 配置多环境域名2](/img/metersphere-v2/faq/配置多环境域名2.png)
+
+图 4  配置多环境域名（2）
 
 ## 17 请求里面涉及到了转发重定向，如何获取接口返回的code？
 
@@ -153,6 +162,8 @@ SQL请求的断言可通过如下步骤进行：
 
 ![! 跟随重定向](/img/metersphere-v2/faq/跟随重定向.png)
 
+图 5  跟随重定向
+
 ## 18 接口自动化批量执行，是并行还是串行？
 
 :::note
@@ -162,7 +173,12 @@ SQL请求的断言可通过如下步骤进行：
 :::
 
 ![! 接口自动化-批量执行](/img/metersphere-v2/faq/接口自动化-批量执行.png)
+
+图 6  接口自动化-批量执行（1）
+
 ![! 串行&并行](/img/metersphere-v2/faq/串行&并行.png)
+
+图 7  串行&并行
 
 ## 19 批量执行接口自动化，是否可以按场景单独显示测试报告？
 
@@ -173,7 +189,12 @@ SQL请求的断言可通过如下步骤进行：
 :::
 
 ![! 接口自动化-批量执行](/img/metersphere-v2/faq/接口自动化-批量执行.png)
+
+图 8  接口自动化-批量执行（2）
+
 ![! 独立报告&集合报告](/img/metersphere-v2/faq/独立报告&集合报告.png)
+
+图 9  独立报告&集合报告
 
 ## 20 接口自动化选择多场景同时运行时，可以把执行结果整合成一个测试报告吗？
 
@@ -184,7 +205,12 @@ SQL请求的断言可通过如下步骤进行：
 :::
 
 ![! 多场景集成报告01](/img/metersphere-v2/faq/接口自动化-批量执行.png)
+
+图 10  接口自动化-批量执行（3）
+
 ![! 多场景集成报告02](/img/metersphere-v2/faq/多场景集成报告02.png)
+
+图 11  多场景集成报告
 
 ## 21 接口定义模块，编辑接口的页面，如何保存？
 
@@ -196,6 +222,8 @@ SQL请求的断言可通过如下步骤进行：
 
 ![! 更新接口按钮](/img/metersphere-v2/faq/更新接口按钮.png)
 
+图 12  更新接口按钮
+
 ## 22 执行接口报错：`Non HTTP response code: java.net.SocketTimeoutException`
 
 :::note
@@ -206,6 +234,8 @@ SQL请求的断言可通过如下步骤进行：
 
 ![! 修改连接超时](/img/metersphere-v2/faq/修改连接超时.png)
 
+图 13  修改连接超时
+
 ## 23 接口定义里的单接口，可以批量执行吗？
 
 :::note
@@ -215,7 +245,12 @@ SQL请求的断言可通过如下步骤进行：
 :::
 
 ![! 单接口批量执行01](/img/metersphere-v2/faq/单接口批量执行01.png)
+
+图 14  单接口批量执行（1）
+
 ![! 单接口批量执行02](/img/metersphere-v2/faq/单接口批量执行02.png)
+
+图 15  单接口批量执行（2）
 
 ## 24 接口测试模块里，目前除了现有的HTTP、TCP、SQL、DUBBO，还支持其他协议吗？
 
@@ -242,6 +277,8 @@ MeterSphere 已支持 IDEA API同步插件，详细使用方法见[metersphere-i
 :::
 
 ![! 场景跨项目添加接口](/img/metersphere-v2/faq/场景跨项目添加接口.png)
+
+图 16  场景跨项目添加接口
 
 ## 27 快捷调试的时候，一直转圈等待是什么原因?
 
@@ -407,6 +444,8 @@ HTTP 协议支持五种文件格式：MeterSphere格式、Postman格式、Swagge
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/metersphere导入格式.png)
 
+图 17  MeterSphere 导入格式
+
 ## 39 TCP 协议接口支持哪些文件格式导入？
 
 :::note
@@ -421,6 +460,8 @@ TCP 协议支持三种文件格式： MeterSphere格式、JMeter格式、ESB格�
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/TCP导入格式.png)
 
+图 18  TCP 导入格式
+
 ## 40 SQL 协议接口支持哪些文件格式导入？
 
 :::note
@@ -433,6 +474,8 @@ SQL 协议支持两种文件格式：MeterSphere格式、JMeter格式：
 :::
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/SQL导入格式.png)
+
+图 19  SQL 导入格式
 
 ## 41 DUBBO 协议接口支持哪些文件格式导入？
 
@@ -447,6 +490,8 @@ DUBBO 协议接口支持两种文件格式：MeterSphere格式、JMeter格式：
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/DUBBO导入格式.png)
 
+图 20  Dubbo 导入格式
+
 ## 42 MeterSphere 根据什么规则判断名称相同或 URL 相同的接口是否为同一接口？
 
 :::note
@@ -458,6 +503,8 @@ DUBBO 协议接口支持两种文件格式：MeterSphere格式、JMeter格式：
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/URL可重复.png)
 
+图 21  URL 可重复
+
 :::note
 
 - 未开启 URL 重复：请求类型+路径相同则为同一接口，如：
@@ -466,6 +513,8 @@ DUBBO 协议接口支持两种文件格式：MeterSphere格式、JMeter格式：
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/未开启URL重复.png)
 
+图 22  未开启 URL 重复
+
 :::note
 
 - 开启 URL 重复：接口名称+请求类型+路径相同则为同一接口，如：
@@ -473,6 +522,8 @@ DUBBO 协议接口支持两种文件格式：MeterSphere格式、JMeter格式：
 :::
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/开启URL重复.png)
+
+图 23  开启 URL 重复
 
 ## 43 接口导入的详细逻辑是什么？
 
@@ -483,6 +534,8 @@ DUBBO 协议接口支持两种文件格式：MeterSphere格式、JMeter格式：
 :::
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/导入&导出逻辑.png)
+
+图 24  导入&导出逻辑
 
 ## 44 配置了定时任务，没有在钉钉群发消息？
 
@@ -561,6 +614,8 @@ vars.put("str",strTest );
 ## 52 接口测试页面弹出红色报错finishConnect(.) failed: Connection refused: /172.30.10.14:8003
 ![! metersphere导入格式](/img/metersphere-v2/faq/链接失败.png)
 
+图 25  链接失败
+
 :::note
 
 出现原因：常见为接口测试 api-test 容器内存溢出导致微服务连接失败。<br />
@@ -571,3 +626,5 @@ vi /opt/metersphere/docker-compose-api-test.yml
 :::
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/问题修改内存.png)
+
+图 26  问题修改内存

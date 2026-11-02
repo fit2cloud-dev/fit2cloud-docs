@@ -12,6 +12,8 @@ title: "1Panel 安装"
 
 ![安装1Panel](/img/metersphere/installation/1Panel/1Panel页面1.png)
 
+图 1  1Panel 页面
+
 ## 2 安装 MeterSphere
 
 :::note
@@ -22,7 +24,11 @@ title: "1Panel 安装"
 
 ![安装MeterSphere](/img/metersphere/installation/1Panel/1Panel部署1.png)
 
+图 2  1Panel 部署（1）
+
 ![安装MeterSphere](/img/metersphere/installation/1Panel/1Panel部署2.png)
+
+图 3  1Panel 部署（2）
 
 :::note
 
@@ -38,6 +44,8 @@ title: "1Panel 安装"
 :::
 
 ![安装MeterSphere](/img/metersphere/installation/1Panel/1Panel部署3.png)
+
+图 4  1Panel 部署（3）
 
 :::note
 
@@ -60,3 +68,5 @@ title: "1Panel 安装"
 :::
 
 ![!界面说明2](/img/metersphere/登录.png)
+
+图 5  登录

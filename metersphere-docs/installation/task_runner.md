@@ -38,7 +38,11 @@ msctl status
 
 ![配置主机3](/img/metersphere/installation/dis_pressure/修改模式.png)
 
+图 1  修改模式
+
 ![配置主机3](/img/metersphere/installation/dis_pressure/status.png)
+
+图 2  服务状态
 
 :::note
 
@@ -48,6 +52,8 @@ msctl status
 :::
 
 ![配置主机3](/img/metersphere/installation/dis_pressure/资源池添加.png)
+
+图 3  资源池添加
 
 :::note[操作说明]
 
@@ -77,6 +83,8 @@ docker run -d -p 8000:8000 --name=task-runner registry.fit2cloud.com/metersphere
 
 ![配置主机3](/img/metersphere/installation/dis_pressure/win_install_1.png)
 
+图 4  Windows 安装资源池
+
 :::note
 
 安装完成后，在【个人中心-本地执行】填写完整的访问 url：`http://localhost:8000` 。
@@ -84,6 +92,8 @@ docker run -d -p 8000:8000 --name=task-runner registry.fit2cloud.com/metersphere
 :::
 
 ![配置主机3](/img/metersphere/installation/dis_pressure/本地.png)
+
+图 5  本地（1）
 
 ### 2.2 Mac 环境
 
@@ -105,6 +115,8 @@ docker run -d -p 8000:8000 --name=task-runner registry.fit2cloud.com/metersphere
 
 ![配置主机3](/img/metersphere/installation/dis_pressure/mac_install_1.png)
 
+图 6  macOS 安装资源池
+
 :::note
 
 安装完成后，在【个人中心-本地执行】填写完整的访问 url：`http://localhost:8000` 。
@@ -112,3 +124,5 @@ docker run -d -p 8000:8000 --name=task-runner registry.fit2cloud.com/metersphere
 :::
 
 ![配置主机3](/img/metersphere/installation/dis_pressure/本地.png)
+
+图 7  本地（2）

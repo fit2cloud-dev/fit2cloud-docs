@@ -636,6 +636,8 @@ MeterSphere v3.0 是新一代的开源持续测试工具，致力于让软件测
 
 ![!changelog](/img/metersphere/changelog_3.0.1.png)
 
+图 1  MeterSphere v3.0 版本更新日志
+
 **注意：** MeterSphere v3.0 产品定位发生变化，不再提供性能测试和 UI 测试相关的功能和能力，也不支持从 v1.x 和 v2.x 版本升级到 v3.0。
 
 :::

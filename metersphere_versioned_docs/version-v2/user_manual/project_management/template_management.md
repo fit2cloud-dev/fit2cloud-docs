@@ -11,6 +11,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![测试报告模板](/img/metersphere-v2/system_management/测试报告模板.png)
 
+图 1  测试报告模板
+
 ## 1 模板字段
 
 :::note
@@ -21,6 +23,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![自定义字段](/img/metersphere-v2/project_management/自定义字段列表.png)
 
+图 2  自定义字段列表
+
 :::note
 
 - 创建字段<br />
@@ -29,6 +33,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![自定义字段](/img/metersphere-v2/system_management/自定义字段.png)
+
+图 3  自定义字段
 
 :::note[个别字段说明]
 
@@ -46,6 +52,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![维护字段](/img/metersphere-v2/system_management/维护字段.png)
 
+图 4  维护字段
+
 ## 2 用例模版
 
 :::note
@@ -56,6 +64,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![用例模版](/img/metersphere-v2/system_management/用例模版.png)
 
+图 5  用例模版
+
 :::note
 
 - 创建模板<br />
@@ -65,7 +75,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建模板](/img/metersphere-v2/system_management/创建模板.png)
 
+图 6  创建模板
+
 ![填写模板](/img/metersphere-v2/system_management/填写模板.png)
+
+图 7  填写模板
 
 :::note
 
@@ -76,6 +90,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![维护模板](/img/metersphere-v2/system_management/维护模板.png)
 
+图 8  维护模板
+
 :::note
 
 - 引用模板<br />
@@ -84,6 +100,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![维护模板](/img/metersphere-v2/system_management/引用用例模板.png)
+
+图 9  引用用例模板
 
 ## 3 缺陷模版
 
@@ -95,6 +113,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![用例模版](/img/metersphere-v2/system_management/缺陷模版.png)
 
+图 10  缺陷模版
+
 :::note
 
 - 创建缺陷模板<br />
@@ -103,6 +123,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建缺陷模板](/img/metersphere-v2/system_management/创建缺陷模板.png)
+
+图 11  创建缺陷模板
 
 :::note
 
@@ -113,6 +135,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![维护缺陷模板](/img/metersphere-v2/system_management/维护缺陷模板.png)
 
+图 12  维护缺陷模板
+
 :::note
 
 - 引用模板<br />
@@ -121,6 +145,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![维护模板](/img/metersphere-v2/system_management/引用缺陷模板.png)
+
+图 13  引用缺陷模板
 
 ## 4 接口模板
 
@@ -132,6 +158,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![用例模版](/img/metersphere-v2/system_management/接口模版.png)
 
+图 14  接口模版
+
 :::note
 
 - 创建接口模板<br />
@@ -140,6 +168,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建缺陷模板](/img/metersphere-v2/system_management/创建接口模版.png)
+
+图 15  创建接口模版
 
 :::note
 
@@ -150,6 +180,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![维护模板](/img/metersphere-v2/system_management/维护接口模板.png)
 
+图 16  维护接口模板
+
 :::note
 
 - 引用模板<br />
@@ -159,6 +191,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![维护模板](/img/metersphere-v2/system_management/引用接口模板.png)
 
+图 17  引用接口模板（1）
+
 :::note
 
 在创建接口定义时，接口基础信息中会展示自定义的模板字段。
@@ -166,3 +200,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![维护模板](/img/metersphere-v2/system_management/引用接口模板1.png)
+
+图 18  引用接口模板（2）

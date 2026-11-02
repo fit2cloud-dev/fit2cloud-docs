@@ -12,6 +12,8 @@ title: "工作台首页"
 
 ![!缺陷创建](/img/metersphere/workstation/index/自定义时间.png)
 
+图 1  自定义时间
+
 :::note
 
 自定义时间，选择项目，页面自动显示筛选后的数据。
@@ -19,6 +21,8 @@ title: "工作台首页"
 :::
 
 ![!jira默认模板填写内容](/img/metersphere/workstation/index/展示项目数据.png)
+
+图 2  展示项目数据
 
 ## 2 卡片设置
 
@@ -30,7 +34,11 @@ title: "工作台首页"
 
 ![!缺陷平台设置](/img/metersphere/workstation/index/卡片设置.png)
 
+图 3  卡片设置
+
 ![!缺陷平台设置](/img/metersphere/workstation/index/卡片设置页面.png)
+
+图 4  卡片设置页面
 
 :::note
 
@@ -39,3 +47,5 @@ title: "工作台首页"
 :::
 
 ![!缺陷平台设置](/img/metersphere/workstation/index/半屏全屏展示.png)
+
+图 5  半屏全屏展示

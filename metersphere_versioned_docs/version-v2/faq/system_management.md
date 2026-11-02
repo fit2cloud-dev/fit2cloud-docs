@@ -45,6 +45,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![! 数据库配置](/img/metersphere-v2/faq/数据库配置1.png)
 
+图 1  数据库配置
+
 ## 6 在一个SQL请求下如何执行多条SQL？
 
 :::note

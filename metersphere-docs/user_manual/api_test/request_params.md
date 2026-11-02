@@ -20,6 +20,8 @@ title: "请求参数介绍"
 
 ![!请求头1](/img/metersphere/api_test/request_params/请求头1.png)
 
+图 1  请求头（1）
+
 :::note[批量添加]
 
 点击【批量添加】，按如下格式要求输入批量导入文本，点击【应用】完成批量导入。<br />
@@ -34,7 +36,11 @@ title: "请求参数介绍"
 
 ![!请求头2](/img/metersphere/api_test/request_params/请求头2.png)
 
+图 2  请求头（2）
+
 ![!请求头2](/img/metersphere/api_test/request_params/请求头3.png)
+
+图 3  请求头（3）
 
 ## 3 请求体
 ### 3.1 none
@@ -47,6 +53,8 @@ title: "请求参数介绍"
 
 ![!请求体1](/img/metersphere/api_test/request_params/请求体1.png)
 
+图 4  请求体（1）
+
 ### 3.2 form-data
 
 :::note
@@ -56,6 +64,8 @@ title: "请求参数介绍"
 :::
 
 ![!请求体2](/img/metersphere/api_test/request_params/请求体2.png)
+
+图 5  请求体（2）
 
 :::note[说明]
 
@@ -91,6 +101,8 @@ title: "请求参数介绍"
 
 ![!请求体3](/img/metersphere/api_test/request_params/请求体3.png)
 
+图 6  请求体（3）
+
 :::note
 
 选择本地上传。
@@ -99,6 +111,8 @@ title: "请求参数介绍"
 
 ![!请求体4](/img/metersphere/api_test/request_params/请求体4.png)
 
+图 7  请求体（4）
+
 :::note
 
 选择关联文件。关联文件即关联【项目管理-文件管理】中的文件。详情参考：[文件管理](../project_management/file_management.md)。
@@ -106,6 +120,8 @@ title: "请求参数介绍"
 :::
 
 ![!请求体5](/img/metersphere/api_test/request_params/请求体5.png)
+
+图 8  请求体（5）
 
 ### 3.3 x-www-form-urlencoded
 
@@ -116,6 +132,8 @@ title: "请求参数介绍"
 :::
 
 ![!请求体7](/img/metersphere/api_test/request_params/请求体7.png)
+
+图 9  请求体（6）
 
 :::note[说明]
 
@@ -151,6 +169,8 @@ title: "请求参数介绍"
 
 ![!请求体8](/img/metersphere/api_test/request_params/请求体8.png)
 
+图 10  请求体（7）
+
 ### 3.5 xml
 
 :::note
@@ -160,6 +180,8 @@ title: "请求参数介绍"
 :::
 
 ![!请求体9](/img/metersphere/api_test/request_params/请求体9.png)
+
+图 11  请求体（8）
 
 ### 3.6 raw
 
@@ -171,6 +193,8 @@ title: "请求参数介绍"
 
 ![!请求体10](/img/metersphere/api_test/request_params/请求体10.png)
 
+图 12  请求体（9）
+
 ### 3.7 binary
 
 :::note
@@ -180,6 +204,8 @@ title: "请求参数介绍"
 :::
 
 ![!请求体11](/img/metersphere/api_test/request_params/请求体11.png)
+
+图 13  请求体（10）
 
 :::note[注意]
 
@@ -198,6 +224,8 @@ binary 只能上传或关联一个文件。
 
 ![!请求体12](/img/metersphere/api_test/request_params/请求体12.png)
 
+图 14  请求体（11）
+
 ## 5 REST
 
 :::note[说明]
@@ -208,6 +236,8 @@ binary 只能上传或关联一个文件。
 :::
 
 ![!请求体13](/img/metersphere/api_test/request_params/请求体13.png)
+
+图 15  请求体（12）
 
 ## 6 前置
 ### 6.1 脚本操作
@@ -275,6 +305,8 @@ JavaScript
 
 ![!手动录入1](/img/metersphere/api_test/request_params/手动录入1.png)
 
+图 16  手动录入（1）
+
 :::note
 
  - **引用公共脚本** <br />
@@ -291,7 +323,11 @@ JavaScript
 
 ![!引用公共脚本1](/img/metersphere/api_test/request_params/引用公共脚本1.png)
 
+图 17  引用公共脚本（1）
+
 ![!引用公共脚本2](/img/metersphere/api_test/request_params/引用公共脚本2.png)
+
+图 18  引用公共脚本（2）
 
 :::note[说明]
 
@@ -315,7 +351,11 @@ JavaScript
 
 ![!SQL 操作](/img/metersphere/api_test/request_params/SQL操作1.png)
 
+图 19  SQL 操作（1）
+
 ![!SQL 操作](/img/metersphere/api_test/request_params/SQL操作2.png)
+
+图 20  SQL 操作（2）
 
 :::note[说明]
 
@@ -330,6 +370,8 @@ JavaScript
 :::
 
 ![!SQL 操作](/img/metersphere/api_test/request_params/SQL操作3.png)
+
+图 21  SQL 操作（3）
 
 :::note[说明]
 
@@ -347,6 +389,8 @@ JavaScript
 
 ![!SQL 操作](/img/metersphere/api_test/request_params/SQL操作4.png)
 
+图 22  SQL 操作（4）
+
 ### 6.3 等待时间
 
 :::note
@@ -356,6 +400,8 @@ JavaScript
 :::
 
 ![!等待时间](/img/metersphere/api_test/request_params/等待时间.png)
+
+图 23  等待时间
 
 ### 6.4 启用全局前置
 
@@ -367,6 +413,8 @@ JavaScript
 :::
 
 ![!启用全局前置](/img/metersphere/api_test/request_params/启用全局前置.png)
+
+图 24  启用全局前置
 
 :::note[说明]
 
@@ -383,6 +431,8 @@ JavaScript
 :::
 
 ![!代码片段快捷功能](/img/metersphere/api_test/request_params/代码片段快捷功能.png)
+
+图 25  代码片段快捷功能
 
 :::note[说明]
 
@@ -465,6 +515,8 @@ JavaScript
 
 ![!手动录入2](/img/metersphere/api_test/request_params/手动录入2.png)
 
+图 26  手动录入（2）
+
 ### 7.2 SQL 操作
 
 :::note
@@ -481,6 +533,8 @@ JavaScript
 
 ![!SQL 操作](/img/metersphere/api_test/request_params/SQL操作5.png)
 
+图 27  SQL 操作（5）
+
 ### 7.3 提取参数
 
 :::note
@@ -492,6 +546,8 @@ JavaScript
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数1.png)
 
+图 28  提取参数（1）
+
 :::note
 
 在表达式处输入正则表达式或者点击【快捷提取】图标打开表达式【测试】页面。
@@ -499,6 +555,8 @@ JavaScript
 :::
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数2.png)
+
+图 29  提取参数（2）
 
 :::note
 
@@ -508,6 +566,8 @@ JavaScript
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数3.png)
 
+图 30  提取参数（3）
+
 :::note
 
 在提取参数列表处，点击【...】可快捷设置【匹配规则】。
@@ -515,6 +575,8 @@ JavaScript
 :::
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数4.png)
+
+图 31  提取参数（4）
 
 :::note
 
@@ -525,6 +587,8 @@ JavaScript
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数5.png)
 
+图 32  提取参数（5）
+
 :::note
 
 在表达式处输入 JSONPath 提取表达式或者点击【快捷提取】图标打开快捷提取页面。
@@ -533,6 +597,8 @@ JavaScript
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数6.png)
 
+图 33  提取参数（6）
+
 :::note
 
 在【快捷提取】页面，点击预期提取的字段快速生成 JSONPath 表达式，测试通过后设置【结果匹配规则】后点击【确认】。
@@ -540,6 +606,8 @@ JavaScript
 :::
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数7.png)
+
+图 34  提取参数（7）
 
 :::note[结果匹配规则说明]
 
@@ -558,6 +626,8 @@ JavaScript
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数8.png)
 
+图 35  提取参数（8）
+
 :::note
 
 - XPath 提取。<br />
@@ -567,6 +637,8 @@ JavaScript
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数9.png)
 
+图 36  提取参数（9）
+
 :::note
 
 在表达式处输入 XPath 提取表达式或者点击【快捷提取】图标打开快捷提取页面。
@@ -574,6 +646,8 @@ JavaScript
 :::
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数10.png)
+
+图 37  提取参数（10）
 
 :::note
 
@@ -583,6 +657,8 @@ JavaScript
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数11.png)
 
+图 38  提取参数（11）
+
 :::note
 
 在提取参数列表处，点击【...】可快捷设置【匹配结果规则】和【响应内容格式】。
@@ -590,6 +666,8 @@ JavaScript
 :::
 
 ![!提取参数](/img/metersphere/api_test/request_params/提取参数12.png)
+
+图 39  提取参数（12）
 
 :::note[参数类型]
 
@@ -599,6 +677,8 @@ JavaScript
 :::
 
 ![!参数类型](/img/metersphere/api_test/request_params/参数类型.png)
+
+图 40  参数类型
 
 ### 7.4 启用全局后置
 
@@ -610,6 +690,8 @@ JavaScript
 :::
 
 ![!启用全局后置](/img/metersphere/api_test/request_params/启用全局后置.png)
+
+图 41  启用全局后置
 
 :::note[说明]
 
@@ -636,6 +718,8 @@ JavaScript
 
 ![!状态码](/img/metersphere/api_test/request_params/状态码.png)
 
+图 42  状态码
+
 ### 8.2 响应头
 
 :::note
@@ -645,6 +729,8 @@ JavaScript
 :::
 
 ![!响应头](/img/metersphere/api_test/request_params/响应头.png)
+
+图 43  响应头
 
 ### 8.3 响应体
 
@@ -656,6 +742,8 @@ JavaScript
 
 ![!响应体](/img/metersphere/api_test/request_params/响应体.png)
 
+图 44  响应体
+
 ### 8.4 响应时间
 
 :::note
@@ -665,6 +753,8 @@ JavaScript
 :::
 
 ![!响应时间](/img/metersphere/api_test/request_params/响应时间.png)
+
+图 45  响应时间
 
 ### 8.5 变量
 
@@ -676,6 +766,8 @@ JavaScript
 
 ![!变量](/img/metersphere/api_test/request_params/变量.png)
 
+图 46  变量
+
 ### 8.6 脚本
 
 :::note
@@ -686,6 +778,8 @@ JavaScript
 
 ![!断言脚本](/img/metersphere/api_test/request_params/断言脚本.png)
 
+图 47  断言脚本
+
 ## 9 认证
 
 :::note
@@ -695,6 +789,8 @@ JavaScript
 :::
 
 ![!认证](/img/metersphere/api_test/request_params/认证.png)
+
+图 48  认证
 
 :::note[说明]
 
@@ -713,6 +809,8 @@ JavaScript
 :::
 
 ![!设置](/img/metersphere/api_test/request_params/设置.png)
+
+图 49  设置
 
 :::note[说明]
 

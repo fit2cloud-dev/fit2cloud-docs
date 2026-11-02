@@ -10,6 +10,8 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/用例入口1.png)
 
+图 1  用例入口
+
 :::note
 
 可根据【视图】中我关注的、我创建的以及新建视图来筛选展示的数据。
@@ -17,6 +19,8 @@ title: "用例"
 :::
 
 ![!测试用例](/img/metersphere/track/根据视图筛选数据.png)
+
+图 2  根据视图筛选数据
 
 :::note
 
@@ -26,7 +30,11 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/筛选数据.png)
 
+图 3  筛选数据
+
 ![!测试用例](/img/metersphere/track/设置条件筛选数据.png)
+
+图 4  设置条件筛选数据
 
 ## 1 创建用例
 
@@ -38,7 +46,11 @@ title: "用例"
 
 ![!表单新建测试用例](/img/metersphere/track/点击新建按钮创建用例.png)
 
+图 5  点击新建按钮创建用例
+
 ![!表单新建测试用例](/img/metersphere/track/新建用例.png)
+
+图 6  新建用例
 
 ##  2 用例更多操作
 
@@ -49,6 +61,8 @@ title: "用例"
 :::
 
 ![!表单新建测试用例](/img/metersphere/track/查看用例.png)
+
+图 7  查看用例
 
 :::note[操作说明]
 
@@ -74,6 +88,8 @@ title: "用例"
 
 ![!关联测试用例](/img/metersphere/track/关联用例.png)
 
+图 8  关联用例
+
 ### 2.2 关联需求
 
 :::note
@@ -83,6 +99,8 @@ title: "用例"
 :::
 
 ![!关联测试用例](/img/metersphere/track/关联需求.png)
+
+图 9  关联需求
 
 ### 2.3 关联缺陷
 
@@ -94,6 +112,8 @@ title: "用例"
 
 ![!关联测试用例](/img/metersphere/track/关联缺陷.png)
 
+图 10  关联缺陷
+
 ### 2.4 创建依赖关系
 
 :::note
@@ -104,6 +124,8 @@ title: "用例"
 
 ![!依赖关系设置](/img/metersphere/track/用例依赖关系.png)
 
+图 11  用例依赖关系
+
 ### 2.5 更多操作
 
 :::note
@@ -113,6 +135,8 @@ title: "用例"
 :::
 
 ![!依赖关系设置](/img/metersphere/track/详情更多操作.png)
+
+图 12  详情更多操作
 
 :::note[操作说明]
 
@@ -135,7 +159,11 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/功能用例切到脑图模式.png)
 
+图 13  功能用例切到脑图模式
+
 ![!测试用例](/img/metersphere/track/脑图模式展示用例.png)
+
+图 14  脑图模式展示用例
 
 :::note
 
@@ -145,6 +173,8 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/脑图展开用例.png)
 
+图 15  脑图展开用例
+
 :::note
 
 如图点击【模块】即可在模块下创建用例
@@ -152,6 +182,8 @@ title: "用例"
 :::
 
 ![!测试用例](/img/metersphere/track/脑图模式点击用例按钮.png)
+
+图 16  脑图模式点击用例按钮
 
 :::note
 
@@ -161,7 +193,11 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/脑图模式里编辑用例.png)
 
+图 17  脑图模式里编辑用例
+
 ![!测试用例](/img/metersphere/track/脑图模式里的用例详情.png)
+
+图 18  脑图模式里的用例详情
 
 :::note
 
@@ -171,6 +207,8 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/脑图模式里保存用例.png)
 
+图 19  脑图模式里保存用例
+
 :::note
 
 选中用例，点击【详情】按钮，用例可以上传附件、评论、关联缺陷或创建缺陷。
@@ -179,6 +217,8 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/保存用例后可添加用例缺陷.png)
 
+图 20  保存用例后可添加用例缺陷
+
 :::note
 
 切到列表模式，可以显示刚创建的脑图用例。
@@ -186,6 +226,8 @@ title: "用例"
 :::
 
 ![!测试用例](/img/metersphere/track/脑图模式切到列表模式.png)
+
+图 21  脑图模式切到列表模式
 
 ### 3.2 模块更多操作
 
@@ -197,6 +239,8 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/脑图里的模块更多操作.png)
 
+图 22  脑图里的模块更多操作
+
 :::note
 
 点击【剪切】，选中其他模块点击【粘贴】，即可将剪切内容添加到该模块。
@@ -205,6 +249,8 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/脑图模式剪切.png)
 
+图 23  脑图模式剪切
+
 :::note
 
 点击【进入当前节点】进入当前模块里进行创建用例，创建完成后点击【保存】，点击【全部模块】即可回到全部模块模式下。
@@ -212,6 +258,8 @@ title: "用例"
 :::
 
 ![!测试用例](/img/metersphere/track/进入当前节点脑图模式.png)
+
+图 24  进入当前节点脑图模式
 
 ### 3.3 用例更多操作
 
@@ -222,6 +270,8 @@ title: "用例"
 :::
 
 ![!测试用例](/img/metersphere/track/脑图模式用例的功能操作.png)
+
+图 25  脑图模式用例的功能操作
 
 ### 3.4 快捷键操作
 
@@ -244,6 +294,8 @@ title: "用例"
 
 ![!测试用例](/img/metersphere/track/快捷键操作.png)
 
+图 26  快捷键操作
+
 ## 4 导入用例
 
 :::note
@@ -254,6 +306,8 @@ title: "用例"
 
 ![!导入测试用例](/img/metersphere/track/导入按钮.png)
 
+图 27  导入按钮
+
 :::note
 
 选择 Xmind 导入，导入本地用例，下载 Xmind 模板按照模板字段填写用例，导入到平台。
@@ -261,6 +315,8 @@ title: "用例"
 :::
 
 ![!导入测试用例](/img/metersphere/track/导入用例.png)
+
+图 28  导入用例
 
 :::note[操作说明]
 
@@ -278,6 +334,8 @@ title: "用例"
 
 ![!导入测试用例](/img/metersphere/track/导出用例.png)
 
+图 29  导出用例
+
 :::note[导出 Excel 格式]
 
 勾选系统字段和其他字段，选择导出格式为默认或单元格拆分，进行导出。
@@ -285,6 +343,8 @@ title: "用例"
 :::
 
 ![!导入测试用例](/img/metersphere/track/导出excle格式.png)
+
+图 30  导出 Excel 格式
 
 :::note[注意]
 
@@ -301,6 +361,8 @@ title: "用例"
 
 ![!导入测试用例](/img/metersphere/track/导出思维导图.png)
 
+图 31  导出思维导图
+
 ## 6 批量操作
 
 :::note
@@ -311,6 +373,8 @@ title: "用例"
 
 ![!回收站](/img/metersphere/track/用例的批量操作.png)
 
+图 32  用例的批量操作
+
 ## 7 AI生成用例
 
 :::note[注意：使用 AI 生成用例需要先在【系统设置】-【系统参数】-【模型设置】或者登录用户的【个人中心】-【模型设置】处配置并开启模型。]
@@ -320,7 +384,12 @@ title: "用例"
 :::
 
 ![!用例AI生成页面](/img/metersphere/track/用例AI生成页面.png)
+
+图 33  用例 AI 生成页面
+
 ![!AI对话框设置页面](/img/metersphere/track/AI对话框设置页面.png)
+
+图 34  AI 对话框设置页面
 
 :::note
 
@@ -329,7 +398,12 @@ title: "用例"
 :::
 
 ![!AI用例同步](/img/metersphere/track/AI用例同步.png)
+
+图 35  AI 用例同步
+
 ![!AI用例同步成功](/img/metersphere/track/AI用例同步成功.png)
+
+图 36  AI 用例同步成功
 
 ## 8 回收站
 
@@ -341,4 +415,8 @@ title: "用例"
 
 ![!回收站](/img/metersphere/track/回收站.png)
 
+图 37  回收站（1）
+
 ![!回收站](/img/metersphere/track/回收站1.png)
+
+图 38  回收站（2）

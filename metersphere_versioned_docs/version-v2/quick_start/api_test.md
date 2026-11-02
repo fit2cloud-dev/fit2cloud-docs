@@ -12,6 +12,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!接口测试首页](/img/metersphere-v2/quick_start/api/接口测试首页.png)
 
+图 1  接口测试首页
+
 ## 1 接口定义管理
 
 :::note
@@ -21,6 +23,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 :::
 
 ![!接口定义](/img/metersphere-v2/quick_start/api/接口定义.png)
+
+图 2  接口定义列表
 
 ### 1.1 导入 Swagger 接口文档
 
@@ -32,6 +36,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!导入swagger文件](/img/metersphere-v2/quick_start/api/导入swagger文件1.png)
 
+图 3  导入 Swagger 文件入口
+
 :::note
 
 选择 Swagger 数据格式，选择 MeterSphere 模块，选择【导入模式】为不覆盖，选择【导入版本】，选择使用 URL 导入，并填入 Swagger 对应的 JSON 地址 `http://xxx.fit2cloud.com/v3/api-docs`，导入 API 接口。
@@ -41,6 +47,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 :::
 
 ![!导入swagger文件](/img/metersphere-v2/quick_start/api/导入swagger文件2.png)
+
+图 4  Swagger 导入设置
 
 ### 1.2 查看接口定义
 
@@ -52,7 +60,11 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!编辑接口详情](/img/metersphere-v2/quick_start/api/编辑接口详情1.png)
 
+图 5  接口详情
+
 ![!编辑接口详情](/img/metersphere-v2/quick_start/api/编辑接口详情2.png)
+
+图 6  接口详情参数
 
 ### 1.3 添加测试环境
 
@@ -65,7 +77,11 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!项目管理](/img/metersphere-v2/quick_start/api/环境管理.png)
 
+图 7  创建环境入口
+
 ![!添加环境](/img/metersphere-v2/quick_start/api/添加环境2.png)
+
+图 8  创建环境
 
 ### 1.4 调试单个接口
 
@@ -79,6 +95,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!调试单个接口](/img/metersphere-v2/quick_start/api/调试单个接口2.png)
 
+图 9  调试接口
+
 :::note
 
 当接口请求完成后，可以在下方的响应内容中查看到本次接口请求的响应信息。
@@ -86,6 +104,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 :::
 
 ![!调试单个接口](/img/metersphere-v2/quick_start/api/调试单个接口3.png)
+
+图 10  响应内容
 
 ## 2 创建单接口用例
 
@@ -97,6 +117,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!接口定义](/img/metersphere-v2/quick_start/api/接口定义.png)
 
+图 11  进入接口定义页面
+
 ### 2.1 新建单接口用例
 
 :::note
@@ -107,6 +129,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!新建单接口用例](/img/metersphere-v2/quick_start/api/新建单接口用例1.png)
 
+图 12  新建单接口用例入口
+
 :::note
 
 输入接口用例的名称及请求接口所需的其他参数后，点击右上角的【保存】按钮保存该接口用例。
@@ -114,6 +138,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 :::
 
 ![!新建单接口用例](/img/metersphere-v2/quick_start/api/新建单接口用例3.png)
+
+图 13  保存用例
 
 ### 2.2 测试单接口用例
 
@@ -125,6 +151,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!测试单接口用例](/img/metersphere-v2/quick_start/api/测试单接口用例1.png)
 
+图 14  执行单接口用例
+
 ## 3 创建场景用例
 
 :::note
@@ -134,6 +162,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 :::
 
 ![!接口自动化](/img/metersphere-v2/quick_start/api/接口自动化.png)
+
+图 15  接口自动化页面
 
 ### 3.1 新建场景用例
 
@@ -147,9 +177,15 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!新建场景用例](/img/metersphere-v2/quick_start/api/新建场景用例1.png)
 
+图 16  创建场景
+
 ![!新建场景用例](/img/metersphere-v2/quick_start/api/接口自动化.png)
 
+图 17  场景列表
+
 ![!新建场景用例](/img/metersphere-v2/quick_start/api/新建场景用例3.png)
+
+图 18  场景详情
 
 ### 3.2 添加场景步骤
 
@@ -161,6 +197,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!在场景用例中添加步骤](/img/metersphere-v2/quick_start/api/在场景用例中添加步骤1.png)
 
+图 19  添加场景步骤
+
 :::note
 
 选择【接口列表导入】步骤，在弹出的接口列表中找到 登录 接口进行添加。
@@ -168,6 +206,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 :::
 
 ![!在场景用例中添加步骤](/img/metersphere-v2/quick_start/api/在场景用例中添加步骤2.png)
+
+图 20  接口列表导入
 
 :::note
 
@@ -177,6 +217,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!在场景用例中添加步骤](/img/metersphere-v2/quick_start/api/在场景用例中添加步骤3.png)
 
+图 21  修改请求参数
+
 :::note
 
 展开 `/signin` 登录接口的请求参数，切换到【后置操作】，在该页面添加一个名称为 `获取CSRF-TOKEN`的提取步骤，采用【推荐 JSONPath 提取】方式添加一个提取，在弹出的响应结果 Json 页面中，下拉到最底层，勾选名称为`csrfToken`和`sessionId`的属性，JSONPath 表达式分别为 `$.data.csrfToken`和`$.data.sessionId`。
@@ -184,6 +226,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 :::
 
 ![!在场景用例中添加步骤](/img/metersphere-v2/quick_start/api/在场景用例中添加步骤4.png)
+
+图 22  添加后置提取
 
 :::note[注意]
 
@@ -193,9 +237,15 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!在场景用例中添加步骤](/img/metersphere-v2/quick_start/api/在场景用例中添加步骤5.png)
 
+图 23  推荐 JSONPath 提取
+
 ![!在场景用例中添加步骤](/img/metersphere-v2/quick_start/api/在场景用例中添加步骤6.png)
 
+图 24  勾选提取属性
+
 ![!在场景用例中添加步骤](/img/metersphere-v2/quick_start/api/在场景用例中添加步骤7.png)
+
+图 25  提取结果
 
 :::note
 
@@ -204,6 +254,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 :::
 
 ![!在场景用例中添加步骤](/img/metersphere-v2/quick_start/api/在场景用例中添加步骤8.png)
+
+图 26  添加第二个接口
 
 ## 3 场景调试
 
@@ -215,6 +267,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!执行场景并查看结果](/img/metersphere-v2/quick_start/api/调试场景1.png)
 
+图 27  调试场景
+
 :::note
 
 点击【调试历史】也可以直接查看详细的报告信息。
@@ -223,7 +277,11 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!执行场景并查看结果](/img/metersphere-v2/quick_start/api/调试场景2.png)
 
+图 28  调试历史
+
 ![!执行场景并查看结果](/img/metersphere-v2/quick_start/api/调试场景3.png)
+
+图 29  调试报告
 
 ## 4 测试报告生成和查看
 
@@ -235,7 +293,11 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!保存测试报告](/img/metersphere-v2/quick_start/api/生成报告1.png)
 
+图 30  生成报告入口
+
 ![!保存测试报告](/img/metersphere-v2/quick_start/api/生成报告2.png)
+
+图 31  报告列表
 
 :::note
 
@@ -245,6 +307,8 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 
 ![!保存测试报告](/img/metersphere-v2/quick_start/api/生成报告3.png)
 
+图 32  报告详情
+
 :::note
 
 在报告列表中选择报告【详情】按钮打开【测试报告】页面，在页面中可以查看报告详情，分享和导出报告。
@@ -252,3 +316,5 @@ MeterSphere 接口测试模块提供了接口定义、接口自动化等接口�
 :::
 
 ![!保存测试报告](/img/metersphere-v2/quick_start/api/生成报告4.png)
+
+图 33  报告分享导出

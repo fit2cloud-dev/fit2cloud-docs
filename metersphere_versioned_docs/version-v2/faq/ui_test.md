@@ -6,6 +6,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 ## 1.本地调试时，启动日志中出现两个 ChromeDriver 版本号，原因是？
 ![! UI测试-版本](/img/metersphere-v2/faq/UI测试本地调试版本不对.png)
 
+图 1  UI 测试本地调试版本不对
+
 :::note
 
 本地浏览器的版本号与下载的驱动版本不匹配，可查看浏览器版本后，重新下载对应版本的驱动。
@@ -15,6 +17,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 ## 2.本地调试，启动日志中报错：`cannot find Chrome binary`，如何解决？
 ![! UI测试-版本](/img/metersphere-v2/faq/UI测试本地调试找不到浏览器.jpg)
 
+图 2  UI 测试本地调试找不到浏览器
+
 :::note
 
 将 chrome.exe 的路径配置到环境变量 PATH 里。
@@ -23,6 +27,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ## 3.本地调试，日志没有任何报错情况，但是页面浏览器没有被调用起来，如何处理？
 ![! UI测试-版本](/img/metersphere-v2/faq/UI测试不勾选性能测试.png)
+
+图 3  UI 测试不勾选性能测试
 
 :::note
 

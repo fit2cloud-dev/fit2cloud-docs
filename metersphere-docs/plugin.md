@@ -8,6 +8,8 @@ title: "插件列表"
 
 :::
 
+表 1  插件列表
+
 <table>
     <tbody>
         <tr>

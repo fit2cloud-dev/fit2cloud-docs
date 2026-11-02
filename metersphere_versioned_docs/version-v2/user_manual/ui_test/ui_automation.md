@@ -15,6 +15,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景1.png)
 
+图 1  进入场景创建页面
+
 :::note
 
 在【基础信息】栏，添加模块、状态、名称等信息后即可保存场景。
@@ -22,6 +24,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景2.png)
+
+图 2  填写场景基础信息
 
 ### 1.2 场景参数
 
@@ -32,7 +36,12 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景3.png)
+
+图 3  场景变量入口
+
 ![创建场景](/img/metersphere-v2/ui_test/创建场景4.png)
+
+图 4  场景变量页面
 
 :::note
 
@@ -42,6 +51,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景5.png)
 
+图 5  添加场景变量
+
 :::note
 
 - **性能模式**：【性能模式】默认开启，开启后不会对每个步骤都截图，更节省资源。
@@ -50,6 +61,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景6.png)
 
+图 6  性能模式开关
+
 :::note
 
 - **浏览器驱动**：浏览器驱动即以什么浏览器执行该场景，当前支持 chrome 浏览器和 firefox 浏览器。
@@ -57,6 +70,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景7.png)
+
+图 7  浏览器驱动选择
 
 ### 1.3 添加步骤
 
@@ -68,6 +83,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景8.png)
 
+图 8  添加步骤入口
+
 :::note
 
 - **浏览器操作**：点击【浏览器操作】，输入【URL】地址，可添加浏览器相关操作步骤。
@@ -75,6 +92,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景9.png)
+
+图 9  浏览器操作步骤
 
 :::note
 
@@ -84,6 +103,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景10.png)
 
+图 10  浏览器操作类型
+
 :::note
 
 - **弹窗操作**：支持对弹窗输入框输入内容，点击【确定】和【取消】的操作。
@@ -91,6 +112,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景11.png)
+
+图 11  弹窗操作步骤
 
 :::note
 
@@ -104,6 +127,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景12.png)
 
+图 12  等待元素步骤
+
 :::note
 
 - **鼠标操作**：支持【鼠标点击】、【鼠标移动】和【鼠标拖拽】的操作，通过定位找到元素后，还支持设置鼠标在元素上的点击位置。<br />
@@ -115,6 +140,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景13.png)
 
+图 13  鼠标拖拽步骤
+
 :::note
 
 【鼠标操作】选择【鼠标点击】，选择点击方式，填写元素位置以及鼠标点击位置即可
@@ -122,6 +149,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/鼠标点击.png)
+
+图 14  鼠标点击步骤
 
 :::note
 
@@ -131,6 +160,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/鼠标点击1.png)
 
+图 15  强制点击
+
 :::note
 
 【鼠标操作】选择【鼠标移动】，选择移动方式，填写鼠标位置即可
@@ -138,6 +169,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/鼠标移动.png)
+
+图 16  鼠标移动步骤
 
 :::note
 
@@ -147,6 +180,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/鼠标拖拽.png)
 
+图 17  鼠标拖拽操作
+
 :::note
 
 - **输入操作**：支持输入框和可编辑段落输入，同时支持追加输入和覆盖输入模式。
@@ -154,6 +189,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景14.png)
+
+图 18  输入操作步骤
 
 :::note
 
@@ -170,6 +207,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景15.png)
 
+图 19  Else 条件分支
+
 :::note
 
 将需要进行流程控制的步骤拖入流程控制器下即可实现步骤循环或者条件控制。
@@ -178,6 +217,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景16.png)
 
+图 20  流程控制器
+
 :::note
 
 - **场景导入**：点击【场景导入】，可以选择项目下的多个场景/指令导入到该场景做为一个步骤。
@@ -185,6 +226,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景17.png)
+
+图 21  场景导入步骤
 
 ### 1.4 高级设置
 
@@ -195,7 +238,12 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景18.png)
+
+图 22  高级设置元素库
+
 ![创建场景](/img/metersphere-v2/ui_test/创建场景18_1.png)
+
+图 23  元素库元素详情
 
 :::note
 
@@ -205,6 +253,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景19.png)
 
+图 24  前置操作类型
+
 :::note
 
 （1）前置脚本：目前支持【js脚本】，设置 js 脚本后，会先于当前步骤在浏览器中执行该脚本。
@@ -212,6 +262,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景20.png)
+
+图 25  前置脚本设置
 
 :::note
 
@@ -221,6 +273,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景21.png)
 
+图 26  脚本返回值变量
+
 :::note
 
 （2）等待时间：【前置操作】可以设置等待时间，如下图所示，将会等待 3 秒再执行当前步骤。
@@ -228,6 +282,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景22.png)
+
+图 27  等待时间设置
 
 :::note
 
@@ -237,6 +293,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景23.png)
 
+图 28  数据提取设置
+
 :::note
 
 窗口信息包括窗口 Handle 信息和网页标题。
@@ -244,6 +302,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景24.png)
+
+图 29  提取窗口信息
 
 :::note
 
@@ -253,6 +313,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景25.png)
 
+图 30  提取元素信息
+
 :::note
 
 系统会根据所选的定位方式、定位表达式和元素属性提取数据以及存储变量。
@@ -260,6 +322,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景26.png)
+
+图 31  提取结果变量
 
 :::note
 
@@ -269,6 +333,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景27.png)
 
+图 32  后置操作设置
+
 :::note
 
 目前断言对象支持断言值、弹窗文本、元素断言、下拉框和网页标题。
@@ -276,6 +342,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景28.png)
+
+图 33  后置断言对象
 
 :::note
 
@@ -287,6 +355,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景29.png)
 
+图 34  忽略异常并继续执行
+
 ### 1.5 步骤列表
 
 :::note
@@ -297,6 +367,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景30.png)
 
+图 35  查看步骤详情
+
 :::note
 
 - **基础操作**：鼠标悬浮在某个步骤之上，会展示【编辑】键，点击后可重命名该步骤。
@@ -304,6 +376,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景31.png)
+
+图 36  重命名步骤
 
 :::note
 
@@ -313,6 +387,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景32.png)
 
+图 37  步骤更多操作
+
 :::note
 
 - **批量操作**：点击左侧小图表，可以列表进行批量操作。
@@ -321,6 +397,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景33.png)
 
+图 38  步骤批量操作入口
+
 :::note
 
 包括批量启用、批量禁用、批量展开、批量折叠和批量删除步骤。
@@ -328,6 +406,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景34.png)
+
+图 39  步骤批量操作选项
 
 ## 2 导入导出
 ### 2.1 导出场景
@@ -340,6 +420,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景35.png)
 
+图 40  导出场景
+
 ### 2.2 导入场景
 
 :::note
@@ -350,6 +432,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景36.png)
 
+图 41  导入场景入口
+
 :::note
 
 在导入页面选择【导入模块】和【导入模式】，并上传 side 格式的文件，点击【保存】即可把 UI 自动化场景导入到相应的模块。
@@ -357,6 +441,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景37.png)
+
+图 42  导入场景设置
 
 ## 3 基础操作
 ### 3.1 场景列表
@@ -369,6 +455,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景38.png)
 
+图 43  场景列表
+
 ### 3.2 执行场景
 
 :::note
@@ -379,6 +467,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景39.png)
 
+图 44  执行场景
+
 :::note
 
 场景执行完成会，会在当前也会展示测试报告详情，也可以到【UI测试-测试报告】路径下查看报告。
@@ -387,11 +477,17 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景40.png)
 
+图 45  场景执行报告
+
 ### 3.3 编辑场景
 ![创建场景](/img/metersphere-v2/ui_test/创建场景41.png)
 
+图 46  编辑场景
+
 ### 3.4 复制场景
 ![创建场景](/img/metersphere-v2/ui_test/创建场景42.png)
+
+图 47  复制场景
 
 ### 3.5 删除场景
 
@@ -403,6 +499,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景43.png)
 
+图 48  删除场景确认
+
 :::note
 
 回收站内的场景可以恢复或彻底删除。
@@ -410,6 +508,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景44.png)
+
+图 49  回收站恢复场景
 
 ## 4 批量操作
 ### 4.1 批量编辑
@@ -422,6 +522,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景45.png)
 
+图 50  批量编辑入口
+
 :::note
 
 弹出批量编辑页面，选择需要修改的属性和属性值，点击【确定】即可。
@@ -429,6 +531,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景46.png)
+
+图 51  批量编辑设置
 
 ### 4.2 批量移动
 
@@ -440,6 +544,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景47.png)
 
+图 52  批量移动入口
+
 :::note
 
 选择用例目录点击【确定】，勾选的场景会移动到该目录下。
@@ -447,6 +553,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景48.png)
+
+图 53  批量移动目录选择
 
 ### 4.3 批量复制
 
@@ -458,6 +566,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景49.png)
 
+图 54  批量复制入口
+
 :::note
 
 选择用例目录并点击【确定】，勾选的用例会复制到该目录下。
@@ -465,6 +575,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景50.png)
+
+图 55  批量复制目录选择
 
 ### 4.4 批量删除
 
@@ -476,6 +588,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景51.png)
 
+图 56  批量删除确认
+
 :::note
 
 点击【确定】，勾选的删除会被删除到回收站。
@@ -483,6 +597,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建场景52.png)
+
+图 57  删除到回收站
 
 ## 5 创建指令
 ### 5.1 基本信息
@@ -495,6 +611,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/创建指令1.png)
 
+图 58  进入指令创建页面
+
 :::note
 
 在【基础信息】栏，添加模块、状态、名称等信息后即可保存场景。
@@ -502,6 +620,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/创建指令2.png)
+
+图 59  填写指令基础信息
 
 ### 5.2 指令步骤
 
@@ -513,6 +633,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/指令步骤1.png)
 
+图 60  指令步骤页
+
 :::note
 
 添加 UI 自动化控件到相应步骤下，其中自定义步骤处支持参数化配置。
@@ -521,6 +643,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/指令步骤11.png)
 
+图 61  添加控件到步骤
+
 :::note
 
 可在【场景步骤】或【指令步骤】的批量选择中，点击创建自定义指令选项。
@@ -528,6 +652,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/快捷创建指令.png)
+
+图 62  快捷创建指令
 
 ### 5.3 指令列表
 
@@ -539,6 +665,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/指令列表1.png)
 
+图 63  指令列表
+
 :::note
 
 可对列表中的指令进行【编辑】、【复制】、【删除】、【查看引用】等操作。
@@ -546,3 +674,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/指令列表2.png)
+
+图 64  指令列表操作
