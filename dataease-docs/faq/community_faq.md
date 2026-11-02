@@ -79,7 +79,7 @@ V3 支持跨源查询。使用需在系统设置--系统参数--基础设置中�
 
 **处理方式**：
 
-不支持临时表，可用子查询替代。
+SQL 数据集只支持单条查询语句，执行时会被包装成子查询，无法执行 CREATE TEMPORARY TABLE 这类 DDL；且连接来自连接池，临时表的会话级生命周期也无法保证。需要中间结果时请用子查询或 CTE（WITH ... AS）​ 替代。
 
 ### 2.6 DataEase 是否支持华为 GaussDB 数据源？
 
@@ -87,7 +87,7 @@ V3 支持跨源查询。使用需在系统设置--系统参数--基础设置中�
 
 **处理方式**：
 
-支持。在【数据准备】中新建数据源，OLTP 分类下选择 GaussDB 图标即可配置连接，系统内置华为 GaussDB JDBC 驱动（`com.huawei.gaussdb.jdbc.Driver`），端口常见默认为 5432，并支持选择 Schema 后加载对应模式下的数据表。
+支持。在【数据准备】中新建数据源，OLTP 分类下选择 GaussDB 图标即可配置连接，系统内置华为 GaussDB JDBC 驱动（`com.huawei.gaussdb.jdbc.Driver`），端口常见默认为 8000，并支持选择 Schema 后加载对应模式下的数据表。
 
 详细配置步骤请参阅[配置 GaussDB 数据源](../user_manual/datasource_configuration/GaussDB_datasource_configuration.md)
 
