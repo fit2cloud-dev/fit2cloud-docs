@@ -56,6 +56,14 @@ SSE 协议读取响应没有超时，会导致工作流调用 MCP 时卡住。�
 
 通过导出再导入的方式实现。
 
+### 1.7 Skill 如何读取服务器目录？
+
+**问题**：在 MaxKB 的 Skill 中想读取服务器上某个目录，直接写路径可以吗？
+
+**处理方式**：
+
+MaxKB 的 Skill 是上传的 ZIP 包，运行时被解压到按会话隔离的临时目录（/tmp/<chat_id>/skills），对 Agent 暴露为虚拟路径 /skills，该目录在本次会话结束后即被删除，且 Skill 内脚本以受限的 sandbox 用户执行，因此不能依赖它读写持久数据，也不存在 input/、output/ 之类的标准数据目录约定。
+
 ## 2 系统集成与权限
 
 ### 2.1 WorkBuddy 与 MaxKB 如何关联？
@@ -73,3 +81,15 @@ WorkBuddy 账号与 MaxKB 账号相互独立，通过 MaxKB 的个人 API Key �
 **处理方式**：
 
 MaxKB Skills 可在论坛帖子（https://bbs.fit2cloud.com/t/topic/19883）中获取下载链接。下载后把安装包直接拖入 WorkBuddy 的输入框，让 WorkBuddy 自行安装即可。
+
+## 3 安装与升级
+
+### 3.1 MaxKB 如何升级版本？
+
+**问题**：MaxKB 怎么升级到新版本？
+
+**处理方式**：
+
+升级前请先对数据进行备份。在线安装的按在线升级步骤操作：先执行 `docker pull registry.fit2cloud.com/maxkb/maxkb` 下载最新镜像，再查看并确认上一次数据持久化目录，删除旧版本容器后以相同的数据持久化目录启动新版本容器。离线安装的请参阅离线升级文档。
+
+详细步骤请参阅[在线升级](../installation/online_installtion.md)与[离线升级](../installation/online_installtion.md)。
