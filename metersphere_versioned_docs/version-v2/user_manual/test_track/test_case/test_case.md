@@ -13,6 +13,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!不同版本号](/img/metersphere-v2/track/不同版本号.png)
 
+图 1  不同版本号
+
 ## 2 切换用例视图
 
 :::note
@@ -23,7 +25,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!切换用例视图](/img/metersphere-v2/track/用例列表视图.png)
 
+图 2  用例列表视图
+
 ![!切换用例视图](/img/metersphere-v2/track/用例脑图视图.png)
+
+图 3  用例脑图视图
 
 ## 3 基于列表视图新建用例
 
@@ -35,6 +41,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!基于列表视图新建用例](/img/metersphere-v2/track/新建测试用例.png)
 
+图 4  新建测试用例
+
 :::note
 
 在新建用例详情页面中，进一步填写用例名称、前置条件、步骤信息、添加备注、上传附件等，还可以为用例设置模块、用例等级、版本、关联需求、标签等，编辑完成后，点击【保存】将此条用例保存至列表。<br />
@@ -43,6 +51,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!表单新建测试用例](/img/metersphere-v2/track/编辑新用例详情.png)
 
+图 5  编辑新用例详情
+
 :::note
 
 新建用例将在用例列表中呈现，点击用例【ID】或点击此条用例后的【编辑】按钮可重新进入用例详情页面进行编辑，可关联测试用例、关联缺陷、设置依赖关系、添加评论、查看变更、创建新版本、版本对比、设置关注、添加到公共用例库、复制等操作。<br />
@@ -50,6 +60,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!表单新建测试用例](/img/metersphere-v2/track/新建用例展示.png)
+
+图 6  新建用例展示
 
 ### 3.1 为用例关联测试
 
@@ -61,6 +73,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联测试用例](/img/metersphere-v2/track/用例关联测试.png)
 
+图 7  用例关联测试
+
 :::note
 
 以接口测试用例为例。进入接口测试用例列表，选中相关联的用例，点击【确定】完成关联。
@@ -69,6 +83,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联测试用例](/img/metersphere-v2/track/用例关联接口测试用例.png)
 
+图 8  用例关联接口测试用例
+
 :::note
 
 关联后的测试用例将在关联列表中显示，点击【取消关联】可取消关联的测试用例。
@@ -76,6 +92,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!关联测试用例](/img/metersphere-v2/track/用例取消关联测试用例.png)
+
+图 9  用例取消关联测试用例
 
 ### 3.2 为用例关联需求
 
@@ -87,6 +105,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联测试用例](/img/metersphere-v2/track/用例关联需求.png)
 
+图 10  用例关联需求
+
 ### 3.3 为用例关联缺陷
 
 :::note
@@ -96,6 +116,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!关联测试用例](/img/metersphere-v2/track/用例关联缺陷.png)
+
+图 11  用例关联缺陷
 
 ### 3.4 为用例创建依赖关系
 
@@ -109,6 +131,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!依赖关系设置](/img/metersphere-v2/track/依赖关系设置.png)
 
+图 12  依赖关系设置
+
 :::note
 
 - 依赖关系图<br />
@@ -117,6 +141,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!依赖关系图](/img/metersphere-v2/track/依赖关系图.png)
+
+图 13  依赖关系图
 
 ## 4 基于脑图视图新建用例
 
@@ -128,6 +154,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!基于脑图视图新建用例](/img/metersphere-v2/track/脑图创建测试用例.png)
 
+图 14  脑图创建测试用例
+
 :::note
 
 右键主题区域触发功能键。<br />
@@ -135,6 +163,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!基于脑图视图新建用例](/img/metersphere-v2/track/脑图用例编辑.png)
+
+图 15  脑图用例编辑
 
 :::note[操作说明]
 
@@ -161,6 +191,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!批量操作](/img/metersphere-v2/track/功能批量处理操作.png)
 
+图 16  功能批量处理操作
+
 ## 6 导入用例
 
 :::note
@@ -171,6 +203,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!导入测试用例](/img/metersphere-v2/track/导入测试用例.png)
 
+图 17  导入测试用例（1）
+
 :::note
 
 可先下载模板，下载的模板中会出现自定义的字段，填写内容后，进行上传。自定义字段也正常展示到页面中。
@@ -178,6 +212,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!导入测试用例](/img/metersphere-v2/track/导入测试用例_1.png)
+
+图 18  导入测试用例（2）
 
 :::note[操作说明]
 
@@ -196,6 +232,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!导出测试用例](/img/metersphere-v2/track/导出功能用例.png)
 
+图 19  导出功能用例
+
 ## 8 回收站
 
 :::note
@@ -206,6 +244,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!回收站](/img/metersphere-v2/track/回收站1.png)
 
+图 20  回收站（1）
+
 :::note
 
 在回收站里可进行【恢复】和【彻底删除】操作。
@@ -213,6 +253,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!回收站](/img/metersphere-v2/track/回收站2.png)
+
+图 21  回收站（2）
 
 ## 9 查看变更记录
 
@@ -224,6 +266,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!用例日志](/img/metersphere-v2/track/用例日志1.png)
 
+图 22  用例日志
+
 ## 10 版本管理
 
 :::note
@@ -233,3 +277,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!版本管理](/img/metersphere-v2/track/版本管理.png)
+
+图 23  版本管理

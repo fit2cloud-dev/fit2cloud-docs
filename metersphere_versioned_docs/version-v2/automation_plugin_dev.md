@@ -49,6 +49,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![表单生成器](/img/metersphere-v2/automation_plugin_dev/表单生成器.png)
 
+图 1  表单生成器
+
 :::note
 
 点击表单生成器右上角的【生成JSON】按钮，将内容保存到`src\main\resources\json\ui_dummy.json`文件中；点击右上角的【生成Options】按钮，将内容保存到`src\main\resources\json\ui_form.json`文件中。对于没有默认值的字段，手动编辑 json 文件，增加空默认值，避免出现空指针异常。<br />
@@ -56,6 +58,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![表单生成器](/img/metersphere-v2/automation_plugin_dev/表单生成器右上角.png)
+
+图 2  表单生成器右上角
 
 ### 2.3 初始化插件资源
 
@@ -67,6 +71,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![表单生成器](/img/metersphere-v2/automation_plugin_dev/初始化插件资源.png)
 
+图 3  初始化插件资源
+
 ### 2.4 转换生成 JMeter HashTree
 
 :::note
@@ -77,7 +83,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![表单生成器](/img/metersphere-v2/automation_plugin_dev/转换生成JMeter_HashTree.png)
 
+图 4  转换生成 JMeter HashTree（1）
+
 ![表单生成器](/img/metersphere-v2/automation_plugin_dev/转换生成JMeter_HashTree_1.png)
+
+图 5  转换生成 JMeter HashTree（2）
 
 :::note
 
@@ -86,6 +96,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![表单生成器](/img/metersphere-v2/automation_plugin_dev/转换生成JMeter_HashTree_2.png)
+
+图 6  转换生成 JMeter HashTree（3）
 
 ### 2.5 打包
 
@@ -97,6 +109,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![表单生成器](/img/metersphere-v2/automation_plugin_dev/收尾打包.png)
 
+图 7  收尾打包
+
 ### 2.6 上传测试
 
 :::note
@@ -107,4 +121,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![表单生成器](/img/metersphere-v2/automation_plugin_dev/上传测试.png)
 
+图 8  上传测试（1）
+
 ![表单生成器](/img/metersphere-v2/automation_plugin_dev/上传测试_1.png)
+
+图 9  上传测试（2）

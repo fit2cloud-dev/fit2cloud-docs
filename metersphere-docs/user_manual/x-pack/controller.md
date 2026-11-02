@@ -16,7 +16,11 @@ title: "资源池"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/controller/资源池列表页面.png)
 
+图 1  资源池列表页面
+
 ![!资源池添加页面](/img/metersphere/X-Pack/controller/资源池添加页面.png)
+
+图 2  资源池添加页面
 
 :::note[说明]
 
@@ -35,6 +39,8 @@ title: "资源池"
 
 ![!添加资源池](/img/metersphere/X-Pack/controller/添加资源池.png)
 
+图 3  添加资源池
+
 :::note[字段说明]
 
 - 【IP】资源池服务器的 IP。
@@ -51,6 +57,8 @@ title: "资源池"
 
 ![!批量添加资源池](/img/metersphere/X-Pack/controller/批量添加资源池.png)
 
+图 4  批量添加资源池
+
 :::note[注意]
 
 **切换资源池**：项目可以切换其他资源池进行使用。详情参考：[切换资源池](../project_management/project_permissions.md#23-测试用例)
@@ -64,3 +72,5 @@ title: "资源池"
 :::
 
 ![!资源池功能操作](/img/metersphere/X-Pack/controller/资源池功能操作.png)
+
+图 5  资源池功能操作

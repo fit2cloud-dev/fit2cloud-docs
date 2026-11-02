@@ -194,6 +194,8 @@ cd metersphere-offline-installer-v3.x.y
 
 ![服务状态](/img/metersphere/installation/msctlstatus.png)
 
+图 1  服务状态
+
 :::note
 
  待所有组件运行状态都是 healthy 状态时，即可通过浏览器访问并登录 MeterSphere。

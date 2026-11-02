@@ -10,6 +10,8 @@ title: "接口定义"
 
 ![!开启重新提审](/img/metersphere/api_test/definition/接口定义页面的视图.png)
 
+图 1  接口定义页面的视图
+
 :::note
 
 点击【筛选】，可根据 ID、接口名称、所属模块、协议等条件进行过滤数据。
@@ -18,7 +20,11 @@ title: "接口定义"
 
 ![!开启重新提审](/img/metersphere/api_test/definition/接口定义页面的筛选.png)
 
+图 2  接口定义页面的筛选
+
 ![!开启重新提审](/img/metersphere/api_test/definition/接口定义页面的筛选条件.png)
+
+图 3  接口定义页面的筛选条件
 
 :::note
 
@@ -28,7 +34,11 @@ title: "接口定义"
 
 ![!开启重新提审](/img/metersphere/api_test/definition/分享按钮.png)
 
+图 4  分享按钮
+
 ![!开启重新提审](/img/metersphere/api_test/definition/新建分享.png)
+
+图 5  新建分享
 
 :::note
 
@@ -37,6 +47,8 @@ title: "接口定义"
 :::
 
 ![!开启重新提审](/img/metersphere/api_test/definition/分享列表.png)
+
+图 6  分享列表
 
 ## 1 新建接口
 
@@ -48,6 +60,8 @@ title: "接口定义"
 
 ![!新建接口](/img/metersphere/api_test/definition/新建请求1.png)
 
+图 7  新建请求（1）
+
 :::note
 
 依次输入接口请求方法类型、URL 地址，接口名称、所属模块、状态等基础信息，响应体、响应头、响应码等响应内容信息。
@@ -55,6 +69,8 @@ title: "接口定义"
 :::
 
 ![!新建接口](/img/metersphere/api_test/definition/新建请求2.png)
+
+图 8  新建请求（2）
 
 :::note[说明]
 
@@ -74,6 +90,8 @@ title: "接口定义"
 
 ![!文件导入](/img/metersphere/api_test/definition/支持多种格式导入.png)
 
+图 9  支持多种格式导入
+
 :::note
 
 以 Swagger 格式为例，导入模块、导入模式、上传文件后，点击导入。
@@ -81,6 +99,8 @@ title: "接口定义"
 :::
 
 ![!文件导入](/img/metersphere/api_test/definition/文件导入.png)
+
+图 10  文件导入
 
 :::note[导入模式说明]
 
@@ -109,6 +129,8 @@ title: "接口定义"
 
 ![!SwaggerURL导入](/img/metersphere/api_test/definition/SwaggerURL导入.png)
 
+图 11  SwaggerURL 导入
+
 :::note[注意]
 
 支持 Swagger 3.0 版本的 json 文件，2.0 的文件建议自行在 [Swagger 官网](https://converter.swagger.io/) 转换成 3.0 再进行导入，大小不超过 50M。
@@ -125,6 +147,8 @@ title: "接口定义"
 
 ![!定时导入](/img/metersphere/api_test/definition/定时导入.png)
 
+图 12  定时导入（1）
+
 :::note
 
 点击上图【定时任务列表】可快速查看定时导入 API 的任务列表。
@@ -132,6 +156,8 @@ title: "接口定义"
 :::
 
 ![!定时导入](/img/metersphere/api_test/definition/定时导入1.png)
+
+图 13  定时导入（2）
 
 :::note
 
@@ -158,7 +184,11 @@ title: "接口定义"
 
 ![!详情](/img/metersphere/api_test/definition/详情1.png)
 
+图 14  详情（1）
+
 ![!详情](/img/metersphere/api_test/definition/详情2.png)
+
+图 15  详情（2）
 
 ### 3.2 引用关系
 
@@ -170,8 +200,12 @@ title: "接口定义"
 
 ![!引用关系](/img/metersphere/api_test/definition/引用关系.png)
 
+图 16  引用关系
+
 ### 3.3 变更历史
 ![!引用关系](/img/metersphere/api_test/definition/变更历史.png)
+
+图 17  变更历史
 
 ## 4 调试
 
@@ -182,6 +216,8 @@ title: "接口定义"
 :::
 
 ![!执行](/img/metersphere/api_test/definition/调试.png)
+
+图 18  调试
 
 :::note[说明]
 
@@ -198,6 +234,8 @@ title: "接口定义"
 
 ![!保存为新用例](/img/metersphere/api_test/definition/保存为新用例.png)
 
+图 19  保存为新用例
+
 ## 5 生成用例
 ### 5.1 手动创建用例
 
@@ -209,6 +247,8 @@ title: "接口定义"
 
 ![!创建用例](/img/metersphere/api_test/definition/创建用例1.png)
 
+图 20  创建用例（1）
+
 :::note
 
 依次输入用例名称，用例等级、状态、标签、请求参数信息，选择环境。点击执行，执行成功后，点击【创建】或【保存并继续创建】。
@@ -216,6 +256,9 @@ title: "接口定义"
 :::
 
 ![!创建用例](/img/metersphere/api_test/definition/创建用例2.png)
+
+图 21  创建用例（2）
+
 ### 5.2 AI 生成用例
 
 :::note[注意：使用 AI 生成用例需要先在【系统设置】-【系统参数】-【模型设置】或者登录用户的【个人中心】-【模型设置】处配置并开启模型。]
@@ -226,6 +269,8 @@ title: "接口定义"
 
 ![!AI生成用例对话框](/img/metersphere/api_test/definition/AI生成用例对话框.png)
 
+图 22  AI 生成用例对话框
+
 :::note
 
 点击对话框【设置】按钮，打开用例设置页，可配置用例生成场景和用例内容。
@@ -234,6 +279,8 @@ title: "接口定义"
 
 ![!AI用例配置页面](/img/metersphere/api_test/definition/AI用例配置页面.png)
 
+图 23  AI 用例配置页面
+
 :::note
 
 输入用例生成要求，待用例生成后，可以勾选用例，点击【同步用例】至用例列表。
@@ -241,7 +288,12 @@ title: "接口定义"
 :::
 
 ![!AI用例同步页面](/img/metersphere/api_test/definition/AI用例同步页面.png)
+
+图 24  AI 用例同步页面
+
 ![!AI用例同步成功页面](/img/metersphere/api_test/definition/AI用例同步成功页面.png)
+
+图 25  AI 用例同步成功页面
 
 ## 6 CASE 预览
 ### 6.1 详情
@@ -254,7 +306,11 @@ title: "接口定义"
 
 ![!详情](/img/metersphere/api_test/definition/用例详情1.png)
 
+图 26  用例详情（1）
+
 ![!详情](/img/metersphere/api_test/definition/用例详情2.png)
+
+图 27  用例详情（2）
 
 ### 6.2 同步更新
 
@@ -266,6 +322,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!引用关系](/img/metersphere/api_test/definition/api更新.png)
 
+图 28  API 更新
+
 :::note
 
 切到【用例】页面，该 case 右侧会有同步变更提示
@@ -273,6 +331,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 :::
 
 ![!引用关系](/img/metersphere/api_test/definition/case提示.png)
+
+图 29  CASE 提示
 
 :::note
 
@@ -282,9 +342,15 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!引用关系](/img/metersphere/api_test/definition/case变更内容页面.png)
 
+图 30  CASE 变更内容页面
+
 ![!引用关系](/img/metersphere/api_test/definition/case用例进行更新.png)
 
+图 31  CASE 用例进行更新
+
 ![!引用关系](/img/metersphere/api_test/definition/case更新成功.png)
+
+图 32  CASE 更新成功
 
 ### 6.3 引用关系
 
@@ -296,6 +362,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!引用关系](/img/metersphere/api_test/definition/用例引用关系.png)
 
+图 33  用例引用关系
+
 ### 6.4 执行历史
 
 :::note
@@ -306,6 +374,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!执行历史](/img/metersphere/api_test/definition/用例执行历史1.png)
 
+图 34  用例执行历史（1）
+
 :::note
 
 点击【报告名称】查看具体响应内容。
@@ -314,7 +384,11 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!执行历史](/img/metersphere/api_test/definition/用例执行历史2.png)
 
+图 35  用例执行历史（2）
+
 ![!执行历史](/img/metersphere/api_test/definition/用例执行历史3.png)
+
+图 36  用例执行历史（3）
 
 :::note
 
@@ -323,6 +397,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 :::
 
 ![!执行历史](/img/metersphere/api_test/definition/用例执行历史4.png)
+
+图 37  用例执行历史（4）
 
 ### 6.5 变更历史
 
@@ -334,6 +410,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!变更历史](/img/metersphere/api_test/definition/用例变更历史.png)
 
+图 38  用例变更历史
+
 ## 7 MOCK 功能
 
 :::note
@@ -344,6 +422,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!API/CASE 列表](/img/metersphere/api_test/definition/创建mock.png)
 
+图 39  创建 Mock
+
 :::note
 
 如下图，按照序号顺序点击进入 MOCK 设置页面，按需设置请求头、QUERY、REST、请求体、以及响应体内容，并点击【创建】保存。
@@ -352,7 +432,11 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!API/CASE 列表](/img/metersphere/api_test/definition/设置mock页面.png)
 
+图 40  设置 Mock 页面
+
 ![!API/CASE 列表](/img/metersphere/api_test/definition/mock设置页面设置.png)
+
+图 41  Mock 设置页面设置
 
 :::note[说明]
 
@@ -369,6 +453,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!API/CASE 列表](/img/metersphere/api_test/definition/mock调试.png)
 
+图 42  Mock 调试
+
 :::note
 
 选择 Mock 环境，点击【服务端执行】或者【本地执行】进行调试。
@@ -377,6 +463,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!API/CASE 列表](/img/metersphere/api_test/definition/mock返回.png)
 
+图 43  Mock 返回
+
 :::note
 
 如下图对 MOCK 接口进行【编辑】、【调试】、【复制】、【复制 Mock 地址】、【删除】等操作。
@@ -384,6 +472,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 :::
 
 ![!API/CASE 列表](/img/metersphere/api_test/definition/mock功能.png)
+
+图 44  Mock 功能
 
 :::note[操作说明]
 
@@ -405,6 +495,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!API/CASE 列表](/img/metersphere/api_test/definition/API列表.png)
 
+图 45  API 列表
+
 :::note
 
 切换【CASE】或者点击【全部 CASE 】查看 CASE 列表。
@@ -413,6 +505,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 
 ![!API/CASE 列表](/img/metersphere/api_test/definition/CASE列表.png)
 
+图 46  CASE 列表
+
 :::note
 
 切换【MOCK】或者点击【全部 MOCK 】查看 MOCK 列表。
@@ -420,6 +514,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 :::
 
 ![!API/CASE 列表](/img/metersphere/api_test/definition/MOCK列表.png)
+
+图 47  Mock 列表
 
 ## 9 切换协议
 
@@ -436,6 +532,8 @@ API 的请求头、请求体、Query、REST 等内容发生变更，修改后点
 :::
 
 ![!切换协议](/img/metersphere/api_test/definition/切换协议.png)
+
+图 48  切换协议
 
 :::note[说明]
 

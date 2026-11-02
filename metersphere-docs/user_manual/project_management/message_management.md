@@ -12,6 +12,8 @@ title: "消息管理"
 
 ![!机器人列表](/img/metersphere/project_management/message_management/机器人列表.png)
 
+图 1  机器人列表
+
 :::note
 
 MeterSphere 支持【站内信】、【邮件】、【企业微信】、【钉钉】、【飞书】等多种方式发送消息通知。<br />
@@ -21,6 +23,8 @@ MeterSphere 支持【站内信】、【邮件】、【企业微信】、【钉�
 
 ![!创建webhook机器人](/img/metersphere/project_management/message_management/创建webhook机器人.png)
 
+图 2  创建 webhook 机器人
+
 :::note
 
 以配置【企业微信】机器人为例。创建企业微信群，选择【... -添加群机器人】后，获取【webhook】地址。
@@ -29,6 +33,8 @@ MeterSphere 支持【站内信】、【邮件】、【企业微信】、【钉�
 
 ![!群创建机器人](/img/metersphere/project_management/message_management/群创建机器人.png)
 
+图 3  群创建机器人
+
 :::note
 
 填写【webhook】地址进行保存。
@@ -36,6 +42,8 @@ MeterSphere 支持【站内信】、【邮件】、【企业微信】、【钉�
 :::
 
 ![!填写企业微信具体信息](/img/metersphere/project_management/message_management/填写企业微信具体信息.png)
+
+图 4  填写企业微信具体信息
 
 :::note[操作说明]
 
@@ -47,6 +55,8 @@ MeterSphere 支持【站内信】、【邮件】、【企业微信】、【钉�
 
 ![!企业微信机器人功能](/img/metersphere/project_management/message_management/企业微信机器人功能.png)
 
+图 5  企业微信机器人功能
+
 ## 2 消息设置
 
 :::note
@@ -56,6 +66,8 @@ MeterSphere 支持【站内信】、【邮件】、【企业微信】、【钉�
 :::
 
 ![!消息设置页面](/img/metersphere/project_management/message_management/消息设置页面.png)
+
+图 6  消息设置页面
 
 :::note[说明]
 
@@ -74,6 +86,8 @@ MeterSphere 支持【站内信】、【邮件】、【企业微信】、【钉�
 :::
 
 ![!缺陷创建通知](/img/metersphere/project_management/message_management/缺陷创建通知.png)
+
+图 7  缺陷创建通知
 
 :::note[注意]
 

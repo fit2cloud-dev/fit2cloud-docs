@@ -20,13 +20,36 @@ MeterSphere 是新一代的开源持续测试工具，内置 AI 助手，让软�
 ## 2 界面展示
 
 ![!界面说明2](/img/metersphere/登录.png)
+
+图 1  登录
+
 ![!界面说明2](/img/metersphere/项目管理.png)
+
+图 2  项目管理
+
 ![!界面说明2](/img/metersphere/测试计划.png)
+
+图 3  测试计划
+
 ![!界面说明2](/img/metersphere/测试用例1.png)
+
+图 4  测试用例（1）
+
 ![!界面说明2](/img/metersphere/测试用例2.png)
+
+图 5  测试用例（2）
+
 ![!界面说明2](/img/metersphere/接口测试1.png)
+
+图 6  接口测试（1）
+
 ![!界面说明2](/img/metersphere/接口测试2.png)
+
+图 7  接口测试（2）
+
 ![!界面说明2](/img/metersphere/缺陷管理.png)
+
+图 8  缺陷管理
 
 ## 3 了解更多
 

@@ -12,6 +12,8 @@ kafka 服务起不来，docker logs kafka 看到日志里出现 "/opt/kafka/conf
 
 ![接口测试](/img/metersphere/ask_question/api_question/kafka起不来日志.png)
 
+图 1  Kafka 起不来日志
+
 :::note[解决方法1]
 
 升级 docker 版本即可。若服务器有网环境，执行
@@ -40,6 +42,8 @@ service docker start
 
 ![接口测试](/img/metersphere/ask_question/api_question/kafka的yml添加特权.png)
 
+图 2  Kafka 的 yml 添加特权
+
 ## 2 mysql 服务无法启动
 
 :::note[问题现象]
@@ -56,6 +60,8 @@ mysql 服务起不来，docker logs mysql 日志里出现 "Fatal glibc error: CP
 
 ![接口测试](/img/metersphere/ask_question/api_question/降低mysql版本.png)
 
+图 3  降低 MySQL 版本
+
 ## 3 MeterSphere 服务日志出现 Schema `metersphere` contains a failed migration to version 3.2.0.2 !
 
 :::note[问题现象]
@@ -66,6 +72,8 @@ metersphere 容器状态 Restarting ，执行 docker logs metersphere 查看日�
 
 ![接口测试](/img/metersphere/ask_question/install_question/ms服务没启动.png)
 
+图 4  MS 服务没启动
+
 :::note
 
 错误为：Schema `metersphere` contains a failed migration to version 3.2.0.2 !
@@ -74,6 +82,8 @@ metersphere 容器状态 Restarting ，执行 docker logs metersphere 查看日�
 
 ![接口测试](/img/metersphere/ask_question/install_question/ms日志.png)
 
+图 5  MS 日志
+
 :::note[解决方法]
 
 到 github 源码上 https://github.com/metersphere/metersphere/tree/v3.3.0/backend/framework/domain/src/main/resources/migration/3.2.0/ddl 下载文件名为 V3.2.0_2__ga_ddl.sql 的 flyway sql。此处链接 v3.3.0 为安装的版本号，如果不是该版本，可切换到目标版本再下载 sql 文件。
@@ -81,6 +91,8 @@ metersphere 容器状态 Restarting ，执行 docker logs metersphere 查看日�
 :::
 
 ![接口测试](/img/metersphere/ask_question/install_question/下载sql.png)
+
+图 6  下载 SQL
 
 :::note
 

@@ -19,6 +19,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![selenium_ide](/img/metersphere-v2/user_manual/plugin_use/selenium_ide_plugin/selenium_ide_install.png)
 
+图 1  安装 Selenium IDE 插件
+
 ## 2 插件使用
 
 :::note
@@ -29,6 +31,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![selenium_ide](/img/metersphere-v2/user_manual/plugin_use/selenium_ide_plugin/selenium_ide_select.png)
 
+图 2  选择 Selenium IDE 插件
+
 :::note
 
 启动【Selenium IDE】插件 <br />
@@ -36,6 +40,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![selenium_ide](/img/metersphere-v2/user_manual/plugin_use/selenium_ide_plugin/selenium_ide_window.png)
+
+图 3  Selenium IDE 窗口
 
 :::note
 
@@ -45,7 +51,12 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![selenium_ide](/img/metersphere-v2/user_manual/plugin_use/selenium_ide_plugin/selenium_ide_newproject.png)
+
+图 4  新建录制项目
+
 ![selenium_ide](/img/metersphere-v2/user_manual/plugin_use/selenium_ide_plugin/selenium_ide_baseurl.png)
+
+图 5  设置录制地址
 
 :::note
 
@@ -55,6 +66,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![selenium_ide](/img/metersphere-v2/user_manual/plugin_use/selenium_ide_plugin/selenium_ide_record.png)
 
+图 6  保存录制结果
+
 :::note
 
 将保存的 .side 文件导入到 MeterSphere UI 测试中即进行 Web UI的自动化测试。
@@ -62,3 +75,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![selenium_ide](/img/metersphere-v2/user_manual/plugin_use/selenium_ide_plugin/add_selenium_ide_7.png)
+
+图 7  导入 .side 文件

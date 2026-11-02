@@ -59,6 +59,8 @@ v3 插件进行全面升级改造，包括对基础JMeter组件的最低版本�
 
 ![!重写](/img/metersphere/dev_manual/api_dev_plugin/重写方法.png)
 
+图 1  重写方法
+
 :::note
 
 编写数据转换类，继承基类 AbstractMsProtocolTestElement ，添加注解 “@PluginSubType” 并添加自身相关属性，添加用于 pf4j 识别的注解 “@Extension”。
@@ -67,6 +69,8 @@ v3 插件进行全面升级改造，包括对基础JMeter组件的最低版本�
 
 ![!重写](/img/metersphere/dev_manual/api_dev_plugin/编写数据转换类.png)
 
+图 2  编写数据转换类
+
 :::note
 
 编写核心解析器，添加用于 pf4j 识别的注解 “@Extension” 继承基础解析器 AbstractJmeterElementConverter，并重写 toHashTree() 方法。
@@ -74,6 +78,8 @@ v3 插件进行全面升级改造，包括对基础JMeter组件的最低版本�
 :::
 
 ![!重写](/img/metersphere/dev_manual/api_dev_plugin/编写核心解析器.png)
+
+图 3  编写核心解析器
 
 :::note[注意:]
 
@@ -94,6 +100,8 @@ v3 插件进行全面升级改造，包括对基础JMeter组件的最低版本�
 
 ![!重写](/img/metersphere/dev_manual/api_dev_plugin/在线编辑器.png)
 
+图 4  在线编辑器
+
 :::note[API 脚本 Props]
 
 在完成页面绘制后，将脚本内容复制到 resources/script 目录下，并创建一个 JSON 文件。在该文件中，按照示例中的脚本格式写入脚本内容。[脚本示例](./script_json.md#1-api-scriptjson)
@@ -101,6 +109,10 @@ v3 插件进行全面升级改造，包括对基础JMeter组件的最低版本�
 :::
 
 ![!重写](/img/metersphere/dev_manual/api_dev_plugin/脚本示例.png)
+
+图 5  脚本示例
+
+表 1  API 脚本参数
 
 <table>
     <tbody>
@@ -162,6 +174,10 @@ v3 插件进行全面升级改造，包括对基础JMeter组件的最低版本�
 :::
 
 ![!重写](/img/metersphere/dev_manual/api_dev_plugin/效果图.png)
+
+图 6  效果图
+
+表 2  环境脚本参数
 
 <table>
     <tbody>
@@ -232,6 +248,8 @@ SDK JAR 文件已经作为主应用的依赖项存在，因此在打包过程中
 
 ![!重写](/img/metersphere/dev_manual/api_dev_plugin/打包1.png)
 
+图 7  打包
+
 :::note
 
 上传插件到平台使用。
@@ -239,3 +257,5 @@ SDK JAR 文件已经作为主应用的依赖项存在，因此在打包过程中
 :::
 
 ![!重写](/img/metersphere/dev_manual/api_dev_plugin/MS平台.png)
+
+图 8  MS 平台

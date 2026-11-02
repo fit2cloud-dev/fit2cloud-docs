@@ -13,6 +13,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!接口定义](/img/metersphere-v2/api/definition/接口定义.png)
 
+图 1  接口定义
+
 ## 2 接口管理
 ### 2.1 接口协议
 
@@ -24,6 +26,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!接口协议](/img/metersphere-v2/api/definition/切换接口协议.png)
 
+图 2  切换接口协议
+
 ### 2.2 模块树管理
 
 :::note
@@ -34,6 +38,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!模块管理](/img/metersphere-v2/api/definition/模块树木操作.png)
 
+图 3  模块树木操作
+
 ### 2.3 接口快捷调试
 
 :::note
@@ -43,7 +49,12 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!快捷操作](/img/metersphere-v2/api/definition/接口快捷调试.png)
+
+图 4  接口快捷调试
+
 ![!快捷调试](/img/metersphere-v2/api/definition/快捷调试01.png)
+
+图 5  快捷调试
 
 ### 2.4 快速创建接口
 
@@ -59,6 +70,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建接口](/img/metersphere-v2/api/definition/创建接口01.png)
 
+图 6  创建接口
+
 :::note
 
 参数填写完成点击【确定】按钮即可完成接口定义创建，并跳转到接口展示【编辑详情】页面，可在【API】【TEST】【CASE】【MOCK】菜单下对接口做进一步调整。
@@ -66,6 +79,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!创建接口](/img/metersphere-v2/api/definition/创建接口保存.png)
+
+图 7  创建接口保存
 
 ## 3 API
 ### 3.1 编辑 API
@@ -78,6 +93,9 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!关注接口](/img/metersphere-v2/api/definition/修改API点击保存.png)
+
+图 8  修改 API 点击保存
+
 ### 3.2 关注接口
 
 :::note
@@ -87,6 +105,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!关注接口](/img/metersphere-v2/api/definition/点击关注.png)
+
+图 9  点击关注
 
 ### 3.3 接口变更记录
 
@@ -98,6 +118,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!变更历史](/img/metersphere-v2/api/definition/变更记录.png)
 
+图 10  变更记录
+
 ### 3.4 版本管理 (X-Pack)
 
 :::note
@@ -107,6 +129,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!变更历史](/img/metersphere-v2/api/definition/版本管理.png)
+
+图 11  版本管理
 
 ### 3.5 HTTP 请求
 
@@ -123,7 +147,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!变更历史](/img/metersphere-v2/api/definition/请求头.png)
 
+图 12  请求头
+
 ![!变更历史](/img/metersphere-v2/api/definition/mock_jmeter函数.png)
+
+图 13  Mock JMeter 函数
 
 :::note
 
@@ -133,7 +161,12 @@ QUERY 参数是在接口地址栏中跟在？后面的参数，如 updateapi?id=
 :::
 
 ![!QUERY参数](/img/metersphere-v2/api/query参数.png)
+
+图 14  query 参数
+
 ![!QUERY参数](/img/metersphere-v2/api/批量添加参数.png)
+
+图 15  批量添加参数
 
 :::note
 
@@ -143,6 +176,8 @@ REST参数是在接口地址栏中被【/】分隔的参数，如 updateapi/\{id
 :::
 
 ![!REST参数](/img/metersphere-v2/api/REST参数.png)
+
+图 16  REST 参数
 
 :::note
 
@@ -154,6 +189,8 @@ REST参数是在接口地址栏中被【/】分隔的参数，如 updateapi/\{id
 
 ![!HTTP请求体](/img/metersphere-v2/api/frxw.png)
 
+图 17  HTTP 请求体（1）
+
 :::note
 
  请求体是 json 格式时，可以使用 Json-schema 用于验证json数据格式。
@@ -161,7 +198,12 @@ REST参数是在接口地址栏中被【/】分隔的参数，如 updateapi/\{id
 :::
 
 ![!HTTP请求体](/img/metersphere-v2/api/json1.png)
+
+图 18  HTTP 请求体（2）
+
 ![!HTTP请求体](/img/metersphere-v2/api/json2.png)
+
+图 19  HTTP 请求体（3）
 
 :::note
 
@@ -172,6 +214,8 @@ REST参数是在接口地址栏中被【/】分隔的参数，如 updateapi/\{id
 
 ![!认证配置](/img/metersphere-v2/api/认证配置.png)
 
+图 20  认证配置
+
 :::note
 
 **其他设置**<br />
@@ -180,6 +224,8 @@ REST参数是在接口地址栏中被【/】分隔的参数，如 updateapi/\{id
 :::
 
 ![!其他设置](/img/metersphere-v2/api/其他设置.png)
+
+图 21  其他设置
 
 ### 3.6 TCP 请求
 
@@ -192,6 +238,8 @@ REST参数是在接口地址栏中被【/】分隔的参数，如 updateapi/\{id
 
 ![!TCP请求参数](/img/metersphere-v2/api/TCP请求参数.png)
 
+图 22  TCP 请求参数（1）
+
 :::note
 
 **请求体**<br />
@@ -201,6 +249,8 @@ REST参数是在接口地址栏中被【/】分隔的参数，如 updateapi/\{id
 
 ![!TCP请求参数](/img/metersphere-v2/api/tcpxml.png)
 
+图 23  TCP 请求参数（2）
+
 :::note
 
 **其他设置**<br />
@@ -209,6 +259,9 @@ REST参数是在接口地址栏中被【/】分隔的参数，如 updateapi/\{id
 :::
 
 ![!TCP请求参数](/img/metersphere-v2/api/tcp其他设置1.png)
+
+图 24  TCP 其他设置
+
 ### 3.7 SQL 请求
 
 :::note
@@ -221,6 +274,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!SQL请求参数](/img/metersphere-v2/api/sql请求.png)
 
+图 25  SQL 请求
+
 ### 3.8 DUBBO 请求
 
 :::note
@@ -232,6 +287,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!ConfigCenter](/img/metersphere-v2/api/interface.png)
 
+图 26  Interface 配置
+
 :::note
 
 **Config Center**<br />
@@ -240,6 +297,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 :::
 
 ![!ConfigCenter](/img/metersphere-v2/api/ConfigCenter.png)
+
+图 27  Config Center 配置
 
 :::note
 
@@ -250,6 +309,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!RegistryCenter](/img/metersphere-v2/api/registrycenter.png)
 
+图 28  Registry Center 配置
+
 :::note
 
 **Consumer & Service**<br />
@@ -258,6 +319,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 :::
 
 ![!Consumer&Service](/img/metersphere-v2/api/comsumers.png)
+
+图 29  Consumer & Service 配置
 
 :::note
 
@@ -268,6 +331,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!Args](/img/metersphere-v2/api/Args.png)
 
+图 30  Args 参数
+
 :::note
 
 **Attachment Args**<br />
@@ -276,6 +341,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 :::
 
 ![!AttachmentArgs](/img/metersphere-v2/api/attachment.png)
+
+图 31  Attachment Args 参数
 
 ### 3.9 依赖关系设置
 
@@ -286,6 +353,9 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 :::
 
 ![!依赖关系](/img/metersphere-v2/api/依赖关系.png)
+
+图 32  依赖关系
+
 ### 3.10 API 列表功能
 
 :::note
@@ -302,6 +372,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 :::
 
 ![!API列表](/img/metersphere-v2/api/接口定义列表操作.png)
+
+图 33  接口定义列表操作
 
 ## 4 TEST
 
@@ -322,6 +394,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!测试数据](/img/metersphere-v2/api/生成测试数据.png)
 
+图 34  生成测试数据
+
 :::note
 
 快速生成数据规则在【高级设置】页面，可以设置默认值、枚举值、最大最小长度、正则表达、描述相关信息，规则设置好后点击【生成测试数据】生效。<br />如有设置了默认值，则生成测试数据是默认值；如设置枚举值，生成的数据是枚举值其中一个，枚举值可以换行设置多个。
@@ -329,6 +403,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 :::
 
 ![!测试数据](/img/metersphere-v2/api/设置生成规则.png)
+
+图 35  设置生成规则
 
 ### 4.2 针对单个接口发起测试
 
@@ -341,6 +417,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!测试](/img/metersphere-v2/api/点击测试.png)
 
+图 36  点击测试
+
 ### 4.3 其他功能
 
 :::note
@@ -351,6 +429,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!其他管理功能](/img/metersphere-v2/api/test更多.png)
 
+图 37  test 更多
+
 :::note
 
 【加载用例】加载该接口下的所有用例。
@@ -358,6 +438,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 :::
 
 ![!加载用例](/img/metersphere-v2/api/查看用例.png)
+
+图 38  查看用例
 
 :::note
 
@@ -367,6 +449,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!另存为新用例](/img/metersphere-v2/api/存为新用例.png)
 
+图 39  存为新用例
+
 :::note
 
 【更新接口】可将当前页面填写的参数信息更新到对应的接口定义中。
@@ -375,6 +459,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!更新接口](/img/metersphere-v2/api/更新接口.png)
 
+图 40  更新接口
+
 :::note
 
 【另存为新接口】即可使用当前页面接口信息来创建新的接口定义。
@@ -382,6 +468,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 :::
 
 ![!另存为新的接口](/img/metersphere-v2/api/存为新接口.png)
+
+图 41  存为新接口
 
 ## 5 CASE
 
@@ -409,6 +497,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!CASE列表功能](/img/metersphere-v2/api/case列表功能.png)
 
+图 42  CASE 列表功能
+
 ### 5.2 批量操作
 
 :::note
@@ -424,6 +514,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!CASE批量操作](/img/metersphere-v2/api/CASE批量操作.png)
 
+图 43  CASE 批量操作
+
 ### 5.3 新建接口用例
 
 :::note
@@ -434,6 +526,8 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 
 ![!CASE添加](/img/metersphere-v2/api/添加用例按钮.png)
 
+图 44  添加用例按钮
+
 ### 5.4 搜索
 
 :::note
@@ -443,7 +537,12 @@ SQL 请求支持配置多个数据源，选择运行环境、数据源，编写s
 :::
 
 ![!CASE搜索](/img/metersphere-v2/api/搜索操作.png)
+
+图 45  搜索操作
+
 ![!CASE搜索](/img/metersphere-v2/api/高级搜索.png)
+
+图 46  高级搜索
 
 ## 6 MOCK
 
@@ -463,6 +562,8 @@ MeterSphere 提供的 Mock 功能可以根据用户输入的请求参数、返�
 
 ![!新增Mock](/img/metersphere-v2/api/添加mock.png)
 
+图 47  添加 Mock
+
 :::note
 
 设置 Mock 服务触发条件。可以在请求头、QUERY参数、REST参数、请求体设置触发条件；在响应内容中设置自定义响应头、响应体、状态码、响应延迟时间相关信息
@@ -470,6 +571,8 @@ MeterSphere 提供的 Mock 功能可以根据用户输入的请求参数、返�
 :::
 
 ![!触发条件设置](/img/metersphere-v2/api/设置条件.png)
+
+图 48  设置条件
 
 :::note
 
@@ -480,6 +583,8 @@ Mock 服务触发条件设置规则匹配及逻辑判断:<br />
 
 ![!触发条件设置](/img/metersphere-v2/api/匹配条件.png)
 
+图 49  匹配条件
+
 :::note
 
 针对一些特定测试场景需要对返回信息进一步处理的情况，比如加解密操作、调用第三方 JAR 包等操作。<br />MeterSphere 在 Mock 服务中添加 后置脚本，用户可以通过编写脚本或添加系统已有的 自定义代码片段来实现对返回信息的处理。
@@ -488,6 +593,8 @@ Mock 服务触发条件设置规则匹配及逻辑判断:<br />
 
 ![!触发条件设置](/img/metersphere-v2/api/后置脚本.png)
 
+图 50  后置脚本
+
 :::note
 
 在【MOCK】数据列表，选择一条数据点击执行，选择 MOCK 环境，当请求参数与设置的触发条件匹配时候，则返回设置的响应内容。
@@ -495,6 +602,8 @@ Mock 服务触发条件设置规则匹配及逻辑判断:<br />
 :::
 
 ![!匹配触发条件](/img/metersphere-v2/api/mock执行.png)
+
+图 51  Mock 执行
 
 ### 6.2 TCP Mock设置
 
@@ -506,6 +615,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 
 ![!开启TCP MOCK服务](/img/metersphere-v2/api/开启TCPMOCk.png)
 
+图 52  开启 TCPMOCk
+
 ### 6.3 MOCK 列表功能
 
 :::note
@@ -515,6 +626,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 :::
 
 ![!MOCK管理功能](/img/metersphere-v2/api/MOCK管理功能.png)
+
+图 53  Mock 管理功能
 
 ## 7 定时同步
 
@@ -526,6 +639,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 
 ![!定时同步](/img/metersphere-v2/api/添加定时任务.png)
 
+图 54  添加定时任务
+
 :::note
 
 定时同步页面需设置同步的路径（以/api-docs结尾）、定时Cron表达式（支持自动生成可以预览近5次运行时间）、导入模块、导入模式，点击【添加】按钮完成接口定时同步设置。
@@ -533,6 +648,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 :::
 
 ![!定时同步](/img/metersphere-v2/api/设置定时任务.png)
+
+图 55  设置定时任务
 
 :::note
 
@@ -542,6 +659,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 
 ![!定时同步](/img/metersphere-v2/api/设置同步通知.png)
 
+图 56  设置同步通知
+
 :::note
 
 定时同步任务支持定时同步任务查看、开启、关闭、删除操作。
@@ -549,6 +668,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 :::
 
 ![!定时同步](/img/metersphere-v2/api/定时任务操作.png)
+
+图 57  定时任务操作
 
 ##  8 导入接口
 
@@ -560,7 +681,11 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 
 ![!接口导入](/img/metersphere-v2/api/导入接口.png)
 
+图 58  导入接口
+
 ![!接口导入](/img/metersphere-v2/api/导入类型.png)
+
+图 59  导入类型
 
 :::note
 
@@ -569,6 +694,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 :::
 
 ![!接口导入](/img/metersphere-v2/api/导入swagger.png)
+
+图 60  导入 Swagger
 
 ## 9 导出接口定义
 
@@ -579,6 +706,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 :::
 
 ![!接口导出](/img/metersphere-v2/api/接口导出文件.png)
+
+图 61  接口导出文件
 
 ## 10 批量操作
 
@@ -592,11 +721,16 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 - 批量复制：批量将接口复制到其他模块 <br />
 - 复制版本数据(X-Pack)：随着版本的迭代，同一接口，当新版接口参数变更需要创建对应新版本的接口 CASE 和 Mock 数据。使用此功能可批量将历史版本的 CASE 和 Mock 数据快速复制到新版本，方便快速维护接口的用例数据。<br />
   ![!API列表](/img/metersphere-v2/api/复制版本信息.png)
+
+图 62  复制版本信息
+
 - 生成依赖关系：批量接口之间的联系生成依赖关系拓扑图 <br />
 
 :::
 
 ![!API列表](/img/metersphere-v2/api/接口定义批量操作.png)
+
+图 63  接口定义批量操作
 
 ## 11 搜索
 
@@ -607,7 +741,12 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 :::
 
 ![!API列表](/img/metersphere-v2/api/接口定义搜索.png)
+
+图 64  接口定义搜索
+
 ![!API列表](/img/metersphere-v2/api/接口定义高级搜索.png)
+
+图 65  接口定义高级搜索
 
 ## 12 回收站
 
@@ -619,6 +758,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 
 ![!回收站](/img/metersphere-v2/api/回收站.png)
 
+图 66  回收站
+
 :::note
 
 回收站列表批量选择数据，点击【...】按钮弹出操作菜单，支持批量删除、批量恢复操作。
@@ -626,6 +767,8 @@ TCP Mock 服务需在【项目设置-应用管理-接口测试】中开启 TCP M
 :::
 
 ![!回收站](/img/metersphere-v2/api/回收站批量操作的.png)
+
+图 67  回收站批量操作的
 
 ## 13 文档管理
 
@@ -639,6 +782,8 @@ API 接口支持以文档形式展示接口定义详细信息，页面右侧展�
 
 ![!文档](/img/metersphere-v2/api/接口定义文档.png)
 
+图 68  接口定义文档
+
 ## 14 版本管理 (X-Pack)
 
 :::note
@@ -648,3 +793,5 @@ API 接口支持以文档形式展示接口定义详细信息，页面右侧展�
 :::
 
 ![!变更历史](/img/metersphere-v2/api/definition/接口定义版本管理.png)
+
+图 69  接口定义版本管理

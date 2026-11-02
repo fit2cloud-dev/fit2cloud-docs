@@ -12,6 +12,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 ## 1 操作日志
 ![!项目设置](/img/metersphere-v2/project_management/操作日志.png)
 
+图 1  操作日志
+
 :::note
 
 详细功能操作及说明参考 [系统->工作空间->操作日志](../system_management/workspace)。

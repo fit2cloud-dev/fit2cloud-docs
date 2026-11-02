@@ -21,6 +21,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![录制](/img/metersphere-v2/user_manual/plugin_use/chrome_plugin/chrome-plugin_install.png)
 
+图 1  加载已解压的扩展程序
+
 ## 2 使用说明
 
 :::note
@@ -30,7 +32,12 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![录制](/img/metersphere-v2/user_manual/plugin_use/chrome_plugin/chrome-plugin_display.png)
+
+图 2  打开录制插件
+
 ![录制](/img/metersphere-v2/user_manual/plugin_use/chrome_plugin/chrome_plugin_1.png)
+
+图 3  开始录制
 
 :::note
 
@@ -40,6 +47,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![录制](/img/metersphere-v2/user_manual/plugin_use/chrome_plugin/chrome_plugin_2.png)
 
+图 4  录制站点请求
+
 :::note
 
  录制结束后，点击保存按钮进行保存。
@@ -47,6 +56,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![录制](/img/metersphere-v2/user_manual/plugin_use/chrome_plugin/chrome_plugin_3.png)
+
+图 5  保存录制
 
 :::note
 
@@ -56,6 +67,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![录制](/img/metersphere-v2/user_manual/plugin_use/chrome_plugin/chrome_plugin_4.png)
 
+图 6  下载 JMX 脚本
+
 :::note
 
  在 MeterSphere 中创建性能测试任务， 上传刚刚录制的 JMX 脚本，然后设置并发参数，进行性能测试。
@@ -63,3 +76,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![录制](/img/metersphere-v2/user_manual/plugin_use/chrome_plugin/chrome_plugin_5.png)
+
+图 7  上传 JMX 脚本

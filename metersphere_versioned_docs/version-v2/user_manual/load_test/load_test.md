@@ -20,6 +20,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!测试资源池](/img/metersphere-v2/system_management/测试资源池.png)
 
+图 1  测试资源池
+
 ## 2 修改当前站点 URL
 
 :::note
@@ -29,6 +31,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!当前站点URL](/img/metersphere-v2/system_management/当前站点URL.png)
+
+图 2  当前站点 URL
 
 ## 3 创建性能测试
 
@@ -40,6 +44,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!性能测试版本管理](/img/metersphere-v2/system_management/性能测试版本管理.png)
 
+图 3  性能测试版本管理
+
 :::note
 
 点击【创建测试】进入性能测试用例创建页面，或点击【编辑】进入性能测试详情页，其界面包含多个页签：【场景配置】、【压力配置】、【高级配置】等。
@@ -47,6 +53,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!创建性能测试](/img/metersphere-v2/performance/创建性能测试.png)
+
+图 4  创建性能测试
 
 ## 4 场景配置
 
@@ -59,6 +67,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!场景配置](/img/metersphere-v2/performance/场景配置.png)
 
+图 5  场景配置
+
 :::note
 
 - **加载性能测试脚本**：在【场景列表】中点击【引用接口自动化场景】，将已有的接口自动化场景添加到性能测试中，或者点击【加载JMX文件】将JMeter脚本直接导入到性能中。
@@ -67,6 +77,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!加载性能测试脚本](/img/metersphere-v2/performance/性能_加载性能测试脚本.png)
 
+图 6  性能 加载性能测试脚本
+
 :::note
 
 - **线程组**：支持两种模式：线性加压模式 ThreadGroup和阶梯加压模式 ConcurrencyThreadGroup。<br />
@@ -74,7 +86,12 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!线程组](/img/metersphere-v2/performance/性能_线程组.png)
+
+图 7  性能 线程组
+
 ![!加压方式](/img/metersphere-v2/performance/性能_加压方式.png)
+
+图 8  性能 加压方式
 
 :::note
 
@@ -83,6 +100,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!加载文件](/img/metersphere-v2/performance/性能_加载文件.png)
+
+图 9  性能 加载文件
 
 ## 5 压力配置
 
@@ -94,6 +113,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!压力配置](/img/metersphere-v2/performance/压力配置.png)
 
+图 10  压力配置
+
 :::note
 
 - **资源池**：指定测试的测试资源池，系统支持独立主机和 K8s 资源池配置，其可用资源池依据系统的资源池配置。
@@ -101,6 +122,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!资源池](/img/metersphere-v2/performance/性能_资源池.png)
+
+图 11  性能 资源池
 
 :::note
 
@@ -110,6 +133,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!执行顺序](/img/metersphere-v2/performance/性能_执行顺序.png)
 
+图 12  性能 执行顺序
+
 :::note
 
 - **自动停止开关**：设置此开关开启时，需要指定压测多久后，强制停止测试。
@@ -117,6 +142,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!自动停止开关](/img/metersphere-v2/performance/性能_自动停止开关.png)
+
+图 13  性能 自动停止开关
 
 :::note
 
@@ -137,6 +164,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!取样器错误后续执行动作](/img/metersphere-v2/performance/性能_取样器错误后续执行动作.png)
 
+图 14  性能 取样器错误后续执行动作
+
 :::note
 
 - **执行方式**：如果设置本次压测需要持续执行多长时间，压测运行时长达到设定的时间就停止压力测试。目前系统提供按小时、分钟、秒来设置。设置本次压测执行的次数，并且设置运行时间，压测运行次数达到设定的次数或者到达设置运行的时间，就停止压力测试。<br />
@@ -147,6 +176,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!执行方式](/img/metersphere-v2/performance/性能_执行方式.png)
 
+图 15  性能 执行方式
+
 :::note
 
 - **RPS设置**：设置 RPS 时，需要先打开 RPS 开关才可以，RPS（Requests per second）：每秒请求数。 如果设置了 RPS 上限，则发压达到这个值后，就不会再继续加压。
@@ -154,6 +185,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!RPS设置](/img/metersphere-v2/performance/性能_RPS设置.png)
+
+图 16  性能 RPS 设置
 
 :::note
 
@@ -163,6 +196,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!Ramp-Up](/img/metersphere-v2/performance/性能_Ramp-Up.png)
 
+图 17  性能 Ramp-Up
+
 :::note
 
 - **分配策略**：针对有多个节点的资源池，MeterSphere 支持用户自定义设置不同的分配策略。目前分配策略支持自动分配、固定节点、以及自定义。
@@ -170,6 +205,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!分配策略](/img/metersphere-v2/performance/性能_分配策略.png)
+
+图 18  性能 分配策略
 
 :::note
 
@@ -179,6 +216,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!自动分配](/img/metersphere-v2/performance/性能_自动分配.png)
 
+图 19  性能 自动分配
+
 :::note
 
 （2）固定节点：允许用户指定压测仅仅在某一个节点上执行。
@@ -187,6 +226,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!固定节点](/img/metersphere-v2/performance/性能_固定节点.png)
 
+图 20  性能 固定节点
+
 :::note
 
 （3）自定义：支持用户根据需要自定义每个节点执行分配占比的情况。
@@ -194,6 +235,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!自定义](/img/metersphere-v2/performance/性能_自定义.png)
+
+图 21  性能 自定义
 
 ## 6 高级配置
 
@@ -211,6 +254,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!常规](/img/metersphere-v2/performance/性能_常规.png)
 
+图 22  性能 常规
+
 :::note
 
 - **超时配置**：连接超时是连接时超过设置的时间就不在连接，响应超时是等待响应时超过设置的时间就不在等待响应。
@@ -218,6 +263,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!超时配置](/img/metersphere-v2/performance/性能_超时配置.png)
+
+图 23  性能 超时配置
 
 :::note
 
@@ -227,6 +274,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!聚合时间](/img/metersphere-v2/performance/性能_聚合时间.png)
 
+图 24  性能 聚合时间
+
 :::note
 
 - **自定义响应**：表示指在这里设置的响应码，就不统计为失败的接口。系统支持添加多个响应码，按逗号分割。
@@ -234,6 +283,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!聚合时间](/img/metersphere-v2/performance/性能_自定义响应.png)
+
+图 25  性能 自定义响应
 
 :::note
 
@@ -243,6 +294,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!域名绑定](/img/metersphere-v2/performance/性能_域名绑定.png)
 
+图 26  性能 域名绑定
+
 :::note
 
 - **CSVDataSet**：性能测试时所需要的参数数据文件，如果所有场景使用一个统一的参数文件，为了避免相同的参数被不同的场景引用造成流程异常。系统会根据压测策略自动来分割 CSV 数据文件里的参数，把不同的参数分配给不同的业务场景。
@@ -250,6 +303,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!CSVDataSet](/img/metersphere-v2/performance/CSVDataSet.png)
+
+图 27  CSV 数据集配置
 
 :::note
 
@@ -259,6 +314,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!自定义变量](/img/metersphere-v2/performance/性能_自定义变量.png)
 
+图 28  性能 自定义变量
+
 :::note
 
 - **JMeter Properties**：系统支持用户自定义需要关注或使用的任何 JMeter Properties 信息。
@@ -266,6 +323,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!JMeter_Properties](/img/metersphere-v2/performance/JMeter_Properties.png)
+
+图 29  JMeter 属性配置
 
 :::note
 
@@ -275,6 +334,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!System_Properties](/img/metersphere-v2/performance/System_Properties.png)
 
+图 30  系统属性配置
+
 :::note
 
 - **监控**：系统支持用户自定义配置需要关注任何发压端和被测服务的测试实时监控，目前对于被监控系统需要安装 Prometheus 的监控插件 node_export 并启动服务。
@@ -283,6 +344,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!监控](/img/metersphere-v2/performance/性能_监控.png)
 
+图 31  性能 监控
+
 :::note
 
 - **监控配置**：点击【高级配置-监控-添加】，可以指定要监控的服务器或压测节点，设置要监控系统的相关信息。点击【确认】完成设置。
@@ -290,6 +353,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!监控配置](/img/metersphere-v2/performance/性能_监控配置.png)
+
+图 32  性能 监控配置
 
 ## 7 性能测试维护管理
 
@@ -301,6 +366,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!保存](/img/metersphere-v2/performance/性能_保存.png)
 
+图 33  性能 保存
+
 :::note
 
 - **性能列表**：在性能测试用例列表中可查看到创建的性能测试用例，点击【执行】、【编辑】、【复制】和【删除】可对性能测试用例进行相应的操作。
@@ -308,6 +375,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!性能测试编辑](/img/metersphere-v2/performance/性能_性能测试编辑.png)
+
+图 34  性能测试编辑
 
 :::note
 
@@ -317,6 +386,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!定时任务1](/img/metersphere-v2/performance/性能_定时任务1.png)
 
+图 35  性能 定时任务（1）
+
 :::note
 
 配置定时任务并开启：
@@ -324,6 +395,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!定时任务2](/img/metersphere-v2/performance/性能_定时任务2.png)
+
+图 36  性能 定时任务（2）
 
 :::note
 
@@ -333,6 +406,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!定时任务3](/img/metersphere-v2/performance/性能_定时任务3.png)
 
+图 37  性能 定时任务（3）
+
 :::note
 
 - **性能测试执行**：点击【保存并执行】进行性能测试的执行，执行完成后可实时查看测试报告，在测试报告中可点击【立即停止】终止性能测试，可点击【再次执行】、【导出报告】和【下载JTL】等操作功能，对性能测试用例和报告进行相应的操作。
@@ -340,7 +415,12 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!性能_保存执行](/img/metersphere-v2/performance/性能_保存执行.png)
+
+图 38  性能 保存执行
+
 ![!性能_查看性能测试报告](/img/metersphere-v2/performance/性能_查看性能测试报告.png)
+
+图 39  性能 查看性能测试报告
 
 :::note
 
@@ -350,6 +430,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!性能_变更记录](/img/metersphere-v2/performance/性能_变更记录.png)
 
+图 40  性能 变更记录
+
 :::note
 
 - **版本管理 (X-Pack)**：性能测试脚本中也可以进行【版本管理】。
@@ -358,6 +440,8 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 
 ![!性能_变更记录](/img/metersphere-v2/performance/性能_版本管理.png)
 
+图 41  性能 版本管理
+
 :::note
 
 - **同步变更场景测试**：当性能测试场景有更新时，在性能测试页面可点击【同步变更场景测试】按钮进行同步更新。
@@ -365,3 +449,5 @@ MeterSphere 性能测试模块支持用户通过已有的接口测试创建或�
 :::
 
 ![!性能_变更记录](/img/metersphere-v2/performance/性能_同步变更场景测试.png)
+
+图 42  性能 同步变更场景测试

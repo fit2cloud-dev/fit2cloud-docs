@@ -13,6 +13,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!切换语言](/img/metersphere-v2/general/切换语言.png)
 
+图 1  切换语言
+
 ## 2 切换工作空间
 
 :::note
@@ -23,6 +25,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!切换工作空间](/img/metersphere-v2/general/切换工作空间.png)
+
+图 2  切换工作空间
 
 ## 3 切换项目
 
@@ -35,6 +39,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!切换项目](/img/metersphere-v2/general/切换项目.png)
 
+图 3  切换项目
+
 ## 4 批量操作
 
 :::note
@@ -45,6 +51,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!批量操作](/img/metersphere-v2/general/批量操作1.png)
 
+图 4  批量操作
+
 :::note
 
 为了更方便的进行全选操作，系统提供了两种全选模式。点击列表左上方全选框旁边的下拉按钮，选择【选择可见数据】选项，该方式只选中当前分页中可见的数据条目。选择【选择所有数据】项，该方式选中当前列表所有分页中的数据条目。
@@ -52,6 +60,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 :::
 
 ![!全选操作](/img/metersphere-v2/general/全选操作.png)
+
+图 5  全选操作
 
 :::note[说明]
 
@@ -69,6 +79,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!查询管理](/img/metersphere-v2/general/查询管理.png)
 
+图 6  查询管理
+
 ### 5.1 单一查询
 
 :::note
@@ -78,6 +90,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 :::
 
 ![!查询管理](/img/metersphere-v2/general/单一查询.png)
+
+图 7  单一查询
 
 ### 5.2 高级查询
 
@@ -90,6 +104,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!高级查询](/img/metersphere-v2/general/高级查询2.png)
 
+图 8  高级查询
+
 ## 6 表头功能
 
 :::note
@@ -99,6 +115,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 :::
 
 ![!表头功能](/img/metersphere-v2/general/表头功能.png)
+
+图 9  表头功能
 
 ### 6.1 复选框功能
 
@@ -110,6 +128,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!复选框功能](/img/metersphere-v2/general/复选框功能.png)
 
+图 10  复选框功能
+
 ### 6.2 列表内查询
 
 :::note
@@ -120,6 +140,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!列表内查询](/img/metersphere-v2/general/列表内查询1.png)
 
+图 11  列表内查询
+
 ### 6.3 排序功能
 
 :::note
@@ -129,6 +151,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 :::
 
 ![!排序功能](/img/metersphere-v2/general/排序功能.png)
+
+图 12  排序功能
 
 ### 6.4 自定义列表显示
 
@@ -141,6 +165,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!自定义列表显示](/img/metersphere-v2/general/自定义列表展示1.png)
 
+图 13  自定义列表展示（1）
+
 :::note
 
 下面以测试计划页面的设置为例，点击【设置】按钮，弹出表头显示字段设置，系统默认显示所有字段。<br />
@@ -149,6 +175,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 :::
 
 ![!自定义列表显示](/img/metersphere-v2/general/自定义列表展示2.png)
+
+图 14  自定义列表展示（2）
 
 :::note
 
@@ -166,6 +194,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!调整列表宽度](/img/metersphere-v2/general/调整列表宽度.png)
 
+图 15  调整列表宽度
+
 ## 7 个人信息
 
 :::note
@@ -176,7 +206,11 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!调整列表宽度](/img/metersphere-v2/general/个人信息.png)
 
+图 16  个人信息（1）
+
 ![!调整列表宽度](/img/metersphere-v2/general/个人信息_1.png)
+
+图 17  个人信息（2）
 
 ## 8 查看版本信息
 
@@ -188,6 +222,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!调整列表宽度](/img/metersphere-v2/general/版本信息.png)
 
+图 18  版本信息
+
 ## 9 查看帮助文档
 
 :::note
@@ -197,6 +233,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 :::
 
 ![!调整列表宽度](/img/metersphere-v2/general/帮助文档.png)
+
+图 19  帮助文档
 
 ## 10 查看 API 文档
 
@@ -208,6 +246,8 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 
 ![!调整列表宽度](/img/metersphere-v2/general/API文档.png)
 
+图 20  API 文档
+
 ## 11 退出系统
 
 :::note
@@ -217,3 +257,5 @@ MeterSphere 中的测试用例、接口定义、性能测试等资源均使用�
 :::
 
 ![!调整列表宽度](/img/metersphere-v2/general/退出系统.png)
+
+图 21  退出系统

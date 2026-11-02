@@ -17,6 +17,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建计划](/img/metersphere-v2/track/创建测试计划1.png)
 
+图 1  创建测试计划
+
 :::note
 
 点击【确定】完成创建测试计划，并且页面跳转到测试计划列表信息页面，可在测试计划列表中查看到创建的测试计划。<br />
@@ -25,6 +27,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!创建计划](/img/metersphere-v2/track/创建测试计划3.png)
+
+图 2  规划与执行
 
 ## 2 执行测试计划
 
@@ -41,6 +45,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建计划](/img/metersphere-v2/track/执行测试计划.png)
 
+图 3  执行测试计划
+
 ## 3 失败重试
 
 :::note
@@ -50,6 +56,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!创建计划](/img/metersphere-v2/track/查看失败重试请求.png)
+
+图 4  查看失败重试请求
 
 ## 4 维护测试计划
 
@@ -61,6 +69,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!维护计划](/img/metersphere-v2/track/维护计划1.png)
 
+图 5  测试计划详情
+
 :::note
 
 添加本次计划测试的范围：功能测试用例、接口测试用例、场景测试用例、性能测试用例等。
@@ -68,6 +78,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!维护计划](/img/metersphere-v2/track/维护计划2.png)
+
+图 6  添加测试范围
 
 :::note
 
@@ -80,6 +92,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!维护计划](/img/metersphere-v2/track/维护计划4.png)
 
+图 7  复制计划
+
 :::note
 
 点击【编辑】，修改测试计划的相关信息和当前状态。
@@ -87,6 +101,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!维护计划](/img/metersphere-v2/track/维护计划5.png)
+
+图 8  编辑计划
 
 :::note[当前状态说明：]
 
@@ -111,6 +127,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!新建测试计划](/img/metersphere-v2/track/跨页选择进行导入.png)
 
+图 9  跨页选择进行导入
+
 ### 5.1 关联功能测试用例
 
 :::note
@@ -121,6 +139,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!新建测试计划](/img/metersphere-v2/track/切换用例列表.png)
 
+图 10  切换用例列表
+
 :::note
 
 - 基于列表视图记录计划执行结果
@@ -130,6 +150,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!更新用例执行结果](/img/metersphere-v2/track/更新用例执行结果.png)
 
+图 11  更新用例执行结果
+
 :::note
 
 - 基于脑图视图记录计划执行结果
@@ -138,6 +160,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!脑图记录用例结果](/img/metersphere-v2/track/脑图记录用例结果.png)
+
+图 12  脑图记录用例结果
 
 ### 5.2 关联接口测试用例
 
@@ -149,6 +173,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联接口用例](/img/metersphere-v2/track/关联接口用例1.png)
 
+图 13  关联接口用例
+
 :::note
 
 点击【关联测试用例】，进入关联接口用例页面，同时此也支持跨项目的接口测试用例和场景用例的引用。<br />
@@ -158,6 +184,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联接口用例](/img/metersphere-v2/track/关联接口用例2.png)
 
+图 14  选择运行环境
+
 :::note
 
 关联接口测试用例后，在测试用例列表中可点击【执行】，执行接口测试，执行完成后可点击【查看测试报告】查看测试结果。
@@ -166,7 +194,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联接口用例](/img/metersphere-v2/track/关联接口用例4.png)
 
+图 15  执行接口用例
+
 ![!关联接口用例](/img/metersphere-v2/track/关联接口用例5.png)
+
+图 16  查看测试报告
 
 ### 5.3 关联 UI 测试用例 (X-Pack)
 
@@ -178,6 +210,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联接口用例](/img/metersphere-v2/track/关联UI测试用例1.png)
 
+图 17  关联 UI 测试用例（1）
+
 :::note
 
 勾选要关联的 UI 测试用例，点击【确定】按钮即可。
@@ -186,6 +220,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!关联接口用例](/img/metersphere-v2/track/关联UI测试用例2.png)
 
+图 18  关联 UI 测试用例（2）
+
 :::note
 
 可看到 UI 测试用例页面，列表展示已经关联的用例
@@ -193,6 +229,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!关联接口用例](/img/metersphere-v2/track/关联UI测试用例3.png)
+
+图 19  关联 UI 测试用例（3）
 
 ### 5.4 关联性能测试用例
 
@@ -204,6 +242,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!新建测试计划](/img/metersphere-v2/track/测试计划关联性能用例.png)
 
+图 20  测试计划关联性能用例
+
 ### 5.5 报告统计
 
 :::note
@@ -213,7 +253,12 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!新建测试计划](/img/metersphere-v2/track/测试计划报告统计.png)
+
+图 21  测试计划报告统计
+
 ![!新建测试计划](/img/metersphere-v2/track/测试计划报告统计编写总结.png)
+
+图 22  测试计划报告统计编写总结
 
 :::note
 
@@ -223,6 +268,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!新建测试计划](/img/metersphere-v2/track/测试计划报告分享链接.png)
 
+图 23  测试计划报告分享链接
+
 :::note
 
 点击【配置】按钮，可自定义配置报告内容。<br />
@@ -230,6 +277,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!新建测试计划](/img/metersphere-v2/track/测试计划报告统计配置.png)
+
+图 24  测试计划报告统计配置
 
 :::note
 
@@ -239,6 +288,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!新建测试计划](/img/metersphere-v2/track/测试计划报告保存导出.png)
 
+图 25  测试计划报告保存导出
+
 :::note
 
 可切换不同测试计划查看报告统计，点击左侧目录，可查看报告统计目录。<br />
@@ -246,3 +297,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!新建测试计划](/img/metersphere-v2/track/测试计划报告目录.png)
+
+图 26  测试计划报告目录

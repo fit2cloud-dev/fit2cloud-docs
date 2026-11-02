@@ -12,6 +12,8 @@ title: "CAS"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/cas/cas配置.png)
 
+图 1  CAS 配置
+
 :::note[字段说明]
 
 - 【服务端地址】cas 系统地址，格式为 `http://cas系统url`
@@ -31,8 +33,16 @@ title: "CAS"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/cas/cas登录.png)
 
+图 2  CAS 登录
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/cas/cas源页面认证.png)
+
+图 3  CAS 源页面认证
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/cas/cas系统登录.png)
 
+图 4  CAS 系统登录
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/cas/正常登录.png)
+
+图 5  正常登录

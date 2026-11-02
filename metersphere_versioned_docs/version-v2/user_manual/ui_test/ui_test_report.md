@@ -13,6 +13,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告1.png)
 
+图 1  报告列表
+
 :::note
 
 高级搜索支持以名称、状态、创建人等维度进行组合查询。
@@ -20,6 +22,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告2.png)
+
+图 2  高级搜索
 
 ## 2 重命名报告
 
@@ -31,6 +35,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告3.png)
 
+图 3  重命名报告
+
 ## 3 报告详情
 
 :::note
@@ -41,6 +47,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告4.png)
 
+图 4  报告详情
+
 :::note
 
 详情页面面板展示了本次执行场景的耗时、成功和失败以及未执行的步骤数，还有断言成功和失败的数量。
@@ -48,6 +56,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告5.png)
+
+图 5  概览面板
 
 :::note
 
@@ -57,6 +67,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告6.png)
 
+图 6  步骤列表
+
 :::note
 
 展开步骤详情可以查看当前步骤的执行结果日志、断言结果和提取结果。
@@ -64,6 +76,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告7.png)
+
+图 7  步骤详情
 
 :::note
 
@@ -73,6 +87,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告8.png)
 
+图 8  截图预览
+
 :::note
 
 点击该预览图，会以网页大图形式展示 UI 截图。
@@ -80,6 +96,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告9.png)
+
+图 9  截图大图
 
 ## 4 删除报告
 
@@ -90,4 +108,9 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![创建场景](/img/metersphere-v2/ui_test/测试报告10.png)
+
+图 10  删除报告确认
+
 ![创建场景](/img/metersphere-v2/ui_test/测试报告11.png)
+
+图 11  删除确认

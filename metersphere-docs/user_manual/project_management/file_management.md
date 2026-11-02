@@ -10,6 +10,8 @@ title: "文件管理"
 
 ![!文件管理](/img/metersphere/project_management/file_management/文件管理.png)
 
+图 1  文件管理
+
 ## 1 模块管理
 
 :::note
@@ -19,6 +21,8 @@ title: "文件管理"
 :::
 
 ![!添加子节点](/img/metersphere/project_management/file_management/添加子节点.png)
+
+图 2  添加子节点
 
 :::note[操作说明]
 
@@ -31,6 +35,8 @@ title: "文件管理"
 
 ![!左侧节点功能](/img/metersphere/project_management/file_management/左侧节点功能.png)
 
+图 3  左侧节点功能
+
 ## 2.上传文件
 
 :::note
@@ -41,6 +47,8 @@ title: "文件管理"
 
 ![!文件上传功能](/img/metersphere/project_management/file_management/文件上传功能.png)
 
+图 4  文件上传功能
+
 :::note
 
 JAR 文件上传后，默认是【禁用】状态，需要点击【启用】，否则在接口前后置脚本中引用不到 JAR 包内容。
@@ -48,6 +56,8 @@ JAR 文件上传后，默认是【禁用】状态，需要点击【启用】，�
 :::
 
 ![!启用jar包](/img/metersphere/project_management/file_management/启用jar包.png)
+
+图 5  启用 jar 包
 
 :::note[操作说明]
 
@@ -61,7 +71,11 @@ JAR 文件上传后，默认是【禁用】状态，需要点击【启用】，�
 
 ![!上传文件功能操作](/img/metersphere/project_management/file_management/上传文件功能操作.png)
 
+图 6  上传文件功能操作
+
 ![!上传文件展示形式](/img/metersphere/project_management/file_management/上传文件展示形式.png)
+
+图 7  上传文件展示形式
 
 ## 3 存储库
 
@@ -73,7 +87,11 @@ JAR 文件上传后，默认是【禁用】状态，需要点击【启用】，�
 
 ![!第三方仓库](/img/metersphere/project_management/file_management/第三方仓库.png)
 
+图 8  第三方仓库
+
 ![!第三方具体仓库](/img/metersphere/project_management/file_management/第三方具体仓库.png)
+
+图 9  第三方具体仓库
 
 :::note
 
@@ -83,6 +101,8 @@ JAR 文件上传后，默认是【禁用】状态，需要点击【启用】，�
 
 ![!gitea仓库为例](/img/metersphere/project_management/file_management/gitea仓库为例.png)
 
+图 10  Gitea 仓库为例
+
 :::note
 
 点击【储存库-添加文件】，填写分支和文件路径。
@@ -90,6 +110,8 @@ JAR 文件上传后，默认是【禁用】状态，需要点击【启用】，�
 :::
 
 ![!配置存储库拉取文件](/img/metersphere/project_management/file_management/配置存储库拉取文件.png)
+
+图 11  配置存储库拉取文件
 
 :::note[操作说明]
 
@@ -99,3 +121,5 @@ JAR 文件上传后，默认是【禁用】状态，需要点击【启用】，�
 :::
 
 ![!拉取文件下来的功能](/img/metersphere/project_management/file_management/拉取文件下来的功能.png)
+
+图 12  拉取文件下来的功能

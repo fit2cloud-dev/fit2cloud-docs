@@ -32,6 +32,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![安装docker](/img/metersphere-v2/installation/mac-install-docker.png)
 
+图 1  安装 Docker
+
 ### 2.3 安装 MeterSphere
 
 :::note
@@ -42,6 +44,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![安装MeterSphere](/img/metersphere-v2/installation/mac-install-metersphere.png)
 
+图 2  安装 MeterSphere（1）
+
 :::note
 
 解压安装包 <br />
@@ -49,6 +53,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![安装MeterSphere](/img/metersphere-v2/installation/mac-install-tar.png)
+
+图 3  安装 MeterSphere（2）
 
 :::note
 
@@ -58,6 +64,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![安装MeterSphere](/img/metersphere-v2/installation/cd-mac-install.png)
 
+图 4  安装 MeterSphere（3）
+
 :::note
 
 执行安装命令 sh install.sh，安装过程中的提示，输入 y  <br />
@@ -65,6 +73,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![安装MeterSphere](/img/metersphere-v2/installation/mac-install-sh.png)
+
+图 5  安装 MeterSphere（4）
 
 :::note
 
@@ -79,4 +89,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![安装MeterSphere](/img/metersphere-v2/installation/mac-install-server.png)
 
+图 6  安装 MeterSphere（5）
+
 ![安装MeterSphere](/img/metersphere-v2/installation/mac-install-localhost.png)
+
+图 7  安装 MeterSphere（6）

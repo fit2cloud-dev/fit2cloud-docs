@@ -12,6 +12,8 @@ LDAP 系统登录进入后，可看到 DN、OU、CN 等信息。
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/ldap/ldap内容.png)
 
+图 1  LDAP 内容
+
 :::note[示例说明]
 
 - CN=Zhang San,OU=TestGroup,DC=BeiJing,DC=Base，即 CN=Zhang San 代表一个用户名，OU=TestGroup 代表一个组织单位（测试组），说明 Zhang San 这个用户是处在 BeiJing.Base 的TestGroup（测试组）下
@@ -25,6 +27,8 @@ LDAP 系统登录进入后，可看到 DN、OU、CN 等信息。
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/ldap/ldap配置图.png)
+
+图 2  LDAP 配置图
 
 :::note[字段说明]
 
@@ -44,6 +48,8 @@ LDAP 系统登录进入后，可看到 DN、OU、CN 等信息。
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/ldap/ldap测试登录成功.png)
 
+图 3  LDAP 测试登录成功
+
 :::note
 
 点击【启用-确认启用】，即可启用 LDAP 认证登录。
@@ -51,6 +57,8 @@ LDAP 系统登录进入后，可看到 DN、OU、CN 等信息。
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/ldap/启用ldap.png)
+
+图 4  启用 LDAP
 
 ## 2 LDAP 登录
 
@@ -62,6 +70,12 @@ LDAP 系统登录进入后，可看到 DN、OU、CN 等信息。
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/ldap/ldap登录页面.png)
 
+图 5  LDAP 登录页面
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/ldap/ldap账户密码登录.png)
 
+图 6  LDAP 账户密码登录
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/ldap/ldap正常登录.png)
+
+图 7  LDAP 正常登录

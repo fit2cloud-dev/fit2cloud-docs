@@ -11,6 +11,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![切换](/img/metersphere-v2/user_manual/my_desk/todo/todo_2.png)
 
+图 1  待办列表切换
+
 ## 1 待完成
 
 :::note
@@ -20,6 +22,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![跳转](/img/metersphere-v2/user_manual/my_desk/todo/todo_7.png)
+
+图 2  待完成列表
 
 ## 2 待更新
 
@@ -37,6 +41,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![跳转](/img/metersphere-v2/user_manual/my_desk/todo/todo_4.png)
 
+图 3  同步设置选项
+
 :::note
 
 可在【待更新】页面列表中进行【同步】或【忽略】操作。
@@ -45,4 +51,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![跳转](/img/metersphere-v2/user_manual/my_desk/todo/todo_5.png)
 
+图 4  待更新列表
+
 ![跳转](/img/metersphere-v2/user_manual/my_desk/todo/todo_6.png)
+
+图 5  同步或忽略操作

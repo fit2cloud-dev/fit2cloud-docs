@@ -10,6 +10,8 @@ title: "组织"
 
 ![!组织创建](/img/metersphere/X-Pack/organization/组织创建.png)
 
+图 1  组织创建
+
 :::note
 
 组织可进行【编辑】、【添加成员】、【结束】、【删除】操作
@@ -17,6 +19,8 @@ title: "组织"
 :::
 
 ![!组织创建](/img/metersphere/X-Pack/organization/组织功能操作.png)
+
+图 2  组织功能操作
 
 :::note[说明]
 
@@ -35,6 +39,8 @@ title: "组织"
 
 ![!组织创建](/img/metersphere/X-Pack/organization/成员内容.png)
 
+图 3  成员内容
+
 :::note
 
 创建完组织后，切到【项目】页面，点击【创建项目】，所属组织处可选择已创建的组织。
@@ -42,3 +48,5 @@ title: "组织"
 :::
 
 ![!组织创建](/img/metersphere/X-Pack/organization/项目处有组织.png)
+
+图 4  项目处有组织

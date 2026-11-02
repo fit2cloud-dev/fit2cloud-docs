@@ -70,6 +70,8 @@ Azure Devops： 请参考[MeterSphere 服务集成之 Azure Devops 对接](https
 
 ![! JIRA](/img/metersphere-v2/faq/服务集成JIRA.png)
 
+图 1  服务集成 Jira
+
 ## 7 同步缺陷到JIRA，如何实现自定义字段？
 
 :::note
@@ -80,7 +82,11 @@ Azure Devops： 请参考[MeterSphere 服务集成之 Azure Devops 对接](https
 
 ![! JIRA自定义字段01](/img/metersphere-v2/faq/创建自定义字段.png)
 
+图 2  创建自定义字段
+
 ![! JIRA自定义字段02](/img/metersphere-v2/faq/用例模板添加.png)
+
+图 3  用例模板添加
 
 ## 8 集成JIRA时，如何实现绑定指定账号？
 

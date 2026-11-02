@@ -12,6 +12,8 @@ title: "项目与权限"
 
 ![!基本信息](/img/metersphere/project_management/project_permissions/基本信息.png)
 
+图 1  基本信息
+
 :::note
 
 在【基本信息】页面，点击【编辑】，可更新项目名称和描述内容。
@@ -19,6 +21,8 @@ title: "项目与权限"
 :::
 
 ![!编辑项目](/img/metersphere/project_management/project_permissions/编辑项目.png)
+
+图 2  编辑项目
 
 ## 2 应用设置
 
@@ -30,6 +34,8 @@ title: "项目与权限"
 
 ![!应用设置](/img/metersphere/project_management/project_permissions/应用设置.png)
 
+图 3  应用设置
+
 ### 2.1 测试计划
 
 :::note
@@ -39,6 +45,8 @@ title: "项目与权限"
 :::
 
 ![!测试计划](/img/metersphere/project_management/project_permissions/测试计划设置.png)
+
+图 4  测试计划设置
 
 ### 2.2 缺陷管理
 
@@ -51,7 +59,11 @@ title: "项目与权限"
 
 ![!同步缺陷](/img/metersphere/project_management/project_permissions/同步缺陷.png)
 
+图 5  同步缺陷
+
 ![!配置同步缺陷](/img/metersphere/project_management/project_permissions/配置同步缺陷.png)
+
+图 6  配置同步缺陷
 
 :::note[字段说明]
 
@@ -76,6 +88,8 @@ title: "项目与权限"
 
 ![!用例管理](/img/metersphere/project_management/project_permissions/用例管理.png)
 
+图 7  用例管理
+
 :::note[说明]
 
 - 【重新评审】评审活动中用例发生变更，用例状态自动切换为重新提审。
@@ -91,7 +105,11 @@ title: "项目与权限"
 
 ![!关联需求](/img/metersphere/project_management/project_permissions/关联需求.png)
 
+图 8  关联需求
+
 ![!配置需求同步](/img/metersphere/project_management/project_permissions/配置需求同步.png)
+
+图 9  配置需求同步
 
 ### 2.4 接口测试
 
@@ -102,6 +120,8 @@ title: "项目与权限"
 :::
 
 ![!接口测试](/img/metersphere/project_management/project_permissions/接口测试.png)
+
+图 10  接口测试
 
 :::note[注意]
 
@@ -117,9 +137,15 @@ title: "项目与权限"
 
 ![!接口测试](/img/metersphere/project_management/project_permissions/系统新增资源池.png)
 
+图 11  系统新增资源池
+
 ![!接口测试](/img/metersphere/project_management/project_permissions/项目处新增资源池.png)
 
+图 12  项目处新增资源池
+
 ![!接口测试](/img/metersphere/project_management/project_permissions/下拉选择资源池.png)
+
+图 13  下拉选择资源池
 
 :::note
 
@@ -129,6 +155,8 @@ title: "项目与权限"
 
 ![!接口测试](/img/metersphere/project_management/project_permissions/误报规则.png)
 
+图 14  误报规则
+
 :::note
 
 点击【新增误报规则】，配置相应的误报规则。
@@ -136,6 +164,8 @@ title: "项目与权限"
 :::
 
 ![!误报设置页面](/img/metersphere/project_management/project_permissions/误报设置页面.png)
+
+图 15  误报设置页面
 
 :::note[操作说明]
 
@@ -148,6 +178,8 @@ title: "项目与权限"
 
 ![!误报规则功能](/img/metersphere/project_management/project_permissions/误报规则功能.png)
 
+图 16  误报规则功能
+
 ## 3 成员
 
 :::note
@@ -158,6 +190,8 @@ title: "项目与权限"
 
 ![!新增成员](/img/metersphere/project_management/project_permissions/新增成员.png)
 
+图 17  新增成员
+
 :::note
 
 如下图，即可给用户添加用户组。
@@ -165,6 +199,8 @@ title: "项目与权限"
 :::
 
 ![!成员](/img/metersphere/project_management/project_permissions/添加成员用户组.png)
+
+图 18  添加成员用户组
 
 :::note
 
@@ -174,7 +210,11 @@ title: "项目与权限"
 
 ![!表格设置](/img/metersphere/project_management/project_permissions/表格设置.png)
 
+图 19  表格设置
+
 ![!表格设置页面](/img/metersphere/project_management/project_permissions/表格设置页面.png)
+
+图 20  表格设置页面
 
 :::note
 
@@ -184,6 +224,8 @@ title: "项目与权限"
 
 ![!启用禁用状态](/img/metersphere/project_management/project_permissions/启用禁用状态.png)
 
+图 21  启用禁用状态
+
 :::note
 
 将多个项目成员批量添加到用户组、从项目移除。
@@ -191,6 +233,8 @@ title: "项目与权限"
 :::
 
 ![!成员功能](/img/metersphere/project_management/project_permissions/成员功能.png)
+
+图 22  成员功能
 
 ## 4 用户组
 
@@ -202,6 +246,8 @@ title: "项目与权限"
 
 ![!用户组](/img/metersphere/project_management/project_permissions/用户组.png)
 
+图 23  用户组
+
 :::note
 
 点击【添加用户组】，输入用户组名称。
@@ -209,6 +255,8 @@ title: "项目与权限"
 :::
 
 ![!用户组](/img/metersphere/project_management/project_permissions/创建用户组.png)
+
+图 24  创建用户组
 
 :::note[操作说明]
 
@@ -219,4 +267,8 @@ title: "项目与权限"
 
 ![!用户组](/img/metersphere/project_management/project_permissions/用户组功能.png)
 
+图 25  用户组功能
+
 ![!用户组](/img/metersphere/project_management/project_permissions/查看权限.png)
+
+图 26  查看权限

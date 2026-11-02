@@ -51,6 +51,8 @@ docker inspect metersphere
 ```
 ![VirtualBox](/img/metersphere/installation/在线升级.png)
 
+图 1  在线升级
+
 删除正在运行的 metersphere 容器
 ```
 docker rm -f metersphere

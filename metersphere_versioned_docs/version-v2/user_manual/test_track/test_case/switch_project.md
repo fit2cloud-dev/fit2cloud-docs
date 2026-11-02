@@ -12,6 +12,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!测试用例首页](/img/metersphere-v2/track/测试用例首页.png)
 
+图 1  测试用例首页
+
 ## 1 切换工作空间
 
 :::note
@@ -22,6 +24,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!测试用例首页](/img/metersphere-v2/track/功能测试_切换工作空间.png)
 
+图 2  功能测试 切换工作空间
+
 ## 2 切换项目
 
 :::note
@@ -31,6 +35,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!测试用例首页](/img/metersphere-v2/track/功能测试_切换项目.png)
+
+图 3  功能测试 切换项目
 
 :::note[说明]
 

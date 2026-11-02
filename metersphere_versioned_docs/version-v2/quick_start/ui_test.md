@@ -29,6 +29,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/快速ui模块.png)
 
+图 1  模块树
+
 ## 2 创建元素
 
 :::note
@@ -38,8 +40,16 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 :::
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试2.png)
+
+图 2  创建元素
+
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试3.png)
+
+图 3  元素列表
+
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试4.png)
+
+图 4  元素详情
 
 ## 3 创建场景
 
@@ -52,7 +62,12 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 ### 3.1 导入 Selenium IDE 脚本
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试5.png)
+
+图 5  导入 Selenium IDE 脚本
+
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试6.png)
+
+图 6  导入脚本结果
 
 ### 3.2 手动创建场景
 
@@ -64,6 +79,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试7.png)
 
+图 7  创建场景
+
 :::note
 
 在打开的【用例编辑】页面中填写名称、模块、状态、责任人等详细信息。
@@ -71,6 +88,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 :::
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试8.png)
+
+图 8  填写场景信息
 
 :::note
 
@@ -83,6 +102,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试9.png)
 
+图 9  浏览器操作步骤
+
 :::note
 
 - 添加【输入用户名】步骤: 操作对象选择【元素定位】，定位方式选择【xpath】，xpath 路径输入 `//input[@placeholder="ID 或 邮箱"]`。
@@ -90,6 +111,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 :::
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试10.png)
+
+图 10  输入用户名步骤
 
 :::note
 
@@ -99,6 +122,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试11.png)
 
+图 11  获取 xpath 路径
+
 :::note
 
 - 添加【输入密码】步骤，方式同上，xpath 路径输入 `//input[@placeholder="密码"]`。
@@ -107,6 +132,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试12.png)
 
+图 12  输入密码步骤
+
 :::note
 
 - 添加【点击登录】步骤，点击页面右下角【+】号，选择【鼠标操作】，【步骤类型】选择鼠标点击，【点击方式】选择单机，元素位置选择【元素定位】，定位方式选择【xpath】，xpath 路径为 `//button[@type="button"]`。
@@ -114,6 +141,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 :::
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试13.png)
+
+图 13  点击登录步骤
 
 ## 4 在场景步骤中添加高级设置
 
@@ -124,7 +153,12 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 :::
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试14.png)
+
+图 14  后置操作设置
+
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试15.png)
+
+图 15  后置操作方式
 
 ## 5 调试 UI 自动化场景
 
@@ -137,6 +171,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试16.png)
 
+图 16  调试场景
+
 ## 6 生成测试报告
 
 :::note
@@ -147,6 +183,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试17.png)
 
+图 17  执行结果
+
 :::note
 
 查看报告中步骤截图信息
@@ -155,6 +193,8 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试18.png)
 
+图 18  步骤截图信息
+
 :::note
 
 也可在测试报告页面中，找到要查看的报告，点击其【报告详情】按钮打开【测试报告】页面查看测试报告。
@@ -162,3 +202,5 @@ MeterSphere 通过模块树的方式组织管理场景，用户可以在左侧�
 :::
 
 ![!使用UI测试](/img/metersphere-v2/quick_start/ui_test/使用UI测试19.png)
+
+图 19  报告详情

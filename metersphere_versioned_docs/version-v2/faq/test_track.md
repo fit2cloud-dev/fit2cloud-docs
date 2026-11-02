@@ -21,6 +21,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![批量评审](/img/metersphere-v2/faq/批量评审.png)
 
+图 1  批量评审
+
 ## 3 测试计划里，如何批量分配执行人？
 
 :::note
@@ -30,6 +32,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![批量分配执行人](/img/metersphere-v2/faq/批量分配执行人.png)
+
+图 2  批量分配执行人
 
 ## 4 测试计划执行定时任务，是否会自动触发接口测试和性能测试？定时任务添加后如何删除？
 
@@ -48,6 +52,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![批量分配执行人](/img/metersphere-v2/faq/测试用例自定义显示字段.png)
+
+图 3  测试用例自定义显示字段（1）
 
 ## 6 如果集成了 JIRA，缺陷状态可以同步更新 MeterSphere 吗？
 
@@ -75,7 +81,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![! 测试用例自定义字段01](/img/metersphere-v2/faq/测试用例自定义字段01.png)
 
+图 4  测试用例自定义字段（1）
+
 ![! 测试用例自定义字段02](/img/metersphere-v2/faq/测试用例自定义字段02.png)
+
+图 5  测试用例自定义字段（2）
 
 ## 9 如何找回误删除的测试用例？
 
@@ -87,6 +97,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![! 测试用例回收站](/img/metersphere-v2/faq/测试用例回收站.png)
 
+图 6  测试用例回收站
+
 ## 10 测试用例页面的字段如何增加自定义字段？
 
 :::note
@@ -97,8 +109,16 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![! 用例模版列表页面](/img/metersphere-v2/faq/添加用例模版字段-用例模版列表页面.png)
+
+图 7  用例模版列表页面
+
 ![! 用例模版列表页面](/img/metersphere-v2/faq/添加用例模版字段-用例模版编辑页面.png)
+
+图 8  用例模版编辑页面
+
 ![! 添加字段对话框](/img/metersphere-v2/faq/添加用例模版字段-添加字段对话框.png)
+
+图 9  添加字段对话框
 
 ## 11 提交缺陷页面的字段如何进行自定义配置？
 
@@ -128,6 +148,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![批量分配执行人](/img/metersphere-v2/faq/测试用例自定义显示字段.png)
+
+图 10  测试用例自定义显示字段（2）
 
 ## 14 同一个测试计划，既包含接口测试用例，也包含场景用例时，执行顺序是怎样的？
 

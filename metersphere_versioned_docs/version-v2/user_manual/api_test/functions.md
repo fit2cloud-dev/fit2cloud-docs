@@ -15,6 +15,8 @@ MeterSphere 接口测试基于 JMeter 实现，因此 JMeter 中的内置函数�
 
 ## 2 内置函数列表
 
+表 1  内置函数清单
+
 <table>
     <tbody>
         <tr>

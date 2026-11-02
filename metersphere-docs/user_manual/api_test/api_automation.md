@@ -12,6 +12,8 @@ title: "场景管理"
 
 ![!创建场景](/img/metersphere/api_test/api_automation/创建场景.png)
 
+图 1  创建场景
+
 ### 1.1 步骤
 
 :::note
@@ -21,6 +23,8 @@ title: "场景管理"
 :::
 
 ![!场景步骤](/img/metersphere/api_test/api_automation/场景步骤.png)
+
+图 2  场景步骤
 
 :::note[说明]
 
@@ -44,6 +48,8 @@ title: "场景管理"
 
 ![!场景步骤](/img/metersphere/api_test/api_automation/场景参数设置.png)
 
+图 3  场景参数设置
+
 :::note
 
 【CSV参数】可本地上传或关联文件，作用域可设置为场景或步骤，文件编码、分隔符也可进行配置。
@@ -52,7 +58,11 @@ title: "场景管理"
 
 ![!场景步骤](/img/metersphere/api_test/api_automation/csv上传文件.png)
 
+图 4  CSV 上传文件
+
 ![!场景步骤](/img/metersphere/api_test/api_automation/csv参数配置功能.png)
+
+图 5  CSV 参数配置功能
 
 :::note[注意]
 
@@ -78,6 +88,8 @@ title: "场景管理"
 
 ![!场景前后置](/img/metersphere/api_test/api_automation/场景前后置.png)
 
+图 6  场景前后置
+
 ### 1.4 断言
 
 :::note
@@ -88,6 +100,8 @@ title: "场景管理"
 
 ![!场景断言](/img/metersphere/api_test/api_automation/场景断言.png)
 
+图 7  场景断言
+
 ### 1.5 设置
 
 :::note
@@ -97,6 +111,8 @@ title: "场景管理"
 :::
 
 ![!配置cookie](/img/metersphere/api_test/api_automation/配置cookie.png)
+
+图 8  配置 cookie
 
 :::note[配置说明]
 
@@ -114,6 +130,8 @@ title: "场景管理"
 :::
 
 ![!配置cookie](/img/metersphere/api_test/api_automation/执行历史变更历史.png)
+
+图 9  执行历史变更历史
 
 :::note[说明]
 
@@ -133,6 +151,8 @@ title: "场景管理"
 
 ![!接口用例场景](/img/metersphere/api_test/api_automation/接口用例场景.png)
 
+图 10  接口用例场景
+
 :::note[说明]
 
 - **复制**：修改复制步骤，源数据不发生变化，若源数据被删除，复制的步骤 ID 置灰，无法跳转。
@@ -148,7 +168,11 @@ title: "场景管理"
 
 ![!接口用例场景](/img/metersphere/api_test/api_automation/引用场景.png)
 
+图 11  引用场景
+
 ![!引用场景进行配置](/img/metersphere/api_test/api_automation/引用场景进行配置.png)
+
+图 12  引用场景进行配置
 
 :::note[字段说明]
 
@@ -172,6 +196,8 @@ title: "场景管理"
 
 ![!自定义请求](/img/metersphere/api_test/api_automation/自定义请求.png)
 
+图 13  自定义请求
+
 :::note[说明]
 
 - **引用环境**：请求地址自动填充 http 或 https 环境，只需输入接口地址。
@@ -187,6 +213,8 @@ title: "场景管理"
 
 ![!自定义请求](/img/metersphere/api_test/api_automation/cURL请求.png)
 
+图 14  cURL 请求
+
 ### 2.3 循环控制器
 
 :::note
@@ -197,6 +225,8 @@ title: "场景管理"
 
 ![!循环控制器](/img/metersphere/api_test/api_automation/循环控制器.png)
 
+图 15  循环控制器
+
 :::note
 
 【次数循环】，将请求拖拽到控制器里，设置循环次数、间隔时间等。
@@ -205,6 +235,8 @@ title: "场景管理"
 
 ![!次数循环](/img/metersphere/api_test/api_automation/次数循环.png)
 
+图 16  次数循环
+
 :::note
 
 【while 循环】，将请求拖拽到控制器里，设置表达式类型、循环条件、超时时间。
@@ -212,6 +244,8 @@ title: "场景管理"
 :::
 
 ![!while循环](/img/metersphere/api_test/api_automation/while循环.png)
+
+图 17  while 循环
 
 :::note[说明]
 
@@ -231,9 +265,15 @@ title: "场景管理"
 
 ![!forEach控制器](/img/metersphere/api_test/api_automation/foreach列表变量值.png)
 
+图 18  foreach 列表变量值
+
 ![!forEach控制器](/img/metersphere/api_test/api_automation/forEach控制器.png)
 
+图 19  forEach 控制器
+
 ![!forEach控制器](/img/metersphere/api_test/api_automation/forEach循环执行结果.png)
+
+图 20  forEach 循环执行结果
 
 :::note[注意]
 
@@ -252,6 +292,8 @@ title: "场景管理"
 
 ![!条件控制器](/img/metersphere/api_test/api_automation/条件控制器.png)
 
+图 21  条件控制器
+
 ### 2.5 仅一次控制器
 
 :::note
@@ -261,6 +303,8 @@ title: "场景管理"
 :::
 
 ![!条件控制器](/img/metersphere/api_test/api_automation/仅一次控制器.png)
+
+图 22  仅一次控制器
 
 :::note[注意]
 
@@ -278,6 +322,8 @@ title: "场景管理"
 
 ![!条件控制器](/img/metersphere/api_test/api_automation/场景里的脚步操作.png)
 
+图 23  场景里的脚步操作
+
 :::note
 
 可以编写脚本，并对脚本进行断言。
@@ -286,6 +332,8 @@ title: "场景管理"
 
 ![!条件控制器](/img/metersphere/api_test/api_automation/场景里脚本操作代码.png)
 
+图 24  场景里脚本操作代码
+
 :::note
 
 【脚本断言】支持对响应码、响应头、响应体、响应时间、变量、脚本等多种形式进行断言。详情参考：[断言操作](request_params.md#8-断言)
@@ -293,6 +341,8 @@ title: "场景管理"
 :::
 
 ![!条件控制器](/img/metersphere/api_test/api_automation/对脚本进行断言.png)
+
+图 25  对脚本进行断言
 
 ### 2.7 等待时间
 
@@ -313,6 +363,8 @@ title: "场景管理"
 
 ![!服务端执行](/img/metersphere/api_test/api_automation/服务端执行.png)
 
+图 26  服务端执行
+
 :::note[注意]
 
 社区版只有一个默认资源池，无法新增和切换资源池。企业版可新增和切换资源池。详情参考：[资源池](../x-pack/controller.md)
@@ -328,6 +380,8 @@ title: "场景管理"
 :::
 
 ![!本地执行](/img/metersphere/api_test/api_automation/本地执行.png)
+
+图 27  本地执行
 
 :::note[注意]
 
@@ -347,7 +401,11 @@ title: "场景管理"
 
 ![!功能操作](/img/metersphere/api_test/api_automation/功能操作.png)
 
+图 28  功能操作
+
 ![!功能操作](/img/metersphere/api_test/api_automation/添加步骤.png)
+
+图 29  添加步骤
 
 :::note[操作说明]
 
@@ -369,6 +427,8 @@ title: "场景管理"
 
 ![!批量操作功能](/img/metersphere/api_test/api_automation/批量操作功能.png)
 
+图 30  批量操作功能
+
 :::note
 
 可以进行【关注】、【复制链接】、【查看报告】等操作。
@@ -376,6 +436,8 @@ title: "场景管理"
 :::
 
 ![!批量操作功能](/img/metersphere/api_test/api_automation/分享链接.png)
+
+图 31  分享链接
 
 :::note[操作说明]
 
@@ -396,6 +458,8 @@ title: "场景管理"
 
 ![!功能操作](/img/metersphere/api_test/api_automation/功能列表导入功能.png)
 
+图 32  功能列表导入功能
+
 :::note[导入模式]
 
 - **【覆盖】** 系统已存在同一场景则进行覆盖导入。
@@ -413,7 +477,11 @@ title: "场景管理"
 
 ![!功能操作](/img/metersphere/api_test/api_automation/功能列表导出功能.png)
 
+图 33  功能列表导出功能
+
 ![!功能操作](/img/metersphere/api_test/api_automation/功能列表下载文件功能.png)
+
+图 34  功能列表下载文件功能
 
 :::note[保留引用关系说明]
 
@@ -432,6 +500,8 @@ title: "场景管理"
 
 ![!功能操作](/img/metersphere/api_test/api_automation/视图刷新功能.png)
 
+图 35  视图刷新功能
+
 :::note
 
 对列表场景进行【编辑】、【执行】、【复制】、【创建定时任务】、【删除】等操作。
@@ -440,6 +510,8 @@ title: "场景管理"
 
 ![!功能操作](/img/metersphere/api_test/api_automation/列表功能操作.png)
 
+图 36  列表功能操作
+
 :::note
 
 批量对场景进行【全选当前页/全选所有页】、【导出】、【编辑】、【执行】、【移动到】、【复制到】、【删除】等操作。
@@ -447,3 +519,5 @@ title: "场景管理"
 :::
 
 ![!功能操作](/img/metersphere/api_test/api_automation/列表批量功能操作.png)
+
+图 37  列表批量功能操作

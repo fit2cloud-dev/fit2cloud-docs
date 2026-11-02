@@ -11,7 +11,11 @@ title: "消息模板"
 
 ![!消息通知](/img/metersphere/X-Pack/message/消息通知.png)
 
+图 1  消息通知
+
 ![!自定义消息通知](/img/metersphere/X-Pack/message/自定义消息通知.png)
+
+图 2  自定义消息通知
 
 :::note[自定义消息模板的字段说明]
 
@@ -29,6 +33,8 @@ title: "消息模板"
 
 ![!消息脚本](/img/metersphere/X-Pack/message/消息脚本.png)
 
+图 3  消息脚本
+
 :::note
 
 点击左侧字段，自定义消息模板中的标题和内容均可使用字段变量，右侧预览处实时更新消息通知内容。
@@ -37,6 +43,8 @@ title: "消息模板"
 
 ![!自定义消息模板内容](/img/metersphere/X-Pack/message/自定义消息模板内容.png)
 
+图 4  自定义消息模板内容
+
 :::note
 
 保存自定义消息模板后，在【预览】处显示消息通知内容。
@@ -44,3 +52,5 @@ title: "消息模板"
 :::
 
 ![!预览内容](/img/metersphere/X-Pack/message/预览内容.png)
+
+图 5  预览内容

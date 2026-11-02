@@ -20,6 +20,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![ideal_plugin](/img/metersphere-v2/user_manual/plugin_use/idea_plugin/idea_plugin_4.png)
 
+图 1  在线安装插件
+
 ### 1.2 离线安装
 
 :::note
@@ -31,6 +33,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![ideal_plugin](/img/metersphere-v2/user_manual/plugin_use/idea_plugin/idea_plugin_1.png)
 
+图 2  离线安装插件
+
 ## 2 插件使用
 
 :::note
@@ -41,6 +45,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![ideal_plugin](/img/metersphere-v2/user_manual/plugin_use/idea_plugin/idea_plugin_2.png)
 
+图 3  配置 MeterSphere 连接
+
 :::note
 
  配置导出是否覆盖、目录层级等信息后，点击【Apply】按钮。
@@ -48,6 +54,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![ideal_plugin](/img/metersphere-v2/user_manual/plugin_use/idea_plugin/idea_plugin_3.png)
+
+图 4  配置导出选项
 
 :::note
 

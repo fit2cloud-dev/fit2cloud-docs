@@ -5,6 +5,8 @@ title: "系统架构"
 ## 1 整体架构
 ![整体架构](/img/metersphere/system-arch.png)
 
+图 1  系统架构
+
 :::note[组件说明]
 
 - **[Frontend](https://github.com/metersphere/metersphere)**: MeterSphere 的前端工程, 基于 Vue.js 进行开发。
@@ -30,6 +32,8 @@ title: "系统架构"
 
 ![组件说明](/img/metersphere/components.png)
 
+图 2  组件说明
+
 ## 2 管理模型
 
 :::note
@@ -47,6 +51,8 @@ MeterSphere 提供了多租户、多角色的管理模型, 用户可根据所在
 :::
 
 ![管理模型](/img/metersphere/management-model.png)
+
+图 3  管理模型
 
 ## 3 技术栈
 

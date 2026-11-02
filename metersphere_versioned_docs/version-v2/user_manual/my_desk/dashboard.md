@@ -11,6 +11,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![显示用例个数](/img/metersphere-v2/user_manual/my_desk/dashboard/all_1.png)
 
+图 1  显示用例个数（1）
+
 ## 1 我的待办
 
 :::note
@@ -20,6 +22,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![显示我的待办](/img/metersphere-v2/user_manual/my_desk/dashboard/todo_1.png)
+
+图 2  显示我的待办
 
 ## 2 我的关注
 
@@ -31,6 +35,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![显示我的关注](/img/metersphere-v2/user_manual/my_desk/dashboard/attention_1.png)
 
+图 3  显示我的关注
+
 ## 3 我创建的用例
 
 :::note
@@ -41,6 +47,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![显示用例个数](/img/metersphere-v2/user_manual/my_desk/dashboard/case_1.png)
 
+图 4  显示用例个数（2）
+
 ## 4 我创建的缺陷
 
 :::note
@@ -50,3 +58,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![显示缺陷个数](/img/metersphere-v2/user_manual/my_desk/dashboard/bug_1.png)
+
+图 5  显示缺陷个数

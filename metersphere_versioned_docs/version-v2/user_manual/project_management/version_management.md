@@ -19,6 +19,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/版本管理_1.png)
 
+图 1  创建版本
+
 :::note
 
 在【创建版本】页面，输入基本配置信息，点击【保存】或者【保存并创建】即可。
@@ -26,6 +28,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/版本管理_2.png)
+
+图 2  版本配置
 
 :::note
 
@@ -35,6 +39,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/版本管理_3.png)
 
+图 3  版本状态与最新版
+
 :::note
 
 点击【编辑】按钮，进入编辑页面，编辑完成后点击【保存】即可。
@@ -43,6 +49,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/版本管理_4.png)
 
+图 4  编辑版本
+
 :::note
 
 点击【删除】按钮，按照提示输入【DELETE-v1.0.0】，该版本号就被删除了。
@@ -50,3 +58,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/版本管理_5.png)
+
+图 5  删除版本

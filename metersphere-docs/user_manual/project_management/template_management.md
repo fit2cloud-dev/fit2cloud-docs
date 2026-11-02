@@ -17,6 +17,8 @@ title: "模板管理"
 
 ![组织模板](/img/metersphere/project_management/template_management/组织模板.png)
 
+图 1  组织模板
+
 :::note
 
 在【项目管理-模板管理】自定义缺陷工作流，用例、缺陷模板及模板字段。
@@ -24,6 +26,8 @@ title: "模板管理"
 :::
 
 ![模板管理](/img/metersphere/project_management/template_management/模板管理.png)
+
+图 2  模板管理
 
 ## 1 用例模板
 ### 1.1 字段设置
@@ -36,6 +40,8 @@ title: "模板管理"
 
 ![新增字段设置](/img/metersphere/project_management/template_management/新增字段设置.png)
 
+图 3  新增字段设置
+
 :::note[操作说明]
 
 - 【查看】查看字段名称、描述、字段类型、选项等内容。
@@ -46,6 +52,8 @@ title: "模板管理"
 
 ![字段设置功能](/img/metersphere/project_management/template_management/字段设置功能.png)
 
+图 4  字段设置功能
+
 ### 1.2 模板设置
 
 :::note
@@ -55,6 +63,8 @@ title: "模板管理"
 :::
 
 ![编辑模板](/img/metersphere/project_management/template_management/编辑模板.png)
+
+图 5  编辑模板
 
 :::note[操作说明]
 
@@ -71,6 +81,8 @@ title: "模板管理"
 
 ![用例模板编辑页面](/img/metersphere/project_management/template_management/用例模板编辑页面.png)
 
+图 6  用例模板编辑页面
+
 :::note
 
 点击【模板名称】，查看模板内容。
@@ -78,6 +90,8 @@ title: "模板管理"
 :::
 
 ![查看用例默认模板](/img/metersphere/project_management/template_management/查看用例默认模板.png)
+
+图 7  查看用例默认模板
 
 ## 2 缺陷模板
 
@@ -89,6 +103,8 @@ title: "模板管理"
 
 ![组织缺陷模板](/img/metersphere/project_management/template_management/组织缺陷模板.png)
 
+图 8  组织缺陷模板
+
 :::note[说明]
 
 - 【字段设置】系统内置字段不可操作，只能操作自定义字段。
@@ -98,6 +114,8 @@ title: "模板管理"
 :::
 
 ![缺陷模板功能](/img/metersphere/project_management/template_management/缺陷模板功能.png)
+
+图 9  缺陷模板功能
 
 ### 2.1 字段设置
 
@@ -109,6 +127,8 @@ title: "模板管理"
 
 ![新增缺陷字段](/img/metersphere/project_management/template_management/新增缺陷字段.png)
 
+图 10  新增缺陷字段
+
 :::note
 
 自定义字段进行【查看】、【编辑】、【删除】操作。
@@ -116,6 +136,8 @@ title: "模板管理"
 :::
 
 ![新增字段的功能](/img/metersphere/project_management/template_management/新增字段的功能.png)
+
+图 11  新增字段的功能
 
 ### 2.2 模板设置
 
@@ -133,6 +155,8 @@ title: "模板管理"
 :::
 
 ![缺陷模板所有操作功能](/img/metersphere/project_management/template_management/缺陷模板所有操作功能.png)
+
+图 12  缺陷模板所有操作功能
 
 :::note[操作说明]
 
@@ -153,7 +177,11 @@ title: "模板管理"
 
 ![新增缺陷模板](/img/metersphere/project_management/template_management/新增缺陷模板.png)
 
+图 13  新增缺陷模板
+
 ![新增缺陷模板](/img/metersphere/project_management/template_management/新增缺陷模板勾选第三方平台.png)
+
+图 14  新增缺陷模板勾选第三方平台
 
 :::note[字段说明]
 
@@ -174,6 +202,8 @@ title: "模板管理"
 
 ![查看缺陷模板](/img/metersphere/project_management/template_management/查看缺陷模板.png)
 
+图 15  查看缺陷模板
+
 :::note
 
 选择指定模板，点击启用按钮，将其作为默认缺陷模板，在【缺陷管理-缺陷-创建缺陷】时，会使用刚设置的缺陷模板。
@@ -182,7 +212,11 @@ title: "模板管理"
 
 ![查看缺陷模板](/img/metersphere/project_management/template_management/点击开启默认模板.png)
 
+图 16  点击开启默认模板
+
 ![查看缺陷模板](/img/metersphere/project_management/template_management/缺陷创建使用模板.png)
+
+图 17  缺陷创建使用模板
 
 ### 2.3 工作流设置
 
@@ -195,6 +229,8 @@ title: "模板管理"
 
 ![新增字段设置](/img/metersphere/project_management/template_management/创建工作流.png)
 
+图 18  创建工作流
+
 :::note
 
 第一列为缺陷所在状态，在状态列点击【创建流转步骤】打勾，表示该行状态可流转到列的状态。设置后，在【缺陷管理】页面更新缺陷时，【状态】字段下拉框中显示刚设置的状态。
@@ -203,7 +239,11 @@ title: "模板管理"
 
 ![工作流阻塞状态](/img/metersphere/project_management/template_management/工作流阻塞状态.png)
 
+图 19  工作流阻塞状态
+
 ![缺陷里的状态流转](/img/metersphere/project_management/template_management/缺陷里的状态流转.png)
+
+图 20  缺陷里的状态流转
 
 :::note[操作说明]
 
@@ -216,3 +256,5 @@ title: "模板管理"
 :::
 
 ![工作流状态功能操作](/img/metersphere/project_management/template_management/工作流状态功能操作.png)
+
+图 21  工作流状态功能操作

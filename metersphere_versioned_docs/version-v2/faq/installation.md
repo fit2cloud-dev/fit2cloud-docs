@@ -429,6 +429,8 @@ flushall
 ## 37 日志中提示：`java.io.FileNotFoundException：/opt/metersphere/logs/metersphere/ms-jmeter-run-log.log(no such file or directory)`
 ![! 安装部署-500错误](/img/metersphere-v2/faq/FileNotFoundException.jpg)
 
+图 1  安装部署-500 错误
+
 :::note
 
 检查 selinux 状态，如果是开启状态，尝试关闭后再重启 docker，重新加载 MeterSphere。
@@ -457,6 +459,8 @@ spring.datasource.quartz.hikari.maximum-pool-size=你想要的数值
 :::
 
 ![! metersphere导入格式](/img/metersphere-v2/faq/mysql_yml.jpg)
+
+图 2  MeterSphere 导入格式
 
 ## 40 安装部署时报错：`Creating network "metersphere_ms-network" with driver "brige" Pool overlaps with other one on this address space`
 

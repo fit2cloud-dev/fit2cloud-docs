@@ -12,6 +12,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 ## 1 项目环境
 ![!项目设置](/img/metersphere-v2/project_management/项目环境.png)
 
+图 1  项目环境
+
 :::note
 
 【创建环境】、【导入】、【导出】、【编辑】、【复制】、【删除】等详细功能操作及说明参考 [系统设置->工作空间->环境管理](../system_management/workspace)。

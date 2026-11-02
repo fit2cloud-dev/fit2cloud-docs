@@ -195,6 +195,8 @@ singleServerConfig:
 
 ![server-start](/img/metersphere/dev/project_package.png)
 
+图 1  项目打包
+
 :::note
 
 - **启动服务**<br />
@@ -203,4 +205,8 @@ singleServerConfig:
 
 ![server-start](/img/metersphere/dev/build-start.png)
 
+图 2  构建启动
+
 ![server-start](/img/metersphere/dev/satrt_success.png)
+
+图 3  启动成功

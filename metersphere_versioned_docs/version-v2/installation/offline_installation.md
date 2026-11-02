@@ -244,6 +244,8 @@ cd metersphere-offline-installer-v2.3.0
 
 ![服务状态](/img/metersphere-v2/installation/ms-status.png)
 
+图 1  服务状态
+
 :::note
 
 等待几分钟后，使用命令 `msctl status` 检查服务运行情况，若各个组件都是 healthy 状态，通过浏览器访问如下页面登录 MeterSphere。

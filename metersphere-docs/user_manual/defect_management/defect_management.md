@@ -12,6 +12,8 @@ title: "缺陷管理"
 
 ![!缺陷创建](/img/metersphere/defect_management/缺陷创建.png)
 
+图 1  缺陷创建
+
 :::note
 
 进入缺陷页面，【JIRA默认模板】可以切换到【默认模板】或其他模板，填写相应内容进行创建。
@@ -20,7 +22,11 @@ title: "缺陷管理"
 
 ![!jira默认模板填写内容](/img/metersphere/defect_management/jira默认模板填写内容.png)
 
+图 2  Jira 默认模板填写内容
+
 ![!系统默认模板](/img/metersphere/defect_management/系统默认模板.png)
+
+图 3  系统默认模板
 
 :::note[字段说明]
 
@@ -39,6 +45,8 @@ title: "缺陷管理"
 
 ![!展示jira平台](/img/metersphere/defect_management/展示jira平台.png)
 
+图 4  展示 Jira 平台
+
 ## 2 同步缺陷
 
 :::note
@@ -49,6 +57,8 @@ title: "缺陷管理"
 
 ![!缺陷平台设置](/img/metersphere/defect_management/缺陷平台设置.png)
 
+图 5  缺陷平台设置
+
 :::note
 
 【手动同步】需要点击缺陷管理页面【同步缺陷】按钮即可进行缺陷双向同步。
@@ -57,7 +67,11 @@ title: "缺陷管理"
 
 ![!缺陷平台设置](/img/metersphere/defect_management/点击同步缺陷.png)
 
+图 6  点击同步缺陷
+
 ![!缺陷功能操作情况](/img/metersphere/defect_management/缺陷功能操作情况.png)
+
+图 7  缺陷功能操作情况
 
 :::note[操作说明]
 
@@ -77,6 +91,8 @@ title: "缺陷管理"
 :::
 
 ![!缺陷功能操作情况](/img/metersphere/defect_management/查看缺陷进入缺陷详情页面.png)
+
+图 8  查看缺陷进入缺陷详情页面
 
 :::note[说明]
 
@@ -98,3 +114,5 @@ title: "缺陷管理"
 :::
 
 ![!缺陷功能操作情况](/img/metersphere/defect_management/批量恢复和删除操作.png)
+
+图 9  批量恢复和删除操作

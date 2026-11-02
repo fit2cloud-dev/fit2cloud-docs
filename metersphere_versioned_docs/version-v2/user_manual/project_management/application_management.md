@@ -6,6 +6,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 ## 1 应用管理权限
 ![!项目设置](/img/metersphere-v2/project_management/应用管理权限1.png)
 
+图 1  更多选项菜单
+
 :::note
 
 如果【项目设置】-【更多选项】里看不到【应用管理】菜单，表示此用户没有此权限，需要到【系统设置】-【系统】-【用户组与权限】修改【项目管理员】的权限。
@@ -14,6 +16,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/应用管理权限2.png)
 
+图 2  用户组应用权限
+
 :::note
 
 选中应用设置权限即可。
@@ -21,6 +25,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/应用管理权限3.png)
+
+图 3  应用权限设置
 
 ## 2 应用管理设置
 
@@ -32,6 +38,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/应用管理1.png)
 
+图 4  应用管理页面
+
 ### 2.1 工作台
 
 :::note
@@ -42,7 +50,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/工作台.png)
 
+图 5  工作台配置
+
 ![!项目设置](/img/metersphere-v2/project_management/工作台_1.png)
+
+图 6  待更新列表配置
 
 ### 2.2 测试跟踪设置
 
@@ -54,6 +66,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/测试跟踪设置.png)
 
+图 7  测试跟踪设置页
+
 :::note
 
 - **启动公共用例库**
@@ -61,6 +75,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/测试跟踪设置5.png)
+
+图 8  启用公共用例库
 
 :::note
 
@@ -71,6 +87,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/测试跟踪设置2.png)
 
+图 9  测试用例自定义 ID
+
 :::note
 
 - **定时清理测试计划报告**
@@ -79,6 +97,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/测试跟踪设置3.png)
 
+图 10  定时清理测试计划报告
+
 :::note
 
 - **报告分享链接**
@@ -86,6 +106,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/测试跟踪设置4.png)
+
+图 11  报告分享链接
 
 ### 2.3 接口测试设置
 
@@ -97,6 +119,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/接口测试设置1.png)
 
+图 12  接口测试设置页
+
 :::note
 
 - **接口定义URL可重复**<br />
@@ -105,6 +129,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/接口测试设置2.png)
+
+图 13  接口定义 URL 可重复
 
 :::note
 
@@ -115,6 +141,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/接口测试设置3.png)
 
+图 14  场景自定义 ID
+
 :::note
 
 - **TCP Mock Port**<br />
@@ -124,6 +152,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/接口测试设置4.png)
 
+图 15  TCP Mock 服务
+
 :::note
 
 如果 TCP 协议的接口需要使用 Mock 服务，则需要开启此服务，开启后在接口测试中，Mock 服务才可用。
@@ -131,6 +161,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/接口测试设置5.png)
+
+图 16  TCP Mock 配置
 
 :::note
 
@@ -140,6 +172,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/接口测试设置6.png)
 
+图 17  定时清理接口测试报告
+
 :::note
 
 - **报告分享链接**
@@ -147,6 +181,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/接口测试设置7.png)
+
+图 18  接口测试报告分享链接
 
 :::note
 
@@ -156,12 +192,20 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目设置](/img/metersphere-v2/project_management/接口测试设置8.png)
 
+图 19  接口定义快捷添加按钮
+
 ![!项目设置](/img/metersphere-v2/project_management/接口测试设置9.png)
+
+图 20  快捷添加按钮配置
 
 ### 2.4 UI测试设置
 ![!项目设置](/img/metersphere-v2/project_management/UI测试.png)
 
+图 21  UI 测试设置页
+
 ![!项目设置](/img/metersphere-v2/project_management/UI测试_1.png)
+
+图 22  UI 测试设置项
 
 ### 2.5 性能测试设置
 
@@ -172,3 +216,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目设置](/img/metersphere-v2/project_management/性能测试设置.png)
+
+图 23  性能测试设置页

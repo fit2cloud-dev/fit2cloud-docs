@@ -21,6 +21,8 @@ MeterSphere 性能测试模块支持通过已有的接口测试用例、场景�
 
 ![!测试资源池](/img/metersphere-v2/quick_start/performance/快速测试资源池1.png)
 
+图 1  快速测试资源池
+
 ## 2 修改当前站点 URL
 
 :::note
@@ -30,6 +32,8 @@ MeterSphere 性能测试模块支持通过已有的接口测试用例、场景�
 :::
 
 ![!当前站点URL](/img/metersphere-v2/quick_start/performance/快速修改站点.png)
+
+图 2  快速修改站点
 
 ## 3 创建性能测试
 
@@ -42,6 +46,8 @@ MeterSphere 性能测试模块支持通过已有的接口测试用例、场景�
 :::
 
 ![!创建性能测试](/img/metersphere-v2/quick_start/performance/创建性能测试.png)
+
+图 3  创建性能测试
 
 ## 4 调整压力配置
 
@@ -61,6 +67,8 @@ MeterSphere 性能测试模块支持通过已有的接口测试用例、场景�
 
 ![!创建性能测试](/img/metersphere-v2/quick_start/performance/性能_测试配置.png)
 
+图 4  性能 测试配置
+
 ## 5 执行并查看报告
 
 :::note
@@ -71,10 +79,20 @@ MeterSphere 性能测试模块支持通过已有的接口测试用例、场景�
 
 ![!性能测试报告](/img/metersphere-v2/quick_start/performance/性能_性能测试报告1.png)
 
+图 5  性能测试报告（1）
+
 ![!性能测试报告](/img/metersphere-v2/quick_start/performance/性能_性能测试报告2.png)
+
+图 6  性能测试报告（2）
 
 ![!性能测试报告](/img/metersphere-v2/quick_start/performance/性能_性能测试报告3.png)
 
+图 7  性能测试报告（3）
+
 ![!性能测试报告](/img/metersphere-v2/quick_start/performance/性能_性能测试报告4.png)
 
+图 8  性能测试报告（4）
+
 ![!性能测试报告](/img/metersphere-v2/quick_start/performance/性能_性能测试报告5.png)
+
+图 9  性能测试报告（5）

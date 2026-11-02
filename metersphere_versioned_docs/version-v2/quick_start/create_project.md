@@ -13,6 +13,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!项目管理](/img/metersphere-v2/system_management/创建项目快速.png)
 
+图 1  创建项目快速
+
 :::note
 
 在【项目管理】页面，点击【创建项目】 按钮，打开【创建项目】对话框，在对话框中输入项目的基本信息后，点击【确定】按钮创建一个新项目。
@@ -20,3 +22,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!项目管理](/img/metersphere-v2/system_management/快速创建项目1.png)
+
+图 2  快速创建项目

@@ -12,6 +12,8 @@ title: "OAuth2.0"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/oauth2/oauth2应用.png)
 
+图 1  OAuth2 应用
+
 :::note
 
 获取 Client ID 和 Client secrets 凭证信息。
@@ -20,6 +22,8 @@ title: "OAuth2.0"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/oauth2/获取凭证.png)
 
+图 2  获取凭证
+
 :::note
 
 点击【系统设置-系统-系统参数-认证设置-添加认证-OAuth2.0】填写认证信息，点击【添加】即可。
@@ -27,6 +31,8 @@ title: "OAuth2.0"
 :::
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/oauth2/oauth2配置.png)
+
+图 3  OAuth2 配置
 
 :::note[字段说明]
 
@@ -49,8 +55,16 @@ title: "OAuth2.0"
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/oauth2/oauth2登录页面.png)
 
+图 4  OAuth2 登录页面
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/oauth2/源页面登录.png)
+
+图 5  源页面登录
 
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/oauth2/github页面登录.png)
 
+图 6  GitHub 页面登录
+
 ![!资源池列表页面](/img/metersphere/X-Pack/single_sign/oauth2/成功登录.png)
+
+图 7  成功登录

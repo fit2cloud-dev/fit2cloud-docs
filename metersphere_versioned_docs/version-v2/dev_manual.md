@@ -214,6 +214,8 @@ database: 1
 
 ![server-start](/img/metersphere-v2/dev/project_package.png)
 
+图 1  项目打包
+
 :::note
 
 - **启动顺序**<br />
@@ -221,8 +223,13 @@ database: 1
 
 :::
 
-![server-start](/img/metersphere-v2/dev/eureka-gateway-start.png)<br />
+![server-start](/img/metersphere-v2/dev/eureka-gateway-start.png)
+
+图 2  启动 Eureka 与 Gateway 服务
+
 ![server-start](/img/metersphere-v2/dev/eureka_gateway_success.png)
+
+图 3  Eureka 与 Gateway 服务启动成功
 
 :::note
 
@@ -231,6 +238,8 @@ database: 1
 :::
 
 ![server-start](/img/metersphere-v2/dev/gateway_success.png)
+
+图 4  Gateway 服务启动成功
 
 :::note
 

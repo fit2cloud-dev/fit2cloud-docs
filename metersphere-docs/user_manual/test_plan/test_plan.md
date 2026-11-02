@@ -13,6 +13,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/新建测试计划1.png)
 
+图 1  新建测试计划（1）
+
 :::note
 
 在新建测试计划页面中，依次填写测试计划名称、描述、创建类型、所属模块、计划起止时间、标签等信息。
@@ -21,6 +23,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/新建测试计划2.png)
 
+图 2  新建测试计划（2）
+
 :::note
 
 点击【更多设置】设置【允许关联重复用例】、【允许自动更新状态】和【通过阈值】，点击【创建】创建测试计划。
@@ -28,6 +32,8 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/新建测试计划5.png)
+
+图 3  新建测试计划（3）
 
 :::note[说明]
 
@@ -47,6 +53,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试计划创建完成后.png)
 
+图 4  测试计划创建完成后
+
 :::note
 
 测试规划页面默认展示【功能用例】、【接口用例】、【场景用例】三种类型测试。
@@ -54,6 +62,8 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试规划三种类型.png)
+
+图 5  测试规划三种类型
 
 :::note[关联用例配置]
 
@@ -63,6 +73,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/功能用例关联用例.png)
 
+图 6  功能用例关联用例
+
 :::note
 
 点击【接口用例-单接口验证】，右侧显示场景用例的【配置】页面，可对接口使用的资源池、环境、串行/并行、是否开启失败停止进行配置。
@@ -70,6 +82,8 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/接口用例的配置页面.png)
+
+图 7  接口用例的配置页面
 
 :::note
 
@@ -79,6 +93,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/场景用例的配置页面.png)
 
+图 8  场景用例的配置页面
+
 :::note[资源池、环境配置]
 
 可以对接口用例和场景用例使用的资源池、环境进行配置。
@@ -87,7 +103,11 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试规划环境管理配置.png)
 
+图 9  测试规划环境管理配置
+
 ![!测试计划](/img/metersphere/test_plan/plan/测试规划测试资源池配置.png)
+
+图 10  测试规划测试资源池配置
 
 :::note
 
@@ -97,6 +117,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/场景用例添加测试点.png)
 
+图 11  场景用例添加测试点
+
 :::note[测试点配置]
 
 点击【添加测试点】，在【场景用例】处会新建测试点，点击【保存】，即可保存新添加的测试点。
@@ -105,7 +127,11 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/新增测试点.png)
 
+图 12  新增测试点
+
 ![!测试计划](/img/metersphere/test_plan/plan/保存测试点.png)
+
+图 13  保存测试点
 
 :::note
 
@@ -115,6 +141,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试点的配置页面.png)
 
+图 14  测试点的配置页面
+
 :::note
 
 选中【测试点】，可以进行【添加测试点】、【关联用例】、【配置】、【删除】操作。
@@ -122,6 +150,8 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试点的功能操作.png)
+
+图 15  测试点的功能操作
 
 :::note
 
@@ -131,6 +161,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试点关联用例.png)
 
+图 16  测试点关联用例
+
 :::note
 
 关联完成后，在测试点处显示个数，也可切到场景用例处显示具体关联的场景，场景用例可进行【执行】或【取消关联】操作。
@@ -139,7 +171,11 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试点关联用例显示.png)
 
+图 17  测试点关联用例显示
+
 ![!测试计划](/img/metersphere/test_plan/plan/显示场景用例的用例.png)
+
+图 18  显示场景用例的用例
 
 ### 1.3 执行
 
@@ -151,6 +187,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/点击执行场景.png)
 
+图 19  点击执行场景
+
 :::note[功能用例]
 
 切到功能用例处查看具体关联的功能用例。
@@ -158,6 +196,8 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试点关联功能用例显示.png)
+
+图 20  测试点关联功能用例显示
 
 :::note[脑图模式执行]
 
@@ -167,6 +207,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/脑图模式执行.png)
 
+图 21  脑图模式执行
+
 :::note
 
 支持使用快捷键执行测试用例，成功快捷键 S，失败快捷键 E，阻塞快捷键 B。
@@ -174,6 +216,8 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/脑图模式执行测试用例.png)
+
+图 22  脑图模式执行测试用例
 
 :::note
 
@@ -183,6 +227,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试计划脑图模式执行.png)
 
+图 23  测试计划脑图模式执行
+
 :::note[列表模式执行]
 
 如图，点击【执行】进入【用例详情】在步骤描述处填写【实际结果】和【步骤执行结果】，修改当前用例【执行状态】和【评论】后，点击【提交结果】完成当前用例执行。
@@ -191,7 +237,11 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/点击执行功能用例.png)
 
+图 24  点击执行功能用例
+
 ![!测试计划](/img/metersphere/test_plan/plan/测试计划执行2.png)
+
+图 25  测试计划执行
 
 :::note
 
@@ -201,6 +251,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/创建缺陷1.png)
 
+图 26  创建缺陷（1）
+
 :::note
 
 点击【新建】，可自动录入用例步骤生成缺陷内容。
@@ -208,6 +260,8 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/创建缺陷2.png)
+
+图 27  创建缺陷（2）
 
 :::note
 
@@ -217,6 +271,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/功能用例执行结果.png)
 
+图 28  功能用例执行结果
+
 :::note
 
 点击【生成报告】自动生成，可自动生成测试报告。
@@ -225,7 +281,11 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试点生成报告.png)
 
+图 29  测试点生成报告（1）
+
 ![!测试计划](/img/metersphere/test_plan/plan/测试点生成报告1.png)
+
+图 30  测试点生成报告（2）
 
 :::note
 
@@ -235,6 +295,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试点生成报告执行历史.png)
 
+图 31  测试点生成报告执行历史
+
 :::note
 
 测试计划页面，可以编辑、生成报告、复制、关注、删除、执行、移动、取消关联、清空等操作。
@@ -242,6 +304,8 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试计划详情页面所有操作.png)
+
+图 32  测试计划详情页面所有操作
 
 :::note[操作说明]
 
@@ -263,6 +327,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试计划筛选.png)
 
+图 33  测试计划筛选
+
 :::note
 
 根据条件筛选内容后，保存为自定义视图。
@@ -271,7 +337,11 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试计划的视图.png)
 
+图 34  测试计划的视图
+
 ![!测试计划](/img/metersphere/test_plan/plan/自定义视图功能.png)
+
+图 35  自定义视图功能
 
 :::note[测试计划功能列表]
 
@@ -281,7 +351,11 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/功能用例关联缺陷.png)
 
+图 36  功能用例关联缺陷
+
 ![!测试计划](/img/metersphere/test_plan/plan/功能用例页面的批量操作.png)
+
+图 37  功能用例页面的批量操作
 
 :::note[测试计划场景列表]
 
@@ -291,6 +365,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/场景用例页面的批量操作.png)
 
+图 38  场景用例页面的批量操作
+
 :::note[测试计划列表]
 
 计划列表页面提供【执行】、【编辑】、【复制】、【创建定时任务】、【删除】、【只看已归档】等操作。
@@ -298,6 +374,8 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/计划列表功能.png)
+
+图 39  计划列表功能
 
 :::note[操作说明]
 
@@ -320,6 +398,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/测试计划组创建.png)
 
+图 40  测试计划组创建
+
 :::note
 
 进入【测试计划-计划】界面，点击【新建】新建测试计划，进入新建页面测试计划页面，创建到选择计划组。
@@ -328,7 +408,11 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/新建测试计划1.png)
 
+图 41  新建测试计划（4）
+
 ![!测试计划](/img/metersphere/test_plan/plan/计划组的计划.png)
+
+图 42  计划组的计划
 
 :::note
 
@@ -338,7 +422,11 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/移动到计划组.png)
 
+图 43  移动到计划组
+
 ![!测试计划](/img/metersphere/test_plan/plan/批量移动到计划组里.png)
+
+图 44  批量移动到计划组里
 
 :::note
 
@@ -348,6 +436,8 @@ title: "计划"
 
 ![!测试计划](/img/metersphere/test_plan/plan/展开计划组.png)
 
+图 45  展开计划组
+
 :::note
 
 计划组列表页面提供【执行】、【编辑】、【复制】、【定时任务】、【删除】、【只看已归档】等操作。
@@ -355,3 +445,5 @@ title: "计划"
 :::
 
 ![!测试计划](/img/metersphere/test_plan/plan/计划组的所有功能.png)
+
+图 46  计划组的所有功能

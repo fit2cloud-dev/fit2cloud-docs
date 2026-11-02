@@ -26,7 +26,11 @@ VirtualBox 下载链接：[https://download.virtualbox.org/virtualbox/7.0.14/Vir
 
 ![VirtualBox](/img/metersphere/installation/windows/ova部署安装VirtualBox1.png)
 
+图 1  OVA 部署安装 VirtualBox（1）
+
 ![VirtualBox](/img/metersphere/installation/windows/ova部署安装VirtualBox2.png)
+
+图 2  OVA 部署安装 VirtualBox（2）
 
 :::note
 
@@ -51,6 +55,8 @@ VirtualBox 下载链接：[https://download.virtualbox.org/virtualbox/7.0.14/Vir
 
 ![导入 OVA](/img/metersphere/installation/windows/导入Ubuntu镜像.png)
 
+图 3  导入 Ubuntu 镜像
+
 :::note
 
 选择一个可用空间在 50G 以上的磁盘位置，点击 “完成”。
@@ -58,6 +64,8 @@ VirtualBox 下载链接：[https://download.virtualbox.org/virtualbox/7.0.14/Vir
 :::
 
 ![导入 OVA](/img/metersphere/installation/windows/选择磁盘空间.png)
+
+图 4  选择磁盘空间
 
 :::note
 
@@ -67,6 +75,8 @@ VirtualBox 下载链接：[https://download.virtualbox.org/virtualbox/7.0.14/Vir
 
 ![导入 OVA](/img/metersphere/installation/windows/等待完成OVA导入.png)
 
+图 5  等待完成 OVA 导入
+
 :::note
 
 导入完成后，选择导入的虚拟机，点击“启动”按钮。
@@ -74,6 +84,8 @@ VirtualBox 下载链接：[https://download.virtualbox.org/virtualbox/7.0.14/Vir
 :::
 
 ![启动](/img/metersphere/installation/windows/虚拟机导入完成.png)
+
+图 6  虚拟机导入完成
 
 :::note
 
@@ -86,6 +98,8 @@ VirtualBox 下载链接：[https://download.virtualbox.org/virtualbox/7.0.14/Vir
 
 ![启动](/img/metersphere/installation/windows/启动虚拟机输入密码.png)
 
+图 7  启动虚拟机输入密码
+
 :::note
 
 查看虚拟机的 IP，输入命令 ip a，每个环境的 IP 地址都不一样，本次演示环境的虚拟机 IP 地址为 192.168.11.182
@@ -93,6 +107,8 @@ VirtualBox 下载链接：[https://download.virtualbox.org/virtualbox/7.0.14/Vir
 :::
 
 ![启动](/img/metersphere/installation/windows/查看虚拟机IP.png)
+
+图 8  查看虚拟机 IP
 
 ### 2.3 安装 MeterSphere
 
@@ -104,7 +120,11 @@ VirtualBox 下载链接：[https://download.virtualbox.org/virtualbox/7.0.14/Vir
 
 ![启动](/img/metersphere/installation/windows/powershell.png)
 
+图 9  PowerShell 执行命令
+
 ![启动](/img/metersphere/installation/windows/登录进服务器.png)
+
+图 10  登录进服务器
 
 :::note
 
@@ -113,6 +133,8 @@ VirtualBox 下载链接：[https://download.virtualbox.org/virtualbox/7.0.14/Vir
 :::
 
 ![启动](/img/metersphere/installation/windows/下载安装包.png)
+
+图 11  下载安装包
 
 :::note
 
@@ -127,7 +149,11 @@ cd metersphere-ce-online-installer-v3.x.y
 
 ![启动](/img/metersphere/installation/windows/安装MS.png)
 
+图 12  安装 MS
+
 ![启动](/img/metersphere/installation/windows/安装完成.png)
+
+图 13  安装完成
 
 :::note
 
@@ -136,3 +162,5 @@ cd metersphere-ce-online-installer-v3.x.y
 :::
 
 ![启动](/img/metersphere/installation/windows/查询状态.png)
+
+图 14  查询状态

@@ -34,3 +34,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![界面说明](/img/metersphere-v2/界面说明.png)
+
+图 1  界面说明

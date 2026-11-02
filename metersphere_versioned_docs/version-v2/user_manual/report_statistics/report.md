@@ -20,6 +20,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建报告](/img/metersphere-v2/report_statistics/创建报告_1.png)
 
+图 1  创建报告入口
+
 :::note
 
 填写报告的基础信息，鼠标悬浮到【示例】前面的小图标，可看到内容为【文本】和【报表】，根据需要进行配置。
@@ -27,6 +29,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!创建报告](/img/metersphere-v2/report_statistics/创建报告_2.png)
+
+图 2  报告基础信息
 
 :::note
 
@@ -36,7 +40,11 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!创建报告](/img/metersphere-v2/report_statistics/创建报告_3.png)
 
+图 3  报告预览
+
 ![!创建报告](/img/metersphere-v2/report_statistics/创建报告_4.png)
+
+图 4  报告列表
 
 - 预览报告
 
@@ -48,6 +56,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!预览报告](/img/metersphere-v2/report_statistics/预览.png)
 
+图 5  预览
+
 - 复制报告
 
 :::note
@@ -57,6 +67,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!复制报告](/img/metersphere-v2/report_statistics/复制.png)
+
+图 6  复制
 
 - 编辑报告
 
@@ -68,6 +80,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!编辑报告](/img/metersphere-v2/report_statistics/编辑报告.png)
 
+图 7  编辑报告
+
 - 删除报告
 
 :::note
@@ -77,6 +91,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!删除报告](/img/metersphere-v2/report_statistics/测试报告_删除.png)
+
+图 8  测试报告 删除
 
 - 定时发送
 
@@ -88,4 +104,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!定时发送报告](/img/metersphere-v2/report_statistics/定时任务.png)
 
+图 9  定时任务
+
 ![!定时发送报告](/img/metersphere-v2/report_statistics/定时任务配置.png)
+
+图 10  定时任务配置

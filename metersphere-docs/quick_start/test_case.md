@@ -22,6 +22,8 @@ title: "使用用例管理"
 
 ![!测试用例](/img/metersphere/quick_start/test_case/添加模块.png)
 
+图 1  添加模块
+
 ## 3 创建测试用例
 
 :::note
@@ -32,7 +34,11 @@ title: "使用用例管理"
 
 ![!测试用例](/img/metersphere/quick_start/test_case/创建用例.png)
 
+图 2  创建用例
+
 ![!测试用例](/img/metersphere/quick_start/test_case/功能用例编辑.png)
+
+图 3  功能用例编辑
 
 ## 4 创建评审计划
 
@@ -44,7 +50,11 @@ title: "使用用例管理"
 
 ![!测试用例](/img/metersphere/quick_start/test_case/用例评审入口.png)
 
+图 4  用例评审入口
+
 ![!创建用例评审](/img/metersphere/quick_start/test_case/创建用例评审页面.png)
+
+图 5  创建用例评审页面
 
 :::note[说明]
 
@@ -63,9 +73,15 @@ title: "使用用例管理"
 
 ![!关联测试用例](/img/metersphere/quick_start/test_case/1.png)
 
+图 6  关联测试用例（1）
+
 ![!关联测试用例](/img/metersphere/quick_start/test_case/2.png)
 
+图 7  关联测试用例（2）
+
 ![!关联测试用例](/img/metersphere/quick_start/test_case/用例评审关联用例.png)
+
+图 8  用例评审关联用例
 
 ## 5 评审
 
@@ -77,8 +93,15 @@ title: "使用用例管理"
 
 ![!评审测试用例](/img/metersphere/quick_start/test_case/关联完成列表1.png)
 
+图 9  关联完成列表
+
 ![!评审测试用例](/img/metersphere/quick_start/test_case/评审操作1.png)
+
+图 10  评审操作
+
 ![!评审测试用例](/img/metersphere/quick_start/test_case/完成.png)
+
+图 11  完成
 
 :::note[操作说明]
 
@@ -98,9 +121,15 @@ title: "使用用例管理"
 
 ![!测试计划](/img/metersphere/quick_start/test_case/新建测试计划1.png)
 
+图 12  新建测试计划（1）
+
 ![!测试计划](/img/metersphere/quick_start/test_case/新建测试计划2.png)
 
+图 13  新建测试计划（2）
+
 ![!测试计划](/img/metersphere/quick_start/test_case/新建测试计划3.png)
+
+图 14  新建测试计划（3）
 
 ## 7 测试计划执行
 
@@ -112,7 +141,11 @@ title: "使用用例管理"
 
 ![!测试计划](/img/metersphere/quick_start/test_case/测试计划执行1.png)
 
+图 15  测试计划执行（1）
+
 ![!测试计划](/img/metersphere/quick_start/test_case/测试计划执行2.png)
+
+图 16  测试计划执行（2）
 
 :::note
 
@@ -122,7 +155,11 @@ title: "使用用例管理"
 
 ![!测试计划](/img/metersphere/quick_start/test_case/创建缺陷1.png)
 
+图 17  创建缺陷（1）
+
 ![!测试计划](/img/metersphere/quick_start/test_case/创建缺陷2.png)
+
+图 18  创建缺陷（2）
 
 ## 8 生成报告
 
@@ -134,6 +171,8 @@ title: "使用用例管理"
 
 ![!报告](/img/metersphere/quick_start/test_case/生成报告.png)
 
+图 19  生成报告
+
 ## 9 查看报告
 
 :::note
@@ -143,3 +182,5 @@ title: "使用用例管理"
 :::
 
 ![!报告](/img/metersphere/quick_start/test_case/查看报告2.png)
+
+图 20  查看报告

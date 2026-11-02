@@ -12,6 +12,8 @@ title: "第三方平台插件开发"
 
 ![服务集成插件](/img/metersphere/dev/项目结构.png)
 
+图 1  项目结构
+
 :::note[POM文件]
 
 ```
@@ -58,6 +60,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 :::
 
 ![服务集成插件](/img/metersphere/dev/依赖关系.png)
+
+图 2  依赖关系
 
 ## 2 前端配置文件
 

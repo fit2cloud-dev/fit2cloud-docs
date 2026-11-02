@@ -25,6 +25,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能测试报告](/img/metersphere-v2/performance/性能测试_报告.png)
 
+图 1  性能测试 报告
+
 :::note
 
 - **测试概览**:认进入测试报告，即为测试概览页面，可看到不同指标下的测试数据汇总情况。
@@ -32,6 +34,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_测试概览](/img/metersphere-v2/performance/性能_测试概览.png)
+
+图 2  性能 测试概览
 
 :::note
 
@@ -41,6 +45,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能测试_测试详情](/img/metersphere-v2/performance/性能测试_测试详情.png)
 
+图 3  性能测试 测试详情
+
 :::note
 
 - **请求统计**:性能测试所有请求情况的统计和分析。
@@ -48,6 +54,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_请求统计](/img/metersphere-v2/performance/性能_请求统计.png)
+
+图 4  性能 请求统计
 
 :::note
 
@@ -57,6 +65,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能_错误记录](/img/metersphere-v2/performance/性能_错误记录.png)
 
+图 5  性能 错误记录
+
 :::note
 
 - **日志详情**:每次执行性能测试时，都会记录和保存本次执行过程中所有的日志情况，方便技术人员问题的查阅和定位。同时可以下载完整的日志信息。
@@ -64,6 +74,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_日志详情](/img/metersphere-v2/performance/性能_日志详情.png)
+
+图 6  性能 日志详情
 
 :::note
 
@@ -73,6 +85,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能_监控详情](/img/metersphere-v2/performance/性能_监控详情.png)
 
+图 7  性能 监控详情
+
 :::note
 
 - **测试配置**:查看此报告对应的每个场景对应的压力配置情况。点选每个场景可以查看各自的压力配置。
@@ -80,6 +94,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_测试配置](/img/metersphere-v2/performance/性能_测试配置.png)
+
+图 8  性能 测试配置
 
 :::note
 
@@ -89,6 +105,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能_立即停止](/img/metersphere-v2/performance/性能_立即停止.png)
 
+图 9  性能 立即停止
+
 :::note
 
 - **再次执行**:点击【再次执行】按钮，可再次执行测试。
@@ -96,6 +114,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_再次执行](/img/metersphere-v2/performance/性能_再次执行.png)
+
+图 10  性能 再次执行
 
 :::note
 
@@ -105,6 +125,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能_导出报告](/img/metersphere-v2/performance/性能_导出报告.png)
 
+图 11  性能 导出报告
+
 :::note
 
 - **分享报告**:点击【分享报告】按钮，系统即会生成该报告对应的链接。接下来，点击【复制】按钮就可以分享给需要查看报告的用户。
@@ -112,6 +134,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_分享报告](/img/metersphere-v2/performance/性能_分享报告.png)
+
+图 12  性能 分享报告
 
 :::note
 
@@ -121,6 +145,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能_分享报告_设置时长](/img/metersphere-v2/performance/性能_分享报告_设置时长.png)
 
+图 13  性能 分享报告 设置时长
+
 :::note
 
 - **报告对比**：点击【报告对比】，勾选要对比的报告，点击【确定】按钮即可。
@@ -128,6 +154,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_报告对比](/img/metersphere-v2/performance/性能_报告对比.png)
+
+图 14  性能 报告对比
 
 :::note
 
@@ -137,6 +165,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能_下载JTL文件](/img/metersphere-v2/performance/性能_下载JTL文件.png)
 
+图 15  性能 下载 JTL 文件
+
 :::note
 
  - **下载执行文件**：点击【下载执行文件】，可下载测试 JMX 脚本配置文件(包括 Jar包、CSV文件等)。
@@ -144,6 +174,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_下载执行文件](/img/metersphere-v2/performance/性能_下载执行文件.png)
+
+图 16  性能 下载执行文件
 
 ## 2 测试报告管理
 
@@ -155,6 +187,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能测试_报告列表](/img/metersphere-v2/performance/性能测试_报告列表.png)
 
+图 17  性能测试 报告列表
+
 :::note
 
 - **报告详情**：点击【报告详情】可查看报告。
@@ -163,6 +197,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能测试_报告详情](/img/metersphere-v2/performance/性能测试_报告详情.png)
 
+图 18  性能测试 报告详情
+
 :::note
 
 - **对比**：点击【对比】可进行多报告数据对比。
@@ -170,7 +206,12 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_报告对比](/img/metersphere-v2/performance/性能_测试报告对比.png)
+
+图 19  性能 测试报告对比（1）
+
 ![!性能_报告对比](/img/metersphere-v2/performance/性能_测试报告对比2.png)
+
+图 20  性能 测试报告对比（2）
 
 :::note
 
@@ -180,6 +221,8 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 
 ![!性能测试_删除报告](/img/metersphere-v2/performance/性能测试_删除报告.png)
 
+图 21  性能测试 删除报告
+
 :::note
 
 - **批量删除**：选中多份报告，点击【批量删除报告】可删除报告。
@@ -187,3 +230,5 @@ description: "MeterSphere 一站式开源持续测试平台官方文档。MeterS
 :::
 
 ![!性能_批量删除](/img/metersphere-v2/performance/性能_批量删除.png)
+
+图 22  性能 批量删除

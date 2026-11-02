@@ -10,7 +10,11 @@ title: "我关注的"
 
 ![!缺陷创建](/img/metersphere/workstation/focus/点击关注.png)
 
+图 1  点击关注
+
 ![!缺陷创建](/img/metersphere/workstation/focus/我的关注.png)
+
+图 2  我的关注
 
 :::note
 
@@ -19,3 +23,5 @@ title: "我关注的"
 :::
 
 ![!jira默认模板填写内容](/img/metersphere/workstation/focus/关注事项.png)
+
+图 3  关注事项
