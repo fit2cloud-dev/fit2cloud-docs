@@ -73,6 +73,32 @@ V3 支持跨源查询。使用需在系统设置--系统参数--基础设置中�
 
 详细配置步骤请参阅[配置 API 数据源](../user_manual/datasource_configuration_api.md)
 
+### 2.5 自定义 SQL 数据集支持临时表吗？
+
+**问题**：在 DataEase 中创建自定义 SQL 数据集时，SQL 里能使用临时表吗？
+
+**处理方式**：
+
+SQL 数据集只支持单条查询语句，执行时会被包装成子查询，无法执行 CREATE TEMPORARY TABLE 这类 DDL；且连接来自连接池，临时表的会话级生命周期也无法保证。需要中间结果时请用子查询或 CTE（WITH ... AS）​ 替代。
+
+### 2.6 DataEase 是否支持华为 GaussDB 数据源？
+
+**问题**：DataEase 支持连接华为高斯（GaussDB）数据库吗？
+
+**处理方式**：
+
+支持。在【数据准备】中新建数据源，OLTP 分类下选择 GaussDB 图标即可配置连接，系统内置华为 GaussDB JDBC 驱动（`com.huawei.gaussdb.jdbc.Driver`），端口常见默认为 8000，并支持选择 Schema 后加载对应模式下的数据表。
+
+详细配置步骤请参阅[配置 GaussDB 数据源](../user_manual/datasource_configuration/GaussDB_datasource_configuration.md)
+
+### 2.7 SQL 数据集文本字段前导零丢失怎么办？
+
+**问题**：用 SQL 生成数据集后，文本型字段以 0 开头的前导零丢失了，如何保留？
+
+**处理方式**：
+
+在数据集字段管理中将该字段的类型改为文本型，前导零即可保留。
+
 ## 3 仪表板与图表
 
 ### 3.1 日期范围筛选器能否手动输入日期？
