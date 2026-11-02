@@ -62,7 +62,7 @@ SSE 协议读取响应没有超时，会导致工作流调用 MCP 时卡住。�
 
 **处理方式**：
 
-MaxKB 的 Skill 是上传的 ZIP 包，运行时被解压到按会话隔离的临时目录（/tmp/<chat_id>/skills），对 Agent 暴露为虚拟路径 /skills，该目录在本次会话结束后即被删除，且 Skill 内脚本以受限的 sandbox 用户执行，因此不能依赖它读写持久数据，也不存在 input/、output/ 之类的标准数据目录约定。
+MaxKB 的 Skill 是上传的 ZIP 包，运行时被解压到按会话隔离的临时目录（`/tmp/<chat_id>/skills`），对 Agent 暴露为虚拟路径 `/skills`，该目录在本次会话结束后即被删除，且 Skill 内脚本以受限的 sandbox 用户执行，因此不能依赖它读写持久数据，也不存在 `input/`、`output/` 之类的标准数据目录约定。
 
 ## 2 系统集成与权限
 
