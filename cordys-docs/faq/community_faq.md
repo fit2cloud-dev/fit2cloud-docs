@@ -48,7 +48,7 @@ title: 常见问题
 
 **处理方式**：
 
-先在服务器上完成 1Panel 的安装部署，进入 1Panel 应用商店，在应用详情页选择最新的 Cordys CRM 版本进行安装，设置名称、管理员用户名与密码，端口1 设为 8081、端口2 设为 8082，并打开端口外部访问。安装完成后通过 `http://目标服务器 IP 地址:8081` 访问，默认管理员用户名为 admin、密码为 CordysCRM。
+先在服务器上完成 1Panel 的安装部署，进入 1Panel 应用商店，在应用详情页选择最新的 Cordys CRM 版本进行安装。
 
 详细步骤请参阅[1Panel 安装](../installation/1panel_installtion.md)
 
