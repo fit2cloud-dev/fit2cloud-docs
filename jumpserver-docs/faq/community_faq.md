@@ -72,6 +72,22 @@ jmsctl restart
 
 需要统一字符集与排序规则。将数据库字符集、表字符集、字段字符集（如有单独指定）以及排序规则统一为同一种即可，不强制必须是 utf8mb4，只要保持一致。
 
+### 1.7 为什么从 v4 升级到 v5 不再挂载lb_http_server.conf文件了？
+
+**问题**：在 v4 的版本中 web.https.yml 配置有挂载自定义的nginx配置：${CONFIG_DIR}/nginx/lb_http_server.conf:/etc/nginx/sites-enabled/https_server.conf，为什么升级到 v5 则抛弃了？
+
+**处理方式**：
+
+v5 中不再支持自定义 lb_http_server.conf 挂载（如 proxy_protocol 配置）。因为各用户环境的自定义配置不同，升级流程无法统一合并，也无法随镜像内 nginx 版本变化同步更新。如果需要，外层再部署个 nginx ，由外层代理承载自定义配置。
+
+### 1.8 v3.10.24 升级到 v4.10.20 提示 3306 端口被占用，是怎么回事？
+
+**问题**：宿主机自建 MySQL 已占用 3306 时，执行 ./jmsctl.sh upgrade 在"进行数据库变更"阶段失败，提示 listen tcp4 127.0.0.1:3306: bind: address already in use。能不能 v3 升级 v4 时和 v3 同版本升级一样不要使用宿主机3306端，就能正常升级成功？
+
+**处理方式**：
+
+升级时内置数据库默认会映射到宿主机，当前版本不支持关闭该映射，请在升级前释放宿主机的 3306 端口，再重新执行升级。官方已规划改为通过 Core API 访问数据，届时不再需要开放本地 3306。
+
 ## 2 环境与数据库要求
 
 JumpServer 对操作系统内核、数据库与缓存的版本要求，详见[环境要求](../installation/setup_linux_standalone/requirements.md)。
