@@ -74,7 +74,7 @@ jmsctl restart
 
 ### 1.7 为什么从 v4 升级到 v5 不再挂载lb_http_server.conf文件了？
 
-**问题**：在 v4 的版本中 web.https.yml 配置有挂载自定义的nginx配置：${CONFIG_DIR}/nginx/lb_http_server.conf:/etc/nginx/sites-enabled/https_server.conf，为什么升级到 v5 则抛弃了？
+**问题**：在 v4 的版本中 web.https.yml 配置有挂载自定义的 nginx 配置：`${CONFIG_DIR}/nginx/lb_http_server.conf:/etc/nginx/sites-enabled/https_server.conf`，为什么升级到 v5 则抛弃了？
 
 **处理方式**：
 
