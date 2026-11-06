@@ -19,7 +19,7 @@ description: 介绍 1Panel AI 网关的离线安装方式，涵盖离线包内�
 离线安装适用于部署服务器**无法访问外网**的内网、离线机房及涉密环境。
 
 - 离线包内已包含安装所需的 Docker、容器镜像与依赖文件，安装过程**不依赖外网**。
-- 社区版不提供 arm 架构离线包，如需在 arm 架构下部署，请采用[在线安装](./online_installation.md)方式。
+- 离线包支持 x86_64 与 arm64 架构，打开[飞致云开源社区 1Panel AI 网关社区版下载](https://community.fit2cloud.com/#/products/1panel-ai-gateway/downloads)页面，**登录后**下载与服务器架构对应的离线安装包。
 
 ## 2 环境要求
 
@@ -35,6 +35,7 @@ description: 介绍 1Panel AI 网关的离线安装方式，涵盖离线包内�
 <tr><td style={{padding:'8px'}}>浏览器</td><td style={{padding:'8px'}}>Chrome、Edge 等现代浏览器</td></tr>
 </tbody>
 </table>
+
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  离线部署端口要求</div>
 <table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>
@@ -94,14 +95,14 @@ description: 介绍 1Panel AI 网关的离线安装方式，涵盖离线包内�
 
 ## 4 下载离线包
 
-打开[飞致云开源社区 1Panel AI 网关社区版下载](https://community.fit2cloud.com/#/products/1panel-ai-gateway/downloads)页面，**登录后**下载最新版本的离线安装包。
+在第 1 节提供的下载页面**登录后**，选择并下载与服务器架构对应的离线安装包。
 
 <img src="/img/offline_installation/image1-download.png" alt="社区版下载页" style={{display:'block',margin:'16px auto',maxWidth:'100%'}}/>
 
 <div style={{textAlign:'center',color:'#8a8f99',fontSize:'13px',margin:'6px 0 20px'}}>图 1  社区版下载页</div>
 
-- 当前最新版本为 **v1.5.1**，安装包文件名为 `1panel-ai-gateway-v1.5.1-linux-amd64.tar.gz`。
-- 下载页会同步提供各历史版本的安装包，可按需选择。
+- 当前最新版本为 **v1.5.1**，以 amd64 架构为例，安装包文件名为 `1panel-ai-gateway-v1.5.1-linux-amd64.tar.gz`。
+- 下载页会同步提供各历史版本及不同架构的安装包，可按需选择。
 
 下载完成后，将离线包**上传至部署服务器**，下文以 `/home` 目录为例说明安装过程。
 
