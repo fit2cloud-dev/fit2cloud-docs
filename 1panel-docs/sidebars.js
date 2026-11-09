@@ -977,6 +977,11 @@ const sidebars = {
           "type": "doc",
           "id": "faq/ai-coding",
           "label": "AI 编程接入指南"
+        },
+        {
+          "type": "doc",
+          "id": "faq/gpu-driver",
+          "label": "配置 GPU 驱动"
         }
       ]
     },
