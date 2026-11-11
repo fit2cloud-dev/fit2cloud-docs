@@ -156,23 +156,23 @@ const sidebars = {
           "items": [
             {
               "type": "doc",
-              "id": "user_manual/ai/agent",
-              "label": "智能体"
+              "id": "user_manual/ai/gpu",
+              "label": "GPU 管理"
             },
             {
               "type": "doc",
-              "id": "user_manual/ai/model",
-              "label": "模型管理"
+              "id": "user_manual/ai/ollama",
+              "label": "Ollama 管理"
             },
             {
               "type": "doc",
               "id": "user_manual/ai/vllm",
-              "label": "vLLM"
+              "label": "vLLM 管理"
             },
             {
               "type": "doc",
-              "id": "user_manual/ai/gateway",
-              "label": "AI 网关"
+              "id": "user_manual/ai/model",
+              "label": "模型服务"
             },
             {
               "type": "doc",
@@ -181,18 +181,23 @@ const sidebars = {
             },
             {
               "type": "doc",
+              "id": "user_manual/ai/gateway",
+              "label": "AI 网关"
+            },
+            {
+              "type": "doc",
+              "id": "user_manual/ai/agent",
+              "label": "智能体"
+            },
+            {
+              "type": "doc",
               "id": "user_manual/ai/skills-hub",
-              "label": "Skills Hub"
+              "label": "Skills 仓库"
             },
             {
               "type": "doc",
               "id": "user_manual/ai/mcp",
-              "label": "MCP"
-            },
-            {
-              "type": "doc",
-              "id": "user_manual/ai/gpu",
-              "label": "GPU 监控"
+              "label": "MCP 管理"
             }
           ]
         },
