@@ -1,78 +1,85 @@
 ---
-title: 1Panel 模型管理使用说明
-description: 介绍在 1Panel 中管理模型账号、Ollama 和 vLLM 服务，以及下载和同步模型的方法。
-keywords: [1Panel 模型管理, Ollama, vLLM, 模型账号, 模型下载器, 本地大模型]
+title: 模型服务
+sidebar_label: 模型服务
+description: 介绍 1Panel 模型服务的添加、编辑、模型池与验证状态管理。
 ---
 
-# 模型管理
+## 1 功能简介
 
-模型管理用于统一维护 AI 功能使用的模型账号和本地模型。入口为左侧菜单 **AI -> 模型**，页面包含 **模型账号** 和 **本地模型** 两个标签页。
+模型部署完成后，模型状态展示为 **已就绪**，下面我们可以直接进入模型服务模块。页面说明为：统一接入公有云、本地推理引擎和 AI 网关等模型服务，供 1Panel 内置智能体及 WorkBuddy 等外部智能体调用。
 
-:::tip[版本说明]
-    模型账号和 Ollama 管理在社区版、专业版、企业版中均可使用。vLLM 和模型下载器需要专业版或企业版许可证。
+在 **模型服务** 页可以单击 **添加** 接入新的模型服务，通过 **编辑**、**模型池**、**更多** 管理已有记录，并用 **API 类型**、**模型供应商** 和 **搜索** 定位记录。列表的 **验证状态** 列显示 **验证成功** 或 **验证失败**，**操作** 列提供 **编辑**、**模型池** 与 **更多**。
 
-:::
-## 1 模型账号
+图 1 为模型部署完成后在模型服务列表中的结果：两条记录的 **模型供应商** 均为 **vLLM**，**API 类型** 均为 **openai-completions**，**验证状态** 分别为 **验证失败** 与 **验证成功**，红框标出的是 **验证成功**。该条记录显示 **验证成功**，是因为其对应的模型已处于 **已就绪** 状态。
 
-模型账号保存模型服务的连接信息，可供智能体、AI 搜索等功能选择。点击 **创建** 后，按页面提示配置以下信息：
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_services_01_model_services_verified.png" alt="图 1  模型部署完成后的模型服务列表与验证成功状态" />
 
-- **名称**：模型账号在 1Panel 中的显示名称。   
-- **模型提供商**：选择预置提供商，或选择自定义、Ollama、vLLM 等类型。
-- **API Key**：模型服务的访问凭证。是否需要填写取决于提供商。
-- **Base URL**：模型服务 API 地址。部分预置提供商使用默认地址，自定义、Ollama 和 vLLM 可按实际服务填写。
-- **API 类型**：按提供商支持情况选择兼容协议。
-- **模型池**：维护模型 ID、显示名称、Context Window、Max Tokens、输入类型和推理能力。
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  模型部署完成后的模型服务列表与验证成功状态</div>
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/cloud_model.png" alt="图 1 模型账号界面" />
+## 2 页面概览
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1 模型账号界面</div>
+工具条从左到右为 **添加**、**API 类型** 下拉、**模型供应商** 下拉、**搜索** 输入框，右侧依次为搜索、**刷新** 与 **选择列** 图标。列表下方显示 **共 2 条**、**10条/页**、页码与 **前往**。单击 **选择列** 图标展开面板，可勾选 **名称**、**模型供应商**、**API 类型**、**模型**、**验证状态**、**端点**、**创建时间**，如图 2 所示。**创建时间** 列可通过该面板控制是否显示，图 1 未显示该列。
 
->创建完成后，可以在列表中验证连接、编辑账号、维护模型池或删除账号。编辑已经被智能体使用的账号时，可按页面选项同步更新相关智能体配置。
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_services_02_column_selector.png" alt="图 2  模型服务列表与选择列" />
 
-:::caution[凭证安全]
-    API Key 属于敏感信息，仅向受信任的管理员开放模型账号管理权限。
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  模型服务列表与选择列</div>
 
-:::
-## 2 Ollama
+## 3 筛选与搜索
 
-### 2.1 使用前提
+**API 类型** 下拉列出 `anthropic-messages`、`dashscope-images`、`gemini-generate-content`、`minimax-images`、`openai-completions`、`openai-embeddings`、`openai-images`、`openai-responses`、`openrouter-images`。
 
-使用 Ollama 管理前，需要先从 **应用商店** 安装 Ollama。安装完成后，页面会显示应用运行状态，并提供启动、停止、重启和连接信息等操作。
+**模型供应商** 下拉在 **AI** 分组下列出 **自定义**、**Ollama**、**vLLM**、**1Panel AI 网关**，其后还有 **DeepSeek**、**阿里云百炼 Coding Plan**、**阿里云百炼**、**火山方舟 Coding Plan**、**火山方舟**、**Z.ai**、**MiniMax (CN)**、**Xiaomi**、**Kimi (CN)**、**Kimi Coding**、**OpenAI**、**OpenRouter**、**Anthropic**、**Gemini**、**Moonshot (Global)**、**LL**、**llmman**，如图 3 所示。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/overview.png" alt="图 2 使用前提界面" />
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_services_03_vendor_filter.png" alt="图 3  模型供应商筛选下拉" />
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2 使用前提界面</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  模型供应商筛选下拉</div>
 
-### 2.2 添加和运行模型
+在 **搜索** 输入框填写关键字后，单击右侧搜索按钮过滤列表；单击 **刷新** 图标重新加载列表。
 
->点击 **添加模型**，输入 [Ollama 模型库](https://ollama.com/search)中的模型名称后确认，1Panel 将创建后台拉取任务。模型可用后，可以执行运行、重建或删除等操作。
+## 4 添加模型服务
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_pull.png" alt="图 3 添加和运行模型界面" />
+单击工具条 **添加** 打开表单，左上角为 **返回**，右上角为关闭按钮，底部为 **取消** 与 **确认**。**模型供应商** 默认 **自定义**，**API 类型** 默认 **openai-completions**，**模型池** 默认 **自动获取**，如图 4 所示。
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3 添加和运行模型界面</div>
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_services_04_add_service_custom.png" alt="图 4  添加模型服务" />
 
->点击模型所在行的 **运行**，可在页面内打开终端与模型对话。
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  添加模型服务</div>
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_run.png" alt="图 4 添加和运行模型界面（续）" />
+填写完成后单击 **确认** 提交，单击 **取消** 放弃；单击 **返回** 或右上角关闭按钮退出。
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4 添加和运行模型界面（续）</div>
+**模型供应商** 选择 **vLLM** 时，表单增加 **创建方式**，提供 **手动输入** 与 **选择** 两个选项。选择 **选择** 后出现必填的 **本地推理引擎** 下拉，**模型池** 固定为 **手动配置**，如图 5 所示。
 
-### 2.3 连接和同步
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_services_05_add_service_vllm_select.png" alt="图 5  添加模型服务与本地推理引擎选择" />
 
-- **连接信息**：查看不同访问场景下的 Ollama 地址。容器内访问、主机访问和外部访问的地址可能不同，应以页面显示为准。
-- **从服务器同步**：当模型由其他工具添加或删除后，从 Ollama 服务重新读取模型列表。
-- **AI 代理增强**：为 Ollama 配置反向代理，可结合域名、HTTPS 和 IP 白名单限制外部访问。
-- **Open WebUI**：按页面入口跳转至已支持的 Web 管理工具。
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  添加模型服务与本地推理引擎选择</div>
 
-## 3 vLLM
+## 5 编辑模型服务
 
-vLLM 页面用于创建和维护本地推理服务，支持查看状态、编辑、启动、停止、重启、删除和查看任务进度。具体配置参见 [vLLM](././vllm)。
+在 **操作** 列单击 **编辑**，打开标题为 **编辑** 的表单。字段与添加一致并带入当前值：**名称** 为 f2c-auto，**模型供应商** 为 **自定义**，**API 类型** 为 **openai-completions**，**Base URL** 显示已保存地址，**API Key** 以掩码显示，**记住认证信息** 与 **保存时验证可用性** 保留当前状态，如图 6 所示。
 
-## 4 模型下载器
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_services_06_edit_service.png" alt="图 6  编辑模型服务" />
 
-:::tip[版本说明]
-    模型下载器需要专业版或企业版许可证。
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  编辑模型服务</div>
 
-:::
->模型下载器用于搜索和下载 Hugging Face、ModelScope 或兼容镜像站中的模型，并统一查看下载任务和本地模型目录。可按页面配置下载目录、镜像地址和访问令牌；私有或受限模型必须使用具有相应权限的令牌。
-下载任务支持查看进度和错误信息，并可取消或重试。删除本地模型前，应确认该目录未被 vLLM 或其他服务使用。
+**模型池** 可在 **自动获取** 与 **手动配置** 间切换；手动配置下通过表格维护 **验证**、**模型**、**名称** 与 **操作**，并提供行内 **添加** 与 **删除**。说明文字为：选择用于验证服务可用性的模型；验证结果仅代表该模型在验证时的可用性。下方提供 **同步关联智能体**，说明为：更新使用该模型服务的智能体 openclaw.json。底部为 **取消** 与 **确认**。
+
+## 6 模型池与验证状态
+
+在 **操作** 列单击 **模型池**，打开以服务名命名的表单，标题形如 f2c-auto · 模型池。顶部为 **添加**，说明文字为：选择用于验证服务可用性的模型；验证结果仅代表该模型在验证时的可用性。切换验证模型后会标记为未验证，不会自动调用模型。每行提供 **编辑** 与 **删除**，底部为 **取消**，如图 7 所示。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_services_07_model_pool.png" alt="图 7  模型池" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7  模型池</div>
+
+列表 **验证状态** 列显示 **验证成功** 或 **验证失败**，其右侧提供 **重新验证** 入口；**保存时验证可用性** 开启时或连接参数、验证模型变更时，发送最小消息验证接口。在 **操作** 列单击 **更多**，下拉仅提供 **删除**，如图 8 所示。
+
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/model_services_08_more_menu.png" alt="图 8  更多下拉" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 8  更多下拉</div>
+
+## 7 注意事项
+
+- **Base URL** 与 **API 类型** 相关，界面提示当前类型最终请求 /v1/chat/completions，Base URL 建议填写 http://127.0.0.1:8000/v1。
+- 如果服务不需要 **API Key**，可输入任意非空占位值，例如 unused。
+- **保存时验证可用性** 默认开启；开启时或连接参数、验证模型变更时，发送最小消息验证接口。
+- 模型池的验证结果仅代表该模型在验证时的可用性；切换验证模型后会标记为未验证，不会自动调用模型。
+- 列表列由 **选择列** 控制，**创建时间** 列可按需显示或隐藏。
