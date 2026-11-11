@@ -27,9 +27,9 @@ vLLM 管理用于在 1Panel 中准备模型权重、维护启动菜谱并部署 
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  模型准备设置页</div>
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  设置页字段</div>
-<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0'}}>
+<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>
 <thead>
-<tr><th style={{width:'24%', padding:'8px'}}>字段</th><th style={{width:'12%', padding:'8px'}}>是否必填</th><th style={{width:'64%', padding:'8px'}}>说明</th></tr>
+<tr><th style={{width:'24%', padding:'8px', textAlign:'left'}}>字段</th><th style={{width:'12%', padding:'8px', textAlign:'left'}}>是否必填</th><th style={{width:'64%', padding:'8px', textAlign:'left'}}>说明</th></tr>
 </thead>
 <tbody>
 <tr><td style={{padding:'8px'}}>模型目录</td><td style={{padding:'8px'}}>是</td><td style={{padding:'8px'}}>模型下载保存目录，也用于读取本地模型列表；修改后不会自动迁移已有文件。示例值 `/opt/1panel/ai/models`</td></tr>
@@ -51,18 +51,18 @@ vLLM 管理用于在 1Panel 中准备模型权重、维护启动菜谱并部署 
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  vLLM 管理入口与精选模型页</div>
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  页签与主要用途</div>          
-<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0'}}>          
-<thead>          
-<tr><th style={{width:'16%', padding:'8px'}}>一级页签</th><th style={{width:'20%', padding:'8px'}}>子页签 / 页面</th><th style={{width:'64%', padding:'8px'}}>主要用途</th></tr>          
-</thead>          
-<tbody>          
-<tr><td style={{padding:'8px'}}>模型准备</td><td style={{padding:'8px'}}>精选模型</td><td style={{padding:'8px'}}>浏览官方精选模型目录，查看规格并下载权重，或打开上游平台详情页</td></tr>          
-<tr><td style={{padding:'8px'}}>模型准备</td><td style={{padding:'8px'}}>模型下载</td><td style={{padding:'8px'}}>搜索下载模型或分词器，查看下载状态、模型目录与 Recipes 数量</td></tr>          
-<tr><td style={{padding:'8px'}}>模型准备</td><td style={{padding:'8px'}}>vLLM Recipes</td><td style={{padding:'8px'}}>保存和管理模型启动命令，部署时直接选用，也可从 recipes.vllm.ai 导入</td></tr>          
-<tr><td style={{padding:'8px'}}>模型准备</td><td style={{padding:'8px'}}>设置</td><td style={{padding:'8px'}}>配置模型目录、分词器目录以及上游平台地址与 Token</td></tr>          
-<tr><td style={{padding:'8px'}}>模型部署</td><td style={{padding:'8px'}}>实例列表</td><td style={{padding:'8px'}}>查看已创建的 vLLM 实例及其状态、日志、资源使用率，并新增实例</td></tr>          
-</tbody>          
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  页签与主要用途</div>
+<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>
+<thead>
+<tr><th style={{width:'16%', padding:'8px', textAlign:'left'}}>一级页签</th><th style={{width:'20%', padding:'8px', textAlign:'left'}}>子页签 / 页面</th><th style={{width:'64%', padding:'8px', textAlign:'left'}}>主要用途</th></tr>
+</thead>
+<tbody>
+<tr><td style={{padding:'8px'}}>模型准备</td><td style={{padding:'8px'}}>精选模型</td><td style={{padding:'8px'}}>浏览官方精选模型目录，查看规格并下载权重，或打开上游平台详情页</td></tr>
+<tr><td style={{padding:'8px'}}>模型准备</td><td style={{padding:'8px'}}>模型下载</td><td style={{padding:'8px'}}>搜索下载模型或分词器，查看下载状态、模型目录与 Recipes 数量</td></tr>
+<tr><td style={{padding:'8px'}}>模型准备</td><td style={{padding:'8px'}}>vLLM Recipes</td><td style={{padding:'8px'}}>保存和管理模型启动命令，部署时直接选用，也可从 recipes.vllm.ai 导入</td></tr>
+<tr><td style={{padding:'8px'}}>模型准备</td><td style={{padding:'8px'}}>设置</td><td style={{padding:'8px'}}>配置模型目录、分词器目录以及上游平台地址与 Token</td></tr>
+<tr><td style={{padding:'8px'}}>模型部署</td><td style={{padding:'8px'}}>实例列表</td><td style={{padding:'8px'}}>查看已创建的 vLLM 实例及其状态、日志、资源使用率，并新增实例</td></tr>
+</tbody>
 </table>
 
 ## 4 模型准备
@@ -75,8 +75,8 @@ vLLM 管理用于在 1Panel 中准备模型权重、维护启动菜谱并部署 
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  上游平台的模型详情页</div>
 
-:::note[第三方页面]  
-图 3 属于上游模型平台页面，不是 1Panel 界面。其栏目名称、按钮位置与文案由上游站点决定，会随站点改版变化；本文仅用它说明**详情**入口的跳转结果。  
+:::note[第三方页面]
+图 3 属于上游模型平台页面，不是 1Panel 界面。其栏目名称、按钮位置与文案由上游站点决定，会随站点改版变化；本文仅用它说明**详情**入口的跳转结果。
 :::
 
 ### 4.2 下载精选模型
@@ -106,8 +106,8 @@ vLLM 管理用于在 1Panel 中准备模型权重、维护启动菜谱并部署 
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6  搜索并下载模型抽屉的初始状态</div>
 
-:::note[初始空数据]  
-未输入关键词时，结果区显示**暂无数据**、共 0 条，这是初始状态，不代表搜索功能异常。热门搜索词可直接作为关键词使用。  
+:::note[初始空数据]
+未输入关键词时，结果区显示**暂无数据**、共 0 条，这是初始状态，不代表搜索功能异常。热门搜索词可直接作为关键词使用。
 :::
 
 ### 4.5 查看搜索结果与模型版本
@@ -140,8 +140,8 @@ Recipe 是模型启动命令的保存形式，部署实例时可直接选用。�
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 9  添加 Recipe 表单</div>
 
-:::tip[两种录入方式]  
-可以手动填写名称、模型、GPU 类型与环境变量；也可以把后文 5.5 节复制的命令粘贴到**导入命令**。该输入框的占位提示写明：粘贴 pip/uv 或 docker 格式的启动命令，1Panel 将自动解析并填充。  
+:::tip[两种录入方式]
+可以手动填写名称、模型、GPU 类型与环境变量；也可以把后文 5.5 节复制的命令粘贴到**导入命令**。该输入框的占位提示写明：粘贴 pip/uv 或 docker 格式的启动命令，1Panel 将自动解析并填充。
 :::
 
 ### 5.3 在 recipes.vllm.ai 查找适配菜谱
