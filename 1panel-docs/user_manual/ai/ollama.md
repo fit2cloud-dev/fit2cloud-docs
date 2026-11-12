@@ -27,17 +27,17 @@ Ollama 通过 1Panel 应用商店安装，页面会自动检测服务。若尚�
 模型列表展示当前 Ollama 中已下载的模型，顶部提供 **搜索** 框与刷新控制，底部显示记录总数与分页信息。每行右侧的 **操作** 列提供 **运行** 与 **更多** 两个入口，用法见第 5 节与第 6 节。
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 1  模型列表字段</div>  
-<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>  
-<thead>  
-<tr><th style={{width:'24%', padding:'8px', textAlign:'left'}}>字段</th><th style={{width:'76%', padding:'8px', textAlign:'left'}}>说明</th></tr>  
-</thead>  
-<tbody>  
-<tr><td style={{padding:'8px'}}>模型</td><td style={{padding:'8px'}}>模型名称与标签，例如 <code>qwen3-embedding:0.6b</code>、<code>qwen3.5:0.8b</code></td></tr>  
-<tr><td style={{padding:'8px'}}>大小</td><td style={{padding:'8px'}}>模型文件占用空间，例如 <code>639 MB</code></td></tr>  
-<tr><td style={{padding:'8px'}}>状态</td><td style={{padding:'8px'}}>模型拉取或添加任务的状态，例如「成功」</td></tr>  
-<tr><td style={{padding:'8px'}}>时间</td><td style={{padding:'8px'}}>模型的添加或下载时间</td></tr>  
-<tr><td style={{padding:'8px'}}>操作</td><td style={{padding:'8px'}}>提供 <strong>运行</strong> 与 <strong>更多</strong>，<strong>更多</strong> 展开后包含 <strong>重试</strong>、<strong>日志</strong>、<strong>删除</strong></td></tr>  
-</tbody>  
+<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>
+<thead>
+<tr><th style={{width:'24%', padding:'8px', textAlign:'left'}}>字段</th><th style={{width:'76%', padding:'8px', textAlign:'left'}}>说明</th></tr>
+</thead>
+<tbody>
+<tr><td style={{padding:'8px'}}>模型</td><td style={{padding:'8px'}}>模型名称与标签，例如 <code>qwen3-embedding:0.6b</code>、<code>qwen3.5:0.8b</code></td></tr>
+<tr><td style={{padding:'8px'}}>大小</td><td style={{padding:'8px'}}>模型文件占用空间，例如 <code>639 MB</code></td></tr>
+<tr><td style={{padding:'8px'}}>状态</td><td style={{padding:'8px'}}>模型拉取或添加任务的状态，例如「成功」</td></tr>
+<tr><td style={{padding:'8px'}}>时间</td><td style={{padding:'8px'}}>模型的添加或下载时间</td></tr>
+<tr><td style={{padding:'8px'}}>操作</td><td style={{padding:'8px'}}>提供 <strong>运行</strong> 与 <strong>更多</strong>，<strong>更多</strong> 展开后包含 <strong>重试</strong>、<strong>日志</strong>、<strong>删除</strong></td></tr>
+</tbody>
 </table>
 
 :::caution[注意]
@@ -53,14 +53,14 @@ Ollama 中的模型需要先从模型库拉取到本地，才能运行并提供�
 表单只有 **名称** 一个字段：填写 Ollama 模型库中的完整模型名称，例如 `qwen3.6:35b`；未指定标签时默认使用 `latest`。页面提示为「前往 ollama.com 查找模型，添加后会自动拉取模型，请确保 Ollama 服务正常运行且磁盘空间充足」。
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  添加模型表单</div>  
-<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>  
-<thead>  
-<tr><th style={{width:'24%', padding:'8px', textAlign:'left'}}>项目</th><th style={{width:'76%', padding:'8px', textAlign:'left'}}>说明</th></tr>  
-</thead>  
-<tbody>  
-<tr><td style={{padding:'8px'}}>名称</td><td style={{padding:'8px'}}>必填，填写 Ollama 模型库中的完整模型名称，例如 <code>qwen3.6:35b</code>；未指定标签时默认使用 <code>latest</code></td></tr>  
-<tr><td style={{padding:'8px'}}>取消 / 添加</td><td style={{padding:'8px'}}>放弃填写，或提交后由 1Panel 自动创建拉取任务</td></tr>  
-</tbody>  
+<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>
+<thead>
+<tr><th style={{width:'24%', padding:'8px', textAlign:'left'}}>项目</th><th style={{width:'76%', padding:'8px', textAlign:'left'}}>说明</th></tr>
+</thead>
+<tbody>
+<tr><td style={{padding:'8px'}}>名称</td><td style={{padding:'8px'}}>必填，填写 Ollama 模型库中的完整模型名称，例如 <code>qwen3.6:35b</code>；未指定标签时默认使用 <code>latest</code></td></tr>
+<tr><td style={{padding:'8px'}}>取消 / 添加</td><td style={{padding:'8px'}}>放弃填写，或提交后由 1Panel 自动创建拉取任务</td></tr>
+</tbody>
 </table>
 
 单击 **添加** 提交后，1Panel 会创建拉取任务并在模型列表中生成一条记录。任务执行过程可在该行的 **更多 → 日志** 中查看：从 `[START]` 开始，依次拉取各层权重、校验 `sha256 digest`、写入 manifest，最后输出 `success` 与 `[TASK-END]`。状态变为「成功」后，即可单击 **运行** 验证模型，或供智能体、模型服务等功能调用。
@@ -123,16 +123,16 @@ Ollama 中的模型需要先从模型库拉取到本地，才能运行并提供�
 工具栏中的 **删除** 是批量操作：勾选模型前的复选框后，可对所选模型执行删除；未勾选任何模型时该按钮置灰。
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 3  模型行操作</div>  
-<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>  
-<thead>  
-<tr><th style={{width:'24%', padding:'8px', textAlign:'left'}}>操作</th><th style={{width:'76%', padding:'8px', textAlign:'left'}}>说明</th></tr>  
-</thead>  
-<tbody>  
-<tr><td style={{padding:'8px'}}>运行</td><td style={{padding:'8px'}}>使用该模型发起一次交互，验证模型能否正常加载与响应</td></tr>  
-<tr><td style={{padding:'8px'}}>重试</td><td style={{padding:'8px'}}>重新执行拉取任务，仅失败或未完成的模型可用，状态为「成功」时置灰</td></tr>  
-<tr><td style={{padding:'8px'}}>日志</td><td style={{padding:'8px'}}>查看该模型拉取任务的执行日志，支持追踪与下载</td></tr>  
-<tr><td style={{padding:'8px'}}>删除</td><td style={{padding:'8px'}}>移除该模型并释放磁盘空间，删除后需重新添加或拉取</td></tr>  
-</tbody>  
+<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>
+<thead>
+<tr><th style={{width:'24%', padding:'8px', textAlign:'left'}}>操作</th><th style={{width:'76%', padding:'8px', textAlign:'left'}}>说明</th></tr>
+</thead>
+<tbody>
+<tr><td style={{padding:'8px'}}>运行</td><td style={{padding:'8px'}}>使用该模型发起一次交互，验证模型能否正常加载与响应</td></tr>
+<tr><td style={{padding:'8px'}}>重试</td><td style={{padding:'8px'}}>重新执行拉取任务，仅失败或未完成的模型可用，状态为「成功」时置灰</td></tr>
+<tr><td style={{padding:'8px'}}>日志</td><td style={{padding:'8px'}}>查看该模型拉取任务的执行日志，支持追踪与下载</td></tr>
+<tr><td style={{padding:'8px'}}>删除</td><td style={{padding:'8px'}}>移除该模型并释放磁盘空间，删除后需重新添加或拉取</td></tr>
+</tbody>
 </table>
 
 ## 7 服务与页面操作
@@ -140,20 +140,20 @@ Ollama 中的模型需要先从模型库拉取到本地，才能运行并提供�
 服务状态栏中的 **停止**、**重启** 控制 Ollama 服务本身；模型列表上方的工具栏作用于模型与页面展示。
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 4  服务与页面操作</div>  
-<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>  
-<thead>  
-<tr><th style={{width:'24%', padding:'8px', textAlign:'left'}}>操作</th><th style={{width:'76%', padding:'8px', textAlign:'left'}}>说明</th></tr>  
-</thead>  
-<tbody>  
-<tr><td style={{padding:'8px'}}>添加</td><td style={{padding:'8px'}}>填写模型名称并从 Ollama 模型库拉取模型，参见第 4 节</td></tr>  
-<tr><td style={{padding:'8px'}}>AI 网关增强</td><td style={{padding:'8px'}}>打开 AI 网关增强配置入口</td></tr>  
-<tr><td style={{padding:'8px'}}>连接信息</td><td style={{padding:'8px'}}>查看当前服务的连接信息</td></tr>  
-<tr><td style={{padding:'8px'}}>OpenWebUI</td><td style={{padding:'8px'}}>打开 OpenWebUI 相关配置或访问入口</td></tr>  
-<tr><td style={{padding:'8px'}}>停止 / 重启</td><td style={{padding:'8px'}}>控制 Ollama 服务的运行状态</td></tr>  
-<tr><td style={{padding:'8px'}}>删除（工具栏）</td><td style={{padding:'8px'}}>勾选模型后批量删除，未勾选时置灰</td></tr>  
-<tr><td style={{padding:'8px'}}>搜索 / 刷新</td><td style={{padding:'8px'}}>按关键字查找模型，或手动刷新列表</td></tr>  
-<tr><td style={{padding:'8px'}}>不刷新</td><td style={{padding:'8px'}}>设置自动刷新间隔，可选 <code>5s</code>、<code>10s</code>、<code>30s</code>、<code>60s</code>、<code>120s</code>、<code>300s</code>，默认不自动刷新</td></tr>  
-</tbody>  
+<table style={{display:'table', width:'100%', maxWidth:'100%', tableLayout:'fixed', borderCollapse:'collapse', borderSpacing:'0', border:'1px solid #d9dee8'}}>
+<thead>
+<tr><th style={{width:'24%', padding:'8px', textAlign:'left'}}>操作</th><th style={{width:'76%', padding:'8px', textAlign:'left'}}>说明</th></tr>
+</thead>
+<tbody>
+<tr><td style={{padding:'8px'}}>添加</td><td style={{padding:'8px'}}>填写模型名称并从 Ollama 模型库拉取模型，参见第 4 节</td></tr>
+<tr><td style={{padding:'8px'}}>AI 网关增强</td><td style={{padding:'8px'}}>打开 AI 网关增强配置入口</td></tr>
+<tr><td style={{padding:'8px'}}>连接信息</td><td style={{padding:'8px'}}>查看当前服务的连接信息</td></tr>
+<tr><td style={{padding:'8px'}}>OpenWebUI</td><td style={{padding:'8px'}}>打开 OpenWebUI 相关配置或访问入口</td></tr>
+<tr><td style={{padding:'8px'}}>停止 / 重启</td><td style={{padding:'8px'}}>控制 Ollama 服务的运行状态</td></tr>
+<tr><td style={{padding:'8px'}}>删除（工具栏）</td><td style={{padding:'8px'}}>勾选模型后批量删除，未勾选时置灰</td></tr>
+<tr><td style={{padding:'8px'}}>搜索 / 刷新</td><td style={{padding:'8px'}}>按关键字查找模型，或手动刷新列表</td></tr>
+<tr><td style={{padding:'8px'}}>不刷新</td><td style={{padding:'8px'}}>设置自动刷新间隔，可选 <code>5s</code>、<code>10s</code>、<code>30s</code>、<code>60s</code>、<code>120s</code>、<code>300s</code>，默认不自动刷新</td></tr>
+</tbody>
 </table>
 
 ## 8 相关文档
