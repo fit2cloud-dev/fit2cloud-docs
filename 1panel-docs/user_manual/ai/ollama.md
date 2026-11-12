@@ -50,6 +50,9 @@ Ollama 通过 1Panel 应用商店安装，页面会自动检测服务。若尚�
 
 Ollama 中的模型需要先从模型库拉取到本地，才能运行并提供给上层应用调用。单击模型列表上方工具栏的 **添加**，打开添加表单。
 
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/ollama_model_add.png" alt="图 2  添加模型" />
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  添加模型</div>
+
 表单只有 **名称** 一个字段：填写 Ollama 模型库中的完整模型名称，例如 `qwen3.6:35b`；未指定标签时默认使用 `latest`。页面提示为「前往 ollama.com 查找模型，添加后会自动拉取模型，请确保 Ollama 服务正常运行且磁盘空间充足」。
 
 <div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"16px 0 8px"}}>表 2  添加模型表单</div>  
@@ -77,9 +80,9 @@ Ollama 中的模型需要先从模型库拉取到本地，才能运行并提供�
 
 在模型列表中点击某一行的 **运行**，页面会打开 **终端** 抽屉，用于快速验证模型是否已正确加载并能够响应。终端出现 `>>> Send a message (/? for help)` 提示符后，直接输入问题并回车即可与模型对话，思考过程与回复会实时显示在终端中；提示符中的 `/?` 可用于查看帮助命令。抽屉左上角提供 **返回**，右下角提供 **断开**。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/ollama_model_run.png" alt="图 2  运行模型终端" />
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/ollama_model_run.png" alt="图 3  运行模型终端" />
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  运行模型终端</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  运行模型终端</div>
 
 运行模型会加载权重并占用内存与显存，模型参数量越大占用越高。运行期间可在 **AI → GPU 管理** 中查看显存使用、GPU 利用率与占用进程；若服务器未安装 GPU 驱动或未配置 NVIDIA Container Toolkit，模型可能只能使用 CPU 推理，响应速度会明显下降，参见 [配置 GPU 驱动](../../faq/gpu-driver.md)。
 
@@ -93,13 +96,13 @@ Ollama 中的模型需要先从模型库拉取到本地，才能运行并提供�
 
 点击模型列表某行的 **更多**，展开下拉菜单，包含 **重试**、**日志**、**删除** 三项。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/ollama_model_actions.png" alt="图 3  模型操作与更多菜单" />
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/ollama_model_actions.png" alt="图 4  模型操作与更多菜单" />
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  模型操作与更多菜单</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  模型操作与更多菜单</div>
 
 ### 6.1 重试
 
-**重试** 用于重新执行该模型的拉取任务。仅当模型处于失败或未完成状态时可用；模型状态为「成功」时该项置灰，如图 3 所示。
+**重试** 用于重新执行该模型的拉取任务。仅当模型处于失败或未完成状态时可用；模型状态为「成功」时该项置灰，如图 4 所示。
 
 ### 6.2 日志
 
@@ -112,9 +115,9 @@ Ollama 中的模型需要先从模型库拉取到本地，才能运行并提供�
 
 弹窗顶部提供 **追踪** 与 **下载**，可用于跟随日志输出与导出日志文件。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/ollama_model_logs.png" alt="图 4  模型拉取日志" />
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/ai/ollama_model_logs.png" alt="图 5  模型拉取日志" />
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4  模型拉取日志</div>
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5  模型拉取日志</div>
 
 ### 6.3 删除
 
