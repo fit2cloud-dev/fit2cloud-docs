@@ -158,8 +158,3 @@ Ollama 中的模型需要先从模型库拉取到本地，才能运行并提供�
 <tr><td style={{padding:'8px'}}>不刷新</td><td style={{padding:'8px'}}>设置自动刷新间隔，可选 <code>5s</code>、<code>10s</code>、<code>30s</code>、<code>60s</code>、<code>120s</code>、<code>300s</code>，默认不自动刷新</td></tr>
 </tbody>
 </table>
-
-## 8 相关文档
-
-- [配置 GPU 驱动](../../faq/gpu-driver.md)：安装 NVIDIA GPU 驱动与 NVIDIA Container Toolkit，使应用能够使用 GPU
-- [GPU 管理](./gpu.md)：查看显存使用、GPU 利用率、温度与占用进程
