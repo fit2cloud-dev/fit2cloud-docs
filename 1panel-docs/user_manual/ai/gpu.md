@@ -151,8 +151,3 @@ NUMA（Non-Uniform Memory Access，非一致性内存访问）是多路 CPU 服�
 **2. 容器无法使用 GPU**
 
 **处理方式**：应用安装或容器启动时报 `could not select device driver "nvidia"`，说明 Docker 尚未注册 NVIDIA 运行时，需先安装 NVIDIA Container Toolkit 并完成运行时配置，参见 [配置 GPU 驱动](../../faq/gpu-driver.md)。
-
-## 5 相关文档
-
-- [配置 GPU 驱动](../../faq/gpu-driver.md)：安装 NVIDIA GPU 驱动与 NVIDIA Container Toolkit
-- [基准测试](./benchmark.md)：对模型服务进行吞吐量与延迟测试
