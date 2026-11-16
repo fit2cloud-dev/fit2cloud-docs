@@ -1,40 +1,86 @@
----
-title: 1Panel 企业版虚拟机管理
-description: 介绍在 1Panel 企业版中检查 KVM 环境并管理虚拟机、ISO、模板、网络、存储池和孤立资源的方法。
-keywords: [1Panel 虚拟机, KVM, libvirt, 虚拟机管理, ISO, 存储池, 企业版]
----
-
 # 虚拟机
 
-:::tip[适用版本与权限]
-    虚拟机管理仅在 1Panel 企业版中可用，需要有效企业版许可证和虚拟机权限。宿主机必须通过页面的虚拟化环境检查。
+> [!TIP] **适用版本与权限**
+> 虚拟机管理在 1Panel 社区版、专业版和企业版中均可使用，不同版本可创建的虚拟机台数不同：社区版 1 台，专业版 5 台，企业版不限制。宿主机必须通过页面的虚拟化环境检查。
 
-:::
-
-进入 **虚拟机**，可以管理基于 KVM/libvirt 的虚拟机、ISO、模板、网络和存储池。
+虚拟机模块将 KVM/libvirt 的常用管理操作封装到面板中，宿主机通过虚拟化环境检查后即可使用。进入 **虚拟机** 后，可通过页签分别管理：系统安装镜像（ISO）的上传与维护，虚拟网络（NAT、桥接）与存储池的规划配置，虚拟机的全生命周期管理，以及基于现有系统状态生成的模板。对于绕过面板、直接通过 `virsh` 等工具在宿主机侧创建或变更的域，可通过同步将面板记录与 libvirt 域列表重新对齐。
 
 ## 1 环境检查
 
 首次进入时，系统会检查虚拟化能力、KVM 辅助服务以及相关依赖。页面提示缺少可安装依赖时，可按引导安装；硬件虚拟化未开启、内核模块不可用或平台不受支持时，需要先在宿主机或固件中处理。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-overview.png" alt="图 1 概览与环境检查" />
+![图 1 概览与环境检查](/img/1panel/enterprise/vm/vm-overview.png)
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1 概览与环境检查</div>
+*图 1 概览与环境检查*
 
 ## 2 页面结构
 
 - **概览**：查看虚拟机、资源和存储摘要，并扫描孤立资源；
-- **虚拟机**：创建、编辑、启动、停止、重启、重命名、删除和进入控制台；
-- **ISO**：上传或管理系统安装镜像；
+- **虚拟机**：创建、编辑、启动、停止、重启、重命名、删除和进入控制台，并支持同步宿主机虚拟机记录；
+- **镜像**：上传或管理系统安装镜像（ISO）；
 - **模板**：从可用资源创建或管理虚拟机模板；
 - **网络**：管理 NAT 或桥接网络；
 - **存储池**：管理虚拟磁盘存放位置和容量。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-list.png" alt="图 2 虚拟机列表" />
+![图 2 虚拟机列表](/img/1panel/enterprise/vm/vm-list.png)
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2 虚拟机列表</div>
+*图 2 虚拟机列表*
 
-## 3 创建虚拟机
+## 3 配置镜像
+
+创建虚拟机之前，需要先把系统安装镜像（ISO 文件）上传到 1Panel 的镜像库。切换到 **镜像** 选项卡，单击左上角的 **创建**，可以选择以下三种创建方式：
+
+- **本地服务器选择**：从宿主机已有的镜像目录中选择 ISO 文件；
+- **本地 ISO 文件上传**：从本地终端上传 ISO 文件；
+- **远程地址拉取**：填写 ISO 文件的下载地址，由 1Panel 从远程拉取。
+
+按所选方式填写信息并提交，等待上传或拉取完成即可。
+
+![图 3 上传操作系统镜像](/img/1panel/enterprise/vm/vm-iso.png)
+
+*图 3 上传操作系统镜像*
+
+常用镜像来源：
+
+- Ubuntu Server / Desktop： [releases.ubuntu.com](https://releases.ubuntu.com)
+- Debian： [debian.org/distrib](https://www.debian.org/distrib)
+- CentOS / Rocky： [rockylinux.org](https://rockylinux.org)
+- Windows Server： 微软官方 ISO
+
+镜像上传完成后会显示在列表中，包括大小、上传时间、格式等信息。1Panel 支持同时管理多个 ISO 镜像文件，便于后续切换测试。
+
+## 4 配置虚拟网络与存储池
+
+创建虚拟机之前，建议先配置好虚拟网络和存储池：虚拟机需要网络对外通信，系统盘需要落在存储池中。
+
+### 4.1 配置虚拟网络
+
+1Panel 默认提供 **default** 网络，使用 NAT 模式，虚拟机通过宿主机访问外网。需要对外提供服务时，可以创建桥接网络，让虚拟机以独立 IP 接入物理网络。常见网络模式：
+
+- **NAT（默认）**：虚拟机通过宿主机访问外网，适合内网测试；
+- **Bridge**：虚拟机像独立主机一样接入网络，需要独立 IP；
+- **Macvtap**：吸取了 NAT 和 Bridge 的优点——免配置网桥，又能像 Bridge 一样直接连入局域网。
+
+创建网络时按类型填写网段、网关和 DHCP 地址范围；桥接网络需要选择宿主机上已有的桥接接口。
+
+![图 4 虚拟网络](/img/1panel/enterprise/vm/vm-network.png)
+
+*图 4 虚拟网络*
+
+### 4.2 配置存储池
+
+存储池是存放虚拟机磁盘镜像的区域。1Panel 默认使用基于目录的存储池。
+创建存储池时填写名称、类型、路径和描述，并可将其中一个设为默认存储池，新建虚拟机时自动使用。
+
+![图 5 存储池](/img/1panel/enterprise/vm/vm-storage.png)
+
+*图 5 存储池*
+
+> [!CAUTION] **宿主机风险**
+> 虚拟机占用宿主机 CPU、内存、磁盘和网络。过量分配、错误桥接或删除虚拟磁盘都可能影响宿主机和业务，生产环境操作前应完成容量评估和备份。
+
+## 5 虚拟机管理
+### 5.1 创建虚拟机
 
 1. 准备可用 ISO 或模板、网络和存储池。
 2. 进入 **虚拟机** 标签，点击 **创建**。
@@ -42,33 +88,43 @@ keywords: [1Panel 虚拟机, KVM, libvirt, 虚拟机管理, ISO, 存储池, 企�
 4. 选择网络及其他启动参数，确认后提交。
 5. 虚拟机启动后，通过控制台完成操作系统安装。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-create.png" alt="图 3 创建虚拟机" />
+![图 6 创建虚拟机](/img/1panel/enterprise/vm/vm-create.png)
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3 创建虚拟机</div>
+*图 6 创建虚拟机*
 
-## 4 网络与存储
+### 5.2 同步虚拟机
 
-- NAT 网络需要配置网段、网关和 DHCP 地址范围；
-- 桥接网络需要选择宿主机现有桥接接口；
-- 存储池创建时填写名称、类型、路径和描述；
-- 删除网络或存储池前，应确认没有虚拟机或磁盘仍在使用。
+当虚拟机由宿主机侧直接操作（例如使用 `virsh` 创建、修改或删除域），或面板显示与实际运行情况不一致时，可执行 **同步**，让面板重新读取宿主机 libvirt 的域列表并刷新记录。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-network.png" alt="图 4 网络" />
+同步完成后，1Panel 面板中的虚拟机元数据与宿主机 libvirt 的域列表实现一致：
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4 网络</div>
+- 对宿主机存在、面板未登记的域补充记录；
+- 按宿主机实际配置刷新已登记域的元数据；
+- 将宿主机上已不存在的域置为删除状态。
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-storage.png" alt="图 5 存储池" />
+同步只处理面板中的记录，**不会修改磁盘文件，也不会改变虚拟机的运行状态**；处于运行中的虚拟机在同步前后保持原状。
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5 存储池</div>
+![图 7 同步虚拟机](/img/1panel/enterprise/vm/vm-sync.png)
 
-:::danger[宿主机风险]
-    虚拟机占用宿主机 CPU、内存、磁盘和网络。过量分配、错误桥接或删除虚拟磁盘都可能影响宿主机和业务，生产环境操作前应完成容量评估和备份。
+*图 7 同步虚拟机*
 
-:::
-## 5 孤立资源清理
+> [!NOTE] **已删除状态的记录**
+> 已置为删除状态的记录不会再驱动宿主机上的任何操作。确认这些域确实不再需要后，可再按需清理其遗留磁盘，清理前须参考「6 孤立资源清理」一节的确认要求。
 
-概览中的孤立资源扫描用于查找未被虚拟机引用的磁盘等资源。清理前必须人工确认资源确实不再使用；删除后不能通过 1Panel 自动恢复。
+### 5.3 创建虚拟机模板
 
-<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-orphan.png" alt="图 6 孤立数据清理" />
+直接从 ISO 安装每台虚拟机都比较耗时。1Panel 提供 **模板** 机制：把现有虚拟机转为模板，保留当前系统状态，后续创建虚拟机时可以直接以模板为安装来源，省去重复安装系统的过程。
 
-<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6 孤立数据清理</div>
+1. 进入 **虚拟机** 选项卡，打开目标虚拟机的详情。
+2. 单击 **转为模板**，按提示确认。
+3. 模板按虚拟机当前系统状态生成，可在 **模板** 选项卡中查看。
+
+![图 8 转为模板](/img/1panel/enterprise/vm/vm-template.png)
+
+*图 8 转为模板*
+
+模板生成后，可在 **模板** 选项卡中查看结果，并作为创建虚拟机时的安装来源。
+
+![图 9 模板同步结果](/img/1panel/enterprise/vm/vm-template-sync.png)
+
+*图 9 模板同步结果*
