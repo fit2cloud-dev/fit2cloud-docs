@@ -9,9 +9,9 @@
 
 首次进入时，系统会检查虚拟化能力、KVM 辅助服务以及相关依赖。页面提示缺少可安装依赖时，可按引导安装；硬件虚拟化未开启、内核模块不可用或平台不受支持时，需要先在宿主机或固件中处理。
 
-![图 1 概览与环境检查](/img/1panel/enterprise/vm/vm-overview.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-overview.png" alt="图 1 概览与环境检查" />
 
-*图 1 概览与环境检查*
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1 概览与环境检查</div>
 
 ## 2 页面结构
 
@@ -22,9 +22,9 @@
 - **网络**：管理 NAT 或桥接网络；
 - **存储池**：管理虚拟磁盘存放位置和容量。
 
-![图 2 虚拟机列表](/img/1panel/enterprise/vm/vm-list.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-list.png" alt="图 2 虚拟机列表" />
 
-*图 2 虚拟机列表*
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2 虚拟机列表</div>
 
 ## 3 配置镜像
 
@@ -36,9 +36,9 @@
 
 按所选方式填写信息并提交，等待上传或拉取完成即可。
 
-![图 3 上传操作系统镜像](/img/1panel/enterprise/vm/vm-iso.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-iso.png" alt="图 3 上传操作系统镜像" />
 
-*图 3 上传操作系统镜像*
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3 上传操作系统镜像</div>
 
 常用镜像来源：
 
@@ -63,18 +63,18 @@
 
 创建网络时按类型填写网段、网关和 DHCP 地址范围；桥接网络需要选择宿主机上已有的桥接接口。
 
-![图 4 虚拟网络](/img/1panel/enterprise/vm/vm-network.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-network.png" alt="图 4 虚拟网络" />
 
-*图 4 虚拟网络*
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 4 虚拟网络</div>
 
 ### 4.2 配置存储池
 
 存储池是存放虚拟机磁盘镜像的区域。1Panel 默认使用基于目录的存储池。
 创建存储池时填写名称、类型、路径和描述，并可将其中一个设为默认存储池，新建虚拟机时自动使用。
 
-![图 5 存储池](/img/1panel/enterprise/vm/vm-storage.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-storage.png" alt="图 5 存储池" />
 
-*图 5 存储池*
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 5 存储池</div>
 
 > [!CAUTION] **宿主机风险**
 > 虚拟机占用宿主机 CPU、内存、磁盘和网络。过量分配、错误桥接或删除虚拟磁盘都可能影响宿主机和业务，生产环境操作前应完成容量评估和备份。
@@ -88,9 +88,9 @@
 4. 选择网络及其他启动参数，确认后提交。
 5. 虚拟机启动后，通过控制台完成操作系统安装。
 
-![图 6 创建虚拟机](/img/1panel/enterprise/vm/vm-create.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-create.png" alt="图 6 创建虚拟机" />
 
-*图 6 创建虚拟机*
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 6 创建虚拟机</div>
 
 ### 5.2 同步虚拟机
 
@@ -104,9 +104,9 @@
 
 同步只处理面板中的记录，**不会修改磁盘文件，也不会改变虚拟机的运行状态**；处于运行中的虚拟机在同步前后保持原状。
 
-![图 7 同步虚拟机](/img/1panel/enterprise/vm/vm-sync.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-sync.png" alt="图 7 同步虚拟机" />
 
-*图 7 同步虚拟机*
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 7 同步虚拟机</div>
 
 > [!NOTE] **已删除状态的记录**
 > 已置为删除状态的记录不会再驱动宿主机上的任何操作。确认这些域确实不再需要后，可再按需清理其遗留磁盘，清理前须参考「6 孤立资源清理」一节的确认要求。
@@ -119,12 +119,12 @@
 2. 单击 **转为模板**，按提示确认。
 3. 模板按虚拟机当前系统状态生成，可在 **模板** 选项卡中查看。
 
-![图 8 转为模板](/img/1panel/enterprise/vm/vm-template.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-template.png" alt="图 8 转为模板" />
 
-*图 8 转为模板*
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 8 转为模板</div>
 
 模板生成后，可在 **模板** 选项卡中查看结果，并作为创建虚拟机时的安装来源。
 
-![图 9 模板同步结果](/img/1panel/enterprise/vm/vm-template-sync.png)
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/1panel/enterprise/vm/vm-template-sync.png" alt="图 9 模板同步结果" />
 
-*图 9 模板同步结果*
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 9 模板同步结果</div>
