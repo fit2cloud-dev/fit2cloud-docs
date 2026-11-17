@@ -77,9 +77,10 @@ logger.sql.level=info
 #spring.ai.mcp.server.type=ASYNC
 #spring.ai.mcp.server.name=cordys-crm-mcp-server
 
-# Streamable Protocol Settings ,default is SSE
+# Streamable Protocol Settings
+# 启用 Streamable HTTP 协议时，客户端 URL 使用 /mcp、transport 使用 streamable_http
 #spring.ai.mcp.server.protocol=STREAMABLE
-#spring.ai.mcp.server.streamable-http.mcp-endpoint=/sse
+#spring.ai.mcp.server.streamable-http.mcp-endpoint=/mcp
 
 # 仪表板外链功能启用白名单,不开启则不限制访问
 #dashboard.whitelist.enabled=false
