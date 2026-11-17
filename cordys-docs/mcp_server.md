@@ -46,8 +46,8 @@ Cordys CRM MCP Server 默认监听端口为 8082，支持 SSE 和 Streamable-HTT
 ```
 {
    "cordys-crm-mcp-server": {
-       "url": "http://<your-server-ip>:8082/sse", // 将 IP 替换为部署机器的地址
-       "transport": "sse",
+       "url": "http://<your-server-ip>:8082/mcp", // 将 IP 替换为部署机器的地址
+       "transport": "streamable_http",
         "headers": {
 			"X-Access-Key": "ak", // 替换为实际的 Access Key
 			"X-Secret-Key": "sk" // 替换为实际的 Secret Key
@@ -55,7 +55,7 @@ Cordys CRM MCP Server 默认监听端口为 8082，支持 SSE 和 Streamable-HTT
     }
 }
 ```
-服务端开启了 Streamable-HTTP 协议，只需将 `transport` 字段修改为 `streamable_http` 即可。
+上述示例使用 Streamable HTTP 协议，URL 为 `/mcp`、`transport` 为 `streamable_http`。若服务端仍使用 SSE 协议，需将 URL 改为 `/sse` 且 `transport` 改为 `sse`，两者须保持一致。
 
 
 登录 Cordys CRM 从左下角 【 个人中心 - API Keys 】中获取 Access Key 和 Secret Key
@@ -162,8 +162,8 @@ Cordys CRM 的 MCP Server 提供以下工具。
     ```
     {
         "cordys-crm-mcp-server": {
-            "url": "http://<Cordys_MCP_IP>:8082/sse",
-            "transport": "sse",
+            "url": "http://<Cordys_MCP_IP>:8082/mcp",
+            "transport": "streamable_http",
             "headers": {
                 "X-Access-Key": "{{global.ak}}",
                 "X-Secret-Key": "{{global.sk}}"
@@ -171,7 +171,7 @@ Cordys CRM 的 MCP Server 提供以下工具。
         }
     }
     ```
-服务端开启了 Streamable-HTTP 协议，只需将 `transport` 字段修改为 `streamable_http` 即可。
+上述示例使用 Streamable HTTP 协议，URL 为 `/mcp`、`transport` 为 `streamable_http`。若服务端仍使用 SSE 协议，需将 URL 改为 `/sse` 且 `transport` 改为 `sse`，两者须保持一致。
 
 
 方式一：Cordys CRM 智能查询效果
@@ -194,7 +194,7 @@ Cordys CRM 的 MCP Server 提供以下工具。
 ```
 {
     "cordys-crm-mcp-server": {
-        "url": "http://<Cordys_MCP_IP>:8082/sse",
+        "url": "http://<Cordys_MCP_IP>:8082/mcp",
         "headers": {
             "X-Access-Key": "ak",
             "X-Secret-Key": "sk"
