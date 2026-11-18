@@ -79,19 +79,6 @@
   text-decoration: none;
 }
 
-/* 漏洞修复按钮：与其余按钮同尺寸，仅换成琥珀色系，让安全相关入口在按钮行里可辨识 */
-.heroBtnWarn {
-  color: #a15c00;
-  border-color: rgba(230, 167, 0, 0.28);
-  background-color: #fff8e6;
-}
-
-.heroBtnWarn:hover {
-  color: #7c4600;
-  border-color: rgba(230, 167, 0, 0.5);
-  background-color: #fff1d6;
-}
-
 /* ===== 产品介绍视频卡片（点击跳转 B 站） =====
    尺寸约束：卡片为列布局（封面 + 副标题），宽 200px 时实测总高 148px
    （封面 198×111 + 文字区 35 + 边框 2）。必须 ≤ 左侧文案块高度（4 行段落 115.5 + 24 + 按钮 36 ≈ 175px），
