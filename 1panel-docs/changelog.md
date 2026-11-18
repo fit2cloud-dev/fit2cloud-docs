@@ -42,7 +42,7 @@ title: 社区版/专业版
 * 【模型】全面重构 GPU 管理
 * 【模型】全面重构 vLLM 管理
 * 【模型】全面重构模型服务
-* 【智能体】新增 DeepSeek Harness 和 OctoP 支持
+* 【智能体】新增 DeepSeek Harness 和 Octop 支持
 * 【MCP 管理】新增 1Panel MCP 服务管理功能
 * 【网站】支持在性能调整中配置反向代理超时时间
 * 【证书】证书申请后支持一次推送到多个本地目录
