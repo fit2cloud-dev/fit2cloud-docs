@@ -80,7 +80,6 @@ MaxKB 的 Skill 是上传的 ZIP 包，运行时被解压到按会话隔离的�
 
 把重排节点的「引用分段 Top」设为 1，回复节点的内容配置直接 copy 重排节点输出参数中的重排结果即可。
 
-
 ## 2 系统集成与权限
 
 ### 2.1 WorkBuddy 与 MaxKB 如何关联？
@@ -99,6 +98,24 @@ WorkBuddy 账号与 MaxKB 账号相互独立，通过 MaxKB 的个人 API Key �
 
 MaxKB Skills 可在论坛帖子（https://bbs.fit2cloud.com/t/topic/19883）中获取下载链接。下载后把安装包直接拖入 WorkBuddy 的输入框，让 WorkBuddy 自行安装即可。
 
+### 2.3 WorkBuddy 调用 MaxKB 必须用商业版吗？
+
+**问题**：WorkBuddy 通过 MaxKB 技能调用知识库，社区版可以吗？
+
+**处理方式**：
+
+MaxKB 技能仅适用于 MaxKB 商业版部署，不适用社区版。社区版未开放知识库 API，仅开放三类智能体相关 API：获取智能体会话 ID、查询智能体详情、与智能体对话；不支持创建智能体、知识库导入、后台统计等能力，因此大部分指令无法在社区版上正常使用。
+
+### 2.4 MaxKB 的 Skill 从哪里下载？
+
+**问题**：除了已有的技能，其他 Skill（比如 office CLI）从哪里下载，怎么导入？
+
+**处理方式**：
+
+MaxKB Skills 可在 GitHub（`https://github.com/1Panel-dev/MaxKB-skills`）或 ClawHub（`https://clawhub.ai/liuruibin/maxkb`）获取；WorkBuddy 使用的 maxkb-platform-pro 技能以 ZIP 安装包形式提供，下载后在 WorkBuddy 的「专家 · 技能 · 连接器」→「技能」页签点击「导入技能」，将 ZIP 文件拖入即可安装。
+
+详细安装与配置步骤请参阅 [MaxKB Skills](../Skills/MaxKB_Skills.md) 与 [WorkBuddy + MaxKB 技能](../Skills/MaxKB_Skills.md)。
+
 ## 3 安装与升级
 
 ### 3.1 MaxKB 如何升级版本？
@@ -111,3 +128,32 @@ MaxKB Skills 可在论坛帖子（https://bbs.fit2cloud.com/t/topic/19883）中�
 
 详细步骤请参阅[在线升级](../installation/online_installtion.md)与[离线升级](../installation/online_installtion.md)。
 
+### 3.2 v1 能直接升级到 v2 吗？
+
+**问题**：Docker 部署的 MaxKB 从 v1.10.2 升级到 v2.10.8，版本跨度较大，能直接升级吗？
+
+**处理方式**：
+
+不能直接升级。v1 需先升级至 **v1.10.10-lts** 版本及后续版本，再使用迁移工具迁移到 **v2.1.0**，之后可升级到 v2 更高版本。迁移前请先备份数据，并停止在 v1 环境的任何操作。
+
+详细步骤请参阅[迁移工具](../installation/migrate.md)
+
+### 3.3 如何从 MaxKB Pro 换装社区版？
+
+**问题**：之前部署了 MaxKB Pro 版本做测试，现在想恢复为全新的社区版，如何卸载旧版本并安装新版本？
+
+**处理方式**：
+
+先停止并卸载旧容器，再手动删除数据目录，然后用离线安装包重新安装，即可得到全新的空环境。依次执行：`mkctl stop`、`mkctl uninstall`（只删容器、不删数据）、`rm -rf /opt/maxkb` 删除数据与配置目录，再进入 v2.1.0 离线安装包目录执行 `bash install.sh`，最后用 `mkctl status` 确认所有容器状态为 healthy。
+
+卸载命令请参阅[命令行工具](../installation/online_installtion.md)，安装步骤请参阅[离线安装](../installation/online_installtion.md)。
+
+### 3.4 1Panel 里的 MaxKB 如何升级并迁回数据？
+
+**问题**：之前用 1Panel 部署的 MaxKB 1.10 想继续在 1Panel 里管理并升级到 v2，另一台服务器上已有 v2.10 的数据，怎么迁回去？
+
+**处理方式**：
+
+迁移工具只能把 v1 迁移到 v2，不能用于 v2 之间的数据迁移。v1 需先升级至 v1.10.10-lts 及后续版本，再用迁移工具迁移到 v2.1.0，之后可升级到 v2 更高版本；迁移的目标环境必须是 v2.1.0 且没有任何数据（license 除外）。
+
+详细步骤请参阅[迁移工具](../installation/migrate.md)
