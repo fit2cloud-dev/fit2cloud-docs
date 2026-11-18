@@ -194,6 +194,67 @@
   color: var(--ifm-color-emphasis-600);
 }
 
+/* ===== 漏洞通知滚动横幅 =====
+   Hero 网格的第 3 行，横跨两列（grid-column: 1 / -1），高度与按钮对齐。
+   轨道内放 4 份相同文案、位移 -50%（= 2 份），因此：
+   ① 位移两份后画面与初始完全一致 → 循环无缝；
+   ② 轨道半宽 2×511=1022px ≥ 视口 778px → 任意时刻视口都被填满，不会露出空白。
+   改份数或文案长度时必须重新核对 ②（轨道半宽 ≥ 横幅宽度），否则右侧会空。 */
+@keyframes noticeMarqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.noticeMarquee {
+  grid-column: 1 / -1;
+  display: block;
+  /* 与 Hero 的 padding-bottom（36px）对齐：横幅上方留白 = 下方留白，视觉居中 */
+  margin-top: 36px;
+  height: 36px;
+  overflow: hidden;
+  border: 1px solid #ffccc7;
+  border-radius: 8px;
+  background-color: #fff1f0;
+  text-decoration: none;
+}
+
+.noticeMarqueeTrack {
+  display: inline-flex;
+  width: max-content;
+  will-change: transform;
+  /* 34s ≈ 每 2 份（1022px）走完，视觉速度约 30px/s，比原来慢一点更耐看 */
+  animation: noticeMarqueeScroll 34s linear infinite;
+}
+
+.noticeMarqueeItem {
+  /* 右内边距即两段文案之间的间隔，改它不会影响 -50% 的无缝衔接 */
+  padding-right: 72px;
+  color: #cf1322;
+  font-size: 0.9375rem;
+  line-height: 34px; /* 36px 高 − 上下各 1px 边框 */
+  white-space: nowrap;
+}
+
+/* 悬停暂停，方便看清内容后点击 */
+.noticeMarquee:hover .noticeMarqueeTrack {
+  animation-play-state: paused;
+}
+
+/* 系统开启「减少动态效果」时不滚动，静态展示首段文案 */
+@media (prefers-reduced-motion: reduce) {
+  .noticeMarqueeTrack {
+    animation: none;
+  }
+
+  .noticeMarqueeTrack .noticeMarqueeItem[aria-hidden='true'] {
+    display: none;
+  }
+}
+
 /* ===== 分区（图标列 + 竖线 + 链接组） ===== */
 .section {
   display: flex;
