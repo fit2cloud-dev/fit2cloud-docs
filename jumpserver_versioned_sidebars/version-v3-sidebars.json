@@ -8,6 +8,12 @@
     },
     {
       "type": "doc",
+      "id": "lifecycle",
+      "label": "生命周期",
+      "key": "v3-doc:生命周期"
+    },
+    {
+      "type": "doc",
       "id": "quick_start",
       "label": "快速入门",
       "key": "v3-doc:快速入门"

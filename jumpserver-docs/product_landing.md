@@ -49,6 +49,27 @@ import styles from './product_landing.module.css';
     </span>
     <span className={styles.videoHint}>飞致云开源社区 · 05:22</span>
   </Link>
+  {/* 漏洞通知滚动横幅：一行红字循环滚动，悬停暂停，点击直达官方博客原文。
+      轨道内需要放足够多份文案 —— 位移距离是轨道的一半，只有「轨道半宽 ≥ 视口宽」
+      才能保证任意时刻视口都被填满（只放 2 份时轨道半宽 511px < 视口 778px，
+      滚到后半程右侧会露出空白）。 */}
+  <Link
+    className={styles.noticeMarquee}
+    to="https://blog.fit2cloud.com/?p=01a1e884-3022-77bd-9d73-b5f4be74993c"
+    aria-label="重要通知：JumpServer 漏洞通知及修复方案（JS-2026.11.18）"
+  >
+    <span className={styles.noticeMarqueeTrack}>
+      {[0, 1, 2, 3].map((i) => (
+        <span
+          key={i}
+          className={styles.noticeMarqueeItem}
+          aria-hidden={i === 0 ? undefined : 'true'}
+        >
+          重要通知 | JumpServer 漏洞通知及修复方案（JS-2026.11.18）
+        </span>
+      ))}
+    </span>
+  </Link>
 </div>
 
 {/* ===== 分区 1：了解 JumpServer ===== */}
