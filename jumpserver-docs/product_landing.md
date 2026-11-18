@@ -23,12 +23,11 @@ import styles from './product_landing.module.css';
       Web 站点以及 Remote App 等多种资产类型。
     </p>
     <div className={styles.heroBtns}>
-      {/* 顺序按设计稿：产品动态 → 下载安装 → 快速体验 → 如何购买 → 漏洞修复 */}
+      {/* 顺序按设计稿：产品动态 → 下载安装 → 快速体验 → 如何购买 */}
       <Link className={styles.heroBtn} to="/jumpserver/change_log">产品动态</Link>
       <Link className={styles.heroBtn} to="https://community.fit2cloud.com/#/products/jumpserver/downloads">下载安装</Link>
       <Link className={styles.heroBtn} to="https://demo.jumpserver.org/">快速体验</Link>
       <Link className={styles.heroBtn} to="https://jumpserver.org/enterprise.html">如何购买</Link>
-      <Link className={`${styles.heroBtn} ${styles.heroBtnWarn}`} to="https://blog.fit2cloud.com/?p=01a1e884-3022-77bd-9d73-b5f4be74993c">漏洞修复</Link>
     </div>
   </div>
   {/* 产品介绍视频：封面为纯 CSS 绿底（沿用视频原海报的绿）+ 白色镂空 logo + 主题词，
@@ -49,13 +48,13 @@ import styles from './product_landing.module.css';
     </span>
     <span className={styles.videoHint}>飞致云开源社区 · 05:22</span>
   </Link>
-  {/* 漏洞通知滚动横幅：一行红字循环滚动，悬停暂停，点击直达官方博客原文。
+  {/* 漏洞通知滚动横幅：一行红字循环滚动，悬停暂停，点击直达站内《漏洞修复方案》。
       轨道内需要放足够多份文案 —— 位移距离是轨道的一半，只有「轨道半宽 ≥ 视口宽」
       才能保证任意时刻视口都被填满（只放 2 份时轨道半宽 511px < 视口 778px，
       滚到后半程右侧会露出空白）。 */}
   <Link
     className={styles.noticeMarquee}
-    to="https://blog.fit2cloud.com/?p=01a1e884-3022-77bd-9d73-b5f4be74993c"
+    to="/jumpserver/faq/vuln_fix/js-2026-11-18"
     aria-label="重要通知：JumpServer 漏洞通知及修复方案（JS-2026.11.18）"
   >
     <span className={styles.noticeMarqueeTrack}>

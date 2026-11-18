@@ -1164,6 +1164,20 @@ const sidebars = {
       "collapsed": true,
       "items": [
         {
+          "type": "category",
+          "label": "漏洞修复",
+          "collapsed": true,
+          "items": [
+            {
+              "type": "doc",
+              "id": "faq/vuln_fix/js-2026-11-18",
+              "label": "JS-2026.11.18",
+              "key": "doc:常见问题/漏洞修复/JS-2026.11.18"
+            }
+          ],
+          "key": "cat:常见问题/漏洞修复"
+        },
+        {
           "type": "doc",
           "id": "faq/faq",
           "label": "产品 FAQ",
