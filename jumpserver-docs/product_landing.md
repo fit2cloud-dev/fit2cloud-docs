@@ -23,11 +23,12 @@ import styles from './product_landing.module.css';
       Web 站点以及 Remote App 等多种资产类型。
     </p>
     <div className={styles.heroBtns}>
-      {/* 顺序按设计稿：产品动态 → 下载安装 → 快速体验 → 如何购买 */}
+      {/* 顺序按设计稿：产品动态 → 下载安装 → 快速体验 → 如何购买 → 漏洞修复 */}
       <Link className={styles.heroBtn} to="/jumpserver/change_log">产品动态</Link>
       <Link className={styles.heroBtn} to="https://community.fit2cloud.com/#/products/jumpserver/downloads">下载安装</Link>
       <Link className={styles.heroBtn} to="https://demo.jumpserver.org/">快速体验</Link>
       <Link className={styles.heroBtn} to="https://jumpserver.org/enterprise.html">如何购买</Link>
+      <Link className={`${styles.heroBtn} ${styles.heroBtnWarn}`} to="https://blog.fit2cloud.com/?p=01a1e884-3022-77bd-9d73-b5f4be74993c">漏洞修复</Link>
     </div>
   </div>
   {/* 产品介绍视频：封面为纯 CSS 绿底（沿用视频原海报的绿）+ 白色镂空 logo + 主题词，

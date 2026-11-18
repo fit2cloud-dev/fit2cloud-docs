@@ -46,10 +46,13 @@
      最坏情况（3 行）卡片顶边只比段落盒顶高约 8px，肉眼无感。 */
 }
 
+/* 按钮行：5 个按钮（末位为「漏洞修复」）需在同一行内放下，
+   按钮内边距 24→18、间距 14→12 —— 正文列宽 = 内容宽 778 − 视频列 200 − gap 36 = 542px，
+   5×96 + 4×12 = 528px，留 14px 余量；视口更窄时自动折行。 */
 .heroBtns {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
 }
 
 /* Hero 按钮：对齐首页卡片「进入文档」主题配色（浅蓝底 + 低对比细边框 + 品牌蓝字） */
@@ -58,7 +61,7 @@
   align-items: center;
   justify-content: center;
   height: 36px;
-  padding: 0 24px;
+  padding: 0 18px;
   border-radius: 8px;
   font-size: 1em;
   font-weight: 500;
@@ -74,6 +77,19 @@
   border-color: rgba(12, 123, 224, 0.24);
   color: #08549a;
   text-decoration: none;
+}
+
+/* 漏洞修复按钮：与其余按钮同尺寸，仅换成琥珀色系，让安全相关入口在按钮行里可辨识 */
+.heroBtnWarn {
+  color: #a15c00;
+  border-color: rgba(230, 167, 0, 0.28);
+  background-color: #fff8e6;
+}
+
+.heroBtnWarn:hover {
+  color: #7c4600;
+  border-color: rgba(230, 167, 0, 0.5);
+  background-color: #fff1d6;
 }
 
 /* ===== 产品介绍视频卡片（点击跳转 B 站） =====
