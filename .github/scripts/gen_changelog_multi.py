@@ -323,7 +323,7 @@ def parse_ul(note: str, cfg: dict | None = None):
     return sections
 
 
-def parse_br(note: str):
+def parse_br(note: str, cfg: dict | None = None):
     """h1/p/■/br 结构（maxkb）。每条以「■」起始；首行为标题，其余行为描述。"""
     sections = []
     for title, body in split_sections(note):
@@ -365,7 +365,7 @@ def md_inline(s: str) -> str:
     return re.sub(r'[ \t\u00a0]+', ' ', s).strip()
 
 
-def parse_md(note: str):
+def parse_md(note: str, cfg: dict | None = None):
     """markdown 正文结构（ai-gateway / GitHub Releases）。
 
     以 #~###### 标题切分为分组；组内以 -/*/+ 列表行为条目，
