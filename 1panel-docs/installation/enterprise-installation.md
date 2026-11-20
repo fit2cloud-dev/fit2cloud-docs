@@ -23,11 +23,42 @@ keywords: [1Panel 离线安装]
 
 ## 3 执行安装命令
 
-获取对应架构的离线安装包并上传至目标服务器解压。进入解压目录后，执行 install.sh 脚本即可根据提示完成安装。
+获取对应架构的离线安装包，上传至目标服务器的 `/tmp` 目录，并以 **root 用户** 执行以下命令解压：
+
+```bash
+cd /tmp
+# 解压离线包（1panel-v2.5.1-linux-amd64.tar.gz 为示例文件名，请替换为实际名称）
+tar zxvf 1panel-v2.5.1-linux-amd64.tar.gz
+```
+
+进入解压目录，执行 `install.sh` 脚本，根据提示完成安装：
+
+```bash
+# 进入解压目录（请按实际包名替换目录名）
+cd 1panel-v2.5.1-linux-amd64
+
+# 执行安装脚本
+/bin/bash install.sh
+```
 
 ## 4 升级指南
 
-获取对应架构的离线安装包并上传至目标服务器解压。进入解压目录后，执行 upgrade.sh 脚本即可根据提示完成升级。
+获取对应架构的离线安装包，上传至目标服务器的 `/tmp` 目录并解压：
+
+```bash
+cd /tmp
+# 解压离线包（1panel-v2.5.1-linux-amd64.tar.gz 为示例文件名，请替换为实际名称）
+tar zxvf 1panel-v2.5.1-linux-amd64.tar.gz
+```
+
+进入解压目录，执行 `upgrade.sh` 脚本，根据提示完成升级：
+
+```bash
+cd 1panel-v2.5.1-linux-amd64
+
+# 执行升级脚本
+/bin/bash upgrade.sh
+```
 
 ## 5 恢复社区版
 
