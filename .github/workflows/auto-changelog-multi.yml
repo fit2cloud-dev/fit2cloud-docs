@@ -7,6 +7,8 @@
 #   - 数据源按产品区分：多数走社区发布 API，ai-gateway 走 GitHub Releases
 #     （脚本内 fetch_releases 自动分派，本 workflow 无需感知）。
 #   - 每个产品一个独立 job，各自创建 PR，互不干扰；版本已存在时脚本会自动跳过。
+#     跳过时脚本多输出一行 STATUS=skipped，本 workflow 据此打 ::notice、在 Step Summary
+#     里标注「已跳过」，并跳过创建 PR 的步骤——避免「机器人天天绿、却从未开过 PR」的静默失效。
 #
 # 注意:
 #   - schedule 触发器只在仓库默认分支(main)上生效；放在功能分支上时，
@@ -112,14 +114,24 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Generate changelog entry
+        id: generate
         run: |
           set -e
-          python "${SCRIPT}" "${{ matrix.product }}" "${{ steps.detect.outputs.version }}"
+          # 退出码 0 同时覆盖「已生成」和「版本已存在、跳过」两种情况，必须靠 STATUS 标记区分，
+          # 否则跳过会被当成成功，没人会发现 PR 其实从来没建出来。
+          out=$(python "${SCRIPT}" "${{ matrix.product }}" "${{ steps.detect.outputs.version }}")
+          printf '%s\n' "${out}"
+          status=$(printf '%s\n' "${out}" | sed -n 's/^STATUS=//p' | tail -n 1)
+          echo "status=${status:-generated}" >> "$GITHUB_OUTPUT"
+          if [ "${status}" = "skipped" ]; then
+            echo "::notice title=${{ matrix.product }} 跳过::${{ matrix.product }} ${{ steps.detect.outputs.version }} 已存在于 ${{ steps.detect.outputs.target_file }}，本次未生成内容，也不会创建 PR。"
+          fi
           echo "----- preview (first 30 lines) -----"
           head -n 30 "${{ steps.detect.outputs.target_file }}"
           echo "------------------------------------"
 
       - name: Create Pull Request
+        if: steps.generate.outputs.status != 'skipped'
         uses: peter-evans/create-pull-request@v6
         with:
           branch: chore/changelog-${{ matrix.product }}
@@ -139,9 +151,22 @@ jobs:
       - name: Summary
         if: always()
         run: |
-          {
-            echo "### Auto Changelog - ${{ matrix.product }}"
-            echo ""
-            echo "- 版本: \`${{ steps.detect.outputs.version || '(未检测到)' }}\`"
-            echo "- 目标文件: \`${{ steps.detect.outputs.target_file || '-' }}\`"
-          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.generate.outputs.status }}" = "skipped" ]; then
+            {
+              echo "### Auto Changelog - ${{ matrix.product }}"
+              echo ""
+              echo "- 版本: \`${{ steps.detect.outputs.version || '(未检测到)' }}\`"
+              echo "- 状态: 已跳过（版本已存在于 \`${{ steps.detect.outputs.target_file }}\`，未创建 PR）"
+              echo ""
+              echo "跳过通常意味着更新日志已被人工提前提交。如需核对机器人生成的内容，可本地执行"
+              echo "\`python ${SCRIPT} ${{ matrix.product }} ${{ steps.detect.outputs.version }} --force --dry-run\` 后与文档比对。"
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            {
+              echo "### Auto Changelog - ${{ matrix.product }}"
+              echo ""
+              echo "- 版本: \`${{ steps.detect.outputs.version || '(未检测到)' }}\`"
+              echo "- 目标文件: \`${{ steps.detect.outputs.target_file || '-' }}\`"
+              echo "- 状态: 已生成，等待创建 PR"
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi

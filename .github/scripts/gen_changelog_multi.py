@@ -28,6 +28,9 @@ fit2cloud 多产品更新日志自动生成脚本（Docusaurus / fit2cloud-docs�
 
 退出码: 0=成功或已存在无需修改, 1=版本在发布列表中不存在, 2=参数/文件错误,
         3=版本与目标文件不匹配(见 sanity_check, 路由配置可能已过期)
+
+退出码 0 同时覆盖「已生成」和「已存在而跳过」两种情况，为了让 workflow 与人工都能
+区分，脚本会额外输出一行状态标记：STATUS=generated / STATUS=skipped。
 """
 from __future__ import annotations
 
@@ -38,6 +41,11 @@ from pathlib import Path
 API_BASE = "https://community.fit2cloud.com/v1/products/{}/releases"
 GH_API = "https://api.github.com/repos/{}/releases"
 TZ = timezone(timedelta(hours=8))
+
+# 与 workflow 约定的状态标记。退出码 0 无法区分「已生成」和「版本已存在跳过」，
+# 不区分就会出现「机器人天天绿、却从未开过 PR」这种静默失效。
+STATUS_GENERATED = 'STATUS=generated'
+STATUS_SKIPPED = 'STATUS=skipped'
 
 # ---------------------------------------------------------------------------
 # 产品配置
@@ -608,7 +616,10 @@ def main() -> int:
         return 3
 
     if not force and re.search(rf'^###\s+{re.escape(target)}\s*$', content, re.M):
+        # 版本已在文档里：通常是人工先提交了更新日志。这里必须显式打出状态标记，
+        # 否则 workflow 只能看到 exit 0，跳过与「已生成」在 Actions 里完全一样。
         print(f'{target} already exists in {path}, skip.')
+        print(STATUS_SKIPPED)
         return 0
 
     rel = find_release(target, fetch_releases(cfg))
@@ -631,10 +642,12 @@ def main() -> int:
         print(f'--- dry-run: would insert into {path} ---')
         sys.stdout.write(block)
         sys.stdout.write(nl)
+        print(STATUS_GENERATED)
         return 0
 
     path.write_bytes(insert(content, block, nl).encode('utf-8'))
     print(f'Inserted {target} into {path}')
+    print(STATUS_GENERATED)
     return 0
 
 
