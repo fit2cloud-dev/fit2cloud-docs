@@ -18,7 +18,7 @@ JumpServer 离线升级包支持的系统与架构如下：
 
 | OS/Arch       | Architecture | Linux Kernel | Offline Name                                     |
 | :------------ | :----------- | :----------- | :----------------------------------------------- |
-| linux/amd64   | x86_64       | &gt;= 4.0       | jumpserver-ce-5.2.0-x86_64.tar.gz |
+| linux/amd64   | x86_64       | &gt;= 4.0       | jumpserver-ce-5.2.1-x86_64.tar.gz |
 
 ## 1. 升级部署
 
@@ -34,8 +34,8 @@ JumpServer 离线升级包支持的系统与架构如下：
 
 ```sh
 cd /opt
-tar -xf jumpserver-ce-5.2.0-x86_64.tar.gz
-cd jumpserver-ce-5.2.0-x86_64
+tar -xf jumpserver-ce-5.2.1-x86_64.tar.gz
+cd jumpserver-ce-5.2.1-x86_64
 ```
 ```sh
 ./jmsctl.sh upgrade
