@@ -25,16 +25,24 @@ title: 数据备份以及恢复指南
   ```sh
   ./jmsctl.sh backup_db
   ```
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/backup_db.png" alt="图 1  数据库备份" />
 
-- 备份文件和当前配置文件会默认保存在持久化目录 /data/jumpserver/db_backup 下，文件名格式为 jumpserver-v5.0.0-xxxx-xx-xx_xx:xx:xx.dump。
-- 如果使用 MySQL 或 MariaDB 作为数据库，文件名格式为 jumpserver-v5.0.0-xxxx-xx-xx_xx:xx:xx.sql。
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 1  数据库备份</div>
+- 备份文件和当前配置文件会默认保存在持久化目录 /data/jumpserver/db_backup 下，文件名格式为 jumpserver-v5.0.0-xxxx-xx-xx_xx:xx:xx.dump.gz。
+- 如果使用 MySQL 或 MariaDB 作为数据库，文件名格式为 jumpserver-v5.0.0-xxxx-xx-xx_xx:xx:xx.sql.gz。
 ### 恢复
 
-- 在堡垒机任意一节点（多节点任意一节点即可）执行以下命令恢复数据库信息：
+- 在堡垒机任意一节点（多节点任意一节点即可）执行以下命令恢复数据库信息(注意：如果是压缩文件需要提前解压)：
 
   ```sh
   ./jmsctl.sh restore_db /data/jumpserver/db_backup/jumpserver-v5.0.0-xxxx-xx-xx_xx:xx:xx.dump
   ```
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/restore_db1.png" alt="图 2  恢复数据库备份1" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 2  恢复数据库备份1</div>
+<img style={{display:"block",margin:"16px auto",maxWidth:"100%"}} src="/img/jumpserver/restore_db2.png" alt="图 3  恢复数据库备份2" />
+
+<div style={{textAlign:"center",color:"#8a8f99",fontSize:"13px",margin:"6px 0 20px"}}>图 3  恢复数据库备份2</div>
 ## 3 静态文件备份
 
 :::warning[注意]
@@ -78,3 +86,13 @@ title: 数据备份以及恢复指南
 rsync -avh /data/jumpserver/core/data/media/replay/ /backup/jumpserver/replay_backup/
 # 录像文件夹以日期和会话 uuid 命名
 ```
+## 4 启动对应版本堡垒机
+
+- 进入到要恢复的版本安装包里面比如jumpserver-v5.0.0-xxxx-xx-xx_xx中先加载旧版镜像然后重启服务，命令如下
+
+  ```sh
+  ./jmsctl.sh load_image
+  ./jmsctl.sh start
+  ```
+
+- 启动服务后访问web网页观察服务是否正常
