@@ -145,6 +145,30 @@ sudo systemctl show-environment | grep '^GODEBUG='
 
 命令说明请参阅[1pctl 命令行工具](../installation/cli.md)
 
+### 2.6 部分国产操作系统无法正常加载 SSH 登录日志怎么办？
+
+**问题**：在部分国产操作系统中，1Panel 无法正常加载 SSH 登录日志，这是什么原因、如何处理？
+
+**处理方式**：
+
+原因是系统的 `/etc/rsyslog.conf` 中只将 `authpriv` 写入了 `/var/log/secure`，没有写入 `auth`，导致 SSH 登录日志无法被正常记录与加载。需要修改 `/etc/rsyslog.conf` 配置，将原来的：
+
+```text
+authpriv.* /var/log/secure
+```
+
+改为：
+
+```text
+auth,authpriv.* /var/log/secure
+```
+
+修改后重启 rsyslog 服务使配置生效：
+
+```bash
+sudo systemctl restart rsyslog
+```
+
 ## 3 应用商店与容器
 
 ### 3.1 应用安装拉取镜像失败怎么办？
