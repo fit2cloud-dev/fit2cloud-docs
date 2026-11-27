@@ -1,0 +1,37 @@
+/* Global font override: switch to Alibaba PuHuiTi 3.0 (阿里巴巴普惠体 3.0) for all content.
+ * Alibaba PuHuiTi is a modern, open-source sans-serif font designed for optimal readability
+ * in both print and digital formats. It supports comprehensive CJK glyphs.
+ * Priority order:
+ * 1. AlibabaPuHuiTi-3-55-Regular - Primary Regular weight
+ * 2. AlibabaPuHuiTi-3-85-Bold - Bold weight for emphasis and badge
+ * 3. Noto Sans CJK SC - Google's open-source CJK sans-serif
+ * 4. WenQuanYi - Traditional Linux CJK font
+ * 5. System fallbacks: Arial, sans-serif
+ */
+@media print {
+  html, body,
+  h1, h2, h3, h4, h5, h6,
+  p, li, label, article,
+  code, pre, kbd, samp, tt,
+  table, th, td, caption,
+  blockquote, aside, nav, header, footer, section {
+    font-family: 'AlibabaPuHuiTi-3-55-Regular', 'Alibaba PuHuiTi 3.0', 'Alibaba PuHuiTi', 'Noto Sans CJK SC', 'Noto Sans SC', 'WenQuanYi Zen Hei', 'WenQuanYi Micro Hei', Arial, sans-serif !important;
+    font-weight: 400;
+  }
+  /* Code blocks with monospace */
+  code, pre, kbd, samp, tt {
+    font-family: 'AlibabaPuHuiTi-3-55-Regular', 'Alibaba PuHuiTi 3.0', 'Alibaba PuHuiTi', 'Noto Sans Mono CJK SC', 'Source Han Mono SC', 'JetBrains Mono', 'Consolas', monospace !important;
+    font-size: 0.95em;
+  }
+}
+
+/* Screen mode (for local preview) */
+html, body,
+h1, h2, h3, h4, h5, h6,
+p, li, label, article,
+code, pre, kbd, samp, tt,
+table, th, td, caption,
+blockquote, aside, nav, header, footer, section {
+  font-family: 'AlibabaPuHuiTi-3-55-Regular', 'Alibaba PuHuiTi 3.0', 'Alibaba PuHuiTi', 'Noto Sans CJK SC', 'Noto Sans SC', 'WenQuanYi Zen Hei', 'WenQuanYi Micro Hei', Arial, sans-serif !important;
+  font-weight: 400;
+}

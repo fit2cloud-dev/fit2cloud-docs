@@ -1,0 +1,186 @@
+name: Markdown Docs to PDF
+description: Convert a selected Docusaurus Markdown directory to a downloadable PDF.
+
+inputs:
+  docs_dir:
+    description: Repository-relative documentation directory, such as dataease-docs.
+    required: true
+  output_name:
+    description: Optional PDF filename. The .pdf suffix is added automatically.
+    required: false
+    default: ''
+  title:
+    description: Optional PDF title. Empty values are inferred from docs_dir.
+    required: false
+    default: ''
+  toc_depth:
+    description: PDF table-of-contents depth (1-6).
+    required: false
+    default: '3'
+  image_max_width:
+    description: Resize wider images to this pixel width; 0 disables resizing.
+    required: false
+    default: '1600'
+  exclude:
+    description: Comma/newline separated docs-relative files or globs to skip, e.g. product_landing.md.
+    required: false
+    default: ''
+  cover_subtitle:
+    description: Optional subtitle shown on the cover page. Leave empty to hide it.
+    required: false
+    default: ''
+  output_dir:
+    description: Output directory relative to GITHUB_WORKSPACE, or an absolute path under the workspace/runner temp.
+    required: false
+    default: pdf-output
+
+outputs:
+  pdf_path:
+    description: Absolute path to the generated PDF.
+    value: ${{ steps.finalize.outputs.pdf_path }}
+  pdf_name:
+    description: Generated PDF filename.
+    value: ${{ steps.finalize.outputs.pdf_name }}
+  pdf_size:
+    description: Generated PDF size in bytes.
+    value: ${{ steps.finalize.outputs.pdf_size }}
+  pdf_sha256:
+    description: Generated PDF SHA-256 checksum.
+    value: ${{ steps.finalize.outputs.pdf_sha256 }}
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install PDF runtime libraries
+      shell: bash
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        set -euo pipefail
+        # WeasyPrint 需要的 C 库。中文字体改用仓库内置字体（见下一步），
+        # 避免每次从 apt 拉取巨大的 fonts-noto-cjk（曾耗时 21 分钟）。
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends \
+          fontconfig \
+          libcairo2 \
+          libharfbuzz0b \
+          libjpeg-dev \
+          libopenjp2-7 \
+          libpango-1.0-0 \
+          libpangoft2-1.0-0 \
+          librsvg2-bin
+    - name: Install bundled CJK fonts
+      shell: bash
+      run: |
+        set -euo pipefail
+        # 内置 Alibaba PuHuiTi，与 CSS font-family 直接匹配，覆盖中文渲染。
+        FONT_DIR="/usr/share/fonts/truetype/alibaba-puhuiti"
+        sudo mkdir -p "$FONT_DIR"
+        sudo cp "$GITHUB_ACTION_PATH"/fonts/*.ttf "$FONT_DIR/"
+        sudo chmod 644 "$FONT_DIR"/*.ttf
+        sudo fc-cache -f "$FONT_DIR"
+
+    - name: Install Python dependencies and local plugin
+      shell: bash
+      run: |
+        set -euo pipefail
+        python -m pip install \
+          --disable-pip-version-check \
+          --requirement "$GITHUB_ACTION_PATH/requirements.txt"
+        python -m pip install \
+          --disable-pip-version-check \
+          --no-deps \
+          --editable "$GITHUB_ACTION_PATH/python"
+        python -c "from importlib.metadata import entry_points; found = [ep for ep in entry_points(group='mkdocs.plugins') if ep.name == 'to-pdf']; assert found, 'mkdocs to-pdf entry point is not installed'"
+        python -c "from importlib.resources import files; assert (files('mkdocs_to_pdf') / 'templates' / 'default_cover.html.j2').is_file(), 'plugin template resources are missing'"
+        mkdocs --version
+        node --version
+
+    - name: Prepare MkDocs document tree
+      shell: bash
+      env:
+        DOCS_DIR: ${{ inputs.docs_dir }}
+        OUTPUT_NAME: ${{ inputs.output_name }}
+        PDF_TITLE: ${{ inputs.title }}
+        TOC_DEPTH: ${{ inputs.toc_depth }}
+        IMAGE_MAX_WIDTH: ${{ inputs.image_max_width }}
+        EXCLUDE: ${{ inputs.exclude }}
+        COVER_SUBTITLE: ${{ inputs.cover_subtitle }}
+        WORK_DIR: ${{ runner.temp }}/docs-pdf-work
+        METADATA_PATH: ${{ runner.temp }}/docs-pdf-metadata.json
+        PYTHONUTF8: '1'
+      run: |
+        set -euo pipefail
+        python "$GITHUB_ACTION_PATH/scripts/prepare_docs.py" \
+          --repo-root "$GITHUB_WORKSPACE" \
+          --docs-dir "$DOCS_DIR" \
+          --work-dir "$WORK_DIR" \
+          --metadata "$METADATA_PATH" \
+          --title "$PDF_TITLE" \
+          --output-name "$OUTPUT_NAME" \
+          --toc-depth "$TOC_DEPTH" \
+          --image-max-width "$IMAGE_MAX_WIDTH" \
+          --exclude "$EXCLUDE" \
+          --cover-subtitle "$COVER_SUBTITLE"
+
+    - name: Build PDF
+      shell: bash
+      env:
+        WORK_DIR: ${{ runner.temp }}/docs-pdf-work
+        PYTHONUTF8: '1'
+        LANG: C.UTF-8
+        TZ: Asia/Shanghai
+        NO_MKDOCS_2_WARNING: '1'
+      run: |
+        set -euo pipefail
+        mkdocs build --clean --config-file "$WORK_DIR/mkdocs.yml"
+
+    - name: Finalize PDF
+      id: finalize
+      shell: bash
+      env:
+        METADATA_PATH: ${{ runner.temp }}/docs-pdf-metadata.json
+        OUTPUT_DIR_INPUT: ${{ inputs.output_dir }}
+      run: |
+        set -euo pipefail
+        PDF_SOURCE="$(python -c 'import json, os; print(json.load(open(os.environ["METADATA_PATH"], encoding="utf-8"))["pdf_source"])')"
+        PDF_NAME="$(python -c 'import json, os; print(json.load(open(os.environ["METADATA_PATH"], encoding="utf-8"))["output_name"])')"
+        test -s "$PDF_SOURCE"
+
+        if [[ "$OUTPUT_DIR_INPUT" = /* ]]; then
+          OUTPUT_DIR="$OUTPUT_DIR_INPUT"
+        else
+          OUTPUT_DIR="$GITHUB_WORKSPACE/$OUTPUT_DIR_INPUT"
+        fi
+        OUTPUT_DIR="$(realpath -m "$OUTPUT_DIR")"
+        case "$OUTPUT_DIR" in
+          "$GITHUB_WORKSPACE"/*|"$RUNNER_TEMP"/*) ;;
+          *)
+            echo "::error::output_dir 必须是 GITHUB_WORKSPACE 或 RUNNER_TEMP 下的目录: $OUTPUT_DIR"
+            exit 1
+            ;;
+        esac
+
+        mkdir -p "$OUTPUT_DIR"
+        PDF_PATH="$OUTPUT_DIR/$PDF_NAME"
+        cp -- "$PDF_SOURCE" "$PDF_PATH"
+        PDF_SIZE="$(stat -c '%s' "$PDF_PATH")"
+        PDF_SHA256="$(sha256sum "$PDF_PATH" | awk '{print $1}')"
+
+        {
+          echo "pdf_path=$PDF_PATH"
+          echo "pdf_name=$PDF_NAME"
+          echo "pdf_size=$PDF_SIZE"
+          echo "pdf_sha256=$PDF_SHA256"
+        } >> "$GITHUB_OUTPUT"
+        echo "::notice::PDF generated: $PDF_PATH ($PDF_SIZE bytes)"

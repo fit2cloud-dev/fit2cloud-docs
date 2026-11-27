@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mkdocs-to-pdf"
+version = "0.10.1"
+description = "Generate a single PDF file from an MkDocs documentation tree"
+requires-python = ">=3.9"
+dependencies = [
+  "beautifulsoup4",
+  "Jinja2",
+  "libsass",
+  "mkdocs",
+  "mkdocs-material",
+  "Pillow",
+  "pydyf==0.10.0",
+  "pymdown-extensions",
+  "PyPDF2",
+  "PyYAML",
+  "weasyprint==62.3",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+[project.entry-points."mkdocs.plugins"]
+to-pdf = "mkdocs_to_pdf.plugin:WithPdfPlugin"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mkdocs_to_pdf*"]
+
+[tool.setuptools.package-data]
+mkdocs_to_pdf = [
+  "styles/*.scss",
+  "templates/*.html.j2",
+  "templates/*.scss",
+  "themes/*.css",
+  "themes/*.css.map",
+  "themes/*.js",
+  "themes/*.js.map",
+  "themes/*.scss",
+]

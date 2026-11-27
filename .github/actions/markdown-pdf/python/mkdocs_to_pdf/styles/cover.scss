@@ -1,0 +1,127 @@
+// 封面单独用命名页。不要用 @page :first：正文是分块渲染的，
+// 每一块的第一页都会被当成 :first，章首页会丢掉页眉和页码。
+article#doc-cover {
+  page: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &>.wrapper {
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 0 3rem;
+
+    &.upper {
+      flex: 1 1 auto;
+      max-height: 30vh;
+
+      > .logo {
+        width: 100%;
+        height: 100%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    h1 {
+      font-size: 36pt;
+      line-height: 1.4;
+      bookmark-level: none;
+    }
+
+    h2 {
+      border: none;
+      bookmark-level: none;
+    }
+  }
+
+  &>.properties {
+    flex: 0 0 auto;
+    text-align: right;
+    padding: 0 2rem;
+
+    p#copyright {
+      font-size: 80%;
+    }
+  }
+}
+
+$back_cover-bg: #eee;
+
+article#doc-back_cover {
+  page: back_cover;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .wrapper {
+    flex: 1 0 auto;
+    display: inline-block;
+    background: $back_cover-bg;
+  }
+
+  .qrcode {
+    display: inline-block;
+    flex: 0 0 auto;
+    background: $back_cover-bg;
+
+    > a {
+      display: inline-block;
+      padding: 0.5em 2em;
+      border-radius: 1em;
+      background-color: #fff;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@page cover {
+  @top-left {
+    content: none;
+  }
+
+  @top-center {
+    content: none;
+  }
+
+  @top-right {
+    content: none;
+  }
+
+  @bottom-center {
+    content: none;
+  }
+
+  @bottom-right {
+    content: none;
+  }
+}
+
+@page back_cover {
+  background-color: $back_cover-bg;
+
+  @top-right {
+    content: normal;
+  }
+
+  @bottom-center {
+    content: normal;
+  }
+
+  @bottom-left {
+    font-size: 8pt;
+    content: string(title);
+  }
+
+  @bottom-right {
+    font-size: 8pt;
+    content: string(copyright);
+  }
+}
