@@ -1,0 +1,210 @@
+
+.build-time-string-set {
+  string-set: build-time content();
+}
+
+@page {
+  size: a4 portrait;
+  margin: 25mm 10mm 25mm 10mm;
+  counter-increment: page;
+  white-space: pre;
+  color: grey;
+ /* logo */
+  @top-right {
+    content: string(brand);
+
+    margin-top: -3%;
+    margin-right: 1.5%;
+    font-size: 15pt;
+    color: #0306c5;
+    font-weight: bold;
+    font-family: "Microsoft YaHei", sans-serif;
+
+  }
+  /* copyright */
+  @top-left {
+    content: string(copyright);
+    font-size: 6pt;
+    margin-left: -2%;
+  }
+ /* bar */
+  @top-center {
+    content: "";
+    border-top: 6px solid #0306c5;
+    width: 110%;
+    margin-left: -10%;
+    margin-top: 14mm;
+  }
+
+  // @bottom-right {
+  //   content: "此文档更新于 {{BUILD_TIME}}";
+  //   font-size: 8pt;
+  //   color: #666;
+  // }
+
+  @bottom-center {
+    font-size: 10pt;
+    content: '- 'counter(page)' -';
+  }
+
+  // @bottom-right {
+  //   font-size: 6pt;
+  //   content: string(copyright);
+  // }
+}
+
+@media print {
+  body {
+    background: none;
+    background-color: #fff;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %headings !optional;
+}
+
+article {
+  min-height: 100vh;
+  overflow: visible;
+
+  &,
+  %headings,
+  div.tabbed-content--wrap > .tabbed-content {
+    clear: both;
+  }
+
+  %headings {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  img {
+    page-break-after: auto;
+    page-break-inside: avoid;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    page-break-inside: avoid;
+  }
+
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  ul,
+  ol {
+    page-break-before: avoid;
+    page-break-inside: auto;
+  }
+
+  /* Allow tables to be broken across pages */
+  table {
+    page-break-before: auto;
+    page-break-inside: auto;
+    width: 100% !important;
+    table-layout: auto;
+  }
+
+  /* Prevent wide data tables from overflowing the page */
+  table:not([class]) {
+    display: table;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  table:not([class]) > thead,
+  table:not([class]) > tbody,
+  table:not([class]) > tfoot {
+    width: 100%;
+  }
+
+  /* Optimize table cells for narrow columns */
+  table th,
+  table td {
+    word-break: break-word;
+    hyphens: auto;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    min-width: 30px;
+    max-width: none;
+    padding: 6px 8px;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+
+  /* Make table headers more compact */
+  table th {
+    font-size: 8.5pt;
+    font-weight: bold;
+    padding: 5px 6px;
+  }
+
+  /* Auto-adjust column widths for tables with many columns */
+  table:has(th:nth-child(6)),
+  table:has(td:nth-child(6)) {
+    th, td {
+      font-size: 8pt;
+      padding: 4px 5px;
+    }
+  }
+
+  table:has(th:nth-child(8)),
+  table:has(td:nth-child(8)) {
+    th, td {
+      font-size: 7.5pt;
+      padding: 3px 4px;
+    }
+  }
+
+  /* Special handling for very wide tables (10+ columns) */
+  table:has(th:nth-child(10)),
+  table:has(td:nth-child(10)) {
+    th, td {
+      font-size: 7pt;
+      padding: 2px 3px;
+      min-width: 20px;
+    }
+  }
+
+  pre,
+  dt + dd {
+    page-break-before: avoid;
+  }
+
+  %headings + ul,
+  %headings + ol {
+    page-break-inside: auto;
+  }
+
+  div.admonition {
+    page-break-inside: avoid;
+  }
+
+  div.tabbed-content--wrap {
+    page-break-inside: avoid;
+  }
+
+  * + div.highlight,
+  * + div.tabbed-set {
+    page-break-before: avoid;
+  }
+}
+
+/* 下一节从新的一页开始。不要用 right：那会为了凑奇数页再插入一整张空白页。 */
+article + article {
+  page-break-before: always;
+}
+
+section.two-columns {
+  columns: 2;
+  column-gap: 1cm;
+}

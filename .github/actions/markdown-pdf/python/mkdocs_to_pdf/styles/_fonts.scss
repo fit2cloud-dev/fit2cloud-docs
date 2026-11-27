@@ -1,0 +1,21 @@
+@media print {
+  /* Font families are globally overridden in templates/styles.scss.
+     Here we keep only size & layout related rules to avoid duplication. */
+  html { font-size: 120%; }
+  body { font-size: 14.5pt; }
+  article { font-size: 1.25rem; line-height: 1.6; }
+
+  /* Preserve enlarged monospace scaling (families defined globally) */
+  pre,
+  code,
+  var,
+  samp,
+  kbd,
+  tt { font-size: 1.25em; }
+
+  pre code,
+  pre var,
+  pre samp,
+  pre kbd,
+  pre tt { font-size: 100%; }
+}

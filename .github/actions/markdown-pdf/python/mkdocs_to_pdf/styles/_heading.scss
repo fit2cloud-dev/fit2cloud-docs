@@ -1,0 +1,50 @@
+// Heading styles with brand color system
+// Base brand: #2b937c (沉稳的墨绿偏青)
+// Derived shades (手动调整亮度与饱和度):
+//   Darker:   #1f6d5d  (h1 强调)
+//   Primary:  #2b937c  (h2 主色)
+//   Lighter:  #69b6a4  (h3 次级)
+
+article {
+  $brand-primary: #2b937c;
+  $brand-primary-dark: #1f6d5d;
+  $brand-primary-light: #69b6a4;
+  $brand-line-muted: #c3ded7;
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    // border-bottom: 1px solid $brand-primary-light;
+  }
+
+  h4 {
+    font-size: 1.0rem !important;
+    font-weight: 500 !important;
+  }
+
+  h5 {
+    font-size: 1.0rem !important;
+    font-weight: 500;
+  }
+
+  h6 {
+    font-size: 1.0rem !important;
+    font-weight: 500;
+  }
+
+  h1>.pdf-order,
+  h2>.pdf-order,
+  h3>.pdf-order {
+    padding-left: 6px;
+  }
+}

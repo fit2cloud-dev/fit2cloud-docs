@@ -1,0 +1,118 @@
+name: Generate Documentation PDF
+
+run-name: Generate PDF - ${{ inputs.custom_docs_dir || inputs.docs_dir || 'dataease-docs' }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      docs_dir:
+        description: '选择要导出的产品文档目录'
+        required: true
+        type: choice
+        default: dataease-docs
+        options:
+          - dataease-docs
+          - jumpserver-docs
+          - maxkb-docs
+          - 1panel-docs
+          - ai-gateway-docs
+          - cordys-docs
+          - sqlbot-docs
+      custom_docs_dir:
+        description: '自定义文档目录（如旧版 dataease_versioned_docs/version-v2 等未列出目录），填写后覆盖上方选择'
+        required: false
+        type: string
+        default: ''
+      output_name:
+        description: 'PDF 文件名；留空则按目录自动生成，可省略 .pdf'
+        required: false
+        type: string
+        default: ''
+      title:
+        description: 'PDF 标题；留空则自动推断'
+        required: false
+        type: string
+        default: ''
+      toc_depth:
+        description: 'PDF 目录最大层级（不是文档版本，建议选 3）'
+        required: true
+        type: choice
+        default: '3'
+        options:
+          - '2'
+          - '3'
+      image_max_width:
+        description: '图片最大宽度（像素），0 表示不缩放'
+        required: true
+        type: string
+        default: '1600'
+      exclude:
+        description: '需排除的文档（相对 docs_dir，逗号或换行分隔，支持通配）。如新版首页页 product_landing.md'
+        required: false
+        type: string
+        default: ''
+      cover_subtitle:
+        description: '封面副标题；留空则不显示（默认不再显示“自动生成”字样）'
+        required: false
+        type: string
+        default: ''
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-pdf-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-pdf:
+    name: Build PDF Artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      DOCS_DIR_EFF: ${{ inputs.custom_docs_dir || inputs.docs_dir || 'dataease-docs' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate PDF
+        id: pdf
+        uses: ./.github/actions/markdown-pdf
+        with:
+          docs_dir: ${{ env.DOCS_DIR_EFF }}
+          output_name: ${{ inputs.output_name }}
+          title: ${{ inputs.title }}
+          toc_depth: ${{ inputs.toc_depth || '3' }}
+          image_max_width: ${{ inputs.image_max_width || '1600' }}
+          exclude: ${{ inputs.exclude || 'product_landing.md' }}
+          cover_subtitle: ${{ inputs.cover_subtitle || '' }}
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-pdf-${{ github.run_number }}-${{ github.run_attempt }}
+          path: ${{ steps.pdf.outputs.pdf_path }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Write job summary
+        shell: bash
+        env:
+          DOCS_DIR: ${{ env.DOCS_DIR_EFF }}
+          PDF_NAME: ${{ steps.pdf.outputs.pdf_name }}
+          PDF_SIZE_BYTES: ${{ steps.pdf.outputs.pdf_size }}
+          PDF_SHA256: ${{ steps.pdf.outputs.pdf_sha256 }}
+          ARTIFACT_NAME: docs-pdf-${{ github.run_number }}-${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          HUMAN_SIZE="$(numfmt --to=iec-i --suffix=B "$PDF_SIZE_BYTES")"
+          {
+            echo '## PDF 生成完成'
+            echo
+            echo "- 源目录：\`$DOCS_DIR\`"
+            echo "- 文件：\`$PDF_NAME\`"
+            echo "- 大小：$HUMAN_SIZE（$PDF_SIZE_BYTES bytes）"
+            echo "- SHA256：\`$PDF_SHA256\`"
+            echo
+            echo "请在本次 Actions 运行页面底部 **Artifacts** 区域下载 \`$ARTIFACT_NAME\`。"
+          } >> "$GITHUB_STEP_SUMMARY"
